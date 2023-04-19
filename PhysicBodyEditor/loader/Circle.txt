@@ -1,0 +1,31 @@
+{
+      "name": "Circle",
+      "imagePath": "../../../../../../atlas/1/deff.png",
+      "origin": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "polygons": [],
+      "circles": [
+        {
+          "cx": 0.0,
+          "cy": 0.0,
+          "r": 0.5
+        }
+      ],
+      "shapes": [
+        {
+          "type": "CIRCLE",
+          "vertices": [
+            {
+              "x": 0.0,
+              "y": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 0.5
+            }
+          ]
+        }
+      ]
+    }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "376957490092",
+    "project_id": "halibuhewrt",
+    "storage_bucket": "halibuhewrt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376957490092:android:5df59ce95bb8cda5cce009",
+        "android_client_info": {
+          "package_name": "com.hk.stck.nord"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376957490092-me6nv4pv36mu7n79pdh5cnlcfkgjugbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZcaVoMwL3QPFXzKX4lLi0J9uuhioHPlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376957490092-me6nv4pv36mu7n79pdh5cnlcfkgjugbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

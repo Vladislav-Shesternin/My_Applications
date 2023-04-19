@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bet">Postaw</string>
+    <string name="back">Wstecz</string>
+    <string name="get_access">Uzyskaj dostęp!</string>
+    <string name="play_as_guest">Graj jako gość</string>
+    <string name="registration_success">Rejestracja powiodła się</string>
+    <string name="minimal_bet_text">To jest minimalny zakład</string>
+    <string name="error_code_not_valid">Nieprawidłowy kod</string>
+    <string name="error_no_internet_connection">Utracono połączenie internetowe</string>
+    <string name="register_message_2">Wygrane czekają na Ciebie!</string>
+    <string name="validation_text">Wprowadź prawidłowy kod</string>
+    <string name="enter_valid_verification_text">Wprowadź prawidłowe informacje</string>
+    <string name="error_phone_number_text">Format numeru telefonu jest nieprawidłowy</string>
+    <string name="register_message">Zarejestruj się i uzyskaj dostęp do ponad 100 kasyn!</string>
+    <string name="go_to_full_game">Idź do prawdziwego kasyna!</string>
+    <string name="positive_button_text">Graj w najlepsze gry kasynowe!</string>
+    <string name="loading">Ładowanie</string>
+    <string name="options">Opcje</string>
+    <string name="exit">Wyjdź</string>
+    <string name="start_game">Rozpocznij grę</string>
+    <string name="sound">Dźwięk</string>
+    <string name="start_balance">Saldo początkowe</string>
+    <string name="menu_icon">Ikona menu</string>
+    <string name="privacy_policy">Polityka firmy</string>
+
+
+    <string name="name">Nazwa</string>
+    <string name="resend_code">Wyślij ponownie</string>
+    <string name="code_sent">Kod wysłany</string>
+    <string name="product_list">Nasze oferty</string>
+    <string name="policy_verification_string">Zweryfikuj swój numer telefonu, aby się zarejestrować</string>
+    <string name="play">Graj</string>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonResendCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:alpha="0.9"
+        android:background="@drawable/rectangle_rounded_registration_button"
+        android:text="@string/resend_code"
+        android:textColor="#C3000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBackToVerification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/codeInputView" />
+
+    <com.raycoarana.codeinputview.CodeInputView
+        android:id="@+id/codeInputView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rectangle_rounded_corner_enter_code"
+        android:imeOptions="flagNoExtractUi"
+        app:animate_on_complete="true"
+        app:autoSizeTextType="uniform"
+        app:code_text_color="@color/white"
+        app:error_color="#77ce9d"
+        app:input_type="numeric"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:length_of_code="4"
+        app:underline_color="@color/white"
+        app:underline_selected_color="#1A26CE"
+        app:underline_stroke_width="2dp"
+        app:underline_width="60dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_margin="15dp"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:maxLines="3"
+
+        android:text="@string/validation_text"
+        android:textSize="30sp"
+        app:autoSizeTextType="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/buttonBackToVerification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_text_corner_rectangle_semitransparent"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

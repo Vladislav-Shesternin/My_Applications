@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/backrgound_verification_rectangle"/>
+            <corners   android:bottomLeftRadius="0.1dp"
+                android:bottomRightRadius="40dip"
+                android:topLeftRadius="40dip"
+                android:topRightRadius="0.1dp"/>
+
+            <stroke android:width="3dip"
+                android:color="@color/background_text_corner"/>
+            <corners   android:bottomLeftRadius="0.1dp"
+                android:bottomRightRadius="40dip"
+                android:topLeftRadius="40dip"
+                android:topRightRadius="0.1dp"/>
+        </shape>
+    </item>
+</selector>

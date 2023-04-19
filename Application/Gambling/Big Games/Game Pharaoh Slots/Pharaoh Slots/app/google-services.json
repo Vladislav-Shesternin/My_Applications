@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "108266878131",
+    "project_id": "pharaoh-slots-30e98",
+    "storage_bucket": "pharaoh-slots-30e98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108266878131:android:4f5b9b17e7745459bb6cc6",
+        "android_client_info": {
+          "package_name": "com.pharhaslo.slo7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108266878131-eep7fm4c00ghgphn1k3k3t6qasqop7gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDld7zYz7HQGfogWZ0uAGiDG3loe2ZI4Ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108266878131-eep7fm4c00ghgphn1k3k3t6qasqop7gd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_splash">
+
+    <fragment
+        android:id="@+id/navigation_game"
+        android:name="com.pharhaslo.slo7.game.LibGDXFragment"
+        android:label="LibGDXFragment">
+        <action
+            android:id="@+id/action_navigation_game_to_navigation_verification"
+            app:destination="@id/navigation_verification" />
+        <action
+            android:id="@+id/action_navigation_game_to_navigation_splash"
+            app:destination="@id/navigation_splash" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.pharhaslo.slo7.fragment.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_navigation_splash_to_navigation_game"
+            app:destination="@id/navigation_game" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_verification"
+        android:name="com.pharhaslo.slo7.fragment.verification.VerificationFragment"
+        android:label="VerificationFragment" >
+        <argument
+            android:name="phoneNumber"
+            app:argType="string"
+            android:defaultValue=" " />
+        <action
+            android:id="@+id/action_navigation_verification_to_navigation_verification_enter_code"
+            app:destination="@id/navigation_verification_enter_code" />
+        <action
+            android:id="@+id/action_navigation_verification_to_navigation_game"
+            app:destination="@id/navigation_game" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_verification_enter_code"
+        android:name="com.pharhaslo.slo7.fragment.verification.VerificationEnterCodeFragment"
+        android:label="VerificationEnterCodeFragment" >
+        <argument
+            android:name="phoneNumber"
+            app:argType="string"
+            android:defaultValue=" " />
+        <action
+            android:id="@+id/action_navigation_verification_enter_code_to_navigation_verification"
+            app:destination="@id/navigation_verification" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.pharhaslo.slo7.fragment.main.MainFragment"
+        android:label="MainFragment" />
+
+</navigation>

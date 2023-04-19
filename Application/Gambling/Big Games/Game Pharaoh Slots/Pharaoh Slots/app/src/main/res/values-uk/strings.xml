@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bet">Ставка</string>
+    <string name="back">Назад</string>
+    <string name="get_access">Реєстрація</string>
+    <string name="play_as_guest">Грати як гість</string>
+    <string name="registration_success">Реєстрація успішна</string>
+    <string name="minimal_bet_text">Це мінімальна ставка</string>
+    <string name="error_code_not_valid">Код введено невірно</string>
+    <string name="error_no_internet_connection">Немає з\'єднання з інтернетом</string>
+    <string name="register_message_2">Виграші чекають на тебе!</string>
+    <string name="validation_text">Будь ласка введіть правильний код</string>
+    <string name="enter_valid_verification_text">Будь ласка введіть правильну інформацію</string>
+    <string name="error_phone_number_text">Формат номера телефона неправильний</string>
+    <string name="register_message">Зареєструйся і отримай доступ до більш ніж 1000 казино</string>
+    <string name="go_to_full_game">Перейти до справжнього казино!</string>
+
+    <string name="positive_button_text">Грати в найкращі казино ігри</string>
+
+    <string name="loading">Завантаження</string>
+    <string name="options">Налаштування</string>
+    <string name="exit">Вихід</string>
+    <string name="start_game">Почати гру</string>
+    <string name="sound">Звук</string>
+    <string name="start_balance">Стартовий баланс</string>
+    <string name="menu_icon">Іконка меню</string>
+    <string name="privacy_policy">Політика компанії</string>
+
+
+    <string name="product_list">Наші пропозиції</string>
+    <string name="resend_code">Відправити знов</string>
+    <string name="code_sent">Код відправлений</string>
+    <string name="policy_verification_string">Для проходження реєстрації, підтвердіть, будь ласка, Ваш номер телефону</string>
+    <string name="name">Ім\'я</string>
+    <string name="play">Грати</string>
+</resources>

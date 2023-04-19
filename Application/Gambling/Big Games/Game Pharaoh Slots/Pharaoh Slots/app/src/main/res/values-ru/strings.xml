@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bet">Ставка</string>
+    <string name="back">Назад</string>
+    <string name="get_access">Регистрация</string>
+    <string name="play_as_guest">Играть как гость</string>
+    <string name="registration_success">Регистрация успешна</string>
+    <string name="minimal_bet_text">Это минимальная ставка</string>
+    <string name="error_code_not_valid">Код неверный</string>
+    <string name="error_no_internet_connection">Потеряно соединение с интернетом</string>
+    <string name="register_message_2">Выиграши ждут тебя!</string>
+    <string name="validation_text">Пожалуйста введите правильный код</string>
+    <string name="enter_valid_verification_text">Пожалуйста введите правильную информацию</string>
+    <string name="error_phone_number_text">Формат номера телефона неправильный</string>
+    <string name="register_message">Зарегистрируйся и получи доступ более чем к 1000 казино!</string>
+    <string name="go_to_full_game">Перейти  в настоящее казино!</string>
+    <string name="positive_button_text">Играть в лучшие казино игры!</string>
+    <string name="loading">Загрузка</string>
+    <string name="options">Опции</string>
+    <string name="exit">Выход</string>
+    <string name="start_game">Начать игру</string>
+    <string name="sound">Звук</string>
+    <string name="start_balance">Стартовый баланс</string>
+    <string name="menu_icon">Иконка меню</string>
+    <string name="privacy_policy">Политика компании</string>
+
+
+    <string name="name">Имя</string>
+    <string name="resend_code">Отправить снова</string>
+    <string name="code_sent">Код отправлен</string>
+    <string name="product_list">Наши предложения</string>
+    <string name="policy_verification_string">Для прохождения регистрации пожалуйста подтвердите Ваш номер телефона</string>
+    <string name="play">Играть</string>
+</resources>

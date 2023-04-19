@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bet">Бәс тігу</string>
+    <string name="back">Артқа</string>
+    <string name = "get_access">Кіруге рұқсат алыңыз!</string>
+    <string name="play_as_guest">Қонақ ретінде ойнау</string>
+    <string name="registration_success">Тіркеу сәтті</string>
+    <string name="minimal_bet_text">Бұл ең аз ставка</string>
+    <string name = "error_code_not_valid">Жарамсыз код</string>
+    <string name = "error_no_internet_connection">Интернет қосылымы жоғалды</string>
+    <string name="register_message_2">Сізді ұтыстар күтуде!</string>
+    <string name = "validation_text">Жарамды кодты енгізіңіз</string>
+    <string name = "enter_valid_verification_text">Жарамды ақпаратты енгізіңіз</string>
+    <string name = "error_phone_number_text">Телефон нөмірі пішімі жарамсыз</string>
+    <string name="register_message">Тіркеліңіз және 100-ден астам казиноға қол жеткізіңіз!</string>
+    <string name="go_to_full_game">Нағыз казиноға барыңыз!</string>
+    <string name="positive_button_text">Ең жақсы казино ойындарын ойнаңыз!</string>
+    <string name="loading">Жүктелуде</string>
+    <string name="options">Параметрлер</string>
+    <string name="exit">Шығу</string>
+    <string name="start_game">Ойынды бастау</string>
+    <string name="sound">Дыбыс</string>
+    <string name="start_balance">Бастапқы баланс</string>
+    <string name="menu_icon">Мәзір белгішесі</string>
+    <string name="privacy_policy">Компания саясаты</string>
+
+
+    <string name="name">Аты</string>
+    <string name="resend_code">Қайта жіберу</string>
+    <string name="code_sent">Код жіберілді</string>
+    <string name="product_list">Біздің ұсыныстарымыз</string>
+    <string name="policy_verification_string">Тіркелу үшін телефон нөміріңізді растаңыз</string>
+    <string name="play">Ойнату</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bet">Bitki</string>
+    <string name="back">Orqaga</string>
+    <string name="get_access">Kirish huquqiga ega bo‘ling!</string>
+    <string name="play_as_guest">Mehmon sifatida o‘ynang</string>
+    <string name="registration_success">Ro‘yxatdan o‘tish muvaffaqiyatli</string>
+    <string name="minimal_bet_text">Bu minimal tikish</string>
+    <string name = "error_code_not_valid">Yaroqsiz kod</string>
+    <string name = "error_no_internet_connection">Internet aloqasi uzildi</string>
+    <string name="register_message_2">Yutishlar sizni kutmoqda!</string>
+    <string name = "validation_text">Iltimos, to‘g‘ri kodni kiriting</string>
+    <string name = "enter_valid_verification_text">Iltimos, to‘g‘ri ma’lumotlarni kiriting</string>
+    <string name="error_phone_number_text">Telefon raqami formati noto‘g‘ri</string>
+    <string name="register_message">Ro‘yxatdan o‘ting va 100 dan ortiq kazinolarga ruxsat oling!</string>
+    <string name="go_to_full_game">Haqiqiy kazinoga boring!</string>
+    <string name="positive_button_text">Eng yaxshi kazino oʻyinlarini oʻynang!</string>
+    <string name="loading">Yuklanmoqda</string>
+    <string name="options">Variantlar</string>
+    <string name="exit">Chiqish</string>
+    <string name="start_game">O‘yinni boshlash</string>
+    <string name="sound">Ovoz</string>
+    <string name="start_balance">Boshlang\'ich balans</string>
+    <string name="menu_icon">Menyu belgisi</string>
+    <string name="privacy_policy">Kompaniya siyosati</string>
+
+
+    <string name="name">Ism</string>
+    <string name="resend_code">Yana yuborish</string>
+    <string name="code_sent">Kod yuborildi</string>
+    <string name="product_list">Bizning takliflarimiz</string>
+    <string name="policy_verification_string">Ro‘yxatdan o‘tish uchun telefon raqamingizni tasdiqlang</string>
+    <string name="play">O‘ynang</string>
+</resources>

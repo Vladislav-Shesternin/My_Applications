@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bet">Mərc</string>
+    <string name="back">Geri</string>
+    <string name="get_access">Giriş əldə edin!</string>
+    <string name="play_as_guest">Qonaq kimi oynayın</string>
+    <string name="registration_success">Qeydiyyat uğurlu oldu</string>
+    <string name="minimal_bet_text">Bu, minimum mərcdir</string>
+    <string name="error_code_not_valid">Yanlış kod</string>
+    <string name="error_no_internet_connection">İnternet bağlantısı itdi</string>
+    <string name="register_message_2">Uduşlar sizi gözləyir!</string>
+    <string name="validation_text">Lütfən etibarlı kodu daxil edin</string>
+    <string name="enter_valid_verification_text">Lütfən, düzgün məlumat daxil edin</string>
+    <string name="error_phone_number_text">Telefon nömrəsi formatı yanlışdır</string>
+    <string name="register_message">Qeydiyyatdan keçin və 100-dən çox kazinoya giriş əldə edin!</string>
+    <string name="go_to_full_game">Real kazinoya gedin!</string>
+    <string name="positive_button_text">Ən yaxşı kazino oyunlarını oynayın!</string>
+    <string name="loading">Yüklənir</string>
+    <string name="options">Seçimlər</string>
+    <string name="exit">Çıxın</string>
+    <string name="start_game">Oyuna başlayın</string>
+    <string name="sound">Səs</string>
+    <string name="start_balance">Başlanğıc balansı</string>
+    <string name="menu_icon">Menyu İkonu</string>
+    <string name="privacy_policy">Şirkət Siyasəti</string>
+
+
+    <string name="name">Ad</string>
+    <string name="resend_code">Yenidən göndər</string>
+    <string name="code_sent">Kod göndərildi</string>
+    <string name="product_list">Təkliflərimiz</string>
+    <string name="policy_verification_string">Qeydiyyatdan keçmək üçün telefon nömrənizi təsdiq edin</string>
+    <string name="play">Oyna</string>
+</resources>

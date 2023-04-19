@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Fantastic Slots</string>
+    <string name="play">Play</string>
+    <string name="options">Options</string>
+    <string name="exit">Exit</string>
+    <string name="training">Training</string>
+    <string name="starting_balance">Starting balance</string>
+    <string name="balance">BALANCE</string>
+    <string name="bet">BET</string>
+    <string name="spin">Spin</string>
+    <string name="bonus_spins">Bonus spins:</string>
+    <string name="bonus_spins_are_over">Bonus spins are over!</string>
+    <string name="bonus_spins_earnings">For the bonus game\nYou have earned:</string>
+    <string name="choose_starting_balance">Choose your starting balance:</string>
+    <string name="current">CURRENT</string>
+    <string name="training_upper">TRAINING:</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="tutorial_balance">Balance - Your current balance is displayed here.</string>
+    <string name="tutorial_bet">Rate - Your rate is displayed here.</string>
+    <string name="tutorial_plus_minus">Minus / Plus - rate adjustment buttons.</string>
+    <string name="tutorial_spin">Spin - the button to start the slot, before pressing it, you need to make a bet.</string>
+    <string name="tutorial_autospin">Autospin - the button to automatically start the slot, before pressing it, you need to adjust the bet, the cancellation occurs by pressing it next.</string>
+    <string name="tutorial_menu">Menu - button to go to the Menu screen.</string>
+    <string name="tutorial_slot">Slot - this is where the game takes place.</string>
+    <string name="tutorial_scatter">Scatter - if 3 scatters appear on the slot, the super game starts.</string>
+    <string name="tutorial_wild">Wild - a universal element, combine in combination with any element.</string>
+    <string name="tutorial_win" tools:ignore="TypographyDashes">Win - possible winning combinations: 1-3, 1-4, 1-5. The same symbol must be contained from reels 1 to 5, no matter which row is the main one in sequence.</string>
+    <string name="tutorial_glow">Glow - if a winning combination has fallen out, the background of the winning element is highlighted in yellow.</string>
+    <string name="tutorial_completed">Training completed!</string>
+    <string name="skip_tutorial">skip</string>
+</resources>

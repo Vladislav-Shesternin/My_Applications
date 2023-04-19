@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "682539213439",
+    "project_id": "gosinvvv",
+    "storage_bucket": "gosinvvv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682539213439:android:1a959f5d8d5066373b154a",
+        "android_client_info": {
+          "package_name": "com.gs.vest.ask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682539213439-n8fp1anf1nfiqlsbb3g4oj9qaofj957i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaM3WKrbZQnaCoq0AnYebmJD_QrA2q9ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682539213439-n8fp1anf1nfiqlsbb3g4oj9qaofj957i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

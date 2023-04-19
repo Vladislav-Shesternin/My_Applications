@@ -1,0 +1,26 @@
+1.png
+size: 298, 358
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball
+  rotate: false
+  xy: 1, 1
+  size: 53, 52
+  orig: 53, 52
+  offset: 0, 0
+  index: -1
+person
+  rotate: false
+  xy: 55, 1
+  size: 192, 263
+  orig: 192, 263
+  offset: 0, 0
+  index: -1
+tablo
+  rotate: false
+  xy: 1, 265
+  size: 296, 92
+  orig: 296, 92
+  offset: 0, 0
+  index: -1

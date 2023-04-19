@@ -1,0 +1,138 @@
+1.png
+size: 922, 1732
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+auto_spin_default
+  rotate: false
+  xy: 1, 113
+  size: 115, 123
+  orig: 115, 123
+  offset: 0, 0
+  index: -1
+auto_spin_disable
+  rotate: false
+  xy: 117, 113
+  size: 115, 123
+  orig: 115, 123
+  offset: 0, 0
+  index: -1
+auto_spin_press
+  rotate: false
+  xy: 233, 113
+  size: 115, 123
+  orig: 115, 123
+  offset: 0, 0
+  index: -1
+balance_panel
+  rotate: false
+  xy: 1, 604
+  size: 456, 105
+  orig: 456, 105
+  offset: 0, 0
+  index: -1
+bet_panel
+  rotate: false
+  xy: 519, 348
+  size: 349, 122
+  orig: 349, 122
+  offset: 0, 0
+  index: -1
+dialog_panel
+  rotate: false
+  xy: 1, 710
+  size: 920, 480
+  orig: 920, 480
+  offset: 0, 0
+  index: -1
+glow
+  rotate: false
+  xy: 236, 348
+  size: 282, 255
+  orig: 282, 255
+  offset: 0, 0
+  index: -1
+minus_default
+  rotate: false
+  xy: 1, 1
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+minus_disable
+  rotate: false
+  xy: 112, 1
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+minus_press
+  rotate: false
+  xy: 223, 1
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+music_disable
+  rotate: false
+  xy: 334, 1
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+music_enable
+  rotate: false
+  xy: 445, 1
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+plus_default
+  rotate: false
+  xy: 556, 1
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+plus_disable
+  rotate: false
+  xy: 667, 1
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+plus_press
+  rotate: false
+  xy: 778, 1
+  size: 110, 110
+  orig: 110, 110
+  offset: 0, 0
+  index: -1
+slot_group_panel
+  rotate: false
+  xy: 1, 1191
+  size: 920, 540
+  orig: 920, 540
+  offset: 0, 0
+  index: -1
+spin_default
+  rotate: false
+  xy: 349, 113
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+  index: -1
+spin_disable
+  rotate: false
+  xy: 584, 113
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+  index: -1
+spin_press
+  rotate: false
+  xy: 1, 348
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+  index: -1

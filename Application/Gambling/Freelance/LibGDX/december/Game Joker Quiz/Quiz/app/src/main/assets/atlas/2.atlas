@@ -1,0 +1,19 @@
+2.png
+size: 1730, 1867
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background
+  rotate: false
+  xy: 1, 1
+  size: 900, 1865
+  orig: 900, 1865
+  offset: 0, 0
+  index: -1
+pan_def
+  rotate: false
+  xy: 902, 1
+  size: 827, 1436
+  orig: 827, 1436
+  offset: 0, 0
+  index: -1

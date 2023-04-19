@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.FantasticSlots" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Splash" parent="Theme.FantasticSlots">
+        <item name="android:windowBackground">@drawable/background</item>
+    </style>
+</resources>

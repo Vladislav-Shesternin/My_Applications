@@ -1,0 +1,19 @@
+1.png
+size: 1802, 1234
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background
+  rotate: false
+  xy: 1, 1
+  size: 1800, 800
+  orig: 1800, 800
+  offset: 0, 0
+  index: -1
+logo_ledy
+  rotate: false
+  xy: 1, 802
+  size: 1599, 431
+  orig: 1599, 431
+  offset: 0, 0
+  index: -1

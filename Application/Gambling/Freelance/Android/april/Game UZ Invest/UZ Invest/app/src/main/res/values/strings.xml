@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UZ Invest</string>
+    <string name="facebook_app_id">1621066035026543</string>
+
+    <string name="balance">BALANCE</string>
+    <string name="cryptocurrency">CRYPTOCURRENCY</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="Theme.HSBKMobile" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+</resources>

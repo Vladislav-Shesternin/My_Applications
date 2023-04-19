@@ -1,0 +1,54 @@
+game.png
+size: 1005, 1349
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+big_def
+  rotate: false
+  xy: 543, 182
+  size: 413, 238
+  orig: 413, 238
+  offset: 0, 0
+  index: -1
+big_press
+  rotate: false
+  xy: 2, 422
+  size: 413, 238
+  orig: 413, 238
+  offset: 0, 0
+  index: -1
+mini_def
+  rotate: false
+  xy: 2, 2
+  size: 229, 132
+  orig: 229, 132
+  offset: 0, 0
+  index: -1
+mini_press
+  rotate: false
+  xy: 233, 2
+  size: 229, 132
+  orig: 229, 132
+  offset: 0, 0
+  index: -1
+stock
+  rotate: false
+  xy: 417, 422
+  size: 539, 925
+  orig: 539, 925
+  offset: 0, 0
+  index: -1
+stock_deff
+  rotate: false
+  xy: 464, 2
+  size: 539, 178
+  orig: 539, 178
+  offset: 0, 0
+  index: -1
+stock_press
+  rotate: false
+  xy: 2, 182
+  size: 539, 178
+  orig: 539, 178
+  offset: 0, 0
+  index: -1

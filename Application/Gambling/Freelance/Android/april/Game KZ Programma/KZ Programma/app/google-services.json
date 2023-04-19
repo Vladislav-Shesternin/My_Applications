@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51203867947",
+    "project_id": "progrmk-e16ae",
+    "storage_bucket": "progrmk-e16ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51203867947:android:0363d462980a129ca5f16e",
+        "android_client_info": {
+          "package_name": "com.prog.zka.mac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51203867947-07ph0742cai1l2v1f2uhqnlglvkfs3n0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0N2Y852FWAQnEV7-lYLw9m2sBPr5AUTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51203867947-07ph0742cai1l2v1f2uhqnlglvkfs3n0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

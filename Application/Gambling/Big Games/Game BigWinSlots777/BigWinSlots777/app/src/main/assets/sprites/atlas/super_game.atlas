@@ -1,0 +1,68 @@
+super_game.png
+size: 1394, 1159
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+center
+  rotate: false
+  xy: 1, 1
+  size: 63, 63
+  orig: 63, 63
+  offset: 0, 0
+  index: -1
+coefficient_panel
+  rotate: false
+  xy: 65, 1
+  size: 116, 123
+  orig: 116, 123
+  offset: 0, 0
+  index: -1
+indicator
+  rotate: false
+  xy: 182, 1
+  size: 47, 41
+  orig: 47, 41
+  offset: 0, 0
+  index: -1
+roulette_wild
+  rotate: false
+  xy: 230, 1
+  size: 533, 532
+  orig: 533, 532
+  offset: 0, 0
+  index: -1
+roulette_coefficient
+  rotate: false
+  xy: 764, 1
+  size: 533, 532
+  orig: 533, 532
+  offset: 0, 0
+  index: -1
+roulette_panel
+  rotate: false
+  xy: 1, 534
+  size: 624, 624
+  orig: 624, 624
+  offset: 0, 0
+  index: -1
+roulette_spin
+  rotate: false
+  xy: 626, 534
+  size: 533, 532
+  orig: 533, 532
+  offset: 0, 0
+  index: -1
+spin_panel
+  rotate: false
+  xy: 1160, 534
+  size: 116, 123
+  orig: 116, 123
+  offset: 0, 0
+  index: -1
+wild_panel
+  rotate: false
+  xy: 1277, 534
+  size: 116, 123
+  orig: 116, 123
+  offset: 0, 0
+  index: -1

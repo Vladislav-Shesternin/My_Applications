@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name" translatable="false">BigWinSlots777</string>
+    <string name="spin">Spin</string>
+    <string name="t_balance">Balance - your current balance is displayed here.</string>
+    <string name="t_bet">Bet - your current bet is displayed here.</string>
+    <string name="t_spin">Spin - game start button.</string>
+    <string name="t_plus_minus">(- | +) - bet adjustment buttons.</string>
+    <string name="t_slot_group">Slot - this is where the game takes place.</string>
+    <string name="win">WIN</string>
+    <string name="fail">FAIL</string>
+    <string name="start">START</string>
+    <string name="finish">FINISH</string>
+    <string name="mini_game">MINI GAME</string>
+    <string name="mini_game_text_1">Pick 1 item on the slot.</string>
+    <string name="mini_game_text_2">You have earned:</string>
+</resources>
