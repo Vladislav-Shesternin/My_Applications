@@ -22,7 +22,8 @@ class SizeConverter(
     fun getSizeX(x: Float) = getPercentX(x) * toOnePercentX
     fun getSizeY(y: Float) = getPercentY(y) * toOnePercentY
 
-    fun getSize(x: Float, y: Float) = Vector2(getSizeX(x), getSizeY(y))
+    fun getSize(x: Float, y: Float) = Size(getSizeX(x), getSizeY(y))
+    fun getSize(size: Size) = Size(getSizeX(size.width), getSizeY(size.height))
     fun getSize(vector2: Vector2) = Vector2(getSizeX(vector2.x), getSizeY(vector2.y))
 
     fun setSize(actor: Actor, width: Float, height: Float) {

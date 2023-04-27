@@ -57,6 +57,9 @@ fun runGDX(block: () -> Unit) {
     Gdx.app.postRunnable { block() }
 }
 
+val Size.vector2 get() = Vector2(width, height)
+val Vector2.size get() = Size(x, y)
+
 data class Size(
     var width : Float = 0f,
     var height: Float = 0f,

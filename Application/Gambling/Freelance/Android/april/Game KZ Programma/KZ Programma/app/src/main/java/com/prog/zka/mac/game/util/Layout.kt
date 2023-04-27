@@ -12,6 +12,25 @@ object Layout {
         val b3    = LayoutData(134f,1257f,482f,157f)
     }
 
+    object Geometrical {
+        val circle = LayoutData(-87f, -67f,924f,924f)
+        val flag   = LayoutData(125f, 145f,500f,500f)
+
+        val btnSize = Size(481f, 181f)
+        val btnPos  = listOf<Vector2>(
+            Vector2(5f, 832f),
+            Vector2(263f, 1004f),
+            Vector2(5f, 1176f),
+            Vector2(263f, 1348f),
+        )
+        val btnStartPos  = listOf<Vector2>(
+            Vector2(-481f, 832f),
+            Vector2(750f, 1004f),
+            Vector2(-481f, 1176f),
+            Vector2(750f, 1348f),
+        )
+    }
+
     data class LayoutData(
         val x: Float = 0f,
         val y: Float = 0f,

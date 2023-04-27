@@ -17,7 +17,6 @@ object Layout {
             LayoutData(1160f,20f,100f,100f),
         )
 
-        val borders = LayoutData(0f, 0f, 1400f, 700f)
         val orbSize = Size(72f,72f)
         val orbPos  = Vector2(533f, 388f)
     }

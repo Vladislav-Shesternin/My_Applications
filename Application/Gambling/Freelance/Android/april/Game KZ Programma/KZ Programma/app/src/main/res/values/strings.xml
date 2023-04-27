@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">KZ Programma</string>
     <string name="facebook_app_id">6076424255811730</string>
+    <string name="music_on">музыка вкл</string>
+    <string name="music_off">музыка выкл</string>
+    <string name="exit">выйти</string>
+    <string name="play">играть</string>
 </resources>

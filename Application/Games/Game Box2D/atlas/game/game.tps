@@ -2,9 +2,9 @@
 <data version="1.0">
     <struct type="Settings">
         <key>fileFormatVersion</key>
-        <int>5</int>
+        <int>6</int>
         <key>texturePackerVersion</key>
-        <string>6.0.2</string>
+        <string>7.0.2</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -127,8 +127,8 @@
                 <filename>../../GameBox2D/app/src/main/assets/atlas/game.atlas</filename>
             </struct>
         </map>
-        <key>multiPack</key>
-        <false/>
+        <key>multiPackMode</key>
+        <enum type="SettingsBase::MultiPackMode">MultiPackOff</enum>
         <key>forceIdenticalLayout</key>
         <false/>
         <key>outputFormat</key>
@@ -173,21 +173,6 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">borders.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>350,175,700,350</rect>
-                <key>scale9Paddings</key>
-                <rect>350,175,700,350</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">btn_deff.png</key>
             <key type="filename">btn_press.png</key>
             <struct type="IndividualSpriteSettings">
@@ -204,8 +189,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">green.png</key>
-            <key type="filename">red.png</key>
+            <key type="filename">car.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -214,13 +198,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>18,18,36,36</rect>
+                <rect>97,43,194,86</rect>
                 <key>scale9Paddings</key>
-                <rect>18,18,36,36</rect>
+                <rect>97,43,194,86</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">joint.png</key>
+            <key type="filename">horizontal.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -229,13 +213,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>34,3,67,7</rect>
+                <rect>350,4,700,7</rect>
                 <key>scale9Paddings</key>
-                <rect>34,3,67,7</rect>
+                <rect>350,4,700,7</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">rev_b-1.png</key>
+            <key type="filename">vertical.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -244,13 +228,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>14,55,27,109</rect>
+                <rect>4,168,7,335</rect>
                 <key>scale9Paddings</key>
-                <rect>14,55,27,109</rect>
+                <rect>4,168,7,335</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">rev_b-2.png</key>
+            <key type="filename">wheel.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -259,48 +243,23 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>50,2,100,3</rect>
+                <rect>17,17,33,33</rect>
                 <key>scale9Paddings</key>
-                <rect>50,2,100,3</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">rev_b.png</key>
-            <key type="filename">rev_y.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>5,12,10,23</rect>
-                <key>scale9Paddings</key>
-                <rect>5,12,10,23</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">rev_point.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>3,3,5,5</rect>
-                <key>scale9Paddings</key>
-                <rect>3,3,5,5</rect>
+                <rect>17,17,33,33</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
-        <key>fileList</key>
-        <array>
-            <filename>.</filename>
-        </array>
+        <key>fileLists</key>
+        <map type="SpriteSheetMap">
+            <key>default</key>
+            <struct type="SpriteSheet">
+                <key>files</key>
+                <array>
+                    <filename>.</filename>
+                </array>
+            </struct>
+        </map>
         <key>ignoreFileList</key>
         <array/>
         <key>replaceList</key>

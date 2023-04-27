@@ -113,7 +113,7 @@ class SplashScreen : AdvancedScreen() {
             progressFlow.collect { p ->
                 while (progress < (p * 100)) {
                     progress += 1
-                    if (progress % 10 == 0) log("progress = $progress%")
+                    if (progress % 25 == 0) log("progress = $progress%")
                     if (progress == 100) isFinishProgress = true
                     // delay((10..15).shuffled().first().toLong())
                 }

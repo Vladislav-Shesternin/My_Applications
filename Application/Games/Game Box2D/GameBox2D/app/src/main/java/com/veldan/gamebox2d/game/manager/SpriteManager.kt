@@ -48,17 +48,12 @@ object SpriteManager {
 
 
     enum class GameRegion(override val region: TextureRegion): IRegion {
-        BORDERS(   EnumAtlas.GAME.data.atlas.findRegion("borders")   ),
-        BTN_DEFF(  EnumAtlas.GAME.data.atlas.findRegion("btn_deff")  ),
-        BTN_PRESS( EnumAtlas.GAME.data.atlas.findRegion("btn_press") ),
-        GREEN(     EnumAtlas.GAME.data.atlas.findRegion("green")     ),
-        RED(       EnumAtlas.GAME.data.atlas.findRegion("red")       ),
-        JOINT(     EnumAtlas.GAME.data.atlas.findRegion("joint")     ),
-        REV_B_1(   EnumAtlas.GAME.data.atlas.findRegion("rev_b-1")   ),
-        REV_B_2(   EnumAtlas.GAME.data.atlas.findRegion("rev_b-2")   ),
-        REV_POINT( EnumAtlas.GAME.data.atlas.findRegion("rev_point") ),
-        REV_B(     EnumAtlas.GAME.data.atlas.findRegion("rev_b")     ),
-        REV_Y(     EnumAtlas.GAME.data.atlas.findRegion("rev_y")     ),
+        VERTICAL(   EnumAtlas.GAME.data.atlas.findRegion("vertical")   ),
+        HORIZONTAL( EnumAtlas.GAME.data.atlas.findRegion("horizontal") ),
+        BTN_DEFF(   EnumAtlas.GAME.data.atlas.findRegion("btn_deff")   ),
+        BTN_PRESS(  EnumAtlas.GAME.data.atlas.findRegion("btn_press")  ),
+        CAR(        EnumAtlas.GAME.data.atlas.findRegion("car")        ),
+        WHEEL(      EnumAtlas.GAME.data.atlas.findRegion("wheel")      ),
     }
 
 //    enum class ListRegion(override val regionList: List<TextureRegion>): IRegionList {

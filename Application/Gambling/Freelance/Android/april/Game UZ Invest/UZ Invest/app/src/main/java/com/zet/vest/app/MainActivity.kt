@@ -159,6 +159,7 @@ class MainActivity : AppCompatActivity() {
                 "Good" -> {
                     DataStoreManager.Link.get()?.let {
                         log("DataStoreManager Key = Good | link = $it")
+                        webViewURL = it
                         startFragmentIdFlow.emit(R.id.webViewFragment)
                         lottie.hideLoader()
                     }

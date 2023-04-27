@@ -16,6 +16,11 @@ fun List<AbstractJoint<out Joint>>.destroyAll(time: Long = 0) {
     onEach { it.startDestroy(time) }
 }
 
+@JvmName("destroyAllAbstractBodyGroup")
+fun List<AbstractBodyGroup>.destroyAll(time: Long = 0) {
+    onEach { it.destroy(time) }
+}
+
 fun World.bodies(): Array<Body> {
     val array = Array<Body>()
     getBodies(array)

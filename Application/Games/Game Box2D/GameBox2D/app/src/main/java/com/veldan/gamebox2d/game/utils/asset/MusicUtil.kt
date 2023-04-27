@@ -2,17 +2,11 @@ package com.veldan.gamebox2d.game.utils.asset
 
 import com.badlogic.gdx.audio.Music
 import com.badlogic.gdx.utils.Disposable
-import com.socall.qzz.game.manager.AudioManager
-import com.socall.qzz.game.manager.MusicManager
-import com.socall.qzz.util.cancelCoroutinesAll
 import com.veldan.gamebox2d.game.manager.AudioManager
-import com.veldan.gamebox2d.game.manager.MusicManager
 import com.veldan.gamebox2d.game.utils.runGDX
 import com.veldan.gamebox2d.util.cancelCoroutinesAll
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.channels.BufferOverflow
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -20,11 +14,11 @@ class MusicUtil: Disposable {
 
     private val coroutine = CoroutineScope(Dispatchers.IO)
 
-    val MAIN by lazy { MusicManager.EnumMusic.MAIN.data.music }
+//    val MAIN by lazy { MusicManager.EnumMusic.MAIN.data.music }
 //    val MINI_GAME  get() = MusicManager.EnumMusic.MINI_GAME.data.music
 //    val SUPER_GAME get() = MusicManager.EnumMusic.SUPER_GAME.data.music
 
-    val musicList by lazy { listOf(MAIN/*MINI_GAME, SUPER_GAME*/) }
+//    val musicList by lazy { listOf(MAIN/*MINI_GAME, SUPER_GAME*/) }
 
     val volumeLevelFlow = MutableStateFlow(AudioManager.volumeLevelPercent)
 

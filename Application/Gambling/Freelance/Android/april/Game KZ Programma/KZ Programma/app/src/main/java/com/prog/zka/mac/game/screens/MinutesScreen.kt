@@ -1,6 +1,7 @@
 package com.prog.zka.mac.game.screens
 
 import android.graphics.Typeface
+import android.media.MediaPlayer
 import android.os.Build
 import android.view.Gravity
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import com.prog.zka.mac.R
 import com.prog.zka.mac.game.actors.Backgrad
+import com.prog.zka.mac.game.isMusic
+import com.prog.zka.mac.game.mediaPlayer
 import com.prog.zka.mac.game.navigationManager
 import com.prog.zka.mac.game.util.DENSITY
 import com.prog.zka.mac.game.util.Layout
@@ -22,10 +25,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.prog.zka.mac.game.util.Layout.Minutes as LM
-
 class MinutesScreen(
     val activity: FragmentActivity
 ): Screen(activity) {
+
+    private companion object {
+        var initializeMusic = true
+    }
 
     private val backrad      = Backgrad(activity)
     private val ygadaImage   = ImageView(activity)
@@ -47,6 +53,14 @@ class MinutesScreen(
 
     override fun show(parentStage: ConstraintLayout) {
         super.show(parentStage)
+
+        if (initializeMusic) {
+            initializeMusic = false
+            mediaPlayer = MediaPlayer.create(activity, R.raw.background).apply { isLooping = true }
+        }
+
+        if (isMusic) mediaPlayer?.start()
+
         //parent.setBackgroundResource(R.drawable.background)
 
 //        debugList.onEach {
@@ -113,15 +127,26 @@ class MinutesScreen(
         addView(exitButton)
 
         igratButton.apply {
-            setUpButton("играть", LM.b1)
-            setOnClickListener {  }
+            setUpButton(context.getString(R.string.play), LM.b1)
+            setOnClickListener { navigationManager.navigate(GeometricalScreen(activity), MinutesScreen(activity)) }
         }
         musicButton.apply {
-            setUpButton("музыка вкл", LM.b2)
-            setOnClickListener {  }
+            setUpButton(if (isMusic) context.getString(R.string.music_on) else context.getString(R.string.music_off), LM.b2)
+
+            setOnClickListener {
+                if (isMusic) {
+                    isMusic = false
+                    text = context.getString(R.string.music_off)
+                    mediaPlayer?.pause()
+                } else {
+                    isMusic = true
+                    text = context.getString(R.string.music_on)
+                    mediaPlayer?.start()
+                }
+            }
         }
         exitButton.apply {
-            setUpButton("выйти", LM.b3)
+            setUpButton(context.getString(R.string.exit), LM.b3)
             setOnClickListener { navigationManager.exit() }
         }
     }

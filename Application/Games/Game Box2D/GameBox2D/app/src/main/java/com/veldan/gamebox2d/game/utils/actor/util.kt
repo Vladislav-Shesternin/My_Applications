@@ -1,10 +1,34 @@
 package com.veldan.gamebox2d.game.utils.actor
 
 import com.badlogic.gdx.scenes.scene2d.Actor
+import com.badlogic.gdx.scenes.scene2d.InputEvent
+import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.Touchable
 import com.badlogic.gdx.scenes.scene2d.ui.Widget
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
 import com.veldan.gamebox2d.game.utils.Layout
+
+fun Actor.setOnClickListener(block: (Actor) -> Unit) {
+    addListener(object : InputListener() {
+        var isWithin = false
+
+        override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {
+            touchDragged(event, x, y, pointer)
+            return true
+        }
+
+        override fun touchDragged(event: InputEvent?, x: Float, y: Float, pointer: Int) {
+            isWithin = x in 0f..width && y in 0f..height
+        }
+
+        override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
+            if (isWithin) {
+                isWithin = false
+                block(this@setOnClickListener)
+            }
+        }
+    })
+}
 
 fun Actor.disable() {
     touchable = Touchable.disabled

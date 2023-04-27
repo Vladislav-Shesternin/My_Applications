@@ -43,6 +43,13 @@ class SizeConverter(
 
     fun setBounds(
         view: View,
+        position: Vector2,
+        size: Size,
+    ) {
+        setBounds(view, position.x, position.y, size.width, size.height)
+    }
+    fun setBounds(
+        view: View,
         x: Float,
         y: Float,
         width: Float,
