@@ -1,0 +1,110 @@
+game.png
+size: 997, 1459
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back
+  rotate: false
+  xy: 2, 2
+  size: 616, 16
+  orig: 616, 16
+  offset: 0, 0
+  index: -1
+bottom
+  rotate: false
+  xy: 651, 38
+  size: 344, 37
+  orig: 344, 37
+  offset: 0, 0
+  index: -1
+bowl
+  rotate: false
+  xy: 348, 77
+  size: 95, 95
+  orig: 95, 95
+  offset: 0, 0
+  index: -1
+btn_deffffff
+  rotate: false
+  xy: 2, 211
+  size: 387, 235
+  orig: 387, 235
+  offset: 0, 0
+  index: -1
+btn_prprpr
+  rotate: false
+  xy: 391, 211
+  size: 387, 235
+  orig: 387, 235
+  offset: 0, 0
+  index: -1
+front
+  rotate: false
+  xy: 2, 20
+  size: 616, 16
+  orig: 616, 16
+  offset: 0, 0
+  index: -1
+left
+  rotate: false
+  xy: 780, 211
+  size: 37, 344
+  orig: 37, 344
+  offset: 0, 0
+  index: -1
+lever
+  rotate: false
+  xy: 620, 38
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+mask
+  rotate: false
+  xy: 2, 38
+  size: 616, 16
+  orig: 616, 16
+  offset: 0, 0
+  index: -1
+md
+  rotate: false
+  xy: 570, 77
+  size: 110, 132
+  orig: 110, 132
+  offset: 0, 0
+  index: -1
+monetochka
+  rotate: false
+  xy: 445, 77
+  size: 123, 123
+  orig: 123, 123
+  offset: 0, 0
+  index: -1
+mp
+  rotate: false
+  xy: 682, 77
+  size: 110, 132
+  orig: 110, 132
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 2, 557
+  size: 616, 900
+  orig: 616, 900
+  offset: 0, 0
+  index: -1
+right
+  rotate: false
+  xy: 819, 211
+  size: 37, 344
+  orig: 37, 344
+  offset: 0, 0
+  index: -1
+top
+  rotate: false
+  xy: 2, 77
+  size: 344, 37
+  orig: 344, 37
+  offset: 0, 0
+  index: -1

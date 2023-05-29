@@ -5,4 +5,8 @@ enum class BodyId {
     BORDERS,
     CAR,
     WHEEL,
+    BLUE_RED,
+    CHAIN,
+    TRUNK,
+    ARM,
 }

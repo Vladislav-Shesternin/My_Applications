@@ -1,0 +1,96 @@
+game.png
+size: 1342, 1935
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back
+  rotate: false
+  xy: 695, 2
+  size: 243, 148
+  orig: 243, 148
+  offset: 0, 0
+  index: -1
+black
+  rotate: false
+  xy: 667, 1026
+  size: 223, 907
+  orig: 223, 907
+  offset: 0, 0
+  index: -1
+cbix_did
+  rotate: false
+  xy: 227, 2
+  size: 78, 72
+  orig: 78, 72
+  offset: 0, 0
+  index: -1
+cbix_pris
+  rotate: false
+  xy: 307, 2
+  size: 78, 72
+  orig: 78, 72
+  offset: 0, 0
+  index: -1
+chikoboka
+  rotate: false
+  xy: 2, 152
+  size: 763, 435
+  orig: 763, 435
+  offset: 0, 0
+  index: -1
+deflako
+  rotate: false
+  xy: 2, 589
+  size: 763, 435
+  orig: 763, 435
+  offset: 0, 0
+  index: -1
+girl
+  rotate: false
+  xy: 387, 2
+  size: 152, 89
+  orig: 152, 89
+  offset: 0, 0
+  index: -1
+green
+  rotate: false
+  xy: 892, 1026
+  size: 223, 907
+  orig: 223, 907
+  offset: 0, 0
+  index: -1
+man
+  rotate: false
+  xy: 541, 2
+  size: 152, 89
+  orig: 152, 89
+  offset: 0, 0
+  index: -1
+newses
+  rotate: false
+  xy: 2, 1026
+  size: 663, 740
+  orig: 663, 740
+  offset: 0, 0
+  index: -1
+rectangle
+  rotate: false
+  xy: 2, 2
+  size: 223, 21
+  orig: 223, 21
+  offset: 0, 0
+  index: -1
+un_back
+  rotate: false
+  xy: 940, 2
+  size: 243, 148
+  orig: 243, 148
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 1117, 1026
+  size: 223, 907
+  orig: 223, 907
+  offset: 0, 0
+  index: -1

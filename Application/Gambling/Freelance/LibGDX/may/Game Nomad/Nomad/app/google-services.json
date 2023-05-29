@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "118015325945",
+    "project_id": "nomada-96153",
+    "storage_bucket": "nomada-96153.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118015325945:android:cbd855d41cb8356e4bd428",
+        "android_client_info": {
+          "package_name": "aer.com.gamesas.mobile.slot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118015325945-4gi6p78h76nhbsnfr9fr0p4ok3425dck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk3sHsbh78eziXPjQ-EFCxJtCPNt-gzrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118015325945-4gi6p78h76nhbsnfr9fr0p4ok3425dck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

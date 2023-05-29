@@ -7,6 +7,7 @@ import com.badlogic.gdx.physics.box2d.joints.DistanceJoint
 import com.badlogic.gdx.physics.box2d.joints.DistanceJointDef
 import com.veldan.gamebox2d.game.utils.Size
 import com.veldan.gamebox2d.game.utils.SizeConverter
+import com.veldan.gamebox2d.game.utils.addNew
 import com.veldan.gamebox2d.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.gamebox2d.game.utils.vector2
 
@@ -20,6 +21,8 @@ abstract class AbstractBodyGroup {
 
     protected val Size.toGroupSize   : Size    get() = sizeConverter.getSize(this)
     protected val Vector2.toGroupSize: Vector2 get() = sizeConverter.getSize(this)
+    protected val Float.toGroupX     : Float get() = sizeConverter.getSizeX(this)
+    protected val Float.toGroupY     : Float get() = sizeConverter.getSizeY(this)
 
     val position = Vector2()
 
@@ -39,12 +42,12 @@ abstract class AbstractBodyGroup {
         createBody(body, Vector2(x, y), Size(w, h))
     }
 
-    fun createBody(body: AbstractBody, position: Vector2, size: Size) {
-        body.create(position, size)
+    fun createBody(body: AbstractBody, pos: Vector2, size: Size) {
+        body.create(position.addNew(pos.toGroupSize), size.toGroupSize)
         destroyBodyList.add(body)
     }
 
-    fun createJoint(joint: AbstractJoint<Joint>, jointDef: JointDef) {
+    fun createJoint(joint: AbstractJoint<out Joint>, jointDef: JointDef) {
         joint.create(jointDef)
         destroyJointList.add(joint)
     }

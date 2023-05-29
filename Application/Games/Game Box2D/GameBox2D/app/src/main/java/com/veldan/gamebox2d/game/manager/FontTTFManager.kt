@@ -14,7 +14,7 @@ object FontTTFManager {
 
     private val resolverInternal = InternalFileHandleResolver()
 
-    var loadableListFont = mutableListOf<FontTTFData>()
+    var loadableFontList = mutableListOf<FontTTFData>()
 
 //    val fontText: IFont get() = when(Language.locale.language) {
 //        "ru", "uk" -> NotoSansFont
@@ -47,12 +47,12 @@ object FontTTFManager {
     fun load(assetManager: AssetManager) {
         with(assetManager) {
             setLoaderTTF()
-            loadableListFont.onEach { load(it.name  + ".ttf", BitmapFont::class.java, it.parameters) }
+            loadableFontList.onEach { load(it.name  + ".ttf", BitmapFont::class.java, it.parameters) }
         }
     }
 
     fun init(assetManager: AssetManager) {
-        loadableListFont.onEach { it.font = assetManager[it.name + ".ttf", BitmapFont::class.java] }
+        loadableFontList.onEach { it.font = assetManager[it.name + ".ttf", BitmapFont::class.java] }
     }
 
 

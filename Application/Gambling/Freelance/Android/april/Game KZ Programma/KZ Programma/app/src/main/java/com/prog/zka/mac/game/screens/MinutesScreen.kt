@@ -6,21 +6,21 @@ import android.os.Build
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.FragmentActivity
 import com.prog.zka.mac.R
 import com.prog.zka.mac.game.actors.Backgrad
 import com.prog.zka.mac.game.isMusic
 import com.prog.zka.mac.game.mediaPlayer
 import com.prog.zka.mac.game.navigationManager
-import com.prog.zka.mac.game.util.DENSITY
-import com.prog.zka.mac.game.util.Layout
-import com.prog.zka.mac.game.util.Screen
-import com.prog.zka.mac.game.util.Size
+import com.prog.zka.mac.game.util.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -38,9 +38,14 @@ class MinutesScreen(
     private val stranuImage  = ImageView(activity)
     private val poFlaguImage = ImageView(activity)
     private val flagsImage   = ImageView(activity)
-    private val igratButton  = Button(activity)
-    private val musicButton  = Button(activity)
-    private val exitButton   = Button(activity)
+    private val igratButton  = ImageView(activity)
+    private val musicButton  = ImageView(activity)
+    private val exitButton   = ImageView(activity)
+
+    private val myStage = FrameLayout(activity)
+    private val pt   = TextView(activity)
+    private val mt   = TextView(activity)
+    private val et   = TextView(activity)
 
 
 //    private val debugList = listOf<View>(
@@ -71,9 +76,48 @@ class MinutesScreen(
     override fun ViewGroup.addActorsOnStage() {
         coroutine.launch(Dispatchers.Main) {
             addBackrad()
+            addButtons()
             addTitleImage()
             addFlags()
-            addButtons()
+
+
+            addView(myStage)
+            sizeConverter.setBounds(myStage, Vector2(0f, 0f), sizeConverter.fromSize)
+            myStage.doOnPreDraw {
+                myStage.addView(pt)
+                pt.apply {
+                    text = context.getString(R.string.play)
+                    gravity = Gravity.CENTER
+                    setTextColor(ContextCompat.getColor(activity, R.color.white))
+                    typeface = Typeface.createFromAsset(activity.assets, "coolvetica rg.otf")
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) setAutoSizeTextTypeWithDefaults(
+                        TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM
+                    ) else textSize = 24f
+                    sizeConverter.setBounds(this, 171f, 888f, 407f, 99f)
+                }
+                myStage.addView(mt)
+                mt.apply {
+                    text = if (isMusic) context.getString(R.string.music_on) else context.getString(R.string.music_off)
+                    gravity = Gravity.CENTER
+                    setTextColor(ContextCompat.getColor(activity, R.color.white))
+                    typeface = Typeface.createFromAsset(activity.assets, "coolvetica rg.otf")
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) setAutoSizeTextTypeWithDefaults(
+                        TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM
+                    ) else textSize = 24f
+                    sizeConverter.setBounds(this, 171f, 1087f, 407f, 99f)
+                }
+                myStage.addView(et)
+                et.apply {
+                    text = context.getString(R.string.exit)
+                    gravity = Gravity.CENTER
+                    setTextColor(ContextCompat.getColor(activity, R.color.white))
+                    typeface = Typeface.createFromAsset(activity.assets, "coolvetica rg.otf")
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) setAutoSizeTextTypeWithDefaults(
+                        TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM
+                    ) else textSize = 24f
+                    sizeConverter.setBounds(this, 171f, 1286f, 407f, 99f)
+                }
+            }
 
             animTitle()
         }
@@ -127,20 +171,20 @@ class MinutesScreen(
         addView(exitButton)
 
         igratButton.apply {
-            setUpButton(context.getString(R.string.play), LM.b1)
+            setUpButton("", LM.b1)
             setOnClickListener { navigationManager.navigate(GeometricalScreen(activity), MinutesScreen(activity)) }
         }
         musicButton.apply {
-            setUpButton(if (isMusic) context.getString(R.string.music_on) else context.getString(R.string.music_off), LM.b2)
+            setUpButton("", LM.b2)
 
             setOnClickListener {
                 if (isMusic) {
                     isMusic = false
-                    text = context.getString(R.string.music_off)
+                    mt.text = context.getString(R.string.music_off)
                     mediaPlayer?.pause()
                 } else {
                     isMusic = true
-                    text = context.getString(R.string.music_on)
+                    mt.text = context.getString(R.string.music_on)
                     mediaPlayer?.start()
                 }
             }
@@ -149,6 +193,7 @@ class MinutesScreen(
             setUpButton(context.getString(R.string.exit), LM.b3)
             setOnClickListener { navigationManager.exit() }
         }
+
     }
 
 //
@@ -168,15 +213,7 @@ class MinutesScreen(
     // Logic
     // ---------------------------------------------------
 
-    private fun Button.setUpButton(text: String, layout: Layout.LayoutData) {
-        this.text = text
-        isAllCaps = false
-        gravity = Gravity.CENTER
-        val pad = 30 * DENSITY
-        setPadding(0, pad, 0, pad)
-        setTextColor(ContextCompat.getColor(activity, R.color.white))
-        typeface = Typeface.createFromAsset(activity.assets, "coolvetica rg.otf")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM) else textSize = 10f
+    private fun ImageView.setUpButton(text: String, layout: Layout.LayoutData) {
         setBackgroundResource(R.drawable.button)
         sizeConverter.setBounds(this, layout)
     }

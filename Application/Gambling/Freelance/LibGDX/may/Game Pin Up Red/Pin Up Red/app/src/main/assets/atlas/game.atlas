@@ -1,0 +1,124 @@
+game.png
+size: 2042, 1814
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bigi
+  rotate: false
+  xy: 705, 2
+  size: 432, 46
+  orig: 432, 46
+  offset: 0, 0
+  index: -1
+def
+  rotate: false
+  xy: 2, 127
+  size: 465, 180
+  orig: 465, 180
+  offset: 0, 0
+  index: -1
+dis
+  rotate: false
+  xy: 469, 127
+  size: 465, 180
+  orig: 465, 180
+  offset: 0, 0
+  index: -1
+enemy_rotte
+  rotate: false
+  xy: 1340, 127
+  size: 280, 282
+  orig: 280, 282
+  offset: 0, 0
+  index: -1
+enemy_try
+  rotate: false
+  xy: 1408, 2
+  size: 93, 71
+  orig: 93, 71
+  offset: 0, 0
+  index: -1
+fail
+  rotate: false
+  xy: 607, 411
+  size: 701, 1401
+  orig: 701, 1401
+  offset: 0, 0
+  index: -1
+knopka
+  rotate: false
+  xy: 1806, 2
+  size: 123, 123
+  orig: 123, 123
+  offset: 0, 0
+  index: -1
+lef
+  rotate: false
+  xy: 1310, 411
+  size: 27, 1401
+  orig: 27, 1401
+  offset: 0, 0
+  index: -1
+mini
+  rotate: false
+  xy: 1139, 2
+  size: 196, 46
+  orig: 196, 46
+  offset: 0, 0
+  index: -1
+mis
+  rotate: false
+  xy: 936, 127
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+muni
+  rotate: false
+  xy: 2, 411
+  size: 603, 1262
+  orig: 603, 1262
+  offset: 0, 0
+  index: -1
+mus
+  rotate: false
+  xy: 1138, 127
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+red
+  rotate: false
+  xy: 1710, 2
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 1337, 2
+  size: 69, 65
+  orig: 69, 65
+  offset: 0, 0
+  index: -1
+take_star
+  rotate: false
+  xy: 1503, 2
+  size: 205, 71
+  orig: 205, 71
+  offset: 0, 0
+  index: -1
+top
+  rotate: false
+  xy: 2, 2
+  size: 701, 27
+  orig: 701, 27
+  offset: 0, 0
+  index: -1
+win
+  rotate: false
+  xy: 1339, 411
+  size: 701, 1401
+  orig: 701, 1401
+  offset: 0, 0
+  index: -1

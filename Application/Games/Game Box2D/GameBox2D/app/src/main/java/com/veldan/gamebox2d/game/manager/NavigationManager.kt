@@ -29,7 +29,7 @@ object NavigationManager {
             NavigationManager.key = key
 
             if (backStack.isEmpty()) exit()
-            else game.screen = backStack.removeLast()
+            else game.screen = backStack.removeLast().javaClass.newInstance()
         }
     }
 

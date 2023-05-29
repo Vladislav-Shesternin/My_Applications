@@ -17,6 +17,6 @@ class BHorizontal(override val screenBox2d: AdvancedBox2dScreen): AbstractBody()
         type = BodyDef.BodyType.StaticBody
     }
     override val fixtureDef = FixtureDef()
-    override val collisionList: MutableList<BodyId> = mutableListOf(CAR, WHEEL)
+    override val collisionList: MutableList<BodyId> = mutableListOf(CAR, WHEEL, CHAIN, TRUNK, ARM)
     override val actor = AImage(SpriteManager.GameRegion.HORIZONTAL.region)
 }

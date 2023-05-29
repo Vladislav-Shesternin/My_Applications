@@ -57,20 +57,25 @@ fun runGDX(block: () -> Unit) {
     Gdx.app.postRunnable { block() }
 }
 
-val Size.vector2 get() = Vector2(width, height)
-val Vector2.size get() = Size(x, y)
+val tmpVector2 = Vector2()
+val tmpSize    = Size()
+
+val Size.vector2 get() = tmpVector2.set(width, height)
+val Vector2.size get() = tmpSize.set(x, y)
 
 data class Size(
     var width : Float = 0f,
     var height: Float = 0f,
 ) {
-    fun set(width: Float, height: Float) {
+    fun set(width: Float, height: Float): Size {
         this.width = width
         this.height = height
+        return this
     }
 
-    fun set(size: Size) {
+    fun set(size: Size): Size {
         width = size.width
         height = size.height
+        return this
     }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1021712317897",
+    "project_id": "russasas-finhelper",
+    "storage_bucket": "russasas-finhelper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021712317897:android:51a72517bbfd3d6cc57c18",
+        "android_client_info": {
+          "package_name": "com.tsabekaa.finhelper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQZZAQcYzGiTfaJXoKHPtMmCZ5kZ583D0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -110,12 +110,7 @@ abstract class AbstractBody {
         this.position.set(position)
         this.size.set(size)
 
-        with(screenBox2d.sizeConverterUIToBox) {
-            bodyDef.position.set(
-                getSizeX(position.x) + center.x,
-                getSizeY(position.y) + center.y
-            )
-        }
+        bodyDef.position.set(screenBox2d.sizeConverterUIToBox.getSize(position).add(center))
 
         coroutine = CoroutineScope(Dispatchers.Default)
         createBody()

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "281561842871",
+    "project_id": "gss-pr",
+    "storage_bucket": "gss-pr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281561842871:android:452a953a16c71bf65b7932",
+        "android_client_info": {
+          "package_name": "gsss.prog.rm.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281561842871-murve4rii7p8gtmdcdege760gmgojed6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrmO383R1qbjg0ZMb8iAmbqs7PpfXh4FU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281561842871-murve4rii7p8gtmdcdege760gmgojed6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

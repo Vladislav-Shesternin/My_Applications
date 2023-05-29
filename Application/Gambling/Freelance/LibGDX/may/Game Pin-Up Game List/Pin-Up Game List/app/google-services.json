@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "791782482602",
+    "project_id": "pingl-a84f1",
+    "storage_bucket": "pingl-a84f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791782482602:android:085fbce625f7d9b9c326d3",
+        "android_client_info": {
+          "package_name": "com.playin.paganis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791782482602-mk8k9vir4ekb0ahs9bvkl43fr6hofn91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcTear2OtnrlZzjZP4pTxescsllEt8ckA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791782482602-mk8k9vir4ekb0ahs9bvkl43fr6hofn91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

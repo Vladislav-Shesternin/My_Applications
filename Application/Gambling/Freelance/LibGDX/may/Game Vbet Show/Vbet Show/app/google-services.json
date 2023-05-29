@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "361059266843",
+    "project_id": "vbtbbb-swhow",
+    "storage_bucket": "vbtbbb-swhow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361059266843:android:40a21f522453ff4cba23be",
+        "android_client_info": {
+          "package_name": "com.vbtb.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361059266843-fgh18cji6qrmjilis5k8c2i2fudqnt4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMTr5Xft3cCNg732HNDwXllyBE3eDjvyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361059266843-fgh18cji6qrmjilis5k8c2i2fudqnt4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

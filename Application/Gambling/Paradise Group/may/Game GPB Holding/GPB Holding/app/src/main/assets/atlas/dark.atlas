@@ -1,0 +1,47 @@
+dark.png
+size: 1359, 1276
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back_d
+  rotate: false
+  xy: 116, 2
+  size: 320, 202
+  orig: 320, 202
+  offset: 0, 0
+  index: -1
+cb_def_d
+  rotate: false
+  xy: 2, 2
+  size: 55, 55
+  orig: 55, 55
+  offset: 0, 0
+  index: -1
+cb_press_d
+  rotate: false
+  xy: 59, 2
+  size: 55, 55
+  orig: 55, 55
+  offset: 0, 0
+  index: -1
+conver_d
+  rotate: false
+  xy: 667, 206
+  size: 690, 971
+  orig: 690, 971
+  offset: 0, 0
+  index: -1
+frame_d
+  rotate: false
+  xy: 438, 2
+  size: 530, 138
+  orig: 530, 138
+  offset: 0, 0
+  index: -1
+men_d
+  rotate: false
+  xy: 2, 206
+  size: 663, 1068
+  orig: 663, 1068
+  offset: 0, 0
+  index: -1

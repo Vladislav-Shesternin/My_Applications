@@ -15,16 +15,15 @@ class SizeConverter(
     private val toOnePercentY get() = toSize.height / 100f
 
 
-
     private fun getPercentX(x: Float) = x / fromOnePercentX
     private fun getPercentY(y: Float) = y / fromOnePercentY
 
     fun getSizeX(x: Float) = getPercentX(x) * toOnePercentX
     fun getSizeY(y: Float) = getPercentY(y) * toOnePercentY
 
-    fun getSize(x: Float, y: Float) = Size(getSizeX(x), getSizeY(y))
-    fun getSize(size: Size) = Size(getSizeX(size.width), getSizeY(size.height))
-    fun getSize(vector2: Vector2) = Vector2(getSizeX(vector2.x), getSizeY(vector2.y))
+    fun getSize(x: Float, y: Float) = tmpSize.set(getSizeX(x), getSizeY(y))
+    fun getSize(size: Size) = tmpSize.set(getSizeX(size.width), getSizeY(size.height))
+    fun getSize(vector2: Vector2) = tmpVector2.set(getSizeX(vector2.x), getSizeY(vector2.y))
 
     fun setSize(actor: Actor, width: Float, height: Float) {
         actor.width = getSizeX(width)

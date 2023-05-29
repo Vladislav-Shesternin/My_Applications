@@ -21,6 +21,13 @@ object Layout {
         val orbPos  = Vector2(533f, 388f)
     }
 
+    object Progress {
+        val progressLength = 587f
+        val size = Size(616f, 16f)
+        val back = Vector2(0f, 6f)
+        val leverSize = Size(29f, 29f)
+    }
+
     data class LayoutData(
         val x: Float = 0f,
         val y: Float = 0f,

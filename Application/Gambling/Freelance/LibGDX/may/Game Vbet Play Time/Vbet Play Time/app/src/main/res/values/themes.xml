@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="Theme.VbetPlayTime" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/saplah</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:navigationBarColor">#9E2A75</item>
+    </style>
+</resources>

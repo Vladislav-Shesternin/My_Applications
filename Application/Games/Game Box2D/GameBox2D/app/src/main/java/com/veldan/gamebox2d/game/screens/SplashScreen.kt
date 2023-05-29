@@ -12,12 +12,9 @@ import com.veldan.gamebox2d.game.manager.SpriteManager
 import com.veldan.gamebox2d.game.utils.actor.setBounds
 import com.veldan.gamebox2d.game.utils.advanced.AdvancedGroup
 import com.veldan.gamebox2d.game.utils.advanced.AdvancedScreen
-import com.veldan.gamebox2d.game.utils.runGDX
 import com.veldan.gamebox2d.util.log
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
 import com.veldan.gamebox2d.game.utils.Layout.Splash as LS
 
 @SuppressLint("CustomSplashScreen")
@@ -73,7 +70,7 @@ class SplashScreen : AdvancedScreen() {
             loadAtlas(game.assetManager)
         }
         with(FontTTFManager) {
-            loadableListFont = mutableListOf(FontTTFManager.RobotoFont.font_40)
+            loadableFontList = mutableListOf(FontTTFManager.RobotoFont.font_40)
             load(game.assetManager)
         }
         game.assetManager.finishLoading()

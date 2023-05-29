@@ -3,23 +3,44 @@ size: 1404, 691
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+arm
+  rotate: false
+  xy: 47, 2
+  size: 19, 153
+  orig: 19, 153
+  offset: 0, 0
+  index: -1
+blue
+  rotate: false
+  xy: 2, 2
+  size: 12, 31
+  orig: 12, 31
+  offset: 0, 0
+  index: -1
+blue_red
+  rotate: false
+  xy: 68, 2
+  size: 52, 279
+  orig: 52, 279
+  offset: 0, 0
+  index: -1
 btn_deff
   rotate: false
-  xy: 87, 2
+  xy: 190, 2
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 btn_press
   rotate: false
-  xy: 189, 2
+  xy: 292, 2
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 car
   rotate: false
-  xy: 291, 2
+  xy: 602, 2
   size: 388, 172
   orig: 388, 172
   offset: 0, 0
@@ -31,16 +52,30 @@ horizontal
   orig: 1400, 15
   offset: 0, 0
   index: -1
+red
+  rotate: false
+  xy: 16, 2
+  size: 12, 31
+  orig: 12, 31
+  offset: 0, 0
+  index: -1
+trunk
+  rotate: false
+  xy: 394, 2
+  size: 206, 95
+  orig: 206, 95
+  offset: 0, 0
+  index: -1
 vertical
   rotate: false
-  xy: 2, 2
+  xy: 30, 2
   size: 15, 670
   orig: 15, 670
   offset: 0, 0
   index: -1
 wheel
   rotate: false
-  xy: 19, 2
+  xy: 122, 2
   size: 66, 66
   orig: 66, 66
   offset: 0, 0

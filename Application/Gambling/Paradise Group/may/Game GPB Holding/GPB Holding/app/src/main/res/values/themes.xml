@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="Theme.GPBHolding" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+</resources>

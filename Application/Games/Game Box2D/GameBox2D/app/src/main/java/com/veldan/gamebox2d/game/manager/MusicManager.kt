@@ -5,14 +5,14 @@ import com.badlogic.gdx.audio.Music
 
 object MusicManager {
 
-    var loadListMusic = mutableListOf<IEnumMusic>()
+    var loadableMusicList = mutableListOf<IEnumMusic>()
 
     fun load(assetManager: AssetManager) {
-        loadListMusic.onEach { assetManager.load(it.data.path, Music::class.java) }
+        loadableMusicList.onEach { assetManager.load(it.data.path, Music::class.java) }
     }
 
     fun init(assetManager: AssetManager) {
-        loadListMusic.onEach { it.data.music = assetManager[it.data.path, Music::class.java] }
+        loadableMusicList.onEach { it.data.music = assetManager[it.data.path, Music::class.java] }
     }
 
 

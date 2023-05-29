@@ -19,6 +19,6 @@ class BCar(override val screenBox2d: AdvancedBox2dScreen): AbstractBody() {
     override val fixtureDef = FixtureDef().apply {
         density = 1f
     }
-    override val collisionList: MutableList<BodyId> = mutableListOf(BORDERS, WHEEL)
+    override val collisionList: MutableList<BodyId> = mutableListOf(BORDERS, WHEEL, CHAIN)
     override val actor = AImage(SpriteManager.GameRegion.CAR.region)
 }

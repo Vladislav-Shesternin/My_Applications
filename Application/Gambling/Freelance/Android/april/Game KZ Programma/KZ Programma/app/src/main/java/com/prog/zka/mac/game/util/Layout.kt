@@ -17,6 +17,8 @@ object Layout {
         val flag   = LayoutData(125f, 145f,500f,500f)
 
         val btnSize = Size(481f, 181f)
+        val txtSize = Size(432f, 81f)
+
         val btnPos  = listOf<Vector2>(
             Vector2(5f, 832f),
             Vector2(263f, 1004f),
@@ -28,6 +30,12 @@ object Layout {
             Vector2(750f, 1004f),
             Vector2(-481f, 1176f),
             Vector2(750f, 1348f),
+        )
+        val txtPos  = listOf<Vector2>(
+            Vector2(30f, 882f),
+            Vector2(288f, 1054f),
+            Vector2(30f, 1226f),
+            Vector2(288f, 1398f),
         )
     }
 

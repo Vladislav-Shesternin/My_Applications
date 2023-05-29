@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "28721695980",
+    "project_id": "pinr-b5671",
+    "storage_bucket": "pinr-b5671.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28721695980:android:52e0cb247d18d8b7af69c9",
+        "android_client_info": {
+          "package_name": "com.avietor.onlaneslets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28721695980-2g342fkb0ih5g3mcuqsthra7m0io8mrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcpKf33NzsjRbuf1h4adK4Z2bM_j5ubZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28721695980-2g342fkb0ih5g3mcuqsthra7m0io8mrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

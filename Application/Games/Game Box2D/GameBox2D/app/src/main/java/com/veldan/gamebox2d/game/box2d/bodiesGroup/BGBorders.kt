@@ -12,10 +12,10 @@ class BGBorders(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGro
 
     override val fromSize = Size(1400f, 700f)
 
-    private val bTop   = BHorizontal(screenBox2d)
-    private val bDown  = BHorizontal(screenBox2d)
-    private val bLeft  = BVertical(screenBox2d)
-    private val bRight = BVertical(screenBox2d)
+    val bTop   = BHorizontal(screenBox2d)
+    val bDown  = BHorizontal(screenBox2d)
+    val bLeft  = BVertical(screenBox2d)
+    val bRight = BVertical(screenBox2d)
 
 
     override fun create(position: Vector2, size: Size) {
@@ -32,14 +32,18 @@ class BGBorders(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGro
     // ---------------------------------------------------
 
     private fun createHorizontal() {
-        createBody(bTop, position.addNew(Vector2(0f, 685f).toGroupSize), Size(1400f, 15f).toGroupSize)
-        createBody(bDown, position.addNew(Vector2(0f, 0f).toGroupSize), Size(1400f, 15f).toGroupSize)
+        createBody(bTop, 0f, 685f, 1400f, 15f)
+        createBody(bDown, 0f, 0f, 1400f, 15f)
     }
 
     private fun createVertical() {
-        createBody(bLeft, position.addNew(Vector2(0f, 15f).toGroupSize), Size(15f, 670f).toGroupSize)
-        createBody(bRight, position.addNew(Vector2(1385f, 15f).toGroupSize), Size(15f, 670f).toGroupSize)
+        createBody(bLeft, 0f, 15f, 15f, 670f)
+        createBody(bRight, 1385f, 15f, 15f, 670f)
     }
+
+    // ---------------------------------------------------
+    // Logic
+    // ---------------------------------------------------
 
 
 }

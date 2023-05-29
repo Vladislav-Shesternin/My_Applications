@@ -54,6 +54,11 @@ object SpriteManager {
         BTN_PRESS(  EnumAtlas.GAME.data.atlas.findRegion("btn_press")  ),
         CAR(        EnumAtlas.GAME.data.atlas.findRegion("car")        ),
         WHEEL(      EnumAtlas.GAME.data.atlas.findRegion("wheel")      ),
+        BLUE_RED(   EnumAtlas.GAME.data.atlas.findRegion("blue_red")   ),
+        BLUE(       EnumAtlas.GAME.data.atlas.findRegion("blue")       ),
+        RED(        EnumAtlas.GAME.data.atlas.findRegion("red")        ),
+        TRUNK(      EnumAtlas.GAME.data.atlas.findRegion("trunk")      ),
+        ARM(        EnumAtlas.GAME.data.atlas.findRegion("arm")        ),
     }
 
 //    enum class ListRegion(override val regionList: List<TextureRegion>): IRegionList {

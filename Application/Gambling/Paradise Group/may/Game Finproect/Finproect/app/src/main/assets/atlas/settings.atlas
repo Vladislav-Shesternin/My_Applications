@@ -1,0 +1,47 @@
+settings.png
+size: 893, 792
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back
+  rotate: false
+  xy: 2, 2
+  size: 129, 133
+  orig: 129, 133
+  offset: 0, 0
+  index: -1
+click
+  rotate: false
+  xy: 133, 2
+  size: 89, 89
+  orig: 89, 89
+  offset: 0, 0
+  index: -1
+frame
+  rotate: false
+  xy: 224, 2
+  size: 47, 788
+  orig: 47, 788
+  offset: 0, 0
+  index: -1
+mask
+  rotate: false
+  xy: 273, 2
+  size: 47, 788
+  orig: 47, 788
+  offset: 0, 0
+  index: -1
+ms
+  rotate: false
+  xy: 322, 2
+  size: 520, 193
+  orig: 520, 193
+  offset: 0, 0
+  index: -1
+progress
+  rotate: false
+  xy: 844, 2
+  size: 47, 788
+  orig: 47, 788
+  offset: 0, 0
+  index: -1

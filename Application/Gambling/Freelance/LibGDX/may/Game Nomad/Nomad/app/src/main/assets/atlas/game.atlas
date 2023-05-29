@@ -1,0 +1,89 @@
+game.png
+size: 872, 543
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+circle
+  rotate: false
+  xy: 174, 2
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+exit_d
+  rotate: false
+  xy: 2, 135
+  size: 433, 202
+  orig: 433, 202
+  offset: 0, 0
+  index: -1
+exit_p
+  rotate: false
+  xy: 437, 135
+  size: 433, 202
+  orig: 433, 202
+  offset: 0, 0
+  index: -1
+go_d
+  rotate: false
+  xy: 457, 2
+  size: 193, 91
+  orig: 193, 91
+  offset: 0, 0
+  index: -1
+go_p
+  rotate: false
+  xy: 652, 2
+  size: 193, 91
+  orig: 193, 91
+  offset: 0, 0
+  index: -1
+mony
+  rotate: false
+  xy: 338, 2
+  size: 117, 131
+  orig: 117, 131
+  offset: 0, 0
+  index: -1
+play_d
+  rotate: false
+  xy: 2, 339
+  size: 433, 202
+  orig: 433, 202
+  offset: 0, 0
+  index: -1
+play_p
+  rotate: false
+  xy: 437, 339
+  size: 433, 202
+  orig: 433, 202
+  offset: 0, 0
+  index: -1
+point
+  rotate: false
+  xy: 2, 2
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rect
+  rotate: false
+  xy: 256, 2
+  size: 80, 43
+  orig: 80, 43
+  offset: 0, 0
+  index: -1
+shar_gold
+  rotate: false
+  xy: 20, 2
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+shar_green
+  rotate: false
+  xy: 97, 2
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1

@@ -95,7 +95,8 @@ class GeometricalScreen(
 
     private val circleImage = ImageView(activity)
     private val flagImage   = ImageView(activity)
-    private val buttons     = List(4) { Button(activity) }
+    private val buttons     = List(4) { ImageView(activity) }
+    private val labels      = List(4) { TextView(activity) }
 
 //    private val debugList = listOf<View>(
 //        circleImage,
@@ -151,22 +152,26 @@ class GeometricalScreen(
     private fun ViewGroup.addButtons() {
         buttons.onEachIndexed { index, btn ->
             addView(btn)
+            val txt = labels[index]
+            addView(txt)
 
-            btn.apply {
+            txt.apply {
                 text = names[index]
                 isAllCaps = false
                 gravity = Gravity.CENTER
-                val pad = 50 * DENSITY
-                setPadding(0, pad, 0, pad)
                 setTextColor(ContextCompat.getColor(activity, R.color.black))
                 typeface = Typeface.createFromAsset(activity.assets, "coolvetica rg.otf")
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM) else textSize = 10f
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM) else textSize = 24f
+                sizeConverter.setBounds(this, LG.txtPos[index], LG.txtSize)
+            }
+
+            btn.apply {
                 setBackgroundResource(R.drawable.btn_white)
                 sizeConverter.setBounds(this, LG.btnStartPos[index], LG.btnSize)
 
                 setOnClickListener {
                     coroutine.launch(Dispatchers.Main) {
-                        if (text == country.name) {
+                        if (txt.text == country.name) {
                             circleImage.setImageResource(R.drawable.circle_true)
                             isEnabled = false
                         } else {
@@ -219,6 +224,12 @@ class GeometricalScreen(
                 duration = 500
             }.start()
         }
+        labels.onEachIndexed { index, btn ->
+            btn.animate().apply {
+                alpha(1f)
+                duration = 250
+            }.start()
+        }
     }
 
     private fun animHideButtons() {
@@ -226,6 +237,12 @@ class GeometricalScreen(
             btn.animate().apply {
                 translationX(sizeConverter.getSizeX(LG.btnStartPos[index].x))
                 duration = 500
+            }.start()
+        }
+        labels.onEachIndexed { index, btn ->
+            btn.animate().apply {
+                alpha(0f)
+                duration = 250
             }.start()
         }
     }

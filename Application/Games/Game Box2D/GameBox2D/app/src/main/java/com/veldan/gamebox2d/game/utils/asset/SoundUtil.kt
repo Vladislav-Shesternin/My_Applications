@@ -1,29 +1,27 @@
-package com.veldan.gamebox2d.game.utils.asset
-
-import com.badlogic.gdx.audio.Sound
-import com.veldan.gamebox2d.game.manager.AudioManager
-import com.veldan.gamebox2d.game.utils.runGDX
-import kotlinx.coroutines.flow.MutableStateFlow
-
-object SoundUtil {
-
-//    val CLICK get() = SoundManager.EnumSound.CLICK.data.sound
-//    val STAR  get() = SoundManager.EnumSound.STAR.data.sound
-//    val STONE get() = SoundManager.EnumSound.STONE.data.sound
+//package com.vbbb.time.game.game.utils.asset
 //
-//    val soundList = listOf(CLICK, STAR, STONE)
+//import com.badlogic.gdx.audio.Sound
+//import com.vbbb.time.game.game.manager.AudioManager
+//import com.vbbb.time.game.game.utils.runGDX
 //
-    val volumeLevelFlow = MutableStateFlow(AudioManager.volumeLevelPercent / 100f)
-
-    val isPause get() = (volumeLevelFlow.value <= 0f)
-}
-
-var previousSoundId = 0L
-    private set
-
-fun Sound.playAdvanced() { runGDX { with(SoundUtil) {
-    if (isPause.not()) {
-        if (previousSoundId != 0L) stop(previousSoundId)
-        previousSoundId = play(volumeLevelFlow.value)
-    }
-} } }
+//class SoundUtil {
+//
+//    //    val CLICK get() = SoundManager.EnumSound.CLICK.data.sound
+////    val STAR  get() = SoundManager.EnumSound.STAR.data.sound
+////    val STONE get() = SoundManager.EnumSound.STONE.data.sound
+////
+////    val soundList = listOf(CLICK, STAR, STONE)
+////
+//    var volumeLevel = AudioManager.volumeLevelPercent / 100f
+//
+//    var isPause = (volumeLevel <= 0f)
+//
+//    private var previousSoundId = 0L
+//
+//    fun play(sound: Sound) = runGDX {
+//        if (isPause.not()) {
+//            if (previousSoundId != 0L) sound.stop(previousSoundId)
+//            previousSoundId = sound.play(volumeLevel)
+//        }
+//    }
+//}
