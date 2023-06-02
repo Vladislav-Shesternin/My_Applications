@@ -16,10 +16,10 @@ class BGRope(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGroup(
     override val fromSize = Size(43f, 359f)
 
     // Body
-    private val bChainList = List(20) { BChain(screenBox2d, BChain.Color.RED) }
+    private val bChainList = List(3) { BChain(screenBox2d, BChain.Color.RED) }
 
     // Joint
-    private val jRopeList = List(19) { AbstractJoint<RopeJoint>(screenBox2d) }
+    private val jRopeList = List(2) { AbstractJoint<RopeJoint>(screenBox2d) }
 
 
     override fun create(position: Vector2, size: Size) {

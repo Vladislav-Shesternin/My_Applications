@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "755160406455",
+    "project_id": "plugoya-rosgpb",
+    "storage_bucket": "plugoya-rosgpb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755160406455:android:c332f24037483453c23032",
+        "android_client_info": {
+          "package_name": "com.plugoya.rosgpb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwWESsix49scD1YzJBqH6JI6u11YjcIg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

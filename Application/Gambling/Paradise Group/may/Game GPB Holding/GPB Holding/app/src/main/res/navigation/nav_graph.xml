@@ -4,12 +4,12 @@
 
     <fragment
         android:id="@+id/libGDXFragment"
-        android:name="com.hello.piramidka.game.LibGDXFragment"
+        android:name="com.gpkhold.mamm.game.LibGDXFragment"
         android:label="LibGDXFragment" />
 
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="com.hello.piramidka.webView.WebViewFragment"
+        android:name="com.gpkhold.mamm.webView.WebViewFragment"
         android:label="webViewFragment" />
 
 </navigation>

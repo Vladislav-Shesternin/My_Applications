@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "55290496969",
+    "project_id": "karpenkov-budgetgid",
+    "storage_bucket": "karpenkov-budgetgid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55290496969:android:a18cef1d19424aa6da4a18",
+        "android_client_info": {
+          "package_name": "com.karpenkov.budgetgid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZK_lHZxazEDvKeKbL14en94R2GI50WS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

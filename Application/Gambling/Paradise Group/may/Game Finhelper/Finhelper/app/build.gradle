@@ -16,6 +16,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                onesignal_app_id               : '883feb36-b5e2-4345-b2ae-40204396e8da',
+                onesignal_google_project_number: 'REMOTE'
+        ]
     }
 
     buildTypes {
@@ -88,6 +93,8 @@ dependencies {
     // GLibrary
     def appsflyer_version = "6.9.0"
     implementation "com.appsflyer:af-android-sdk:$appsflyer_version"
+    def oneSignal_version = "4.8.2"
+    implementation "com.onesignal:OneSignal:$oneSignal_version"
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:32.0.0')

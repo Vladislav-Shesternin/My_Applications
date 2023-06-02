@@ -156,7 +156,7 @@ class GameScreen: AdvancedBox2dScreen(WorldUtil()) {
     }
 
     private fun createBG_Rope() {
-        bgRope.create(Vector2(608f, 208f), Size(9f, 81f))
+        bgRope.create(Vector2(608f, 208f), Size(43f, 359f))
     }
 
     // ---------------------------------------------------

@@ -29,6 +29,7 @@ interface APIService {
     @GET
     suspend fun getResponse(@Url url: String): Response<ResponseBody>
 }
+
 fun Activity.internetConnection(): Boolean {
     var haveConnectedWifi   = false
     var haveConnectedMobile = false

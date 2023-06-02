@@ -1,20 +1,26 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
-    namespace = "com.hello.piramidka"
+    namespace = "com.gpkhold.mamm"
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.hello.piramidka"
+        applicationId "com.gpkhold.mamm"
         minSdk 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                onesignal_app_id               : 'b89a71dc-bb97-4ff8-bd8f-fe5752f2ac31',
+                onesignal_google_project_number: 'REMOTE'
+        ]
     }
 
     buildTypes {
@@ -83,6 +89,17 @@ dependencies {
     def retrofit_version = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // GLibrary
+    def appsflyer_version = "6.9.0"
+    implementation "com.appsflyer:af-android-sdk:$appsflyer_version"
+    def oneSignal_version = "4.8.2"
+    implementation "com.onesignal:OneSignal:$oneSignal_version"
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 }
 
 task copyAndroidNatives {
@@ -134,5 +151,5 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.hello.piramidka/com.hello.piramidka.MainActivity'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.gpkhold.mamm/com.gpkhold.mamm.MainActivity'
 }

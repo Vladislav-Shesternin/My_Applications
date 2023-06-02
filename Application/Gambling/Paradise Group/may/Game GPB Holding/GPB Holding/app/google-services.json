@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "493959121283",
+    "project_id": "gpkhold-mamm",
+    "storage_bucket": "gpkhold-mamm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493959121283:android:6c249df253a886f5e2ceb6",
+        "android_client_info": {
+          "package_name": "com.gpkhold.mamm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLhZ35gNWmrgu7r9mcG5ZimI5krAnAqj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
