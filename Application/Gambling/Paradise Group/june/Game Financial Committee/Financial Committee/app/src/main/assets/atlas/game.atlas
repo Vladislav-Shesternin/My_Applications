@@ -1,0 +1,75 @@
+game.png
+size: 2044, 1357
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+backckckach
+  rotate: false
+  xy: 276, 2
+  size: 164, 166
+  orig: 164, 166
+  offset: 0, 0
+  index: -1
+crypto_item
+  rotate: false
+  xy: 1420, 2
+  size: 608, 139
+  orig: 608, 139
+  offset: 0, 0
+  index: -1
+huy
+  rotate: false
+  xy: 86, 2
+  size: 93, 75
+  orig: 93, 75
+  offset: 0, 0
+  index: -1
+pipka
+  rotate: false
+  xy: 181, 2
+  size: 93, 75
+  orig: 93, 75
+  offset: 0, 0
+  index: -1
+s
+  rotate: false
+  xy: 442, 2
+  size: 487, 129
+  orig: 487, 129
+  offset: 0, 0
+  index: -1
+setting_pannel
+  rotate: false
+  xy: 1317, 170
+  size: 725, 348
+  orig: 725, 348
+  offset: 0, 0
+  index: -1
+splsh
+  rotate: false
+  xy: 638, 170
+  size: 677, 1185
+  orig: 677, 1185
+  offset: 0, 0
+  index: -1
+strelka
+  rotate: false
+  xy: 2, 2
+  size: 82, 82
+  orig: 82, 82
+  offset: 0, 0
+  index: -1
+testxt
+  rotate: false
+  xy: 2, 170
+  size: 634, 530
+  orig: 634, 530
+  offset: 0, 0
+  index: -1
+w
+  rotate: false
+  xy: 931, 2
+  size: 487, 129
+  orig: 487, 129
+  offset: 0, 0
+  index: -1

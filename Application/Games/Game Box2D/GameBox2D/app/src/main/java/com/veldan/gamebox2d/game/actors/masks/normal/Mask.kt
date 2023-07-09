@@ -9,7 +9,7 @@ import com.veldan.gamebox2d.game.utils.advanced.AdvancedGroup
 import com.veldan.gamebox2d.game.utils.zeroScreenVector
 
 class Mask(
-    private val mask: TextureRegion? = null,
+    var maskRegion: TextureRegion? = null,
 ) : AdvancedGroup() {
 
     private lateinit var screenCoordinates: Vector2
@@ -50,7 +50,7 @@ class Mask(
         Gdx.gl.glEnable(GL20.GL_SCISSOR_TEST)
         Gdx.gl.glScissor(mX.toInt(), mY.toInt(), mW.toInt(), mH.toInt())
 
-        if (mask != null) batch?.drawMask(parentAlpha) else drawSuper(batch, parentAlpha)
+        if (maskRegion != null) batch?.drawMask(parentAlpha) else drawSuper(batch, parentAlpha)
         Gdx.gl.glDisable(GL20.GL_SCISSOR_TEST)
     }
 
@@ -60,7 +60,7 @@ class Mask(
         setBlendFunction(GL20.GL_ONE, GL20.GL_ZERO)
 
         setColor(0f, 0f, 0f, parentAlpha)
-        draw(mask, x, y, width, height)
+        draw(maskRegion, x, y, width, height)
 
         drawMasked(parentAlpha)
     }

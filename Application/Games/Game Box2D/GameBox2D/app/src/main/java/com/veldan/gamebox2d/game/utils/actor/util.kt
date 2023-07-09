@@ -1,5 +1,6 @@
 package com.veldan.gamebox2d.game.utils.actor
 
+import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
@@ -49,6 +50,18 @@ fun List<Actor>.setFillParent() {
 
 fun Actor.setBounds(layoutData: Layout.LayoutData) {
     with(layoutData) { setBounds(x, y, w, h) }
+}
+
+fun Actor.setBounds(position: Vector2, size: Vector2) {
+    setBounds(position.x, position.y, size.x, size.y)
+}
+
+fun Actor.setPosition(position: Vector2) {
+    setPosition(position.x, position.y)
+}
+
+fun Actor.setOrigin(vector: Vector2) {
+    setOrigin(vector.x, vector.y)
 }
 
 fun Actor.getSizeByPercentX(percent: Float) = (width / 100f) * percent

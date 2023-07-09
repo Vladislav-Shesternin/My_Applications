@@ -1,0 +1,306 @@
+game.png
+size: 2041, 1790
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1h
+  rotate: false
+  xy: 102, 2
+  size: 66, 43
+  orig: 66, 43
+  offset: 0, 0
+  index: -1
+1m
+  rotate: false
+  xy: 170, 2
+  size: 66, 43
+  orig: 66, 43
+  offset: 0, 0
+  index: -1
+1w
+  rotate: false
+  xy: 238, 2
+  size: 66, 43
+  orig: 66, 43
+  offset: 0, 0
+  index: -1
+1y
+  rotate: false
+  xy: 306, 2
+  size: 66, 43
+  orig: 66, 43
+  offset: 0, 0
+  index: -1
+6h
+  rotate: false
+  xy: 374, 2
+  size: 66, 43
+  orig: 66, 43
+  offset: 0, 0
+  index: -1
+24h
+  rotate: false
+  xy: 442, 2
+  size: 66, 43
+  orig: 66, 43
+  offset: 0, 0
+  index: -1
+assets_act
+  rotate: false
+  xy: 759, 696
+  size: 722, 286
+  orig: 722, 286
+  offset: 0, 0
+  index: -1
+base
+  rotate: false
+  xy: 874, 182
+  size: 319, 75
+  orig: 319, 75
+  offset: 0, 0
+  index: -1
+buttons
+  rotate: false
+  xy: 1099, 259
+  size: 556, 95
+  orig: 556, 95
+  offset: 0, 0
+  index: -1
+buttons_otkl
+  rotate: false
+  xy: 2, 356
+  size: 556, 95
+  orig: 556, 95
+  offset: 0, 0
+  index: -1
+buy
+  rotate: false
+  xy: 1757, 82
+  size: 282, 60
+  orig: 282, 60
+  offset: 0, 0
+  index: -1
+buy_d
+  rotate: false
+  xy: 2, 182
+  size: 282, 60
+  orig: 282, 60
+  offset: 0, 0
+  index: -1
+checkcle
+  rotate: false
+  xy: 2, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+deatelnost
+  rotate: false
+  xy: 611, 1251
+  size: 597, 461
+  orig: 597, 461
+  offset: 0, 0
+  index: -1
+forex
+  rotate: false
+  xy: 975, 2
+  size: 113, 64
+  orig: 113, 64
+  offset: 0, 0
+  index: -1
+greenka
+  rotate: false
+  xy: 1695, 2
+  size: 101, 78
+  orig: 101, 78
+  offset: 0, 0
+  index: -1
+header_dark
+  rotate: false
+  xy: 1195, 182
+  size: 601, 62
+  orig: 601, 62
+  offset: 0, 0
+  index: -1
+index
+  rotate: false
+  xy: 1090, 2
+  size: 113, 64
+  orig: 113, 64
+  offset: 0, 0
+  index: -1
+luch_akc
+  rotate: false
+  xy: 784, 2
+  size: 189, 30
+  orig: 189, 30
+  offset: 0, 0
+  index: -1
+m_buyok
+  rotate: false
+  xy: 1235, 356
+  size: 802, 232
+  orig: 802, 232
+  offset: 0, 0
+  index: -1
+m_debts
+  rotate: false
+  xy: 2, 984
+  size: 800, 265
+  orig: 800, 265
+  offset: 0, 0
+  index: -1
+m_home
+  rotate: false
+  xy: 804, 984
+  size: 802, 265
+  orig: 802, 265
+  offset: 0, 0
+  index: -1
+m_wallet
+  rotate: false
+  xy: 2, 696
+  size: 755, 265
+  orig: 755, 265
+  offset: 0, 0
+  index: -1
+menu_all
+  rotate: false
+  xy: 1177, 82
+  size: 578, 29
+  orig: 578, 29
+  offset: 0, 0
+  index: -1
+money1
+  rotate: false
+  xy: 560, 356
+  size: 315, 298
+  orig: 315, 298
+  offset: 0, 0
+  index: -1
+money2
+  rotate: false
+  xy: 1021, 82
+  size: 154, 98
+  orig: 154, 98
+  offset: 0, 0
+  index: -1
+obsch_bal
+  rotate: false
+  xy: 2, 1251
+  size: 607, 363
+  orig: 607, 363
+  offset: 0, 0
+  index: -1
+oill
+  rotate: false
+  xy: 1205, 2
+  size: 113, 64
+  orig: 113, 64
+  offset: 0, 0
+  index: -1
+pok
+  rotate: false
+  xy: 510, 2
+  size: 135, 23
+  orig: 135, 23
+  offset: 0, 0
+  index: -1
+receipt
+  rotate: false
+  xy: 877, 356
+  size: 356, 338
+  orig: 356, 338
+  offset: 0, 0
+  index: -1
+rectikd
+  rotate: false
+  xy: 52, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+redka
+  rotate: false
+  xy: 1798, 2
+  size: 102, 78
+  orig: 102, 78
+  offset: 0, 0
+  index: -1
+search_fil
+  rotate: false
+  xy: 508, 259
+  size: 589, 87
+  orig: 589, 87
+  offset: 0, 0
+  index: -1
+sell
+  rotate: false
+  xy: 286, 182
+  size: 292, 60
+  orig: 292, 60
+  offset: 0, 0
+  index: -1
+sell_d
+  rotate: false
+  xy: 580, 182
+  size: 292, 60
+  orig: 292, 60
+  offset: 0, 0
+  index: -1
+skr
+  rotate: false
+  xy: 647, 2
+  size: 135, 23
+  orig: 135, 23
+  offset: 0, 0
+  index: -1
+sp500
+  rotate: false
+  xy: 1320, 2
+  size: 113, 64
+  orig: 113, 64
+  offset: 0, 0
+  index: -1
+stock
+  rotate: false
+  xy: 1435, 2
+  size: 113, 64
+  orig: 113, 64
+  offset: 0, 0
+  index: -1
+tekas
+  rotate: false
+  xy: 2, 259
+  size: 504, 81
+  orig: 504, 81
+  offset: 0, 0
+  index: -1
+time_list
+  rotate: false
+  xy: 2, 82
+  size: 505, 23
+  orig: 505, 23
+  offset: 0, 0
+  index: -1
+total_usd
+  rotate: false
+  xy: 1210, 1251
+  size: 734, 537
+  orig: 734, 537
+  offset: 0, 0
+  index: -1
+uverh
+  rotate: false
+  xy: 1550, 2
+  size: 143, 55
+  orig: 143, 55
+  offset: 0, 0
+  index: -1
+v_n_c
+  rotate: false
+  xy: 509, 82
+  size: 510, 23
+  orig: 510, 23
+  offset: 0, 0
+  index: -1

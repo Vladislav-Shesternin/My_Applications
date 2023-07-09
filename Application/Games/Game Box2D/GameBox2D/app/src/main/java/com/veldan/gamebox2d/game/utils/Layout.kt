@@ -5,27 +5,14 @@ import com.badlogic.gdx.math.Vector2
 object Layout {
 
     object Splash {
-        val progress = LayoutData(615f,63f,170f,100f)
-    }
-
-    object Game {
-
-        val btns = listOf(
-            LayoutData(20f,460f,100f,100f),
-            LayoutData(140f,580f,100f,100f),
-            LayoutData(1280f,140f,100f,100f),
-            LayoutData(1160f,20f,100f,100f),
-        )
-
-        val orbSize = Size(72f,72f)
-        val orbPos  = Vector2(533f, 388f)
+        val progress = LayoutData(541f,0f,318f,187f)
     }
 
     object Progress {
         val progressLength = 587f
-        val size = Size(616f, 16f)
+        val size = Vector2(616f, 16f)
         val back = Vector2(0f, 6f)
-        val leverSize = Size(29f, 29f)
+        val leverSize = Vector2(29f, 29f)
     }
 
     data class LayoutData(
@@ -40,7 +27,7 @@ object Layout {
     ) {
 
         fun position() = Vector2(x, y)
-        fun size() = Size(w, h)
+        fun size() = Vector2(w, h)
 
     }
 

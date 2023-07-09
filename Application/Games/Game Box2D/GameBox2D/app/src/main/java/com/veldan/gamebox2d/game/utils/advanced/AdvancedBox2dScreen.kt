@@ -1,24 +1,18 @@
 package com.veldan.gamebox2d.game.utils.advanced
 
 import com.badlogic.gdx.utils.viewport.FitViewport
-import com.veldan.gamebox2d.game.utils.Size
-import com.veldan.gamebox2d.game.utils.SizeConverter
-import com.veldan.gamebox2d.game.utils.disposeAll
 import com.veldan.gamebox2d.game.box2d.WorldUtil
+import com.veldan.gamebox2d.game.utils.*
 
 abstract class AdvancedBox2dScreen(
     val worldUtil: WorldUtil,
-    val uiW  : Float = 1400f,
-    val uiH  : Float = 700f,
-    val boxW : Float = 50f,
-    val boxH : Float = 25f,
+    val uiW  : Float = WIDTH_UI,
+    val uiH  : Float = HEIGHT_UI,
+    val boxW : Float = WIDTH_BOX2D,
+    val boxH : Float = HEIGHT_BOX2D,
 ): AdvancedScreen(uiW, uiH) {
 
     private val viewportBox2d by lazy { FitViewport(boxW, boxH) }
-
-    val sizeConverterUIToBox = SizeConverter(Size(uiW, uiH), Size(boxW, boxH))
-    val sizeConverterBoxToUI = SizeConverter(Size(boxW, boxH), Size(uiW, uiH))
-
 
 
     override fun resize(width: Int, height: Int) {

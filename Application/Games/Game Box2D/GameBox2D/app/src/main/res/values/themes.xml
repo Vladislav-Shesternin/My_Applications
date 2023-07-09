@@ -1,7 +1,7 @@
 <resources>
     <style name="Theme.GameBox2D" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">#4BA7B0</item>
+        <item name="android:windowBackground">#0E0066</item>
         <item name="android:navigationBarColor">@color/black</item>
     </style>
 </resources>

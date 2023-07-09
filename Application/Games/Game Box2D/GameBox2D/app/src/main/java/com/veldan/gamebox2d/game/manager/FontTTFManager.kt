@@ -10,7 +10,9 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader
 
 object FontTTFManager {
 
-    private const val pathRoboto = "TTF/Roboto.ttf"
+    private const val pathRobotoRegular      = "TTF/Roboto-Regular.ttf"
+    private const val pathJosefinSansRegular = "TTF/JosefinSans-Regular.ttf"
+    private const val pathJosefinSansBold    = "TTF/JosefinSans-Bold.ttf"
 
     private val resolverInternal = InternalFileHandleResolver()
 
@@ -57,11 +59,25 @@ object FontTTFManager {
 
 
 
-    object RobotoFont: IFont {
-        val font_40 = FontTTFData("Roboto_40", getLoaderParameter(pathRoboto) { size = 40 })
+    object RobotoRegularFont: IFont {
+        val font_75 = FontTTFData("Roboto_Regular_75", getLoaderParameter(pathRobotoRegular) { size = 75 })
 
         override val values: List<FontTTFData>
-            get() = super.values + listOf(font_40)
+            get() = super.values + listOf(font_75)
+    }
+
+    object JosefinRegularFont: IFont {
+        val font_75 = FontTTFData("Josefin_Regular_75", getLoaderParameter(pathJosefinSansRegular) { size = 75 })
+
+        override val values: List<FontTTFData>
+            get() = super.values + listOf(font_75)
+    }
+
+    object JosefinBoldFont: IFont {
+        val font_75 = FontTTFData("Josefin_Bold_75", getLoaderParameter(pathJosefinSansBold) { size = 75 })
+
+        override val values: List<FontTTFData>
+            get() = super.values + listOf(font_75)
     }
 
 

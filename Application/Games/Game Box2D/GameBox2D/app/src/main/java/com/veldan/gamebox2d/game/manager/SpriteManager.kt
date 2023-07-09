@@ -5,6 +5,7 @@ import com.badlogic.gdx.assets.loaders.TextureLoader
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.veldan.gamebox2d.game.utils.region
 
 object SpriteManager {
 
@@ -39,32 +40,30 @@ object SpriteManager {
 
     enum class EnumAtlas(override val data: TextureAtlasData): IAtlas {
         GAME(   TextureAtlasData("atlas/game.atlas")   ),
+        LOADER( TextureAtlasData("atlas/loader.atlas") ),
     }
 
     enum class EnumTexture(override val data: TextureData): ITexture {
-       // BACKGROUND( TextureData("textures/background.png") ),
+        GRID( TextureData("textures/grid.png") ),
+        LOADER( TextureData("textures/loader.png") ),
     }
-
 
 
     enum class GameRegion(override val region: TextureRegion): IRegion {
-        VERTICAL(   EnumAtlas.GAME.data.atlas.findRegion("vertical")   ),
-        HORIZONTAL( EnumAtlas.GAME.data.atlas.findRegion("horizontal") ),
-        BTN_DEFF(   EnumAtlas.GAME.data.atlas.findRegion("btn_deff")   ),
-        BTN_PRESS(  EnumAtlas.GAME.data.atlas.findRegion("btn_press")  ),
-        CAR(        EnumAtlas.GAME.data.atlas.findRegion("car")        ),
-        WHEEL(      EnumAtlas.GAME.data.atlas.findRegion("wheel")      ),
-        BLUE_RED(   EnumAtlas.GAME.data.atlas.findRegion("blue_red")   ),
-        BLUE(       EnumAtlas.GAME.data.atlas.findRegion("blue")       ),
-        RED(        EnumAtlas.GAME.data.atlas.findRegion("red")        ),
-        TRUNK(      EnumAtlas.GAME.data.atlas.findRegion("trunk")      ),
-        ARM(        EnumAtlas.GAME.data.atlas.findRegion("arm")        ),
+        VERTICAL(   EnumAtlas.GAME.data.atlas.findRegion("v")         ),
+        HORIZONTAL( EnumAtlas.GAME.data.atlas.findRegion("h")         ),
+        CIRCLE(     EnumAtlas.GAME.data.atlas.findRegion("circle")    ),
+        PLATFORMA(  EnumAtlas.GAME.data.atlas.findRegion("platforma") ),
+        USER(       EnumAtlas.GAME.data.atlas.findRegion("user")      ),
+
+        GRID(EnumTexture.GRID.data.texture.region),
+
+        LOADER(EnumTexture.LOADER.data.texture.region),
     }
 
-//    enum class ListRegion(override val regionList: List<TextureRegion>): IRegionList {
-//        MAN( List(21) { EnumAtlas.MAN.data.atlas.findRegion("man (${it.inc()})") }),
-//        FIRE(List(10) { EnumAtlas.FIRE.data.atlas.findRegion("fire (${it.inc()})") }),
-//    }
+    enum class ListRegion(override val regionList: List<TextureRegion>): IRegionList {
+        LOADER( List(101) { EnumAtlas.LOADER.data.atlas.findRegion("$it") }),
+    }
 
 
 

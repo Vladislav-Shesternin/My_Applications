@@ -1,0 +1,145 @@
+ites.png
+size: 492, 212
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 72, 2
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 142, 2
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 212, 2
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 282, 2
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 352, 2
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 422, 2
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 2, 72
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 72, 72
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 142, 72
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+11
+  rotate: false
+  xy: 212, 72
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+12
+  rotate: false
+  xy: 282, 72
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+13
+  rotate: false
+  xy: 352, 72
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+14
+  rotate: false
+  xy: 422, 72
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+15
+  rotate: false
+  xy: 2, 142
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+16
+  rotate: false
+  xy: 72, 142
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+17
+  rotate: false
+  xy: 142, 142
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+18
+  rotate: false
+  xy: 212, 142
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+19
+  rotate: false
+  xy: 282, 142
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+20
+  rotate: false
+  xy: 352, 142
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1

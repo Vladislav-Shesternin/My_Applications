@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "757396993208",
+    "project_id": "verde-game-club",
+    "storage_bucket": "verde-game-club.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757396993208:android:61104f4db6f99717a1304d",
+        "android_client_info": {
+          "package_name": "com.vurda.start"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757396993208-0oco3jcbv2s9dd6l9dg8i6abbkf3cfuo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoI6U1ZhepEtGpmb3UiGXXRCd4FLCr8C0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757396993208-0oco3jcbv2s9dd6l9dg8i6abbkf3cfuo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,68 @@
+game.png
+size: 1941, 1155
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+askar
+  rotate: false
+  xy: 608, 2
+  size: 572, 197
+  orig: 572, 197
+  offset: 0, 0
+  index: -1
+backa
+  rotate: false
+  xy: 2, 201
+  size: 295, 295
+  orig: 295, 295
+  offset: 0, 0
+  index: -1
+berdas
+  rotate: false
+  xy: 1182, 2
+  size: 572, 197
+  orig: 572, 197
+  offset: 0, 0
+  index: -1
+delete
+  rotate: false
+  xy: 206, 2
+  size: 222, 162
+  orig: 222, 162
+  offset: 0, 0
+  index: -1
+dorivnue
+  rotate: false
+  xy: 430, 2
+  size: 176, 162
+  orig: 176, 162
+  offset: 0, 0
+  index: -1
+dsa
+  rotate: false
+  xy: 2, 2
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+flomenko
+  rotate: false
+  xy: 299, 201
+  size: 845, 813
+  orig: 845, 813
+  offset: 0, 0
+  index: -1
+pradsik
+  rotate: false
+  xy: 1146, 201
+  size: 793, 952
+  orig: 793, 952
+  offset: 0, 0
+  index: -1
+redf
+  rotate: false
+  xy: 104, 2
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1

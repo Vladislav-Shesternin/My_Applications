@@ -1,0 +1,138 @@
+game.png
+size: 1023, 1765
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+backgrounding_circle
+  rotate: false
+  xy: 519, 704
+  size: 244, 244
+  orig: 244, 244
+  offset: 0, 0
+  index: -1
+bukovki
+  rotate: false
+  xy: 2, 2
+  size: 515, 22
+  orig: 515, 22
+  offset: 0, 0
+  index: -1
+cheeked
+  rotate: false
+  xy: 36, 27
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+continue
+  rotate: false
+  xy: 213, 27
+  size: 590, 87
+  orig: 590, 87
+  offset: 0, 0
+  index: -1
+def
+  rotate: false
+  xy: 339, 116
+  size: 645, 112
+  orig: 645, 112
+  offset: 0, 0
+  index: -1
+deffault
+  rotate: false
+  xy: 74, 27
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+gradik
+  rotate: false
+  xy: 765, 704
+  size: 244, 244
+  orig: 244, 244
+  offset: 0, 0
+  index: -1
+karta
+  rotate: false
+  xy: 2, 1269
+  size: 684, 494
+  orig: 684, 494
+  offset: 0, 0
+  index: -1
+menkuha
+  rotate: false
+  xy: 2, 344
+  size: 569, 136
+  orig: 569, 136
+  offset: 0, 0
+  index: -1
+menuha
+  rotate: false
+  xy: 248, 950
+  size: 569, 317
+  orig: 569, 317
+  offset: 0, 0
+  index: -1
+politik_terms
+  rotate: false
+  xy: 2, 116
+  size: 335, 104
+  orig: 335, 104
+  offset: 0, 0
+  index: -1
+prs
+  rotate: false
+  xy: 2, 230
+  size: 645, 112
+  orig: 645, 112
+  offset: 0, 0
+  index: -1
+r
+  rotate: false
+  xy: 141, 27
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+stata
+  rotate: false
+  xy: 2, 704
+  size: 515, 227
+  orig: 515, 227
+  offset: 0, 0
+  index: -1
+text
+  rotate: false
+  xy: 2, 482
+  size: 645, 220
+  orig: 645, 220
+  offset: 0, 0
+  index: -1
+textushka
+  rotate: false
+  xy: 519, 2
+  size: 502, 23
+  orig: 502, 23
+  offset: 0, 0
+  index: -1
+uverh
+  rotate: false
+  xy: 112, 27
+  size: 27, 50
+  orig: 27, 50
+  offset: 0, 0
+  index: -1
+vibor
+  rotate: false
+  xy: 2, 27
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 2, 950
+  size: 244, 244
+  orig: 244, 244
+  offset: 0, 0
+  index: -1

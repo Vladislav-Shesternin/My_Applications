@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "306018555327",
+    "project_id": "shapovalovd-financecomitet",
+    "storage_bucket": "shapovalovd-financecomitet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306018555327:android:8eece33c55407f4a66bd0a",
+        "android_client_info": {
+          "package_name": "com.shapovalovd.financecomitet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306018555327-a2tcaau5d1f0iq71rrg5r8h22vt7bov5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmkTMEOL-JCvLL1ajerCW2XAZxYd9Kyzc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306018555327-a2tcaau5d1f0iq71rrg5r8h22vt7bov5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

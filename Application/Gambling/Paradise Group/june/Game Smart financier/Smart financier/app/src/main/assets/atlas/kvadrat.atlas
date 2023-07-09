@@ -1,0 +1,96 @@
+kvadrat.png
+size: 1731, 1320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gaf-1
+  rotate: false
+  xy: 2, 2
+  size: 246, 216
+  orig: 246, 216
+  offset: 0, 0
+  index: -1
+gaf-2
+  rotate: false
+  xy: 250, 2
+  size: 247, 216
+  orig: 247, 216
+  offset: 0, 0
+  index: -1
+gaf-3
+  rotate: false
+  xy: 499, 2
+  size: 247, 216
+  orig: 247, 216
+  offset: 0, 0
+  index: -1
+gaf-4
+  rotate: false
+  xy: 748, 2
+  size: 247, 216
+  orig: 247, 216
+  offset: 0, 0
+  index: -1
+gaf-5
+  rotate: false
+  xy: 997, 2
+  size: 246, 216
+  orig: 246, 216
+  offset: 0, 0
+  index: -1
+gaf-6
+  rotate: false
+  xy: 1245, 2
+  size: 246, 216
+  orig: 246, 216
+  offset: 0, 0
+  index: -1
+gaf-7
+  rotate: false
+  xy: 2, 220
+  size: 246, 216
+  orig: 246, 216
+  offset: 0, 0
+  index: -1
+gaf-8
+  rotate: false
+  xy: 250, 220
+  size: 246, 216
+  orig: 246, 216
+  offset: 0, 0
+  index: -1
+gaf-9
+  rotate: false
+  xy: 498, 220
+  size: 246, 216
+  orig: 246, 216
+  offset: 0, 0
+  index: -1
+gaf-10
+  rotate: false
+  xy: 746, 220
+  size: 246, 216
+  orig: 246, 216
+  offset: 0, 0
+  index: -1
+stststst-1
+  rotate: false
+  xy: 994, 220
+  size: 735, 548
+  orig: 735, 548
+  offset: 0, 0
+  index: -1
+stststst-2
+  rotate: false
+  xy: 2, 770
+  size: 735, 548
+  orig: 735, 548
+  offset: 0, 0
+  index: -1
+stststst-3
+  rotate: false
+  xy: 739, 770
+  size: 735, 548
+  orig: 735, 548
+  offset: 0, 0
+  index: -1

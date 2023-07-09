@@ -20,6 +20,8 @@ import aer.com.gamesas.mobile.slot.game.utils.Completer
 import aer.com.gamesas.mobile.slot.util.*
 import aer.com.gamesas.mobile.slot.util.manager.DataStoreManager
 import aer.com.gamesas.mobile.slot.util.network.internetConnection
+import aer.com.gamesas.mobile.slot.webView.webViewFragment
+import android.content.Intent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.BufferOverflow
@@ -100,10 +102,10 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         exitProcess(0)
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        webViewFragment?.onActivityResult(requestCode, resultCode, data)
-//    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        webViewFragment?.onActivityResult(requestCode, resultCode, data)
+    }
 
 
 
@@ -172,7 +174,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     }
 
     private suspend fun getRickiMorty(mud: String, belong: Boolean) {
-        if (true) {
+        if (belong) {
             withContext(Dispatchers.Main) {
                 val completer = Completer(coroutine, 2) {
                     val advertisingId = AdvertisingIdClient.getAdvertisingIdInfo(appContext).id

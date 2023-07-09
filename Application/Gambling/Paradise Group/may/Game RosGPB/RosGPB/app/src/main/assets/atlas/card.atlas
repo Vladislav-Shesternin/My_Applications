@@ -1,137 +1,130 @@
 card.png
-size: 1969, 439
+size: 1850, 433
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 color 0
   rotate: false
-  xy: 521, 344
+  xy: 1040, 338
   size: 133, 93
   orig: 133, 93
   offset: 0, 0
   index: -1
 color 1
   rotate: false
-  xy: 656, 344
+  xy: 1175, 338
   size: 133, 93
   orig: 133, 93
   offset: 0, 0
   index: -1
 color 2
   rotate: false
-  xy: 791, 344
+  xy: 1310, 338
   size: 133, 93
   orig: 133, 93
   offset: 0, 0
   index: -1
 color 3
   rotate: false
-  xy: 926, 344
+  xy: 1445, 338
   size: 133, 93
   orig: 133, 93
   offset: 0, 0
   index: -1
 color 4
   rotate: false
-  xy: 1061, 344
+  xy: 1580, 338
   size: 133, 93
   orig: 133, 93
   offset: 0, 0
   index: -1
 color 5
   rotate: false
-  xy: 1196, 344
-  size: 133, 93
-  orig: 133, 93
-  offset: 0, 0
-  index: -1
-color 6
-  rotate: false
-  xy: 1331, 344
+  xy: 1715, 338
   size: 133, 93
   orig: 133, 93
   offset: 0, 0
   index: -1
 id 0
   rotate: false
-  xy: 632, 113
+  xy: 1205, 110
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 id 1
   rotate: false
-  xy: 706, 113
+  xy: 1279, 110
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 id 2
   rotate: false
-  xy: 1300, 113
-  size: 73, 73
-  orig: 73, 73
+  xy: 1353, 110
+  size: 72, 72
+  orig: 72, 72
   offset: 0, 0
   index: -1
 id 3
   rotate: false
-  xy: 780, 113
-  size: 73, 72
-  orig: 73, 72
+  xy: 1427, 110
+  size: 72, 72
+  orig: 72, 72
   offset: 0, 0
   index: -1
 id 4
   rotate: false
-  xy: 855, 113
-  size: 73, 72
-  orig: 73, 72
+  xy: 1501, 110
+  size: 72, 72
+  orig: 72, 72
   offset: 0, 0
   index: -1
 id 5
   rotate: false
-  xy: 1375, 113
-  size: 73, 74
-  orig: 73, 74
+  xy: 1575, 110
+  size: 72, 72
+  orig: 72, 72
   offset: 0, 0
   index: -1
 id 6
   rotate: false
-  xy: 930, 113
+  xy: 1649, 110
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 id 7
   rotate: false
-  xy: 1004, 113
+  xy: 1723, 110
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 id 8
   rotate: false
-  xy: 1078, 113
+  xy: 2, 184
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 id 9
   rotate: false
-  xy: 1152, 113
+  xy: 76, 184
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 id 10
   rotate: false
-  xy: 1226, 113
+  xy: 150, 184
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 name 0
   rotate: false
-  xy: 1382, 56
+  xy: 2, 110
   size: 343, 53
   orig: 343, 53
   offset: 0, 0
@@ -145,7 +138,7 @@ name 1
   index: -1
 name 2
   rotate: false
-  xy: 287, 113
+  xy: 860, 110
   size: 343, 56
   orig: 343, 56
   offset: 0, 0
@@ -159,91 +152,91 @@ name 3
   index: -1
 name 4
   rotate: false
-  xy: 1619, 2
+  xy: 2, 56
   size: 343, 52
   orig: 343, 52
   offset: 0, 0
   index: -1
 name 5
   rotate: false
-  xy: 2, 56
+  xy: 347, 56
   size: 343, 52
   orig: 343, 52
   offset: 0, 0
   index: -1
 name 6
   rotate: false
-  xy: 347, 56
+  xy: 692, 56
   size: 343, 52
   orig: 343, 52
   offset: 0, 0
   index: -1
 name 7
   rotate: false
-  xy: 692, 56
+  xy: 1037, 56
   size: 343, 52
   orig: 343, 52
   offset: 0, 0
   index: -1
 name 8
   rotate: false
-  xy: 1037, 56
+  xy: 1382, 56
   size: 343, 52
   orig: 343, 52
   offset: 0, 0
   index: -1
 nume 0
   rotate: false
-  xy: 1450, 113
+  xy: 224, 184
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
   index: -1
 nume 1
   rotate: false
-  xy: 2, 190
+  xy: 743, 184
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
   index: -1
 nume 2
   rotate: false
-  xy: 521, 190
+  xy: 1262, 184
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
   index: -1
 nume 3
   rotate: false
-  xy: 1040, 190
+  xy: 2, 261
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
   index: -1
 nume 4
   rotate: false
-  xy: 2, 267
+  xy: 521, 261
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
   index: -1
 nume 5
   rotate: false
-  xy: 521, 267
+  xy: 1040, 261
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
   index: -1
 nume 6
   rotate: false
-  xy: 1040, 267
+  xy: 2, 338
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
   index: -1
 nume 7
   rotate: false
-  xy: 2, 344
+  xy: 521, 338
   size: 517, 75
   orig: 517, 75
   offset: 0, 0
@@ -313,63 +306,63 @@ surname 8
   index: -1
 wifi 0
   rotate: false
-  xy: 1727, 56
+  xy: 347, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 1
   rotate: false
-  xy: 1784, 56
+  xy: 404, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 2
   rotate: false
-  xy: 1841, 56
+  xy: 461, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 3
   rotate: false
-  xy: 1898, 56
+  xy: 518, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 4
   rotate: false
-  xy: 2, 113
+  xy: 575, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 5
   rotate: false
-  xy: 59, 113
+  xy: 632, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 6
   rotate: false
-  xy: 116, 113
+  xy: 689, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 7
   rotate: false
-  xy: 173, 113
+  xy: 746, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0
   index: -1
 wifi 8
   rotate: false
-  xy: 230, 113
+  xy: 803, 110
   size: 55, 55
   orig: 55, 55
   offset: 0, 0

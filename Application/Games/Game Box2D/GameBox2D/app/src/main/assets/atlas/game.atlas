@@ -3,80 +3,47 @@ size: 1404, 691
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-arm
+circle
   rotate: false
-  xy: 47, 2
-  size: 19, 153
-  orig: 19, 153
+  xy: 160, 2
+  size: 173, 173
+  orig: 173, 173
   offset: 0, 0
   index: -1
-blue
-  rotate: false
-  xy: 2, 2
-  size: 12, 31
-  orig: 12, 31
-  offset: 0, 0
-  index: -1
-blue_red
-  rotate: false
-  xy: 68, 2
-  size: 52, 279
-  orig: 52, 279
-  offset: 0, 0
-  index: -1
-btn_deff
-  rotate: false
-  xy: 190, 2
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-btn_press
-  rotate: false
-  xy: 292, 2
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-car
-  rotate: false
-  xy: 602, 2
-  size: 388, 172
-  orig: 388, 172
-  offset: 0, 0
-  index: -1
-horizontal
+h
   rotate: false
   xy: 2, 674
   size: 1400, 15
   orig: 1400, 15
   offset: 0, 0
   index: -1
-red
+nine
   rotate: false
-  xy: 16, 2
-  size: 12, 31
-  orig: 12, 31
+  xy: 19, 2
+  size: 50, 70
+  split: 26, 23, 31, 32
+  pad: 26, 22, 38, 31
+  orig: 50, 70
   offset: 0, 0
   index: -1
-trunk
+platforma
   rotate: false
-  xy: 394, 2
-  size: 206, 95
-  orig: 206, 95
+  xy: 335, 2
+  size: 348, 54
+  orig: 348, 54
   offset: 0, 0
   index: -1
-vertical
+user
   rotate: false
-  xy: 30, 2
+  xy: 71, 2
+  size: 87, 107
+  orig: 87, 107
+  offset: 0, 0
+  index: -1
+v
+  rotate: false
+  xy: 2, 2
   size: 15, 670
   orig: 15, 670
-  offset: 0, 0
-  index: -1
-wheel
-  rotate: false
-  xy: 122, 2
-  size: 66, 66
-  orig: 66, 66
   offset: 0, 0
   index: -1

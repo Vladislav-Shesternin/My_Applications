@@ -18,7 +18,7 @@ class BodyEditorLoader {
     private val circleShape = CircleShape()
 
     // -------------------------------------------------------------------------
-    // Ctors
+    // Constructors
     // -------------------------------------------------------------------------
     constructor(file: FileHandle?) {
         if (file == null) throw NullPointerException("file is null")

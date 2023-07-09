@@ -1,0 +1,110 @@
+game.png
+size: 936, 1472
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bk
+  rotate: false
+  xy: 658, 133
+  size: 259, 259
+  orig: 259, 259
+  offset: 0, 0
+  index: -1
+cbfak
+  rotate: false
+  xy: 264, 133
+  size: 195, 195
+  orig: 195, 195
+  offset: 0, 0
+  index: -1
+cbguik
+  rotate: false
+  xy: 461, 133
+  size: 195, 195
+  orig: 195, 195
+  offset: 0, 0
+  index: -1
+dom_df
+  rotate: false
+  xy: 636, 2
+  size: 129, 129
+  orig: 129, 129
+  offset: 0, 0
+  index: -1
+dom_prs
+  rotate: false
+  xy: 767, 2
+  size: 129, 129
+  orig: 129, 129
+  offset: 0, 0
+  index: -1
+less
+  rotate: false
+  xy: 2, 2
+  size: 175, 64
+  orig: 175, 64
+  offset: 0, 0
+  index: -1
+more
+  rotate: false
+  xy: 179, 2
+  size: 193, 64
+  orig: 193, 64
+  offset: 0, 0
+  index: -1
+padae
+  rotate: false
+  xy: 374, 2
+  size: 129, 127
+  orig: 129, 127
+  offset: 0, 0
+  index: -1
+paneljan
+  rotate: false
+  xy: 2, 898
+  size: 723, 572
+  orig: 723, 572
+  offset: 0, 0
+  index: -1
+pol_def
+  rotate: false
+  xy: 2, 394
+  size: 465, 322
+  orig: 465, 322
+  offset: 0, 0
+  index: -1
+pol_press
+  rotate: false
+  xy: 469, 394
+  size: 465, 322
+  orig: 465, 322
+  offset: 0, 0
+  index: -1
+ponel
+  rotate: false
+  xy: 2, 718
+  size: 867, 178
+  orig: 867, 178
+  offset: 0, 0
+  index: -1
+roste
+  rotate: false
+  xy: 505, 2
+  size: 129, 127
+  orig: 129, 127
+  offset: 0, 0
+  index: -1
+stat_ddf
+  rotate: false
+  xy: 2, 133
+  size: 129, 129
+  orig: 129, 129
+  offset: 0, 0
+  index: -1
+stata_ck
+  rotate: false
+  xy: 133, 133
+  size: 129, 129
+  orig: 129, 129
+  offset: 0, 0
+  index: -1

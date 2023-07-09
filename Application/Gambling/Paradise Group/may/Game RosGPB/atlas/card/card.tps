@@ -179,7 +179,6 @@
             <key type="filename">color 3.png</key>
             <key type="filename">color 4.png</key>
             <key type="filename">color 5.png</key>
-            <key type="filename">color 6.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>

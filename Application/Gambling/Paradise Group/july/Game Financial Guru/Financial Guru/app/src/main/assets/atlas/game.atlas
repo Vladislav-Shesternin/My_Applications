@@ -1,0 +1,313 @@
+game.png
+size: 1445, 1921
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 919, 47
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 997, 47
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1075, 47
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 1153, 47
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 1231, 47
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1309, 47
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 2, 125
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 80, 125
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 158, 125
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 236, 125
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+an
+  rotate: false
+  xy: 2, 47
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+analize
+  rotate: false
+  xy: 314, 125
+  size: 691, 78
+  orig: 691, 78
+  offset: 0, 0
+  index: -1
+anonim
+  rotate: false
+  xy: 2, 2
+  size: 148, 26
+  orig: 148, 26
+  offset: 0, 0
+  index: -1
+bal
+  rotate: false
+  xy: 2, 960
+  size: 627, 193
+  orig: 627, 193
+  offset: 0, 0
+  index: -1
+bez_ten
+  rotate: false
+  xy: 631, 475
+  size: 627, 142
+  orig: 627, 142
+  offset: 0, 0
+  index: -1
+dni_nedela
+  rotate: false
+  xy: 631, 960
+  size: 776, 194
+  orig: 776, 194
+  offset: 0, 0
+  index: -1
+fri
+  rotate: false
+  xy: 895, 2
+  size: 71, 43
+  orig: 71, 43
+  offset: 0, 0
+  index: -1
+goooo
+  rotate: false
+  xy: 338, 47
+  size: 579, 62
+  orig: 579, 62
+  offset: 0, 0
+  index: -1
+gray_pan
+  rotate: false
+  xy: 564, 1156
+  size: 691, 763
+  orig: 691, 763
+  offset: 0, 0
+  index: -1
+gur
+  rotate: false
+  xy: 2, 285
+  size: 114, 87
+  orig: 114, 87
+  offset: 0, 0
+  index: -1
+kup_prod
+  rotate: false
+  xy: 235, 285
+  size: 627, 89
+  orig: 627, 89
+  offset: 0, 0
+  index: -1
+kursi_valuti
+  rotate: false
+  xy: 2, 205
+  size: 691, 78
+  orig: 691, 78
+  offset: 0, 0
+  index: -1
+man_with_flower
+  rotate: false
+  xy: 2, 1156
+  size: 560, 502
+  orig: 560, 502
+  offset: 0, 0
+  index: -1
+may_bal
+  rotate: false
+  xy: 695, 205
+  size: 691, 78
+  orig: 691, 78
+  offset: 0, 0
+  index: -1
+menu_analize
+  rotate: false
+  xy: 2, 773
+  size: 670, 185
+  orig: 670, 185
+  offset: 0, 0
+  index: -1
+menu_ga
+  rotate: false
+  xy: 2, 619
+  size: 660, 148
+  orig: 660, 148
+  offset: 0, 0
+  index: -1
+menu_homi
+  rotate: false
+  xy: 674, 773
+  size: 670, 185
+  orig: 670, 185
+  offset: 0, 0
+  index: -1
+mon
+  rotate: false
+  xy: 968, 2
+  size: 72, 43
+  orig: 72, 43
+  offset: 0, 0
+  index: -1
+nedela
+  rotate: false
+  xy: 302, 2
+  size: 280, 30
+  orig: 280, 30
+  offset: 0, 0
+  index: -1
+nex
+  rotate: false
+  xy: 864, 285
+  size: 579, 93
+  orig: 579, 93
+  offset: 0, 0
+  index: -1
+pex
+  rotate: false
+  xy: 2, 380
+  size: 579, 93
+  orig: 579, 93
+  offset: 0, 0
+  index: -1
+popka
+  rotate: false
+  xy: 584, 2
+  size: 309, 39
+  orig: 309, 39
+  offset: 0, 0
+  index: -1
+rud
+  rotate: false
+  xy: 118, 285
+  size: 115, 87
+  orig: 115, 87
+  offset: 0, 0
+  index: -1
+sat
+  rotate: false
+  xy: 1042, 2
+  size: 72, 43
+  orig: 72, 43
+  offset: 0, 0
+  index: -1
+smotrik
+  rotate: false
+  xy: 152, 2
+  size: 148, 26
+  orig: 148, 26
+  offset: 0, 0
+  index: -1
+sun
+  rotate: false
+  xy: 1116, 2
+  size: 71, 43
+  orig: 71, 43
+  offset: 0, 0
+  index: -1
+testikj
+  rotate: false
+  xy: 583, 380
+  size: 549, 93
+  orig: 549, 93
+  offset: 0, 0
+  index: -1
+thu
+  rotate: false
+  xy: 1189, 2
+  size: 71, 43
+  orig: 71, 43
+  offset: 0, 0
+  index: -1
+tue
+  rotate: false
+  xy: 1262, 2
+  size: 71, 43
+  orig: 71, 43
+  offset: 0, 0
+  index: -1
+us
+  rotate: false
+  xy: 58, 47
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+vasa
+  rotate: false
+  xy: 2, 475
+  size: 627, 114
+  orig: 627, 114
+  offset: 0, 0
+  index: -1
+vasi_valutki
+  rotate: false
+  xy: 114, 47
+  size: 222, 57
+  orig: 222, 57
+  offset: 0, 0
+  index: -1
+wed
+  rotate: false
+  xy: 1335, 2
+  size: 72, 43
+  orig: 72, 43
+  offset: 0, 0
+  index: -1
+with_ten
+  rotate: false
+  xy: 664, 619
+  size: 635, 152
+  orig: 635, 152
+  offset: 0, 0
+  index: -1

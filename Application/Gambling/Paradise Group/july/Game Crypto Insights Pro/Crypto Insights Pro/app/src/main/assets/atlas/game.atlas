@@ -1,0 +1,194 @@
+game.png
+size: 2024, 1237
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ad
+  rotate: false
+  xy: 447, 2
+  size: 72, 42
+  orig: 72, 42
+  offset: 0, 0
+  index: -1
+ah
+  rotate: false
+  xy: 521, 2
+  size: 72, 42
+  orig: 72, 42
+  offset: 0, 0
+  index: -1
+am
+  rotate: false
+  xy: 595, 2
+  size: 73, 42
+  orig: 73, 42
+  offset: 0, 0
+  index: -1
+aw
+  rotate: false
+  xy: 670, 2
+  size: 72, 42
+  orig: 72, 42
+  offset: 0, 0
+  index: -1
+ay
+  rotate: false
+  xy: 744, 2
+  size: 73, 42
+  orig: 73, 42
+  offset: 0, 0
+  index: -1
+back_buy_bitcoin_price
+  rotate: false
+  xy: 2, 719
+  size: 680, 299
+  orig: 680, 299
+  offset: 0, 0
+  index: -1
+beginners_guide
+  rotate: false
+  xy: 2, 274
+  size: 680, 145
+  orig: 680, 145
+  offset: 0, 0
+  index: -1
+bitcoin_star
+  rotate: false
+  xy: 684, 274
+  size: 605, 165
+  orig: 605, 165
+  offset: 0, 0
+  index: -1
+by_continuing
+  rotate: false
+  xy: 120, 52
+  size: 548, 66
+  orig: 548, 66
+  offset: 0, 0
+  index: -1
+check_galka
+  rotate: false
+  xy: 2, 52
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1
+check_star
+  rotate: false
+  xy: 61, 52
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1
+circle_arrow
+  rotate: false
+  xy: 670, 52
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+coin_performance
+  rotate: false
+  xy: 1170, 719
+  size: 696, 516
+  orig: 696, 516
+  offset: 0, 0
+  index: -1
+continue_gray
+  rotate: false
+  xy: 752, 52
+  size: 604, 85
+  orig: 604, 85
+  offset: 0, 0
+  index: -1
+continue_purple
+  rotate: false
+  xy: 1358, 52
+  size: 604, 85
+  orig: 604, 85
+  offset: 0, 0
+  index: -1
+cur_inv_ret_tot
+  rotate: false
+  xy: 2, 452
+  size: 605, 223
+  orig: 605, 223
+  offset: 0, 0
+  index: -1
+how_usd_btc
+  rotate: false
+  xy: 1119, 452
+  size: 680, 265
+  orig: 680, 265
+  offset: 0, 0
+  index: -1
+invested_coins
+  rotate: false
+  xy: 609, 452
+  size: 508, 240
+  orig: 508, 240
+  offset: 0, 0
+  index: -1
+markets
+  rotate: false
+  xy: 1366, 139
+  size: 608, 133
+  orig: 608, 133
+  offset: 0, 0
+  index: -1
+menu_left
+  rotate: false
+  xy: 2, 139
+  size: 680, 130
+  orig: 680, 130
+  offset: 0, 0
+  index: -1
+menu_right
+  rotate: false
+  xy: 684, 139
+  size: 680, 130
+  orig: 680, 130
+  offset: 0, 0
+  index: -1
+other_coins_tot_inv
+  rotate: false
+  xy: 2, 2
+  size: 225, 23
+  orig: 225, 23
+  offset: 0, 0
+  index: -1
+profile_search_quar
+  rotate: false
+  xy: 1423, 2
+  size: 599, 48
+  orig: 599, 48
+  offset: 0, 0
+  index: -1
+timerik
+  rotate: false
+  xy: 819, 2
+  size: 602, 42
+  orig: 602, 42
+  offset: 0, 0
+  index: -1
+tot_bal
+  rotate: false
+  xy: 229, 2
+  size: 216, 33
+  orig: 216, 33
+  offset: 0, 0
+  index: -1
+want_to_invest
+  rotate: false
+  xy: 684, 719
+  size: 484, 505
+  orig: 484, 505
+  offset: 0, 0
+  index: -1
+you_pay_includes
+  rotate: false
+  xy: 1291, 274
+  size: 604, 176
+  orig: 604, 176
+  offset: 0, 0
+  index: -1

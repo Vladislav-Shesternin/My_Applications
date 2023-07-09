@@ -24,9 +24,6 @@ val Viewport.zeroScreenVector: Vector2 get() = project(Vector2(0f, 0f))
 
 val TextureEmpty get() = Texture(1, 1, Pixmap.Format.RGBA8888)
 
-val DEGTORAD = (PI / 180f).toFloat()
-val RADTODEG = (180f / PI).toFloat()
-
 
 
 fun disposeAll(vararg disposable: Disposable) {
@@ -57,25 +54,4 @@ fun runGDX(block: () -> Unit) {
     Gdx.app.postRunnable { block() }
 }
 
-val tmpVector2 = Vector2()
-val tmpSize    = Size()
-
-val Size.vector2 get() = tmpVector2.set(width, height)
-val Vector2.size get() = tmpSize.set(x, y)
-
-data class Size(
-    var width : Float = 0f,
-    var height: Float = 0f,
-) {
-    fun set(width: Float, height: Float): Size {
-        this.width = width
-        this.height = height
-        return this
-    }
-
-    fun set(size: Size): Size {
-        width = size.width
-        height = size.height
-        return this
-    }
-}
+fun Float.divOr0(num: Float) = try { this / num } catch (e: Exception) { 0f }

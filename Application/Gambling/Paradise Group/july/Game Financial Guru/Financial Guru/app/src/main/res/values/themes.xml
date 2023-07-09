@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.FinancialGuru" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/bluer</item>
+        <item name="android:navigationBarColor">@color/bluer</item>
+    </style>
+
+    <style name="Theme.FinancialGuru" parent="Base.Theme.FinancialGuru" />
+</resources>

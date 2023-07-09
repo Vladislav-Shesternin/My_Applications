@@ -4,9 +4,10 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.Body
 import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.FixtureDef
-import com.veldan.gamebox2d.game.utils.Layout
-import com.veldan.gamebox2d.game.utils.RADTODEG
-import com.veldan.gamebox2d.game.utils.Size
+import com.veldan.gamebox2d.game.utils.*
+import com.veldan.gamebox2d.game.utils.actor.setBounds
+import com.veldan.gamebox2d.game.utils.actor.setOrigin
+import com.veldan.gamebox2d.game.utils.actor.setPosition
 import com.veldan.gamebox2d.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.gamebox2d.game.utils.advanced.AdvancedGroup
 import com.veldan.gamebox2d.util.Once
@@ -18,21 +19,21 @@ import kotlinx.coroutines.launch
 
 abstract class AbstractBody {
     abstract val screenBox2d  : AdvancedBox2dScreen
-    abstract var id           : BodyId
     abstract val name         : String
     abstract val bodyDef      : BodyDef
     abstract val fixtureDef   : FixtureDef
-    abstract val collisionList: MutableList<BodyId>
 
-    open val actor: AdvancedGroup? = null
+    open val actor        : AdvancedGroup? = null
+    open var id           : String         = BodyId.NONE
+    open val collisionList                 = mutableListOf<String>()
 
-    val size     = Size()
+    val size     = Vector2()
     val position = Vector2()
 
     var coroutine: CoroutineScope? = null
         private set
 
-    val scale  by lazy { screenBox2d.sizeConverterUIToBox.getScale(size.width) }
+    val scale  by lazy { size.x.toB2 }
     val center by lazy { screenBox2d.worldUtil.bodyEditor.getOrigin(name, scale) }
 
     var body: Body? = null
@@ -74,18 +75,15 @@ abstract class AbstractBody {
     private fun addActor() {
         actor?.apply {
             screenBox2d.stageUI.addActor(this)
-            setBounds(position.x, position.y, size.width, size.height)
+            setBounds(position, size)
         }
     }
 
     private fun renderActor() {
         body?.let { b ->
             actor?.apply {
-                screenBox2d.sizeConverterBoxToUI.apply {
-                    x = getSizeX(b.position.x - center.x)
-                    y = getSizeY(b.position.y - center.y)
-                    setOrigin(getSizeX(center.x), getSizeY(center.y))
-                }
+                setPosition(b.position.cpy().sub(center).toUI)
+                setOrigin(center.cpy().toUI)
                 rotation = b.angle * RADTODEG
             }
         }
@@ -103,14 +101,14 @@ abstract class AbstractBody {
     }
 
     fun create(x: Float, y: Float, w: Float, h: Float) {
-        create(Vector2(x, y), Size(w, h))
+        create(Vector2(x, y), Vector2(w, h))
     }
 
-    fun create(position: Vector2, size: Size) {
+    fun create(position: Vector2, size: Vector2) {
         this.position.set(position)
         this.size.set(size)
 
-        bodyDef.position.set(screenBox2d.sizeConverterUIToBox.getSize(position).add(center))
+        bodyDef.position.set(position.toB2.add(center))
 
         coroutine = CoroutineScope(Dispatchers.Default)
         createBody()

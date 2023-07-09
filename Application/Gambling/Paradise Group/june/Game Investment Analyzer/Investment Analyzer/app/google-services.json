@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "970551216319",
+    "project_id": "zaykoa-investmentanalyzer",
+    "storage_bucket": "zaykoa-investmentanalyzer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970551216319:android:147a5fef301fb4ce779e0a",
+        "android_client_info": {
+          "package_name": "com.zaykoa.investmentanalyzer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970551216319-e92qga8uq2j850843fntb47tkd9aphsn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdp3FyynY4U-wOGXxHHPcd954YgBo0lLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970551216319-e92qga8uq2j850843fntb47tkd9aphsn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

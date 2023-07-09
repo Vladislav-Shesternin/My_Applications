@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "221989195125",
+    "project_id": "dankom-financialtracker",
+    "storage_bucket": "dankom-financialtracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221989195125:android:23c2b28c8b8b623590d73c",
+        "android_client_info": {
+          "package_name": "com.dankom.financialtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221989195125-cfaq78aji3of383upl3fbu6ujp9g78kn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFSBlm1IVL3ntEP29X9TXNaqnVcqoW0Ls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221989195125-cfaq78aji3of383upl3fbu6ujp9g78kn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

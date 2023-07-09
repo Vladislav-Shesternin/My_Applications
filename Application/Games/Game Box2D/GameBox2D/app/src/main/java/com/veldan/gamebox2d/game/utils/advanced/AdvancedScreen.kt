@@ -10,6 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.badlogic.gdx.utils.viewport.FillViewport
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.veldan.gamebox2d.game.manager.NavigationManager
+import com.veldan.gamebox2d.game.utils.HEIGHT_UI
+import com.veldan.gamebox2d.game.utils.WIDTH_UI
 import com.veldan.gamebox2d.game.utils.addProcessors
 import com.veldan.gamebox2d.game.utils.disposeAll
 import com.veldan.gamebox2d.util.cancelCoroutinesAll
@@ -18,8 +20,8 @@ import kotlinx.coroutines.Dispatchers
 
 
 abstract class AdvancedScreen(
-    val WIDTH : Float = 1400f,
-    val HEIGHT: Float = 700f
+    val WIDTH : Float = WIDTH_UI,
+    val HEIGHT: Float = HEIGHT_UI
 ) : ScreenAdapter(), AdvancedInputProcessor {
 
     open val name: String = javaClass.name

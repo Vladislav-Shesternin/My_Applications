@@ -1,0 +1,222 @@
+game.png
+size: 1914, 1850
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+avt
+  rotate: false
+  xy: 724, 2
+  size: 240, 72
+  orig: 240, 72
+  offset: 0, 0
+  index: -1
+begin
+  rotate: false
+  xy: 2, 291
+  size: 563, 108
+  orig: 563, 108
+  offset: 0, 0
+  index: -1
+begined
+  rotate: false
+  xy: 567, 291
+  size: 563, 108
+  orig: 563, 108
+  offset: 0, 0
+  index: -1
+bekich_with_green
+  rotate: false
+  xy: 2, 844
+  size: 594, 327
+  orig: 594, 327
+  offset: 0, 0
+  index: -1
+blue
+  rotate: false
+  xy: 1132, 291
+  size: 94, 122
+  orig: 94, 122
+  offset: 0, 0
+  index: -1
+check_circle
+  rotate: false
+  xy: 2, 2
+  size: 54, 56
+  orig: 54, 56
+  offset: 0, 0
+  index: -1
+check_done
+  rotate: false
+  xy: 58, 2
+  size: 54, 56
+  orig: 54, 56
+  offset: 0, 0
+  index: -1
+circle_colorova
+  rotate: false
+  xy: 1390, 415
+  size: 157, 157
+  orig: 157, 157
+  offset: 0, 0
+  index: -1
+filter
+  rotate: false
+  xy: 1245, 844
+  size: 667, 1004
+  orig: 667, 1004
+  offset: 0, 0
+  index: -1
+glob
+  rotate: false
+  xy: 966, 2
+  size: 242, 72
+  orig: 242, 72
+  offset: 0, 0
+  index: -1
+gray
+  rotate: false
+  xy: 1228, 291
+  size: 95, 122
+  orig: 95, 122
+  offset: 0, 0
+  index: -1
+invest_analizator
+  rotate: false
+  xy: 523, 574
+  size: 515, 176
+  orig: 515, 176
+  offset: 0, 0
+  index: -1
+invest_menu
+  rotate: false
+  xy: 2, 415
+  size: 692, 122
+  orig: 692, 122
+  offset: 0, 0
+  index: -1
+investisi
+  rotate: false
+  xy: 598, 844
+  size: 645, 521
+  orig: 645, 521
+  offset: 0, 0
+  index: -1
+kra
+  rotate: false
+  xy: 1210, 2
+  size: 176, 72
+  orig: 176, 72
+  offset: 0, 0
+  index: -1
+luc
+  rotate: false
+  xy: 1388, 2
+  size: 351, 72
+  orig: 351, 72
+  offset: 0, 0
+  index: -1
+obu
+  rotate: false
+  xy: 2, 76
+  size: 209, 72
+  orig: 209, 72
+  offset: 0, 0
+  index: -1
+pop
+  rotate: false
+  xy: 213, 76
+  size: 259, 72
+  orig: 259, 72
+  offset: 0, 0
+  index: -1
+pro
+  rotate: false
+  xy: 474, 76
+  size: 290, 72
+  orig: 290, 72
+  offset: 0, 0
+  index: -1
+prode
+  rotate: false
+  xy: 1213, 76
+  size: 294, 104
+  orig: 294, 104
+  offset: 0, 0
+  index: -1
+proded
+  rotate: false
+  xy: 1509, 76
+  size: 294, 104
+  orig: 294, 104
+  offset: 0, 0
+  index: -1
+put
+  rotate: false
+  xy: 766, 76
+  size: 246, 72
+  orig: 246, 72
+  offset: 0, 0
+  index: -1
+seale
+  rotate: false
+  xy: 2, 182
+  size: 294, 104
+  orig: 294, 104
+  offset: 0, 0
+  index: -1
+sealed
+  rotate: false
+  xy: 298, 182
+  size: 294, 104
+  orig: 294, 104
+  offset: 0, 0
+  index: -1
+search
+  rotate: false
+  xy: 696, 415
+  size: 692, 122
+  orig: 692, 122
+  offset: 0, 0
+  index: -1
+start_work
+  rotate: false
+  xy: 594, 182
+  size: 563, 107
+  orig: 563, 107
+  offset: 0, 0
+  index: -1
+started_work
+  rotate: false
+  xy: 1159, 182
+  size: 563, 107
+  orig: 563, 107
+  offset: 0, 0
+  index: -1
+substract_top
+  rotate: false
+  xy: 1040, 574
+  size: 692, 268
+  orig: 692, 268
+  offset: 0, 0
+  index: -1
+textopolitika
+  rotate: false
+  xy: 2, 574
+  size: 519, 160
+  orig: 519, 160
+  offset: 0, 0
+  index: -1
+zapovid
+  rotate: false
+  xy: 114, 2
+  size: 608, 57
+  orig: 608, 57
+  offset: 0, 0
+  index: -1
+zdo
+  rotate: false
+  xy: 1014, 76
+  size: 197, 72
+  orig: 197, 72
+  offset: 0, 0
+  index: -1

@@ -1,162 +1,129 @@
 package com.veldan.gamebox2d.game.screens
 
+import android.graphics.drawable.NinePatchDrawable
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.QueryCallback
 import com.badlogic.gdx.physics.box2d.joints.MouseJoint
 import com.badlogic.gdx.physics.box2d.joints.MouseJointDef
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
-import com.badlogic.gdx.utils.Align
-import com.veldan.gamebox2d.game.actors.button.AButton
-import com.veldan.gamebox2d.game.actors.button.AButtonStyle
+import com.badlogic.gdx.scenes.scene2d.actions.Actions
+import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.veldan.gamebox2d.game.actors.LoaderGroup
 import com.veldan.gamebox2d.game.box2d.AbstractBody
 import com.veldan.gamebox2d.game.box2d.AbstractBodyGroup
 import com.veldan.gamebox2d.game.box2d.AbstractJoint
 import com.veldan.gamebox2d.game.box2d.WorldUtil
-import com.veldan.gamebox2d.game.box2d.bodiesGroup.*
-import com.veldan.gamebox2d.game.utils.Size
-import com.veldan.gamebox2d.game.utils.actor.setBounds
+import com.veldan.gamebox2d.game.box2d.bodies.BCircle
+import com.veldan.gamebox2d.game.box2d.bodies.BPlatform
+import com.veldan.gamebox2d.game.box2d.bodiesGroup.BGBorders
+import com.veldan.gamebox2d.game.manager.SpriteManager
+import com.veldan.gamebox2d.game.utils.actor.disable
 import com.veldan.gamebox2d.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.gamebox2d.game.utils.advanced.AdvancedStage
 import com.veldan.gamebox2d.game.utils.runGDX
-import com.veldan.gamebox2d.game.utils.vector2
+import com.veldan.gamebox2d.game.utils.toB2
 import com.veldan.gamebox2d.util.log
-import com.veldan.gamebox2d.game.utils.Layout.Game as LG
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
+
 
 class GameScreen: AdvancedBox2dScreen(WorldUtil()) {
 
-    // Actors
-    private val upBtn    = AButton(AButtonStyle.btn)
-    private val downBtn  = AButton(AButtonStyle.btn)
-    private val leftBtn  = AButton(AButtonStyle.btn)
-    private val rightBtn = AButton(AButtonStyle.btn)
+    // Actor
+    private val user = Image(SpriteManager.GameRegion.USER.region)
 
     // Body
+    private val bPlatform = BPlatform(this)
+    private val bCircle   = BCircle(this)
 
     // Joint
     private val jMouse = AbstractJoint<MouseJoint>(this)
 
     // BodyGroup
-    private val bgBorders   = BGBorders(this)
-    private val bgCar       = BGCar(this)
-    private val bgRotate    = BGRotate(this)
-    private val bgPrismatic = BGPrismatic(this)
-    private val bgPulley    = BGPulley(this)
-    private val bgGear      = BGGear(this)
-    private val bgMotor     = BGMotor(this)
-    private val bgFriction  = BGFriction(this)
-    private val bgWeld      = BGWeld(this)
-    private val bgWheel     = BGWheel(this)
-    private val bgRope      = BGRope(this)
+    private val bgBorders = BGBorders(this)
 
+    override fun show() {
+        setBackgrounds(SpriteManager.GameRegion.GRID.region)
+        super.show()
+    }
 
     override fun AdvancedStage.addActorsOnStageUI() {
         createBG_Borders()
-        // createBG_Car()
-        // createBG_Rotate()
-        // createBG_Prismatic()
-        //createBG_Pulley()
-        //createBG_Gear()
-        //createBG_Motor()
-        //createBG_Friction()
-        //createBG_Weld()
-        //createBG_Wheel()
-        createBG_Rope()
+        createB_Platform()
+        createB_Circle()
 
-        addBtns()
+        addUser()
 
-        mainGroup.addListener(getInputListener())
+        mainGroup.addListener(getInputListenerForMouseJoint())
+        mainGroup.addListener(getInputListenerForUser())
     }
 
     override fun dispose() {
         super.dispose()
-        listOf<AbstractBodyGroup>(bgBorders, bgCar)
+        listOf<AbstractBodyGroup>(bgBorders)
     }
 
     // ------------------------------------------------------------------------
     // Add Actors
     // ------------------------------------------------------------------------
 
-    private fun AdvancedStage.addBtns() {
-        runGDX {
-            val listBlock = listOf<() -> Unit>(
-                { bgCar.left() },
-                { bgCar.right() },
-                { bgCar.right() },
-                { bgCar.right() },
-              //  { bOrbG.body?.applyLinearImpulse(Vector2(-20f, 0f), bOrbG.body?.worldCenter, true) },
-              // { bOrbG.body?.applyLinearImpulse(Vector2(0f, 50f),  bOrbG.body?.worldCenter,true) },
-              // { bOrbG.body?.applyLinearImpulse(Vector2(20f, 0f),  bOrbG.body?.worldCenter,true) },
-              // { bOrbG.body?.applyLinearImpulse(Vector2(0f, -50f), bOrbG.body?.worldCenter, true) },
-            )
-
-            val angleList = listOf(90f, 0f, -90f, 180f)
-            listOf(leftBtn, upBtn, rightBtn, downBtn).onEachIndexed { index, btn ->
-                addActor(btn)
-                btn.apply {
-                    setBounds(LG.btns[index])
-                    setOrigin(Align.center)
-                    rotation = angleList[index]
-                    setOnClickListener { listBlock[index].invoke() }
-                }
-            }
+    private fun AdvancedStage.addUser() {
+        addActor(user)
+        user.apply {
+            disable()
+            setSize(85f, 105f)
+            addAction(Actions.alpha(0f))
         }
+
+
+        // TEXT
+
+//        val fontFamily = FontFamily(arrayOf(
+//            Font(FontTTFManager.JosefinRegularFont.font_75.font).setName("JosefinRegularFont_75"),
+//            Font(FontTTFManager.JosefinBoldFont.font_75.font).setName("JosefinBoldFont_75"),
+//            Font(FontTTFManager.RobotoRegularFont.font_75.font).setName("RobotoRegularFont_75"),
+//        ))
+//
+//        val font = Font().apply { setFamily(fontFamily) }
+//
+//        val label = TypingLabel("Hello My name is Veldan", font)
+//
+//        addActor(label)
+//        label.setBounds(36f, 478f, 1327f, 187f)
+//        label.alignment = Align.center
+//        label.wrap = true
+//        label.debug()
+
+
+        // Nine 9.paths
+
+//        val nine = Image(SpriteManager.EnumAtlas.GAME.data.atlas.createPatch("nine"))
+//        addActor(nine)
+//        nine.setBounds(165f, 303f, 67f, 99f)
+
     }
 
     // ------------------------------------------------------------------------
     // Create Body
     // ------------------------------------------------------------------------
 
-    private fun createB_Orb() {
+    private fun createB_Platform() {
+        bPlatform.create(526f, 163f, 348f, 53f)
+    }
 
+    private fun createB_Circle() {
+        bCircle.create(613f, 217f, 173f, 173f)
     }
 
     // ------------------------------------------------------------------------
     // Create Body Group
     // ------------------------------------------------------------------------
-    
+
     private fun createBG_Borders() {
-        bgBorders.create(Vector2(0f, 0f), Size(WIDTH, HEIGHT))
-    }
-
-    private fun createBG_Car() {
-        bgCar.create(Vector2(45f, 55f), Size(386f, 196f))
-    }
-
-    private fun createBG_Rotate() {
-        bgRotate.create(Vector2(1013f, 327f), Size(22f, 118f))
-    }
-
-    private fun createBG_Prismatic() {
-        bgPrismatic.create(Vector2(229f, 36f), Size(242f, 153f))
-    }
-
-    private fun createBG_Pulley() {
-        bgPulley.create(Vector2(325f, 25f), Size(581f, 95f))
-    }
-
-    private fun createBG_Gear() {
-        bgGear.create(Vector2(262f, 78f), Size(772f, 350f))
-    }
-
-    private fun createBG_Motor() {
-        bgMotor.create(Vector2(470f, 133f), Size(192f, 192f))
-    }
-
-    private fun createBG_Friction() {
-        bgFriction.create(Vector2(496f, 232f), Size(120f, 120f))
-    }
-
-    private fun createBG_Weld() {
-        bgWeld.create(Vector2(496f, 232f), Size(259f, 120f))
-    }
-
-    private fun createBG_Wheel() {
-        bgWheel.create(Vector2(416f, 125f), Size(206f, 199f))
-    }
-
-    private fun createBG_Rope() {
-        bgRope.create(Vector2(608f, 208f), Size(43f, 359f))
+        bgBorders.create(Vector2(0f, 0f), Vector2(WIDTH, HEIGHT))
     }
 
     // ---------------------------------------------------
@@ -171,11 +138,11 @@ class GameScreen: AdvancedBox2dScreen(WorldUtil()) {
     // Logic
     // ------------------------------------------------------------------------
 
-    private fun getInputListener() = object : InputListener() {
+    private fun getInputListenerForMouseJoint() = object : InputListener() {
 
         var hitAbstractBody: AbstractBody? = null
         val touchPointInBox = Vector2()
-        val callback   = QueryCallback { fixture ->
+        val callback        = QueryCallback { fixture ->
             if (fixture.testPoint(touchPointInBox)) {
                 hitAbstractBody = fixture.body?.userData as AbstractBody
                 return@QueryCallback false
@@ -184,16 +151,21 @@ class GameScreen: AdvancedBox2dScreen(WorldUtil()) {
         }
 
         override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {
-            touchPointInBox.set(sizeConverterUIToBox.getSize(x, y).vector2)
-            hitAbstractBody = null
-            worldUtil.world.QueryAABB(callback, touchPointInBox.x - 0.01f, touchPointInBox.y - 0.01f, touchPointInBox.x + 0.01f, touchPointInBox.y + 0.01f)
+            touchPointInBox.set(Vector2(x, y).toB2)
+            hitAbstractBody = bCircle
+            worldUtil.world.QueryAABB(callback,
+                touchPointInBox.x - 0.01f,
+                touchPointInBox.y - 0.01f,
+                touchPointInBox.x + 0.01f,
+                touchPointInBox.y + 0.01f)
 
             hitAbstractBody?.let {
                 jMouse.create(MouseJointDef().apply {
                     bodyA = bgBorders.bDown.body
                     bodyB = it.body
-                    target.set(touchPointInBox)
                     collideConnected = true
+
+                    target.set(bodyB.position)
                     maxForce = 1000 * bodyB.mass
                 })
             }
@@ -201,11 +173,33 @@ class GameScreen: AdvancedBox2dScreen(WorldUtil()) {
         }
 
         override fun touchDragged(event: InputEvent?, x: Float, y: Float, pointer: Int) {
-            jMouse.joint?.target = sizeConverterUIToBox.getSize(x, y).vector2
+            jMouse.joint?.target = Vector2(x, y).toB2
         }
 
         override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
             jMouse.startDestroy()
         }
     }
+
+    private fun getInputListenerForUser() = object : InputListener() {
+        override fun touchDown(event: InputEvent?,x: Float,y: Float,pointer: Int,button: Int): Boolean {
+            user.apply {
+                clearActions()
+                addAction(Actions.alpha(1f))
+                this.x = x - 28f
+                this.y = y - 103f
+            }
+            return true
+        }
+        override fun touchDragged(event: InputEvent?, x: Float, y: Float, pointer: Int) {
+            user.apply {
+                this.x = x - 28f
+                this.y = y - 103f
+            }
+        }
+        override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
+            user.addAction(Actions.fadeOut(0.3f))
+        }
+    }
+
 }

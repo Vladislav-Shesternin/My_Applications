@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "712679856378",
+    "project_id": "wild-fun-239e3",
+    "storage_bucket": "wild-fun-239e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712679856378:android:48497467818d10b4139143",
+        "android_client_info": {
+          "package_name": "com.williamsanteractive.jackputpasty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712679856378-p9i5an51789nnbq99cer7e8o20g02p06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0DUXQESZgWqXNIIXgmE1tVGV-FNlVAeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712679856378-p9i5an51789nnbq99cer7e8o20g02p06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

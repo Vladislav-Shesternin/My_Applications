@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "757911300391",
+    "project_id": "quanin-b94dd",
+    "storage_bucket": "quanin-b94dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757911300391:android:e437a1319db80a12e9a102",
+        "android_client_info": {
+          "package_name": "crapto.quantem.ao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757911300391-b4433qadno1760epc6s57k991n16k528.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVDuTuT5UavQdC49yOJy2AYt9xBbPTrBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757911300391-b4433qadno1760epc6s57k991n16k528.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

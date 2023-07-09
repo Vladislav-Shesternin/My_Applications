@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "578034901275",
+    "project_id": "uchimenkoe-financecounter",
+    "storage_bucket": "uchimenkoe-financecounter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578034901275:android:614f5265b88c45fb30f3be",
+        "android_client_info": {
+          "package_name": "com.uchimenkoe.financecounter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578034901275-tm0ftvicqva3jv68vcq4u49vghp4egds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVlueBxs9b0ZZHhlLTB7fYmZvtbbSit-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578034901275-tm0ftvicqva3jv68vcq4u49vghp4egds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82843526332",
+    "project_id": "golovkoe-cryptosafe",
+    "storage_bucket": "golovkoe-cryptosafe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82843526332:android:754865bd69dd4d271b1cb9",
+        "android_client_info": {
+          "package_name": "com.golovkoe.cryptosafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82843526332-iroafpj3dvo54lutq98bapgvp57bv1s6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZclvhguQS2AHmlfgPTcJmFoaLJ2aRLn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82843526332-iroafpj3dvo54lutq98bapgvp57bv1s6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

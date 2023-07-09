@@ -12,11 +12,11 @@ data class AButtonStyle(
 ) {
     
     companion object {
-        val btn get() = AButtonStyle(
-            default = SpriteManager.GameRegion.BTN_DEFF.region,
-            pressed = SpriteManager.GameRegion.BTN_PRESS.region,
-            disabled = SpriteManager.GameRegion.BTN_PRESS.region,
-        )
+//        val btn get() = AButtonStyle(
+//            default = SpriteManager.GameRegion.BTN_DEFF.region,
+//            pressed = SpriteManager.GameRegion.BTN_PRESS.region,
+//            disabled = SpriteManager.GameRegion.BTN_PRESS.region,
+//        )
     }
     
 }

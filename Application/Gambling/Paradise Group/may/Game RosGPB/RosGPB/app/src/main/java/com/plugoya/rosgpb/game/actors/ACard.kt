@@ -26,19 +26,19 @@ class ACard : AdvancedGroup() {
         addActors(idImage, wifiImage, surnameImage, nameImage, numeImage)
 
         idImage.apply {
-            setBounds(48f, 179f, 71f, 71f)
+            setBounds(57f, 294f, 71f, 71f)
         }
         wifiImage.apply {
-            setBounds(57f, 46f, 55f, 55f)
+            setBounds(586f, 200f, 55f, 55f)
         }
         surnameImage.apply {
-            setBounds(535f, 24f, 101f, 44f)
+            setBounds(291f, 192f, 101f, 44f)
         }
         nameImage.apply {
-            setBounds(49f, 334f, 343f, 52f)
+            setBounds(170f, 303f, 343f, 52f)
         }
         numeImage.apply {
-            setBounds(166f, 189f, 517f, 75f)
+            setBounds(83f, 50f, 517f, 75f)
         }
     }
 

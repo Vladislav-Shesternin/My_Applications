@@ -1,0 +1,47 @@
+account.png
+size: 335, 458
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 331, 74
+  orig: 331, 74
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 2, 78
+  size: 331, 74
+  orig: 331, 74
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 2, 154
+  size: 331, 74
+  orig: 331, 74
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 2, 230
+  size: 331, 74
+  orig: 331, 74
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 2, 306
+  size: 331, 74
+  orig: 331, 74
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 2, 382
+  size: 331, 74
+  orig: 331, 74
+  offset: 0, 0
+  index: -1

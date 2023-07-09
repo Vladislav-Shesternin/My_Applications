@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.CryptoInsightsPro" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/purlilka</item>
+        <item name="android:navigationBarColor">@color/purlilka</item>
+    </style>
+
+    <style name="Theme.FinancialGuru" parent="Base.Theme.CryptoInsightsPro" />
+</resources>

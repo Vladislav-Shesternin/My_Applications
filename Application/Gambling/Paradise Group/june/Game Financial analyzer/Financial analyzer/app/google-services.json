@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "538122470354",
+    "project_id": "vitaliyi-financeanalizator",
+    "storage_bucket": "vitaliyi-financeanalizator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538122470354:android:1df876fdcf414297037e0b",
+        "android_client_info": {
+          "package_name": "com.vitaliyi.financeanalizator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538122470354-s141hnmr5f93han0pvc6hhm0ttee2lrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5dNjFyZ3xT1IK1gf2DnOXkgmUPNeykAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538122470354-s141hnmr5f93han0pvc6hhm0ttee2lrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

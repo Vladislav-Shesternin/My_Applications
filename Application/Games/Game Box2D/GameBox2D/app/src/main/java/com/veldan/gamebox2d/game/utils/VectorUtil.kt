@@ -2,5 +2,8 @@ package com.veldan.gamebox2d.game.utils
 
 import com.badlogic.gdx.math.Vector2
 
-fun Vector2.addNew(vector: Vector2) = vector.add(this)
-fun Vector2.addNew(x: Float, y: Float) = Vector2(this.x + x, this.y + y)
+fun Vector2.divOr0(scalar: Float): Vector2 {
+    x = x.divOr0(scalar)
+    y = y.divOr0(scalar)
+    return this
+}

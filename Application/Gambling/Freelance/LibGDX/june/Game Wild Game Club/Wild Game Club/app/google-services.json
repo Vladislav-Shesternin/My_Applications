@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097760010229",
+    "project_id": "wild-c683c",
+    "storage_bucket": "wild-c683c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097760010229:android:0d203915b50ff4fe4bfabc",
+        "android_client_info": {
+          "package_name": "com.bango.weld.androit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097760010229-vqdc95bgfm544efrg3mnakj45qfnupm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAByOkh6wxMxPYsw-fDGK2GWT1l9CJMYxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097760010229-vqdc95bgfm544efrg3mnakj45qfnupm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

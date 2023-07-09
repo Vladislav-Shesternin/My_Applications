@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "880855629863",
+    "project_id": "verd-2345-its",
+    "storage_bucket": "verd-2345-its.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880855629863:android:e1c0c06e08325532d98e02",
+        "android_client_info": {
+          "package_name": "com.vurda.fina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880855629863-j51697csaigfqspfca26gv5937sfg1l5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM3ExBuLK0gR69s8m0zXTljhqCEiDHmHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880855629863-j51697csaigfqspfca26gv5937sfg1l5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

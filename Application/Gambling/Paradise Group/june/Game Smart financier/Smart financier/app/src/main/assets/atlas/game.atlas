@@ -1,0 +1,110 @@
+game.png
+size: 1819, 1332
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+black
+  rotate: false
+  xy: 2, 2
+  size: 588, 25
+  orig: 588, 25
+  offset: 0, 0
+  index: -1
+bluck
+  rotate: false
+  xy: 592, 2
+  size: 588, 25
+  orig: 588, 25
+  offset: 0, 0
+  index: -1
+ckk
+  rotate: false
+  xy: 1773, 2
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+dff
+  rotate: false
+  xy: 2, 38
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+glavna
+  rotate: false
+  xy: 1226, 479
+  size: 591, 851
+  orig: 591, 851
+  offset: 0, 0
+  index: -1
+m1
+  rotate: false
+  xy: 2, 300
+  size: 631, 176
+  orig: 631, 176
+  offset: 0, 0
+  index: -1
+m2
+  rotate: false
+  xy: 635, 300
+  size: 631, 177
+  orig: 631, 177
+  offset: 0, 0
+  index: -1
+m3
+  rotate: false
+  xy: 2, 479
+  size: 631, 177
+  orig: 631, 177
+  offset: 0, 0
+  index: -1
+oll_operatsia
+  rotate: false
+  xy: 635, 479
+  size: 589, 250
+  orig: 589, 250
+  offset: 0, 0
+  index: -1
+otkl
+  rotate: false
+  xy: 629, 38
+  size: 604, 105
+  orig: 604, 105
+  offset: 0, 0
+  index: -1
+progressochko
+  rotate: false
+  xy: 608, 145
+  size: 589, 125
+  orig: 589, 125
+  offset: 0, 0
+  index: -1
+statas
+  rotate: false
+  xy: 38, 38
+  size: 589, 61
+  orig: 589, 61
+  offset: 0, 0
+  index: -1
+statkama
+  rotate: false
+  xy: 1199, 145
+  size: 609, 153
+  orig: 609, 153
+  offset: 0, 0
+  index: -1
+uvimkneno
+  rotate: false
+  xy: 2, 145
+  size: 604, 105
+  orig: 604, 105
+  offset: 0, 0
+  index: -1
+vse_moi_dohodi
+  rotate: false
+  xy: 1182, 2
+  size: 589, 29
+  orig: 589, 29
+  offset: 0, 0
+  index: -1

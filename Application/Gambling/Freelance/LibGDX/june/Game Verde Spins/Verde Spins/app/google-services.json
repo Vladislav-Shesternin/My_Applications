@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1034874897924",
+    "project_id": "verdspn",
+    "storage_bucket": "verdspn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034874897924:android:f104cfa880cda07db7d751",
+        "android_client_info": {
+          "package_name": "com.verdevad.casinavurda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034874897924-vpbbj7d2c5a40mjdohtd2i9olnfq0n0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVSDwZaqjlb2tbOidK2jCXtuSJZ1F-Ldc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034874897924-vpbbj7d2c5a40mjdohtd2i9olnfq0n0s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

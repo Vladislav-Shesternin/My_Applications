@@ -1,0 +1,33 @@
+splaha.png
+size: 844, 783
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+black_out
+  rotate: false
+  xy: 2, 2
+  size: 419, 11
+  orig: 419, 11
+  offset: 0, 0
+  index: -1
+load
+  rotate: false
+  xy: 2, 15
+  size: 420, 84
+  orig: 420, 84
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 2, 101
+  size: 680, 680
+  orig: 680, 680
+  offset: 0, 0
+  index: -1
+porogresska
+  rotate: false
+  xy: 423, 2
+  size: 419, 11
+  orig: 419, 11
+  offset: 0, 0
+  index: -1

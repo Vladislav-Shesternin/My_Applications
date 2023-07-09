@@ -11,8 +11,12 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import aer.com.gamesas.mobile.slot.MainActivity
 import aer.com.gamesas.mobile.slot.databinding.FragmentWebviewBinding
+import android.content.Intent
+import android.net.Uri
+import android.webkit.DownloadListener
+import android.webkit.WebChromeClient
 
-// var webViewFragment: WebViewFragment? = null
+var webViewFragment: WebViewFragment? = null
 
 class WebViewFragment : Fragment() {
 
@@ -23,7 +27,7 @@ class WebViewFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //webViewFragment = this
+        webViewFragment = this
         onBackPressed()
     }
 
@@ -61,13 +65,13 @@ class WebViewFragment : Fragment() {
             isSaveEnabled = true
             isFocusableInTouchMode = true
 
-           // webChromeClient = WebViewChromeClient(this@WebViewFragment)
-           // webViewClient = WebViewClient(requireContext())
+            webChromeClient = WebViewChromeClient(this@WebViewFragment)
+            webViewClient = WebViewClient(requireContext())
 
             CookieManager.getInstance().setAcceptCookie(true)
             CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
 
-           // setDownloadListener(getDownloadListener())
+            setDownloadListener(getDownloadListener())
             MainActivity.lottie.hideLoader()
             loadUrl(MainActivity.webViewURL)
 
@@ -86,23 +90,23 @@ class WebViewFragment : Fragment() {
         super.onPause()
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == WebViewChromeClient.REQUEST_SELECT_FILE) {
-//            if (WebViewChromeClient.uploadMessage == null) return
-//            WebViewChromeClient.uploadMessage!!.onReceiveValue(WebChromeClient.FileChooserParams.parseResult(resultCode, data))
-//            WebViewChromeClient.uploadMessage = null
-//        }
-//    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == WebViewChromeClient.REQUEST_SELECT_FILE) {
+            if (WebViewChromeClient.uploadMessage == null) return
+            WebViewChromeClient.uploadMessage!!.onReceiveValue(WebChromeClient.FileChooserParams.parseResult(resultCode, data))
+            WebViewChromeClient.uploadMessage = null
+        }
+    }
 
 
 
-//    private fun getDownloadListener() = DownloadListener { url, _, _, _, _ ->
-//        val intent = Intent(Intent.ACTION_VIEW)
-//        intent.data = Uri.parse(url)
-//        requireActivity().startActivity(intent)
-//    }
+    private fun getDownloadListener() = DownloadListener { url, _, _, _, _ ->
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        requireActivity().startActivity(intent)
+    }
 
     private fun onBackPressed() {
         requireActivity().onBackPressedDispatcher.addCallback(this) {

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "19266304880",
+    "project_id": "gusarove-digitalexchange",
+    "storage_bucket": "gusarove-digitalexchange.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19266304880:android:81d2a7954504a23a2a6db5",
+        "android_client_info": {
+          "package_name": "com.gusarove.digitalexchange"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19266304880-87io6scvok86gsqhmkh5qj61uc3d93og.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNJp3FNqa0GBZeURmzD9EAq60__ECUxsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19266304880-87io6scvok86gsqhmkh5qj61uc3d93og.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

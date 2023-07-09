@@ -1,0 +1,33 @@
+game.png
+size: 1986, 225
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aaaa
+  rotate: false
+  xy: 2, 2
+  size: 447, 184
+  orig: 447, 184
+  offset: 0, 0
+  index: -1
+bbbb
+  rotate: false
+  xy: 451, 2
+  size: 447, 184
+  orig: 447, 184
+  offset: 0, 0
+  index: -1
+btn_dis
+  rotate: false
+  xy: 900, 2
+  size: 447, 184
+  orig: 447, 184
+  offset: 0, 0
+  index: -1
+WIN
+  rotate: false
+  xy: 1349, 2
+  size: 635, 221
+  orig: 635, 221
+  offset: 0, 0
+  index: -1

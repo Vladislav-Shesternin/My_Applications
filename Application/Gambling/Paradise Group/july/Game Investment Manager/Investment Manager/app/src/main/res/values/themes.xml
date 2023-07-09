@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.InvestmentManager" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/purple</item>
+        <item name="android:navigationBarColor">@color/purple</item>
+    </style>
+
+    <style name="Theme.InvestmentManager" parent="Base.Theme.InvestmentManager" />
+</resources>

@@ -1,0 +1,159 @@
+game.png
+size: 1939, 1978
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chotiry
+  rotate: false
+  xy: 637, 160
+  size: 543, 148
+  orig: 543, 148
+  offset: 0, 0
+  index: -1
+datik
+  rotate: false
+  xy: 2, 2
+  size: 561, 33
+  orig: 561, 33
+  offset: 0, 0
+  index: -1
+deatelnost
+  rotate: false
+  xy: 967, 2
+  size: 561, 39
+  orig: 561, 39
+  offset: 0, 0
+  index: -1
+defolt
+  rotate: false
+  xy: 565, 2
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+detalizacia
+  rotate: false
+  xy: 659, 614
+  size: 563, 519
+  orig: 563, 519
+  offset: 0, 0
+  index: -1
+domik
+  rotate: false
+  xy: 342, 310
+  size: 655, 257
+  orig: 655, 257
+  offset: 0, 0
+  index: -1
+infolt
+  rotate: false
+  xy: 602, 2
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+k1
+  rotate: false
+  xy: 999, 310
+  size: 468, 302
+  orig: 468, 302
+  offset: 0, 0
+  index: -1
+k2
+  rotate: false
+  xy: 1469, 310
+  size: 468, 302
+  orig: 468, 302
+  offset: 0, 0
+  index: -1
+left
+  rotate: false
+  xy: 2, 1226
+  size: 503, 683
+  orig: 503, 683
+  offset: 0, 0
+  index: -1
+lr
+  rotate: false
+  xy: 1164, 1226
+  size: 655, 750
+  orig: 655, 750
+  offset: 0, 0
+  index: -1
+nachat
+  rotate: false
+  xy: 507, 1226
+  size: 655, 715
+  orig: 655, 715
+  offset: 0, 0
+  index: -1
+nastroiki
+  rotate: false
+  xy: 576, 43
+  size: 586, 88
+  orig: 586, 88
+  offset: 0, 0
+  index: -1
+people
+  rotate: false
+  xy: 1224, 614
+  size: 358, 610
+  orig: 358, 610
+  offset: 0, 0
+  index: -1
+privet
+  rotate: false
+  xy: 2, 310
+  size: 338, 189
+  orig: 338, 189
+  offset: 0, 0
+  index: -1
+right
+  rotate: false
+  xy: 2, 614
+  size: 655, 518
+  orig: 655, 518
+  offset: 0, 0
+  index: -1
+see
+  rotate: false
+  xy: 639, 2
+  size: 162, 37
+  orig: 162, 37
+  offset: 0, 0
+  index: -1
+seri
+  rotate: false
+  xy: 1164, 43
+  size: 633, 115
+  orig: 633, 115
+  offset: 0, 0
+  index: -1
+sini
+  rotate: false
+  xy: 2, 160
+  size: 633, 115
+  orig: 633, 115
+  offset: 0, 0
+  index: -1
+svernut
+  rotate: false
+  xy: 803, 2
+  size: 162, 37
+  orig: 162, 37
+  offset: 0, 0
+  index: -1
+uslovia
+  rotate: false
+  xy: 2, 43
+  size: 572, 84
+  orig: 572, 84
+  offset: 0, 0
+  index: -1
+whiti_chotirki
+  rotate: false
+  xy: 1182, 160
+  size: 595, 148
+  orig: 595, 148
+  offset: 0, 0
+  index: -1

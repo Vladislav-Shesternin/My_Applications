@@ -1,0 +1,54 @@
+package com.veldan.base.box2d.game.actors.button
+
+import com.badlogic.gdx.math.Vector2
+import com.badlogic.gdx.scenes.scene2d.ui.Label
+import com.badlogic.gdx.utils.Align
+import com.veldan.base.box2d.game.utils.SizeStandardizer
+import com.veldan.base.box2d.game.utils.actor.disable
+import com.veldan.base.box2d.game.utils.actor.setBounds
+
+class ARegularButton(
+    text: String, labelStyle: Label.LabelStyle
+): AButton(AButtonStyle.regular) {
+
+    private val standardizer = SizeStandardizer()
+    private val label        = Label(text, labelStyle)
+
+    override fun sizeChanged() {
+        super.sizeChanged()
+        if (width > 0 && height > 0) {
+            standardizer.standardize(466f, width)
+            addActorsOnGroup()
+        }
+    }
+
+    private fun addActorsOnGroup() {
+        addLabel()
+    }
+
+    // ------------------------------------------------------------------------
+    // Add Actors
+    // ------------------------------------------------------------------------
+
+    private fun addLabel() {
+        addActor(label)
+        label.apply {
+            standardizer.scope { setBounds(
+                Vector2(0f, 19f).toStandart,
+                Vector2(466f, 150f).toStandart
+            ) }
+            disable()
+            setAlignment(Align.center)
+            wrap = true
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // Logic
+    // ------------------------------------------------------------------------
+
+    fun setText(text: String) {
+        label.setText(text)
+    }
+
+}

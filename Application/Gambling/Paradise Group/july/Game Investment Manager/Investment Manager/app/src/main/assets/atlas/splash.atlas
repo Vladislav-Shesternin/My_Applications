@@ -1,0 +1,33 @@
+splash.png
+size: 666, 591
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+brodaga
+  rotate: false
+  xy: 2, 2
+  size: 266, 266
+  orig: 266, 266
+  offset: 0, 0
+  index: -1
+centerar
+  rotate: false
+  xy: 2, 409
+  size: 561, 116
+  orig: 561, 116
+  offset: 0, 0
+  index: -1
+hand_with_mony
+  rotate: false
+  xy: 270, 2
+  size: 394, 405
+  orig: 394, 405
+  offset: 0, 0
+  index: -1
+header
+  rotate: false
+  xy: 2, 527
+  size: 601, 62
+  orig: 601, 62
+  offset: 0, 0
+  index: -1

@@ -14,6 +14,6 @@ object ALabelStyle {
     }
 
     enum class Roboto(override val font: BitmapFont) : Type {
-        _40(FontTTFManager.RobotoFont.font_40.font),
+        _40(FontTTFManager.RobotoRegularFont.font_75.font),
     }
 }
