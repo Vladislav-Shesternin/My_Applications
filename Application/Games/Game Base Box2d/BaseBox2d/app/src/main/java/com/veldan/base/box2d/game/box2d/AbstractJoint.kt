@@ -21,6 +21,7 @@ class AbstractJoint<T : Joint>(val screenBox2d  : AdvancedBox2dScreen) {
     fun destroy() {
         if (joint != null) {
             cancelCoroutinesAll(coroutine)
+            coroutine = null
 
             with(screenBox2d.worldUtil) {
                 world.destroyJoint(joint)

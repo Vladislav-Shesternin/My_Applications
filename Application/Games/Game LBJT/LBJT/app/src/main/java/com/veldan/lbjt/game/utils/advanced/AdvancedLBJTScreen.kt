@@ -16,7 +16,6 @@ import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.actor.disable
 import com.veldan.lbjt.game.utils.toB2
-import space.earlygrey.shapedrawer.ShapeDrawer
 
 abstract class AdvancedLBJTScreen: AdvancedBox2dScreen(WorldUtil()) {
 
@@ -33,8 +32,8 @@ abstract class AdvancedLBJTScreen: AdvancedBox2dScreen(WorldUtil()) {
     override fun show() {
         super.show()
         stageUI.addLBJTActorsOnStageUI()
-        mainGroup.addListener(getInputListenerForMouseJoint())
-        mainGroup.addListener(getInputListenerForUser())
+        stageUI.root.addListener(getInputListenerForMouseJoint())
+        stageUI.root.addListener(getInputListenerForUser())
     }
 
     private fun AdvancedStage.addLBJTActorsOnStageUI() {

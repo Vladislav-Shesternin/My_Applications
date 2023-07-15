@@ -1,0 +1,75 @@
+kadgat.png
+size: 480, 1256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 236, 249
+  orig: 236, 249
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 240, 2
+  size: 237, 248
+  orig: 237, 248
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 2, 253
+  size: 237, 248
+  orig: 237, 248
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 241, 253
+  size: 237, 248
+  orig: 237, 248
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 2, 503
+  size: 237, 249
+  orig: 237, 249
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 241, 503
+  size: 237, 249
+  orig: 237, 249
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 2, 754
+  size: 237, 249
+  orig: 237, 249
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 241, 754
+  size: 237, 249
+  orig: 237, 249
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 2, 1005
+  size: 237, 249
+  orig: 237, 249
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 241, 1005
+  size: 237, 249
+  orig: 237, 249
+  offset: 0, 0
+  index: -1

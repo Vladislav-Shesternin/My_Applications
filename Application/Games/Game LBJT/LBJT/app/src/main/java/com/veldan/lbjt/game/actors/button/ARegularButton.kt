@@ -14,16 +14,11 @@ class ARegularButton(
 
     private val standardizer = SizeStandardizer()
     private val label        = Label(text, labelStyle)
+    
 
-    override fun sizeChanged() {
-        super.sizeChanged()
-        if (width > 0 && height > 0) {
-            standardizer.standardize(466f, width)
-            addActorsOnGroup()
-        }
-    }
-
-    private fun addActorsOnGroup() {
+    override fun addActorsOnGroup() {
+        super.addActorsOnGroup()
+        standardizer.standardize(466f, width)
         addLabel()
     }
 

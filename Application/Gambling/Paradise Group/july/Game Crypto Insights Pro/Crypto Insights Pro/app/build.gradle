@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace 'crapto.makasinik.cryptoinsightspro'
+    namespace 'com.bezdrodovam.cryptoinsightspro'
     compileSdk 33
 
-    defaultConfig {
-        applicationId "crapto.makasinik.cryptoinsightspro"
+    defaultConfig { 
+        applicationId "com.bezdrodovam.cryptoinsightspro"
         minSdk 24
         targetSdk 33
-        versionCode 5
-        versionName "5.0"
+        versionCode 4
+        versionName "4.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -148,5 +148,5 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'crapto.makasinik.cryptoinsightspro/crapto.makasinik.cryptoinsightspro.MainActivity'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.bezdrodovam.cryptoinsightspro/com.bezdrodovam.cryptoinsightspro.MainActivity'
 }

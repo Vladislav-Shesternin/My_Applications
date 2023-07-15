@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Widget
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
 import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.actor.setFillParent
+import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.cancelCoroutinesAll
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -15,10 +16,18 @@ open class AdvancedGroup: WidgetGroup(), Disposable {
     val coroutine = CoroutineScope(Dispatchers.Default)
     var blockPreDraw: () -> Unit = {}
 
+    private val onceInit  = Once()
+
+
+    open fun addActorsOnGroup() {}
 
     override fun draw(batch: Batch?, parentAlpha: Float) {
         blockPreDraw()
         super.draw(batch, parentAlpha)
+    }
+
+    override fun sizeChanged() {
+        if (width > 0 && height > 0) { onceInit.once { addActorsOnGroup() } }
     }
 
     override fun dispose() {
@@ -26,7 +35,6 @@ open class AdvancedGroup: WidgetGroup(), Disposable {
         remove()
         cancelCoroutinesAll(coroutine)
     }
-
 
     fun addAlignActor(
         actor: Actor,

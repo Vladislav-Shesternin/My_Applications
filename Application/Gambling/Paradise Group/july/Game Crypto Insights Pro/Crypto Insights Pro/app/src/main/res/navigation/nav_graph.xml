@@ -4,12 +4,12 @@
 
     <fragment
         android:id="@+id/libGDXFragment"
-        android:name="crapto.makasinik.cryptoinsightspro.game.LibGDXFragment"
+        android:name="com.bezdrodovam.cryptoinsightspro.game.LibGDXFragment"
         android:label="LibGDXFragment" />
 
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="crapto.makasinik.cryptoinsightspro.webView.WebViewFragment"
+        android:name="com.bezdrodovam.cryptoinsightspro.webView.WebViewFragment"
         android:label="webViewFragment" />
 
 </navigation>

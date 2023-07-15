@@ -25,14 +25,10 @@ open class AButton(
     private var area: Actor? = null
 
 
-
-    override fun sizeChanged() {
-        if (width > 0 && height > 0) {
-            addAndFillActors(getActors())
-            addListener(getListener())
-        }
+    override fun addActorsOnGroup() {
+        addAndFillActors(getActors())
+        addListener(getListener())
     }
-
 
 
     private fun getActors() = listOf<Actor>(

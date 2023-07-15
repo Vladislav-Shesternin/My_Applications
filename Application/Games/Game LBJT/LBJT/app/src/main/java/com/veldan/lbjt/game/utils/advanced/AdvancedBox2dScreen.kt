@@ -2,9 +2,11 @@ package com.veldan.lbjt.game.utils.advanced
 
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.veldan.lbjt.game.box2d.WorldUtil
-import com.veldan.lbjt.game.manager.SpriteManager
-import com.veldan.lbjt.game.utils.*
-import space.earlygrey.shapedrawer.ShapeDrawer
+import com.veldan.lbjt.game.utils.HEIGHT_BOX2D
+import com.veldan.lbjt.game.utils.HEIGHT_UI
+import com.veldan.lbjt.game.utils.WIDTH_BOX2D
+import com.veldan.lbjt.game.utils.WIDTH_UI
+import com.veldan.lbjt.game.utils.disposeAll
 
 abstract class AdvancedBox2dScreen(
     val worldUtil: WorldUtil,

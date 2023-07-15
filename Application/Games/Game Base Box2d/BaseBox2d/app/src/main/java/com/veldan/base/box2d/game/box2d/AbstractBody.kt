@@ -49,6 +49,7 @@ abstract class AbstractBody {
     open fun destroy() {
         if (body != null) {
             cancelCoroutinesAll(coroutine)
+            coroutine = null
             actor?.dispose()
             actor = null
             collisionList.clear()

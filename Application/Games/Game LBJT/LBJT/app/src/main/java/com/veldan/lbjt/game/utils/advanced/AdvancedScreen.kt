@@ -19,7 +19,6 @@ import com.veldan.lbjt.util.cancelCoroutinesAll
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
-
 abstract class AdvancedScreen(
     val WIDTH : Float = WIDTH_UI,
     val HEIGHT: Float = HEIGHT_UI
@@ -39,8 +38,6 @@ abstract class AdvancedScreen(
 
     val coroutine = CoroutineScope(Dispatchers.Default)
 
-    val mainGroup = AdvancedGroup()
-
     val drawerUtil by lazy { ShapeDrawerUtil(stageUI.batch) }
 
 
@@ -49,9 +46,6 @@ abstract class AdvancedScreen(
         stageUI.apply {
             addActor(uiBackgroundImage)
             addActorsOnStageUI()
-
-            addAndFillActor(mainGroup)
-            mainGroup.addActorsOnGroup()
         }
 
         Gdx.input.inputProcessor = inputMultiplexer.apply { addProcessors(this@AdvancedScreen, stageUI) }
@@ -85,8 +79,6 @@ abstract class AdvancedScreen(
     }
 
     open fun AdvancedStage.addActorsOnStageUI() {}
-    open fun AdvancedGroup.addActorsOnGroup() {}
-
 
 
     fun setBackBackground(region: TextureRegion) {

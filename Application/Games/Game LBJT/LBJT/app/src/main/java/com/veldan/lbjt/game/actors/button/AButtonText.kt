@@ -15,7 +15,8 @@ class AButtonText(
         if (width > 0 && height > 0) addActorsOnGroup()
     }
 
-    private fun addActorsOnGroup() {
+    override fun addActorsOnGroup() {
+        super.addActorsOnGroup()
         addLabel()
     }
 

@@ -43,14 +43,7 @@ class SpinningLabel(
     private val timeRollNext = timeRoll + ((timeRoll / 100) * LABEL_SPACE_PERCENT)
 
 
-
-    override fun sizeChanged() {
-        if (width > 0 && height > 0) addActorsOnGroup()
-    }
-
-
-
-    private fun addActorsOnGroup() {
+    override fun addActorsOnGroup() {
         addMask()
         addCurrentLabel()
     }

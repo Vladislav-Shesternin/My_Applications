@@ -60,7 +60,7 @@ class WorldUtil: Disposable {
     }
 
     fun debug(matrix4: Matrix4) {
-        debugRenderer.render(world, matrix4)
+      //  debugRenderer.render(world, matrix4)
     }
 
 }

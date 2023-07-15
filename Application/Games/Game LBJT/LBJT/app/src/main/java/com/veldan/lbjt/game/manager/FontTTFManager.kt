@@ -63,7 +63,7 @@ object FontTTFManager {
             val font_25  = FontTTFData("Inter_ExtraBold_25" , getLoaderParameter(pathInter_ExtraBold) { size = 25  })
 
             override val values: List<FontTTFData>
-                get() = super.values + listOf(font_100, font_50)
+                get() = super.values + listOf(font_100, font_50, font_40, font_30, font_25)
         }
     }
 

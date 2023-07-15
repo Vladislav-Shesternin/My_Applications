@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
                     if (isDevMode(this@MainActivity) && isUSB(this@MainActivity)) startFragmentIdFlow.emit(R.id.libGDXFragment)
                     else try {
                         Firebase.remoteConfig.apply {
-                            setConfigSettingsAsync(remoteConfigSettings { minimumFetchIntervalInSeconds = 0 })
+                            setConfigSettingsAsync(remoteConfigSettings { minimumFetchIntervalInSeconds = 3600 })
                             fetchAndActivate().addOnCompleteListener(this@MainActivity) { task ->
                                 if (task.isSuccessful) {
                                     val jsonStr = getString("Caffe")

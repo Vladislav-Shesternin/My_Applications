@@ -12,8 +12,8 @@ import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.TIME_ANIM_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.setBounds
-import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
+import com.veldan.lbjt.game.utils.advanced.AdvancedStage
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.util.log
 import kotlinx.coroutines.delay
@@ -45,8 +45,7 @@ class SplashScreen : AdvancedScreen() {
         isFinish()
     }
 
-
-    override fun AdvancedGroup.addActorsOnGroup() {
+    override fun AdvancedStage.addActorsOnStageUI() {
         addProgress()
         isFinishAnim = true
     }
@@ -56,7 +55,7 @@ class SplashScreen : AdvancedScreen() {
     // Add Actors
     // ------------------------------------------------------------------------
 
-    private fun AdvancedGroup.addProgress() {
+    private fun AdvancedStage.addProgress() {
         addActor(progressLabel)
         progressLabel.apply {
             setBounds(LS.progress)
@@ -128,7 +127,7 @@ class SplashScreen : AdvancedScreen() {
         if (isFinishProgress && isFinishAnim) {
             isFinishAnim = false
 
-            mainGroup.animHide(TIME_ANIM_ALPHA) {
+            stageUI.root.animHide(TIME_ANIM_ALPHA) {
                 MainActivity.lottie.hideLoader()
                 NavigationManager.navigate(MenuScreen())
             }

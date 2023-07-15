@@ -24,4 +24,6 @@ class BRegularBtn(
         friction    = 0.3f
     }
     override var actor: AdvancedGroup? = ARegularButton(text, style)
+
+    fun getActor(): ARegularButton? = actor as? ARegularButton
 }

@@ -1,0 +1,75 @@
+game.png
+size: 802, 1922
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cini
+  rotate: false
+  xy: 2, 736
+  size: 695, 120
+  orig: 695, 120
+  offset: 0, 0
+  index: -1
+data_i_torgovla
+  rotate: false
+  xy: 2, 190
+  size: 606, 356
+  orig: 606, 356
+  offset: 0, 0
+  index: -1
+golovna
+  rotate: false
+  xy: 2, 858
+  size: 695, 120
+  orig: 695, 120
+  offset: 0, 0
+  index: -1
+moyo_balla
+  rotate: false
+  xy: 60, 2
+  size: 151, 38
+  orig: 151, 38
+  offset: 0, 0
+  index: -1
+portfolio
+  rotate: false
+  xy: 2, 980
+  size: 695, 120
+  orig: 695, 120
+  offset: 0, 0
+  index: -1
+rinok_kala_podorojal
+  rotate: false
+  xy: 2, 548
+  size: 621, 186
+  orig: 621, 186
+  offset: 0, 0
+  index: -1
+ugu
+  rotate: false
+  xy: 2, 2
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+viberi_aktiv_dla_pokupki
+  rotate: false
+  xy: 2, 1102
+  size: 695, 104
+  orig: 695, 104
+  offset: 0, 0
+  index: -1
+y_vas_net_tranza
+  rotate: false
+  xy: 2, 1208
+  size: 695, 712
+  orig: 695, 712
+  offset: 0, 0
+  index: -1
+zvezda_i_back
+  rotate: false
+  xy: 213, 2
+  size: 587, 186
+  orig: 587, 186
+  offset: 0, 0
+  index: -1
