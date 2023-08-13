@@ -1,0 +1,113 @@
+package com.zeuse.zeusjackpotjamboree.game.utils.advanced
+
+import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.Input
+import com.badlogic.gdx.InputMultiplexer
+import com.badlogic.gdx.ScreenAdapter
+import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.badlogic.gdx.utils.viewport.FillViewport
+import com.badlogic.gdx.utils.viewport.FitViewport
+import com.zeuse.zeusjackpotjamboree.game.LibGDXGame
+import com.zeuse.zeusjackpotjamboree.game.utils.HEIGHT_UI
+import com.zeuse.zeusjackpotjamboree.game.utils.LanguageUtil
+import com.zeuse.zeusjackpotjamboree.game.utils.ShapeDrawerUtil
+import com.zeuse.zeusjackpotjamboree.game.utils.TIME_ANIM_ALPHA
+import com.zeuse.zeusjackpotjamboree.game.utils.WIDTH_UI
+import com.zeuse.zeusjackpotjamboree.game.utils.actor.animHide
+import com.zeuse.zeusjackpotjamboree.game.utils.addProcessors
+import com.zeuse.zeusjackpotjamboree.game.utils.disposeAll
+import com.zeuse.zeusjackpotjamboree.game.utils.runGDX
+import com.zeuse.zeusjackpotjamboree.util.cancelCoroutinesAll
+import com.zeuse.zeusjackpotjamboree.util.log
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+
+abstract class AdvancedScreen(
+    val WIDTH : Float = WIDTH_UI,
+    val HEIGHT: Float = HEIGHT_UI
+) : ScreenAdapter(), AdvancedInputProcessor {
+
+    abstract val game: LibGDXGame
+    val name: String = javaClass.name
+
+    private val viewportBack by lazy { FillViewport(Gdx.graphics.width.toFloat(), Gdx.graphics.height.toFloat()) }
+    private val stageBack    by lazy { AdvancedStage(viewportBack) }
+
+    val viewportUI by lazy { FitViewport(WIDTH, HEIGHT) }
+    val stageUI    by lazy { AdvancedStage(viewportUI) }
+
+    val inputMultiplexer    = InputMultiplexer()
+    val backBackgroundImage = Image()
+    val uiBackgroundImage   = Image()
+
+    var coroutine: CoroutineScope? = CoroutineScope(Dispatchers.Default)
+        private set
+
+    val drawerUtil   by lazy { ShapeDrawerUtil(stageUI.batch) }
+    val languageUtil by lazy { LanguageUtil(game.activity) }
+
+
+    override fun show() {
+        game.activity.webViewFragment.backBlock = { runGDX { stageUI.root.animHide(0.7f) { game.navigationManager.back() }}}
+
+        stageBack.addActor(backBackgroundImage)
+        stageUI.addActor(uiBackgroundImage)
+
+        stageUI.addActorsOnStageUI()
+
+        Gdx.input.inputProcessor = inputMultiplexer.apply { addProcessors(this@AdvancedScreen, stageUI) }
+        //Gdx.input.setCatchKey(Input.Keys.BACK, true)
+    }
+
+    override fun resize(width: Int, height: Int) {
+        viewportBack.update(width, height, true)
+        viewportUI.update(width, height, true)
+    }
+
+    override fun render(delta: Float) {
+        stageBack.render()
+        stageUI.render()
+        drawerUtil.update()
+    }
+
+    override fun dispose() {
+        log("dispose AdvancedScreen")
+        cancelCoroutinesAll(coroutine)
+        coroutine = null
+        disposeAll(stageBack, stageUI, drawerUtil)
+        inputMultiplexer.clear()
+    }
+
+//    override fun keyDown(keycode: Int): Boolean {
+//        if (keycode == Input.Keys.BACK) {
+//            if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
+//            else stageUI.root.animHide(TIME_ANIM_ALPHA) { game.navigationManager.back() }
+//        }
+//        return super.keyDown(keycode)
+//    }
+
+    open fun AdvancedStage.addActorsOnStageUI() {}
+
+
+    fun setBackBackground(region: TextureRegion) {
+        backBackgroundImage.apply {
+            drawable = TextureRegionDrawable(region)
+            setSize(viewportBack.worldWidth, viewportBack.worldHeight)
+        }
+    }
+
+    fun setUIBackground(texture: TextureRegion) {
+        uiBackgroundImage.apply {
+            drawable = TextureRegionDrawable(texture)
+            setSize(WIDTH, HEIGHT)
+        }
+    }
+
+    fun setBackgrounds(backRegion: TextureRegion, uiRegion: TextureRegion = backRegion) {
+        setBackBackground(backRegion)
+        setUIBackground(uiRegion)
+    }
+
+}

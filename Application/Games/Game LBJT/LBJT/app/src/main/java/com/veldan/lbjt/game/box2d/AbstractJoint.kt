@@ -3,14 +3,15 @@ package com.veldan.lbjt.game.box2d
 import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
-import com.veldan.lbjt.util.Once
+import com.veldan.lbjt.game.utils.onEachAndRemove
+import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.util.cancelCoroutinesAll
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
-class AbstractJoint<T : Joint>(val screenBox2d  : AdvancedBox2dScreen) {
+class AbstractJoint<T : Joint, TD : JointDef>(
+    val screenBox2d  : AdvancedBox2dScreen
+): Destroyable {
 
     var coroutine: CoroutineScope? = null
         private set
@@ -18,29 +19,56 @@ class AbstractJoint<T : Joint>(val screenBox2d  : AdvancedBox2dScreen) {
     var joint: T? = null
         private set
 
+    var jointDef: TD? = null
+        private set
 
-    fun destroy() {
+    private val createdBlockList   = mutableListOf<(AbstractJoint<T, TD>) -> Unit>()
+    private val destroyedBlockList = mutableListOf<() -> Unit>()
+
+    var createdBlock: (AbstractJoint<T, TD>) -> Unit = {}
+        set(value) {
+            createdBlockList.add(value)
+        }
+    var destroyedBlock: () -> Unit = {}
+        set(value) {
+            destroyedBlockList.add(value)
+        }
+
+
+    override fun dispose(isDestroy: Boolean, block: () -> Unit) {
         if (joint != null) {
             cancelCoroutinesAll(coroutine)
             coroutine = null
 
-            with(screenBox2d.worldUtil) {
-                world.destroyJoint(joint)
-                joint = null
+            if (isDestroy) {
+                screenBox2d.worldUtil.world.destroyJoint(joint)
+                destroyedBlockList.onEach { it.invoke() }.clear()
             }
+            joint = null
+
+            block()
         }
     }
 
-    fun create(jointDef: JointDef) {
-        joint = screenBox2d.worldUtil.world.createJoint(jointDef).apply { userData = this@AbstractJoint } as T
-        coroutine = CoroutineScope(Dispatchers.Default)
+    fun createInWorld() {
+        if (joint == null) {
+            joint = screenBox2d.worldUtil.world.createJoint(jointDef).apply { userData = this@AbstractJoint } as T
+            coroutine = CoroutineScope(Dispatchers.Default)
+
+            createdBlockList.onEach { it.invoke(this) }.clear()
+        }
     }
 
-    fun startDestroy(time: Long = 0) {
-        coroutine?.launch {
-            delay(time)
-            screenBox2d.worldUtil.destroyJointList.add(this@AbstractJoint)
-        }
+    fun requestToCreate(jointDef: TD, block: () -> Unit = {}) {
+        createdBlock = { block() }
+
+        this.jointDef = jointDef
+        screenBox2d.worldUtil.createJointList.add(this@AbstractJoint)
+    }
+
+    override fun requestToDestroy(block: () -> Unit) {
+        destroyedBlock = { block() }
+        screenBox2d.worldUtil.destroyJointList.add(this@AbstractJoint)
     }
 
 

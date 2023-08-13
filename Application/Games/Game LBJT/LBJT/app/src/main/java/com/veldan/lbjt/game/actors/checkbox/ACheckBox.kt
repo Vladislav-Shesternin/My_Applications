@@ -1,5 +1,6 @@
 package com.veldan.lbjt.game.actors.checkbox
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
@@ -7,43 +8,44 @@ import com.badlogic.gdx.scenes.scene2d.Touchable
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
+import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-class ACheckBox(
-    style: ACheckBoxStyle? = null,
+open class ACheckBox(
+    override val screen: AdvancedScreen,
+    type: Type? = null,
 ) : AdvancedGroup() {
 
-    private val defaultImage = if (style != null)  Image(style.default) else Image()
-    private val checkImage   = (if (style != null) Image(style.checked) else Image()).apply { isVisible = false }
+    private val defaultImage by lazy {  if (type != null) Image(getStyleByType(type).default) else Image() }
+    private val checkImage   by lazy { (if (type != null) Image(getStyleByType(type).checked) else Image()).apply { isVisible = false } }
 
     private var onCheckBlock: (Boolean) -> Unit = { }
 
+    private var isInvokeCheckBlock: Boolean = true
     var checkBoxGroup: ACheckBoxGroup? = null
 
     val checkFlow = MutableStateFlow(false)
 
+    private val themeUtil by lazy { screen.game.themeUtil }
 
 
-    init {
+    override fun addActorsOnGroup() {
         addAndFillActors(getActors())
         addListener(getListener())
-
-        collectCheckFlow()
+        asyncCollectCheckFlow()
     }
-
-
 
     private fun getActors() = listOf<Actor>(
         defaultImage,
         checkImage,
     )
 
-    private fun collectCheckFlow() {
-        coroutine.launch { checkFlow.collect { isCheck -> onCheckBlock(isCheck) } }
+    private fun asyncCollectCheckFlow() {
+        coroutine?.launch { checkFlow.collect { isCheck -> if (isInvokeCheckBlock) onCheckBlock(isCheck) } }
     }
 
-    private fun getListener() = object : InputListener() {
+    open fun getListener() = object : InputListener() {
         var isWithin = false
 
         override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {
@@ -68,7 +70,9 @@ class ACheckBox(
 
 
 
-    fun check() {
+    fun check(isInvokeCheckBlock: Boolean = true) {
+        this.isInvokeCheckBlock = isInvokeCheckBlock
+
         checkBoxGroup?.let {
             it.currentCheckedCheckBox?.uncheck()
             it.currentCheckedCheckBox = this
@@ -80,8 +84,8 @@ class ACheckBox(
         checkFlow.value = true
     }
 
-    fun uncheck() {
-        checkBoxGroup?.let { it.currentCheckedCheckBox == null }
+    fun uncheck(isInvokeCheckBlock: Boolean = true) {
+        this.isInvokeCheckBlock = isInvokeCheckBlock
 
         defaultImage.isVisible = true
         checkImage.isVisible   = false
@@ -114,6 +118,26 @@ class ACheckBox(
 
     fun setOnCheckListener(block: (Boolean) -> Unit) {
         onCheckBlock = block
+    }
+
+    fun getStyleByType(type: Type) = when(type) {
+        Type.YAN_YIN -> ACheckBoxStyle(
+            default = themeUtil.trc.YAN,
+            checked = themeUtil.trc.YIN,
+        )
+    }
+
+    // ---------------------------------------------------
+    // Style
+    // ---------------------------------------------------
+
+    data class ACheckBoxStyle(
+        val default: TextureRegion,
+        val checked: TextureRegion,
+    )
+
+    enum class Type {
+        YAN_YIN,
     }
 
 }

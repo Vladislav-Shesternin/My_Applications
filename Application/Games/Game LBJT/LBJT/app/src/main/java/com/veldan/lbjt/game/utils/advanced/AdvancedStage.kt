@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
 import com.badlogic.gdx.utils.Disposable
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.veldan.lbjt.game.utils.actor.setFillParent
+import com.veldan.lbjt.util.log
 
 open class AdvancedStage(viewport: Viewport) : Stage(viewport) {
 

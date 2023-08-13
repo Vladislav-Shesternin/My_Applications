@@ -1,0 +1,152 @@
+flowers.png
+size: 2045, 856
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0
+  rotate: false
+  xy: 2, 2
+  size: 474, 175
+  orig: 474, 175
+  offset: 0, 0
+  index: -1
+1
+  rotate: false
+  xy: 478, 2
+  size: 474, 175
+  orig: 474, 175
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 954, 2
+  size: 474, 176
+  orig: 474, 176
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1430, 2
+  size: 474, 175
+  orig: 474, 175
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 2, 180
+  size: 474, 175
+  orig: 474, 175
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 478, 180
+  size: 474, 175
+  orig: 474, 175
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 954, 180
+  size: 474, 175
+  orig: 474, 175
+  offset: 0, 0
+  index: -1
+chk1
+  rotate: false
+  xy: 1430, 180
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+chk2
+  rotate: false
+  xy: 2, 357
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+chk3
+  rotate: false
+  xy: 617, 357
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+chk4
+  rotate: false
+  xy: 1232, 357
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+chk5
+  rotate: false
+  xy: 2, 457
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+chk6
+  rotate: false
+  xy: 617, 457
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+chk7
+  rotate: false
+  xy: 1232, 457
+  size: 613, 97
+  orig: 613, 97
+  offset: 0, 0
+  index: -1
+def1
+  rotate: false
+  xy: 2, 557
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+def2
+  rotate: false
+  xy: 617, 557
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+def3
+  rotate: false
+  xy: 1232, 557
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+def4
+  rotate: false
+  xy: 2, 657
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+def5
+  rotate: false
+  xy: 617, 657
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+def6
+  rotate: false
+  xy: 1232, 657
+  size: 613, 98
+  orig: 613, 98
+  offset: 0, 0
+  index: -1
+def7
+  rotate: false
+  xy: 2, 757
+  size: 613, 97
+  orig: 613, 97
+  offset: 0, 0
+  index: -1

@@ -6,9 +6,11 @@ import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.math.Vector2
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
+import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.zeroScreenVector
 
 class InvertedMask(
+    override val screen: AdvancedScreen,
     private val region: TextureRegion,
 ) : AdvancedGroup() {
 
@@ -21,6 +23,7 @@ class InvertedMask(
     private var mH: Float = 0f
 
 
+    override fun addActorsOnGroup() {}
 
     override fun draw(batch: Batch?, parentAlpha: Float) {
         if (stage != null) {

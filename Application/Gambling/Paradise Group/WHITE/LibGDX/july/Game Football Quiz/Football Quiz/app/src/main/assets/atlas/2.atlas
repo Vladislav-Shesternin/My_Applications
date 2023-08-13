@@ -1,0 +1,12 @@
+2.png
+size: 1922, 1177
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background
+  rotate: false
+  xy: 1, 1
+  size: 1920, 1175
+  orig: 1920, 1175
+  offset: 0, 0
+  index: -1

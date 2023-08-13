@@ -1,0 +1,40 @@
+game.png
+size: 1023, 963
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a_eto_u_nas_menu
+  rotate: false
+  xy: 2, 2
+  size: 705, 220
+  orig: 705, 220
+  offset: 0, 0
+  index: -1
+lord_gabriil
+  rotate: false
+  xy: 709, 2
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1
+monako
+  rotate: false
+  xy: 768, 2
+  size: 253, 347
+  orig: 253, 347
+  offset: 0, 0
+  index: -1
+sho_skazav_allo
+  rotate: false
+  xy: 2, 351
+  size: 643, 610
+  orig: 643, 610
+  offset: 0, 0
+  index: -1
+suntafe
+  rotate: false
+  xy: 647, 351
+  size: 253, 347
+  orig: 253, 347
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,2 @@
+-keep class com.appsflyer.** { *; }
+-dontwarn javax.annotation.Nullable

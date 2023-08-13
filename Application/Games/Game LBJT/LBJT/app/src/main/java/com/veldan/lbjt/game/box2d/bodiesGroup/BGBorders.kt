@@ -6,6 +6,7 @@ import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.bodies.BHorizontal
 import com.veldan.lbjt.game.box2d.bodies.BVertical
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
+import com.veldan.lbjt.game.utils.runGDX
 
 class BGBorders(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGroup() {
 
@@ -16,20 +17,32 @@ class BGBorders(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGro
     val bLeft  = BVertical(screenBox2d)
     val bRight = BVertical(screenBox2d)
 
+    override fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit) {
+        super.requestToCreate(position, size, block)
 
-    override fun create(position: Vector2, size: Vector2) {
-        super.create(position, size)
-
-        arrayOf(bTop, bDown, bLeft, bRight).onEach { it.apply {
-            id = BodyId.Menu.STATIC
-            collisionList.add(BodyId.Menu.BUTTON)
-        } }
+        initB_Borders()
 
         createHorizontal()
         createVertical()
+
+        finishCreate(block)
     }
 
 
+    // ---------------------------------------------------
+    // Init
+    // ---------------------------------------------------
+
+    private fun initB_Borders() {
+        arrayOf(bTop, bDown, bLeft, bRight).onEach { it.apply {
+            id = BodyId.BORDERS
+            collisionList.addAll(arrayOf(
+                BodyId.Menu.BUTTON,
+                BodyId.Settings.VOLUME,
+                BodyId.Settings.LANGUAGE,
+            ))
+        } }
+    }
 
     // ---------------------------------------------------
     // Create Body

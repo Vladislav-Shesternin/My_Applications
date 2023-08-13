@@ -1,0 +1,47 @@
+1.png
+size: 1922, 896
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ans_def
+  rotate: false
+  xy: 1, 1
+  size: 1920, 90
+  orig: 1920, 90
+  offset: 0, 0
+  index: -1
+ans_false
+  rotate: false
+  xy: 1, 92
+  size: 1920, 90
+  orig: 1920, 90
+  offset: 0, 0
+  index: -1
+ans_true
+  rotate: false
+  xy: 1, 183
+  size: 1920, 90
+  orig: 1920, 90
+  offset: 0, 0
+  index: -1
+check
+  rotate: false
+  xy: 1, 274
+  size: 260, 64
+  orig: 260, 64
+  offset: 0, 0
+  index: -1
+def
+  rotate: false
+  xy: 262, 274
+  size: 260, 64
+  orig: 260, 64
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 1, 339
+  size: 1744, 556
+  orig: 1744, 556
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.FootballQuiz" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/geen</item>
+        <item name="android:navigationBarColor">@color/geen</item>
+    </style>
+
+    <style name="Theme.FootballQuiz" parent="Base.Theme.FootballQuiz" />
+</resources>

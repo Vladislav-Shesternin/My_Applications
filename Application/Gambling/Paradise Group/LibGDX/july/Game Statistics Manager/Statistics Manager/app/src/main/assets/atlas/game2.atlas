@@ -1,0 +1,19 @@
+game2.png
+size: 729, 2042
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+deatelnostik
+  rotate: false
+  xy: 2, 2
+  size: 721, 966
+  orig: 721, 966
+  offset: 0, 0
+  index: -1
+privetvladimirka
+  rotate: false
+  xy: 2, 970
+  size: 725, 1070
+  orig: 725, 1070
+  offset: 0, 0
+  index: -1

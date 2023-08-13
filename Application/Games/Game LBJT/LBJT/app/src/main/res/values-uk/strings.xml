@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="music">Музика</string>
+    <string name="quiet">Тихiше</string>
+    <string name="louder">Гучнiше</string>
+    <string name="sound">Звук</string>
+    <string name="tutorials">Уроки</string>
+    <string name="settings">Налаштування</string>
+    <string name="about_author">Про Автора</string>
+    <string name="comments">Коментарi</string>
+    <string name="language">Мова</string>
+    <string name="english">Англiйська</string>
+    <string name="ukrainian">Соловїна</string>
+</resources>

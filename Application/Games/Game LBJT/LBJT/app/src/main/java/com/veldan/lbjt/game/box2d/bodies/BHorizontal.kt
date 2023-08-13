@@ -12,4 +12,5 @@ class BHorizontal(override val screenBox2d: AdvancedBox2dScreen): AbstractBody()
         type = BodyDef.BodyType.StaticBody
     }
     override val fixtureDef = FixtureDef()
+
 }

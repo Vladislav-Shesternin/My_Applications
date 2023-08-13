@@ -9,8 +9,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
+import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
-class AImage: AdvancedGroup {
+class AImage constructor(override val screen: AdvancedScreen): AdvancedGroup() {
 
     private val image = Image()
 
@@ -21,25 +22,21 @@ class AImage: AdvancedGroup {
             field = value
         }
 
-
-    constructor()
-    constructor(region: TextureRegion) {
+    constructor(screen: AdvancedScreen, region: TextureRegion) : this(screen) {
         image.drawable = TextureRegionDrawable(region)
     }
-    constructor(texture: Texture) {
+    constructor(screen: AdvancedScreen, texture: Texture) : this(screen) {
         image.drawable = TextureRegionDrawable(texture)
     }
-    constructor(drawable: Drawable) {
+    constructor(screen: AdvancedScreen, drawable: Drawable) : this(screen) {
         image.drawable = drawable
     }
-    constructor(ninePatch: NinePatch) {
+    constructor(screen: AdvancedScreen, ninePatch: NinePatch) : this(screen) {
         image.drawable = NinePatchDrawable(ninePatch)
     }
 
-    init { addActor(image) }
-
-    override fun sizeChanged() {
-        if (width > 0 && height > 0) image.setBounds(0f,0f,width, height)
+    override fun addActorsOnGroup() {
+        addAndFillActor(image)
     }
 
 }

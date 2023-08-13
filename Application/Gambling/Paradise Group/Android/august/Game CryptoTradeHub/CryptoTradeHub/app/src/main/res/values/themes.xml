@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.CryptoTradeHub" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="Theme.CryptoTradeHub" parent="Base.Theme.CryptoTradeHub" />
+</resources>

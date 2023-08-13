@@ -1,0 +1,131 @@
+game.png
+size: 883, 1932
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+all
+  rotate: false
+  xy: 169, 2
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+chasiki
+  rotate: false
+  xy: 2, 1725
+  size: 792, 49
+  orig: 792, 49
+  offset: 0, 0
+  index: -1
+cheker
+  rotate: false
+  xy: 2, 2
+  size: 65, 65
+  orig: 65, 65
+  offset: 0, 0
+  index: -1
+dva_palca
+  rotate: false
+  xy: 2, 1034
+  size: 757, 689
+  orig: 757, 689
+  offset: 0, 0
+  index: -1
+hot
+  rotate: false
+  xy: 69, 2
+  size: 98, 49
+  orig: 98, 49
+  offset: 0, 0
+  index: -1
+manug
+  rotate: false
+  xy: 2, 1776
+  size: 879, 154
+  orig: 879, 154
+  offset: 0, 0
+  index: -1
+od
+  rotate: false
+  xy: 275, 2
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+oh
+  rotate: false
+  xy: 381, 2
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+om
+  rotate: false
+  xy: 487, 2
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+ow
+  rotate: false
+  xy: 593, 2
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+oy
+  rotate: false
+  xy: 699, 2
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+p24hour
+  rotate: false
+  xy: 2, 73
+  size: 149, 49
+  orig: 149, 49
+  offset: 0, 0
+  index: -1
+palankaga
+  rotate: false
+  xy: 2, 458
+  size: 748, 574
+  orig: 748, 574
+  offset: 0, 0
+  index: -1
+peredacha
+  rotate: false
+  xy: 2, 124
+  size: 742, 218
+  orig: 742, 218
+  offset: 0, 0
+  index: -1
+podim
+  rotate: false
+  xy: 305, 73
+  size: 156, 49
+  orig: 156, 49
+  offset: 0, 0
+  index: -1
+poteri
+  rotate: false
+  xy: 153, 73
+  size: 150, 49
+  orig: 150, 49
+  offset: 0, 0
+  index: -1
+pribil
+  rotate: false
+  xy: 463, 73
+  size: 175, 49
+  orig: 175, 49
+  offset: 0, 0
+  index: -1
+prodoz
+  rotate: false
+  xy: 2, 344
+  size: 742, 112
+  orig: 742, 112
+  offset: 0, 0
+  index: -1

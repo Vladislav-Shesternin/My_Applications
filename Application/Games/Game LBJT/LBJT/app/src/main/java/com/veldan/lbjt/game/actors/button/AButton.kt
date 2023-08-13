@@ -1,20 +1,24 @@
 package com.veldan.lbjt.game.actors.button
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.Touchable
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.veldan.lbjt.game.utils.ThemeUtil
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
+import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 open class AButton(
-    style: AButtonStyle? = null
+    override val screen: AdvancedScreen,
+    type: Type? = null
 ) : AdvancedGroup() {
 
-    private val defaultImage  =  if (style != null) Image(style.default)  else Image()
-    private val pressedImage  = (if (style != null) Image(style.pressed)  else Image()).apply { isVisible = false }
-    private val disabledImage = (if (style != null) Image(style.disabled) else Image()).apply { isVisible = false }
+    private val defaultImage  by lazy {  if (type != null) Image(getStyleByType(type).default)  else Image() }
+    private val pressedImage  by lazy { (if (type != null) Image(getStyleByType(type).pressed)  else Image()).apply { isVisible = false } }
+    private val disabledImage by lazy { (if (type != null) Image(getStyleByType(type).disabled) else Image()).apply { isVisible = false } }
 
     private var onClickBlock    : () -> Unit = { }
 
@@ -23,6 +27,8 @@ open class AButton(
     var touchUpBlock     : AButton.(x: Float, y: Float) -> Unit = { x, y -> }
 
     private var area: Actor? = null
+
+    private val themeUtil by lazy { screen.game.themeUtil }
 
 
     override fun addActorsOnGroup() {
@@ -125,6 +131,28 @@ open class AButton(
     fun addArea(actor: Actor) {
         area = actor
         actor.addListener(getListener())
+    }
+
+    private fun getStyleByType(type: Type) = when(type) {
+        Type.REGULAR -> AButtonStyle(
+            default  = themeUtil.trc.REGULAR_BTN_DEF,
+            pressed  = themeUtil.trc.REGULAR_BTN_PRESS,
+            disabled = themeUtil.trc.REGULAR_BTN_PRESS,
+        )
+    }
+
+    // ---------------------------------------------------
+    // Style
+    // ---------------------------------------------------
+
+    data class AButtonStyle(
+        val default : TextureRegion,
+        val pressed : TextureRegion,
+        val disabled: TextureRegion? = null,
+    )
+
+    enum class Type {
+        REGULAR
     }
 
 }

@@ -5,28 +5,35 @@ import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Widget
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
 import com.badlogic.gdx.utils.Disposable
+import com.veldan.lbjt.game.utils.SizeStandardizer
 import com.veldan.lbjt.game.utils.actor.setFillParent
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.cancelCoroutinesAll
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
-open class AdvancedGroup: WidgetGroup(), Disposable {
+abstract class AdvancedGroup: WidgetGroup(), Disposable {
+    abstract val screen: AdvancedScreen
 
-    val coroutine = CoroutineScope(Dispatchers.Default)
-    var blockPreDraw: () -> Unit = {}
+    open var standartW: Float = 1f
+
+    var coroutine   : CoroutineScope? = CoroutineScope(Dispatchers.Default)
+        private set
+    var blockPreDraw: (Float) -> Unit = {}
+    val standardizer = SizeStandardizer()
 
     private val onceInit  = Once()
 
 
-    open fun addActorsOnGroup() {}
+    abstract fun addActorsOnGroup()
 
     override fun draw(batch: Batch?, parentAlpha: Float) {
-        blockPreDraw()
+        blockPreDraw(parentAlpha)
         super.draw(batch, parentAlpha)
     }
 
     override fun sizeChanged() {
+        standardizer.standardize(standartW, width)
         if (width > 0 && height > 0) { onceInit.once { addActorsOnGroup() } }
     }
 
@@ -34,6 +41,7 @@ open class AdvancedGroup: WidgetGroup(), Disposable {
         clear()
         remove()
         cancelCoroutinesAll(coroutine)
+        coroutine = null
     }
 
     fun addAlignActor(

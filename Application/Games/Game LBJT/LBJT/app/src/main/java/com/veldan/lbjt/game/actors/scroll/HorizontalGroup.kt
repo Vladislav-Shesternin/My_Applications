@@ -2,13 +2,18 @@ package com.veldan.lbjt.game.actors.scroll
 
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
+import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 class HorizontalGroup(
+    override val screen: AdvancedScreen,
     val gap     : Float = 0f,
     val startGap: Float = gap,
     val endGap  : Float = gap,
     val direction: Direction = Direction.RIGHT,
 ) : AdvancedGroup() {
+
+    private var lastIndex = 0
+
 
     override fun getPrefWidth(): Float {
         var newWidth = 0f
@@ -23,8 +28,7 @@ class HorizontalGroup(
         return height
     }
 
-
-    private var lastIndex = 0
+    override fun addActorsOnGroup() {}
 
     override fun addActor(actor: Actor) {
         super.addActor(actor)

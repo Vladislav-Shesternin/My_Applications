@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.veldan.spinia">
+    package="com.tropical.treasure">
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Spinia"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".AndroidLauncher"
+            android:name="com.tropical.treasure.catcher.AndroidLauncher"
             android:configChanges="orientation|locale|screenSize"
             android:exported="true"
             android:screenOrientation="landscape"

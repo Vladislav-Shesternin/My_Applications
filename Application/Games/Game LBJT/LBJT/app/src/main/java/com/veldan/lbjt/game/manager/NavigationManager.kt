@@ -1,44 +1,39 @@
 package com.veldan.lbjt.game.manager
 
 import com.badlogic.gdx.Gdx
-import com.veldan.lbjt.game.game
+import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
+import com.veldan.lbjt.util.log
 
-object NavigationManager {
+class NavigationManager(val game: LibGDXGame) {
 
     private val backStack = mutableListOf<AdvancedScreen>()
     var key: Int? = null
         private set
 
-    fun navigate(to: AdvancedScreen, from: AdvancedScreen? = null, key: Int? = null) {
-        runGDX {
-            NavigationManager.key = key
+    fun navigate(to: AdvancedScreen, from: AdvancedScreen? = null, key: Int? = null) = runGDX {
+        this.key = key
 
-            game.screen = to
-            from?.let { f ->
-                backStack.filter { it.name == f.name }.onEach { backStack.remove(it) }
-                backStack.add(f)
-            }
-            backStack.filter { it.name == to.name }.onEach { backStack.remove(it) }
+        game.screen = to
+        backStack.filter { it.name == to.name }.onEach { backStack.remove(it) }
+        from?.let { f ->
+            backStack.filter { it.name == f.name }.onEach { backStack.remove(it) }
+            backStack.add(f)
         }
     }
 
-    fun back(key: Int? = null) {
-        runGDX {
-            NavigationManager.key = key
+    fun back(key: Int? = null) = runGDX {
+        this.key = key
 
-            if (backStack.isEmpty()) exit()
-            else game.screen = backStack.removeLast().javaClass.newInstance()
-        }
+        if (isBackStackEmpty()) exit()
+        else game.screen = backStack.removeLast().javaClass.getDeclaredConstructor(LibGDXGame::class.java).newInstance(game)
     }
 
-    fun exit() {
-        runGDX {
-            backStack.clear()
-            game.dispose()
-            Gdx.app.exit()
-        }
-    }
+
+    fun exit() = runGDX { Gdx.app.exit() }
+
+
+    fun isBackStackEmpty() = backStack.isEmpty()
 
 }

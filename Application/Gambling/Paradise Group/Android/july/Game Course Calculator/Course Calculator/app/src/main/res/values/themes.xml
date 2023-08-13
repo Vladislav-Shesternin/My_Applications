@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.CourseCalculator" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/dark</item>
+        <item name="android:navigationBarColor">@color/dark</item>
+    </style>
+
+    <style name="Theme.CourseCalculator" parent="Base.Theme.CourseCalculator" />
+</resources>

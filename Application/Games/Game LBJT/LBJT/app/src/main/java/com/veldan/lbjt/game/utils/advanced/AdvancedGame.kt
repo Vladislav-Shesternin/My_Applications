@@ -3,6 +3,12 @@ package com.veldan.lbjt.game.utils.advanced
 import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Screen
+import com.badlogic.gdx.scenes.scene2d.actions.Actions.show
+import com.veldan.lbjt.game.utils.runGDX
+import com.veldan.lbjt.util.cancelCoroutinesAll
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 abstract class AdvancedGame: ApplicationListener {
 
@@ -22,14 +28,12 @@ abstract class AdvancedGame: ApplicationListener {
         }
 
 
-
-
     override fun render() {
         backScreen?.render(Gdx.graphics.deltaTime)
         frontScreen?.render(Gdx.graphics.deltaTime)
 
        if (frontScreen != null) {
-           frontScreen!!.hide()
+           frontScreen!!.dispose()
            frontScreen = null
        }
     }
@@ -47,7 +51,7 @@ abstract class AdvancedGame: ApplicationListener {
     }
 
     override fun dispose() {
-        backScreen?.hide()
+        backScreen?.dispose()
     }
 
 }

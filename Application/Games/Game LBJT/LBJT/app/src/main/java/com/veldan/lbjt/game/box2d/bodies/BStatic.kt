@@ -15,5 +15,5 @@ class BStatic(override val screenBox2d: AdvancedBox2dScreen): AbstractBody() {
         type = BodyDef.BodyType.StaticBody
     }
     override val fixtureDef = FixtureDef()
-    override var actor: AdvancedGroup? = AImage(SpriteManager.GameRegion.YAN.region)
+    //override var actor: AdvancedGroup? = AImage(SpriteManager.GameRegion.YAN.region)
 }

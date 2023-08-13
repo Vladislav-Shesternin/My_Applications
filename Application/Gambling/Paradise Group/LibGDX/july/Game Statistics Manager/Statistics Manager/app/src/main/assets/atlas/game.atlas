@@ -1,0 +1,89 @@
+game.png
+size: 1554, 2022
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+agenstvo
+  rotate: false
+  xy: 2, 1063
+  size: 721, 586
+  orig: 721, 586
+  offset: 0, 0
+  index: -1
+dobroe_utrechko
+  rotate: false
+  xy: 778, 644
+  size: 721, 417
+  orig: 721, 417
+  offset: 0, 0
+  index: -1
+kek
+  rotate: false
+  xy: 2, 2
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1
+lord
+  rotate: false
+  xy: 1261, 2
+  size: 230, 230
+  orig: 230, 230
+  offset: 0, 0
+  index: -1
+men_homik
+  rotate: false
+  xy: 615, 234
+  size: 774, 187
+  orig: 774, 187
+  offset: 0, 0
+  index: -1
+men_profilik
+  rotate: false
+  xy: 2, 455
+  size: 774, 187
+  orig: 774, 187
+  offset: 0, 0
+  index: -1
+men_trigugolnik
+  rotate: false
+  xy: 778, 455
+  size: 774, 187
+  orig: 774, 187
+  offset: 0, 0
+  index: -1
+men_video
+  rotate: false
+  xy: 2, 644
+  size: 774, 187
+  orig: 774, 187
+  offset: 0, 0
+  index: -1
+menedjer
+  rotate: false
+  xy: 61, 2
+  size: 475, 50
+  orig: 475, 50
+  offset: 0, 0
+  index: -1
+moi_zadachi
+  rotate: false
+  xy: 538, 2
+  size: 721, 36
+  orig: 721, 36
+  offset: 0, 0
+  index: -1
+prodoljit
+  rotate: false
+  xy: 2, 234
+  size: 611, 219
+  orig: 611, 219
+  offset: 0, 0
+  index: -1
+svozvratom
+  rotate: false
+  xy: 725, 1063
+  size: 721, 957
+  orig: 721, 957
+  offset: 0, 0
+  index: -1

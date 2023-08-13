@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.OlympicPairofShields" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/banana</item>
+        <item name="android:navigationBarColor">@color/banana</item>
+    </style>
+
+    <style name="Theme.OlympicPairofShields" parent="Base.Theme.OlympicPairofShields" />
+</resources>

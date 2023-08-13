@@ -2,66 +2,56 @@ package com.veldan.lbjt
 
 import android.os.Bundle
 import androidx.annotation.ColorRes
-import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
 import com.veldan.lbjt.databinding.ActivityMainBinding
-import com.veldan.lbjt.game.game
 import com.veldan.lbjt.util.Lottie
-import com.veldan.lbjt.util.cancelCoroutinesAll
+import com.veldan.lbjt.util.Once
+import com.veldan.lbjt.util.admob.BannerUtil
+import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
-    companion object {
-        lateinit var binding: ActivityMainBinding
-        lateinit var navController: NavController
-
-        val lottie by lazy { Lottie(binding) }
-    }
-
     private val coroutine = CoroutineScope(Dispatchers.Default)
+    private val onceExit  = Once()
+
+    private lateinit var binding : ActivityMainBinding
+    lateinit var lottie          : Lottie
+    lateinit var bannerUtil      : BannerUtil
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         initialize()
+
         lottie.showLoader()
-        setStartDestination(R.id.libGDXFragment)
+        bannerUtil.load()
 
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        exit()
     }
 
     override fun exit() {
-        cancelCoroutinesAll(coroutine)
-        finishAndRemoveTask()
-        exitProcess(0)
+        onceExit.once {
+            log("exit")
+            coroutine.launch(Dispatchers.Main) {
+                finishAndRemoveTask()
+                delay(100)
+                exitProcess(0)
+            }
+        }
     }
 
     private fun initialize() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        navController = findNavController(R.id.nav_host_fragment)
-    }
-
-    private fun setStartDestination(
-        @IdRes destinationId: Int,
-        args: Bundle? = null
-    ) {
-        with(navController) {
-            navInflater.inflate(R.navigation.nav_graph).apply { setStartDestination(destinationId) }.also { setGraph(it, args) }
-        }
+        lottie     = Lottie(binding)
+        bannerUtil = BannerUtil(binding.banner, coroutine)
     }
 
     // ---------------------------------------------------

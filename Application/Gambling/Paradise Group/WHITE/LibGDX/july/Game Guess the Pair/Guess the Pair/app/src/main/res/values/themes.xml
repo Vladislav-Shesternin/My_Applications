@@ -1,0 +1,9 @@
+<resources>
+<style name="Base.Theme.GuessThePair" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowBackground">@color/red</item>
+    <item name="android:navigationBarColor">@color/red</item>
+</style>
+
+<style name="Theme.GuessThePair" parent="Base.Theme.GuessThePair" />
+</resources>

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -86,6 +87,12 @@ dependencies {
     implementation "space.earlygrey:shapedrawer:$shape_drawer_version"
     def textra_typist_version = "0.8.3"
     implementation "com.github.tommyettinger:textratypist:$textra_typist_version"
+    def ads_version = "22.2.0"
+    implementation "com.google.android.gms:play-services-ads:$ads_version"
+    def firebase_version = "32.2.0"
+    implementation platform("com.google.firebase:firebase-bom:$firebase_version")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation "com.google.firebase:firebase-storage-ktx"
 }
 
 task copyAndroidNatives {

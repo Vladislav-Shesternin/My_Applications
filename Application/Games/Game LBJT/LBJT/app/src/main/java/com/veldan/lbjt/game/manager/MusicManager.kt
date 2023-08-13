@@ -3,27 +3,22 @@ package com.veldan.lbjt.game.manager
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.audio.Music
 
-object MusicManager {
+class MusicManager(var assetManager: AssetManager) {
 
     var loadableMusicList = mutableListOf<IEnumMusic>()
 
-    fun load(assetManager: AssetManager) {
+    fun load() {
         loadableMusicList.onEach { assetManager.load(it.data.path, Music::class.java) }
     }
 
-    fun init(assetManager: AssetManager) {
+    fun init() {
         loadableMusicList.onEach { it.data.music = assetManager[it.data.path, Music::class.java] }
     }
 
-
-
     enum class EnumMusic(override val data: MusicData): IEnumMusic {
-//        MAIN(      MusicData("music/main.ogg")      ),
-//        MINI_GAME( MusicData("music/mini_game.ogg") ),
-//        SUPER_GAME(MusicData("music/super_game.ogg")),
+        DEFAULT_1(MusicData("music/music_default 1.ogg")),
+        DEFAULT_2(MusicData("music/music_default 2.ogg")),
     }
-
-
 
     interface IEnumMusic {
         val data: MusicData

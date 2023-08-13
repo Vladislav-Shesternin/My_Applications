@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.MetrixManager" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/orange</item>
+        <item name="android:navigationBarColor">@color/orange</item>
+    </style>
+
+    <style name="Theme.MetrixManager" parent="Base.Theme.MetrixManager" />
+</resources>

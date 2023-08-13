@@ -7,6 +7,7 @@ import com.veldan.lbjt.game.utils.HEIGHT_UI
 import com.veldan.lbjt.game.utils.WIDTH_BOX2D
 import com.veldan.lbjt.game.utils.WIDTH_UI
 import com.veldan.lbjt.game.utils.disposeAll
+import com.veldan.lbjt.util.log
 
 abstract class AdvancedBox2dScreen(
     val worldUtil: WorldUtil,
@@ -30,13 +31,10 @@ abstract class AdvancedBox2dScreen(
         worldUtil.debug(viewportBox2d.camera.combined)
     }
 
-    override fun hide() {
-        dispose()
-    }
-
     override fun dispose() {
+        log("dispose AdvancedBox2dScreen")
         super.dispose()
-        disposeAll(worldUtil)
+        worldUtil.dispose()
     }
 
 }

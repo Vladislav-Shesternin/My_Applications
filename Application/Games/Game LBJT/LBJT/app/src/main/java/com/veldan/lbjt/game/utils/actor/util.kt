@@ -1,7 +1,6 @@
 package com.veldan.lbjt.game.utils.actor
 
 import com.badlogic.gdx.math.Vector2
-import com.badlogic.gdx.scenes.scene2d.Action
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
@@ -10,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Widget
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
 import com.veldan.lbjt.game.utils.Layout
+import kotlin.math.round
 
 fun Actor.setOnClickListener(block: (Actor) -> Unit) {
     addListener(object : InputListener() {
@@ -29,6 +29,22 @@ fun Actor.setOnClickListener(block: (Actor) -> Unit) {
                 isWithin = false
                 block(this@setOnClickListener)
             }
+        }
+    })
+}
+
+fun Actor.setOnTouchListener(block: (Actor) -> Unit) {
+    val touchPointDown = Vector2()
+    val touchPointUp   = Vector2()
+    addListener(object : InputListener() {
+        override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {
+            touchPointDown.set(round(x), round(y))
+            return true
+        }
+        override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
+            touchPointUp.set(round(x), round(y))
+            if (touchPointDown.x in (touchPointUp.x - 1..touchPointUp.x + 1) &&
+                touchPointDown.y in (touchPointUp.y - 1..touchPointUp.y + 1)) block(this@setOnTouchListener)
         }
     })
 }

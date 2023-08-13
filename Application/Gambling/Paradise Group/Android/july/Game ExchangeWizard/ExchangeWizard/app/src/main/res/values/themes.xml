@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.ExchangeWizard" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/circle</item>
+        <item name="android:navigationBarColor">@color/circle</item>
+    </style>
+
+    <style name="Theme.ExchangeWizard" parent="Base.Theme.ExchangeWizard" />
+</resources>

@@ -1,0 +1,131 @@
+razne.png
+size: 1981, 1198
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 531, 296
+  orig: 531, 296
+  offset: 0, 0
+  index: -1
+1_check
+  rotate: false
+  xy: 725, 798
+  size: 722, 98
+  orig: 722, 98
+  offset: 0, 0
+  index: -1
+1_def
+  rotate: false
+  xy: 535, 300
+  size: 721, 98
+  orig: 721, 98
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 535, 2
+  size: 531, 296
+  orig: 531, 296
+  offset: 0, 0
+  index: -1
+2_check
+  rotate: false
+  xy: 2, 898
+  size: 722, 98
+  orig: 722, 98
+  offset: 0, 0
+  index: -1
+2_def
+  rotate: false
+  xy: 1258, 300
+  size: 721, 98
+  orig: 721, 98
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1068, 2
+  size: 531, 296
+  orig: 531, 296
+  offset: 0, 0
+  index: -1
+3_check
+  rotate: false
+  xy: 726, 898
+  size: 722, 98
+  orig: 722, 98
+  offset: 0, 0
+  index: -1
+3_def
+  rotate: false
+  xy: 2, 598
+  size: 721, 98
+  orig: 721, 98
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 2, 300
+  size: 531, 296
+  orig: 531, 296
+  offset: 0, 0
+  index: -1
+4_check
+  rotate: false
+  xy: 2, 998
+  size: 722, 98
+  orig: 722, 98
+  offset: 0, 0
+  index: -1
+4_def
+  rotate: false
+  xy: 725, 598
+  size: 721, 98
+  orig: 721, 98
+  offset: 0, 0
+  index: -1
+5_check
+  rotate: false
+  xy: 726, 998
+  size: 722, 98
+  orig: 722, 98
+  offset: 0, 0
+  index: -1
+5_def
+  rotate: false
+  xy: 2, 698
+  size: 721, 98
+  orig: 721, 98
+  offset: 0, 0
+  index: -1
+6_check
+  rotate: false
+  xy: 2, 1098
+  size: 722, 98
+  orig: 722, 98
+  offset: 0, 0
+  index: -1
+6_def
+  rotate: false
+  xy: 725, 698
+  size: 721, 98
+  orig: 721, 98
+  offset: 0, 0
+  index: -1
+7_check
+  rotate: false
+  xy: 726, 1098
+  size: 722, 98
+  orig: 722, 98
+  offset: 0, 0
+  index: -1
+7_def
+  rotate: false
+  xy: 2, 798
+  size: 721, 98
+  orig: 721, 98
+  offset: 0, 0
+  index: -1

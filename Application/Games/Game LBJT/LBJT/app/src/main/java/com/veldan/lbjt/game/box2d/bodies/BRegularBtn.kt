@@ -3,9 +3,8 @@ package com.veldan.lbjt.game.box2d.bodies
 import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.FixtureDef
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle
-import com.veldan.lbjt.game.actors.button.ARegularButton
+import com.veldan.lbjt.game.actors.button.AButton_Regular
 import com.veldan.lbjt.game.box2d.AbstractBody
-import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 
@@ -23,7 +22,7 @@ class BRegularBtn(
         restitution = 0.3f
         friction    = 0.3f
     }
-    override var actor: AdvancedGroup? = ARegularButton(text, style)
+    override var actor: AdvancedGroup? = AButton_Regular(screenBox2d, text, style)
 
-    fun getActor(): ARegularButton? = actor as? ARegularButton
+    fun getActor(): AButton_Regular? = actor as? AButton_Regular
 }

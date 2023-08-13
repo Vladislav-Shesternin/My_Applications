@@ -2,56 +2,65 @@ package com.veldan.lbjt.game.actors.masks.normal
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.GL20
+import com.badlogic.gdx.graphics.Pixmap
+import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Batch
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.graphics.glutils.FrameBuffer
 import com.badlogic.gdx.math.Vector2
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
+import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
+import com.veldan.lbjt.game.utils.combineByCenter
 import com.veldan.lbjt.game.utils.zeroScreenVector
+import com.veldan.lbjt.util.log
 
 class Mask(
-    var maskRegion: TextureRegion? = null,
+    override val screen: AdvancedScreen,
+    val mask: Texture? = null,
 ) : AdvancedGroup() {
 
-    private lateinit var screenCoordinates: Vector2
-    private lateinit var screenSize       : Vector2
+    companion object {
+        private const val PIXMAP_W = 2000
+        private const val PIXMAP_H = 2000
+    }
 
-    private var mX: Float = 0f
-    private var mY: Float = 0f
-    private var mW: Float = 0f
-    private var mH: Float = 0f
+    private val maskTexture: Texture by lazy {
+        val pixmap = Pixmap(PIXMAP_W, PIXMAP_H, Pixmap.Format.RGBA8888)
+        pixmap.setColor(0f, 0f, 0f, 0f)
+        pixmap.fill()
 
+        val texture = if (mask == null) {
+            pixmap.setColor(0f, 0f, 0f, 1f)
+            pixmap.fillRectangle(
+                (PIXMAP_W / 2) - (width.toInt() / 2),
+                (PIXMAP_H / 2) - (height.toInt() / 2),
+                width.toInt(), height.toInt()
+            )
+            Texture(pixmap)
+        } else Texture(pixmap).combineByCenter(mask)
 
+        if (pixmap.isDisposed.not()) pixmap.dispose()
+        texture
+    }
+
+    override fun addActorsOnGroup() {}
+
+    override fun dispose() {
+        super.dispose()
+        mask?.dispose()
+        maskTexture.dispose()
+    }
 
     override fun draw(batch: Batch?, parentAlpha: Float) {
         if (stage != null) {
             batch?.flush()
-            updateCoordinatesAndSize()
-            drawScissor(batch, parentAlpha)
+            batch?.drawMask(parentAlpha)
         }
     }
 
-
-
     private fun drawSuper(batch: Batch?, parentAlpha: Float) {
         super.draw(batch, parentAlpha)
-    }
-
-    private fun updateCoordinatesAndSize() {
-        screenCoordinates = localToScreenCoordinates(Vector2())
-        screenSize        = stage.viewport.project(Vector2(width, height))
-
-        mX = screenCoordinates.x
-        mY = Gdx.graphics.height - screenCoordinates.y
-        mW = screenSize.x - stage.viewport.zeroScreenVector.x
-        mH = screenSize.y - stage.viewport.zeroScreenVector.y
-    }
-
-    private fun drawScissor(batch: Batch?, parentAlpha: Float) {
-        Gdx.gl.glEnable(GL20.GL_SCISSOR_TEST)
-        Gdx.gl.glScissor(mX.toInt(), mY.toInt(), mW.toInt(), mH.toInt())
-
-        if (maskRegion != null) batch?.drawMask(parentAlpha) else drawSuper(batch, parentAlpha)
-        Gdx.gl.glDisable(GL20.GL_SCISSOR_TEST)
     }
 
     private fun Batch.drawMask(parentAlpha: Float) {
@@ -60,7 +69,11 @@ class Mask(
         setBlendFunction(GL20.GL_ONE, GL20.GL_ZERO)
 
         setColor(0f, 0f, 0f, parentAlpha)
-        draw(maskRegion, x, y, width, height)
+        draw(maskTexture,
+            x + (width / 2) - (maskTexture.width / 2),
+            y + (height /2) - (maskTexture.height / 2),
+            maskTexture.width.toFloat(), maskTexture.height.toFloat()
+        )
 
         drawMasked(parentAlpha)
     }

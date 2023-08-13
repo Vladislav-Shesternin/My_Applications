@@ -8,25 +8,28 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.utils.Disposable
 import space.earlygrey.shapedrawer.ShapeDrawer
 
-class ShapeDrawerUtil(val batch: Batch): Disposable {
+class ShapeDrawerUtil(batch: Batch): Disposable {
 
-    private var texture: Texture? = null
+    private val disposableTextureList = mutableListOf<Texture>()
 
     val drawer = ShapeDrawer(batch, getRegion())
 
     override fun dispose() {
-        texture?.dispose()
+        disposableTextureList.disposeAll()
     }
 
     fun update() {
         drawer.update()
     }
 
-    private fun getRegion(color: Color = Color.WHITE): TextureRegion {
+    fun getRegion(color: Color = Color.WHITE): TextureRegion {
         val pixmap = Pixmap(1, 1, Pixmap.Format.RGBA8888)
         pixmap.setColor(color)
         pixmap.drawPixel(0, 0)
+
         val texture = Texture(pixmap)
+        disposableTextureList.add(texture)
+
         pixmap.dispose()
         return TextureRegion(texture, 0, 0, 1, 1)
     }

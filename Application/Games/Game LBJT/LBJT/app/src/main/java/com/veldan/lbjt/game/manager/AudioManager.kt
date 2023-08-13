@@ -6,12 +6,11 @@ import com.veldan.lbjt.appContext
 
 object AudioManager {
 
-    val audioManager      = appContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-    val maxVolumeLevel    = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
-    val volumeLevel get() = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
+    val audioManager   by lazy { appContext.getSystemService(Context.AUDIO_SERVICE) as AudioManager }
+    val maxVolumeLevel by lazy { audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC) }
+    val volumeLevel    get() = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
 
-    val onePercentVolumeLevel = (maxVolumeLevel / 100f)
-
-    val volumeLevelPercent get() = (volumeLevel / onePercentVolumeLevel).toInt()
+    val onePercentVolumeLevel by lazy { (maxVolumeLevel / 100f) }
+    val volumeLevelPercent    get() = volumeLevel / onePercentVolumeLevel
 
 }
