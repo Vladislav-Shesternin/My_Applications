@@ -1,39 +1,45 @@
 package com.veldan.lbjt.game.screens
 
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.LibGDXGame
+import com.veldan.lbjt.game.actors.checkbox.ACheckBox
 import com.veldan.lbjt.game.actors.label.AutoLanguageSpinningLabel
+import com.veldan.lbjt.game.box2d.WorldUtil
 import com.veldan.lbjt.game.box2d.bodies.BLanguage
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGBorders
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGFrameLanguage
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGLanguage
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGVolume
-import com.veldan.lbjt.game.box2d.disposeAll
+import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.box2d.util.CheckGroupBGLanguage
 import com.veldan.lbjt.game.manager.AudioManager
 import com.veldan.lbjt.game.utils.GameColor
-import com.veldan.lbjt.game.utils.LanguageUtil
-import com.veldan.lbjt.game.utils.TIME_ANIM_ALPHA
+import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.advanced.AdvancedMouseScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
+import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.game.utils.font.FontParameter.CharType
+import com.veldan.lbjt.game.utils.language.Language
+import com.veldan.lbjt.game.utils.region
+import com.veldan.lbjt.game.utils.runGDX
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.util.Locale
 import kotlin.math.roundToInt
 
-class SettingsScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
+class SettingsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
+    
+    var percentVolumeMusic = -1
+    var percentVolumeSound = -1
 
-    companion object {
-        var percentVolumeMusic = -1
-        var percentVolumeSound = -1
-    }
+    private val parameter = FontParameter()
 
     // Actor
-    private val aLanguageLbl by lazy { AutoLanguageSpinningLabel(this, R.string.language, Label.LabelStyle(game.fontTTFUtil.fontInterExtraBold.font_50.font, GameColor.textGreen)) }
+    private val aLanguageLbl = AutoLanguageSpinningLabel(this, R.string.language, Label.LabelStyle(fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(50)), GameColor.textGreen))
+    private val aDebugBox    = ACheckBox(this, ACheckBox.Type.DEBUG)
 
     // BodyGroup
     private val bgBorders       = BGBorders(this)
@@ -43,29 +49,33 @@ class SettingsScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
     private val bgLanguageEN    = BGLanguage(this, BLanguage.Type.EN)
     private val bgLanguageUK    = BGLanguage(this, BLanguage.Type.UK)
 
+    // Field
     override fun show() {
         stageUI.root.animHide()
-        setUIBackground(game.themeUtil.trc.BACKGROUND)
+        setUIBackground(game.themeUtil.assets.BACKGROUND.region)
         super.show()
-        stageUI.root.animShow(TIME_ANIM_ALPHA)
     }
 
     override fun AdvancedStage.addActorsOnStageUI() {
+        addLanguageLbl()
+        addDebugBox()
+
         createBG_Borders()
         createBG_Volume()
-        addLanguageLbl()
         createBG_FrameLanguage()
-        createBG_Language {
-            initialize()
-            asyncCollectPercentVolumeFlow()
-        }
+        createBG_Language()
+
+        asyncCollectPercentVolumeFlow()
+        bgFrameLanguage.impulseFrameLanguage()
+        stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
     }
 
     override fun dispose() {
         listOf(
             bgBorders, bgVolumeMusic, bgVolumeSound,
             bgFrameLanguage, bgLanguageEN, bgLanguageUK,
-        ).disposeAll()
+        ).destroyAll()
+
         super.dispose()
     }
 
@@ -78,47 +88,64 @@ class SettingsScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
         aLanguageLbl.setBounds(10f, 559f, 337f, 65f)
     }
 
+    private fun AdvancedStage.addDebugBox() {
+        addActor(aDebugBox)
+        aDebugBox.apply {
+            setBounds(302f, 186f, 96f, 92f)
+            if (WorldUtil.isDebug) check(false) else uncheck(false)
+            setOnCheckListener { isCheck ->
+                disable()
+                WorldUtil.isDebug = isCheck
+                coroutine?.launch {
+                    game.soundUtil.apply { play(ELECTRICITY) }
+                    delay(1000)
+                    runGDX { enable() }
+                }
+            }
+        }
+    }
+
     // ------------------------------------------------------------------------
     // Create Body Group
     // ------------------------------------------------------------------------
 
-    private fun createBG_Borders(block: () -> Unit = {}) {
-        bgBorders.requestToCreate(Vector2(0f, 0f), Vector2(700f, 1400f), block)
+    private fun createBG_Borders() {
+        bgBorders.create(0f,0f,700f,1400f)
     }
 
-    private fun createBG_Volume(block: () -> Unit = {}) {
-        bgVolumeMusic.requestToCreate(Vector2(30f, 691f), Vector2(314f, 630f))
-        bgVolumeSound.requestToCreate(Vector2(357f, 691f), Vector2(314f, 630f), block)
+    private fun createBG_Volume() {
+        bgVolumeMusic.create(30f,691f,314f,630f)
+        bgVolumeSound.create(357f,691f,314f,630f)
     }
 
-    private fun createBG_FrameLanguage(block: () -> Unit = {}) {
-        bgFrameLanguage.requestToCreate(Vector2(357f, 540f), Vector2(314f, 102f), block)
+    private fun createBG_FrameLanguage() {
+        bgFrameLanguage.create(357f,540f,314f,102f)
     }
 
-    private fun createBG_Language(block: () -> Unit = {}) {
+    private fun createBG_Language() {
         val checkGroupBGLanguage = CheckGroupBGLanguage()
 
         bgLanguageEN.apply {
             this.checkGroupBGLanguage = checkGroupBGLanguage
-            setOnCheckBlock { if (it) LanguageUtil.localeFlow.value = Locale("en") }
-            requestToCreate(Vector2(413f, 0f), Vector2(202f, 498f))
+            setOnCheckBlock { if (it) game.languageUtil.languageFlow.value = Language.EN }
+            create(413f,0f,202f,498f)
         }
         bgLanguageUK.apply {
             this.checkGroupBGLanguage = checkGroupBGLanguage
-            setOnCheckBlock { if (it) LanguageUtil.localeFlow.value = Locale("uk") }
-            requestToCreate(Vector2(86f, 0f), Vector2(202f, 498f), block)
+            setOnCheckBlock { if (it) game.languageUtil.languageFlow.value = Language.UK }
+            create(86f,0f,202f,498f)
         }
 
-        when(LanguageUtil.localeFlow.value.language) {
-            "en" -> {
+        when(game.languageUtil.languageFlow.value) {
+            Language.EN -> {
                 checkGroupBGLanguage.currentCheckedBGLanguage = bgLanguageEN
-                bgLanguageEN.check()
-                bgLanguageUK.uncheck()
+                bgLanguageEN.check(false)
+                bgLanguageUK.uncheck(false)
             }
-            "uk" -> {
+            Language.UK -> {
                 checkGroupBGLanguage.currentCheckedBGLanguage = bgLanguageUK
-                bgLanguageUK.check()
-                bgLanguageEN.uncheck()
+                bgLanguageUK.check(false)
+                bgLanguageEN.uncheck(false)
             }
         }
     }

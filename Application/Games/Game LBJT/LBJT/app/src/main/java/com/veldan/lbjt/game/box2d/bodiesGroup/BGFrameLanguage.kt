@@ -11,7 +11,6 @@ import com.veldan.lbjt.game.box2d.BodyId.Settings.VOLUME
 import com.veldan.lbjt.game.box2d.bodies.BFrameLanguage
 import com.veldan.lbjt.game.box2d.bodies.BStatic
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
-import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.game.utils.toB2
 
 class BGFrameLanguage(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup() {
@@ -25,20 +24,15 @@ class BGFrameLanguage(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
     // Joint
     private val jWeld = AbstractJoint<WeldJoint, WeldJointDef>(screenBox2d)
 
-    override fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit) {
-        super.requestToCreate(position, size, block)
+    override fun create(x: Float, y: Float, w: Float, h: Float) {
+        super.create(x, y, w, h)
 
         initB_FrameLanguage()
 
         createB_Static()
         createB_FrameLanguage()
 
-        finishCreate {
-            block()
-
-            createJ_Weld()
-            imitateImpulseFrameLanguage()
-        }
+        createJ_Weld()
     }
 
     // ---------------------------------------------------
@@ -82,10 +76,10 @@ class BGFrameLanguage(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
     // Logic
     // ---------------------------------------------------
 
-    private fun imitateImpulseFrameLanguage() {
+    fun impulseFrameLanguage() {
         bFrameLanguage.body?.applyLinearImpulse(
             Vector2(0f, 300f),
-            standardizer.scope { position.cpy().add(Vector2(55f, 45f).toStandart).toB2 },
+            position.cpy().add(Vector2(55f, 45f).toStandart).toB2,
             true
         )
     }

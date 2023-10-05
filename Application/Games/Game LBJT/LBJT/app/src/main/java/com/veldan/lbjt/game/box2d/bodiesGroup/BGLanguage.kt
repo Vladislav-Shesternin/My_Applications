@@ -11,18 +11,15 @@ import com.veldan.lbjt.game.box2d.bodies.BDynamic
 import com.veldan.lbjt.game.box2d.bodies.BLanguage
 import com.veldan.lbjt.game.box2d.bodies.BStatic
 import com.veldan.lbjt.game.box2d.util.CheckGroupBGLanguage
+
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.JOINT_WIDTH
 import com.veldan.lbjt.game.utils.SizeStandardizer
-import com.veldan.lbjt.game.utils.actor.enable
 import com.veldan.lbjt.game.utils.actor.setOnTouchListener
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
-import com.veldan.lbjt.game.utils.runGDX
+import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.toUI
 import com.veldan.lbjt.util.Once
-import com.veldan.lbjt.util.log
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class BGLanguage(
     override val screenBox2d: AdvancedBox2dScreen,
@@ -43,18 +40,21 @@ class BGLanguage(
     // Field
     private val drawer = screenBox2d.drawerUtil.drawer
 
-    private val firstSizeStandardizer     = SizeStandardizer()
-    private val onceFirstSizeStandardizer = Once()
+    private val onceFirstSizeStandardizer     = Once()
+    private val firstSizeStandardizer         = SizeStandardizer()
+    private val Vector2.toFirstStandart get() = firstSizeStandardizer.scope { toStandart }
+    private val Float.toFirstStandart   get() = firstSizeStandardizer.scope { toStandart }
 
     private var onCheckBlock: (Boolean) -> Unit = {}
     var checkGroupBGLanguage: CheckGroupBGLanguage? = null
     var isCheck = true
         private set
 
-    override fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit) {
-        super.requestToCreate(position, size, block)
+    override fun create(x: Float, y: Float, w: Float, h: Float) {
+        super.create(x, y, w, h)
 
         onceFirstSizeStandardizer.once { firstSizeStandardizer.standardize(standartW, size.x) }
+
         initB_Dynamic()
         initB_Language()
 
@@ -62,12 +62,8 @@ class BGLanguage(
         createB_Static()
         createB_Language()
 
-        finishCreate {
-            block()
-
-            createJ_Weld_DynamicLanguage()
-            createJ_Weld_DynamicStatic()
-        }
+        createJ_Weld_DynamicLanguage()
+        createJ_Weld_DynamicStatic()
     }
 
     // ---------------------------------------------------
@@ -125,8 +121,9 @@ class BGLanguage(
             frequencyHz  = 10f
             dampingRatio = 0.7f
 
-            bLanguage.actor?.blockPreDraw = { alpha ->
-                drawer.line(bodyA.position.cpy().toUI, bodyB.position.cpy().toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH)
+            bLanguage.actor?.apply {
+                clearPreDrawBlock()
+                preDrawArray.add(AdvancedGroup.PreDrawer { alpha -> drawer.line(bodyA.position.toUI, bodyB.position.toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
             }
         })
     }
@@ -151,45 +148,49 @@ class BGLanguage(
         onCheckBlock = block
     }
 
-    fun check() {
+    fun check(isInvokeCheckBlock: Boolean = true) {
         if (isCheck) return
 
         checkGroupBGLanguage?.let {
-            it.currentCheckedBGLanguage?.uncheck()
+            it.currentCheckedBGLanguage?.uncheck(isInvokeCheckBlock)
             it.currentCheckedBGLanguage = this
         }
 
         bLanguage.increase {
-            onCheckBlock(true)
-            bLanguage.isDisposeActor = false
+            if (isInvokeCheckBlock) onCheckBlock(true)
 
-            requestToDestroy {
-                isCheck = true
-                firstSizeStandardizer.scope { requestToCreate(
-                    position.sub(Vector2(25f, 0f).toStandart),
-                    size.add(Vector2(51f, 66f).toStandart)
-                ) {
-                    bLanguage.actor?.addAction(Actions.scaleTo(1f, 1f))
-                    screenBox2d.game.soundUtil.apply { play(ELECTRICITY) }
-                } }
-            }
+            bLanguage.isDestroyActor = false
+            destroy()
+
+            isCheck = true
+
+            val pos = position.sub(Vector2(25f, 0f).toFirstStandart)
+            val siz = size.add(Vector2(51f, 66f).toFirstStandart)
+
+            create(pos.x, pos.y, siz.x, siz.y)
+
+            bLanguage.actor?.addAction(Actions.scaleTo(1f, 1f))
+            if (isInvokeCheckBlock) screenBox2d.game.soundUtil.apply { play(ELECTRICITY) }
         }
     }
 
-    fun uncheck() {
+    fun uncheck(isInvokeCheckBlock: Boolean = true) {
         if (isCheck.not()) return
 
         bLanguage.decrease {
-            onCheckBlock(false)
-            bLanguage.isDisposeActor = false
+            if (isInvokeCheckBlock) onCheckBlock(false)
 
-            requestToDestroy {
-                isCheck = false
-                firstSizeStandardizer.scope { requestToCreate(
-                    position.add(Vector2(25f, 0f).toStandart),
-                    size.sub(Vector2(51f, 66f).toStandart)
-                ) { bLanguage.actor?.addAction(Actions.scaleTo(1f, 1f)) } }
-            }
+            bLanguage.isDestroyActor = false
+            destroy()
+
+            isCheck = false
+
+            val pos = position.add(Vector2(25f, 0f).toFirstStandart)
+            val siz = size.sub(Vector2(51f, 66f).toFirstStandart)
+
+            create(pos.x, pos.y, siz.x, siz.y)
+
+            bLanguage.actor?.addAction(Actions.scaleTo(1f, 1f))
         }
     }
 

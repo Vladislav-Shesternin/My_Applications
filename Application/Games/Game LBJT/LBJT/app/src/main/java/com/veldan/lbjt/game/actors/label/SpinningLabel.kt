@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
-import com.veldan.lbjt.game.actors.masks.normal.Mask
+import com.veldan.lbjt.game.actors.masks.Mask
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.toMS
@@ -34,7 +34,7 @@ class SpinningLabel(
         const val TIME_DELAY        = 2f
     }
 
-    private val mask         = Mask(screen)
+    private val mask         = Mask(screen, alphaWidth = 1000)
     private var labelCurrent = Label(text, labelStyle)
     private var labelNext    = Label(text, labelStyle)
 

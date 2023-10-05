@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.CryptoEducation" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/backat</item>
+        <item name="android:navigationBarColor">@color/backat</item>
+    </style>
+</resources>

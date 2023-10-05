@@ -1,16 +1,15 @@
 package com.veldan.lbjt.game.actors.volume
 
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.label.AutoLanguageSpinningLabel
-import com.veldan.lbjt.game.actors.label.SpinningLabel
 import com.veldan.lbjt.game.utils.GameColor
-import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
+import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.game.utils.font.FontParameter.CharType
 import com.veldan.lbjt.game.utils.runGDX
 
 class AVolume(
@@ -20,12 +19,12 @@ class AVolume(
 
     override var standartW = 149f
 
-    private val themeUtil   by lazy { screen.game.themeUtil }
-    private val fontTTFUtil by lazy { screen.game.fontTTFUtil }
+    private val themeUtil = screen.game.themeUtil
+    private val parameter = FontParameter()
 
-    private val nameLbl       by lazy { AutoLanguageSpinningLabel(screen, type.nameResId, Label.LabelStyle(fontTTFUtil.fontInterMedium.font_30.font, GameColor.textGreen)) }
-    private val percentLbl    = Label("0%", Label.LabelStyle(fontTTFUtil.fontInterBlack.font_25.font, GameColor.textGreen))
-    private val backgroundImg by lazy { Image(getBackgroundRegionByType(type)) }
+    private val nameLbl       = AutoLanguageSpinningLabel(screen, type.nameResId, Label.LabelStyle(screen.fontGeneratorInter_Medium.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(30)), GameColor.textGreen))
+    private val percentLbl    = Label("0%", Label.LabelStyle(screen.fontGeneratorInter_Black.generateFont(parameter.setCharacters(CharType.NUMBERS.chars+"%").setSize(25)), GameColor.textGreen))
+    private val backgroundImg = Image(getBackgroundRegionByType(type))
 
     override fun addActorsOnGroup() {
         addBackgroundImg()
@@ -39,20 +38,20 @@ class AVolume(
 
     private fun addBackgroundImg() {
         addActor(backgroundImg)
-        standardizer.scope { backgroundImg.setBounds(Vector2(0f, 0f).toStandart, Vector2(149f, 102f).toStandart) }
+        backgroundImg.setBoundsStandart(0f,0f,149f,102f)
     }
 
     private fun addNameLbl() {
         addActor(nameLbl)
         nameLbl.apply {
-            standardizer.scope { setBounds(Vector2(10f, 51f).toStandart, Vector2(129f, 41f).toStandart) }
+            setBoundsStandart(10f,51f,129f,41f)
         }
     }
 
     private fun addPercentLbl() {
         addActor(percentLbl)
         percentLbl.apply {
-            standardizer.scope { setBounds(Vector2(10f, 10f).toStandart, Vector2(129f, 41f).toStandart) }
+            setBoundsStandart(10f,10f,129f,41f)
             setAlignment(Align.center)
         }
     }
@@ -61,13 +60,13 @@ class AVolume(
     // Logic
     // ---------------------------------------------------
 
-    fun updatePercent(percent: Int) {
-        runGDX { percentLbl.setText("$percent%") }
+    private fun getBackgroundRegionByType(type: Type) = when(type) {
+        Type.QUIET -> themeUtil.assets.VOLUME_QUIET
+        Type.LOUDER -> themeUtil.assets.VOLUME_LOUDER
     }
 
-    fun getBackgroundRegionByType(type: Type) = when(type) {
-        Type.QUIET -> themeUtil.trc.VOLUME_QUIET
-        Type.LOUDER -> themeUtil.trc.VOLUME_LOUDER
+    fun updatePercent(percent: Int) {
+        runGDX { percentLbl.setText("$percent%") }
     }
 
     enum class Type(val nameResId: Int, ) {

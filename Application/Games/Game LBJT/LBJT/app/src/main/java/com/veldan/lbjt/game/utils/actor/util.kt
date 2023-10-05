@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Touchable
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Widget
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
+import com.veldan.lbjt.game.actors.button.AButton
 import com.veldan.lbjt.game.utils.Layout
 import kotlin.math.round
 
@@ -53,8 +54,9 @@ fun Actor.disable() {
     touchable = Touchable.disabled
 }
 
-fun Actor.enable() {
-    touchable = Touchable.enabled
+fun Actor.enable() = when(this) {
+    is AButton -> enable()
+    else       -> touchable = Touchable.enabled
 }
 
 fun List<Actor>.setFillParent() {

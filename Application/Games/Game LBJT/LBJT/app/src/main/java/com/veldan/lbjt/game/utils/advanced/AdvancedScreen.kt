@@ -7,17 +7,19 @@ import com.badlogic.gdx.ScreenAdapter
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.badlogic.gdx.utils.Disposable
 import com.badlogic.gdx.utils.viewport.FillViewport
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.utils.HEIGHT_UI
-import com.veldan.lbjt.game.utils.LanguageUtil
 import com.veldan.lbjt.game.utils.ShapeDrawerUtil
-import com.veldan.lbjt.game.utils.TIME_ANIM_ALPHA
+import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.WIDTH_UI
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.addProcessors
 import com.veldan.lbjt.game.utils.disposeAll
+import com.veldan.lbjt.game.utils.font.FontGenerator
+import com.veldan.lbjt.game.utils.font.FontGenerator.FontPath
 import com.veldan.lbjt.util.cancelCoroutinesAll
 import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
@@ -29,7 +31,6 @@ abstract class AdvancedScreen(
 ) : ScreenAdapter(), AdvancedInputProcessor {
 
     abstract val game: LibGDXGame
-    val name: String = javaClass.name
 
     private val viewportBack by lazy { FillViewport(Gdx.graphics.width.toFloat(), Gdx.graphics.height.toFloat()) }
     private val stageBack    by lazy { AdvancedStage(viewportBack) }
@@ -40,12 +41,21 @@ abstract class AdvancedScreen(
     val inputMultiplexer    = InputMultiplexer()
     val backBackgroundImage = Image()
     val uiBackgroundImage   = Image()
+    val disposableSet       = mutableSetOf<Disposable>()
 
     var coroutine: CoroutineScope? = CoroutineScope(Dispatchers.Default)
         private set
 
     val drawerUtil by lazy { ShapeDrawerUtil(stageUI.batch) }
 
+    val fontGeneratorInter_ExtraBold = FontGenerator(FontPath.Inter_ExtraBold)
+    val fontGeneratorInter_Medium    = FontGenerator(FontPath.Inter_Medium)
+    val fontGeneratorInter_Black     = FontGenerator(FontPath.Inter_Black)
+
+    override fun resize(width: Int, height: Int) {
+        viewportBack.update(width, height, true)
+        viewportUI.update(width, height, true)
+    }
 
     override fun show() {
         stageBack.addActor(backBackgroundImage)
@@ -55,11 +65,9 @@ abstract class AdvancedScreen(
 
         Gdx.input.inputProcessor = inputMultiplexer.apply { addProcessors(this@AdvancedScreen, stageUI) }
         Gdx.input.setCatchKey(Input.Keys.BACK, true)
-    }
 
-    override fun resize(width: Int, height: Int) {
-        viewportBack.update(width, height, true)
-        viewportUI.update(width, height, true)
+        viewportBack.apply(true)
+        viewportUI.apply(true)
     }
 
     override fun render(delta: Float) {
@@ -69,19 +77,25 @@ abstract class AdvancedScreen(
     }
 
     override fun dispose() {
-        log("dispose AdvancedScreen")
+        log("dispose AdvancedScreen: ${this::class.java.name.substringAfterLast('.')}")
+        disposeAll(
+            stageBack, stageUI, drawerUtil,
+            fontGeneratorInter_ExtraBold, fontGeneratorInter_Medium, fontGeneratorInter_Black
+        )
+        disposableSet.disposeAll()
+        inputMultiplexer.clear()
         cancelCoroutinesAll(coroutine)
         coroutine = null
-        disposeAll(stageBack, stageUI, drawerUtil)
-        inputMultiplexer.clear()
     }
 
     override fun keyDown(keycode: Int): Boolean {
-        if (keycode == Input.Keys.BACK) {
-            if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
-            else stageUI.root.animHide(TIME_ANIM_ALPHA) { game.navigationManager.back() }
+        when(keycode) {
+            Input.Keys.BACK -> {
+                if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
+                else stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) { game.navigationManager.back() }
+            }
         }
-        return super.keyDown(keycode)
+        return true
     }
 
     open fun AdvancedStage.addActorsOnStageUI() {}

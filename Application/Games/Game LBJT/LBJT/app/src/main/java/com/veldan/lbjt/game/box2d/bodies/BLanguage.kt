@@ -1,7 +1,6 @@
 package com.veldan.lbjt.game.box2d.bodies
 
 import com.badlogic.gdx.math.Interpolation
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.FixtureDef
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
@@ -31,7 +30,7 @@ class BLanguage(
         density = 1f
     }
 
-    override var actor: AdvancedGroup? = AImage(screenBox2d).apply { drawable = TextureRegionDrawable(getLanguageRegionByType(type)) }
+    override var actor: AdvancedGroup? = AImage(screenBox2d, getLanguageRegionByType(type))
 
     fun getActor(): AImage? = actor as? AImage
 
@@ -40,8 +39,8 @@ class BLanguage(
     // ---------------------------------------------------
 
     private fun getLanguageRegionByType(type: Type) = when(type) {
-        Type.EN -> screenBox2d.game.themeUtil.trc.LANGUAGE_EN
-        Type.UK -> screenBox2d.game.themeUtil.trc.LANGUAGE_UK
+        Type.EN -> screenBox2d.game.themeUtil.assets.LANGUAGE_EN
+        Type.UK -> screenBox2d.game.themeUtil.assets.LANGUAGE_UK
     }
 
     fun decrease(block: () -> Unit) {

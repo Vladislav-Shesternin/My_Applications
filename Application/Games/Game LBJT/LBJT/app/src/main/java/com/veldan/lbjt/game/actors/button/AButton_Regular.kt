@@ -1,10 +1,8 @@
 package com.veldan.lbjt.game.actors.button
 
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
 import com.veldan.lbjt.game.utils.actor.disable
-import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 class AButton_Regular(
@@ -28,7 +26,7 @@ class AButton_Regular(
     private fun addLabel() {
         addActor(label)
         label.apply {
-            standardizer.scope { setBounds(Vector2(0f, 19f).toStandart, Vector2(466f, 150f).toStandart) }
+            setBoundsStandart(0f,19f,466f,150f)
             disable()
             setAlignment(Align.center)
             wrap = true

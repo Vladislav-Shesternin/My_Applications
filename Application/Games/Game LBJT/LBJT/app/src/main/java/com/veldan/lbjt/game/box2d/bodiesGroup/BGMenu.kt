@@ -14,27 +14,26 @@ import com.veldan.lbjt.game.box2d.BodyId.Menu.STATIC
 import com.veldan.lbjt.game.box2d.bodies.BRegularBtn
 import com.veldan.lbjt.game.box2d.bodies.BStaticCircle
 import com.veldan.lbjt.game.utils.GameColor
-import com.veldan.lbjt.game.utils.JOINT_WIDTH
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
-import com.veldan.lbjt.game.utils.runGDX
+import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
+import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.game.utils.font.FontParameter.CharType
 import com.veldan.lbjt.game.utils.toB2
-import com.veldan.lbjt.game.utils.toUI
-
 
 class BGMenu(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup() {
 
     override val standartW = 466f
 
-    private val fontTTFUtil by lazy { screenBox2d.game.fontTTFUtil }
+    private val parameter = FontParameter()
 
     // Body
-    private val bStaticCircleLeft      = BStaticCircle(screenBox2d)
-    private val bStaticCircleRight     = BStaticCircle(screenBox2d)
+    private val bStaticCircleLeft  = BStaticCircle(screenBox2d)
+    private val bStaticCircleRight = BStaticCircle(screenBox2d)
 
-    val bRegularBtnTutorial    by lazy { BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.tutorials),    Label.LabelStyle(fontTTFUtil.fontInterExtraBold.font_50.font, GameColor.textGreen)) }
-    val bRegularBtnSettings    by lazy { BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.settings),     Label.LabelStyle(fontTTFUtil.fontInterExtraBold.font_40.font, GameColor.textGreen)) }
-    val bRegularBtnAboutAuthor by lazy { BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.about_author), Label.LabelStyle(fontTTFUtil.fontInterExtraBold.font_30.font, GameColor.textGreen)) }
-    val bRegularBtnComment     by lazy { BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.comments),     Label.LabelStyle(fontTTFUtil.fontInterExtraBold.font_25.font, GameColor.textGreen)) }
+    val bRegularBtnTutorial    = BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.tutorials),    Label.LabelStyle(screenBox2d.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(50)), GameColor.textGreen))
+    val bRegularBtnSettings    = BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.settings),     Label.LabelStyle(screenBox2d.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(40)), GameColor.textGreen))
+    val bRegularBtnAboutAuthor = BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.about_author), Label.LabelStyle(screenBox2d.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(30)), GameColor.textGreen))
+    val bRegularBtnComment     = BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(R.string.comments),     Label.LabelStyle(screenBox2d.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(25)), GameColor.textGreen))
 
     // Joint
     private val jDistanceTutorialLeft   = AbstractJoint<DistanceJoint, DistanceJointDef>(screenBox2d)
@@ -43,11 +42,8 @@ class BGMenu(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
     private val jDistanceAboutAuthor    = AbstractJoint<DistanceJoint, DistanceJointDef>(screenBox2d)
     private val jDistanceComment        = AbstractJoint<DistanceJoint, DistanceJointDef>(screenBox2d)
 
-    // Field
-    private val drawer = screenBox2d.drawerUtil.drawer
-
-    override fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit) {
-        super.requestToCreate(position, size, block)
+    override fun create(x: Float, y: Float, w: Float, h: Float) {
+        super.create(x, y, w, h)
 
         initB_StaticCircle()
         initB_RegularBtn()
@@ -55,10 +51,7 @@ class BGMenu(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
         createB_StaticCircle()
         createB_RegularBtn()
 
-        finishCreate {
-            block()
-            createJ_Joint()
-        }
+        createJ_Joint()
     }
 
     // ---------------------------------------------------
@@ -159,14 +152,11 @@ class BGMenu(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
             localAnchorB.set(_anchorB.subCenter(bodyB))
             collideConnected = true
 
-            standardizer.scope { length = _length.toStandart.toB2 }
+            length       = _length.toStandart.toB2
             frequencyHz  = 1.7f
             dampingRatio = 0.6f
         })
 
-        _bodyA.actor?.blockPreDraw = { alpha -> _joint.joint?.run {
-            drawer.line(anchorA.toUI, anchorB.toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH)
-        } }
+        _bodyA.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> _joint.drawJoint(alpha) })
     }
-
 }

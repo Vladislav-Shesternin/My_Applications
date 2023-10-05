@@ -1,10 +1,8 @@
 package com.veldan.lbjt.game.actors.checkbox
 
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.utils.Align
-import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
@@ -12,7 +10,7 @@ class ACheckBoxTouch_YanYinTheme(override val screen: AdvancedScreen): AdvancedG
 
     override var standartW = 131f
 
-    private val lightImg  = Image(screen.game.themeUtil.trc.YIN_YAN_LIGHT)
+    private val lightImg  = Image(screen.game.themeUtil.assets.YIN_YAN_LIGHT)
     private val yanYinBox = ACheckBoxTouch(screen, ACheckBox.Type.YAN_YIN)
 
 
@@ -28,7 +26,7 @@ class ACheckBoxTouch_YanYinTheme(override val screen: AdvancedScreen): AdvancedG
     private fun addLight() {
         addActor(lightImg)
         lightImg.apply {
-            standardizer.scope { setBounds(Vector2(-59f, -60f).toStandart, Vector2(251f, 251f).toStandart) }
+            setBoundsStandart(-59f,-60f,251f,251f)
             setOrigin(Align.center)
 
             val scale = 0.2f

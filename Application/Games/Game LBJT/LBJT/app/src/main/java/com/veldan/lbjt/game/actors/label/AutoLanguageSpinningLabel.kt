@@ -5,18 +5,16 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
-import com.veldan.lbjt.game.actors.masks.normal.Mask
-import com.veldan.lbjt.game.utils.LanguageUtil
+import com.veldan.lbjt.game.actors.masks.Mask
+
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.game.utils.toMS
-import com.veldan.lbjt.game.utils.toTexture
 import com.veldan.lbjt.util.cancelCoroutinesAll
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -28,9 +26,9 @@ class AutoLanguageSpinningLabel(
     override val screen: AdvancedScreen,
     private var resId     : Int,
     private val labelStyle: Label.LabelStyle,
-    private var timeDelay : Float = TIME_DELAY,
-    private var timeRoll  : Float = TIME_ROLL_CURRENT,
-    private val alignment : Int   = Align.center
+    private var timeDelay : Float   = TIME_DELAY,
+    private var timeRoll  : Float   = TIME_ROLL_CURRENT,
+    private val alignment : Int     = Align.center,
 ): AdvancedGroup() {
 
     companion object {
@@ -45,7 +43,7 @@ class AutoLanguageSpinningLabel(
 
     private var text = screen.game.languageUtil.getStringResource(resId)
 
-    private val mask         = Mask(screen)
+    private val mask         = Mask(screen, alphaWidth = 1000)
     private var labelCurrent = Label(text, labelStyle)
     private var labelNext    = Label(text, labelStyle)
 
@@ -149,7 +147,7 @@ class AutoLanguageSpinningLabel(
 
     private fun asyncCollectLocaleAndUpdateText() {
         coroutineLanguage?.launch {
-            LanguageUtil.localeFlow.collect { runGDX {
+            screen.game.languageUtil.languageFlow.collect { runGDX {
                 text = screen.game.languageUtil.getStringResource(resId)
                 setText(text)
             } }

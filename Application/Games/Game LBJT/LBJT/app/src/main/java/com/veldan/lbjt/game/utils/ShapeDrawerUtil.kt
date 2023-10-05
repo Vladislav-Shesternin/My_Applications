@@ -10,12 +10,12 @@ import space.earlygrey.shapedrawer.ShapeDrawer
 
 class ShapeDrawerUtil(batch: Batch): Disposable {
 
-    private val disposableTextureList = mutableListOf<Texture>()
+    private val disposableSet = mutableSetOf<Disposable>()
 
     val drawer = ShapeDrawer(batch, getRegion())
 
     override fun dispose() {
-        disposableTextureList.disposeAll()
+        disposableSet.disposeAll()
     }
 
     fun update() {
@@ -28,7 +28,7 @@ class ShapeDrawerUtil(batch: Batch): Disposable {
         pixmap.drawPixel(0, 0)
 
         val texture = Texture(pixmap)
-        disposableTextureList.add(texture)
+        disposableSet.add(texture)
 
         pixmap.dispose()
         return TextureRegion(texture, 0, 0, 1, 1)

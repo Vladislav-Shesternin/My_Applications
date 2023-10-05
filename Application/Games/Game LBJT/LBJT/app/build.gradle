@@ -12,8 +12,8 @@ android {
         applicationId "com.veldan.lbjt"
         minSdk 21
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 5
+        versionName "5.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -53,7 +53,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    def gdx_version = '1.11.0'
+    def gdx_version = '1.12.0'
     api "com.badlogicgames.gdx:gdx-backend-android:$gdx_version"
     natives "com.badlogicgames.gdx:gdx-platform:$gdx_version:natives-armeabi-v7a"
     natives "com.badlogicgames.gdx:gdx-platform:$gdx_version:natives-arm64-v8a"
@@ -71,6 +71,8 @@ dependencies {
     natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdx_version:natives-x86_64"
     def core_version = '1.8.0'
     implementation "androidx.core:core-ktx:$core_version"
+    def activity_version = "1.7.2"
+    implementation "androidx.activity:activity-ktx:$activity_version"
     def appcompat_version = '1.6.0'
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     def navigation_version = '2.4.1'
@@ -85,14 +87,17 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottie_version"
     def shape_drawer_version = "2.6.0"
     implementation "space.earlygrey:shapedrawer:$shape_drawer_version"
-    def textra_typist_version = "0.8.3"
+    def textra_typist_version = "0.9.0-a3"
     implementation "com.github.tommyettinger:textratypist:$textra_typist_version"
     def ads_version = "22.2.0"
     implementation "com.google.android.gms:play-services-ads:$ads_version"
-    def firebase_version = "32.2.0"
+    def billing_version = "6.0.1"
+    implementation "com.android.billingclient:billing-ktx:$billing_version"
+    def firebase_version = "32.2.3"
     implementation platform("com.google.firebase:firebase-bom:$firebase_version")
     implementation "com.google.firebase:firebase-analytics-ktx"
     implementation "com.google.firebase:firebase-storage-ktx"
+    implementation("com.google.firebase:firebase-database-ktx")
 }
 
 task copyAndroidNatives {

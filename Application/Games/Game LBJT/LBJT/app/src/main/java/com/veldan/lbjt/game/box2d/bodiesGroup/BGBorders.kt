@@ -1,12 +1,10 @@
 package com.veldan.lbjt.game.box2d.bodiesGroup
 
-import com.badlogic.gdx.math.Vector2
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
 import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.bodies.BHorizontal
 import com.veldan.lbjt.game.box2d.bodies.BVertical
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
-import com.veldan.lbjt.game.utils.runGDX
 
 class BGBorders(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGroup() {
 
@@ -17,15 +15,13 @@ class BGBorders(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGro
     val bLeft  = BVertical(screenBox2d)
     val bRight = BVertical(screenBox2d)
 
-    override fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit) {
-        super.requestToCreate(position, size, block)
+    override fun create(x: Float, y: Float, w: Float, h: Float) {
+        super.create(x, y, w, h)
 
         initB_Borders()
 
         createHorizontal()
         createVertical()
-
-        finishCreate(block)
     }
 
 
@@ -40,6 +36,9 @@ class BGBorders(override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGro
                 BodyId.Menu.BUTTON,
                 BodyId.Settings.VOLUME,
                 BodyId.Settings.LANGUAGE,
+                BodyId.AboutAuthor.ITEM,
+                BodyId.Comment.ITEM,
+                BodyId.Comment.DIALOG,
             ))
         } }
     }

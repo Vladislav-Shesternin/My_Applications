@@ -1,36 +1,48 @@
 package com.veldan.lbjt.game.utils.advanced
 
 import com.badlogic.gdx.graphics.g2d.Batch
+import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Widget
 import com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup
+import com.badlogic.gdx.utils.Array
 import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.SizeStandardizer
 import com.veldan.lbjt.game.utils.actor.setFillParent
+import com.veldan.lbjt.game.utils.disposeAll
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.cancelCoroutinesAll
+import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
-abstract class AdvancedGroup: WidgetGroup(), Disposable {
+abstract class AdvancedGroup : WidgetGroup(), Disposable {
     abstract val screen: AdvancedScreen
 
     open var standartW: Float = 1f
 
-    var coroutine   : CoroutineScope? = CoroutineScope(Dispatchers.Default)
+    var coroutine: CoroutineScope? = CoroutineScope(Dispatchers.Default)
         private set
-    var blockPreDraw: (Float) -> Unit = {}
-    val standardizer = SizeStandardizer()
+    var isDisposed = false
+        private set
 
-    private val onceInit  = Once()
+    private val standardizer = SizeStandardizer()
 
+    val Vector2.toStandart get() = standardizer.scope { toStandart }
+    val Float.toStandart   get() = standardizer.scope { toStandart }
+
+    val preDrawArray  = Array<PreDrawer>()
+    val disposableSet = mutableSetOf<Disposable>()
+
+    private val onceInit = Once()
 
     abstract fun addActorsOnGroup()
 
     override fun draw(batch: Batch?, parentAlpha: Float) {
-        blockPreDraw(parentAlpha)
+        preDrawArray.forEach { it.draw(parentAlpha * this@AdvancedGroup.color.a) }
         super.draw(batch, parentAlpha)
     }
+
 
     override fun sizeChanged() {
         standardizer.standardize(standartW, width)
@@ -38,11 +50,18 @@ abstract class AdvancedGroup: WidgetGroup(), Disposable {
     }
 
     override fun dispose() {
-        clear()
-        remove()
-        cancelCoroutinesAll(coroutine)
-        coroutine = null
+        //if (isDisposed.not()) {
+            clearPreDrawBlock()
+            disposableSet.disposeAll()
+            children.onEach { actor -> if (actor is AdvancedGroup && actor.isDisposed.not()) actor.dispose() }
+            cancelCoroutinesAll(coroutine)
+            coroutine = null
+
+         //   isDisposed = true
+        //}
     }
+
+    fun clearPreDrawBlock() = preDrawArray.clear()
 
     fun addAlignActor(
         actor: Actor,
@@ -114,7 +133,19 @@ abstract class AdvancedGroup: WidgetGroup(), Disposable {
         actors.forEach { addActor(it) }
     }
 
+    protected fun Actor.setBoundsStandart(x: Float, y: Float, width: Float, height: Float) {
+        setBounds(x.toStandart, y.toStandart, width.toStandart, height.toStandart)
+    }
+
+    protected fun Actor.setBoundsStandart(position: Vector2, size: Vector2) {
+        setBoundsStandart(position.x, position.y, size.x, size.y)
+    }
+
     enum class AlignmentHorizontal { START, CENTER, END, }
     enum class AlignmentVertical { BOTTOM, CENTER, TOP, }
+
+    fun interface PreDrawer {
+        fun draw(alpha: Float)
+    }
 
 }

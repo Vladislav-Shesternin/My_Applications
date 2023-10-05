@@ -122,8 +122,12 @@ open class ACheckBox(
 
     fun getStyleByType(type: Type) = when(type) {
         Type.YAN_YIN -> ACheckBoxStyle(
-            default = themeUtil.trc.YAN,
-            checked = themeUtil.trc.YIN,
+            default = themeUtil.assets.YAN,
+            checked = themeUtil.assets.YIN,
+        )
+        Type.DEBUG -> ACheckBoxStyle(
+            default = themeUtil.assets.DEBUG_BOX_DEF,
+            checked = themeUtil.assets.DEBUG_BOX_CHECK,
         )
     }
 
@@ -137,7 +141,7 @@ open class ACheckBox(
     )
 
     enum class Type {
-        YAN_YIN,
+        YAN_YIN, DEBUG
     }
 
 }

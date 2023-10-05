@@ -2,32 +2,35 @@ package com.veldan.lbjt.game.manager
 
 import com.badlogic.gdx.Gdx
 import com.veldan.lbjt.game.LibGDXGame
+import com.veldan.lbjt.game.screens.AboutAuthorScreen
+import com.veldan.lbjt.game.screens.CommentScreen
+import com.veldan.lbjt.game.screens.LoaderScreen
+import com.veldan.lbjt.game.screens.MenuScreen
+import com.veldan.lbjt.game.screens.SettingsScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
-import com.veldan.lbjt.util.log
 
 class NavigationManager(val game: LibGDXGame) {
 
-    private val backStack = mutableListOf<AdvancedScreen>()
+    private val backStack = mutableListOf<String>()
     var key: Int? = null
         private set
 
-    fun navigate(to: AdvancedScreen, from: AdvancedScreen? = null, key: Int? = null) = runGDX {
+    fun navigate(toScreenName: String, fromScreenName: String? = null, key: Int? = null) = runGDX {
         this.key = key
 
-        game.screen = to
-        backStack.filter { it.name == to.name }.onEach { backStack.remove(it) }
-        from?.let { f ->
-            backStack.filter { it.name == f.name }.onEach { backStack.remove(it) }
-            backStack.add(f)
+        game.updateScreen(getScreenByName(toScreenName))
+        backStack.filter { name -> name == toScreenName }.onEach { name -> backStack.remove(name) }
+        fromScreenName?.let { fromName ->
+            backStack.filter { name -> name == fromName }.onEach { name -> backStack.remove(name) }
+            backStack.add(fromName)
         }
     }
 
     fun back(key: Int? = null) = runGDX {
         this.key = key
 
-        if (isBackStackEmpty()) exit()
-        else game.screen = backStack.removeLast().javaClass.getDeclaredConstructor(LibGDXGame::class.java).newInstance(game)
+        if (isBackStackEmpty()) exit() else game.updateScreen(getScreenByName(backStack.removeLast()))
     }
 
 
@@ -35,5 +38,14 @@ class NavigationManager(val game: LibGDXGame) {
 
 
     fun isBackStackEmpty() = backStack.isEmpty()
+
+    private fun getScreenByName(name: String): AdvancedScreen = when(name) {
+        MenuScreen       ::class.java.name -> MenuScreen(game)
+        SettingsScreen   ::class.java.name -> SettingsScreen(game)
+        AboutAuthorScreen::class.java.name -> AboutAuthorScreen(game)
+        CommentScreen    ::class.java.name -> CommentScreen(game)
+        LoaderScreen     ::class.java.name -> LoaderScreen(game)
+        else                               -> MenuScreen(game)
+    }
 
 }

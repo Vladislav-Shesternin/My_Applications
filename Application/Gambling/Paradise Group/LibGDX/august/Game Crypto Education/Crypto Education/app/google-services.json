@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "100219393338",
+    "project_id": "crupp-tsk-learnn-inggg",
+    "storage_bucket": "crupp-tsk-learnn-inggg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100219393338:android:29e6bca15934202cf1ec03",
+        "android_client_info": {
+          "package_name": "crupp.tsk.learnn.inggg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100219393338-5l3oqt4r3vbe5k752rlkisb7jhg4s9ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxpWOOZalUhj80yyYsYHLwVgCLYkMHQVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100219393338-5l3oqt4r3vbe5k752rlkisb7jhg4s9ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

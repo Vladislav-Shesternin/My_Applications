@@ -1,5 +1,5 @@
 game.png
-size: 915, 1297
+size: 938, 1614
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -12,14 +12,37 @@ ads
   index: -1
 circle_blue
   rotate: false
-  xy: 689, 180
+  xy: 317, 280
   size: 113, 113
   orig: 113, 113
   offset: 0, 0
   index: -1
+cursor
+  rotate: false
+  xy: 100, 2
+  size: 7, 54
+  split: 3, 2, 7, 6
+  pad: -1, -1, -1, -1
+  orig: 7, 54
+  offset: 0, 0
+  index: -1
+debug_box_check
+  rotate: false
+  xy: 572, 76
+  size: 98, 94
+  orig: 98, 94
+  offset: 0, 0
+  index: -1
+debug_box_def
+  rotate: false
+  xy: 672, 76
+  size: 98, 94
+  orig: 98, 94
+  offset: 0, 0
+  index: -1
 description_panel
   rotate: false
-  xy: 584, 466
+  xy: 116, 778
   size: 300, 245
   orig: 300, 245
   offset: 0, 0
@@ -31,9 +54,23 @@ el_dan
   orig: 254, 91
   offset: 0, 0
   index: -1
+frame_icon
+  rotate: false
+  xy: 700, 280
+  size: 154, 154
+  orig: 154, 154
+  offset: 0, 0
+  index: -1
+frame_icon_empty
+  rotate: false
+  xy: 2, 436
+  size: 154, 154
+  orig: 154, 154
+  offset: 0, 0
+  index: -1
 frame_language
   rotate: false
-  xy: 493, 76
+  xy: 2, 172
   size: 314, 102
   orig: 314, 102
   offset: 0, 0
@@ -47,84 +84,139 @@ gift
   index: -1
 hand_hello
   rotate: false
-  xy: 2, 999
+  xy: 2, 1316
   size: 206, 289
   orig: 206, 289
   offset: 0, 0
   index: -1
 hand_hint
   rotate: false
-  xy: 667, 713
+  xy: 667, 1030
   size: 246, 284
   orig: 246, 284
   offset: 0, 0
   index: -1
 hand_v
   rotate: false
-  xy: 470, 466
+  xy: 2, 778
   size: 112, 203
   orig: 112, 203
   offset: 0, 0
   index: -1
+icon_def
+  rotate: false
+  xy: 493, 76
+  size: 77, 93
+  orig: 77, 93
+  offset: 0, 0
+  index: -1
 language_en
   rotate: false
-  xy: 255, 713
+  xy: 255, 1030
   size: 204, 267
   orig: 204, 267
   offset: 0, 0
   index: -1
 language_uk
   rotate: false
-  xy: 461, 713
+  xy: 461, 1030
   size: 204, 267
   orig: 204, 267
   offset: 0, 0
   index: -1
+loader
+  rotate: false
+  xy: 91, 280
+  size: 111, 110
+  orig: 111, 110
+  offset: 0, 0
+  index: -1
 monetization_btn_def
   rotate: false
-  xy: 210, 999
+  xy: 210, 1316
   size: 296, 296
   orig: 296, 296
   offset: 0, 0
   index: -1
 monetization_btn_press
   rotate: false
-  xy: 508, 999
+  xy: 508, 1316
   size: 296, 296
   orig: 296, 296
   offset: 0, 0
   index: -1
 monetization_mega_btn_def
   rotate: false
-  xy: 304, 180
+  xy: 620, 172
   size: 146, 106
   orig: 146, 106
   offset: 0, 0
   index: -1
 monetization_mega_btn_press
   rotate: false
-  xy: 452, 180
+  xy: 768, 172
   size: 146, 106
   orig: 146, 106
   offset: 0, 0
   index: -1
+no_wifi
+  rotate: false
+  xy: 204, 280
+  size: 111, 110
+  orig: 111, 110
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 530, 2
+  size: 70, 70
+  split: 23, 23, 23, 23
+  pad: -1, -1, -1, -1
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+panel_with_light_red
+  rotate: false
+  xy: 418, 778
+  size: 250, 250
+  split: 55, 53, 53, 52
+  pad: 0, 0, 0, 0
+  orig: 250, 250
+  offset: 0, 0
+  index: -1
+panel_with_light_white
+  rotate: false
+  xy: 670, 778
+  size: 250, 250
+  split: 52, 54, 51, 53
+  pad: -1, -1, -1, -1
+  orig: 250, 250
+  offset: 0, 0
+  index: -1
 ps
   rotate: false
-  xy: 100, 2
+  xy: 117, 2
   size: 411, 64
   orig: 411, 64
   offset: 0, 0
   index: -1
 regular_btn_def
   rotate: false
-  xy: 270, 295
+  xy: 158, 436
+  size: 466, 169
+  orig: 466, 169
+  offset: 0, 0
+  index: -1
+regular_btn_disable
+  rotate: false
+  xy: 2, 607
   size: 466, 169
   orig: 466, 169
   offset: 0, 0
   index: -1
 regular_btn_press
   rotate: false
-  xy: 2, 466
+  xy: 470, 607
   size: 466, 169
   orig: 466, 169
   offset: 0, 0
@@ -143,51 +235,60 @@ rod_quiet
   orig: 47, 47
   offset: 0, 0
   index: -1
+select
+  rotate: false
+  xy: 109, 2
+  size: 6, 54
+  split: 2, 2, 6, 8
+  pad: -1, -1, -1, -1
+  orig: 6, 54
+  offset: 0, 0
+  index: -1
 thanks_frame
   rotate: false
-  xy: 513, 2
+  xy: 602, 2
   size: 271, 72
   orig: 271, 72
   offset: 0, 0
   index: -1
 user
   rotate: false
-  xy: 600, 180
+  xy: 2, 280
   size: 87, 107
   orig: 87, 107
   offset: 0, 0
   index: -1
 volume_louder
   rotate: false
-  xy: 2, 180
+  xy: 318, 172
   size: 149, 102
   orig: 149, 102
   offset: 0, 0
   index: -1
 volume_quiet
   rotate: false
-  xy: 153, 180
+  xy: 469, 172
   size: 149, 102
   orig: 149, 102
   offset: 0, 0
   index: -1
 yan
   rotate: false
-  xy: 2, 295
+  xy: 432, 280
   size: 132, 131
   orig: 132, 131
   offset: 0, 0
   index: -1
 yin
   rotate: false
-  xy: 136, 295
+  xy: 566, 280
   size: 132, 131
   orig: 132, 131
   offset: 0, 0
   index: -1
 yin_yan_light
   rotate: false
-  xy: 2, 713
+  xy: 2, 1030
   size: 251, 251
   orig: 251, 251
   offset: 0, 0

@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name" translatable="false">LBJT</string>
-<!--    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="app_name"   translatable="false">LBJT</string>
+    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="reward_UID" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
 
     <string name="music">Music</string>
     <string name="quiet">Quiet</string>
@@ -13,4 +14,21 @@
     <string name="language">Language</string>
     <string name="english">English</string>
     <string name="ukrainian">Ukrainian</string>
+    <string name="about_author_description">"[#d2e9cdff]{SLIDE=1.0;1.0;false}{WAVE}I am writing this text on 05.25.2023{ENDWAVE}{ENDSLIDE}\n"
+                "\n"
+                "{SPIN}Started working as a programmer in March 2021 as an Android developer.{ENDSPIN} {SPIRAL}In the fall of 2021, he became interested in 2D games and studied {SICK}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDSICK} - a framework for creating 2D games.{ENDSPIRAL} {JUMP=1.0;1.0;1.0;1.0}In 2023, I set a goal to learn {GRADIENT=1465dfff;d2e9cdff;1.0;1.0}Box2D{ENDGRADIENT} for {JUMP}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDJUMP} and here I am.{ENDJUMP}\n"
+                "\n"
+                "{SHRINK}The main source of knowledge is the site {LINK=https://www.iforce2d.net/b2dtut/joints-overview}[#e4e90cff][_]https://www.iforce2d.net/b2dtut/joints-overview[_]{CLEARCOLOR}[#d2e9cdff]{ENDLINK}. Thanks for it =){ENDSHRINK}\n"
+                "\n"
+                "{EMERGE}All texts in the application were written by me, grammar was edited by {RAINBOW}ChatGPT.{ENDRAINBOW}{ENDEMERGE}"</string>
+    <string name="give_thanks">Give thanks</string>
+    <string name="ads">View ads</string>
+    <string name="gift">Buy a gift</string>
+    <string name="write_comment">Write a comment</string>
+    <string name="nickname">Nickname</string>
+    <string name="nickname_hint">Nickname &lt;= 15 chars</string>
+    <string name="cancel">Сancel</string>
+    <string name="publish">Publish</string>
+    <string name="comment_hint">Comment &lt;= 350 characters…</string>
+    <string name="veldan_comment">Set an ICON and NICKNAME then you can comment !)</string>
 </resources>

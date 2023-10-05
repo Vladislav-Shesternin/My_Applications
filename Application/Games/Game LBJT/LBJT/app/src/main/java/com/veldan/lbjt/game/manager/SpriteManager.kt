@@ -3,22 +3,23 @@ package com.veldan.lbjt.game.manager
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.assets.loaders.TextureLoader
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.NinePatch
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.graphics.g2d.TextureRegion
-import com.veldan.lbjt.game.utils.region
+import com.badlogic.gdx.utils.Array
 
 class SpriteManager(var assetManager: AssetManager) {
 
-    var loadableAtlasList   = mutableListOf<IAtlas>()
-    var loadableTextureList = mutableListOf<ITexture>()
+    var loadableAtlasList   = mutableListOf<AtlasData>()
+    var loadableTextureList = mutableListOf<TextureData>()
 
     fun loadAtlas() {
-        loadableAtlasList.onEach { assetManager.load(it.data.path, TextureAtlas::class.java) }
+        loadableAtlasList.onEach { assetManager.load(it.path, TextureAtlas::class.java) }
     }
 
     fun loadTexture() {
         loadableTextureList.onEach {
-            assetManager.load(it.data.path, Texture::class.java, TextureLoader.TextureParameter().apply {
+            assetManager.load(it.path, Texture::class.java, TextureLoader.TextureParameter().apply {
                 minFilter = Texture.TextureFilter.Linear
                 magFilter = Texture.TextureFilter.Linear
                 genMipMaps = true
@@ -27,11 +28,11 @@ class SpriteManager(var assetManager: AssetManager) {
     }
 
     fun initAtlas() {
-        loadableAtlasList.onEach { it.data.atlas = assetManager[it.data.path, TextureAtlas::class.java] }
+        loadableAtlasList.onEach { it.atlas = assetManager[it.path, TextureAtlas::class.java] }
     }
 
     fun initTexture() {
-        loadableTextureList.onEach { it.data.texture = assetManager[it.data.path, Texture::class.java] }
+        loadableTextureList.onEach { it.texture = assetManager[it.path, Texture::class.java] }
     }
 
     fun initAtlasAndTexture() {
@@ -40,32 +41,23 @@ class SpriteManager(var assetManager: AssetManager) {
     }
 
 
-    enum class EnumAtlas(override val data: TextureAtlasData): IAtlas {
-        GAME(   TextureAtlasData("atlas/game.atlas")   ),
+    enum class EnumAtlas(val data: AtlasData) {
+        GAME(AtlasData("atlas/game.atlas")),
     }
 
-    enum class EnumTexture(override val data: TextureData): ITexture {
+    enum class EnumTexture(val data: TextureData) {
         YAN_BACKGROUND(TextureData("textures/yan_background.png")),
         YIN_BACKGROUND(TextureData("textures/yin_background.png")),
+        MASK_ICON(     TextureData("textures/mask_icon.png")     ),
+        VELDAN_ICON(   TextureData("textures/veldan_icon.png")   ),
     }
 
-    interface IAtlas {
-        val data: TextureAtlasData
-    }
 
-    interface ITexture {
-        val data: TextureData
-    }
-
-    data class TextureAtlasData(
-        val path: String,
-    ) {
+    data class AtlasData(val path: String) {
         lateinit var atlas: TextureAtlas
     }
 
-    data class TextureData(
-        val path: String,
-    ) {
+    data class TextureData(val path: String) {
         lateinit var texture: Texture
     }
 

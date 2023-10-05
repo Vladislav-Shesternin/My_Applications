@@ -15,7 +15,7 @@ class BodyEditorLoader {
 
     private val vectorPool: MutableList<Vector2?> = ArrayList()
     private val polygonShape = PolygonShape()
-    private val circleShape = CircleShape()
+    private val circleShape  = CircleShape()
 
     // -------------------------------------------------------------------------
     // Constructors

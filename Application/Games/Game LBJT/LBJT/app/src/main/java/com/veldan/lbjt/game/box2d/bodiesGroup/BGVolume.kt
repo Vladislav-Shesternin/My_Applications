@@ -8,6 +8,7 @@ import com.badlogic.gdx.physics.box2d.joints.PulleyJointDef
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.veldan.lbjt.game.actors.label.AutoLanguageSpinningLabel
 import com.veldan.lbjt.game.actors.volume.AVolume
+import com.veldan.lbjt.game.box2d.AbstractBody
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
@@ -21,7 +22,10 @@ import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.JOINT_WIDTH
 import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
+import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
+import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.game.utils.font.FontParameter.CharType
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.game.utils.toB2
 import com.veldan.lbjt.game.utils.toUI
@@ -49,10 +53,10 @@ class BGVolume(
 
     override val standartW = 314f
 
-    private val fontTTFUtil by lazy { screenBox2d.game.fontTTFUtil }
+    private val parameter = FontParameter()
 
     // Actor
-    private val aNameLbl by lazy { AutoLanguageSpinningLabel(screenBox2d, nameResId, Label.LabelStyle(fontTTFUtil.fontInterExtraBold.font_50.font, GameColor.textGreen)) }
+    private val aNameLbl = AutoLanguageSpinningLabel(screenBox2d, nameResId, Label.LabelStyle(screenBox2d.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(50)), GameColor.textGreen))
 
     // Body
     private val bVolumeQuiet     = BVolume(screenBox2d, AVolume.Type.QUIET)
@@ -66,14 +70,15 @@ class BGVolume(
     private val jMotorStart = AbstractJoint<MotorJoint, MotorJointDef>(screenBox2d)
 
     // Field
-    private val drawer = screenBox2d.drawerUtil.drawer
+    private val drawer     = screenBox2d.drawerUtil.drawer
+    private val tmpVector2 = Vector2()
 
     private val percentLouderFlow by lazy { MutableStateFlow(startVolumePercent) }
     val percentVolumeFlow = MutableSharedFlow<Int>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
 
 
-    override fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit) {
-        super.requestToCreate(position, size, block)
+    override fun create(x: Float, y: Float, w: Float, h: Float) {
+        super.create(x, y, w, h)
 
         screenBox2d.stageUI.apply {
             addNameLbl()
@@ -87,12 +92,8 @@ class BGVolume(
         createB_VolumeRod()
         createB_StaticStart()
 
-        finishCreate {
-            block()
-            createJ_Pulley()
-            asyncCollectPercentLouderFlow()
-        }
-
+        createJ_Pulley()
+        asyncCollectPercentLouderFlow()
     }
 
     // ---------------------------------------------------
@@ -130,7 +131,7 @@ class BGVolume(
 
     private fun AdvancedStage.addNameLbl() {
         addActor(aNameLbl)
-        standardizer.scope { aNameLbl.setBounds(position.cpy().add(Vector2(0f, 565f).toStandart), Vector2(314f, 65f).toStandart) }
+        aNameLbl.setBounds(position.cpy().add(Vector2(0f, 565f).toStandart), Vector2(314f, 65f).toStandart)
     }
 
     // ---------------------------------------------------
@@ -160,17 +161,15 @@ class BGVolume(
             bodyA = bVolumeRodQuiet.body
             bodyB = bVolumeRodLouder.body
 
-            standardizer.scope {
-                groundAnchorA.set(position.cpy().add(Vector2(74f, 440f).toStandart).toB2)
-                groundAnchorB.set(position.cpy().add(Vector2(239f, 440f).toStandart).toB2)
-                localAnchorA.set(Vector2(23f, 23f).subCenter(bodyA))
-                localAnchorB.set(Vector2(23f, 23f).subCenter(bodyB))
-                lengthA = 209f.toStandart.toB2
-                lengthB = 209f.toStandart.toB2
-            }
+            groundAnchorA.set(position.cpy().add(Vector2(74f, 440f).toStandart).toB2)
+            groundAnchorB.set(position.cpy().add(Vector2(239f, 440f).toStandart).toB2)
+            localAnchorA.set(Vector2(23f, 23f).subCenter(bodyA))
+            localAnchorB.set(Vector2(23f, 23f).subCenter(bodyB))
+            lengthA = 209f.toStandart.toB2
+            lengthB = 209f.toStandart.toB2
 
-            bVolumeRodQuiet.actor?.blockPreDraw = { alpha -> drawer.line(groundAnchorA.cpy().toUI, bodyA.position.add(localAnchorA).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) }
-            bVolumeRodLouder.actor?.blockPreDraw = { alpha -> drawer.line(groundAnchorB.cpy().toUI, bodyB.position.add(localAnchorB).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) }
+            bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
+            bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
 
         })
     }
@@ -200,11 +199,11 @@ class BGVolume(
 
                     runGDX { bVolumeRodLouder.apply {
                         val onceDestroy = Once()
-                        beginContactBlock = { if (it.id == START) onceDestroy.once { coroutine?.launch {
+                        beginContactBlock = AbstractBody.ContactBlock { if (it.id == START) onceDestroy.once { coroutine?.launch {
                             delay(700)
-                            runGDX { bStaticStart.requestToDestroy() }
+                            runGDX { bStaticStart.destroy() }
                         } } }
-                        renderBlock = { (body?.position?.y ?: 0f).also { _y ->
+                        renderBlock = AbstractBody.RenderBlock { (body?.position?.y ?: 0f).also { _y ->
                             percentLouderFlow.value = when {
                                 _y >= MIN_LOUDER -> 0
                                 _y <= MAX_LOUDER -> 100

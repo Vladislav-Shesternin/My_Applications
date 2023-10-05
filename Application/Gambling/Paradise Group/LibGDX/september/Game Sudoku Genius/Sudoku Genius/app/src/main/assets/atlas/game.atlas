@@ -1,0 +1,145 @@
+game.png
+size: 490, 283
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+b1
+  rotate: false
+  xy: 2, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b2
+  rotate: false
+  xy: 63, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b3
+  rotate: false
+  xy: 124, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b4
+  rotate: false
+  xy: 185, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b5
+  rotate: false
+  xy: 246, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b6
+  rotate: false
+  xy: 307, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b7
+  rotate: false
+  xy: 368, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b8
+  rotate: false
+  xy: 429, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+b9
+  rotate: false
+  xy: 2, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+chk
+  rotate: false
+  xy: 124, 124
+  size: 157, 157
+  orig: 157, 157
+  offset: 0, 0
+  index: -1
+def
+  rotate: false
+  xy: 283, 124
+  size: 157, 157
+  orig: 157, 157
+  offset: 0, 0
+  index: -1
+w1
+  rotate: false
+  xy: 63, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w2
+  rotate: false
+  xy: 124, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w3
+  rotate: false
+  xy: 185, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w4
+  rotate: false
+  xy: 246, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w5
+  rotate: false
+  xy: 307, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w6
+  rotate: false
+  xy: 368, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w7
+  rotate: false
+  xy: 429, 63
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w8
+  rotate: false
+  xy: 2, 124
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+w9
+  rotate: false
+  xy: 63, 124
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1

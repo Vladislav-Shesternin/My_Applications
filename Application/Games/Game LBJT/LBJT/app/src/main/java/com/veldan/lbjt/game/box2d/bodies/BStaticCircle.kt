@@ -13,5 +13,5 @@ class BStaticCircle(override val screenBox2d: AdvancedBox2dScreen): AbstractBody
         type = BodyDef.BodyType.StaticBody
     }
     override val fixtureDef = FixtureDef()
-    override var actor: AdvancedGroup? = AImage(screenBox2d, screenBox2d.game.themeUtil.trc.CIRCLE_BLUE)
+    override var actor: AdvancedGroup? = AImage(screenBox2d, screenBox2d.game.themeUtil.assets.CIRCLE_BLUE)
 }

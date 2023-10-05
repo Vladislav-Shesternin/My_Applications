@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">Money Maker Converter</string>
+    <string name="ne_prinal">Cancel</string>
+    <string name="prinal">Accept</string>
+</resources>

@@ -1,5 +1,6 @@
 package com.veldan.lbjt.game.utils.advanced
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Widget
@@ -38,14 +39,17 @@ open class AdvancedStage(viewport: Viewport) : Stage(viewport) {
     }
 
     fun render() {
-        viewport.apply(true)
         act()
         draw()
     }
 
     override fun dispose() {
-        actors.onEach { actor -> if (actor is Disposable) actor.dispose() }
+        actors.onEach { actor -> if (actor is AdvancedGroup && actor.isDisposed.not()) actor.dispose() }
         super.dispose()
     }
 
+    fun unfocusAndHideKeyboard() {
+        unfocusAll()
+        Gdx.input.setOnscreenKeyboardVisible(false)
+    }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "732676362019",
+    "project_id": "golov-lomaka-sudjoken",
+    "storage_bucket": "golov-lomaka-sudjoken.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732676362019:android:8d849991dd96e00346c696",
+        "android_client_info": {
+          "package_name": "golov.lomaka.sudjoken"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732676362019-combh879dnakmco1ks9onjngdcpuiu7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYPakRxaKXlvW2XXNRzeJgRdIab95JNsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732676362019-combh879dnakmco1ks9onjngdcpuiu7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,6 +6,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.FixtureDef
 import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
+import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.*
 import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.actor.setOrigin
@@ -28,107 +29,75 @@ abstract class AbstractBody: Destroyable {
     open var id    : String         = BodyId.NONE
     open val collisionList          = mutableListOf<String>()
 
-    val size     = Vector2()
-    val position = Vector2()
+    private val tmpVector2 = Vector2()
 
-    val scale  get() = size.x.toB2
-    val center get() = screenBox2d.worldUtil.bodyEditor.getOrigin(name, scale)
+    val size       = Vector2()
+    val position   = Vector2()
 
     var body: Body? = null
+        private set
+    var scale = 0f
+        private set
+    var center = tmpVector2
         private set
     var coroutine: CoroutineScope? = null
         private set
 
-    var beginContactBlock: (AbstractBody) -> Unit = {}
-    var endContactBlock  : (AbstractBody) -> Unit = {}
-    var renderBlock      : (Float)        -> Unit = {}
+    var beginContactBlock: ContactBlock? = null
+    var endContactBlock  : ContactBlock? = null
+    var renderBlock      : RenderBlock?  = null
 
-    private val createdBlockList   = mutableListOf<(AbstractBody) -> Unit>()
-    private val destroyedBlockList = mutableListOf<() -> Unit>()
-
-    var createdBlock: (AbstractBody) -> Unit = {}
-        set(value) {
-            createdBlockList.add(value)
-        }
-    var destroyedBlock: () -> Unit = {}
-        set(value) {
-            destroyedBlockList.add(value)
-        }
-
-    var isDisposeActor = true
-
+    var isDestroyActor = true
 
     open fun render(deltaTime: Float) {
+        renderBlock?.block(deltaTime)
         transformActor()
-        renderBlock(deltaTime)
     }
 
-    open fun beginContact(contactBody: AbstractBody) {
-        beginContactBlock(contactBody)
-    }
+    open fun beginContact(contactBody: AbstractBody) = beginContactBlock?.block(contactBody)
 
-    open fun endContact(contactBody: AbstractBody) {
-        endContactBlock(contactBody)
-    }
+    open fun endContact(contactBody: AbstractBody) = endContactBlock?.block(contactBody)
 
-    override fun dispose(isDestroy: Boolean, block: () -> Unit) {
+    override fun destroy() {
         if (body != null) {
             cancelCoroutinesAll(coroutine)
             coroutine = null
 
-            if (isDisposeActor) {
+            if (isDestroyActor && actor?.isDisposed == false) {
                 actor?.dispose()
                 actor = null
             }
 
             collisionList.clear()
 
-            body?.jointList?.onEach { (it.joint.userData as AbstractJoint<out Joint, out JointDef>).dispose(false) }
-            if (isDestroy) {
-                screenBox2d.worldUtil.world.destroyBody(body)
-                destroyedBlockList.onEach { it.invoke() }.clear()
-            }
-            body = null
+            body?.jointList?.map { (it.joint.userData as AbstractJoint<out Joint, out JointDef>) }?.destroyAll()
 
-            block()
+            screenBox2d.worldUtil.world.destroyBody(body)
+            body = null
         }
     }
 
-    fun createInWorld() {
+    fun create(x: Float, y: Float, w: Float, h: Float) {
         if (body == null) {
+            position.set(x, y)
+            size.set(w, h)
+            scale  = size.x.toB2
+            center = screenBox2d.worldUtil.bodyEditor.getOrigin(name, scale)
+
+            bodyDef.position.set(tmpVector2.set(position).toB2.add(center))
+
             body = screenBox2d.worldUtil.world.createBody(bodyDef).apply { userData = this@AbstractBody }
             screenBox2d.worldUtil.bodyEditor.attachFixture(body!!, name, fixtureDef, scale)
-            actor?.let { addActor() }
 
-            isDisposeActor = true
+            coroutine = CoroutineScope(Dispatchers.Default)
+            addActor()
 
-            createdBlockList.onEach { it.invoke(this) }.clear()
+            isDestroyActor = true
         }
     }
 
-    fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit = {}) {
-        createdBlock = { block() }
-
-        this.position.set(position)
-        this.size.set(size)
-
-        bodyDef.position.set(position.toB2.add(center))
-        coroutine = CoroutineScope(Dispatchers.Default)
-
-        screenBox2d.worldUtil.createBodyList.add(this@AbstractBody)
-    }
-
-    fun requestToCreate(layoutData: Layout.LayoutData, block: () -> Unit = {}) {
-        requestToCreate(layoutData.position(), layoutData.size(), block)
-    }
-
-    fun requestToCreate(x: Float, y: Float, w: Float, h: Float, block: () -> Unit = {}) {
-        requestToCreate(Vector2(x, y), Vector2(w, h), block)
-    }
-
-    override fun requestToDestroy(block: () -> Unit) {
-        destroyedBlock = { block() }
-        screenBox2d.worldUtil.destroyBodyList.add(this@AbstractBody)
+    fun create(position: Vector2, size: Vector2) {
+        create(position.x, position.y, size.x, size.y)
     }
 
     private fun addActor() {
@@ -141,11 +110,18 @@ abstract class AbstractBody: Destroyable {
     private fun transformActor() {
         body?.let { b ->
             actor?.apply {
-                setPosition(b.position.cpy().sub(center).toUI)
-                setOrigin(center.cpy().toUI)
+                setPosition(tmpVector2.set(b.position).sub(center).toUI)
+                setOrigin(tmpVector2.set(center).toUI)
                 rotation = b.angle * RADTODEG
             }
         }
     }
+
+    // ---------------------------------------------------
+    // SAM
+    // ---------------------------------------------------
+
+    fun interface ContactBlock { fun block(body: AbstractBody) }
+    fun interface RenderBlock { fun block(deltaTime: Float) }
 
 }

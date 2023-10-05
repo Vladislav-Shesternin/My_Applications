@@ -11,4 +11,21 @@
     <string name="language">Мова</string>
     <string name="english">Англiйська</string>
     <string name="ukrainian">Соловїна</string>
+    <string name="about_author_description">"[#d2e9cdff]{SLIDE=1.0;1.0;false}{WAVE}Цей текст Я пишу 25.05.2023{ENDWAVE}{ENDSLIDE}\n"
+                "\n"
+                "{SPIN}Почав працювати програмістом з березня 2021 року на посаді Андроїд-розробника.{ENDSPIN} {SPIRAL}Восени 2021 року зацікавився 2D-іграми та вивчав {SICK}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDSICK} - фреймворк для створення 2D ігор.{ENDSPIRAL} {JUMP=1.0;1.0;1.0;1.0}У 2023 році поставив собі мету вивчити {GRADIENT=1465dfff;d2e9cdff;1.0;1.0}Box2D{ENDGRADIENT} для {JUMP}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDJUMP} и ось Я тут.{ENDJUMP}\n"
+                "\n"
+                "{SHRINK}Основне джерело знань - сайт {LINK=https://www.iforce2d.net/b2dtut/joints-overview}[#e4e90cff][_]https://www.iforce2d.net/b2dtut/joints-overview[_]{CLEARCOLOR}[#d2e9cdff]{ENDLINK}. Дякую за нього! =){ENDSHRINK}\n"
+                "\n"
+                "{EMERGE}Всі тексти у додатку написав Я, граматику допомагав редагувати {RAINBOW}ChatGPT.{ENDRAINBOW}{ENDEMERGE}"</string>
+    <string name="give_thanks">Подякувати</string>
+    <string name="ads">Реклама</string>
+    <string name="gift">Подарунок</string>
+    <string name="write_comment">Коментувати</string>
+    <string name="nickname">Нiкнейм</string>
+    <string name="nickname_hint">Нікнейм &lt;= 15 символів</string>
+    <string name="cancel">Скасувати</string>
+    <string name="publish">Опублікувати</string>
+    <string name="comment_hint">Коментувати &lt;= 350 символiв…</string>
+    <string name="veldan_comment">Встановіть ІКОНКУ та НІКНЕЙМ тоді можете коментувати !)</string>
 </resources>

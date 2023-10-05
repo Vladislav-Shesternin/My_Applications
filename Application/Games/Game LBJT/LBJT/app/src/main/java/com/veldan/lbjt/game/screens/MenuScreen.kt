@@ -3,29 +3,32 @@ package com.veldan.lbjt.game.screens
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.assets.AssetDescriptor
 import com.badlogic.gdx.audio.Music
+import com.badlogic.gdx.graphics.glutils.ShaderProgram
 import com.badlogic.gdx.math.Interpolation
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.veldan.lbjt.game.LibGDXGame
+import com.veldan.lbjt.game.actors.ShaderGroup
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGBorders
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGMenu
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGYanYinTheme
-import com.veldan.lbjt.game.box2d.disposeAll
+import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.utils.FIREBASE_STORAGE_MUSIC
 import com.veldan.lbjt.game.utils.LOCAL_MUSIC_DIR
-import com.veldan.lbjt.game.utils.TIME_ANIM_ALPHA
+import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.actor.setOnTouchListener
 import com.veldan.lbjt.game.utils.advanced.AdvancedMouseScreen
-import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
+import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.game.utils.region
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.util.Once
+import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -34,20 +37,20 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 
-class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
+class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
     companion object {
         private val oncePlayMusic = Once()
     }
 
     // Actor
-    private val aHandHelloImg = Image(game.themeUtil.trc.HAND_HELLO)
-    private val aHandHintImg  = Image(game.themeUtil.trc.HAND_HINT)
+    private val aHandHelloImg = Image(game.themeUtil.assets.HAND_HELLO)
+    private val aHandHintImg  = Image(game.themeUtil.assets.HAND_HINT)
 
     // BodyGroup
-    private val bgBorders     = BGBorders(this )
-    private val bgMenu        = BGMenu(this )
-    private val bgYanYinTheme = BGYanYinTheme(this)
+//    private val bgBorders     = BGBorders(this )
+//    private val bgMenu        = BGMenu(this )
+//    private val bgYanYinTheme = BGYanYinTheme(this)
 
     // Fields
     private val fileHandlerMusic       = Gdx.files.local(LOCAL_MUSIC_DIR)
@@ -59,39 +62,44 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
         game.apply { backgroundColor = themeUtil.backgroundColor }
 
         stageUI.root.animHide()
-        setUIBackground(game.themeUtil.trc.BACKGROUND)
+        setUIBackground(game.themeUtil.assets.BACKGROUND.region)
         super.show()
-        stageUI.root.animShow(TIME_ANIM_ALPHA)
 
-        game.activity.apply {
-            setNavigationBarColor(game.themeUtil.navBarColor)
-            bannerUtil.show()
-        }
+        game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
 
         //oncePlayMusic.once { playMusic() }
+
     }
 
+    private var shader: ShaderProgram? = null
+
     override fun AdvancedStage.addActorsOnStageUI() {
-        createBG_Borders()
-        createBG_Menu()
-        createBG_YanYinTheme {
-            addHandHelloImg()
-            addHandHintImg()
+        //createBG_Borders()
+        //createBG_Menu()
+        //createBG_YanYinTheme()
 
-            initialize {
-                asyncCollectIsUserFirstTouchFlow()
+        val shaderGroup = ShaderGroup(this@MenuScreen)
 
-                jobAnimHand = coroutine?.launch {
-                    animHandHello()
-                    animHandHint()
-                }
-            }
+        ShaderProgram.pedantic = false
+        shader = ShaderProgram(batch.shader.vertexShaderSource, Gdx.files.internal("shaders/fragment.frag").readString())
+        shader?.apply { if (isCompiled) batch.shader = shader else log(log) }
+
+        addHandHelloImg()
+        addHandHintImg()
+
+        asyncCollectIsUserFirstTouchFlow()
+
+        jobAnimHand = coroutine?.launch {
+            animHandHello()
+            animHandHint()
         }
+
+        stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
     }
 
 
     override fun dispose() {
-        listOf(bgBorders, bgMenu, bgYanYinTheme).disposeAll()
+        //listOf(bgBorders, bgMenu, bgYanYinTheme).destroyAll()
         super.dispose()
     }
 
@@ -119,25 +127,25 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
     // ------------------------------------------------------------------------
     // Create Body Group
     // ------------------------------------------------------------------------
-    private fun createBG_Borders(block: () -> Unit = {}) {
-        bgBorders.requestToCreate(Vector2(0f, 0f), Vector2(700f, 1400f), block)
-    }
-
-    private fun createBG_Menu(block: () -> Unit = {}) {
-        bgMenu.requestToCreate(Vector2(117f, 444f), Vector2(466f, 1012f), block)
-
-        bgMenu.apply {
-            bRegularBtnTutorial   .getActor()?.setOnTouchListener {/*navigateTo(SettingsScreen())*/ }
-            bRegularBtnSettings   .getActor()?.setOnTouchListener { navigateTo(SettingsScreen(game))    }
-            bRegularBtnAboutAuthor.getActor()?.setOnTouchListener { navigateTo(AboutAuthorScreen(game)) }
-            bRegularBtnComment    .getActor()?.setOnTouchListener { /*navigateTo(SettingsScreen())*/ }
-
-        }
-    }
-
-    private fun createBG_YanYinTheme(block: () -> Unit = {}) {
-        bgYanYinTheme.requestToCreate(Vector2(285f, 231f), Vector2(131f, 131f), block)
-    }
+//    private fun createBG_Borders() {
+//        bgBorders.create(0f,0f,700f,1400f)
+//    }
+//
+//    private fun createBG_Menu() {
+//        bgMenu.create(117f,444f,466f,1012f)
+//
+//        bgMenu.apply {
+//            bRegularBtnTutorial   .getActor()?.setOnTouchListener { /*navigateTo(SettingsScreen())*/ }
+//            bRegularBtnSettings   .getActor()?.setOnTouchListener { navigateTo(SettingsScreen::class.java.name)    }
+//            bRegularBtnAboutAuthor.getActor()?.setOnTouchListener { navigateTo(AboutAuthorScreen::class.java.name) }
+//            bRegularBtnComment    .getActor()?.setOnTouchListener { navigateTo(CommentScreen::class.java.name)     }
+//
+//        }
+//    }
+//
+//    private fun createBG_YanYinTheme() {
+//        bgYanYinTheme.create(285f,231f,131f,131f)
+//    }
 
     // ---------------------------------------------------
     // Anim
@@ -246,13 +254,15 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
             musicRef.listAll().addOnSuccessListener { results ->
                 results.items.also { items ->
                     items.onEachIndexed { index, ref ->
-                        ref.getBytes(Long.MAX_VALUE).addOnSuccessListener { bytes -> runGDX {
-                            fileHandlerMusic.child("song$index.ogg").writeBytes(bytes, false)
-                            if (index == items.lastIndex) isLoadStorageMusicFlow.tryEmit(true)
-                        } }
+                        ref.metadata.addOnSuccessListener { metadata ->
+                            ref.getBytes(Long.MAX_VALUE).addOnSuccessListener { bytes -> runGDX {
+                                fileHandlerMusic.child("song$index.${metadata.contentType?.substringAfter('/')}").writeBytes(bytes, false)
+                                if (index == items.lastIndex) isLoadStorageMusicFlow.tryEmit(true)
+                            } }
+                        }
                     }
                 }
-            }
+            }.addOnFailureListener { log("asyncLoadStorageMusic FAILURE: ${it.message}") }
         }
     }
 
@@ -289,8 +299,8 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
     }
 
     private fun playMusic() {
-        asyncLoadLocalMusic()
         asyncLoadStorageMusic()
+        asyncLoadLocalMusic()
 
         var indexMusic = 0
         var musicList: List<Music> = game.musicUtil.firebaseStorageMusicList
@@ -312,8 +322,8 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen() {
         playRandomMusic()
     }
 
-    private fun navigateTo(screen: AdvancedScreen) {
-        stageUI.root.animHide(TIME_ANIM_ALPHA) { game.navigationManager.navigate(screen, MenuScreen(game)) }
+    private fun navigateTo(screenName: String) {
+        stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) { game.navigationManager.navigate(screenName, MenuScreen::class.java.name) }
     }
 
 }

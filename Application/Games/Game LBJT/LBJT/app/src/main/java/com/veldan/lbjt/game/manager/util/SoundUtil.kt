@@ -25,12 +25,5 @@ class SoundUtil {
 
     var isPause = (volumeLevel <= 0f)
 
-    private var previousSoundId = 0L
-
-    fun play(sound: Sound, isStopPrev: Boolean = false) = runGDX {
-        if (isPause.not()) {
-            if (isStopPrev && previousSoundId != 0L) sound.stop(previousSoundId)
-            previousSoundId = sound.play(volumeLevel)
-        }
-    }
+    fun play(sound: Sound) = runGDX { if (isPause.not()) sound.play(volumeLevel) }
 }

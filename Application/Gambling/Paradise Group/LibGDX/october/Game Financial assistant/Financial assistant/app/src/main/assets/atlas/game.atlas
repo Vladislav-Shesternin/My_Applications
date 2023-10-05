@@ -1,0 +1,19 @@
+game.png
+size: 692, 226
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+redon
+  rotate: false
+  xy: 2, 2
+  size: 688, 110
+  orig: 688, 110
+  offset: 0, 0
+  index: -1
+rom
+  rotate: false
+  xy: 2, 114
+  size: 688, 110
+  orig: 688, 110
+  offset: 0, 0
+  index: -1

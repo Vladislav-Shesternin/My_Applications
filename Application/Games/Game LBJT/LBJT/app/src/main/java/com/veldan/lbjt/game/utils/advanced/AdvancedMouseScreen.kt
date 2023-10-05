@@ -7,8 +7,10 @@ import com.badlogic.gdx.physics.box2d.joints.MouseJointDef
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.box2d.AbstractBody
 import com.veldan.lbjt.game.box2d.AbstractJoint
+import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.WorldUtil
 import com.veldan.lbjt.game.box2d.bodies.BStatic
 import com.veldan.lbjt.game.utils.actor.animHide
@@ -20,10 +22,10 @@ import com.veldan.lbjt.util.log
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 
-abstract class AdvancedMouseScreen: AdvancedBox2dScreen(WorldUtil()) {
+abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2dScreen(WorldUtil()) {
 
     // Actor
-    val user by lazy { Image(game.themeUtil.trc.USER) }
+    val user by lazy { Image(game.themeUtil.assets.USER) }
 
     // Joint
     private val jMouse by lazy { AbstractJoint<MouseJoint, MouseJointDef>(this) }
@@ -39,20 +41,22 @@ abstract class AdvancedMouseScreen: AdvancedBox2dScreen(WorldUtil()) {
     val isUserFirstTouchFlow       = MutableSharedFlow<Unit>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
 
 
-    fun initialize(block: () -> Unit = {}) {
-        stageUI.addLBJTActorsOnStageUI(block)
-        stageUI.root.addListener(listenerForMouseJoint)
-        stageUI.root.addListener(listenerForUser)
+    override fun show() {
+        super.show()
+
+        stageUI.addLBJTActorsOnStageUI()
+        stageUI.addListener(listenerForMouseJoint)
+        stageUI.addListener(listenerForUser)
     }
 
     override fun dispose() {
-        log("dispose AdvancedLBJTScreen")
+        log("dispose AdvancedLBJTScreen: ${this::class.java.name.substringAfterLast('.')}")
         super.dispose()
     }
 
-    private fun AdvancedStage.addLBJTActorsOnStageUI(block: () -> Unit = {}) {
+    private fun AdvancedStage.addLBJTActorsOnStageUI() {
         addUser()
-        createB_Static(block)
+        createB_Static()
     }
 
     // ---------------------------------------------------
@@ -72,20 +76,25 @@ abstract class AdvancedMouseScreen: AdvancedBox2dScreen(WorldUtil()) {
     // Create Body
     // ---------------------------------------------------
 
-    private fun createB_Static(block: () -> Unit = {}) {
-        bStatic.requestToCreate(Vector2(0f, 0f), Vector2(1f, 1f), block)
+    private fun createB_Static() {
+        bStatic.create(0f, 0f,1f,1f)
     }
 
     // ------------------------------------------------------------------------
-    // Logic
+    // Listener
     // ------------------------------------------------------------------------
 
     private fun getInputListenerForMouseJoint() = object : InputListener() {
 
         var hitAbstractBody: AbstractBody? = null
         val touchPointInBox = Vector2()
+        val tmpVector2      = Vector2()
         val callback        = QueryCallback { fixture ->
-            if (fixture.testPoint(touchPointInBox)) {
+            if (
+                fixture.isSensor.not() &&
+                fixture.testPoint(touchPointInBox) &&
+                (fixture.body?.userData as AbstractBody).id != BodyId.NONE
+            ) {
                 hitAbstractBody = fixture.body?.userData as AbstractBody
                 return@QueryCallback false
             }
@@ -100,7 +109,7 @@ abstract class AdvancedMouseScreen: AdvancedBox2dScreen(WorldUtil()) {
 
             timeTouchUp = System.currentTimeMillis()
 
-            touchPointInBox.set(Vector2(x, y).toB2)
+            touchPointInBox.set(tmpVector2.set(x, y).toB2)
             hitAbstractBody = null
 
             worldUtil.world.QueryAABB(callback,
@@ -110,9 +119,9 @@ abstract class AdvancedMouseScreen: AdvancedBox2dScreen(WorldUtil()) {
                 touchPointInBox.y + 0.01f)
 
             hitAbstractBody?.let {
-                it.playSound_TouchDown()
+                playSound_TouchDown()
 
-                jMouse.requestToCreate(MouseJointDef().apply {
+                jMouse.create(MouseJointDef().apply {
                     bodyA = bStatic.body
                     bodyB = it.body
                     collideConnected = true
@@ -127,27 +136,27 @@ abstract class AdvancedMouseScreen: AdvancedBox2dScreen(WorldUtil()) {
 
         override fun touchDragged(event: InputEvent?, x: Float, y: Float, pointer: Int) {
             if (pointer != 0) return
-            jMouse.joint?.target = Vector2(x, y).toB2
+            jMouse.joint?.target = tmpVector2.set(x, y).toB2
         }
 
         override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
             if (pointer != 0) return
             hitAbstractBody?.let {
-                it.playSound_TouchUp()
-                jMouse.requestToDestroy()
+                playSound_TouchUp()
+                jMouse.destroy()
             }
         }
 
 
-        private fun AbstractBody.playSound_TouchDown() {
+        private fun playSound_TouchDown() {
             if (System.currentTimeMillis().minus(timeTouchDown) >= 200) {
-                game.soundUtil.apply { play(TOUCH_DOWN, false) }
+                game.soundUtil.apply { play(TOUCH_DOWN) }
                 timeTouchDown = System.currentTimeMillis()
             }
         }
 
-        private fun AbstractBody.playSound_TouchUp() {
-            if (System.currentTimeMillis().minus(timeTouchUp) >= 500) game.soundUtil.apply { play(TOUCH_DOWN, false) }
+        private fun playSound_TouchUp() {
+            if (System.currentTimeMillis().minus(timeTouchUp) >= 500) game.soundUtil.apply { play(TOUCH_DOWN) }
         }
 
     }

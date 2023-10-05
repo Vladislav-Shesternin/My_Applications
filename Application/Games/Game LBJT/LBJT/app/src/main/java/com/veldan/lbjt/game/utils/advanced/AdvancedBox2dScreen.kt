@@ -1,6 +1,7 @@
 package com.veldan.lbjt.game.utils.advanced
 
 import com.badlogic.gdx.utils.viewport.FitViewport
+import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.box2d.WorldUtil
 import com.veldan.lbjt.game.utils.HEIGHT_BOX2D
 import com.veldan.lbjt.game.utils.HEIGHT_UI
@@ -21,20 +22,20 @@ abstract class AdvancedBox2dScreen(
 
 
     override fun resize(width: Int, height: Int) {
-        super.resize(width, height)
         viewportBox2d.update(width, height, true)
+        super.resize(width, height)
     }
 
     override fun render(delta: Float) {
-        super.render(delta)
         worldUtil.update(delta)
+        super.render(delta)
         worldUtil.debug(viewportBox2d.camera.combined)
     }
 
     override fun dispose() {
-        log("dispose AdvancedBox2dScreen")
-        super.dispose()
+        log("dispose AdvancedBox2dScreen: ${this::class.java.name.substringAfterLast('.')}")
         worldUtil.dispose()
+        super.dispose()
     }
 
 }

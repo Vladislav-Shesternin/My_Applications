@@ -1,8 +1,9 @@
 package com.veldan.lbjt.game.box2d
 
 object BodyId {
-    const val NONE    = "none"
-    const val BORDERS = "borders"
+    const val NONE      = "none"
+    const val BORDERS   = "borders"
+    const val SEPARATOR = "separator"
 
     object Menu {
         const val STATIC = "menu.static"
@@ -13,5 +14,14 @@ object BodyId {
         const val VOLUME   = "settings.volume"
         const val START    = "settings.start"
         const val LANGUAGE = "settings.language"
+    }
+
+    object AboutAuthor {
+        const val ITEM = "author.item"
+    }
+
+    object Comment {
+        const val ITEM   = "comment.item"
+        const val DIALOG = "comment.dialog"
     }
 }

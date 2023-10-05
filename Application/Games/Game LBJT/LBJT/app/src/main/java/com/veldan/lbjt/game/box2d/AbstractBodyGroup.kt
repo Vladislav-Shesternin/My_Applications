@@ -4,19 +4,26 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.Body
 import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
+import com.badlogic.gdx.scenes.scene2d.Actor
+import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.*
+import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.util.cancelCoroutinesAll
+import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
 abstract class AbstractBodyGroup: Destroyable {
-    abstract val screenBox2d    : AdvancedBox2dScreen
-    abstract val standartW      : Float
+    abstract val screenBox2d: AdvancedBox2dScreen
+    abstract val standartW  : Float
 
-    private val createdBodyList  = mutableListOf<AbstractBody>()
+    protected val bodyList      = mutableListOf<AbstractBody>()
+    protected val disposableSet = mutableSetOf<Disposable>()
 
-    protected val standardizer = SizeStandardizer()
+    private val standardizer = SizeStandardizer()
+    val Vector2.toStandart get() = standardizer.scope { toStandart }
+    val Float.toStandart   get() = standardizer.scope { toStandart }
 
     var coroutine: CoroutineScope? = null
         private set
@@ -24,45 +31,57 @@ abstract class AbstractBodyGroup: Destroyable {
     val position  = Vector2()
     val size      = Vector2()
 
-    protected fun finishCreate(block: () -> Unit = {}) {
-        createdBodyList.onEachIndexed { index, abstractBody -> abstractBody.createdBlock = {
-            if (index == createdBodyList.lastIndex) block()
-        } }
-    }
+    private val tmpPositionA = Vector2()
+    private val tmpPositionB = Vector2()
+    private val tmpAnchorA   = Vector2()
+    private val tmpAnchorB   = Vector2()
 
-    open fun requestToCreate(position: Vector2, size: Vector2, block: () -> Unit = {}) {
-        this.position.set(position)
-        this.size.set(size)
+    open fun create(x: Float, y: Float, w: Float, h: Float) {
+        position.set(x,y)
+        size.set(w,h)
 
         coroutine = CoroutineScope(Dispatchers.Default)
-        standardizer.standardize(standartW, size.x)
+        standardizer.standardize(standartW, w)
     }
 
-    fun createBody(body: AbstractBody, pos: Vector2, size: Vector2, block: () -> Unit = {}) {
-        standardizer.scope { body.requestToCreate(position.cpy().add(pos.toStandart), size.toStandart, block) }
-        createdBodyList.add(body)
-    }
-
-    fun createBody(body: AbstractBody, x: Float, y: Float, w: Float, h: Float, block: () -> Unit = {}) {
-        createBody(body, Vector2(x, y), Vector2(w, h), block)
-    }
-
-    fun <T : JointDef> createJoint(joint: AbstractJoint<out Joint, T>, jointDef: T, block: () -> Unit = {}) {
-        joint.requestToCreate(jointDef, block)
-    }
-
-    override fun dispose(isDestroy: Boolean, block: () -> Unit) {
+    override fun destroy() {
+        log("destroy: ${this::class.java.name.substringAfterLast('.')}")
         cancelCoroutinesAll(coroutine)
-        createdBodyList.disposeAll(block)
+        disposableSet.disposeAll()
+        bodyList.destroyAll()
     }
 
-    override fun requestToDestroy(block: () -> Unit) {
-        cancelCoroutinesAll(coroutine)
-        createdBodyList.destroyAll(block)
+    fun createBody(body: AbstractBody, pos: Vector2, size: Vector2) {
+        body.create(position.cpy().add(pos.toStandart), size.toStandart)
+        bodyList.add(body)
     }
 
-    protected fun Vector2.subCenter(body: Body): Vector2 = standardizer.scope {
-        this@subCenter.toStandart.toB2.sub((body.userData as AbstractBody).center)
+    fun createBody(body: AbstractBody, x: Float, y: Float, w: Float, h: Float) {
+        createBody(body, Vector2(x, y), Vector2(w, h))
+    }
+
+    fun <T : JointDef> createJoint(joint: AbstractJoint<out Joint, T>, jointDef: T) {
+        joint.create(jointDef)
+    }
+
+    protected fun Vector2.subCenter(body: Body): Vector2 = toStandart.toB2.sub((body.userData as AbstractBody).center)
+
+    protected fun Actor.setBoundsStandart(x: Float, y: Float, width: Float, height: Float) {
+        setBounds(position.cpy().add(Vector2(x,y).toStandart), Vector2(width, height).toStandart)
+    }
+
+    protected fun drawJoint(
+        alpha: Float,
+        bodyA: AbstractBody,
+        bodyB: AbstractBody,
+        anchorA: Vector2,
+        anchorB: Vector2,
+    ) {
+        screenBox2d.drawerUtil.drawer.line(
+            tmpPositionA.set(bodyA.body?.position).add(tmpAnchorA.set(anchorA).subCenter(bodyA.body!!)).toUI,
+            tmpPositionB.set(bodyB.body?.position).add(tmpAnchorB.set(anchorB).subCenter(bodyB.body!!)).toUI,
+            GameColor.joint.apply { a = alpha }, JOINT_WIDTH
+        )
     }
 
 }

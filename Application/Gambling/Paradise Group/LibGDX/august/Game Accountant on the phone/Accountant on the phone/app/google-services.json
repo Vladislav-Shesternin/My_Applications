@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "242264184102",
+    "project_id": "mange-yourse-finnnance",
+    "storage_bucket": "mange-yourse-finnnance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242264184102:android:f0c3ecd910cac4c0ff5de7",
+        "android_client_info": {
+          "package_name": "mange.yourse.finnnance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242264184102-q5h3nc6vj2l7aul3cqdfhdgpspvn1po1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ8NCypy5n0fmXLyLddptJ13ugLi5C_rE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242264184102-q5h3nc6vj2l7aul3cqdfhdgpspvn1po1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

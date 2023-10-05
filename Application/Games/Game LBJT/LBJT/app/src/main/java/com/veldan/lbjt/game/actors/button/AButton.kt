@@ -7,7 +7,6 @@ import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.Touchable
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
-import com.veldan.lbjt.game.utils.ThemeUtil
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
@@ -135,9 +134,19 @@ open class AButton(
 
     private fun getStyleByType(type: Type) = when(type) {
         Type.REGULAR -> AButtonStyle(
-            default  = themeUtil.trc.REGULAR_BTN_DEF,
-            pressed  = themeUtil.trc.REGULAR_BTN_PRESS,
-            disabled = themeUtil.trc.REGULAR_BTN_PRESS,
+            default  = themeUtil.assets.REGULAR_BTN_DEF,
+            pressed  = themeUtil.assets.REGULAR_BTN_PRESS,
+            disabled = themeUtil.assets.REGULAR_BTN_DISABLE,
+        )
+        Type.MONETIZATION -> AButtonStyle(
+            default  = themeUtil.assets.MONETIZATION_BTN_DEF,
+            pressed  = themeUtil.assets.MONETIZATION_BTN_PRESS,
+            disabled = themeUtil.assets.MONETIZATION_BTN_PRESS,
+        )
+        Type.MONETIZATION_MEGA -> AButtonStyle(
+            default  = themeUtil.assets.MONETIZATION_MEGA_BTN_DEF,
+            pressed  = themeUtil.assets.MONETIZATION_MEGA_BTN_PRESS,
+            disabled = themeUtil.assets.MONETIZATION_MEGA_BTN_PRESS,
         )
     }
 
@@ -152,7 +161,7 @@ open class AButton(
     )
 
     enum class Type {
-        REGULAR
+        REGULAR, MONETIZATION, MONETIZATION_MEGA
     }
 
 }

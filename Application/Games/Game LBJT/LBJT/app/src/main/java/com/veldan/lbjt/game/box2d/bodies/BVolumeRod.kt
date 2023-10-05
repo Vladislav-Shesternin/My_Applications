@@ -24,9 +24,9 @@ class BVolumeRod(
 
     fun getActor(): AImage? = actor as? AImage
 
-    fun getRegionByType(type: Type) = when(type) {
-        Type.QUIET -> screenBox2d.game.themeUtil.trc.ROD_QUIET
-        Type.LOUDER -> screenBox2d.game.themeUtil.trc.ROD_LOUDER
+    private fun getRegionByType(type: Type) = when(type) {
+        Type.QUIET  -> screenBox2d.game.themeUtil.assets.ROD_QUIET
+        Type.LOUDER -> screenBox2d.game.themeUtil.assets.ROD_LOUDER
     }
 
     // ---------------------------------------------------
