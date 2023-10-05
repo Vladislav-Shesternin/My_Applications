@@ -79,6 +79,8 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
         //createBG_YanYinTheme()
 
         val shaderGroup = ShaderGroup(this@MenuScreen)
+        addActor(shaderGroup)
+        shaderGroup.setBounds(249f, 568f, 202f, 265f)
 
         ShaderProgram.pedantic = false
         shader = ShaderProgram(batch.shader.vertexShaderSource, Gdx.files.internal("shaders/fragment.frag").readString())
