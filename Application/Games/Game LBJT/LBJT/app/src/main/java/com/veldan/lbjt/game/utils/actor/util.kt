@@ -50,8 +50,9 @@ fun Actor.setOnTouchListener(block: (Actor) -> Unit) {
     })
 }
 
-fun Actor.disable() {
-    touchable = Touchable.disabled
+fun Actor.disable() = when(this) {
+    is AButton -> disable()
+    else       -> touchable = Touchable.disabled
 }
 
 fun Actor.enable() = when(this) {

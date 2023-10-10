@@ -1,16 +1,20 @@
 package com.veldan.lbjt.game.box2d.bodiesGroup.dialog
 
+import com.badlogic.gdx.InputAdapter
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.joints.MotorJoint
 import com.badlogic.gdx.physics.box2d.joints.MotorJointDef
 import com.badlogic.gdx.physics.box2d.joints.PrismaticJoint
 import com.badlogic.gdx.physics.box2d.joints.PrismaticJointDef
+import com.badlogic.gdx.scenes.scene2d.InputEvent
+import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.AIndicator
+import com.veldan.lbjt.game.actors.button.AButton
 import com.veldan.lbjt.game.actors.dialog.ADialogComment.State.DEFAULT
 import com.veldan.lbjt.game.actors.dialog.ADialogComment.State.ERROR
 import com.veldan.lbjt.game.actors.image.AImage
@@ -42,6 +46,7 @@ import com.veldan.lbjt.game.utils.toB2
 import com.veldan.lbjt.util.internetConnection
 import com.veldan.lbjt.util.log
 import kotlinx.coroutines.launch
+import java.util.EventListener
 
 class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup() {
 
@@ -72,13 +77,11 @@ class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
 
 
     // Field
-    private val actorList get() = bodyList.mapNotNull { it.actor }.toMutableList().apply { addAll(
-        arrayOf(aBackgroundImg, aIndicator)
-    ) }
-    private val idList = mutableListOf<String>()
-
     var isShow = false
         private set
+
+    var animShowBlock: () -> Unit = {}
+    var animHideBlock: () -> Unit = {}
 
     private var comment = ""
 
@@ -214,9 +217,11 @@ class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
     // ---------------------------------------------------
 
     fun animShowBG(time: Float = 0f) {
+        animShowBlock()
+
         isShow = true
 
-        bodyList.onEach { it.id = idList.removeFirst() }
+        setOriginalId()
         actorList.onEach {
             it.animShow(time)
             it.enable()
@@ -227,13 +232,12 @@ class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
     }
 
     fun animHideBG(time: Float = 0f) {
+        animHideBlock()
+
         isShow = false
         screenBox2d.stageUI.unfocusAndHideKeyboard()
 
-        bodyList.onEach {
-            idList.add(it.id)
-            it.id = BodyId.NONE
-        }
+        setNoneId()
         actorList.onEach {
             it.disable()
             it.animHide(time)
@@ -324,7 +328,7 @@ class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
 
     private fun publishHandler() {
         screenBox2d.stageUI.unfocusAndHideKeyboard()
-        actorList.filterNot { it == aBackgroundImg }.onEach { it.disable() }
+        actorList.filterNot { it == aBackgroundImg }.onEach {it.disable() }
 
         if (activity.internetConnection()) {
             aIndicator.animShowLoader()

@@ -1,9 +1,9 @@
 package com.veldan.lbjt.game.screens
 
+import android.graphics.Bitmap
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.assets.AssetDescriptor
 import com.badlogic.gdx.audio.Music
-import com.badlogic.gdx.graphics.glutils.ShaderProgram
 import com.badlogic.gdx.math.Interpolation
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
@@ -24,11 +24,11 @@ import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.actor.setOnTouchListener
 import com.veldan.lbjt.game.utils.advanced.AdvancedMouseScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
-import com.veldan.lbjt.game.utils.font.FontParameter
 import com.veldan.lbjt.game.utils.region
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.log
+import jp.wasabeef.blurry.Blurry
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -48,9 +48,9 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
     private val aHandHintImg  = Image(game.themeUtil.assets.HAND_HINT)
 
     // BodyGroup
-//    private val bgBorders     = BGBorders(this )
-//    private val bgMenu        = BGMenu(this )
-//    private val bgYanYinTheme = BGYanYinTheme(this)
+    private val bgBorders     = BGBorders(this )
+    private val bgMenu        = BGMenu(this )
+    private val bgYanYinTheme = BGYanYinTheme(this)
 
     // Fields
     private val fileHandlerMusic       = Gdx.files.local(LOCAL_MUSIC_DIR)
@@ -68,23 +68,12 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
         game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
 
         //oncePlayMusic.once { playMusic() }
-
     }
 
-    private var shader: ShaderProgram? = null
-
     override fun AdvancedStage.addActorsOnStageUI() {
-        //createBG_Borders()
-        //createBG_Menu()
-        //createBG_YanYinTheme()
-
-        val shaderGroup = ShaderGroup(this@MenuScreen)
-        addActor(shaderGroup)
-        shaderGroup.setBounds(249f, 568f, 202f, 265f)
-
-        ShaderProgram.pedantic = false
-        shader = ShaderProgram(batch.shader.vertexShaderSource, Gdx.files.internal("shaders/fragment.frag").readString())
-        shader?.apply { if (isCompiled) batch.shader = shader else log(log) }
+        createBG_Borders()
+        createBG_Menu()
+        createBG_YanYinTheme()
 
         addHandHelloImg()
         addHandHintImg()
@@ -96,12 +85,16 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
             animHandHint()
         }
 
-        stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
+        stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA) {
+            runGDX {
+            val shaderGroup = ShaderGroup(this@MenuScreen)
+            addActor(shaderGroup)
+            shaderGroup.setBounds(100f, 100f, 100f, 100f)
+        } }
     }
 
-
     override fun dispose() {
-        //listOf(bgBorders, bgMenu, bgYanYinTheme).destroyAll()
+        listOf(bgBorders, bgMenu, bgYanYinTheme).destroyAll()
         super.dispose()
     }
 
@@ -129,25 +122,25 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
     // ------------------------------------------------------------------------
     // Create Body Group
     // ------------------------------------------------------------------------
-//    private fun createBG_Borders() {
-//        bgBorders.create(0f,0f,700f,1400f)
-//    }
-//
-//    private fun createBG_Menu() {
-//        bgMenu.create(117f,444f,466f,1012f)
-//
-//        bgMenu.apply {
-//            bRegularBtnTutorial   .getActor()?.setOnTouchListener { /*navigateTo(SettingsScreen())*/ }
-//            bRegularBtnSettings   .getActor()?.setOnTouchListener { navigateTo(SettingsScreen::class.java.name)    }
-//            bRegularBtnAboutAuthor.getActor()?.setOnTouchListener { navigateTo(AboutAuthorScreen::class.java.name) }
-//            bRegularBtnComment    .getActor()?.setOnTouchListener { navigateTo(CommentScreen::class.java.name)     }
-//
-//        }
-//    }
-//
-//    private fun createBG_YanYinTheme() {
-//        bgYanYinTheme.create(285f,231f,131f,131f)
-//    }
+    private fun createBG_Borders() {
+        bgBorders.create(0f,0f,700f,1400f)
+    }
+
+    private fun createBG_Menu() {
+        bgMenu.create(117f,444f,466f,1012f)
+
+        bgMenu.apply {
+            bRegularBtnTutorial   .getActor()?.setOnTouchListener { /*navigateTo(SettingsScreen())*/ }
+            bRegularBtnSettings   .getActor()?.setOnTouchListener { navigateTo(SettingsScreen::class.java.name)    }
+            bRegularBtnAboutAuthor.getActor()?.setOnTouchListener { navigateTo(AboutAuthorScreen::class.java.name) }
+            bRegularBtnComment    .getActor()?.setOnTouchListener { navigateTo(CommentScreen::class.java.name)     }
+
+        }
+    }
+
+    private fun createBG_YanYinTheme() {
+        bgYanYinTheme.create(285f,231f,131f,131f)
+    }
 
     // ---------------------------------------------------
     // Anim

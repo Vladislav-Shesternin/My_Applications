@@ -73,14 +73,12 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
 
 
     // Field
-    private val actorList get() = bodyList.mapNotNull { it.actor }.toMutableList().apply { addAll(
-        arrayOf(aBackgroundImg, aIndicator)
-    ) }
-    private val idList = mutableListOf<String>()
-
     var isShow = false
         private set
-    var publishBlock: (String) -> Unit = {}
+
+    var publishBlock : (String) -> Unit = {}
+    var animShowBlock: () -> Unit = {}
+    var animHideBlock: () -> Unit = {}
 
     private var nickname = ""
 
@@ -219,9 +217,11 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
     // ---------------------------------------------------
 
     fun animShowBG(time: Float = 0f, nickname: String) {
+        animShowBlock()
+
         isShow = true
 
-        bodyList.onEach { it.id = idList.removeFirst() }
+        setOriginalId()
         actorList.onEach {
             it.animShow(time)
             if (it is AButton) it.enable() else it.enable()
@@ -232,13 +232,12 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
     }
 
     fun animHideBG(time: Float = 0f) {
+        animHideBlock()
+
         isShow = false
         screenBox2d.stageUI.unfocusAndHideKeyboard()
 
-        bodyList.onEach {
-            idList.add(it.id)
-            it.id = BodyId.NONE
-        }
+        setNoneId()
         actorList.onEach {
             it.disable()
             it.animHide(time)

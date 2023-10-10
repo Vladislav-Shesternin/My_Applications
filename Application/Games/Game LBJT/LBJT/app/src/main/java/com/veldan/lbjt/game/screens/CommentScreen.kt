@@ -34,7 +34,9 @@ import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.game.utils.toTexture
 import com.veldan.lbjt.util.ChildEventAdapter
 import com.veldan.lbjt.util.internetConnection
+import com.veldan.lbjt.util.log
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.collectIndexed
 import kotlinx.coroutines.isActive
@@ -56,7 +58,10 @@ class CommentScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
     // Field
     private var listenerChildAdded: ChildEventListener? = null
-    private val commentFlow       = MutableSharedFlow<Comment>(50)
+    private val commentFlow       = MutableSharedFlow<Comment>(COMMENT_COUNT)
+    private val mainActors        by lazy { bgComment.actorList.toMutableList().apply { addAll(
+        listOf(aCommentScrollPanel, aIndicator)
+    )} }
 
     override fun show() {
         stageUI.root.animHide()
@@ -135,16 +140,25 @@ class CommentScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
     }
 
     private fun createBG_DialogNickname() {
-       bgDialogNickname.create(0f,0f,700f,1400f)
-       bgDialogNickname.publishBlock = { bgComment.updateNickname(it) }
+        bgDialogNickname.create(0f, 0f, 700f, 1400f)
+        bgDialogNickname.apply {
+            publishBlock  = { bgComment.updateNickname(it) }
+            animShowBlock = { animHideMainActors() }
+            animHideBlock = { animShowMainActors() }
+        }
+
     }
 
     private fun createBG_DialogComment() {
         bgDialogComment.create(0f,0f,700f,1400f)
+        bgDialogComment.apply {
+            animShowBlock = { animHideMainActors() }
+            animHideBlock = { animShowMainActors() }
+        }
     }
 
     // ---------------------------------------------------
-    // Logic
+    // Get Comment
     // ---------------------------------------------------
 
     private suspend fun getComments() {
@@ -155,17 +169,19 @@ class CommentScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
                 snapshot.getValue<Comment>()?.let { data -> commentFlow.tryEmit(data) }
             }
         }
-        listenerChildAdded?.add()
 
         val commentCount = getCommentCount()
         val startIndex   = if ((commentCount - COMMENT_COUNT) >= 0) commentCount - COMMENT_COUNT else 0
 
         coroutine?.launch {
             commentFlow.collectIndexed { index, data ->
+                log("i = $index")
                 if (isActive && index >= startIndex) data.user_id?.let { userId ->
                     val nickname    = getNickname(userId)
                     val iconTexture = getIconTexture(userId).also { disposableSet.add(it) }
                     val comment     = data.comment
+
+                    log("n = $nickname")
 
                     runGDX { if (isActive) aCommentScrollPanel.addComment(User(
                         nickname = nickname,
@@ -175,6 +191,9 @@ class CommentScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
                 }
             }
         }
+
+        listenerChildAdded?.add()
+
     }
 
     private fun ChildEventListener.add() = Firebase.database.reference.child(FIREBASE_DATABASE_COMMENTS).addChildEventListener(this)
@@ -196,6 +215,20 @@ class CommentScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
         Firebase.storage.getReferenceFromUrl(FIREBASE_STORAGE_ICON).child(path).getBytes(Long.MAX_VALUE).addOnSuccessListener { bytes ->
             runGDX { continuation.resume(bytes.toTexture()) }
         }
+    }
+
+    // ---------------------------------------------------
+    // Anim
+    // ---------------------------------------------------
+
+    private fun animShowMainActors() {
+        bgComment.setOriginalId()
+        mainActors.onEach { it.animShow(TIME_ANIM_DIALOG_ALPHA) }
+    }
+
+    private fun animHideMainActors() {
+        bgComment.setNoneId()
+        mainActors.onEach { it.animHide(TIME_ANIM_DIALOG_ALPHA) }
     }
 
 }

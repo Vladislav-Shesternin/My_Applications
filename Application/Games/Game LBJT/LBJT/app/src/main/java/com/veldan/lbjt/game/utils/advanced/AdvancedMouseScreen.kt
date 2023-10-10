@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.QueryCallback
 import com.badlogic.gdx.physics.box2d.joints.MouseJoint
 import com.badlogic.gdx.physics.box2d.joints.MouseJointDef
+import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.Image
@@ -16,6 +17,8 @@ import com.veldan.lbjt.game.box2d.bodies.BStatic
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.actor.disable
+import com.veldan.lbjt.game.utils.actor.setOnClickListener
+import com.veldan.lbjt.game.utils.actor.setOnTouchListener
 import com.veldan.lbjt.game.utils.toB2
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.log
@@ -89,6 +92,7 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
         var hitAbstractBody: AbstractBody? = null
         val touchPointInBox = Vector2()
         val tmpVector2      = Vector2()
+
         val callback        = QueryCallback { fixture ->
             if (
                 fixture.isSensor.not() &&

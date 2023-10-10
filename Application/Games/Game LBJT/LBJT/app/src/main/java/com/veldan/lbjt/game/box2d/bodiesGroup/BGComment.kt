@@ -70,7 +70,7 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
     // Field
     private val activity = screenBox2d.game.activity
 
-    var nicknameBlock       : () -> Unit = {}
+    var nicknameBlock              : () -> Unit = {}
     var btnWriteCommentFailureBlock: () -> Unit = {}
     var btnWriteCommentSuccessBlock: () -> Unit = {}
 
@@ -85,7 +85,6 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
 
         createB_Separator()
         createB_Item()
-
 
         createJ_Icon()
         createJ_BtnWriteComment()

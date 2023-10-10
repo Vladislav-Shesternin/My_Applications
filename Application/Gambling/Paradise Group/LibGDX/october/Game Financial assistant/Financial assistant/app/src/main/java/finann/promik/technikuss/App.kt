@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 lateinit var appContext: Context private set
 
-private const val ONESIGNAL_APP_ID = "c7010700-8746-4264-b260-c9eee4dec95c"
+private const val ONESIGNAL_APP_ID = "ef320e48-363f-4338-9243-0b82f7825482"
 
 class App: Application() {
 

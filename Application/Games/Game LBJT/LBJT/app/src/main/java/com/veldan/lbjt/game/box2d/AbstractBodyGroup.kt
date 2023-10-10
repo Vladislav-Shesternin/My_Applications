@@ -18,8 +18,12 @@ abstract class AbstractBodyGroup: Destroyable {
     abstract val screenBox2d: AdvancedBox2dScreen
     abstract val standartW  : Float
 
-    protected val bodyList      = mutableListOf<AbstractBody>()
-    protected val disposableSet = mutableSetOf<Disposable>()
+    private val _bodyList  = mutableListOf<AbstractBody>()
+    private val _actorList = mutableListOf<Actor>()
+    val disposableSet      = mutableSetOf<Disposable>()
+
+    val bodyList get()  = _bodyList.toList()
+    val actorList get() = _actorList.toList()
 
     private val standardizer = SizeStandardizer()
     val Vector2.toStandart get() = standardizer.scope { toStandart }
@@ -48,12 +52,13 @@ abstract class AbstractBodyGroup: Destroyable {
         log("destroy: ${this::class.java.name.substringAfterLast('.')}")
         cancelCoroutinesAll(coroutine)
         disposableSet.disposeAll()
-        bodyList.destroyAll()
+        _bodyList.destroyAll()
     }
 
     fun createBody(body: AbstractBody, pos: Vector2, size: Vector2) {
         body.create(position.cpy().add(pos.toStandart), size.toStandart)
-        bodyList.add(body)
+        _bodyList.add(body)
+        body.actor?.let { _actorList.add(it) }
     }
 
     fun createBody(body: AbstractBody, x: Float, y: Float, w: Float, h: Float) {
@@ -68,6 +73,7 @@ abstract class AbstractBodyGroup: Destroyable {
 
     protected fun Actor.setBoundsStandart(x: Float, y: Float, width: Float, height: Float) {
         setBounds(position.cpy().add(Vector2(x,y).toStandart), Vector2(width, height).toStandart)
+        _actorList.add(this)
     }
 
     protected fun drawJoint(
@@ -82,6 +88,14 @@ abstract class AbstractBodyGroup: Destroyable {
             tmpPositionB.set(bodyB.body?.position).add(tmpAnchorB.set(anchorB).subCenter(bodyB.body!!)).toUI,
             GameColor.joint.apply { a = alpha }, JOINT_WIDTH
         )
+    }
+
+    fun setNoneId() {
+        bodyList.onEach { it.setNoneId() }
+    }
+
+    fun setOriginalId() {
+        bodyList.onEach { it.setOriginalId() }
     }
 
 }

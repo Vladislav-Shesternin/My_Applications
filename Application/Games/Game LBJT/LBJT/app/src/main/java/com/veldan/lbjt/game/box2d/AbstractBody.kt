@@ -6,7 +6,6 @@ import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.FixtureDef
 import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
-import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.*
 import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.actor.setOrigin
@@ -14,7 +13,6 @@ import com.veldan.lbjt.game.utils.actor.setPosition
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.util.cancelCoroutinesAll
-import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
@@ -25,10 +23,20 @@ abstract class AbstractBody: Destroyable {
     abstract val bodyDef    : BodyDef
     abstract val fixtureDef : FixtureDef
 
-    open var actor : AdvancedGroup? = null
-    open var id    : String         = BodyId.NONE
+    open var actor     : AdvancedGroup? = null
     open val collisionList          = mutableListOf<String>()
 
+    open var originalId: String = BodyId.NONE
+    open var id        : String = BodyId.NONE
+        set(value) {
+            if (isSetId.not()) {
+                isSetId = true
+                originalId = value
+            }
+            field = value
+        }
+
+    private var isSetId = false
     private val tmpVector2 = Vector2()
 
     val size       = Vector2()
@@ -115,6 +123,14 @@ abstract class AbstractBody: Destroyable {
                 rotation = b.angle * RADTODEG
             }
         }
+    }
+
+    fun setNoneId() {
+        id = BodyId.NONE
+    }
+
+    fun setOriginalId() {
+        id = originalId
     }
 
     // ---------------------------------------------------

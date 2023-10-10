@@ -131,7 +131,7 @@ class BGVolume(
 
     private fun AdvancedStage.addNameLbl() {
         addActor(aNameLbl)
-        aNameLbl.setBounds(position.cpy().add(Vector2(0f, 565f).toStandart), Vector2(314f, 65f).toStandart)
+        aNameLbl.setBoundsStandart(0f, 565f, 314f, 65f)
     }
 
     // ---------------------------------------------------
