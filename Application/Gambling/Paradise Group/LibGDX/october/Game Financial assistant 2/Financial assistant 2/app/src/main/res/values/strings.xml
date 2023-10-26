@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">Financial assistant</string>
+    <string name="androm">Cancel</string>
+    <string name="iod">Accept</string>
+</resources>

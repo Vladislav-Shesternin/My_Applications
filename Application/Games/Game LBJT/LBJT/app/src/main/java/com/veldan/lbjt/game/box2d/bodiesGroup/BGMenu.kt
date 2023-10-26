@@ -157,6 +157,6 @@ class BGMenu(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
             dampingRatio = 0.6f
         })
 
-        _bodyA.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> _joint.drawJoint(alpha) })
+        _bodyA.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> _joint.drawJoint(alpha) })
     }
 }

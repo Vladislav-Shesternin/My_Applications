@@ -22,7 +22,7 @@ import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.BodyId.Comment.DIALOG
 import com.veldan.lbjt.game.box2d.bodies.BDialogNickname
 import com.veldan.lbjt.game.box2d.bodies.BRegularBtn
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.data.User
 import com.veldan.lbjt.game.utils.FIREBASE_DATABASE_USERS
 import com.veldan.lbjt.game.utils.GameColor
@@ -189,7 +189,7 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
         val tmpCancelLeftAnchorB  = Vector2(38f, 101f)
         val tmpCancelRightAnchorA = Vector2(279f, 30f)
         val tmpCancelRightAnchorB = Vector2(254f, 101f)
-        bDialogNickname.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha ->
+        bDialogNickname.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
             drawJoint(alpha, bDialogNickname, bRegularBtnCancel, tmpCancelLeftAnchorA, tmpCancelLeftAnchorB)
             drawJoint(alpha, bDialogNickname, bRegularBtnCancel, tmpCancelRightAnchorA, tmpCancelRightAnchorB)
         })
@@ -206,7 +206,7 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
         val tmpPublishLeftAnchorB  = Vector2(38f, 101f)
         val tmpPublishRightAnchorA = Vector2(620f, 30f)
         val tmpPublishRightAnchorB = Vector2(254f, 101f)
-        bDialogNickname.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha ->
+        bDialogNickname.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
             drawJoint(alpha, bDialogNickname, bRegularBtnPublish, tmpPublishLeftAnchorA, tmpPublishLeftAnchorB)
             drawJoint(alpha, bDialogNickname, bRegularBtnPublish, tmpPublishRightAnchorA, tmpPublishRightAnchorB)
         })

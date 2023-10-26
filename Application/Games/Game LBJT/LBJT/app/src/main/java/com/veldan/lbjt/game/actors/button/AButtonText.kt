@@ -11,12 +11,6 @@ class AButtonText(
 ): AButton(screen, type) {
 
     val label = Label(text, labelStyle)
-
-    override fun sizeChanged() {
-        super.sizeChanged()
-        if (width > 0 && height > 0) addActorsOnGroup()
-    }
-
     override fun addActorsOnGroup() {
         super.addActorsOnGroup()
         addLabel()

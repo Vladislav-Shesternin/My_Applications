@@ -28,4 +28,11 @@
     <string name="publish">Опублікувати</string>
     <string name="comment_hint">Коментувати &lt;= 350 символiв…</string>
     <string name="veldan_comment">Встановіть ІКОНКУ та НІКНЕЙМ тоді можете коментувати !)</string>
+    <string name="static_description">[#1465dfff]Статичне тіло{CLEARCOLOR}[#d2e9cdff] - це нерухоме тіло з нескінченною масою, на яке не діють зовнішні сили.</string>
+    <string name="kinematic_description">[#bcab79ff]Кінематичне тіло{CLEARCOLOR}[#d2e9cdff] - це нерухоме тіло з нескінченною масою, на яке не діють зовнішні сили, крім лінійної та кутової швидкості.</string>
+    <string name="dynamic_description">[#1a932cff]Динамічне тіло{CLEARCOLOR}[#d2e9cdff] - рухоме тіло певної маси, на яке діють зовнішні сили.</string>
+    <string name="joint_description">[#bc380eff]З’єднання{CLEARCOLOR}[#d2e9cdff] - служать для {GRADIENT=bc380eff;d2e9cdff;1.0;1.0}з’єднання двох тіл{ENDGRADIENT} одне з одним. Типовими прикладами в іграх є ганчіркові ляльки, гойдалки та шківи.</string>
+    <string name="test_stand">випробувальний стенд</string>
+    <string name="next">Далi</string>
+    <string name="general_information">{JUMP=0.5;1.0;1.0}Загальна інформація[]</string>
 </resources>

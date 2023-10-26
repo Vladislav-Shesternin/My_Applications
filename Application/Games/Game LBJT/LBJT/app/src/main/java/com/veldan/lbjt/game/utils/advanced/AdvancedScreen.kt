@@ -42,7 +42,6 @@ abstract class AdvancedScreen(
     val backBackgroundImage = Image()
     val uiBackgroundImage   = Image()
     val disposableSet       = mutableSetOf<Disposable>()
-
     var coroutine: CoroutineScope? = CoroutineScope(Dispatchers.Default)
         private set
 
@@ -58,16 +57,13 @@ abstract class AdvancedScreen(
     }
 
     override fun show() {
-        stageBack.addActor(backBackgroundImage)
-        stageUI.addActor(uiBackgroundImage)
+        stageBack.addAndFillActor(backBackgroundImage)
+        stageUI.addAndFillActor(uiBackgroundImage)
 
         stageUI.addActorsOnStageUI()
 
         Gdx.input.inputProcessor = inputMultiplexer.apply { addProcessors(this@AdvancedScreen, stageUI) }
         Gdx.input.setCatchKey(Input.Keys.BACK, true)
-
-        viewportBack.apply(true)
-        viewportUI.apply(true)
     }
 
     override fun render(delta: Float) {
@@ -102,17 +98,11 @@ abstract class AdvancedScreen(
 
 
     fun setBackBackground(region: TextureRegion) {
-        backBackgroundImage.apply {
-            drawable = TextureRegionDrawable(region)
-            setSize(viewportBack.worldWidth, viewportBack.worldHeight)
-        }
+        backBackgroundImage.drawable = TextureRegionDrawable(region)
     }
 
     fun setUIBackground(texture: TextureRegion) {
-        uiBackgroundImage.apply {
-            drawable = TextureRegionDrawable(texture)
-            setSize(WIDTH, HEIGHT)
-        }
+        uiBackgroundImage.drawable = TextureRegionDrawable(texture)
     }
 
     fun setBackgrounds(backRegion: TextureRegion, uiRegion: TextureRegion = backRegion) {

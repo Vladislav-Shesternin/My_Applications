@@ -12,7 +12,6 @@ import com.veldan.lbjt.game.utils.actor.setFillParent
 import com.veldan.lbjt.game.utils.disposeAll
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.cancelCoroutinesAll
-import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
@@ -31,7 +30,8 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
     val Vector2.toStandart get() = standardizer.scope { toStandart }
     val Float.toStandart   get() = standardizer.scope { toStandart }
 
-    val preDrawArray  = Array<PreDrawer>()
+    val preDrawArray  = Array<Drawer>()
+    val postDrawArray = Array<Drawer>()
     val disposableSet = mutableSetOf<Disposable>()
 
     private val onceInit = Once()
@@ -41,6 +41,7 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
     override fun draw(batch: Batch?, parentAlpha: Float) {
         preDrawArray.forEach { it.draw(parentAlpha * this@AdvancedGroup.color.a) }
         super.draw(batch, parentAlpha)
+        postDrawArray.forEach { it.draw(parentAlpha * this@AdvancedGroup.color.a) }
     }
 
 
@@ -50,18 +51,23 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
     }
 
     override fun dispose() {
-        //if (isDisposed.not()) {
-            clearPreDrawBlock()
+        if (isDisposed.not()) {
+            preDrawArray.clear()
+            postDrawArray.clear()
             disposableSet.disposeAll()
-            children.onEach { actor -> if (actor is AdvancedGroup && actor.isDisposed.not()) actor.dispose() }
+            children.onEach { actor -> if (actor is Disposable) actor.dispose() }
             cancelCoroutinesAll(coroutine)
             coroutine = null
 
-         //   isDisposed = true
-        //}
+            isDisposed = true
+            remove()
+        }
     }
 
-    fun clearPreDrawBlock() = preDrawArray.clear()
+    override fun removeActorAt(index: Int, unfocus: Boolean): Actor {
+        children[index].also { if(it is Disposable) it.dispose() }
+        return super.removeActorAt(index, unfocus)
+    }
 
     fun addAlignActor(
         actor: Actor,
@@ -144,7 +150,7 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
     enum class AlignmentHorizontal { START, CENTER, END, }
     enum class AlignmentVertical { BOTTOM, CENTER, TOP, }
 
-    fun interface PreDrawer {
+    fun interface Drawer {
         fun draw(alpha: Float)
     }
 

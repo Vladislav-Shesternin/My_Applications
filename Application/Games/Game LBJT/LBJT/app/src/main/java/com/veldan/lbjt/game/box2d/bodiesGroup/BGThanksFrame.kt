@@ -9,7 +9,7 @@ import com.veldan.lbjt.game.box2d.AbstractBodyGroup
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.BodyId.AboutAuthor.ITEM
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.box2d.bodies.BThanksFrame
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
@@ -98,7 +98,7 @@ class BGThanksFrame(override val screenBox2d: AdvancedBox2dScreen): AbstractBody
                 frequencyHz  = 0.5f
                 dampingRatio = 0.1f
             })
-            bThanksFrame.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> data.joint.drawJoint(alpha) })
+            bThanksFrame.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> data.joint.drawJoint(alpha) })
         }
 
     }

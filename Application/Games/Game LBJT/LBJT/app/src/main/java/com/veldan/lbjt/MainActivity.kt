@@ -72,8 +72,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         setContentView(binding.root)
         lottie       = Lottie(binding)
         banner       = binding.banner.apply { loadAd(AdRequest.Builder().build()) }
-        //rewardedUtil = RewardedUtil(this)
-        //billingUtil  = BillingUtil(this)
+        rewardedUtil = RewardedUtil(this, coroutine)
+        billingUtil  = BillingUtil(this)
     }
 
     // ---------------------------------------------------

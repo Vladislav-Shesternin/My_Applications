@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">Gaz Investment Group</string>
+    <string name="lala">Accept</string>
+    <string name="tutu">Cancel</string>
+</resources>

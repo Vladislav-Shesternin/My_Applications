@@ -24,4 +24,14 @@ object BodyId {
         const val ITEM   = "comment.item"
         const val DIALOG = "comment.dialog"
     }
+
+    object TestStand {
+        const val STATIC   = "test_stand.static"
+        const val DYNAMIC  = "test_stand.dynamic"
+    }
+
+    object Tutorials {
+        const val KINEMATIC = "tutorials.kinematic"
+        const val DYNAMIC     = "tutorials.dynamic"
+    }
 }

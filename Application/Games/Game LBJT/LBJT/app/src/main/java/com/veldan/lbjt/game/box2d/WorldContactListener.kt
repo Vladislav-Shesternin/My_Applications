@@ -7,10 +7,9 @@ import com.badlogic.gdx.physics.box2d.ContactListener
 import com.badlogic.gdx.physics.box2d.Manifold
 import com.badlogic.gdx.utils.Array
 import com.veldan.lbjt.game.manager.util.SoundUtil
+import com.veldan.lbjt.game.utils.currentTimeMinus
 
-import com.veldan.lbjt.util.log
-
-object WorldContactListener: ContactListener {
+class WorldContactListener: ContactListener {
 
     private var timeContactBorders = 0L
     private var timeContactStatic  = 0L
@@ -22,18 +21,21 @@ object WorldContactListener: ContactListener {
     private val tmpArray = Array<AbstractBody>().apply { setSize(2) }
     private lateinit var soundUtil: SoundUtil
 
+    var beginContactBlockArray = Array<ContactBlock>()
+    var endContactBlockArray   = Array<ContactBlock>()
+
     override fun beginContact(contact: Contact) {
         with(contact) {
             playSound(abstractBodyA, abstractBodyB)
             abstractBodyA.beginContact(abstractBodyB)
-            abstractBodyA.beginContact(abstractBodyB)
+            abstractBodyB.beginContact(abstractBodyA)
         }
     }
 
     override fun endContact(contact: Contact) {
         with(contact) {
-            abstractBodyA.endContact(abstractBodyA)
-            abstractBodyB.endContact(abstractBodyB)
+            abstractBodyA.endContact(abstractBodyB)
+            abstractBodyB.endContact(abstractBodyA)
         }
     }
 
@@ -54,19 +56,19 @@ object WorldContactListener: ContactListener {
         if (tmpArray.all { it.fixtureDef.isSensor.not() }) {
             when {
                 tmpArray.any { it.id == BodyId.BORDERS }
-                -> if (timeMinus(timeContactBorders) >= 210) {
+                -> if (currentTimeMinus(timeContactBorders) >= 210) {
                     soundUtil.apply { play(BORDER) }
                     timeContactBorders = System.currentTimeMillis()
                 }
 
                 tmpArray.any { it.bodyDef.type == BodyDef.BodyType.StaticBody }
-                -> if (timeMinus(timeContactStatic) >= 200) {
+                -> if (currentTimeMinus(timeContactStatic) >= 200) {
                     soundUtil.apply { play(METAL) }
                     timeContactStatic = System.currentTimeMillis()
                 }
 
                 tmpArray.any { it.bodyDef.type == BodyDef.BodyType.DynamicBody }
-                -> if (timeMinus(timeContactDynamic) >= 150) {
+                -> if (currentTimeMinus(timeContactDynamic) >= 150) {
                     soundUtil.apply { play(CLUNK) }
                     timeContactDynamic = System.currentTimeMillis()
                 }
@@ -75,6 +77,10 @@ object WorldContactListener: ContactListener {
 
     }
 
-    private fun timeMinus(time: Long) = System.currentTimeMillis().minus(time)
+    // ---------------------------------------------------
+    // SAM
+    // ---------------------------------------------------
+
+    fun interface ContactBlock { fun block(bodyA: AbstractBody, bodyB: AbstractBody) }
 
 }

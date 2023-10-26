@@ -28,10 +28,10 @@ class FontParameter : FreeTypeFontParameter() {
     }
 
     enum class CharType(val chars: String) {
-        SYMBOLS       ("\"!`?'.,;:()[]{}<>|/@\\^\$€-%+=#_&~*"                              ),
+        SYMBOLS       ("\"!`?'.,;:()[]{}<>|/@\\^\$€-%+=#_&~*’"                             ),
         NUMBERS       ("1234567890"                                                        ),
         LATIN         ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"              ),
-        CYRILLIC      ("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяІЇії"),
+        CYRILLIC      ("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЄЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэєюяІЇії"),
 
         LATIN_CYRILLIC(LATIN.chars.plus(CYRILLIC.chars)                                         ),
         ALL           (SYMBOLS.chars.plus(NUMBERS.chars).plus(LATIN.chars).plus(CYRILLIC.chars) ),

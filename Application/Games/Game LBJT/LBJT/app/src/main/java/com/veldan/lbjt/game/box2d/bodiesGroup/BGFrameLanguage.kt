@@ -9,7 +9,7 @@ import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.BodyId.Settings.LANGUAGE
 import com.veldan.lbjt.game.box2d.BodyId.Settings.VOLUME
 import com.veldan.lbjt.game.box2d.bodies.BFrameLanguage
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.toB2
 

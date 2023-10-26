@@ -39,12 +39,13 @@ open class AdvancedStage(viewport: Viewport) : Stage(viewport) {
     }
 
     fun render() {
+        viewport.apply()
         act()
         draw()
     }
 
     override fun dispose() {
-        actors.onEach { actor -> if (actor is AdvancedGroup && actor.isDisposed.not()) actor.dispose() }
+        actors.onEach { actor -> if (actor is Disposable) actor.dispose() }
         super.dispose()
     }
 

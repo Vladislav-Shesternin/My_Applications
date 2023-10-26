@@ -10,7 +10,7 @@ import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.BodyId.AboutAuthor.ITEM
 import com.veldan.lbjt.game.box2d.bodies.BDescriptionPanel
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.toB2
@@ -95,7 +95,7 @@ class BGDescriptionPanel(override val screenBox2d: AdvancedBox2dScreen): Abstrac
                 frequencyHz = 1.2f
                 dampingRatio = 0.2f
             })
-            bDescriptionPanel.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> data.joint.drawJoint(alpha) })
+            bDescriptionPanel.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> data.joint.drawJoint(alpha) })
         }
 
     }

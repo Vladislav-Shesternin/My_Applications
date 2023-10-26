@@ -6,6 +6,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.FixtureDef
 import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
+import com.badlogic.gdx.utils.Array
 import com.veldan.lbjt.game.utils.*
 import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.actor.setOrigin
@@ -51,27 +52,27 @@ abstract class AbstractBody: Destroyable {
     var coroutine: CoroutineScope? = null
         private set
 
-    var beginContactBlock: ContactBlock? = null
-    var endContactBlock  : ContactBlock? = null
-    var renderBlock      : RenderBlock?  = null
+    var beginContactBlockArray = Array<ContactBlock>()
+    var endContactBlockArray   = Array<ContactBlock>()
+    var renderBlockArray       = Array<RenderBlock>()
 
     var isDestroyActor = true
 
     open fun render(deltaTime: Float) {
-        renderBlock?.block(deltaTime)
+        renderBlockArray.onEach { it.block(deltaTime) }
         transformActor()
     }
 
-    open fun beginContact(contactBody: AbstractBody) = beginContactBlock?.block(contactBody)
+    open fun beginContact(contactBody: AbstractBody) = beginContactBlockArray.onEach { it.block(contactBody) }
 
-    open fun endContact(contactBody: AbstractBody) = endContactBlock?.block(contactBody)
+    open fun endContact(contactBody: AbstractBody) = endContactBlockArray.onEach { it.block(contactBody) }
 
     override fun destroy() {
         if (body != null) {
             cancelCoroutinesAll(coroutine)
             coroutine = null
 
-            if (isDestroyActor && actor?.isDisposed == false) {
+            if (isDestroyActor) {
                 actor?.dispose()
                 actor = null
             }

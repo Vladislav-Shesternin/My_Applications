@@ -21,7 +21,7 @@ class WorldUtil: Disposable {
         const val GRAVITY_Y = -9.8f
         private const val TIME_STEP: Float = 1f / 60f
 
-        var isDebug = false
+        var isDebug = true//false
     }
 
     private var accumulatorTime = 0f
@@ -31,14 +31,18 @@ class WorldUtil: Disposable {
     val debugRenderer by lazy { Box2DDebugRenderer(true, true, true, true, true, true) }
     val bodyEditor    by lazy { BodyEditorLoader(Gdx.files.internal("physics/PhysicsData")) }
 
+    val contactFilter   = WorldContactFilter()
+    val contactListener = WorldContactListener()
+
     init {
-        world.setContactFilter(WorldContactFilter)
-        world.setContactListener(WorldContactListener)
+        world.setContactFilter(contactFilter)
+        world.setContactListener(contactListener)
     }
 
     override fun dispose() {
         log("WorldUtil dispose")
         cancelCoroutinesAll(coroutine)
+        world.bodies().map { it.userData as AbstractBody }.destroyAll()
         world.dispose()
     }
 

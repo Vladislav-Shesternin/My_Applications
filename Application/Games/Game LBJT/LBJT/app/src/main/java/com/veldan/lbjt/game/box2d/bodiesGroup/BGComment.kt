@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory
 import androidx.activity.result.contract.ActivityResultContracts
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.joints.DistanceJoint
 import com.badlogic.gdx.physics.box2d.joints.DistanceJointDef
@@ -152,7 +151,7 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
 
         val tmpAnchorA = Vector2(88f, 5f)
         val tmpAnchorB = Vector2(77f, 4f)
-        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> drawJoint(alpha, bSeparator, bIcon, tmpAnchorA, tmpAnchorB) })
+        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawJoint(alpha, bSeparator, bIcon, tmpAnchorA, tmpAnchorB) })
     }
 
     private fun createJ_BtnWriteComment() {
@@ -180,7 +179,7 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
         val tmpLeftAnchorB  = Vector2(53f, 96f)
         val tmpRightAnchorA = Vector2(628f, 396f)
         val tmpRightAnchorB = Vector2(447f, 96f)
-        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha ->
+        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
             drawJoint(alpha, bSeparator, bFrameNickname, tmpLeftAnchorA, tmpLeftAnchorB)
             drawJoint(alpha, bSeparator, bFrameNickname, tmpRightAnchorA, tmpRightAnchorB)
         })
@@ -247,7 +246,7 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
             dampingRatio = 0.5f
         })
 
-        _bodyA.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> _joint.drawJoint(alpha) })
+        _bodyA.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> _joint.drawJoint(alpha) })
     }
 
     // ---------------------------------------------------

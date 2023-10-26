@@ -31,4 +31,22 @@
     <string name="publish">Publish</string>
     <string name="comment_hint">Comment &lt;= 350 characters…</string>
     <string name="veldan_comment">Set an ICON and NICKNAME then you can comment !)</string>
+    <string name="static_description">[#1465dfff]Static Body{CLEARCOLOR}[#d2e9cdff] - is a motionless body with infinite mass, which is not acted upon by external forces.</string>
+    <string name="kinematic_description">[#bcab79ff]Kinematic Body{CLEARCOLOR}[#d2e9cdff] - is a stationary body with infinite mass that is not affected by external forces other than linear and angular velocity.</string>
+    <string name="dynamic_description">[#1a932cff]Dynamic Body{CLEARCOLOR}[#d2e9cdff] - is a moving body with a certain mass, which is acted upon by external forces.</string>
+    <string name="joint_description">[#bc380eff]Joints{CLEARCOLOR}[#d2e9cdff] - serve to {GRADIENT=bc380eff;d2e9cdff;1.0;1.0}connect two bodies{ENDGRADIENT} to each other. Typical examples in games are rag dolls, swings, and pulleys.</string>
+    <string name="test_stand">test stand</string>
+    <string name="next">Next</string>
+    <string name="general_information">{JUMP}General information[]</string>
+    <string name="mouse_joint" translatable="false">{WAVE}Mouse[] [#bc380eff]Joint[]</string>
+    <string name="distance_joint" translatable="false">{WAVE}Distance[] [#bc380eff]Joint[]</string>
+    <string name="revolute_joint" translatable="false">{WAVE}Revolute[] [#bc380eff]Joint[]</string>
+    <string name="prismatic_joint" translatable="false">{WAVE}Prismatic[] [#bc380eff]Joint[]</string>
+    <string name="wheel_joint" translatable="false">{WAVE}Wheel[] [#bc380eff]Joint[]</string>
+    <string name="weld_joint" translatable="false">{WAVE}Weld[] [#bc380eff]Joint[]</string>
+    <string name="friction_joint" translatable="false">{WAVE}Friction[] [#bc380eff]Joint[]</string>
+    <string name="rope_joint" translatable="false">{WAVE}Rope[] [#bc380eff]Joint[]</string>
+    <string name="pulley_joint" translatable="false">{WAVE}Pulley[] [#bc380eff]Joint[]</string>
+    <string name="gear_joint" translatable="false">{WAVE}Gear[] [#bc380eff]Joint[]</string>
+    <string name="motor_joint" translatable="false">{WAVE}Motor[] [#bc380eff]Joint[]</string>
 </resources>

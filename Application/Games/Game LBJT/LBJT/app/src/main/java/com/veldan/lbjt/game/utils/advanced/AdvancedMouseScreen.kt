@@ -1,10 +1,10 @@
 package com.veldan.lbjt.game.utils.advanced
 
 import com.badlogic.gdx.math.Vector2
+import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.QueryCallback
 import com.badlogic.gdx.physics.box2d.joints.MouseJoint
 import com.badlogic.gdx.physics.box2d.joints.MouseJointDef
-import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.Image
@@ -13,12 +13,10 @@ import com.veldan.lbjt.game.box2d.AbstractBody
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.WorldUtil
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.actor.disable
-import com.veldan.lbjt.game.utils.actor.setOnClickListener
-import com.veldan.lbjt.game.utils.actor.setOnTouchListener
 import com.veldan.lbjt.game.utils.toB2
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.log
@@ -47,7 +45,7 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
     override fun show() {
         super.show()
 
-        stageUI.addLBJTActorsOnStageUI()
+        stageUI.addMouseActorsOnStageUI()
         stageUI.addListener(listenerForMouseJoint)
         stageUI.addListener(listenerForUser)
     }
@@ -57,7 +55,7 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
         super.dispose()
     }
 
-    private fun AdvancedStage.addLBJTActorsOnStageUI() {
+    private fun AdvancedStage.addMouseActorsOnStageUI() {
         addUser()
         createB_Static()
     }
@@ -106,12 +104,9 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
         }
 
         var timeTouchDown = 0L
-        var timeTouchUp   = 0L
 
         override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {
             if (pointer != 0) return true
-
-            timeTouchUp = System.currentTimeMillis()
 
             touchPointInBox.set(tmpVector2.set(x, y).toB2)
             hitAbstractBody = null
@@ -160,7 +155,7 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
         }
 
         private fun playSound_TouchUp() {
-            if (System.currentTimeMillis().minus(timeTouchUp) >= 500) game.soundUtil.apply { play(TOUCH_DOWN) }
+            if (System.currentTimeMillis().minus(timeTouchDown) >= 500) game.soundUtil.apply { play(TOUCH_DOWN) }
         }
 
     }

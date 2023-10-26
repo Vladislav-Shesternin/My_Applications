@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.veldan.lbjt'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.veldan.lbjt"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 5
         versionName "5.0"
 
@@ -93,8 +93,6 @@ dependencies {
     implementation "com.google.android.gms:play-services-ads:$ads_version"
     def billing_version = "6.0.1"
     implementation "com.android.billingclient:billing-ktx:$billing_version"
-
-    implementation 'jp.wasabeef:blurry:4.0.1'
 
     def firebase_version = "32.2.3"
     implementation platform("com.google.firebase:firebase-bom:$firebase_version")

@@ -3,10 +3,12 @@ package com.veldan.lbjt.game.manager
 import com.badlogic.gdx.Gdx
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.screens.AboutAuthorScreen
-import com.veldan.lbjt.game.screens.CommentScreen
+import com.veldan.lbjt.game.screens.CommentsScreen
 import com.veldan.lbjt.game.screens.LoaderScreen
 import com.veldan.lbjt.game.screens.MenuScreen
 import com.veldan.lbjt.game.screens.SettingsScreen
+import com.veldan.lbjt.game.screens.TutorialIntroductionScreen
+import com.veldan.lbjt.game.screens.TutorialsScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
 
@@ -40,12 +42,15 @@ class NavigationManager(val game: LibGDXGame) {
     fun isBackStackEmpty() = backStack.isEmpty()
 
     private fun getScreenByName(name: String): AdvancedScreen = when(name) {
-        MenuScreen       ::class.java.name -> MenuScreen(game)
-        SettingsScreen   ::class.java.name -> SettingsScreen(game)
-        AboutAuthorScreen::class.java.name -> AboutAuthorScreen(game)
-        CommentScreen    ::class.java.name -> CommentScreen(game)
-        LoaderScreen     ::class.java.name -> LoaderScreen(game)
-        else                               -> MenuScreen(game)
+        LoaderScreen              ::class.java.name -> LoaderScreen(game)
+        MenuScreen                ::class.java.name -> MenuScreen(game)
+        TutorialIntroductionScreen::class.java.name -> TutorialIntroductionScreen(game)
+        SettingsScreen            ::class.java.name -> SettingsScreen(game)
+        AboutAuthorScreen         ::class.java.name -> AboutAuthorScreen(game)
+        CommentsScreen            ::class.java.name -> CommentsScreen(game)
+        TutorialsScreen           ::class.java.name -> TutorialsScreen(game)
+
+        else                                        -> MenuScreen(game)
     }
 
 }

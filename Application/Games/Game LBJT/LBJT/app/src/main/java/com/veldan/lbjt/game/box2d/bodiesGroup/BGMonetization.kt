@@ -12,7 +12,7 @@ import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.BodyId.AboutAuthor.ITEM
 import com.veldan.lbjt.game.box2d.bodies.BMonetizationBtn
 import com.veldan.lbjt.game.box2d.bodies.BMonetizationMegaBtn
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.JOINT_WIDTH
@@ -135,7 +135,7 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
                 maxForce = 200 * bodyB.mass
                 correctionFactor = 0.95f
 
-                data.bodyB.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha ->
+                data.bodyB.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
                     drawer.line(
                         bodyA.position.cpy().add(data.anchorA.cpy().subCenter(bodyA)).toUI,
                         bodyB.position.cpy().add(data.anchorB.cpy().subCenter(bodyB)).toUI,
@@ -153,13 +153,13 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
     private fun handlerTouchMonetizationBtnAds() {
         screenBox2d.stageUI.root.disable()
         aIndicator.animShowLoader()
-//        game.activity.rewardedUtil.apply { loadAndShow(
-//            successBlock = {
-//                screenBox2d.stageUI.root.enable()
-//                aIndicator.animHideLoader()
-//            },
-//            failedBlock  = this@BGMonetization::failedBlock
-//        ) }
+        screenBox2d.game.activity.rewardedUtil.apply { loadAndShow(
+            successBlock = {
+                screenBox2d.stageUI.root.enable()
+                aIndicator.animHideLoader()
+            },
+            failedBlock  = this@BGMonetization::failedBlock
+        ) }
     }
 
     private fun handlerTouchMonetizationBtnGift(product: BillingUtil.Product) {

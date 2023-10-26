@@ -1,0 +1,112 @@
+package com.veldan.lbjt.game.screens
+
+import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.scenes.scene2d.actions.Actions
+import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.veldan.lbjt.game.LibGDXGame
+import com.veldan.lbjt.game.actors.ABox2dObject
+import com.veldan.lbjt.game.actors.image.AImage
+import com.veldan.lbjt.game.box2d.bodiesGroup.BGBorders
+import com.veldan.lbjt.game.box2d.bodiesGroup.BGLift
+import com.veldan.lbjt.game.box2d.bodiesGroup.BGTestStand
+import com.veldan.lbjt.game.box2d.destroyAll
+import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
+import com.veldan.lbjt.game.utils.actor.animHide
+import com.veldan.lbjt.game.utils.actor.animShow
+import com.veldan.lbjt.game.utils.advanced.AdvancedMouseScreen
+import com.veldan.lbjt.game.utils.advanced.AdvancedStage
+import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.game.utils.region
+import com.veldan.lbjt.game.utils.runGDX
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
+class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
+
+    // Actor
+    private val aHand = Image(game.themeUtil.assets.HAND_HINT)
+
+    // BodyGroup
+    private val bgLift = BGLift(this)
+
+    override fun show() {
+        game.apply { backgroundColor = themeUtil.backgroundColor }
+
+        stageUI.root.animHide()
+        setUIBackground(game.themeUtil.assets.BACKGROUND.region)
+        super.show()
+
+        game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
+    }
+
+    override fun AdvancedStage.addActorsOnStageUI() {
+        createBG_Lift()
+
+        addHand()
+
+        stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA) {
+            animHand { bgLift.destroyMotorJoint() }
+        }
+    }
+
+    override fun dispose() {
+        listOf(bgLift).destroyAll()
+        super.dispose()
+    }
+
+    // ---------------------------------------------------
+    // Add Actor
+    // ---------------------------------------------------
+
+    private fun AdvancedStage.addHand() {
+        addActor(aHand)
+        aHand.apply {
+            val regionHandFlip = TextureRegion(game.themeUtil.assets.HAND_HINT).apply { flip(true, false) }
+            drawable = TextureRegionDrawable(regionHandFlip)
+
+            setBounds(700f, 1112f, 100f, 116f)
+            setOrigin(98f, 34f)
+            animHide()
+        }
+
+    }
+
+    // ------------------------------------------------------------------------
+    // Create Body Group
+    // ------------------------------------------------------------------------
+
+    private fun createBG_Lift() {
+        bgLift.create(20f,203f,654f,1244f)
+    }
+
+    // ---------------------------------------------------
+    // Anim
+    // ---------------------------------------------------
+
+    private fun animHand(endBlock: () -> Unit) {
+        aHand.addAction(
+            Actions.sequence(
+                Actions.parallel(
+                    Actions.fadeIn(0.5f),
+                    Actions.moveTo(622f, 1112f, 0.5f)
+                ),
+                Actions.delay(0.2f),
+                Actions.parallel(
+                    Actions.moveBy(15f, -50f, 0.6f),
+                    Actions.rotateBy(30f, 0.4f)
+                ),
+                Actions.run(endBlock),
+                Actions.moveBy(200f, 100f, 0.3f)
+            ))
+    }
+
+    // ---------------------------------------------------
+    // Logic
+    // ---------------------------------------------------
+
+    private fun navigateTo(screenName: String) {
+        stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) { game.navigationManager.navigate(screenName, TutorialsScreen::class.java.name) }
+    }
+
+}

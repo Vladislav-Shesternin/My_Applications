@@ -60,6 +60,9 @@ class ACommentVerticalGroup(
             lastActor2 = children.removeIndex(children.size - 1)
 
             children.add(lastActor1, lastActor2)
+
+            lastActor1 = null
+            lastActor2 = null
         }
 
         ny = prefHeight

@@ -7,7 +7,7 @@ import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.BodyId.Menu.BUTTON
 import com.veldan.lbjt.game.box2d.BodyId.Menu.STATIC
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.box2d.bodies.BYanYinTheme
 import com.veldan.lbjt.game.utils.actor.disable
 import com.veldan.lbjt.game.utils.actor.enable

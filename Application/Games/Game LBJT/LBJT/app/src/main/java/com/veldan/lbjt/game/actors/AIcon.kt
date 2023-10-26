@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.veldan.lbjt.game.actors.masks.Mask
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
+import com.veldan.lbjt.util.log
 
 class AIcon(override val screen: AdvancedScreen): AdvancedGroup() {
 
@@ -53,7 +54,5 @@ class AIcon(override val screen: AdvancedScreen): AdvancedGroup() {
     fun updateIcon(texture: Texture) {
         iconImg.drawable = TextureRegionDrawable(texture)
     }
-
-
 
 }

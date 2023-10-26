@@ -13,6 +13,7 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.font.FontParameter
 import com.veldan.lbjt.game.utils.font.FontParameter.CharType
+import com.veldan.lbjt.util.log
 
 class AComment(override val screen: AdvancedScreen): AdvancedGroup() {
 
@@ -69,6 +70,11 @@ class AComment(override val screen: AdvancedScreen): AdvancedGroup() {
         user.icon    ?.let { icon.updateIcon(it)  }
         user.nickname?.let { nickname.setText(it) }
         user.comment ?.let { comment.setText(it)  }
+    }
+
+    override fun dispose() {
+        super.dispose()
+        log("DIK")
     }
 
 }

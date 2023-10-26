@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.*
 import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
+import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.util.cancelCoroutinesAll
 import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
@@ -16,10 +17,10 @@ import kotlinx.coroutines.Dispatchers
 
 abstract class AbstractBodyGroup: Destroyable {
     abstract val screenBox2d: AdvancedBox2dScreen
-    abstract val standartW  : Float
+    abstract val standartW: Float
 
     private val _bodyList  = mutableListOf<AbstractBody>()
-    private val _actorList = mutableListOf<Actor>()
+    private val _actorList = mutableListOf<AdvancedGroup>()
     val disposableSet      = mutableSetOf<Disposable>()
 
     val bodyList get()  = _bodyList.toList()
@@ -53,6 +54,7 @@ abstract class AbstractBodyGroup: Destroyable {
         cancelCoroutinesAll(coroutine)
         disposableSet.disposeAll()
         _bodyList.destroyAll()
+        _actorList.disposeAll()
     }
 
     fun createBody(body: AbstractBody, pos: Vector2, size: Vector2) {
@@ -69,9 +71,22 @@ abstract class AbstractBodyGroup: Destroyable {
         joint.create(jointDef)
     }
 
+    fun createBodyGroup(bodyGroup: AbstractBodyGroup, pos: Vector2, size: Vector2) {
+        val resultPosition = position.cpy().add(pos.toStandart)
+        val resultSize     = size.toStandart
+
+        bodyGroup.create(resultPosition.x, resultPosition.y, resultSize.x, resultSize.y)
+        _bodyList.addAll(bodyGroup.bodyList)
+        _actorList.addAll(bodyGroup.actorList)
+    }
+
+    fun createBodyGroup(bodyGroup: AbstractBodyGroup, x: Float, y: Float, w: Float, h: Float) {
+        createBodyGroup(bodyGroup, Vector2(x, y), Vector2(w, h))
+    }
+
     protected fun Vector2.subCenter(body: Body): Vector2 = toStandart.toB2.sub((body.userData as AbstractBody).center)
 
-    protected fun Actor.setBoundsStandart(x: Float, y: Float, width: Float, height: Float) {
+    protected fun AdvancedGroup.setBoundsStandart(x: Float, y: Float, width: Float, height: Float) {
         setBounds(position.cpy().add(Vector2(x,y).toStandart), Vector2(width, height).toStandart)
         _actorList.add(this)
     }

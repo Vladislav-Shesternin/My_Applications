@@ -7,9 +7,9 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId.Settings.LANGUAGE
-import com.veldan.lbjt.game.box2d.bodies.BDynamic
+import com.veldan.lbjt.game.box2d.bodies.standart.BDynamic
 import com.veldan.lbjt.game.box2d.bodies.BLanguage
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.box2d.util.CheckGroupBGLanguage
 
 import com.veldan.lbjt.game.utils.GameColor
@@ -122,8 +122,8 @@ class BGLanguage(
             dampingRatio = 0.7f
 
             bLanguage.actor?.apply {
-                clearPreDrawBlock()
-                preDrawArray.add(AdvancedGroup.PreDrawer { alpha -> drawer.line(bodyA.position.toUI, bodyB.position.toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
+                preDrawArray.clear()
+                preDrawArray.add(AdvancedGroup.Drawer { alpha -> drawer.line(bodyA.position.toUI, bodyB.position.toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
             }
         })
     }

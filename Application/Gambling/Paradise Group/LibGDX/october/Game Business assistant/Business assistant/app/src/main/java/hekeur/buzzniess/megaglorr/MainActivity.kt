@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     lateinit var lottie: Lottie
 
     val webViewFragment = WebViewFragment(this)
-    val okHttpClient    = OkHttpClient()
 
+    private val okHttpClient = OkHttpClient()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

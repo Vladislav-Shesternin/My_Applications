@@ -10,8 +10,9 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 
 class BRegularBtn(
     override val screenBox2d: AdvancedBox2dScreen,
-    val text : String,
-    val style: LabelStyle,
+    val text     : String,
+    val style    : LabelStyle,
+    val labelType: AButton_Regular.LabelType = AButton_Regular.LabelType.DEFAULT,
 ): AbstractBody() {
     override val name       = "regular_btn"
     override val bodyDef    = BodyDef().apply {
@@ -22,7 +23,7 @@ class BRegularBtn(
         restitution = 0.3f
         friction    = 0.3f
     }
-    override var actor: AdvancedGroup? = AButton_Regular(screenBox2d, text, style)
+    override var actor: AdvancedGroup? = AButton_Regular(screenBox2d, text, style, labelType)
 
     fun getActor(): AButton_Regular? = actor as? AButton_Regular
 }

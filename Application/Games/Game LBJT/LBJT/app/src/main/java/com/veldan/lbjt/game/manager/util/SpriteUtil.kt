@@ -43,12 +43,24 @@ class SpriteUtil {
           val FRAME_ICON                  : TextureRegion
           val ICON_DEF                    : TextureRegion
           val FRAME_ICON_EMPTY            : TextureRegion
+          val C_DYNAMIC                   : TextureRegion
+          val C_KINEMATIC                 : TextureRegion
+          val C_STATIC                    : TextureRegion
+          val H_DYNAMIC                   : TextureRegion
+          val H_KINEMATIC                 : TextureRegion
+          val H_STATIC                    : TextureRegion
+          val V_DYNAMIC                   : TextureRegion
+          val V_KINEMATIC                 : TextureRegion
+          val V_STATIC                    : TextureRegion
+          val LIFT_PLATFORM               : TextureRegion
+          val LIFT_GEAR                   : TextureRegion
 
           val PANEL                  : NinePatch
           val CURSOR                 : NinePatch
           val SELECT                 : NinePatch
           val PANEL_WITH_LIGHT_WHITE : NinePatch
           val PANEL_WITH_LIGHT_RED   : NinePatch
+          val BORDERS_BLUE           : NinePatch
 
           val BACKGROUND : Texture
           val MASK_ICON  : Texture
@@ -95,12 +107,24 @@ class SpriteUtil {
           override val FRAME_ICON                  = getGameRegion("frame_icon")
           override val ICON_DEF                    = getGameRegion("icon_def")
           override val FRAME_ICON_EMPTY            = getGameRegion("frame_icon_empty")
+          override val C_DYNAMIC                   = getGameRegion("c_dynamic")
+          override val C_KINEMATIC                 = getGameRegion("c_kinematic")
+          override val C_STATIC                    = getGameRegion("c_static")
+          override val H_DYNAMIC                   = getGameRegion("h_dynamic")
+          override val H_KINEMATIC                 = getGameRegion("h_kinematic")
+          override val H_STATIC                    = getGameRegion("h_static")
+          override val V_DYNAMIC                   = getGameRegion("v_dynamic")
+          override val V_KINEMATIC                 = getGameRegion("v_kinematic")
+          override val V_STATIC                    = getGameRegion("v_static")
+          override val LIFT_PLATFORM               = getGameRegion("lift_platform")
+          override val LIFT_GEAR                   = getGameRegion("lift_gear")
 
           override val PANEL                  = getGamePath("panel")
           override val CURSOR                 = getGamePath("cursor")
           override val SELECT                 = getGamePath("select")
           override val PANEL_WITH_LIGHT_WHITE = getGamePath("panel_with_light_white")
           override val PANEL_WITH_LIGHT_RED   = getGamePath("panel_with_light_red")
+          override val BORDERS_BLUE           = getGamePath("borders_blue")
 
           override val MASK_ICON   = SpriteManager.EnumTexture.MASK_ICON.data.texture
           override val ICON_VELDAN = SpriteManager.EnumTexture.VELDAN_ICON.data.texture

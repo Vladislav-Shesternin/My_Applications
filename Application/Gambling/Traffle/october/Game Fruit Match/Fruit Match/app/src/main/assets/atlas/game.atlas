@@ -1,0 +1,124 @@
+game.png
+size: 1848, 819
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1593, 81
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 1720, 81
+  size: 126, 125
+  orig: 126, 125
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 2, 208
+  size: 126, 125
+  orig: 126, 125
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 130, 208
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 257, 208
+  size: 126, 125
+  orig: 126, 125
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 385, 208
+  size: 126, 125
+  orig: 126, 125
+  offset: 0, 0
+  index: -1
+b_def
+  rotate: false
+  xy: 640, 208
+  size: 596, 148
+  orig: 596, 148
+  offset: 0, 0
+  index: -1
+b_prs
+  rotate: false
+  xy: 1238, 208
+  size: 596, 148
+  orig: 596, 148
+  offset: 0, 0
+  index: -1
+bom
+  rotate: false
+  xy: 513, 208
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+glued
+  rotate: false
+  xy: 2, 358
+  size: 157, 157
+  orig: 157, 157
+  offset: 0, 0
+  index: -1
+menu_def
+  rotate: false
+  xy: 161, 358
+  size: 256, 209
+  orig: 256, 209
+  offset: 0, 0
+  index: -1
+menu_press
+  rotate: false
+  xy: 419, 358
+  size: 256, 209
+  orig: 256, 209
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 1278, 81
+  size: 214, 96
+  orig: 214, 96
+  offset: 0, 0
+  index: -1
+progress_frame
+  rotate: false
+  xy: 2, 2
+  size: 1274, 77
+  orig: 1274, 77
+  offset: 0, 0
+  index: -1
+progress_indicator
+  rotate: false
+  xy: 2, 81
+  size: 1274, 77
+  orig: 1274, 77
+  offset: 0, 0
+  index: -1
+touch
+  rotate: false
+  xy: 1494, 81
+  size: 97, 97
+  orig: 97, 97
+  offset: 0, 0
+  index: -1
+win
+  rotate: false
+  xy: 677, 358
+  size: 858, 459
+  orig: 858, 459
+  offset: 0, 0
+  index: -1

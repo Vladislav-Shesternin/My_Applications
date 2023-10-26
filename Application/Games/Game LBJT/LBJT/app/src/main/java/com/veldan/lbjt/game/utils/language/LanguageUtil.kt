@@ -33,8 +33,8 @@ class LanguageUtil(activity: MainActivity) {
 
     private fun getLanguageByLocale(locale: Locale): Language {
         return when (locale.language) {
-            "uk" -> Language.UK
-            "en" -> Language.EN
+            Language.UK.language -> Language.UK
+            Language.EN.language -> Language.EN
             else -> Language.EN
         }
 

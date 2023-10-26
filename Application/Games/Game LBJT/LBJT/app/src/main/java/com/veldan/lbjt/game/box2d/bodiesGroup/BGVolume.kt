@@ -15,12 +15,11 @@ import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.BodyId.Settings.LANGUAGE
 import com.veldan.lbjt.game.box2d.BodyId.Settings.START
 import com.veldan.lbjt.game.box2d.BodyId.Settings.VOLUME
-import com.veldan.lbjt.game.box2d.bodies.BStatic
+import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.box2d.bodies.BVolume
 import com.veldan.lbjt.game.box2d.bodies.BVolumeRod
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.JOINT_WIDTH
-import com.veldan.lbjt.game.utils.actor.setBounds
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
@@ -168,8 +167,8 @@ class BGVolume(
             lengthA = 209f.toStandart.toB2
             lengthB = 209f.toStandart.toB2
 
-            bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
-            bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.PreDrawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
+            bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
+            bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
 
         })
     }
@@ -199,17 +198,17 @@ class BGVolume(
 
                     runGDX { bVolumeRodLouder.apply {
                         val onceDestroy = Once()
-                        beginContactBlock = AbstractBody.ContactBlock { if (it.id == START) onceDestroy.once { coroutine?.launch {
+                        beginContactBlockArray.add(AbstractBody.ContactBlock { if (it.id == START) onceDestroy.once { coroutine?.launch {
                             delay(700)
                             runGDX { bStaticStart.destroy() }
-                        } } }
-                        renderBlock = AbstractBody.RenderBlock { (body?.position?.y ?: 0f).also { _y ->
+                        } } })
+                        renderBlockArray.add(AbstractBody.RenderBlock { (body?.position?.y ?: 0f).also { _y ->
                             percentLouderFlow.value = when {
                                 _y >= MIN_LOUDER -> 0
                                 _y <= MAX_LOUDER -> 100
                                 else -> ((MIN_LOUDER - _y) / ONE_PERCENT_LOUDER).roundToInt()
                             }
-                        } }
+                        } })
                     } }
                 }
                 runGDX {
