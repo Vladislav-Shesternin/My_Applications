@@ -47,9 +47,12 @@ abstract class AdvancedScreen(
 
     val drawerUtil by lazy { ShapeDrawerUtil(stageUI.batch) }
 
-    val fontGeneratorInter_ExtraBold = FontGenerator(FontPath.Inter_ExtraBold)
-    val fontGeneratorInter_Medium    = FontGenerator(FontPath.Inter_Medium)
     val fontGeneratorInter_Black     = FontGenerator(FontPath.Inter_Black)
+    val fontGeneratorInter_ExtraBold = FontGenerator(FontPath.Inter_ExtraBold)
+    val fontGeneratorInter_Bold      = FontGenerator(FontPath.Inter_Bold)
+    val fontGeneratorInter_Medium    = FontGenerator(FontPath.Inter_Medium)
+    val fontGeneratorInter_Regular   = FontGenerator(FontPath.Inter_Regular)
+    val fontGeneratorInter_Light     = FontGenerator(FontPath.Inter_Light)
 
     override fun resize(width: Int, height: Int) {
         viewportBack.update(width, height, true)

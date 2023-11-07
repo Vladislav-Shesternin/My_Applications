@@ -25,13 +25,9 @@ class TutorialIntroductionScreen(override val game: LibGDXGame): AdvancedMouseSc
     private val bgTestStand = BGTestStand(this)
 
     override fun show() {
-        game.apply { backgroundColor = themeUtil.backgroundColor }
-
         stageUI.root.animHide()
         setUIBackground(game.themeUtil.assets.BACKGROUND.region)
         super.show()
-
-        game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
     }
 
     override fun AdvancedStage.addActorsOnStageUI() {

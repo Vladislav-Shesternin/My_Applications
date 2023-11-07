@@ -1,0 +1,117 @@
+game.png
+size: 1011, 1945
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1, 1
+  size: 142, 142
+  orig: 142, 142
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 144, 1
+  size: 142, 142
+  orig: 142, 142
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 287, 1
+  size: 142, 142
+  orig: 142, 142
+  offset: 0, 0
+  index: -1
+balaca
+  rotate: false
+  xy: 430, 1
+  size: 466, 216
+  orig: 466, 216
+  offset: 0, 0
+  index: -1
+ex_def
+  rotate: false
+  xy: 1, 218
+  size: 637, 176
+  orig: 637, 176
+  offset: 0, 0
+  index: -1
+ex_prs
+  rotate: false
+  xy: 1, 395
+  size: 637, 176
+  orig: 637, 176
+  offset: 0, 0
+  index: -1
+minuas_def
+  rotate: false
+  xy: 639, 395
+  size: 185, 185
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+minuas_pers
+  rotate: false
+  xy: 825, 395
+  size: 185, 185
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+pl_def
+  rotate: false
+  xy: 1, 581
+  size: 637, 176
+  orig: 637, 176
+  offset: 0, 0
+  index: -1
+pl_prs
+  rotate: false
+  xy: 1, 758
+  size: 637, 176
+  orig: 637, 176
+  offset: 0, 0
+  index: -1
+pulsek_def
+  rotate: false
+  xy: 639, 758
+  size: 185, 185
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+pulsek_prs
+  rotate: false
+  xy: 825, 758
+  size: 185, 185
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+slogroup
+  rotate: false
+  xy: 1, 944
+  size: 910, 646
+  orig: 910, 646
+  offset: 0, 0
+  index: -1
+sp_def
+  rotate: false
+  xy: 1, 1591
+  size: 637, 176
+  orig: 637, 176
+  offset: 0, 0
+  index: -1
+sp_wait
+  rotate: false
+  xy: 1, 1768
+  size: 637, 176
+  orig: 637, 176
+  offset: 0, 0
+  index: -1
+win
+  rotate: false
+  xy: 639, 1768
+  size: 153, 153
+  orig: 153, 153
+  offset: 0, 0
+  index: -1

@@ -34,7 +34,7 @@ fun Actor.setOnClickListener(block: (Actor) -> Unit) {
     })
 }
 
-fun Actor.setOnTouchListener(block: (Actor) -> Unit) {
+fun Actor.setOnTouchListener(radius: Int = 1, block: (Actor) -> Unit) {
     val touchPointDown = Vector2()
     val touchPointUp   = Vector2()
     addListener(object : InputListener() {
@@ -44,8 +44,8 @@ fun Actor.setOnTouchListener(block: (Actor) -> Unit) {
         }
         override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
             touchPointUp.set(round(x), round(y))
-            if (touchPointDown.x in (touchPointUp.x - 1..touchPointUp.x + 1) &&
-                touchPointDown.y in (touchPointUp.y - 1..touchPointUp.y + 1)) block(this@setOnTouchListener)
+            if (touchPointDown.x in (touchPointUp.x - radius..touchPointUp.x + radius) &&
+                touchPointDown.y in (touchPointUp.y - radius..touchPointUp.y + radius)) block(this@setOnTouchListener)
         }
     })
 }

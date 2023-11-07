@@ -47,7 +47,7 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
 
     override fun sizeChanged() {
         standardizer.standardize(standartW, width)
-        if (width > 0 && height > 0) { onceInit.once { addActorsOnGroup() } }
+        onceInit.once { addActorsOnGroup() }
     }
 
     override fun dispose() {

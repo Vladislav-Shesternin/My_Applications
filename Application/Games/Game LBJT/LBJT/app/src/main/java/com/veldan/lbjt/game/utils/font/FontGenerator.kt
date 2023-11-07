@@ -23,9 +23,12 @@ class FontGenerator(fontPath: FontPath): FreeTypeFontGenerator(Gdx.files.interna
     }
 
     enum class FontPath(val path: String) {
-        Inter_ExtraBold("font/Inter-ExtraBold.ttf"),
-        Inter_Medium   ("font/Inter-Medium.ttf"   ),
         Inter_Black    ("font/Inter-Black.ttf"    ),
+        Inter_ExtraBold("font/Inter-ExtraBold.ttf"),
+        Inter_Bold     ("font/Inter-Bold.ttf"),
+        Inter_Regular  ("font/Inter-Regular.ttf"  ),
+        Inter_Medium   ("font/Inter-Medium.ttf"   ),
+        Inter_Light    ("font/Inter-Light.ttf"    ),
     }
 
 }

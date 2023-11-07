@@ -42,7 +42,7 @@ class BGLift(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
     private val bLever        = BVObject(screenBox2d, BodyDef.BodyType.DynamicBody)
 
     // BodyGroup
-    private val bgRegularBtns = BGRegularButtons(screenBox2d)
+    val bgRegularBtns = BGRegularButtons(screenBox2d)
 
     // Joint
     private val jPulley            = AbstractJoint<PulleyJoint, PulleyJointDef>(screenBox2d)

@@ -6,21 +6,24 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 class HorizontalGroup(
     override val screen: AdvancedScreen,
-    val gap     : Float = 0f,
-    val startGap: Float = gap,
-    val endGap  : Float = gap,
+    val gap      : Float = 0f,
+    val startGap : Float = gap,
+    val endGap   : Float = gap,
+    val alignment: Alignment = Alignment.START,
     val direction: Direction = Direction.RIGHT,
 ) : AdvancedGroup() {
 
-    private var lastIndex = 0
-
+    private var nx = 0f
+    private var newWidth = 0f
 
     override fun getPrefWidth(): Float {
-        var newWidth = 0f
-        children.onEach { newWidth += it.width + gap }
+        newWidth = 0f
+        children.onEach { newWidth += it.height + gap }
 
         newWidth -= gap
         newWidth += startGap + endGap
+
+        if (alignment == Alignment.END && parent.width > newWidth) newWidth = parent.width
         return newWidth
     }
 
@@ -30,27 +33,52 @@ class HorizontalGroup(
 
     override fun addActorsOnGroup() {}
 
-    override fun addActor(actor: Actor) {
-        super.addActor(actor)
-        invalidateHierarchy()
+    override fun childrenChanged() {
+        super.childrenChanged()
+        placeChildren()
+    }
 
-        lastIndex = children.size-1
+    private fun placeChildren() {
+        when (alignment) {
+            Alignment.END    -> {
+                nx = prefWidth
 
-        if (direction == Direction.LEFT) {
-            children.onEachIndexed { index, a ->
-                if (index == lastIndex) a.x = startGap
-                else a.x += actor.width + gap
+                when (direction) {
+                    Direction.LEFT  -> children.onEachIndexed { index, a -> a.moveFromEND(index) }
+                    Direction.RIGHT -> children.reversed().onEachIndexed { index, a -> a.moveFromEND(index) }
+                }
             }
-        } else {
-            if (children.size > 1) actor.x = children[lastIndex - 1].x + children[lastIndex - 1].width + gap
-            else actor.x = startGap
+            Alignment.START -> {
+                nx = 0f
+
+                when (direction) {
+                    Direction.LEFT  -> children.reversed().onEachIndexed { index, a -> a.moveFromSTART(index) }
+                    Direction.RIGHT -> children.onEachIndexed { index, a -> a.moveFromSTART(index) }
+                }
+            }
         }
     }
 
+    private fun Int.gap() = (if (this==0) startGap else gap)
+
+    private fun Actor.moveFromEND(index: Int) {
+        nx = nx - index.gap() - width
+        x  = nx
+    }
+
+    private fun Actor.moveFromSTART(index: Int) {
+        nx += index.gap()
+        x  = nx
+        nx += width
+    }
 
 
     enum class Direction {
-        RIGHT, LEFT
+        LEFT, RIGHT
+    }
+
+    enum class Alignment {
+        START, END
     }
 
 }

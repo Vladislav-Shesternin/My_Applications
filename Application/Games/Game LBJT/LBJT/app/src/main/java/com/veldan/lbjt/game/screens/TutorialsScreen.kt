@@ -11,9 +11,11 @@ import com.veldan.lbjt.game.box2d.bodiesGroup.BGBorders
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGLift
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGTestStand
 import com.veldan.lbjt.game.box2d.destroyAll
+import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
+import com.veldan.lbjt.game.utils.actor.setOnTouchListener
 import com.veldan.lbjt.game.utils.advanced.AdvancedMouseScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
 import com.veldan.lbjt.game.utils.font.FontParameter
@@ -31,13 +33,9 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
     private val bgLift = BGLift(this)
 
     override fun show() {
-        game.apply { backgroundColor = themeUtil.backgroundColor }
-
         stageUI.root.animHide()
         setUIBackground(game.themeUtil.assets.BACKGROUND.region)
         super.show()
-
-        game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
     }
 
     override fun AdvancedStage.addActorsOnStageUI() {
@@ -78,6 +76,14 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
 
     private fun createBG_Lift() {
         bgLift.create(20f,203f,654f,1244f)
+
+        val screenNameList = listOf(
+            GeneralInformationScreen::class.java.name
+        )
+
+        bgLift.bgRegularBtns.bRegularBtnList.onEachIndexed { index, bRegularBtn ->
+            bRegularBtn.actor?.setOnTouchListener(radius = 20) { navigateTo(screenNameList.first()) }
+        }
     }
 
     // ---------------------------------------------------

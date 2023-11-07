@@ -14,6 +14,7 @@ class SoundManager(var assetManager: AssetManager) {
 
     fun init() {
         loadableSoundList.onEach { it.sound = assetManager[it.path, Sound::class.java] }
+        loadableSoundList.clear()
     }
 
     enum class EnumSound(val data: SoundData) {

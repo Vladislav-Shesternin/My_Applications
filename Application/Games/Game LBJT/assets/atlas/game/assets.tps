@@ -542,6 +542,21 @@
                 <key>scale9FromFile</key>
                 <true/>
             </struct>
+            <key type="filename">panel_code.9.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <true/>
+                <key>scale9Borders</key>
+                <rect>15,15,40,40</rect>
+                <key>scale9Paddings</key>
+                <rect>0,0,0,0</rect>
+                <key>scale9FromFile</key>
+                <true/>
+            </struct>
             <key type="filename">panel_with_light_red.9.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>

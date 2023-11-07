@@ -130,7 +130,7 @@ class LoaderScreen(override val game: LibGDXGame) : AdvancedScreen() {
 
             stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
                 game.activity.lottie.hideLoader()
-                game.navigationManager.navigate(MenuScreen::class.java.name)
+                game.navigationManager.navigate(TutorialsScreen::class.java.name)
             }
         }
     }

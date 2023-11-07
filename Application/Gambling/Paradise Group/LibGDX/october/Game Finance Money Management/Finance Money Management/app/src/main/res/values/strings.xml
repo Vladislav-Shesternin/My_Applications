@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">Finance Money Management</string>
+    <string name="alpha">Cancel</string>
+    <string name="beta">Accept</string>
+</resources>

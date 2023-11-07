@@ -14,13 +14,11 @@
     <string name="language">Language</string>
     <string name="english">English</string>
     <string name="ukrainian">Ukrainian</string>
-    <string name="about_author_description">"[#d2e9cdff]{SLIDE=1.0;1.0;false}{WAVE}I am writing this text on 05.25.2023{ENDWAVE}{ENDSLIDE}\n"
-                "\n"
-                "{SPIN}Started working as a programmer in March 2021 as an Android developer.{ENDSPIN} {SPIRAL}In the fall of 2021, he became interested in 2D games and studied {SICK}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDSICK} - a framework for creating 2D games.{ENDSPIRAL} {JUMP=1.0;1.0;1.0;1.0}In 2023, I set a goal to learn {GRADIENT=1465dfff;d2e9cdff;1.0;1.0}Box2D{ENDGRADIENT} for {JUMP}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDJUMP} and here I am.{ENDJUMP}\n"
-                "\n"
-                "{SHRINK}The main source of knowledge is the site {LINK=https://www.iforce2d.net/b2dtut/joints-overview}[#e4e90cff][_]https://www.iforce2d.net/b2dtut/joints-overview[_]{CLEARCOLOR}[#d2e9cdff]{ENDLINK}. Thanks for it =){ENDSHRINK}\n"
-                "\n"
-                "{EMERGE}All texts in the application were written by me, grammar was edited by {RAINBOW}ChatGPT.{ENDRAINBOW}{ENDEMERGE}"</string>
+    <string name="about_author_description">
+        [#d2e9cdff]{SLIDE=1.0;1.0;false}{WAVE}I am writing this text on 05.25.2023{ENDWAVE}{ENDSLIDE}\n
+        \n{SPIN}Started working as a programmer in March 2021 as an Android developer.{ENDSPIN} {SPIRAL}In the fall of 2021, he became interested in 2D games and studied {SICK}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDSICK} - a framework for creating 2D games.{ENDSPIRAL} {JUMP=1.0;1.0;1.0;1.0}In 2023, I set a goal to learn {GRADIENT=1465dfff;d2e9cdff;1.0;1.0}Box2D{ENDGRADIENT} for {JUMP}[*][#000000ff]Lib{CLEARCOLOR}[#e74a45ff]GDX{CLEARCOLOR}[*][#d2e9cdff]{ENDJUMP} and here I am.{ENDJUMP}\n
+        \n{SHRINK}The main source of knowledge is the site {LINK=https://www.iforce2d.net/b2dtut/joints-overview}[#e4e90cff][_]https://www.iforce2d.net/b2dtut/joints-overview[_]{CLEARCOLOR}[#d2e9cdff]{ENDLINK}. Thanks for it =){ENDSHRINK}\n
+        \n{EMERGE}All texts in the application were written by me, grammar was edited by {RAINBOW}ChatGPT.{ENDRAINBOW}{ENDEMERGE}</string>
     <string name="give_thanks">Give thanks</string>
     <string name="ads">View ads</string>
     <string name="gift">Buy a gift</string>
@@ -37,6 +35,7 @@
     <string name="joint_description">[#bc380eff]Joints{CLEARCOLOR}[#d2e9cdff] - serve to {GRADIENT=bc380eff;d2e9cdff;1.0;1.0}connect two bodies{ENDGRADIENT} to each other. Typical examples in games are rag dolls, swings, and pulleys.</string>
     <string name="test_stand">test stand</string>
     <string name="next">Next</string>
+
     <string name="general_information">{JUMP}General information[]</string>
     <string name="mouse_joint" translatable="false">{WAVE}Mouse[] [#bc380eff]Joint[]</string>
     <string name="distance_joint" translatable="false">{WAVE}Distance[] [#bc380eff]Joint[]</string>
@@ -49,4 +48,163 @@
     <string name="pulley_joint" translatable="false">{WAVE}Pulley[] [#bc380eff]Joint[]</string>
     <string name="gear_joint" translatable="false">{WAVE}Gear[] [#bc380eff]Joint[]</string>
     <string name="motor_joint" translatable="false">{WAVE}Motor[] [#bc380eff]Joint[]</string>
+
+    <!--GeneralInformation-->
+    <string name="geninfo_title_1">And so the… Joints</string>
+    <string name="geninfo_title_2">Special Settings</string>
+    <string name="geninfo_title_3">So what is this getOrigin?</string>
+    <string name="geninfo_title_4">How to measure, SCALE?</string>
+
+    <string name="geninfo_sub_title_1">Let’s talk about Anchor Points</string>
+    <string name="geninfo_sub_title_2">How to measure where to set the Anchor Point?</string>
+    <string name="geninfo_sub_title_3">Back to how to get SCALE?</string>
+
+    <string name="geninfo_text_1">[#d2e9cdff][@Inter_Medium]Joints are used to connect [#FF4949][@Inter_Bold]2 bodies together.[]\n[#d2e9cdff][@Inter_Medium]Joints are created and destroyed similarly to bodies, using [#FF4949][@Inter_Bold]world methods:</string>
+    <string name="geninfo_text_2">[#d2e9cdff][@Inter_Medium]At the moment there are [#FF4949][@Inter_Bold]11 joints[][#d2e9cdff][@Inter_Medium] in Box2d, all of them are different and have their own characteristics and scope:</string>
+    <string name="geninfo_text_3">[#d2e9cdff][@Inter_Medium]Each joint has its own behavior, so to create a joint, you need to create a [#FF4949][@Inter_Bold]“Joint Definition” &lt;JointDef&gt;[][#d2e9cdff][@Inter_Medium], set it up, and pass it to the joint creation method:</string>
+    <string name="geninfo_text_4">[#FF4949][@Inter_Bold]Joint Def[#d2e9cdff][@Inter_Medium] - is the main definition from which all other joint definitions are inherited, which means that all joints have the same [#FF4949][@Inter_Bold]MANDATORY[#d2e9cdff][@Inter_Medium] padding settings, namely:</string>
+    <string name="geninfo_text_5">[#d2e9cdff][@Inter_Medium]After setting up the [#FF4949][@Inter_Bold]general fields[#d2e9cdff][@Inter_Medium] (bodyA, bodyB, collideConnected), you need to set up [#FF4949][@Inter_Bold]special settings[#d2e9cdff][@Inter_Medium] for the connection type. They are:</string>
+    <string name="geninfo_text_6">[#FF4949][@Inter_Bold]Anchor points [#d2e9cdff][@Inter_Medium]([#FF4949][@Inter_Bold]аnchorA [#d2e9cdff][@Inter_Medium]|[#FF4949][@Inter_Bold] аnchorB[#d2e9cdff][@Inter_Medium]) &lt;Vector2(x,y)&gt; — This is the [#FF4949][@Inter_Bold]starting[#d2e9cdff][@Inter_Medium] point of the connection at bodyA and the [#FF4949][@Inter_Bold]endpoint[#d2e9cdff][@Inter_Medium] at bodyB.</string>
+    <string name="geninfo_text_7">[#d2e9cdff][@Inter_Medium]In [#FF4949][@Inter_Bold]LibGDX[#d2e9cdff][@Inter_Medium], the reference point [#FF4949][@Inter_Bold]x=0, y=0,[#d2e9cdff][@Inter_Medium] is in the [#FF4949][@Inter_Bold]lower left[#d2e9cdff][@Inter_Medium] corner, and in [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium], the [#FF4949][@Inter_Bold]center of mass[#d2e9cdff][@Inter_Medium] is considered the reference point of the body fixture, and it [#FF4949][@Inter_Bold]can be anywhere[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_8">[#d2e9cdff][@Inter_Medium]But if getting the center using the method [#FF4949][@Inter_Bold]{LINK=https://drive.google.com/file/d/1iKeufstgpFrPnQPC6lEKM4P3FYG8NYVd/view?usp=drive_link}[_]LibGDX Kotlin BodyEditorLoader[_]{ENDLINK} &lt;getOrigin&gt;[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_9">[#d2e9cdff][@Inter_Medium]It returns the value of the body attachment center based on the origin (x=0, y=0), lower left corner, and its value will be Vector2 with the distance from the lower left corner x=0, y=0, to the center of mass of the body fixture. As shown in the example, [#FF4949][@Inter_Bold]getOrigin returns the distance from the green dot to the red dot[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_10">
+        [#d2e9cdff][@Inter_Medium]Now we  can find the point where the anchor point will be, just for [#FF4949][@Inter_Bold]x=0, y=0[#d2e9cdff][@Inter_Medium], take the [#FF4949][@Inter_Bold]lower left corner[#d2e9cdff][@Inter_Medium] and from there we put the point where we want and subtract getOrigin from this point.\n
+        \n[#FF4949][@Inter_Bold]Imagine an Example[#d2e9cdff][@Inter_Medium] that there is a body measuring 10 by 10 meters with a center of mass at coordinates [#FF4949][@Inter_Bold]x=8.35, y=8.4[#d2e9cdff][@Inter_Medium], we want to set a [#FF4949][@Inter_Bold]Anchor Point at coordinates x=3.2, y=4.1[#d2e9cdff][@Inter_Medium]. We are counting [#FF4949][@Inter_Bold]x=3.2, y=4.1[#d2e9cdff][@Inter_Medium], from the lower left corner, assuming it is [#FF4949][@Inter_Bold]x=0, y=0[#d2e9cdff][@Inter_Medium], but in fact the calculation will take place from the [#FF4949][@Inter_Bold]center of mass[#d2e9cdff][@Inter_Medium], which in this case is at the point [#FF4949][@Inter_Bold]x=8.35, y=8.4[#d2e9cdff][@Inter_Medium]. In order for the Anchor Point to be where we want, that is, the counting was carried out from the [#FF4949][@Inter_Bold]lower left corner[#d2e9cdff][@Inter_Medium], we just need to [#FF4949][@Inter_Bold]SUBSTRUCT[#d2e9cdff][@Inter_Medium] from the coordinates we specified
+        \n\n[#FF4949][@Inter_Bold](x=3.2, y=4.1) - (x=8.35, y=8.4)[#d2e9cdff][@Inter_Medium] = Anchor Point:
+    </string>
+    <string name="geninfo_text_11">[#d2e9cdff][@Inter_Medium]This is how the [#FF4949][@Inter_Bold]{LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] looks like, which I recommend you download and build body shapes with it, the red dot will be the center of mass of the fixture of the body, it is the values of this point that the [#FF4949][@Inter_Bold]{LINK=https://drive.google.com/file/d/1iKeufstgpFrPnQPC6lEKM4P3FYG8NYVd/view?usp=drive_link}[_]LibGDX Kotlin BodyEditorLoader[_]{ENDLINK} &lt;getOrigin&gt;[#d2e9cdff][@Inter_Medium] method returns. Notice the main thing:</string>
+    <string name="geninfo_text_12">[#d2e9cdff][@Inter_Medium]If in your world the shape of the fixture has dimensions greater than or less than 1 meter (which is obvious), then the getOrigin method has a parameter to scale that you must provide. It will increase or decrease your shape as needed, and accordingly, [#FF4949][@Inter_Bold]its center of mass will also change[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_13">[#d2e9cdff][@Inter_Medium]As I said above, I work with Figma and initially build my world design there, here is an example:</string>
+    <string name="geninfo_text_14">
+        [#d2e9cdff][@Inter_Medium]But these dimensions are in pixels, and in [#FF4949][@Inter_Bold]box2d they are meters-kilogram-seconds (MKS)[#d2e9cdff][@Inter_Medium]. So we need [#FF4949][@Inter_Bold]to set the dimensions in meters for the Box2D world[#d2e9cdff][@Inter_Medium].
+        \Just [#FF4949][@Inter_Bold]follow the ratio [#d2e9cdff][@Inter_Medium](in my example, as you can see, the size of the world is 1400x700, that is, the world has a ratio of [#FF4949][@Inter_Bold]2х1[#d2e9cdff][@Inter_Medium])), then let the world be [#FF4949][@Inter_Bold]50x25[#d2e9cdff][@Inter_Medium] (the ratio of 2x1 is preserved).
+        \n\n[#FF4949][@Inter_Bold]Then what will be the size of the sphere in the box2d world?
+    </string>
+    <string name="geninfo_text_15">
+        [#d2e9cdff][@Inter_Medium]We have learned how to [#FF4949][@Inter_Bold]transfer dimensions[#d2e9cdff][@Inter_Medium] from the world of Figma to the world of box2d, but the question of SCALE remained unresolved.
+        \n\nSo how do we get this [#FF4949][@Inter_Bold]SCALE[#d2e9cdff][@Inter_Medium]?
+        \nBut first, about the features of {LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK}: the [#FF4949][@Inter_Bold]WIDTH[#d2e9cdff][@Inter_Medium] of an object in it is always equal to [#FF4949][@Inter_Bold]ONE[#d2e9cdff][@Inter_Medium]:
+    </string>
+    <string name="geninfo_text_16">[#d2e9cdff][@Inter_Medium]As simple as with dimensions, [#FF4949][@Inter_Bold]conversion to percentages[#d2e9cdff][@Inter_Medium] (percentages are a cool thing in general, whoever came up with them, I\'m your fan)</string>
+    <string name="geninfo_text_17">
+        [#d2e9cdff][@Inter_Medium]Let\'s look at an example based on:
+        \n[#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium] world (1400x700)
+        \n[#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] world (50x25)
+        \n[#FF4949][@Inter_Bold]Коло[#d2e9cdff][@Inter_Medium] object (300x300):
+    </string>
+    <string name="geninfo_text_18">[#d2e9cdff][@Inter_Medium]It turns out that you can simply [#FF4949][@Inter_Bold]divide the dimensions of the Figma world by the corresponding Box2d dimensions[#d2e9cdff][@Inter_Medium], as we get the percentages, we can immediately get the dimensions for the Box2d objects.</string>
+    <string name="geninfo_text_19">[#d2e9cdff][@Inter_Medium]Let\'s use this method to repeat the [#FF4949][@Inter_Bold]EXAMPLES[#d2e9cdff][@Inter_Medium] to determine the size of an [#FF4949][@Inter_Bold]object in Box2d[#d2e9cdff][@Inter_Medium] by the size of an [#FF4949][@Inter_Bold]object in Figma[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_20">[#FF4949][@Inter_Bold]1%[#d2e9cdff][@Inter_Medium] (percentage) for width or height in the [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium] world will be like  [#FF4949][@Inter_Bold]1 meter[#d2e9cdff][@Inter_Medium] in the [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] world (if we find such [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium] percentages, then we immediately find the dimensions of the [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] bodies:</string>
+
+    <string name="geninfo_note_1">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] All connections [#FF0100][@Inter_Bold]only work with 2 bodies[#d2e9cdff][@Inter_Medium] connected to each other (bodyA ~ bodyB).</string>
+    <string name="geninfo_note_2">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] At its core, collideConnected means to [#FF0100][@Inter_Bold]enable[#d2e9cdff][@Inter_Medium] or [#FF0100][@Inter_Bold]disable[#d2e9cdff][@Inter_Medium] ContactFilter rules for connected bodies.</string>
+    <string name="geninfo_note_3">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] Anchor points [#FF0100][@Inter_Bold]аre set in the local coordinates of the body[#d2e9cdff][@Inter_Medium] and [#FF0100][@Inter_Bold]can extend beyond[#d2e9cdff][@Inter_Medium] the dimensions of the body.</string>
+
+    <string name="geninfo_codepanel_1" translatable="false">world.createJoint( JointDef )\nworld.destroyJoint( Joint )</string>
+    <string name="geninfo_codepanel_2" translatable="false">world.createJoint( JointDef )</string>
+    <string name="geninfo_codepanel_3" translatable="false">
+        "val bodyEditor = KotlinBodyEditorLoader(Gdx.files.internal("physics/PhysicsData"))"
+        "\nval center         = bodyEditor.getOrigin(name, scale)"
+    </string>
+    <string name="geninfo_codepanel_4" translatable="false">val center = bodyEditor.getOrigin(name, scale)</string>
+    <string name="geninfo_codepanel_5" translatable="false">
+        "// 1-2 points"
+        "\n\nval figmaWorldOnePercent = Vector2(x=1400/100, y=700/100)"
+        "\n// figmaWorldOnePercent = (14, 7)"
+        "\n\nval box2dWorldOnePercent = Vector2(x=50/100, y=25/100)"
+        "\n// box2dWorldOnePercent = (0.5, 0.25)"
+        "\n\n// 3 point"
+        "\nval figmaObjectPercent = Vector2(x=300/14, y=300/7)"
+        "\n// figmaObjectPercent = (21.42857, 42.85714)"
+        "\n\n// 4 point"
+        "\nval box2dObjectSize = Vector2(x=21.42857*0.5, y=42.85714*0.25)"
+        "\n// box2dObjectSize = (10.71428, 10,71428)"
+    </string>
+    <string name="geninfo_codepanel_6" translatable="false">
+        "// figmaWorldOnePercent = (x=14, y=7)"
+        "\n// box2dWorldOnePercent = (x=0.5, y=0.25)"
+        "\n\n// 1 point"
+        "\nval figmaObjectWidthPercent = 300/14"
+        "\n// figmaObjectWidthPercent = 21.42857"
+        "\n\n// 2 point"
+        "\nconst val PhysicBodyEditor_WIDTH = 1"
+        "\nval box2dObjectWidthPercent = PhysicBodyEditor_WIDTH / 0.5"
+        "\n// box2dObjectWidthPercent = 2"
+        "\n\n// 3 point"
+        "\nval SCALE = figmaObjectWidthPercent / box2dObjectWidthPercent // 21.42857 / 2"
+        "\n// SCALE = 10.71485"
+    </string>
+
+
+
+    <string name="geninfo_longquote_1">
+        [#FF4949][@Inter_Bold]true[#d2e9cdff[@Inter_Regular] — bodyA collides with bodyB if ContactFilter are configured so that these bodies should collide. If not, then bodies will not collide, even if collideConnected = true.\n
+        \n[#FF4949][@Inter_Bold]false[#d2e9cdff[@Inter_Regular] — bodyA won’t collide with bodyB.\n
+        \n[#FF4949][@Inter_Bold]default[#d2e9cdff[@Inter_Regular] collideConnected = false.
+    </string>
+    <string name="geninfo_longquote_2">[#d2e9cdff[@Inter_Regular]Constraints and motors are unique for each joint, so they will be described in articles personal to the joint. Now, we will discuss the [#FF4949][@Inter_Bold]аnchor points and how to calculate them[#d2e9cdff][@Inter_Regular], since they are common to all joints.</string>
+    <string name="geninfo_longquote_3">
+        [#d2e9cdff][@Inter_Regular]For texture rendering I use [#FF4949][@Inter_Bold]{LINK=https://libgdx.com/}[_]LibGDX[_]{ENDLINK}[#d2e9cdff][@Inter_Regular];
+        \nTo create a design I use [#FF4949][@Inter_Bold]{LINK=https://www.figma.com/}[_]Figma[_]{ENDLINK}[#d2e9cdff][@Inter_Regular];
+        \nTo create fixtures for bodies I use [#FF4949][@Inter_Bold]{LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK}[#d2e9cdff][@Inter_Regular] instead of LibGDX Java loader I use its modification [#FF4949][@Inter_Bold]{LINK=https://drive.google.com/file/d/1iKeufstgpFrPnQPC6lEKM4P3FYG8NYVd/view?usp=drive_link}[_]LibGDX Kotlin BodyEditorLoader[_]{ENDLINK}[#d2e9cdff][@Inter_Regular].
+    </string>
+    <string name="geninfo_longquote_4">
+        [#d2e9cdff][@Inter_Regular]Then what will be the size of the ball in the box2d world?
+        [#FF4949][@Inter_Bold]\n\nSize of the ball in the box2d world =
+        \n(width: 10.71428, height: 10,71428).
+    </string>
+    <string name="geninfo_longquote_5">
+        [#d2e9cdff][@Inter_Regular]It turns out that you can translate the sizes in another way, only now I understand it SORRY [#FF4949][@Inter_Bold]now I\’ll explain everything[#d2e9cdff][@Inter_Regular].
+        \n\nOnly now it dawned on me what kind of [#FF4949][@Inter_Bold]constant[#d2e9cdff][@Inter_Regular] people used in the examples to convert sizes to meters.
+    </string>
+    <string name="geninfo_longquote_6">
+        [#d2e9cdff][@Inter_Regular]You just need to [#FF4949][@Inter_Bold]divide[#d2e9cdff][@Inter_Regular] the dimensions of the WIDTH or HEIGHT [#FF4949][@Inter_Bold]of the Figma world not by 100[#d2e9cdff][@Inter_Regular] to get percentages, [#FF4949][@Inter_Bold]but by the corresponding dimensions of the[#d2e9cdff][@Inter_Regular] WIDTH or HEIGHT of the [#FF4949][@Inter_Bold] Box2d world[#d2e9cdff][@Inter_Regular].
+        \n\nThus, we will get [#FF4949][@Inter_Bold]not 1%[#d2e9cdff][@Inter_Regular] (percentage), [#FF4949][@Inter_Bold]but the number of Figma pixels[#d2e9cdff][@Inter_Regular] equal to [#FF4949][@Inter_Bold]1 meter in Box2d[#d2e9cdff][@Inter_Regular].
+        \n\nAnd in the same way that we received the percentage of the width or height of the circle in the Figma world, [#FF4949][@Inter_Bold]we can immediately get these dimensions in meters for the Box2d bodies[#d2e9cdff][@Inter_Regular].
+    </string>
+
+    <string-array name="geninfo_arr_1" translatable="false">
+        <item>Mouse Joint</item>
+        <item>Distance Joint</item>
+        <item>Revolute Joint</item>
+        <item>Prismatic Joint</item>
+        <item>Wheel Joint</item>
+        <item>Weld Joint</item>
+        <item>Friction Joint</item>
+        <item>Rope Joint</item>
+        <item>Pulley Joint</item>
+        <item>Gear Joint</item>
+        <item>Motor Joint</item>
+    </string-array>
+    <string-array name="geninfo_arr_2">
+        <item>bodyA — first joint body.</item>
+        <item>bodyB — second joint body.</item>
+    </string-array>
+    <string-array name="geninfo_arr_3">
+        <item>collideConnected — &lt;boolean&gt; Specifies whether bodyA should collide with bodyB.</item>
+    </string-array>
+    <string-array name="geninfo_arr_4">
+        <item>Anchor points (localAnchorA, localAnchorB);</item>
+        <item>Restrictions, limits;</item>
+        <item>Motors (speed, force, torque).</item>
+    </string-array>
+    <string-array name="geninfo_arr_5">
+        <item>[#FF4949][@Inter_Bold]The starting point is the lower left corner\nx=0, y=0[#d2e9cdff][@Inter_Medium];</item>
+        <item>[#d2e9cdff][@Inter_Medium]You set the center of mass (red dot) by moving it around the scene, [#FF4949][@Inter_Bold]it can be set even outside the size of the body[#d2e9cdff][@Inter_Medium];</item>
+        <item>[#d2e9cdff][@Inter_Medium]Everything you work with in {LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK} [#FF4949][@Inter_Bold]will have a size of 1 meter.[#d2e9cdff][@Inter_Medium] (units in box2d = meters-kilograms-seconds (MKS)).</item>
+    </string-array>
+    <string-array name="geninfo_arr_6">
+        <item>[#d2e9cdff][@Inter_Regular]Calculate what is equal to [#FF4949][@Inter_Bold]1 percent of the size[#d2e9cdff][@Inter_Regular] of the world in [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Calculate what is equal to [#FF4949][@Inter_Bold]1 percent of the size[#d2e9cdff][@Inter_Regular] of the world in [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#FF4949][@Inter_Bold]Calculate how many percent the size [#d2e9cdff][@Inter_Regular] of the selected object in the world of [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular] takes;</item>
+        <item>[#FF4949][@Inter_Bold]Apply the resulting percentage [#d2e9cdff][@Inter_Regular] of the object size to the dimensions in the [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular] world;</item>
+    </string-array>
+    <string-array name="geninfo_arr_7">
+        <item>[#d2e9cdff][@Inter_Regular]Calculate how many percent the [#FF4949][@Inter_Bold]WIDTH[#d2e9cdff][@Inter_Regular] of the selected object in the [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular] world takes;</item>
+        <item>[#d2e9cdff][@Inter_Regular]Since We know that the [#FF4949][@Inter_Bold]{LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK} WIDTH[#d2e9cdff][@Inter_Regular] of the shape of the body fixture is always equal to [#FF4949][@Inter_Bold]1 meter[#d2e9cdff][@Inter_Regular], we need to calculate how many percent the [#FF4949][@Inter_Bold]WIDTH (1 meter)[#d2e9cdff][@Inter_Regular] takes in the [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular] world;</item>
+        <item>[#d2e9cdff][@Inter_Regular]We count on how much the percentage of the width of the object in the world of [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular] is [#FF4949][@Inter_Bold]more[#d2e9cdff][@Inter_Regular] or [#FF4949][@Inter_Bold]less[#d2e9cdff][@Inter_Regular] than the percentage of [#FF4949][@Inter_Bold]WIDTH (1 meter)[#d2e9cdff][@Inter_Regular] in the world of [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular]. (in simple words, how many percent of the [#FF4949][@Inter_Bold]WIDTH (1 meter)[#d2e9cdff][@Inter_Regular] from the world of [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular] will fit in the percentage of the width of the object from the world of [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular]).</item>
+    </string-array>
+
+
 </resources>

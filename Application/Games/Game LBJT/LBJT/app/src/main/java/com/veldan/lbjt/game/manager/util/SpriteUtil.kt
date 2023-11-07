@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.NinePatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.veldan.lbjt.game.manager.SpriteManager
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_GeneralInformation as GenInfo
 
 class SpriteUtil {
 
@@ -61,11 +62,11 @@ class SpriteUtil {
           val PANEL_WITH_LIGHT_WHITE : NinePatch
           val PANEL_WITH_LIGHT_RED   : NinePatch
           val BORDERS_BLUE           : NinePatch
+          val PANEL_CODE             : NinePatch
 
           val BACKGROUND : Texture
           val MASK_ICON  : Texture
           val ICON_VELDAN: Texture
-
      }
 
      abstract class CommonAssets: AllAssets {
@@ -125,6 +126,7 @@ class SpriteUtil {
           override val PANEL_WITH_LIGHT_WHITE = getGamePath("panel_with_light_white")
           override val PANEL_WITH_LIGHT_RED   = getGamePath("panel_with_light_red")
           override val BORDERS_BLUE           = getGamePath("borders_blue")
+          override val PANEL_CODE             = getGamePath("panel_code")
 
           override val MASK_ICON   = SpriteManager.EnumTexture.MASK_ICON.data.texture
           override val ICON_VELDAN = SpriteManager.EnumTexture.VELDAN_ICON.data.texture
@@ -136,5 +138,20 @@ class SpriteUtil {
 
      class YinAssets: CommonAssets() {
           override val BACKGROUND = SpriteManager.EnumTexture.YIN_BACKGROUND.data.texture
+     }
+
+     class GeneralInformation {
+          val I1  = GenInfo.I1.data.texture
+          val I2  = GenInfo.I2.data.texture
+          val I3  = GenInfo.I3.data.texture
+          val I4  = GenInfo.I4.data.texture
+          val I5  = GenInfo.I5.data.texture
+          val I6  = GenInfo.I6.data.texture
+          val I7  = GenInfo.I7.data.texture
+          val I8  = GenInfo.I8.data.texture
+          val I9  = GenInfo.I9.data.texture
+          val I10 = GenInfo.I10.data.texture
+          val I11 = GenInfo.I11.data.texture
+          val I12 = GenInfo.I12.data.texture
      }
 }

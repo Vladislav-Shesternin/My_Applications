@@ -65,14 +65,14 @@ class VerticalGroup(
     private fun Int.gap() = (if (this==0) startGap else gap)
 
     private fun Actor.moveFromTOP(index: Int) {
-        ny  = ny - index.gap() - height
-        y = ny
+        ny = ny - index.gap() - height
+        y  = ny
     }
 
     private fun Actor.moveFromBOTTOM(index: Int) {
-        ny  += index.gap()
-        y = ny
-        ny  += height
+        ny += index.gap()
+        y  = ny
+        ny += height
     }
 
 

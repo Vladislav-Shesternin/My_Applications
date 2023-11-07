@@ -14,6 +14,7 @@ class MusicManager(var assetManager: AssetManager) {
 
     fun init() {
         loadableMusicList.onEach { it.music = assetManager[it.path, Music::class.java] }
+        loadableMusicList.clear()
     }
 
     enum class EnumMusic(val data: MusicData) {

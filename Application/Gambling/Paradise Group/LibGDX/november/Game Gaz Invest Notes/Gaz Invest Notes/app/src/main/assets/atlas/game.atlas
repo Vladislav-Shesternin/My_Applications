@@ -1,0 +1,61 @@
+game.png
+size: 492, 206
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 78, 2
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 154, 2
+  size: 74, 76
+  orig: 74, 76
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 230, 2
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 306, 2
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 382, 2
+  size: 74, 75
+  orig: 74, 75
+  offset: 0, 0
+  index: -1
+cadar
+  rotate: false
+  xy: 458, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+dobavka
+  rotate: false
+  xy: 2, 80
+  size: 488, 124
+  orig: 488, 124
+  offset: 0, 0
+  index: -1

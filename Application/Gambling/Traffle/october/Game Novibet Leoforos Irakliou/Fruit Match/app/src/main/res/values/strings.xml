@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">Fruit Match</string>
+    <string name="accept" translatable="false">Accept</string>
+</resources>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Novibet Leoforos Irakliou</string>
+    <string name="rules_text">"General workplace etiquette rules for employees promote healthy relationships and productivity. Here are some common rules:\n"
+                "\n"
+                "1. Respect and Courtesy: All employees should interact with respect and courtesy towards each other. This includes polite communication, active listening, and timely responses.\n"
+                "\n"
+                "2. Personal Hygiene: Maintaining personal hygiene standards, including daily showers, clean clothing, and proper hand cleanliness, is crucial for the comfort and health of all employees.\n"
+                "\n"
+                "3. Punctuality: Arrive at work on time and adhere to your work schedule. Punctuality is essential for the smooth functioning of the office.\n"
+                "\n"
+                "4. Confidentiality: Maintain confidentiality regarding the information you receive at work. Do not disclose personal or confidential information about colleagues.\n"
+                "\n"
+                "5. Communication: Maintain open and effective communication channels with colleagues and management. Report issues or changes promptly.\n"
+                "\n"
+                "6. Workplace Neatness: Keep the office clean and orderly. Treat common areas and equipment with care and respect.\n"
+                "\n"
+                "7. Diligence: Follow your work schedule and carry out your duties responsibly and with high productivity.\n"
+                "\n"
+                "8. Home Office Etiquette: If working from home, adhere to the same professional standards as in the office, including appropriate attire for virtual meetings.\n"
+                "\n"
+                "9. Partnership and Collaboration: Work as part of a team, collaborate with colleagues, and foster a positive work environment.\n"
+                "\n"
+                "10. Safety Awareness: Adhere to workplace safety rules for your own and others' safety.\n"
+                "\n"
+                "Adhering to these rules will help create a positive and productive work environment in the office."</string>
+    <string name="address">"office address\n""Leof. Irakliou 385, Iraklio 141 22"</string>
+    <string name="description">"\"Novibet Leoforos Irakliou\" is an internal corporate application that will simplify communication between employees and administration, as well as help each team member to be aware of their responsibilities and work schedule."</string>
+</resources>
