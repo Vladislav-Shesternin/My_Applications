@@ -12,7 +12,7 @@ class BRegularBtn(
     override val screenBox2d: AdvancedBox2dScreen,
     val text     : String,
     val style    : LabelStyle,
-    val labelType: AButton_Regular.LabelType = AButton_Regular.LabelType.DEFAULT,
+    val labelType: AButton_Regular.Static.LabelType = AButton_Regular.Static.LabelType.DEFAULT,
 ): AbstractBody() {
     override val name       = "regular_btn"
     override val bodyDef    = BodyDef().apply {

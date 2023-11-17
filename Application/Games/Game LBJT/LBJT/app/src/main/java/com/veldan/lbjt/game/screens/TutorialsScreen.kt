@@ -1,28 +1,22 @@
 package com.veldan.lbjt.game.screens
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.physics.box2d.joints.MouseJointDef
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.veldan.lbjt.game.LibGDXGame
-import com.veldan.lbjt.game.actors.ABox2dObject
-import com.veldan.lbjt.game.actors.image.AImage
-import com.veldan.lbjt.game.box2d.bodiesGroup.BGBorders
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGLift
-import com.veldan.lbjt.game.box2d.bodiesGroup.BGTestStand
 import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.actor.setOnTouchListener
 import com.veldan.lbjt.game.utils.advanced.AdvancedMouseScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
-import com.veldan.lbjt.game.utils.font.FontParameter
 import com.veldan.lbjt.game.utils.region
-import com.veldan.lbjt.game.utils.runGDX
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
@@ -78,11 +72,12 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
         bgLift.create(20f,203f,654f,1244f)
 
         val screenNameList = listOf(
-            GeneralInformationScreen::class.java.name
+            GeneralInformationScreen::class.java.name,
+            JMouseScreen::class.java.name,
         )
 
         bgLift.bgRegularBtns.bRegularBtnList.onEachIndexed { index, bRegularBtn ->
-            bRegularBtn.actor?.setOnTouchListener(radius = 20) { navigateTo(screenNameList.first()) }
+            bRegularBtn.actor?.setOnTouchListener(radius = 20) { navigateTo(screenNameList[1]) }
         }
     }
 

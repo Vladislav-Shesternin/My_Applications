@@ -12,8 +12,7 @@ import com.google.firebase.ktx.Firebase
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.AIndicator
 import com.veldan.lbjt.game.actors.button.AButton
-import com.veldan.lbjt.game.actors.dialog.ADialogNickname.State.DEFAULT
-import com.veldan.lbjt.game.actors.dialog.ADialogNickname.State.ERROR
+import com.veldan.lbjt.game.actors.dialog.ADialogNickname
 import com.veldan.lbjt.game.actors.image.AImage
 import com.veldan.lbjt.game.box2d.AbstractBody
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
@@ -317,10 +316,10 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
 
                         if (text.length > NICKNAME_LENGTH || text.isBlank()) {
                             bRegularBtnPublish.getActor()?.disable()
-                            ERROR
+                            ADialogNickname.Static.State.ERROR
                         } else {
                             bRegularBtnPublish.getActor()?.enable()
-                            DEFAULT
+                            ADialogNickname.Static.State.DEFAULT
                         }.also { setState(it) }
                     }
                 }

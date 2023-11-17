@@ -15,7 +15,7 @@ import com.veldan.lbjt.game.utils.runGDX
 
 class BLanguage(
     override val screenBox2d: AdvancedBox2dScreen,
-    val type: Type
+    val type: Static.Type
 ): AbstractBody() {
 
     companion object {
@@ -38,9 +38,9 @@ class BLanguage(
     // Logic
     // ---------------------------------------------------
 
-    private fun getLanguageRegionByType(type: Type) = when(type) {
-        Type.EN -> screenBox2d.game.themeUtil.assets.LANGUAGE_EN
-        Type.UK -> screenBox2d.game.themeUtil.assets.LANGUAGE_UK
+    private fun getLanguageRegionByType(type: Static.Type) = when(type) {
+        Static.Type.EN -> screenBox2d.game.themeUtil.assets.LANGUAGE_EN
+        Static.Type.UK -> screenBox2d.game.themeUtil.assets.LANGUAGE_UK
     }
 
     fun decrease(block: () -> Unit) {
@@ -71,7 +71,8 @@ class BLanguage(
         } }
     }
 
-    enum class Type {
-        EN, UK
+    object Static {
+        enum class Type { EN, UK }
     }
+
 }

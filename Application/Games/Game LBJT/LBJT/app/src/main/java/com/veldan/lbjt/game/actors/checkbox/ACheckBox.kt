@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 open class ACheckBox(
     override val screen: AdvancedScreen,
-    type: Type? = null,
+    type: Static.Type? = null,
 ) : AdvancedGroup() {
 
     private val defaultImage by lazy {  if (type != null) Image(getStyleByType(type).default) else Image() }
@@ -111,7 +111,7 @@ open class ACheckBox(
         touchable = Touchable.disabled
     }
 
-    fun setStyle(style: ACheckBoxStyle) {
+    fun setStyle(style: Static.ACheckBoxStyle) {
         defaultImage.drawable = TextureRegionDrawable(style.default)
         checkImage.drawable   = TextureRegionDrawable(style.checked)
     }
@@ -120,12 +120,12 @@ open class ACheckBox(
         onCheckBlock = block
     }
 
-    fun getStyleByType(type: Type) = when(type) {
-        Type.YAN_YIN -> ACheckBoxStyle(
+    fun getStyleByType(type: Static.Type) = when(type) {
+        Static.Type.YAN_YIN    -> Static.ACheckBoxStyle(
             default = themeUtil.assets.YAN,
             checked = themeUtil.assets.YIN,
         )
-        Type.DEBUG -> ACheckBoxStyle(
+        Static.Type.DEBUG -> Static.ACheckBoxStyle(
             default = themeUtil.assets.DEBUG_BOX_DEF,
             checked = themeUtil.assets.DEBUG_BOX_CHECK,
         )
@@ -135,13 +135,15 @@ open class ACheckBox(
     // Style
     // ---------------------------------------------------
 
-    data class ACheckBoxStyle(
-        val default: TextureRegion,
-        val checked: TextureRegion,
-    )
+    object Static {
+        data class ACheckBoxStyle(
+            val default: TextureRegion,
+            val checked: TextureRegion,
+        )
 
-    enum class Type {
-        YAN_YIN, DEBUG
+        enum class Type {
+            YAN_YIN, DEBUG
+        }
     }
 
 }

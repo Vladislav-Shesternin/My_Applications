@@ -2,6 +2,7 @@ package com.veldan.lbjt.game.actors.scroll.tutorial.actors
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.scenes.scene2d.ui.Label
+import com.badlogic.gdx.utils.Align
 import com.github.tommyettinger.textra.Font
 import com.github.tommyettinger.textra.TypingLabel
 import com.veldan.lbjt.game.actors.scroll.HorizontalGroup
@@ -10,10 +11,10 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 class AList_TypingLabel(
     val _screen : AdvancedScreen,
-    font    : Font,
+    font        : Font,
     override val strings: List<String>,
-    override val align  : Align  = Align.Left,
-    override val symbol : Symbol = Symbol.Bullet,
+    override val align  : Static.Align  = Static.Align.Left,
+    override val symbol : Static.Symbol = Static.Symbol.Bullet,
     override val symbolFont: BitmapFont
 ): AAbstractList(_screen) {
 
@@ -35,11 +36,11 @@ class AList_TypingLabel(
             tmpSymbolLbl       = Label(symbol.getSymbol(), symbolLblStyle)
 
             when (align) {
-                Align.Left   -> {
+                Static.Align.Left   -> {
                     tmpHorizontalGroup.width = width
                     lbl.width                = (width - tmpSymbolLbl.prefWidth)
                 }
-                Align.Center -> {
+                Static.Align.Center -> {
                     tmpHorizontalGroup.width = width * 0.7f
                     tmpHorizontalGroup.x     = width * 0.3f
                     lbl.width                = ((width * 0.7f) - tmpSymbolLbl.prefWidth)
@@ -51,7 +52,7 @@ class AList_TypingLabel(
             tmpSymbolLbl.apply {
                 width  = prefWidth
                 height = lbl.height + 10
-                setAlignment(com.badlogic.gdx.utils.Align.top)
+                setAlignment(Align.top)
             }
 
             tmpHorizontalGroup.addActors(tmpSymbolLbl, lbl)

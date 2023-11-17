@@ -39,7 +39,7 @@ class BGRegularButtons(override val screenBox2d: AdvancedBox2dScreen): AbstractB
     )
 
     // Body
-    val bRegularBtnList = List(12) { BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(stringIdList[it]), Label.LabelStyle(font35, GameColor.textGreen), AButton_Regular.LabelType.TYPING) }
+    val bRegularBtnList = List(12) { BRegularBtn(screenBox2d, screenBox2d.game.languageUtil.getStringResource(stringIdList[it]), Label.LabelStyle(font35, GameColor.textGreen), AButton_Regular.Static.LabelType.TYPING) }
 
     override fun create(x: Float, y: Float, w: Float, h: Float) {
         super.create(x, y, w, h)
@@ -128,9 +128,13 @@ class BGRegularButtons(override val screenBox2d: AdvancedBox2dScreen): AbstractB
                     _bodyB = reversedRegularBtnList[index+1],
                 )
 
+                val leftAnchorA  = Vector2(62f, 164f)
+                val leftAnchorB  = Vector2(62f, 5f)
+                val rightAnchorA = Vector2(401f, 164f)
+                val rightAnchorB = Vector2(401f, 5f)
                 bBtn.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
-                    drawJoint(alpha, bBtn, reversedRegularBtnList[index+1], Vector2(62f, 164f), Vector2(62f, 5f))
-                    drawJoint(alpha, bBtn, reversedRegularBtnList[index+1], Vector2(401f, 164f), Vector2(401f, 5f))
+                    drawJoint(alpha, bBtn, reversedRegularBtnList[index+1], leftAnchorA, leftAnchorB)
+                    drawJoint(alpha, bBtn, reversedRegularBtnList[index+1], rightAnchorA, rightAnchorB)
                 })
             }
         }

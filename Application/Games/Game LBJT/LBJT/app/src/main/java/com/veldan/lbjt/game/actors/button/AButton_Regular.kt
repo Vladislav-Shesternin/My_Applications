@@ -9,14 +9,14 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 class AButton_Regular(
     override val screen: AdvancedScreen,
     text: String, labelStyle: Label.LabelStyle,
-    labelType: LabelType = LabelType.DEFAULT
-): AButton(screen, Type.REGULAR) {
+    labelType: Static.LabelType = Static.LabelType.DEFAULT
+): AButton(screen, AButton.Static.Type.REGULAR) {
 
     override var standartW = 466f
 
     val label = when(labelType) {
-        LabelType.DEFAULT -> Label(text, labelStyle)
-        LabelType.TYPING  -> TypingLabel(text, labelStyle)
+        Static.LabelType.DEFAULT -> Label(text, labelStyle)
+        Static.LabelType.TYPING  -> TypingLabel(text, labelStyle)
     }
 
     override fun addActorsOnGroup() {
@@ -59,8 +59,10 @@ class AButton_Regular(
         }
     }
 
-    enum class LabelType {
-        DEFAULT, TYPING
+    object Static {
+        enum class LabelType {
+            DEFAULT, TYPING
+        }
     }
 
 }

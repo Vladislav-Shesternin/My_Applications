@@ -83,7 +83,6 @@ dependencies {
 
     // GOGO
     implementation 'com.appsflyer:af-android-sdk:6.12.2'
-    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'com.onesignal:OneSignal:[5.0.0, 5.99.99]'
 
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))

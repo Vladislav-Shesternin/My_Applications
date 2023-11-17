@@ -11,8 +11,8 @@ class AList_Label(
     _screen : AdvancedScreen,
     font        : BitmapFont,
     override val strings: List<String>,
-    override val align  : Align  = Align.Left,
-    override val symbol : Symbol = Symbol.Bullet,
+    override val align  : Static.Align  = Static.Align.Left,
+    override val symbol : Static.Symbol = Static.Symbol.Bullet,
     override val symbolFont: BitmapFont
 ): AAbstractList(_screen) {
 
@@ -34,11 +34,11 @@ class AList_Label(
             tmpSymbolLbl       = Label(symbol.getSymbol(), symbolLblStyle)
 
             when (align) {
-                Align.Left   -> {
+                Static.Align.Left   -> {
                     tmpHorizontalGroup.width = width
                     lbl.width                = (width - tmpSymbolLbl.prefWidth)
                 }
-                Align.Center -> {
+                Static.Align.Center -> {
                     tmpHorizontalGroup.width = width * 0.7f
                     tmpHorizontalGroup.x     = width * 0.3f
                     lbl.width                = ((width * 0.7f) - tmpSymbolLbl.prefWidth)
@@ -50,7 +50,7 @@ class AList_Label(
             tmpSymbolLbl.apply {
                 width  = prefWidth
                 height = lbl.prefHeight
-                setAlignment(com.badlogic.gdx.utils.Align.top)
+                setAlignment(Align.top)
             }
 
             tmpHorizontalGroup.addActors(tmpSymbolLbl, lbl)

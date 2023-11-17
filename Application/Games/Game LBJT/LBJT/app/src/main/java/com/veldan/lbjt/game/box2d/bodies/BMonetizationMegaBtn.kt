@@ -17,7 +17,7 @@ class BMonetizationMegaBtn(override val screenBox2d: AdvancedBox2dScreen): Abstr
         restitution = 0.4f
         friction    = 0.4f
     }
-    override var actor: AdvancedGroup? = AButton(screenBox2d, AButton.Type.MONETIZATION_MEGA)
+    override var actor: AdvancedGroup? = AButton(screenBox2d, AButton.Static.Type.MONETIZATION_MEGA)
 
     fun getActor(): AButton? = actor as? AButton
 }

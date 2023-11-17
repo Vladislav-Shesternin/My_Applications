@@ -3,7 +3,7 @@ package com.veldan.lbjt.game.actors
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.veldan.lbjt.R
-import com.veldan.lbjt.game.actors.label.SpinningLabel
+import com.veldan.lbjt.game.actors.label.ASpinningLabel
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
@@ -19,7 +19,7 @@ class AThanksFrame(override val screen: AdvancedScreen): AdvancedGroup() {
     private val parameter = FontParameter()
 
     private val frameImg      = Image(themeUtil.assets.THANKS_FRAME)
-    private val giveThanksLbl = SpinningLabel(screen, screen.game.languageUtil.getStringResource(R.string.give_thanks), Label.LabelStyle(screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(35)), GameColor.textGreen))
+    private val giveThanksLbl = ASpinningLabel(screen, screen.game.languageUtil.getStringResource(R.string.give_thanks), Label.LabelStyle(screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(35)), GameColor.textGreen))
 
     override fun addActorsOnGroup() {
         addFrameImg()

@@ -14,7 +14,7 @@ import com.veldan.lbjt.game.utils.runGDX
 
 class AVolume(
     override val screen: AdvancedScreen,
-    val type: Type
+    val type: Static.Type
 ): AdvancedGroup() {
 
     override var standartW = 149f
@@ -60,17 +60,19 @@ class AVolume(
     // Logic
     // ---------------------------------------------------
 
-    private fun getBackgroundRegionByType(type: Type) = when(type) {
-        Type.QUIET -> themeUtil.assets.VOLUME_QUIET
-        Type.LOUDER -> themeUtil.assets.VOLUME_LOUDER
+    private fun getBackgroundRegionByType(type: Static.Type) = when(type) {
+        Static.Type.QUIET       -> themeUtil.assets.VOLUME_QUIET
+        Static.Type.LOUDER -> themeUtil.assets.VOLUME_LOUDER
     }
 
     fun updatePercent(percent: Int) {
         runGDX { percentLbl.setText("$percent%") }
     }
 
-    enum class Type(val nameResId: Int, ) {
-        QUIET(R.string.quiet), LOUDER(R.string.louder),
+    object Static {
+        enum class Type(val nameResId: Int) {
+            QUIET(R.string.quiet), LOUDER(R.string.louder),
+        }
     }
 
 }

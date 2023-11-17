@@ -1,23 +1,16 @@
 package com.veldan.lbjt.game.actors.scroll.tutorial.actors
 
 import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.scenes.scene2d.ui.Image
-import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane
-import com.badlogic.gdx.utils.Align
 import com.github.tommyettinger.textra.Font
 import com.github.tommyettinger.textra.TypingLabel
-import com.veldan.lbjt.game.actors.scroll.VerticalGroup
-import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
-import com.veldan.lbjt.util.log
 
 class ALongQuote_TypingLabel(
     override val screen : AdvancedScreen,
     textQuote: String,
-    font    : Font,
+    font     : Font,
 ): AdvancedGroup() {
 
     private val lineImg    = Image(screen.drawerUtil.getRegion(Color.BLACK))

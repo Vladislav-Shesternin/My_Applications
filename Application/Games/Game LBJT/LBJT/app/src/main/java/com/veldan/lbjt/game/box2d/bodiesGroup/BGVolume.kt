@@ -58,10 +58,10 @@ class BGVolume(
     private val aNameLbl = AutoLanguageSpinningLabel(screenBox2d, nameResId, Label.LabelStyle(screenBox2d.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(50)), GameColor.textGreen))
 
     // Body
-    private val bVolumeQuiet     = BVolume(screenBox2d, AVolume.Type.QUIET)
-    private val bVolumeLouder    = BVolume(screenBox2d, AVolume.Type.LOUDER)
-    private val bVolumeRodQuiet  = BVolumeRod(screenBox2d, BVolumeRod.Type.QUIET)
-    private val bVolumeRodLouder = BVolumeRod(screenBox2d, BVolumeRod.Type.LOUDER)
+    private val bVolumeQuiet     = BVolume(screenBox2d, AVolume.Static.Type.QUIET)
+    private val bVolumeLouder    = BVolume(screenBox2d, AVolume.Static.Type.LOUDER)
+    private val bVolumeRodQuiet  = BVolumeRod(screenBox2d, BVolumeRod.Static.Type.QUIET)
+    private val bVolumeRodLouder = BVolumeRod(screenBox2d, BVolumeRod.Static.Type.LOUDER)
     private val bStaticStart     = BStatic(screenBox2d)
 
     // Joint
@@ -167,8 +167,8 @@ class BGVolume(
             lengthA = 209f.toStandart.toB2
             lengthB = 209f.toStandart.toB2
 
-            bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
-            bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
+            bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
+            bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
 
         })
     }

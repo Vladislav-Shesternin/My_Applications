@@ -39,15 +39,15 @@ class SettingsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
     // Actor
     private val aLanguageLbl = AutoLanguageSpinningLabel(this, R.string.language, Label.LabelStyle(fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN_CYRILLIC).setSize(50)), GameColor.textGreen))
-    private val aDebugBox    = ACheckBox(this, ACheckBox.Type.DEBUG)
+    private val aDebugBox    = ACheckBox(this, ACheckBox.Static.Type.DEBUG)
 
     // BodyGroup
     private val bgBorders       = BGBorders(this)
     private val bgVolumeMusic   = BGVolume(this, R.string.music, if (percentVolumeMusic != -1) percentVolumeMusic else AudioManager.volumeLevelPercent.roundToInt())
     private val bgVolumeSound   = BGVolume(this, R.string.sound, if (percentVolumeSound != -1) percentVolumeSound else AudioManager.volumeLevelPercent.roundToInt())
     private val bgFrameLanguage = BGFrameLanguage(this)
-    private val bgLanguageEN    = BGLanguage(this, BLanguage.Type.EN)
-    private val bgLanguageUK    = BGLanguage(this, BLanguage.Type.UK)
+    private val bgLanguageEN    = BGLanguage(this, BLanguage.Static.Type.EN)
+    private val bgLanguageUK    = BGLanguage(this, BLanguage.Static.Type.UK)
 
     // Field
     override fun show() {

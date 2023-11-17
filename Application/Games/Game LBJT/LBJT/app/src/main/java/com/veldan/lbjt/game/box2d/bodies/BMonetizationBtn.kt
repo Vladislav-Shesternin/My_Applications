@@ -9,7 +9,7 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 
 class BMonetizationBtn(
     override val screenBox2d: AdvancedBox2dScreen,
-    monetizationType: AButton_Monetization.Type,
+    monetizationType: AButton_Monetization.Static.Type,
 ): AbstractBody() {
     override val name       = "monetization_btn"
     override val bodyDef    = BodyDef().apply {

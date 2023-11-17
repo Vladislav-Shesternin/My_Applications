@@ -23,7 +23,7 @@ import com.veldan.lbjt.util.Once
 
 class BGLanguage(
     override val screenBox2d: AdvancedBox2dScreen,
-    val type: BLanguage.Type,
+    val type: BLanguage.Static.Type,
 ): AbstractBodyGroup() {
 
     override val standartW = 202f
@@ -123,7 +123,7 @@ class BGLanguage(
 
             bLanguage.actor?.apply {
                 preDrawArray.clear()
-                preDrawArray.add(AdvancedGroup.Drawer { alpha -> drawer.line(bodyA.position.toUI, bodyB.position.toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) })
+                preDrawArray.add(AdvancedGroup.Drawer { alpha -> drawer.line(bodyA.position.toUI, bodyB.position.toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
             }
         })
     }

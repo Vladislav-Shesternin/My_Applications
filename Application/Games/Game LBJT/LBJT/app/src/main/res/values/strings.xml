@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name"   translatable="false">LBJT</string>
     <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="reward_UID" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
@@ -35,6 +35,8 @@
     <string name="joint_description">[#bc380eff]Joints{CLEARCOLOR}[#d2e9cdff] - serve to {GRADIENT=bc380eff;d2e9cdff;1.0;1.0}connect two bodies{ENDGRADIENT} to each other. Typical examples in games are rag dolls, swings, and pulleys.</string>
     <string name="test_stand">test stand</string>
     <string name="next">Next</string>
+    <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Main source of information.[_]{ENDLINK}</string>
+    <string name="PS_Vel_daN" translatable="false">[#FFFFFF]PS. [#5BD344]Vel_daN[#FFFFFF]: Love what You DO [#5BD344]❤[#FFFFFF].</string>
 
     <string name="general_information">{JUMP}General information[]</string>
     <string name="mouse_joint" translatable="false">{WAVE}Mouse[] [#bc380eff]Joint[]</string>
@@ -54,8 +56,9 @@
     <string name="geninfo_title_2">Special Settings</string>
     <string name="geninfo_title_3">So what is this getOrigin?</string>
     <string name="geninfo_title_4">How to measure, SCALE?</string>
+    <string name="geninfo_title_5">Destroy the joints U+1F4A5</string>
 
-    <string name="geninfo_sub_title_1">Let’s talk about Anchor Points</string>
+    <string name="geninfo_sub_title_1">Let\’s talk about Anchor Points</string>
     <string name="geninfo_sub_title_2">How to measure where to set the Anchor Point?</string>
     <string name="geninfo_sub_title_3">Back to how to get SCALE?</string>
 
@@ -96,10 +99,33 @@
     <string name="geninfo_text_18">[#d2e9cdff][@Inter_Medium]It turns out that you can simply [#FF4949][@Inter_Bold]divide the dimensions of the Figma world by the corresponding Box2d dimensions[#d2e9cdff][@Inter_Medium], as we get the percentages, we can immediately get the dimensions for the Box2d objects.</string>
     <string name="geninfo_text_19">[#d2e9cdff][@Inter_Medium]Let\'s use this method to repeat the [#FF4949][@Inter_Bold]EXAMPLES[#d2e9cdff][@Inter_Medium] to determine the size of an [#FF4949][@Inter_Bold]object in Box2d[#d2e9cdff][@Inter_Medium] by the size of an [#FF4949][@Inter_Bold]object in Figma[#d2e9cdff][@Inter_Medium]:</string>
     <string name="geninfo_text_20">[#FF4949][@Inter_Bold]1%[#d2e9cdff][@Inter_Medium] (percentage) for width or height in the [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium] world will be like  [#FF4949][@Inter_Bold]1 meter[#d2e9cdff][@Inter_Medium] in the [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] world (if we find such [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium] percentages, then we immediately find the dimensions of the [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] bodies:</string>
+    <string name="geninfo_text_21">
+        [#d2e9cdff][@Inter_Medium]As we see, there is [#FF4949][@Inter_Bold]no difference in dividing the width or height[#d2e9cdff][@Inter_Medium], we get the [#FF4949][@Inter_Bold]same value[#d2e9cdff][@Inter_Medium], this is because they have equal [#FF4949][@Inter_Bold]ratios[#d2e9cdff][@Inter_Medium] and this is how we should know [#FF4949][@Inter_Bold]1 by 1 meter[#d2e9cdff][@Inter_Medium] in this case:
+        \n\n[#FF4949][@Inter_Bold]1 meter[#d2e9cdff][@Inter_Medium] in the world of [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] is [#FF4949][@Inter_Bold]28 pixels[#d2e9cdff][@Inter_Medium] in the world of [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium]:
+    </string>
+    <string name="geninfo_text_22">[#d2e9cdff][@Inter_Medium]Now let\’s calculate the dimensions of the object for the [#FF4949][@Inter_Bold]Box2d world[#d2e9cdff][@Inter_Medium] using our [#FF4949][@Inter_Bold]1 METER CONSTANT[#d2e9cdff][@Inter_Medium] that in the [#FF4949][@Inter_Bold]world of Figma 28 pixels[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_23">[#d2e9cdff][@Inter_Medium]Let\’s redo the [#FF4949][@Inter_Bold]EXAMPLE[#d2e9cdff][@Inter_Medium] with finding the [#FF4949][@Inter_Bold]SCALE[#d2e9cdff][@Inter_Medium] in the same way (we remember that the  [#FF4949][@Inter_Bold]WIDTH[#d2e9cdff][@Inter_Medium] in [#FF4949][@Inter_Bold]{LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] is always equal to [#FF4949][@Inter_Bold]1 meter[#d2e9cdff][@Inter_Medium]):</string>
+    <string name="geninfo_text_24">[#d2e9cdff][@Inter_Medium]Let\’s compare how we counted with [#FF4949][@Inter_Bold]percentages[#d2e9cdff][@Inter_Medium] and how with a [#FF4949][@Inter_Bold]constant of 1 meter[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_25">
+        [#d2e9cdff][@Inter_Medium]To destroy the joint, use the world method [#FF4949][@Inter_Bold]world.destroyJoint(Joint)[#d2e9cdff][@Inter_Medium].
+        \n\nFeatures of joint destruction:
+    </string>
+    <string name="geninfo_text_26">[#d2e9cdff][@Inter_Medium]Just [#FF4949][@Inter_Bold]create mutable lists for Creating and Destroying[#d2e9cdff][@Inter_Medium] bodies, as well as for joints. [#FF4949][@Inter_Bold]After[#d2e9cdff][@Inter_Medium] calling [#FF4949][@Inter_Bold]world.step()[#d2e9cdff][@Inter_Medium], create and destroy the bodies and joints [#FF4949][@Inter_Bold]from these lists[#d2e9cdff][@Inter_Medium], and [#FF4949][@Inter_Bold]don’t forget to clean[#d2e9cdff][@Inter_Medium] them up afterwards.</string>
+    <string name="geninfo_text_27">[#FF4949][@Inter_Bold]AbstractBody[#d2e9cdff][@Inter_Medium] | [#FF4949][@Inter_Bold]AbstractJoint[#d2e9cdff][@Inter_Medium] — these are [#FF4949][@Inter_Bold]wrappers[#d2e9cdff][@Inter_Medium] over the [#FF4949][@Inter_Bold]body and joint[#d2e9cdff][@Inter_Medium] for their control, but I will not cut them (sorry for now) come up with your own.</string>
 
-    <string name="geninfo_note_1">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] All connections [#FF0100][@Inter_Bold]only work with 2 bodies[#d2e9cdff][@Inter_Medium] connected to each other (bodyA ~ bodyB).</string>
-    <string name="geninfo_note_2">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] At its core, collideConnected means to [#FF0100][@Inter_Bold]enable[#d2e9cdff][@Inter_Medium] or [#FF0100][@Inter_Bold]disable[#d2e9cdff][@Inter_Medium] ContactFilter rules for connected bodies.</string>
-    <string name="geninfo_note_3">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] Anchor points [#FF0100][@Inter_Bold]аre set in the local coordinates of the body[#d2e9cdff][@Inter_Medium] and [#FF0100][@Inter_Bold]can extend beyond[#d2e9cdff][@Inter_Medium] the dimensions of the body.</string>
+    <string name="geninfo_note_1">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] All connections [#FF4949][@Inter_Bold]only work with 2 bodies[#d2e9cdff][@Inter_Medium] connected to each other (bodyA ~ bodyB).</string>
+    <string name="geninfo_note_2">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] At its core, collideConnected means to [#FF4949][@Inter_Bold]enable[#d2e9cdff][@Inter_Medium] or [#FF4949][@Inter_Bold]disable[#d2e9cdff][@Inter_Medium] ContactFilter rules for connected bodies.</string>
+    <string name="geninfo_note_3">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] Anchor points [#FF4949][@Inter_Bold]аre set in the local coordinates of the body[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]can extend beyond[#d2e9cdff][@Inter_Medium] the dimensions of the body.</string>
+    <string name="geninfo_note_4">
+        "[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] Well, to be honest, I don\’t bother like that anymore, I create an i know connection if I get caught up in the process of rendering (Gdx.app.postRunnable)"
+        "\n\nI have my own function for simplicity:"
+        "\n\nfun runGDX(block: () -> Unit) ("
+        "\n    Gdx.app.postRunnable ("
+        "\n          block()"
+        "\n    }"
+        "\n}"
+        "\n\nIn my opinion, if problems are to blame for you when creating a bathroom, try the method I described in the building."
+    </string>
 
     <string name="geninfo_codepanel_1" translatable="false">world.createJoint( JointDef )\nworld.destroyJoint( Joint )</string>
     <string name="geninfo_codepanel_2" translatable="false">world.createJoint( JointDef )</string>
@@ -135,8 +161,35 @@
         "\nval SCALE = figmaObjectWidthPercent / box2dObjectWidthPercent // 21.42857 / 2"
         "\n// SCALE = 10.71485"
     </string>
-
-
+    <string name="geninfo_codepanel_7" translatable="false">
+        "const val FIGMA_WIDTH_1_METER  = 1400/50 // 28"
+        "\nconst val FIGMA_HEIGHT_1_METER = 700/25 // 28"
+    </string>
+    <string name="geninfo_codepanel_8" translatable="false">const val FIGMA_METER = 1400/50 or 700/25 // 28</string>
+    <string name="geninfo_codepanel_9" translatable="false">
+        "val box2dObjectSize = Size(300/FIGMA_METER, 300/FIGMA_METER)"
+        "\n// 300/28 = 10.71428"
+    </string>
+    <string name="geninfo_codepanel_10" translatable="false">
+        "val SCALE = 300/FIGMA_METER"
+        "\n// 300/28 = 10.71428"
+    </string>
+    <string name="geninfo_codepanel_11" translatable="false">
+        "class WorldUtil {"
+        "\n     val world = World()"
+        "\n     val createBodyList    = mutableListOf&lt;AbstractBody&gt;()"
+        "\n     val createJointList    = mutableListOf&lt;AbstractJoint&gt;()"
+        "\n     val destroyBodyList  = mutableListOf&lt;AbstractBody&gt;()"
+        "\n     val destroyJointList  = mutableListOf&lt;AbstractJoint&gt;()"
+        "\n\n    fun update() {"
+        "\n           world.step()"
+        "\n           createBodyList.onEach {   world.createBody(aBody.bodyDef)                }.clear()"
+        "\n           createJointList.onEach {    aJoint -> world.createJoint(aJoint.jointDef) }.clear()"
+        "\n           destroyBodyList.onEach {  aBody  -> world.destroyBody(aBody.body) }.clear()"
+        "\n           destroyJointList.onEach {   aJoint -> world.destroyJoint(aJoint.joint)    }.clear()"
+        "\n      }"
+        "\n}"
+    </string>
 
     <string name="geninfo_longquote_1">
         [#FF4949][@Inter_Bold]true[#d2e9cdff[@Inter_Regular] — bodyA collides with bodyB if ContactFilter are configured so that these bodies should collide. If not, then bodies will not collide, even if collideConnected = true.\n
@@ -162,6 +215,10 @@
         [#d2e9cdff][@Inter_Regular]You just need to [#FF4949][@Inter_Bold]divide[#d2e9cdff][@Inter_Regular] the dimensions of the WIDTH or HEIGHT [#FF4949][@Inter_Bold]of the Figma world not by 100[#d2e9cdff][@Inter_Regular] to get percentages, [#FF4949][@Inter_Bold]but by the corresponding dimensions of the[#d2e9cdff][@Inter_Regular] WIDTH or HEIGHT of the [#FF4949][@Inter_Bold] Box2d world[#d2e9cdff][@Inter_Regular].
         \n\nThus, we will get [#FF4949][@Inter_Bold]not 1%[#d2e9cdff][@Inter_Regular] (percentage), [#FF4949][@Inter_Bold]but the number of Figma pixels[#d2e9cdff][@Inter_Regular] equal to [#FF4949][@Inter_Bold]1 meter in Box2d[#d2e9cdff][@Inter_Regular].
         \n\nAnd in the same way that we received the percentage of the width or height of the circle in the Figma world, [#FF4949][@Inter_Bold]we can immediately get these dimensions in meters for the Box2d bodies[#d2e9cdff][@Inter_Regular].
+    </string>
+    <string name="geninfo_longquote_7">
+        [#FF4949][@Inter_Bold]The choice is obvious use the meter constant[#d2e9cdff][@Inter_Regular].
+        \n\nHere\’s a plus for you to write articles on your own, I realized that you can use the meter constant and not use percentages, I hope it was useful to you too.
     </string>
 
     <string-array name="geninfo_arr_1" translatable="false">
@@ -204,6 +261,184 @@
         <item>[#d2e9cdff][@Inter_Regular]Calculate how many percent the [#FF4949][@Inter_Bold]WIDTH[#d2e9cdff][@Inter_Regular] of the selected object in the [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular] world takes;</item>
         <item>[#d2e9cdff][@Inter_Regular]Since We know that the [#FF4949][@Inter_Bold]{LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK} WIDTH[#d2e9cdff][@Inter_Regular] of the shape of the body fixture is always equal to [#FF4949][@Inter_Bold]1 meter[#d2e9cdff][@Inter_Regular], we need to calculate how many percent the [#FF4949][@Inter_Bold]WIDTH (1 meter)[#d2e9cdff][@Inter_Regular] takes in the [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular] world;</item>
         <item>[#d2e9cdff][@Inter_Regular]We count on how much the percentage of the width of the object in the world of [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular] is [#FF4949][@Inter_Bold]more[#d2e9cdff][@Inter_Regular] or [#FF4949][@Inter_Bold]less[#d2e9cdff][@Inter_Regular] than the percentage of [#FF4949][@Inter_Bold]WIDTH (1 meter)[#d2e9cdff][@Inter_Regular] in the world of [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular]. (in simple words, how many percent of the [#FF4949][@Inter_Bold]WIDTH (1 meter)[#d2e9cdff][@Inter_Regular] from the world of [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular] will fit in the percentage of the width of the object from the world of [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular]).</item>
+    </string-array>
+    <string-array name="geninfo_arr_8">
+        <item>[#d2e9cdff][@Inter_Regular]If you [#FF4949][@Inter_Bold]destroy the body[#d2e9cdff][@Inter_Regular] to which the joint is attached, then the [#FF4949][@Inter_Bold]joint itself will destroy[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]If a joint attached to a body is destroyed, [#FF4949][@Inter_Bold]only the joint will be destroyed[#d2e9cdff][@Inter_Regular], the body will remain intact, and there will be [#FF4949][@Inter_Bold]no further destruction[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Don\’t forget to, [#FF4949][@Inter_Bold]create and destroy[#d2e9cdff][@Inter_Regular] bodies and joints [#FF4949][@Inter_Bold]AFTER updating[#d2e9cdff][@Inter_Regular] the world (world step) after by calling the [#FF4949][@Inter_Bold]world.step()[#d2e9cdff][@Inter_Regular] method of the world;</item>
+    </string-array>
+
+    <!--JointMouse-->
+    <string name="jmouse_title_1">And so the… Mouse Joint</string>
+    <string name="jmouse_title_2">Practice. How to create a Mouse Joint?</string>
+
+    <string name="jmouse_sub_title_1">MouseJointDef settings:</string>
+    <string name="jmouse_sub_title_2">Mandatory</string>
+    <string name="jmouse_sub_title_3">Optional</string>
+    <string name="jmouse_sub_title_4">All code:</string>
+
+    <string name="jmouse_text_1">[#d2e9cdff][@Inter_Medium]Mouse joint — the joint is designed to move dynamic bodies by the user.</string>
+    <string name="jmouse_text_2" tools:ignore="TypographyDashes">[#d2e9cdff][@Inter_Medium]First, we need to set up the joint. For this, each joint has its own implementation of JointDef. You can read about this in the article: [#FF4949][@Inter_Bold]{LINK=https://medium.com/@veldan1202/lbjt–%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d}[_]General information[_]{ENDLINK}[#d2e9cdff][@Inter_Medium]. And now let\’s talk about the MouseJointDef.</string>
+    <string name="jmouse_text_3">[#d2e9cdff][@Inter_Medium]Values for [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmouse_text_4">[#d2e9cdff][@Inter_Medium]Our example will consist of a [#FF4949][@Inter_Bold]static platform[#d2e9cdff][@Inter_Medium] and a [#FF4949][@Inter_Bold]dynamic ball[#d2e9cdff][@Inter_Medium] on it. We need to make it so that the user can touch the ball and move it.</string>
+    <string name="jmouse_text_5">[#d2e9cdff][@Inter_Medium]Create 2 bodies: a [#FF4949][@Inter_Bold]статичну[#d2e9cdff][@Inter_Medium] platform and a  [#FF4949][@Inter_Bold]динамічну[#d2e9cdff][@Inter_Medium] ball.</string>
+    <string name="jmouse_text_6">[#d2e9cdff][@Inter_Medium]Add an [#FF4949][@Inter_Bold]InputListener[#d2e9cdff][@Inter_Medium] to the [#FF4949][@Inter_Bold]stage[#d2e9cdff][@Inter_Medium] on which the UI is drawn, and redefine the [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Medium], [#FF4949][@Inter_Bold]touchDragged[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] methods.</string>
+    <string name="jmouse_text_7">[#d2e9cdff][@Inter_Medium]Сreate reference fields for:</string>
+    <string name="jmouse_text_8">[#d2e9cdff][@Inter_Medium]In the [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Medium] method:</string>
+    <string name="jmouse_text_9">[#d2e9cdff][@Inter_Medium]In the [#FF4949][@Inter_Bold]touchDragged[#d2e9cdff][@Inter_Medium] method, change the coordinates of the [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium] to the coordinates of the [#FF4949][@Inter_Bold]user converted to Box2d[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmouse_text_10">[#d2e9cdff][@Inter_Medium]In the [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] method, [#FF4949][@Inter_Bold]destroy[#d2e9cdff][@Inter_Medium] the [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium]:</string>
+
+    <string name="jmouse_note_1">[#000000ff][@Inter_Bold](Note: )[#FF4949] Why 1000?[#d2e9cdff][@Inter_Medium] Because if the force is too small or the body is too heavy, we won\’t be able to move it. A force 1000 times the mass of bodyB is sufficient to move it.</string>
+    <string name="jmouse_note_2">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] QueryCallback — should return a boolean value, what does that mean?</string>
+    <string name="jmouse_note_3" tools:ignore="TypographyDashes">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] Vectore2().toBox2d — Converts sizes from [#FF4949][@Inter_Bold]UI to Box2d[#d2e9cdff][@Inter_Medium] thanks to the [#FF4949][@Inter_Bold]meter constant[#d2e9cdff][@Inter_Medium]. If you do not know how to convert sizes from UI to Box2d, read the article: [#FF4949][@Inter_Bold]{LINK=https://veldan1202.medium.com/lbjt-%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d#:~:text=sizes%20to%20meters.-,meter%20constant%3A,-It%20turns%20out}[_]Meter Constant[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] or go to the [#FF4949][@Inter_Bold]General Information[#d2e9cdff][@Inter_Medium] screen.</string>
+    <string name="jmouse_note_4" tools:ignore="TypographyDashes">
+        [#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] The destruction in the [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] method is only for [#FF4949][@Inter_Bold]demonstration purposes[#d2e9cdff][@Inter_Medium]. In a real example, you would need to destroy [#FF4949][@Inter_Bold]bodies[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]joints after updating the world[#d2e9cdff][@Inter_Medium]. The process of destroying bodies and joints is described in [#FF4949][@Inter_Bold]{LINK=https://veldan1202.medium.com/lbjt-%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d#:~:text=to%20you%20too.%20%F0%9F%98%8E-,destroy%20the%20joints}[_]Destroy the joints[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] or go to the [#FF4949][@Inter_Bold]General Information[#d2e9cdff][@Inter_Medium] screen.
+        \n\nIt is important to perform the destruction step after updating the world to ensure proper synchronization and avoid any potential issues.
+    </string>
+
+    <string name="jmouse_codepanel_1" translatable="false">
+        "val platform = StaticBody"
+        "\nval ball         = DynamicBody"
+    </string>
+    <string name="jmouse_codepanel_2" translatable="false">
+        "stageUI.addListener(object: InputListener() {"
+        "\n     override fun touchDown()"
+        "\n     override fun touchDragged()"
+        "\n     override fun touchUp()"
+        "\n})"
+    </string>
+    <string name="jmouse_codepanel_3" translatable="false">
+        "/*1*/ val mouseJoint: MouseJoint?   = null"
+        "\n/*2*/ val hitBody     : Body?               = null"
+        "\n/*3*/ val touchPoint: Vecto2             = Vector2()"
+        "\n/*4*/ val callback    : QueryCallback = QueryCallback { fixture ->"
+        "\n                if (fixture.testPoint(touchPoint)) {"
+        "\n                    hitBody = fixture.body"
+        "\n                    return@QueryCallback false"
+        "\n                }"
+        "\n                return@QueryCallback true"
+        "\n          }"
+    </string>
+    <string name="jmouse_codepanel_4" translatable="false">
+        "override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {"
+        "\n/*1*/ touchPoint.set(Vector2(x, y).toBox2d)"
+        "\n/*2*/ hotBody = null"
+        "\n/*3*/ world.QueryAABB(callback,"
+        "\n                 touchPoint.x - 0.01f, touchPoint.x + 0.01f,"
+        "\n                 touchPoint.y - 0.01f, touchPoint.y + 0.01f)"
+        "\n/*4*/ hitBody?.let { hitB ->"
+        "\n                 world.createJoint(MouseJointDef().apply {"
+        "\n                           bodyA = platform"
+        "\n                           bodyB = hitB"
+        "\n                           collideConnected = true"
+        "\n                  /*5*/ target.set(touchPoint)"
+        "\n                  /*6*/ maxForce = 1000 * bodyB.mass"
+        "\n                  })"
+        "\n         }"
+        "\nreturn true"
+        "\n}"
+    </string>
+    <string name="jmouse_codepanel_5" translatable="false">
+        "override fun touchDragged(event: InputEvent?, x: Float, y: Float, pointer: Int) {"
+        "\n         mouseJoint?.target = Vector2(x, y).toBox2d"
+        "\n}"
+    </string>
+    <string name="jmouse_codepanel_6" translatable="false">
+        "override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {"
+        "\n         world.destroyJoint(mouseJoint)"
+        "\n}"
+    </string>
+    <string name="jmouse_codepanel_7" translatable="false">
+        "val platform = StaticBody"
+        "\nval ball         = DynamicBody"
+        "\n\nstageUI.addListener(object: InputListener() {"
+        "\n        val mouseJoint: MouseJoint? = null"
+        "\n        val hitBody      : Body?            = null"
+        "\n        val touchPoint: Vecto2           = Vector2()"
+        "\n        val callback     : QueryCallback = QueryCallback { fixture ->"
+        "\n                if (fixture.testPoint(touchPoint)) {"
+        "\n                     hitBody = fixture.body"
+        "\n                     return@QueryCallback false"
+        "\n                }"
+        "\n                return@QueryCallback true"
+        "\n        }"
+        "\n\n        override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {"
+        "\n              touchPoint.set(Vector2(x, y).toBox2d)"
+        "\n              hotBody = null"
+        "\n              world.QueryAABB(callback,"
+        "\n                        touchPoint.x - 0.01f, touchPoint.x + 0.01f,"
+        "\n                        touchPoint.y - 0.01f, touchPoint.y + 0.01f"
+        "\n              )"
+        "\n              hitBody?.let { hitB ->"
+        "\n                    world.createJoint(MouseJointDef().apply {"
+        "\n                              bodyA = platform"
+        "\n                              bodyB = hitB"
+        "\n                              collideConnected = true"
+        "\n                              target.set(touchPoint)"
+        "\n                              maxForce = 1000 * bodyB.mass"
+        "\n                    })"
+        "\n              }"
+        "\n              return true"
+        "\n        }"
+        "\n\n        override fun touchDragged(event: InputEvent?, x: Float, y: Float, pointer: Int) {"
+        "\n              mouseJoint?.target = Vector2(x, y).toBox2d"
+        "\n        }"
+        "\n\n        override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {"
+        "\n              world.destroyJoint(mouseJoint)"
+        "\n        }"
+        "\n})"
+    </string>
+
+    <string name="jmouse_longquote_1">
+        [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Medium]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Medium].
+        \n\n[#FF4949][@Inter_Bold]Value &gt; 1: [#d2e9cdff][@Inter_Medium]With values greater than 1, such as 2, 5, or 10, the joint will stretch very little or not at all, similar to a [#FF4949][@Inter_Bold]stiff spring[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="jmouse_longquote_2">
+        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: does not suppress.
+        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: almost absolute suppression.
+        \n\nBut values greater than 1 are possible, although in such cases the body will move very slowly. On the other hand, values less than 0 will make the body highly active and behave erratically, similar to wild behavior.
+        \n[#FF4949][@Inter_Bold]However, it is generally not recommended to use values outside the range of 0 to 1[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="jmouse_longquote_3">[#d2e9cdff][@Inter_Medium]That\’s all. However, in most [#FF4949][@Inter_Bold]practical examples[#d2e9cdff][@Inter_Medium], it is common to include an additional check in the [#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Medium] to verify if the found body is [#FF4949][@Inter_Bold]dynamic[#d2e9cdff][@Inter_Medium]. This is because [#FF4949][@Inter_Bold]kinematic[#d2e9cdff][@Inter_Medium] or [#FF4949][@Inter_Bold]static[#d2e9cdff][@Inter_Medium] bodies are [#FF4949][@Inter_Bold]not movable[#d2e9cdff][@Inter_Medium] and, therefore, not relevant for certain interactions.</string>
+
+    <string-array name="jmouse_arr_1" translatable="false">
+        <item>
+            [#d2e9cdff][@Inter_Regular]bodyA — first joint body.
+            \n([#FF4949][@Inter_Bold]StaticBody[#d2e9cdff][@Inter_Regular])
+        </item>
+        <item>
+            [#d2e9cdff][@Inter_Regular]bodyB — second joint body.
+            \n([#FF4949][@Inter_Bold]DynamicBody[#d2e9cdff][@Inter_Regular])
+        </item>
+        <item>[#d2e9cdff][@Inter_Regular]collideConnected — &lt;boolean&gt; Specifies whether bodyA should collide with bodyB.</item>
+    </string-array>
+    <string-array name="jmouse_arr_2" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]target — The &lt;Vector2&gt; target point that matches the user\’s touch coordinates [#FF4949][@Inter_Bold]will cause bodyA to move relative to that point[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxForce — [#FF4949][@Inter_Bold]the force required to move bodyB[#d2e9cdff][@Inter_Regular]. Usually expressed as (multiplier * mass * gravity) = (1000 * bodyB.mass * world.gravity ). I personally usually do this for tests (1000 * bodyB.mass).</item>
+    </string-array>
+    <string-array name="jmouse_arr_3" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]frequencyHz — also known as the [#FF4949][@Inter_Bold]response rate[#d2e9cdff][@Inter_Regular], works like a spring between the user\’s finger [#FF4949][@Inter_Bold](target)[#d2e9cdff][@Inter_Regular] and [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jmouse_arr_4" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]dampingRatio — suppresses vibrations and takes values from [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular] to [#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jmouse_arr_5" translatable="false">
+        <item>[#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] (because it will be [#FF4949][@Inter_Bold]created[#d2e9cdff][@Inter_Regular] and [#FF4949][@Inter_Bold]destroyed[#d2e9cdff][@Inter_Regular] in different methods);</item>
+        <item>[#d2e9cdff][@Inter_Regular]The [#FF4949][@Inter_Bold]body[#d2e9cdff][@Inter_Regular] that will move;</item>
+        <item>[#FF4949][@Inter_Bold]Click coordinates in Box2d[#d2e9cdff][@Inter_Regular] dimensions;</item>
+        <item>[#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Regular] to determine if the user clicked on the body they want to move.</item>
+    </string-array>
+    <string-array name="jmouse_arr_6" translatable="false">
+        <item>[#FF4949][@Inter_Bold]true[#d2e9cdff][@Inter_Regular] — returns for [#FF4949][@Inter_Bold]CONTINUE[#d2e9cdff][@Inter_Regular] searching for body fixtures.</item>
+        <item>[#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular] — returns for [#FF4949][@Inter_Bold]STOP[#d2e9cdff][@Inter_Regular] searching for body fixtures.</item>
+    </string-array>
+    <string-array name="jmouse_arr_7" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]For [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular] set click coordinates in [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular] sizes;</item>
+        <item>[#d2e9cdff][@Inter_Regular]For [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] set [#FF4949][@Inter_Bold]null[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Call [#FF4949][@Inter_Bold]QueryAABB[#d2e9cdff][@Inter_Regular] with implementation [#FF4949][@Inter_Bold]callback[#d2e9cdff][@Inter_Regular] and coordinates [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular] + 0.01;</item>
+        <item>[#d2e9cdff][@Inter_Regular]We check if the [#FF4949][@Inter_Bold]callback[#d2e9cdff][@Inter_Regular] has determined that the user clicked within the coordinates of the body fixture. If this condition is met, we set the corresponding body as the [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular]. Then, we create a [#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] between the [#FF4949][@Inter_Bold]platform[#d2e9cdff][@Inter_Regular] and the [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] and assign this connection to the variable [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]We set the [#FF4949][@Inter_Bold]target[#d2e9cdff][@Inter_Regular] in the coordinates of the [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]We set the [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Regular] (1000 * bodyB.mass).</item>
     </string-array>
 
 

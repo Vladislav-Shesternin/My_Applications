@@ -12,7 +12,7 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 open class AButton(
     override val screen: AdvancedScreen,
-    type: Type? = null
+    type: Static.Type? = null
 ) : AdvancedGroup() {
 
     private val defaultImage  by lazy {  if (type != null) Image(getStyleByType(type).default)  else Image() }
@@ -117,7 +117,7 @@ open class AButton(
         enable()
     }
 
-    fun setStyle(style: AButtonStyle) {
+    fun setStyle(style: Static.AButtonStyle) {
         defaultImage.drawable  = TextureRegionDrawable(style.default)
         pressedImage.drawable  = TextureRegionDrawable(style.pressed)
         disabledImage.drawable = TextureRegionDrawable(style.disabled)
@@ -132,18 +132,18 @@ open class AButton(
         actor.addListener(getListener())
     }
 
-    private fun getStyleByType(type: Type) = when(type) {
-        Type.REGULAR -> AButtonStyle(
+    private fun getStyleByType(type: Static.Type) = when(type) {
+        Static.Type.REGULAR -> Static.AButtonStyle(
             default  = themeUtil.assets.REGULAR_BTN_DEF,
             pressed  = themeUtil.assets.REGULAR_BTN_PRESS,
             disabled = themeUtil.assets.REGULAR_BTN_DISABLE,
         )
-        Type.MONETIZATION -> AButtonStyle(
+        Static.Type.MONETIZATION -> Static.AButtonStyle(
             default  = themeUtil.assets.MONETIZATION_BTN_DEF,
             pressed  = themeUtil.assets.MONETIZATION_BTN_PRESS,
             disabled = themeUtil.assets.MONETIZATION_BTN_PRESS,
         )
-        Type.MONETIZATION_MEGA -> AButtonStyle(
+        Static.Type.MONETIZATION_MEGA -> Static.AButtonStyle(
             default  = themeUtil.assets.MONETIZATION_MEGA_BTN_DEF,
             pressed  = themeUtil.assets.MONETIZATION_MEGA_BTN_PRESS,
             disabled = themeUtil.assets.MONETIZATION_MEGA_BTN_PRESS,
@@ -154,14 +154,16 @@ open class AButton(
     // Style
     // ---------------------------------------------------
 
-    data class AButtonStyle(
-        val default : TextureRegion,
-        val pressed : TextureRegion,
-        val disabled: TextureRegion? = null,
-    )
+    object Static {
+        data class AButtonStyle(
+            val default: TextureRegion,
+            val pressed: TextureRegion,
+            val disabled: TextureRegion? = null,
+        )
 
-    enum class Type {
-        REGULAR, MONETIZATION, MONETIZATION_MEGA
+        enum class Type {
+            REGULAR, MONETIZATION, MONETIZATION_MEGA
+        }
     }
 
 }

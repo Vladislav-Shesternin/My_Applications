@@ -29,7 +29,7 @@ class ADialogNickname(override val screen: AdvancedScreen): AdvancedGroup() {
 
     var focusBlock: (Boolean) -> Unit = {}
     val textFlow = MutableSharedFlow<String>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
-    var state = State.DEFAULT
+    var state = Static.State.DEFAULT
         private set
 
     override fun addActorsOnGroup() {
@@ -69,11 +69,11 @@ class ADialogNickname(override val screen: AdvancedScreen): AdvancedGroup() {
         null
     )
 
-    fun setState(state: State) {
+    fun setState(state: Static.State) {
         this.state = state
         when (state) {
-            State.DEFAULT -> themeUtil.assets.PANEL_WITH_LIGHT_WHITE
-            State.ERROR   -> themeUtil.assets.PANEL_WITH_LIGHT_RED
+            Static.State.DEFAULT    -> themeUtil.assets.PANEL_WITH_LIGHT_WHITE
+            Static.State.ERROR -> themeUtil.assets.PANEL_WITH_LIGHT_RED
         }.also { ninePath: NinePatch -> panelImg.drawable = NinePatchDrawable(ninePath) }
     }
 
@@ -82,9 +82,10 @@ class ADialogNickname(override val screen: AdvancedScreen): AdvancedGroup() {
         textFlow.tryEmit(nickname)
     }
 
-
-    enum class State {
-        DEFAULT, ERROR
+    object Static {
+        enum class State {
+            DEFAULT, ERROR
+        }
     }
 
 }

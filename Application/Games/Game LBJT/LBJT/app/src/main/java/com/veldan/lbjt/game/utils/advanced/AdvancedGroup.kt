@@ -54,7 +54,10 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
         if (isDisposed.not()) {
             preDrawArray.clear()
             postDrawArray.clear()
+
             disposableSet.disposeAll()
+            disposableSet.clear()
+
             children.onEach { actor -> if (actor is Disposable) actor.dispose() }
             cancelCoroutinesAll(coroutine)
             coroutine = null

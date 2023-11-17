@@ -34,8 +34,8 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
 
     // Body
     private val bStatic              = BStatic(screenBox2d)
-    private val bMonetizationBtnAds  = BMonetizationBtn(screenBox2d, AButton_Monetization.Type.ADS)
-    private val bMonetizationBtnGift = BMonetizationBtn(screenBox2d, AButton_Monetization.Type.GIFT)
+    private val bMonetizationBtnAds  = BMonetizationBtn(screenBox2d, AButton_Monetization.Static.Type.ADS)
+    private val bMonetizationBtnGift = BMonetizationBtn(screenBox2d, AButton_Monetization.Static.Type.GIFT)
     private val bMonetizationBtnMega = BMonetizationMegaBtn(screenBox2d)
 
     // Joint
@@ -103,22 +103,22 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
     // ---------------------------------------------------
 
     private fun createJ_MotorAds() {
-        listOf<MotorJointData>(
-            MotorJointData(
+        listOf<Static.MotorJointData>(
+            Static.MotorJointData(
                 jMotorAds,
                 bMonetizationBtnAds,
                 offset = Vector2(-155f, 46f),
                 anchorA = Vector2(-155f, -310f),
                 anchorB = Vector2(147f, 6f)
             ),
-            MotorJointData(
+            Static.MotorJointData(
                 jMotorGift,
                 bMonetizationBtnGift,
                 offset = Vector2(170f, 46f),
                 anchorA = Vector2(170f, -310f),
                 anchorB = Vector2(147f, 6f)
             ),
-            MotorJointData(
+            Static.MotorJointData(
                 jMotorMega,
                 bMonetizationBtnMega,
                 offset = Vector2(7f, -79f),
@@ -139,7 +139,7 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
                     drawer.line(
                         bodyA.position.cpy().add(data.anchorA.cpy().subCenter(bodyA)).toUI,
                         bodyB.position.cpy().add(data.anchorB.cpy().subCenter(bodyB)).toUI,
-                        GameColor.joint.apply { a = alpha }, JOINT_WIDTH
+                        colorJoint.apply { a = alpha }, JOINT_WIDTH
                     )
                 })
             })
@@ -180,12 +180,14 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
         aIndicator.animShowNoWifi { btns.onEach { it.actor?.enable() } }
     }
 
-    private data class MotorJointData(
-        val joint  : AbstractJoint<MotorJoint, MotorJointDef>,
-        val bodyB  : AbstractBody,
-        val offset : Vector2,
-        val anchorA: Vector2,
-        val anchorB: Vector2,
-    )
+    object Static {
+        data class MotorJointData(
+            val joint: AbstractJoint<MotorJoint, MotorJointDef>,
+            val bodyB: AbstractBody,
+            val offset: Vector2,
+            val anchorA: Vector2,
+            val anchorB: Vector2,
+        )
+    }
 
 }

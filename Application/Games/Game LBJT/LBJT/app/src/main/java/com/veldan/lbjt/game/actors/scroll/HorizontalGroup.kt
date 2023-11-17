@@ -1,6 +1,7 @@
 package com.veldan.lbjt.game.actors.scroll
 
 import com.badlogic.gdx.scenes.scene2d.Actor
+import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AAbstractList
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
@@ -9,8 +10,8 @@ class HorizontalGroup(
     val gap      : Float = 0f,
     val startGap : Float = gap,
     val endGap   : Float = gap,
-    val alignment: Alignment = Alignment.START,
-    val direction: Direction = Direction.RIGHT,
+    val alignment: Static.Alignment = Static.Alignment.START,
+    val direction: Static.Direction = Static.Direction.RIGHT,
 ) : AdvancedGroup() {
 
     private var nx = 0f
@@ -23,7 +24,7 @@ class HorizontalGroup(
         newWidth -= gap
         newWidth += startGap + endGap
 
-        if (alignment == Alignment.END && parent.width > newWidth) newWidth = parent.width
+        if (alignment == Static.Alignment.END && parent.width > newWidth) newWidth = parent.width
         return newWidth
     }
 
@@ -40,20 +41,20 @@ class HorizontalGroup(
 
     private fun placeChildren() {
         when (alignment) {
-            Alignment.END    -> {
+            Static.Alignment.END                        -> {
                 nx = prefWidth
 
                 when (direction) {
-                    Direction.LEFT  -> children.onEachIndexed { index, a -> a.moveFromEND(index) }
-                    Direction.RIGHT -> children.reversed().onEachIndexed { index, a -> a.moveFromEND(index) }
+                    Static.Direction.LEFT  -> children.onEachIndexed { index, a -> a.moveFromEND(index) }
+                    Static.Direction.RIGHT -> children.reversed().onEachIndexed { index, a -> a.moveFromEND(index) }
                 }
             }
-            Alignment.START -> {
+            Static.Alignment.START -> {
                 nx = 0f
 
                 when (direction) {
-                    Direction.LEFT  -> children.reversed().onEachIndexed { index, a -> a.moveFromSTART(index) }
-                    Direction.RIGHT -> children.onEachIndexed { index, a -> a.moveFromSTART(index) }
+                    Static.Direction.LEFT  -> children.reversed().onEachIndexed { index, a -> a.moveFromSTART(index) }
+                    Static.Direction.RIGHT -> children.onEachIndexed { index, a -> a.moveFromSTART(index) }
                 }
             }
         }
@@ -72,13 +73,14 @@ class HorizontalGroup(
         nx += width
     }
 
+    object Static {
+        enum class Direction {
+            LEFT, RIGHT
+        }
 
-    enum class Direction {
-        LEFT, RIGHT
-    }
-
-    enum class Alignment {
-        START, END
+        enum class Alignment {
+            START, END
+        }
     }
 
 }

@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.NinePatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.veldan.lbjt.game.manager.SpriteManager
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_GeneralInformation as GenInfo
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointMouse as JMouse
 
 class SpriteUtil {
 
@@ -55,6 +56,8 @@ class SpriteUtil {
           val V_STATIC                    : TextureRegion
           val LIFT_PLATFORM               : TextureRegion
           val LIFT_GEAR                   : TextureRegion
+
+          val NUMBER_LIST : List<TextureRegion>
 
           val PANEL                  : NinePatch
           val CURSOR                 : NinePatch
@@ -120,6 +123,8 @@ class SpriteUtil {
           override val LIFT_PLATFORM               = getGameRegion("lift_platform")
           override val LIFT_GEAR                   = getGameRegion("lift_gear")
 
+          override val NUMBER_LIST = List(9) { getGameRegion("number ${it.inc()}") }
+
           override val PANEL                  = getGamePath("panel")
           override val CURSOR                 = getGamePath("cursor")
           override val SELECT                 = getGamePath("select")
@@ -141,6 +146,10 @@ class SpriteUtil {
      }
 
      class GeneralInformation {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          val animObama = List<TextureRegion>(63) { getRegion("anim_obama (${it.inc()})", SpriteManager.EnumAtlas_GeneralInformation.ANIM_OBAMA.data) }
+
           val I1  = GenInfo.I1.data.texture
           val I2  = GenInfo.I2.data.texture
           val I3  = GenInfo.I3.data.texture
@@ -154,4 +163,37 @@ class SpriteUtil {
           val I11 = GenInfo.I11.data.texture
           val I12 = GenInfo.I12.data.texture
      }
+
+     class JointMouse: TutorialsAssets {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          private val animVideo_1_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_1_0.data) }
+          private val animVideo_1_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_1_1.data) }
+          private val animVideo_1_2 = List<TextureRegion>(78) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_1_2.data) }
+          private val animVideo_1_3 = List<TextureRegion>(27) { getRegion("video (${it.inc()+234})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_1_3.data) }
+
+          private val animVideo_2_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_2_0.data) }
+          private val animVideo_2_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_2_1.data) }
+          private val animVideo_2_2 = List<TextureRegion>(78) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_2_2.data) }
+          private val animVideo_2_3 = List<TextureRegion>(78) { getRegion("video (${it.inc()+234})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_2_3.data) }
+          private val animVideo_2_4 = List<TextureRegion>(78) { getRegion("video (${it.inc()+312})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_2_4.data) }
+          private val animVideo_2_5 = List<TextureRegion>(58) { getRegion("video (${it.inc()+390})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_2_5.data) }
+
+          private val animVideo_3_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_0.data) }
+          private val animVideo_3_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_1.data) }
+          private val animVideo_3_2 = List<TextureRegion>(78) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_2.data) }
+          private val animVideo_3_3 = List<TextureRegion>(78) { getRegion("video (${it.inc()+234})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_3.data) }
+          private val animVideo_3_4 = List<TextureRegion>(78) { getRegion("video (${it.inc()+312})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_4.data) }
+          private val animVideo_3_5 = List<TextureRegion>(78) { getRegion("video (${it.inc()+390})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_5.data) }
+          private val animVideo_3_6 = List<TextureRegion>(18) { getRegion("video (${it.inc()+468})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_6.data) }
+
+          val animVideo_1 = animVideo_1_0+animVideo_1_1+animVideo_1_2+animVideo_1_3
+          val animVideo_2 = animVideo_2_0+animVideo_2_1+animVideo_2_2+animVideo_2_3+animVideo_2_4+animVideo_2_5
+          val animVideo_3 = animVideo_3_0+animVideo_3_1+animVideo_3_2+animVideo_3_3+animVideo_3_4+animVideo_3_5+animVideo_3_6
+
+          val I1  = JMouse.I1.data.texture
+
+     }
+
+     interface TutorialsAssets
 }

@@ -21,6 +21,8 @@ class AbstractJoint<T : Joint, TD : JointDef>(val screenBox2d: AdvancedBox2dScre
     var jointDef: TD? = null
         private set
 
+    private val colorJoint = GameColor.joint.cpy()
+
     fun create(jointDef: TD) {
         if (joint == null) {
             this.jointDef = jointDef
@@ -40,7 +42,7 @@ class AbstractJoint<T : Joint, TD : JointDef>(val screenBox2d: AdvancedBox2dScre
         }
     }
 
-    fun drawJoint(alpha: Float) = joint?.run { screenBox2d.drawerUtil.drawer.line(anchorA.toUI, anchorB.toUI, GameColor.joint.apply { a = alpha }, JOINT_WIDTH) }
+    fun drawJoint(alpha: Float) = joint?.run { screenBox2d.drawerUtil.drawer.line(anchorA.toUI, anchorB.toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) }
 
 
 }

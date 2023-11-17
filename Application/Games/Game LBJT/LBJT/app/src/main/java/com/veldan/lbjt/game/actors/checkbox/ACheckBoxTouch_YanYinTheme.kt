@@ -11,7 +11,7 @@ class ACheckBoxTouch_YanYinTheme(override val screen: AdvancedScreen): AdvancedG
     override var standartW = 131f
 
     private val lightImg  = Image(screen.game.themeUtil.assets.YIN_YAN_LIGHT)
-    private val yanYinBox = ACheckBoxTouch(screen, ACheckBox.Type.YAN_YIN)
+    private val yanYinBox = ACheckBoxTouch(screen, ACheckBox.Static.Type.YAN_YIN)
 
 
     override fun addActorsOnGroup() {

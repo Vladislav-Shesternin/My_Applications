@@ -41,6 +41,8 @@ abstract class AbstractBodyGroup: Destroyable {
     private val tmpAnchorA   = Vector2()
     private val tmpAnchorB   = Vector2()
 
+    val colorJoint = GameColor.joint.cpy()
+
     open fun create(x: Float, y: Float, w: Float, h: Float) {
         position.set(x,y)
         size.set(w,h)
@@ -101,7 +103,7 @@ abstract class AbstractBodyGroup: Destroyable {
         screenBox2d.drawerUtil.drawer.line(
             tmpPositionA.set(bodyA.body?.position).add(tmpAnchorA.set(anchorA).subCenter(bodyA.body!!)).toUI,
             tmpPositionB.set(bodyB.body?.position).add(tmpAnchorB.set(anchorB).subCenter(bodyB.body!!)).toUI,
-            GameColor.joint.apply { a = alpha }, JOINT_WIDTH
+            colorJoint.apply { a = alpha }, JOINT_WIDTH
         )
     }
 

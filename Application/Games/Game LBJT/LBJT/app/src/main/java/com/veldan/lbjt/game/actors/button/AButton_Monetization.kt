@@ -5,7 +5,7 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.veldan.lbjt.R
-import com.veldan.lbjt.game.actors.label.SpinningLabel
+import com.veldan.lbjt.game.actors.label.ASpinningLabel
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.actor.disable
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
@@ -14,8 +14,8 @@ import com.veldan.lbjt.game.utils.font.FontParameter.CharType
 
 class AButton_Monetization(
     override val screen: AdvancedScreen,
-    val type: Type,
-): AButton(screen, AButton.Type.MONETIZATION) {
+    val type: Static.Type,
+): AButton(screen, AButton.Static.Type.MONETIZATION) {
 
     override var standartW = 296f
 
@@ -23,7 +23,7 @@ class AButton_Monetization(
 
     private val parameter = FontParameter()
 
-    private val label = SpinningLabel(screen, initData.text, Label.LabelStyle(screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN.chars+CharType.CYRILLIC.chars).setSize(25)), GameColor.textGreen))
+    private val label = ASpinningLabel(screen, initData.text, Label.LabelStyle(screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.LATIN.chars+CharType.CYRILLIC.chars).setSize(25)), GameColor.textGreen))
     private val image = Image(initData.region)
 
     override fun addActorsOnGroup() {
@@ -56,8 +56,8 @@ class AButton_Monetization(
     // Logic
     // ------------------------------------------------------------------------
 
-    private fun getInitDataByType(): InitData = when(type) {
-        Type.ADS -> InitData(
+    private fun getInitDataByType(): Static.InitData = when(type) {
+        Static.Type.ADS       -> Static.InitData(
             screen.game.languageUtil.getStringResource(R.string.ads),
             screen.game.themeUtil.assets.ADS,
             Vector2(95f, 189f),
@@ -65,7 +65,7 @@ class AButton_Monetization(
             Vector2(79f, 81f),
             Vector2(138f, 93f),
         )
-        Type.GIFT -> InitData(
+        Static.Type.GIFT -> Static.InitData(
             screen.game.languageUtil.getStringResource(R.string.gift),
             screen.game.themeUtil.assets.GIFT,
             Vector2(95f, 76f),
@@ -75,17 +75,19 @@ class AButton_Monetization(
         )
     }
 
-    data class InitData(
-        val text         : String,
-        val region       : TextureRegion,
-        val positionLabel: Vector2,
-        val sizeLabel    : Vector2,
-        val positionImage: Vector2,
-        val sizeImage    : Vector2,
-    )
+    object Static {
+        data class InitData(
+            val text: String,
+            val region: TextureRegion,
+            val positionLabel: Vector2,
+            val sizeLabel: Vector2,
+            val positionImage: Vector2,
+            val sizeImage: Vector2,
+        )
 
-    enum class Type {
-        ADS, GIFT
+        enum class Type {
+            ADS, GIFT
+        }
     }
 
 }

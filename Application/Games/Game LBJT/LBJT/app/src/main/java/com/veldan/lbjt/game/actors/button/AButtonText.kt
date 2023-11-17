@@ -7,7 +7,7 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 class AButtonText(
     override val screen: AdvancedScreen,
-    text: String, type: Type? = null, labelStyle: Label.LabelStyle, val alignment: Int = Align.center
+    text: String, type: Static.Type? = null, labelStyle: Label.LabelStyle, val alignment: Int = Align.center
 ): AButton(screen, type) {
 
     val label = Label(text, labelStyle)

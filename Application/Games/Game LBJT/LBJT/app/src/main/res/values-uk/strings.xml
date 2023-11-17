@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="music">Музика</string>
     <string name="quiet">Тихiше</string>
     <string name="louder">Гучнiше</string>
@@ -33,12 +33,14 @@
     <string name="test_stand">випробувальний стенд</string>
     <string name="next">Далi</string>
     <string name="general_information">{JUMP=0.5;1.0;1.0}Загальна інформація[]</string>
+    <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Основне джерело інформації.[_]{ENDLINK}</string>
 
     <!--GeneralInformation-->
     <string name="geninfo_title_1">І так… З\'єднання</string>
     <string name="geninfo_title_2">Спеціальні Налаштування</string>
     <string name="geninfo_title_3">Отже, що за getOrigin?</string>
     <string name="geninfo_title_4">Як вимірювати, SCALE?</string>
+    <string name="geninfo_title_5">Знищення З\'єднань</string>
 
     <string name="geninfo_sub_title_1">Поговоримо про опорні точки</string>
     <string name="geninfo_sub_title_2">Як виміряти, де встановити опорну точку?</string>
@@ -81,10 +83,33 @@
     <string name="geninfo_text_18">[#d2e9cdff][@Inter_Medium]Виявляється, ви можете просто [#FF4949][@Inter_Bold]розділити розміри світу Figma на відповідні розміри Box2d[#d2e9cdff][@Inter_Medium], як ми отримуємо відсотки, так ми можемо одразу отримати розміри для об\’єктів Box2d.</string>
     <string name="geninfo_text_19">[#d2e9cdff][@Inter_Medium]Давайте використаємо цей метод, щоб повторити [#FF4949][@Inter_Bold]ПРИКЛАДИ[#d2e9cdff][@Inter_Medium] для визначення розміру [#FF4949][@Inter_Bold]об\’єкта в Box2d[#d2e9cdff][@Inter_Medium] за розміром [#FF4949][@Inter_Bold]об\’єкта в Figma[#d2e9cdff][@Inter_Medium]:</string>
     <string name="geninfo_text_20">[#FF4949][@Inter_Bold]1%[#d2e9cdff][@Inter_Medium] (відсоток) для ширини або висоти у світі [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium] буде як [#FF4949][@Inter_Bold]1 метр[#d2e9cdff][@Inter_Medium] у світі [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] (якщо ми знайшли такі відсотки [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium], то ми одразу знайдемо розміри тiл [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_21">
+        [#d2e9cdff][@Inter_Medium]Як ми бачимо, [#FF4949][@Inter_Bold]немає різниці в поділі ширини або висоти[#d2e9cdff][@Inter_Medium], ми отримуємо [#FF4949][@Inter_Bold]однакове значення[#d2e9cdff][@Inter_Medium], це тому, що вони мають однакові [#FF4949][@Inter_Bold]співвідношення[#d2e9cdff][@Inter_Medium], і ось як ми знайшли [#FF4949][@Inter_Bold]1 на 1 метр[#d2e9cdff][@Inter_Medium] у цьому випадку:
+        \n\n[#FF4949][@Inter_Bold]1 метр[#d2e9cdff][@Inter_Medium] у світі [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium] становить [#FF4949][@Inter_Bold]28 пікселів[#d2e9cdff][@Inter_Medium] у світі [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Medium]:
+    </string>
+    <string name="geninfo_text_22">[#d2e9cdff][@Inter_Medium]Тепер давайте обчислимо розміри об\’єкта для [#FF4949][@Inter_Bold]світу Box2d[#d2e9cdff][@Inter_Medium], використовуючи нашу [#FF4949][@Inter_Bold]КОНСТАНТУ 1 МЕТР[#d2e9cdff][@Inter_Medium] що у [#FF4949][@Inter_Bold]світі Figma 28 пiкселiв[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_23">[#d2e9cdff][@Inter_Medium]Давайте повторимо [#FF4949][@Inter_Bold]ПРИКЛАД[#d2e9cdff][@Inter_Medium] із знаходженням [#FF4949][@Inter_Bold]SCALE[#d2e9cdff][@Inter_Medium] таким же чином (ми пам\’ятаємо, що [#FF4949][@Inter_Bold]WIDTH[#d2e9cdff][@Inter_Medium] у [#FF4949][@Inter_Bold]{LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] завжди дорівнює [#FF4949][@Inter_Bold]1 метр[#d2e9cdff][@Inter_Medium]):</string>
+    <string name="geninfo_text_24">[#d2e9cdff][@Inter_Medium]Давайте порівняємо, як ми рахували з [#FF4949][@Inter_Bold]відсотками[#d2e9cdff][@Inter_Medium] і як з [#FF4949][@Inter_Bold]константою в 1 метр[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="geninfo_text_25">
+        [#d2e9cdff][@Inter_Medium]Щоб знищити з\'єднаня, використовуйте cвiтовий метод [#FF4949][@Inter_Bold]world.destroyJoint(Joint)[#d2e9cdff][@Inter_Medium].
+        \n\nОсобливості знищення з\'єднань:
+    </string>
+    <string name="geninfo_text_26">[#d2e9cdff][@Inter_Medium]Просто [#FF4949][@Inter_Bold]створіть змінні списки для Створення та Знищення[#d2e9cdff][@Inter_Medium] тіл, а також для з\'єднань. [#FF4949][@Inter_Bold]Після[#d2e9cdff][@Inter_Medium] виклику [#FF4949][@Inter_Bold]world.step()[#d2e9cdff][@Inter_Medium], створюйте та знищуйте тіла та з\'єднаня [#FF4949][@Inter_Bold]з цих списків[#d2e9cdff][@Inter_Medium] і не [#FF4949][@Inter_Bold]забудьте очистити їх[#d2e9cdff][@Inter_Medium] після цього.</string>
+    <string name="geninfo_text_27">[#FF4949][@Inter_Bold]AbstractBody[#d2e9cdff][@Inter_Medium] | [#FF4949][@Inter_Bold]AbstractJoint[#d2e9cdff][@Inter_Medium] — це [#FF4949][@Inter_Bold]обгортки[#d2e9cdff][@Inter_Medium] над [#FF4949][@Inter_Bold]тілом і з\'єднанням[#d2e9cdff][@Inter_Medium], щоб контролювати їх, але я не буду їх пояснювати (поки що вибачте), придумайте самі.</string>
 
-    <string name="geninfo_note_1">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Всі з\'єднання працюють [#FF0100][@Inter_Bold]тільки з двома тілами[#d2e9cdff][@Inter_Medium], з\'єднаними один з одним (bodyА ~ ️bodyВ).</string>
-    <string name="geninfo_note_2">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] По суті, collideConnected означає [#FF0100][@Inter_Bold]включення[#d2e9cdff][@Inter_Medium] або [#FF0100][@Inter_Bold]відключення[#d2e9cdff][@Inter_Medium] правил ContactFilter для з\'єднаних тіл.</string>
-    <string name="geninfo_note_3">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Опорні точки [#FF0100][@Inter_Bold]встановлюються в локальних координатах тіла[#d2e9cdff][@Inter_Medium] і [#FF0100][@Inter_Bold]можуть виходити за межі[#d2e9cdff][@Inter_Medium] розмірів тіла.</string>
+    <string name="geninfo_note_1">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Всі з\'єднання працюють [#FF4949][@Inter_Bold]тільки з двома тілами[#d2e9cdff][@Inter_Medium], з\'єднаними один з одним (bodyА ~ ️bodyВ).</string>
+    <string name="geninfo_note_2">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] По суті, collideConnected означає [#FF4949][@Inter_Bold]включення[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]відключення[#d2e9cdff][@Inter_Medium] правил ContactFilter для з\'єднаних тіл.</string>
+    <string name="geninfo_note_3">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Опорні точки [#FF4949][@Inter_Bold]встановлюються в локальних координатах тіла[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]можуть виходити за межі[#d2e9cdff][@Inter_Medium] розмірів тіла.</string>
+    <string name="geninfo_note_4">
+        "[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Але якщо чесно то вже я так не роблю, я створюю i знищую з\'єднаня коли заманеться головне це робиты в потоцi рендерингу (Gdx.app.postRunnable)"
+        "\n\nУ Мене це своя функцiя для простоти:"
+        "\n\nfun runGDX(block: () -> Unit) ("
+        "\n        Gdx.app.postRunnable ("
+        "\n              block()"
+        "\n        }"
+        "\n}"
+        "\n\nВ мене це працює, якщо в вас виникають проблеми при створеннi чи руйнуваннi спробуйте метод який я описав вище."
+    </string>
 
     <string name="geninfo_longquote_1">
         [#FF4949][@Inter_Bold]true[#d2e9cdff][@Inter_Medium] — bodyA стикається з bodyB, якщо ContactFilter налаштований так, що ці тіла мають стикатися. Якщо ні, то тіла не будуть стикатися, навіть якщо collideConnected = true.\n
@@ -110,6 +135,10 @@
         [#d2e9cdff][@Inter_Regular]Просто треба [#FF4949][@Inter_Bold]дiлити[#d2e9cdff][@Inter_Regular] розмiри ШИРИНИ або ВИСОТИ [#FF4949][@Inter_Bold]свiту Figma не на 100[#d2e9cdff][@Inter_Regular] щоб потiм отримувати вiдсотки, [#FF4949][@Inter_Bold]а на вiдповiднi розмiри[#d2e9cdff][@Inter_Regular] ШИРИНИ або ВИСОТИ [#FF4949][@Inter_Bold]свiту Box2d[#d2e9cdff][@Inter_Regular].
         \n\nТаким чином ми отримаемо [#FF4949][@Inter_Bold]не 1%[#d2e9cdff][@Inter_Regular] (вiдсоток) [#FF4949][@Inter_Bold]а кiлькiсть пiкселiв Figma[#d2e9cdff][@Inter_Regular] що [#FF4949][@Inter_Bold]рiвноцiннi 1 метру в Box2d[#d2e9cdff][@Inter_Regular].
         \n\nI таким чином як ми отримували скiльки вiдсоткiв має ширина або висота кола в свiтi Figma, [#FF4949][@Inter_Bold]можна одразу отримати цi розмiри в метрах для тiл Box2d[#d2e9cdff][@Inter_Regular].
+    </string>
+    <string name="geninfo_longquote_7">
+        [#FF4949][@Inter_Bold]Вибір очевидний, використовуйте константу метра[#d2e9cdff][@Inter_Regular].
+        \n\nОсь тобі плюс, щоб самостійно писати статті, я зрозумів, що можна використовувати константу, а не використовувати відсотки, сподіваюся, це було корисно і для вас.
     </string>
 
     <string-array name="geninfo_arr_2">
@@ -139,6 +168,91 @@
         <item>[#d2e9cdff][@Inter_Regular]Обчисліть, скільки відсотків займає [#FF4949][@Inter_Bold]ШИРИНА[#d2e9cdff][@Inter_Regular] вибраного об\’єкта у світі [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular];</item>
         <item>[#d2e9cdff][@Inter_Regular]Оскільки ми знаємо, що [#FF4949][@Inter_Bold]ШИРИНА[#d2e9cdff][@Inter_Regular] у {LINK=https://libgdx.com/wiki/extensions/physics/box2d#importing-complex-shapes-using-box2d-editor}[_]PhysicBodyEditor[_]{ENDLINK} форми приладу тіла завжди дорівнює [#FF4949][@Inter_Bold]1 метру[#d2e9cdff][@Inter_Regular], нам потрібно обчислити, скільки відсотків займає [#FF4949][@Inter_Bold]ШИРИНА (1 метр)[#d2e9cdff][@Inter_Regular] у світі [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular];</item>
         <item>[#d2e9cdff][@Inter_Regular]Ми розраховуємо, наскільки відсоток ширини об’єкта у світі [#FF4949][@Inter_Bold]Figma більше[#d2e9cdff][@Inter_Regular] або [#FF4949][@Inter_Bold]менше[#d2e9cdff][@Inter_Regular] ніж відсоток [#FF4949][@Inter_Bold]WIDTH (1 метр)[#d2e9cdff][@Inter_Regular] у світі [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular]. (Простими словами, скільки відсотків [#FF4949][@Inter_Bold]WIDTH (1 метр)[#d2e9cdff][@Inter_Regular] зі світу [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular] вміститься у відсотках ширини об’єкта зі світу [#FF4949][@Inter_Bold]Figma[#d2e9cdff][@Inter_Regular]).</item>
+    </string-array>
+    <string-array name="geninfo_arr_8">
+        <item>[#d2e9cdff][@Inter_Regular]Якщо [#FF4949][@Inter_Bold]зруйнувати тіло[#d2e9cdff][@Inter_Regular], до якого кріпиться з\'єднаня, то [#FF4949][@Inter_Bold]зруйнується і саме з\'єднаня[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Якщо зруйновати з\'єднаня, прикріплене до тіла, [#FF4949][@Inter_Bold]буде зруйновано лише з\'єднаня, тіло залишиться недоторканим[#d2e9cdff][@Inter_Regular], і подальшого руйнування не вiдбудеться;</item>
+        <item>[#d2e9cdff][@Inter_Regular]Не забувайте [#FF4949][@Inter_Bold]створювати та знищувати[#d2e9cdff][@Inter_Regular] тіла та з\'єднаня [#FF4949][@Inter_Bold]ПІСЛЯ оновлення світу[#d2e9cdff][@Inter_Regular] (світовий крок), пiсля вiдпрацювання методу [#FF4949][@Inter_Bold]world.step()[#d2e9cdff][@Inter_Regular];</item>
+    </string-array>
+
+    <!--JointMouse-->
+    <string name="jmouse_title_1">I ось… Mouse Joint</string>
+    <string name="jmouse_title_2">Практика. Як створити Mouse Joint?</string>
+
+    <string name="jmouse_sub_title_1">MouseJointDef налаштування:</string>
+    <string name="jmouse_sub_title_2">Обов\'язковi</string>
+    <string name="jmouse_sub_title_3">Не обов\'язковi</string>
+    <string name="jmouse_sub_title_4">Весь код:</string>
+
+    <string name="jmouse_text_1">[#d2e9cdff][@Inter_Medium]Mouse joint — з\'єднання призначенe для переміщення динамічних тіл юзером.</string>
+    <string name="jmouse_text_2" tools:ignore="TypographyDashes">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{LINK=https://medium.com/@veldan1202/lbjt-%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d}[_]General information[_]{ENDLINK}[#d2e9cdff][@Inter_Medium]. А тепер поговоримо про MouseJointDef.</string>
+    <string name="jmouse_text_3">[#d2e9cdff][@Inter_Medium]Значення для [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmouse_text_4">[#d2e9cdff][@Inter_Medium]Наш приклад буде складатися зі [#FF4949][@Inter_Bold]статичної платформи[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]динамічної кулі[#d2e9cdff][@Inter_Medium] на ній. Нам потрібно зробити так, щоб користувач міг торкнутися м\'яча і перемістити його.</string>
+    <string name="jmouse_text_5">[#d2e9cdff][@Inter_Medium]Створіть 2 тіла: [#FF4949][@Inter_Bold]статичну[#d2e9cdff][@Inter_Medium] платформу та [#FF4949][@Inter_Bold]динамічну[#d2e9cdff][@Inter_Medium] кулю.</string>
+    <string name="jmouse_text_6">[#d2e9cdff][@Inter_Medium]Додайте [#FF4949][@Inter_Bold]InputListener[#d2e9cdff][@Inter_Medium] до [#FF4949][@Inter_Bold]stage[#d2e9cdff][@Inter_Medium], на якій малюється UI, і перевизначте методи [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Medium], [#FF4949][@Inter_Bold]touchDragged[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jmouse_text_7">[#d2e9cdff][@Inter_Medium]Створіть довідкові поля для:</string>
+    <string name="jmouse_text_8">[#d2e9cdff][@Inter_Medium]У методі [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmouse_text_9">[#d2e9cdff][@Inter_Medium]У методі [#FF4949][@Inter_Bold]touchDragged[#d2e9cdff][@Inter_Medium] змініть координати [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium] на координати користувача, перетворених на [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmouse_text_10">[#d2e9cdff][@Inter_Medium]У методі [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] зруйнуйте [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium]:</string>
+
+    <string name="jmouse_note_1">[#000000ff][@Inter_Bold](Примітка: )[#FF4949] Чому 1000?[#d2e9cdff][@Inter_Medium] Бо якщо сила надто мала або тіло надто важке, ми не зможемо його зрушити. Сила, у 1000 разів більша за масу bodyB, є достатньою для його переміщення.</string>
+    <string name="jmouse_note_2">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] QueryCallback — має повертати boolean значення, що це означає?</string>
+    <string name="jmouse_note_3" tools:ignore="TypographyDashes">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Vectore2().toBox2d — перетворює розміри з [#FF4949][@Inter_Bold]UI на Box2d[#d2e9cdff][@Inter_Medium] завдяки [#FF4949][@Inter_Bold]константі метра[#d2e9cdff][@Inter_Medium]. Якщо ви не знаєте, як конвертувати розміри з UI в Box2d, прочитайте статтю: [#FF4949][@Inter_Bold]{LINK=https://veldan1202.medium.com/lbjt-%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d#:~:text=sizes%20to%20meters.-,meter%20constant%3A,-It%20turns%20out}[_]Meter Constant[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] або перейдіть на eкран [#FF4949][@Inter_Bold]General Information[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jmouse_note_4" tools:ignore="TypographyDashes">
+        [#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Знищення в методі [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] лише для [#FF4949][@Inter_Bold]демонстрації[#d2e9cdff][@Inter_Medium]. У реальному прикладі вам потрібно буде знищити [#FF4949][@Inter_Bold]тіла[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]з\'єднання після оновлення світу[#d2e9cdff][@Inter_Medium]. Процес руйнування тіл і з\'єднаннь описаний у розділі [#FF4949][@Inter_Bold]{LINK=https://veldan1202.medium.com/lbjt-%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d#:~:text=to%20you%20too.%20%F0%9F%98%8E-,destroy%20the%20joints}[_]Знищити з\'єднаннь[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] або перейдіть на eкран [#FF4949][@Inter_Bold]General Information[#d2e9cdff][@Inter_Medium].
+        \n\nВажливо виконати крок знищення після оновлення світу, щоб забезпечити правильну синхронізацію та уникнути будь-яких потенційних проблем.
+    </string>
+
+    <string name="jmouse_longquote_1">
+        [#FF4949][@Inter_Bold]Значення &lt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями менше 1, наприклад 0,5 або 0,7, з\'єднання буде сильно розтягнутим, нагадуючи [#FF4949][@Inter_Bold]м\’яку пружину[#d2e9cdff][@Inter_Medium].
+        \n\n[#FF4949][@Inter_Bold]Значення &gt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями, більшe за 1, наприклад 2, 5 або 10, з\'єднання розтягнеться дуже мало або зовсім не розтягнеться, подібно до [#FF4949][@Inter_Bold]жорсткої пружини[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="jmouse_longquote_2">
+        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: не пригнічує.
+        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: майже абсолютне придушення.
+        \n\nАле можливі значення більше 1, хоча в таких випадках тіло рухатиметься дуже повільно. З іншого боку, значення, менші за 0, зроблять тiло дуже активним і поводитиметься хаотично, подібно до дикої поведінки.
+        \n[#FF4949][@Inter_Bold]Однак зазвичай не рекомендується використовувати значення за межами діапазону від 0 до 1[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="jmouse_longquote_3">[#d2e9cdff][@Inter_Medium]Це все. Однак у більшості [#FF4949][@Inter_Bold]практичних прикладів[#d2e9cdff][@Inter_Medium] зазвичай включається додаткова перевірка в [#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Medium], щоб перевірити, чи знайдене тіло є [#FF4949][@Inter_Bold]динамічним[#d2e9cdff][@Inter_Medium]. Це пояснюється тим, що [#FF4949][@Inter_Bold]кінематичні[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]статичні[#d2e9cdff][@Inter_Medium] тіла [#FF4949][@Inter_Bold]не є рухомими[#d2e9cdff][@Inter_Medium] і, отже, не мають значення для певних взаємодій.</string>
+
+    <string-array name="jmouse_arr_1" translatable="false">
+        <item>
+            [#d2e9cdff][@Inter_Regular]bodyA — перше тiло з\'єднання.
+            \n([#FF4949][@Inter_Bold]StaticBody[#d2e9cdff][@Inter_Regular])
+        </item>
+        <item>
+            [#d2e9cdff][@Inter_Regular]bodyB — другe тiло з\'єднання.
+            \n([#FF4949][@Inter_Bold]DynamicBody[#d2e9cdff][@Inter_Regular])
+        </item>
+        <item>[#d2e9cdff][@Inter_Regular]collideConnected — &lt;boolean&gt; Визначає, чи має bodyA зіткнутися з bodyB.</item>
+    </string-array>
+    <string-array name="jmouse_arr_2" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]target — Цільова точка &lt;Vector2&gt;, яка збігається з координатами дотику користувача, [#FF4949][@Inter_Bold]змушує тіло A рухатися відносно цієї точки[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxForce — [#FF4949][@Inter_Bold]сила, необхідна для переміщення тілаВ[#d2e9cdff][@Inter_Regular]. Зазвичай виражається як (множник * маса * сила тяжіння) = (1000 * bodyB.mass * сила тяжіння). Я особисто зазвичай роблю це для тестів (1000 * bodyB.mass).</item>
+    </string-array>
+    <string-array name="jmouse_arr_3" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]frequencyHz — також відомий як [#FF4949][@Inter_Bold]швидкість відповіді[#d2e9cdff][@Inter_Regular], працює як пружина між пальцем юзерa [#FF4949][@Inter_Bold](target)[#d2e9cdff][@Inter_Regular] i [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jmouse_arr_4" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]dampingRatio — пригнічує вібрації і приймає значення від [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular] до [#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jmouse_arr_5" translatable="false">
+        <item>[#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] (оскільки він буде [#FF4949][@Inter_Bold]створюватися[#d2e9cdff][@Inter_Regular] та [#FF4949][@Inter_Bold]знищуватися[#d2e9cdff][@Inter_Regular] різними методами);</item>
+        <item>[#FF4949][@Inter_Bold]Тіло[#d2e9cdff][@Inter_Regular], яке буде рухатися;</item>
+        <item>[#FF4949][@Inter_Bold]Координати дотику[#d2e9cdff][@Inter_Regular] в розмірах Box2d;</item>
+        <item>[#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Regular], щоб визначити, чи торкнувся користувач тіла, яке він хоче перемістити.</item>
+    </string-array>
+    <string-array name="jmouse_arr_6" translatable="false">
+        <item>[#FF4949][@Inter_Bold]true[#d2e9cdff][@Inter_Regular] — повертає для [#FF4949][@Inter_Bold]ПРОДОВЖЕННЯ[#d2e9cdff][@Inter_Regular] пошуку fixture тіла.</item>
+        <item>[#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular] — повертає для [#FF4949][@Inter_Bold]ЗУПИНКИ[#d2e9cdff][@Inter_Regular] пошуку fixture тіла.</item>
+    </string-array>
+    <string-array name="jmouse_arr_7" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]Для [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular] встановіть координати дотику в розмірах [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Для [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] встановити значення [#FF4949][@Inter_Bold]null[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Викличiть [#FF4949][@Inter_Bold]QueryAABB[#d2e9cdff][@Inter_Regular] із реалізацією [#FF4949][@Inter_Bold]зворотнього виклику[#d2e9cdff][@Inter_Regular] та координатами [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular] + 0,01;</item>
+        <item>[#d2e9cdff][@Inter_Regular]Ми перевіряємо, чи [#FF4949][@Inter_Bold]зворотній виклик[#d2e9cdff][@Inter_Regular] визначив, що користувач клацнув у межах координат тіла. Якщо ця умова виконується, ми встановлюємо відповідне тіло як [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular]. Потім ми створюємо [#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] між [#FF4949][@Inter_Bold]платформою[#d2e9cdff][@Inter_Regular] та [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] і призначаємо це з’єднання змінній [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Встановлюємо [#FF4949][@Inter_Bold]target[#d2e9cdff][@Inter_Regular] в координатах [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]Ми встановлюємо [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Regular] (1000 * bodyB.mass).</item>
     </string-array>
 
 </resources>

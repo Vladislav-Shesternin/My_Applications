@@ -84,8 +84,8 @@ class BGThanksFrame(override val screenBox2d: AdvancedBox2dScreen): AbstractBody
 
     private fun createJ_Distance() {
         listOf(
-            DistanceJointData(jDistanceRight, Vector2(358f, 8f), Vector2(266f, 36f)),
-            DistanceJointData(jDistanceLeft, Vector2(-342f, 8f), Vector2(5f, 36f)),
+            Static.DistanceJointData(jDistanceRight, Vector2(358f, 8f), Vector2(266f, 36f)),
+            Static.DistanceJointData(jDistanceLeft, Vector2(-342f, 8f), Vector2(5f, 36f)),
         ).onEach { data ->
             createJoint(data.joint, DistanceJointDef().apply {
                 bodyA = bStatic.body
@@ -103,11 +103,13 @@ class BGThanksFrame(override val screenBox2d: AdvancedBox2dScreen): AbstractBody
 
     }
 
-    private data class DistanceJointData(
-        val joint: AbstractJoint<DistanceJoint, DistanceJointDef>,
-        val anchorA: Vector2,
-        val anchorB: Vector2,
-    )
+    object Static {
+        data class DistanceJointData(
+            val joint: AbstractJoint<DistanceJoint, DistanceJointDef>,
+            val anchorA: Vector2,
+            val anchorB: Vector2,
+        )
+    }
 
     // ---------------------------------------------------
     // Logic

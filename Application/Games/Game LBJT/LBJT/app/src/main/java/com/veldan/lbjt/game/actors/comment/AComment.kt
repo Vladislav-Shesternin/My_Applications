@@ -5,7 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
 import com.veldan.lbjt.game.actors.AIcon
-import com.veldan.lbjt.game.actors.label.SpinningLabel
+import com.veldan.lbjt.game.actors.label.ASpinningLabel
 import com.veldan.lbjt.game.data.User
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.actor.setBounds
@@ -13,7 +13,6 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.font.FontParameter
 import com.veldan.lbjt.game.utils.font.FontParameter.CharType
-import com.veldan.lbjt.util.log
 
 class AComment(override val screen: AdvancedScreen): AdvancedGroup() {
 
@@ -22,7 +21,7 @@ class AComment(override val screen: AdvancedScreen): AdvancedGroup() {
     private val parameter = FontParameter()
 
     private val icon     = AIcon(screen)
-    private val nickname = SpinningLabel(screen,"", Label.LabelStyle(screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.ALL).setSize(35)), GameColor.textGreen), alignment = Align.left)
+    private val nickname = ASpinningLabel(screen,"", Label.LabelStyle(screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.ALL).setSize(35)), GameColor.textGreen), alignment = Align.left)
     private val panel    = Image(screen.game.themeUtil.assets.PANEL)
     private val comment  = Label("", Label.LabelStyle(screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setCharacters(CharType.ALL).setSize(20)), GameColor.textGreen))
 
@@ -70,11 +69,6 @@ class AComment(override val screen: AdvancedScreen): AdvancedGroup() {
         user.icon    ?.let { icon.updateIcon(it)  }
         user.nickname?.let { nickname.setText(it) }
         user.comment ?.let { comment.setText(it)  }
-    }
-
-    override fun dispose() {
-        super.dispose()
-        log("DIK")
     }
 
 }

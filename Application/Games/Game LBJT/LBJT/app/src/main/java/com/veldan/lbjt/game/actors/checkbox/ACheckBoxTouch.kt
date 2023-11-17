@@ -15,7 +15,7 @@ import kotlin.math.round
 
 class ACheckBoxTouch(
     override val screen: AdvancedScreen,
-    type: Type? = null,
+    type: Static.Type? = null,
 ) : ACheckBox(screen, type) {
 
     override fun getListener() = object : InputListener() {

@@ -19,7 +19,7 @@ import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.addProcessors
 import com.veldan.lbjt.game.utils.disposeAll
 import com.veldan.lbjt.game.utils.font.FontGenerator
-import com.veldan.lbjt.game.utils.font.FontGenerator.FontPath
+import com.veldan.lbjt.game.utils.font.FontGenerator.Companion.FontPath
 import com.veldan.lbjt.util.cancelCoroutinesAll
 import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
@@ -79,7 +79,8 @@ abstract class AdvancedScreen(
         log("dispose AdvancedScreen: ${this::class.java.name.substringAfterLast('.')}")
         disposeAll(
             stageBack, stageUI, drawerUtil,
-            fontGeneratorInter_ExtraBold, fontGeneratorInter_Medium, fontGeneratorInter_Black
+            fontGeneratorInter_Black, fontGeneratorInter_ExtraBold, fontGeneratorInter_Bold,
+            fontGeneratorInter_Medium, fontGeneratorInter_Regular, fontGeneratorInter_Light
         )
         disposableSet.disposeAll()
         inputMultiplexer.clear()

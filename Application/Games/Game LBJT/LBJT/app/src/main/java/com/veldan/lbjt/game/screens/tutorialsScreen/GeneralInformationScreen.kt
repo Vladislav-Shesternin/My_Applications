@@ -1,5 +1,6 @@
 package com.veldan.lbjt.game.screens.tutorialsScreen
 
+import com.badlogic.gdx.assets.AssetManager
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.actors.scroll.tutorial.AGeneralInformationScrollPanel
 import com.veldan.lbjt.game.manager.SpriteManager
@@ -13,13 +14,14 @@ import com.veldan.lbjt.game.utils.region
 
 class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() {
 
+    private val assetManager = AssetManager()
+
     // Assets
-    private var isFinishLoading         = false
-    private val loadableTextureDataList = SpriteManager.EnumTexture_GeneralInformation.values().map { it.data }.toMutableList()
-    private val spriteUtilGeneralInfo   by lazy { SpriteUtil.GeneralInformation() }
+    private var isFinishLoading = false
+    private var spriteUtilGeneralInfo: SpriteUtil.GeneralInformation? = null
 
     // Actor
-    private val aGeneralInformationScrollPanel by lazy { AGeneralInformationScrollPanel(this, spriteUtilGeneralInfo) }
+    private var aGeneralInformationScrollPanel: AGeneralInformationScrollPanel? = null
 
     override fun show() {
         stageUI.root.animHide()
@@ -33,17 +35,24 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
     }
 
     private fun loadAssets() {
+        game.spriteManager.assetManager = assetManager
+
         with(game.spriteManager) {
-            loadableTextureList = loadableTextureDataList
+            loadableAtlasList   = SpriteManager.EnumAtlas_GeneralInformation.values().map { it.data }.toMutableList()
+            loadAtlas()
+            loadableTextureList = SpriteManager.EnumTexture_GeneralInformation.values().map { it.data }.toMutableList()
             loadTexture()
         }
     }
 
     private fun loadingAssets() {
         if (isFinishLoading.not()) {
-            if (game.assetManager.update(16)) {
+            if (assetManager.update(16)) {
                 isFinishLoading = true
                 initAssets()
+
+                spriteUtilGeneralInfo          = SpriteUtil.GeneralInformation()
+                aGeneralInformationScrollPanel = AGeneralInformationScrollPanel(this, spriteUtilGeneralInfo!!)
 
                 super.show()
             }
@@ -51,7 +60,7 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
     }
 
     private fun initAssets() {
-        game.spriteManager.initTexture()
+        game.spriteManager.initAtlasAndTexture()
     }
 
     override fun AdvancedStage.addActorsOnStageUI() {
@@ -60,8 +69,9 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
     }
 
     override fun dispose() {
-        loadableTextureDataList.onEach { game.assetManager.unload(it.path) }
         super.dispose()
+        assetManager.dispose()
+        game.spriteManager.assetManager = game.assetManager
     }
 
     // ---------------------------------------------------
@@ -70,7 +80,7 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
 
     private fun AdvancedStage.addGeneralInformationScrollPanel() {
         addActor(aGeneralInformationScrollPanel)
-        aGeneralInformationScrollPanel.setBounds(25f, 25f, 650f, 1350f)
+        aGeneralInformationScrollPanel?.setBounds(25f, 0f, 650f, 1400f)
     }
 
 }

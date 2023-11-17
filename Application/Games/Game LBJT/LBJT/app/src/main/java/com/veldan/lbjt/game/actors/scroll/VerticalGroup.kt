@@ -12,8 +12,8 @@ class VerticalGroup(
     val gap      : Float = 0f,
     val startGap : Float = gap,
     val endGap   : Float = gap,
-    val alignment: Alignment = Alignment.BOTTOM,
-    val direction: Direction = Direction.UP,
+    val alignment: Static.Alignment = Static.Alignment.TOP,
+    val direction: Static.Direction = Static.Direction.DOWN,
 ) : AdvancedGroup() {
 
     private var ny = 0f
@@ -30,7 +30,7 @@ class VerticalGroup(
         newHeight -= gap
         newHeight += startGap + endGap
 
-        if (alignment == Alignment.TOP && parent.height > newHeight) newHeight = parent.height
+        if (alignment == Static.Alignment.TOP && parent.height > newHeight) newHeight = parent.height
         return newHeight
     }
 
@@ -43,20 +43,20 @@ class VerticalGroup(
 
     private fun placeChildren() {
         when (alignment) {
-            Alignment.TOP    -> {
+            Static.Alignment.TOP    -> {
                 ny = prefHeight
 
                 when (direction) {
-                    Direction.DOWN -> children.onEachIndexed { index, a -> a.moveFromTOP(index) }
-                    Direction.UP   -> children.reversed().onEachIndexed { index, a -> a.moveFromTOP(index) }
+                    Static.Direction.DOWN -> children.onEachIndexed { index, a -> a.moveFromTOP(index) }
+                    Static.Direction.UP   -> children.reversed().onEachIndexed { index, a -> a.moveFromTOP(index) }
                 }
             }
-            Alignment.BOTTOM -> {
+            Static.Alignment.BOTTOM -> {
                 ny = 0f
 
                 when (direction) {
-                    Direction.DOWN -> children.reversed().onEachIndexed { index, a -> a.moveFromBOTTOM(index) }
-                    Direction.UP   -> children.onEachIndexed { index, a -> a.moveFromBOTTOM(index) }
+                    Static.Direction.DOWN    -> children.reversed().onEachIndexed { index, a -> a.moveFromBOTTOM(index) }
+                    Static.Direction.UP -> children.onEachIndexed { index, a -> a.moveFromBOTTOM(index) }
                 }
             }
         }
@@ -75,13 +75,14 @@ class VerticalGroup(
         ny += height
     }
 
+    object Static {
+        enum class Direction {
+            UP, DOWN
+        }
 
-    enum class Direction {
-        UP, DOWN
-    }
-
-    enum class Alignment {
-        TOP, BOTTOM
+        enum class Alignment {
+            TOP, BOTTOM
+        }
     }
 
 }

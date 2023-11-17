@@ -11,8 +11,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.AIndicator
-import com.veldan.lbjt.game.actors.dialog.ADialogComment.State.DEFAULT
-import com.veldan.lbjt.game.actors.dialog.ADialogComment.State.ERROR
+import com.veldan.lbjt.game.actors.dialog.ADialogComment
 import com.veldan.lbjt.game.actors.image.AImage
 import com.veldan.lbjt.game.box2d.AbstractBody
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
@@ -311,10 +310,10 @@ class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
 
                     if (text.length > COMMENT_LENGTH || text.isBlank()) {
                         bRegularBtnPublish.getActor()?.disable()
-                        ERROR
+                        ADialogComment.Static.State.ERROR
                     } else {
                         bRegularBtnPublish.getActor()?.enable()
-                        DEFAULT
+                        ADialogComment.Static.State.DEFAULT
                     }.also { setState(it) }
                 }
             }

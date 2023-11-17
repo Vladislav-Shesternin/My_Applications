@@ -51,21 +51,48 @@ class SpriteManager(var assetManager: AssetManager) {
         VELDAN_ICON(   TextureData("textures/veldan_icon.png")   ),
     }
 
+    enum class EnumAtlas_GeneralInformation(val data: AtlasData) {
+        ANIM_OBAMA(AtlasData("atlas/anim/tutorials/general_information/obama.atlas")),
+    }
     enum class EnumTexture_GeneralInformation(val data: TextureData) {
-        I1( TextureData("textures/general_information/i1.png") ),
-        I2( TextureData("textures/general_information/i2.png") ),
-        I3( TextureData("textures/general_information/i3.png") ),
-        I4( TextureData("textures/general_information/i4.png") ),
-        I5( TextureData("textures/general_information/i5.png") ),
-        I6( TextureData("textures/general_information/i6.png") ),
-        I7( TextureData("textures/general_information/i7.png") ),
-        I8( TextureData("textures/general_information/i8.png") ),
-        I9( TextureData("textures/general_information/i9.png") ),
-        I10(TextureData("textures/general_information/i10.png")),
-        I11(TextureData("textures/general_information/i11.png")),
-        I12(TextureData("textures/general_information/i12.png")),
+        I1( TextureData("textures/tutorials/general_information/i1.png") ),
+        I2( TextureData("textures/tutorials/general_information/i2.png") ),
+        I3( TextureData("textures/tutorials/general_information/i3.png") ),
+        I4( TextureData("textures/tutorials/general_information/i4.png") ),
+        I5( TextureData("textures/tutorials/general_information/i5.png") ),
+        I6( TextureData("textures/tutorials/general_information/i6.png") ),
+        I7( TextureData("textures/tutorials/general_information/i7.png") ),
+        I8( TextureData("textures/tutorials/general_information/i8.png") ),
+        I9( TextureData("textures/tutorials/general_information/i9.png") ),
+        I10(TextureData("textures/tutorials/general_information/i10.png")),
+        I11(TextureData("textures/tutorials/general_information/i11.png")),
+        I12(TextureData("textures/tutorials/general_information/i12.png")),
     }
 
+    enum class EnumAtlas_JointMouse(val data: AtlasData) {
+        ANIM_VIDEO_1_0(AtlasData("atlas/anim/tutorials/joint_mouse/video_1/video_1_0.atlas")),
+        ANIM_VIDEO_1_1(AtlasData("atlas/anim/tutorials/joint_mouse/video_1/video_1_1.atlas")),
+        ANIM_VIDEO_1_2(AtlasData("atlas/anim/tutorials/joint_mouse/video_1/video_1_2.atlas")),
+        ANIM_VIDEO_1_3(AtlasData("atlas/anim/tutorials/joint_mouse/video_1/video_1_3.atlas")),
+
+        ANIM_VIDEO_2_0(AtlasData("atlas/anim/tutorials/joint_mouse/video_2/video_2_0.atlas")),
+        ANIM_VIDEO_2_1(AtlasData("atlas/anim/tutorials/joint_mouse/video_2/video_2_1.atlas")),
+        ANIM_VIDEO_2_2(AtlasData("atlas/anim/tutorials/joint_mouse/video_2/video_2_2.atlas")),
+        ANIM_VIDEO_2_3(AtlasData("atlas/anim/tutorials/joint_mouse/video_2/video_2_3.atlas")),
+        ANIM_VIDEO_2_4(AtlasData("atlas/anim/tutorials/joint_mouse/video_2/video_2_4.atlas")),
+        ANIM_VIDEO_2_5(AtlasData("atlas/anim/tutorials/joint_mouse/video_2/video_2_5.atlas")),
+
+        ANIM_VIDEO_3_0(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_0.atlas")),
+        ANIM_VIDEO_3_1(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_1.atlas")),
+        ANIM_VIDEO_3_2(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_2.atlas")),
+        ANIM_VIDEO_3_3(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_3.atlas")),
+        ANIM_VIDEO_3_4(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_4.atlas")),
+        ANIM_VIDEO_3_5(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_5.atlas")),
+        ANIM_VIDEO_3_6(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_6.atlas")),
+    }
+    enum class EnumTexture_JointMouse(val data: TextureData) {
+        I1(TextureData("textures/tutorials/joint_mouse/i1.png")),
+    }
 
     data class AtlasData(val path: String) {
         lateinit var atlas: TextureAtlas

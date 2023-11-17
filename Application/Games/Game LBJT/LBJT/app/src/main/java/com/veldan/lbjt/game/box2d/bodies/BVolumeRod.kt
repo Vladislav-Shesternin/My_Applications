@@ -9,7 +9,7 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 
 class BVolumeRod(
     override val screenBox2d: AdvancedBox2dScreen,
-    val type: Type
+    val type: Static.Type
 ): AbstractBody() {
     override val name       = "circle"
     override val bodyDef    = BodyDef().apply {
@@ -24,16 +24,18 @@ class BVolumeRod(
 
     fun getActor(): AImage? = actor as? AImage
 
-    private fun getRegionByType(type: Type) = when(type) {
-        Type.QUIET  -> screenBox2d.game.themeUtil.assets.ROD_QUIET
-        Type.LOUDER -> screenBox2d.game.themeUtil.assets.ROD_LOUDER
+    private fun getRegionByType(type: Static.Type) = when(type) {
+        Static.Type.QUIET  -> screenBox2d.game.themeUtil.assets.ROD_QUIET
+        Static.Type.LOUDER -> screenBox2d.game.themeUtil.assets.ROD_LOUDER
     }
 
     // ---------------------------------------------------
     // Logic
     // ---------------------------------------------------
 
-    enum class Type {
-        QUIET, LOUDER
+    object Static {
+        enum class Type {
+            QUIET, LOUDER
+        }
     }
 }
