@@ -151,7 +151,15 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
 
         val tmpAnchorA = Vector2(88f, 5f)
         val tmpAnchorB = Vector2(77f, 4f)
-        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawJoint(alpha, bSeparator, bIcon, tmpAnchorA, tmpAnchorB) })
+        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
+            drawJoint(
+                alpha,
+                bSeparator,
+                bIcon,
+                tmpAnchorA,
+                tmpAnchorB
+            )
+        })
     }
 
     private fun createJ_BtnWriteComment() {
@@ -179,7 +187,7 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
         val tmpLeftAnchorB  = Vector2(53f, 96f)
         val tmpRightAnchorA = Vector2(628f, 396f)
         val tmpRightAnchorB = Vector2(447f, 96f)
-        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
+        bSeparator.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
             drawJoint(alpha, bSeparator, bFrameNickname, tmpLeftAnchorA, tmpLeftAnchorB)
             drawJoint(alpha, bSeparator, bFrameNickname, tmpRightAnchorA, tmpRightAnchorB)
         })
@@ -246,7 +254,7 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
             dampingRatio = 0.5f
         })
 
-        _bodyA.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> _joint.drawJoint(alpha) })
+        _bodyA.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha -> _joint.drawJoint(alpha) })
     }
 
     // ---------------------------------------------------

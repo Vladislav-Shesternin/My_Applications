@@ -32,6 +32,7 @@
     <string name="joint_description">[#bc380eff]З’єднання{CLEARCOLOR}[#d2e9cdff] - служать для {GRADIENT=bc380eff;d2e9cdff;1.0;1.0}з’єднання двох тіл{ENDGRADIENT} одне з одним. Типовими прикладами в іграх є ганчіркові ляльки, гойдалки та шківи.</string>
     <string name="test_stand">випробувальний стенд</string>
     <string name="next">Далi</string>
+    <string name="play">Грати</string>
     <string name="general_information">{JUMP=0.5;1.0;1.0}Загальна інформація[]</string>
     <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Основне джерело інформації.[_]{ENDLINK}</string>
 
@@ -178,6 +179,7 @@
     <!--JointMouse-->
     <string name="jmouse_title_1">I ось… Mouse Joint</string>
     <string name="jmouse_title_2">Практика. Як створити Mouse Joint?</string>
+    <string name="jmouse_title_3">Ще кілька прикладів (круті ефекти)</string>
 
     <string name="jmouse_sub_title_1">MouseJointDef налаштування:</string>
     <string name="jmouse_sub_title_2">Обов\'язковi</string>
@@ -194,6 +196,7 @@
     <string name="jmouse_text_8">[#d2e9cdff][@Inter_Medium]У методі [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Medium]:</string>
     <string name="jmouse_text_9">[#d2e9cdff][@Inter_Medium]У методі [#FF4949][@Inter_Bold]touchDragged[#d2e9cdff][@Inter_Medium] змініть координати [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium] на координати користувача, перетворених на [#FF4949][@Inter_Bold]Box2d[#d2e9cdff][@Inter_Medium]:</string>
     <string name="jmouse_text_10">[#d2e9cdff][@Inter_Medium]У методі [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] зруйнуйте [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmouse_text_11">[#d2e9cdff][@Inter_Medium]Ще один чудовий ефект — якщо ви встановите [#FF4949][@Inter_Bold]target[#d2e9cdff][@Inter_Medium] як[#FF4949][@Inter_Bold] bodyB.position [#d2e9cdff][@Inter_Medium]у методі [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Medium], решта буде як у [#FF4949][@Inter_Bold]попередньому прикладі[#d2e9cdff][@Inter_Medium]:</string>
 
     <string name="jmouse_note_1">[#000000ff][@Inter_Bold](Примітка: )[#FF4949] Чому 1000?[#d2e9cdff][@Inter_Medium] Бо якщо сила надто мала або тіло надто важке, ми не зможемо його зрушити. Сила, у 1000 разів більша за масу bodyB, є достатньою для його переміщення.</string>
     <string name="jmouse_note_2">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] QueryCallback — має повертати boolean значення, що це означає?</string>
@@ -202,6 +205,7 @@
         [#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Знищення в методі [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] лише для [#FF4949][@Inter_Bold]демонстрації[#d2e9cdff][@Inter_Medium]. У реальному прикладі вам потрібно буде знищити [#FF4949][@Inter_Bold]тіла[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]з\'єднання після оновлення світу[#d2e9cdff][@Inter_Medium]. Процес руйнування тіл і з\'єднаннь описаний у розділі [#FF4949][@Inter_Bold]{LINK=https://veldan1202.medium.com/lbjt-%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d#:~:text=to%20you%20too.%20%F0%9F%98%8E-,destroy%20the%20joints}[_]Знищити з\'єднаннь[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] або перейдіть на eкран [#FF4949][@Inter_Bold]General Information[#d2e9cdff][@Inter_Medium].
         \n\nВажливо виконати крок знищення після оновлення світу, щоб забезпечити правильну синхронізацію та уникнути будь-яких потенційних проблем.
     </string>
+    <string name="jmouse_note_5">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Для цих прикладів [#FF4949][@Inter_Bold]буде використовуватися попередній код[#d2e9cdff][@Inter_Medium], просто його потрібно трохи змінити.</string>
 
     <string name="jmouse_longquote_1">
         [#FF4949][@Inter_Bold]Значення &lt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями менше 1, наприклад 0,5 або 0,7, з\'єднання буде сильно розтягнутим, нагадуючи [#FF4949][@Inter_Bold]м\’яку пружину[#d2e9cdff][@Inter_Medium].
@@ -214,6 +218,10 @@
         \n[#FF4949][@Inter_Bold]Однак зазвичай не рекомендується використовувати значення за межами діапазону від 0 до 1[#d2e9cdff][@Inter_Medium].
     </string>
     <string name="jmouse_longquote_3">[#d2e9cdff][@Inter_Medium]Це все. Однак у більшості [#FF4949][@Inter_Bold]практичних прикладів[#d2e9cdff][@Inter_Medium] зазвичай включається додаткова перевірка в [#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Medium], щоб перевірити, чи знайдене тіло є [#FF4949][@Inter_Bold]динамічним[#d2e9cdff][@Inter_Medium]. Це пояснюється тим, що [#FF4949][@Inter_Bold]кінематичні[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]статичні[#d2e9cdff][@Inter_Medium] тіла [#FF4949][@Inter_Bold]не є рухомими[#d2e9cdff][@Inter_Medium] і, отже, не мають значення для певних взаємодій.</string>
+    <string name="jmouse_longquote_4">
+        [#d2e9cdff][@Inter_Medium]Тіло притягується до дотиків користувача, [#FF4949][@Inter_Bold]як магніт[#d2e9cdff][@Inter_Medium], хіба це не диво?
+        \n\n[#FF4949][@Inter_Bold]Як це круто!)[#d2e9cdff][@Inter_Medium]
+    </string>
 
     <string-array name="jmouse_arr_1" translatable="false">
         <item>
@@ -253,6 +261,10 @@
         <item>[#d2e9cdff][@Inter_Regular]Ми перевіряємо, чи [#FF4949][@Inter_Bold]зворотній виклик[#d2e9cdff][@Inter_Regular] визначив, що користувач клацнув у межах координат тіла. Якщо ця умова виконується, ми встановлюємо відповідне тіло як [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular]. Потім ми створюємо [#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] між [#FF4949][@Inter_Bold]платформою[#d2e9cdff][@Inter_Regular] та [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] і призначаємо це з’єднання змінній [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Regular];</item>
         <item>[#d2e9cdff][@Inter_Regular]Встановлюємо [#FF4949][@Inter_Bold]target[#d2e9cdff][@Inter_Regular] в координатах [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular];</item>
         <item>[#d2e9cdff][@Inter_Regular]Ми встановлюємо [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Regular] (1000 * bodyB.mass).</item>
+    </string-array>
+    <string-array name="jmouse_arr_8" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]У методі [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Regular] налаштуйте [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] як [#FF4949][@Inter_Bold]ball[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]У методі [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Regular] (Видалити / Закоментувати) [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] і [#FF4949][@Inter_Bold]QueryAABB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
 
 </resources>

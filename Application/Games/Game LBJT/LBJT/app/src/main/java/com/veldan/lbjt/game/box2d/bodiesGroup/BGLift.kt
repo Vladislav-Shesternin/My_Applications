@@ -155,7 +155,7 @@ class BGLift(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
         val rightAnchorA = Vector2(621f, 1199f)
         val rightAnchorB = Vector2(33f, 160f)
 
-        bStatic.actor?.postDrawArray?.add(AdvancedGroup.Drawer { alpha ->
+        bStatic.actor?.postDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
             drawJoint(alpha, bStatic, bLiftPlatform, leftAnchorA, leftAnchorB)
             drawJoint(alpha, bStatic, bLever, rightAnchorA, rightAnchorB)
         })

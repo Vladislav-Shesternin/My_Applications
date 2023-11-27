@@ -89,6 +89,9 @@ class SpriteManager(var assetManager: AssetManager) {
         ANIM_VIDEO_3_4(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_4.atlas")),
         ANIM_VIDEO_3_5(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_5.atlas")),
         ANIM_VIDEO_3_6(AtlasData("atlas/anim/tutorials/joint_mouse/video_3/video_3_6.atlas")),
+
+        MEM_1(AtlasData("atlas/anim/tutorials/joint_mouse/mem/mem_1.atlas")),
+        MEM_2(AtlasData("atlas/anim/tutorials/joint_mouse/mem/mem_2.atlas")),
     }
     enum class EnumTexture_JointMouse(val data: TextureData) {
         I1(TextureData("textures/tutorials/joint_mouse/i1.png")),

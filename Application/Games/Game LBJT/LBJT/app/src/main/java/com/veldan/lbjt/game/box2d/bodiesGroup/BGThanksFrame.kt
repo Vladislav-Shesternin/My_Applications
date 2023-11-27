@@ -98,7 +98,7 @@ class BGThanksFrame(override val screenBox2d: AdvancedBox2dScreen): AbstractBody
                 frequencyHz  = 0.5f
                 dampingRatio = 0.1f
             })
-            bThanksFrame.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> data.joint.drawJoint(alpha) })
+            bThanksFrame.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha -> data.joint.drawJoint(alpha) })
         }
 
     }

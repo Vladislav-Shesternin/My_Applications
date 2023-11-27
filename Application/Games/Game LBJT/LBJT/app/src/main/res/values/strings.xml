@@ -35,6 +35,7 @@
     <string name="joint_description">[#bc380eff]Joints{CLEARCOLOR}[#d2e9cdff] - serve to {GRADIENT=bc380eff;d2e9cdff;1.0;1.0}connect two bodies{ENDGRADIENT} to each other. Typical examples in games are rag dolls, swings, and pulleys.</string>
     <string name="test_stand">test stand</string>
     <string name="next">Next</string>
+    <string name="play">Play</string>
     <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Main source of information.[_]{ENDLINK}</string>
     <string name="PS_Vel_daN" translatable="false">[#FFFFFF]PS. [#5BD344]Vel_daN[#FFFFFF]: Love what You DO [#5BD344]❤[#FFFFFF].</string>
 
@@ -271,6 +272,7 @@
     <!--JointMouse-->
     <string name="jmouse_title_1">And so the… Mouse Joint</string>
     <string name="jmouse_title_2">Practice. How to create a Mouse Joint?</string>
+    <string name="jmouse_title_3">A few more examples (cool effects)</string>
 
     <string name="jmouse_sub_title_1">MouseJointDef settings:</string>
     <string name="jmouse_sub_title_2">Mandatory</string>
@@ -287,6 +289,7 @@
     <string name="jmouse_text_8">[#d2e9cdff][@Inter_Medium]In the [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Medium] method:</string>
     <string name="jmouse_text_9">[#d2e9cdff][@Inter_Medium]In the [#FF4949][@Inter_Bold]touchDragged[#d2e9cdff][@Inter_Medium] method, change the coordinates of the [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium] to the coordinates of the [#FF4949][@Inter_Bold]user converted to Box2d[#d2e9cdff][@Inter_Medium]:</string>
     <string name="jmouse_text_10">[#d2e9cdff][@Inter_Medium]In the [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] method, [#FF4949][@Inter_Bold]destroy[#d2e9cdff][@Inter_Medium] the [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmouse_text_11">[#d2e9cdff][@Inter_Medium]Another cool effect is if you set the [#FF4949][@Inter_Bold]target[#d2e9cdff][@Inter_Medium] as[#FF4949][@Inter_Bold] bodyB.position [#d2e9cdff][@Inter_Medium]in the[#FF4949][@Inter_Bold] touchDown[#d2e9cdff][@Inter_Medium] method,  the rest is as in the [#FF4949][@Inter_Bold]previous example[#d2e9cdff][@Inter_Medium]:</string>
 
     <string name="jmouse_note_1">[#000000ff][@Inter_Bold](Note: )[#FF4949] Why 1000?[#d2e9cdff][@Inter_Medium] Because if the force is too small or the body is too heavy, we won\’t be able to move it. A force 1000 times the mass of bodyB is sufficient to move it.</string>
     <string name="jmouse_note_2">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] QueryCallback — should return a boolean value, what does that mean?</string>
@@ -295,6 +298,7 @@
         [#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] The destruction in the [#FF4949][@Inter_Bold]touchUp[#d2e9cdff][@Inter_Medium] method is only for [#FF4949][@Inter_Bold]demonstration purposes[#d2e9cdff][@Inter_Medium]. In a real example, you would need to destroy [#FF4949][@Inter_Bold]bodies[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]joints after updating the world[#d2e9cdff][@Inter_Medium]. The process of destroying bodies and joints is described in [#FF4949][@Inter_Bold]{LINK=https://veldan1202.medium.com/lbjt-%D1%81ommon-in-joints-1%EF%B8%8F%E2%83%A3-1677db08541d#:~:text=to%20you%20too.%20%F0%9F%98%8E-,destroy%20the%20joints}[_]Destroy the joints[_]{ENDLINK}[#d2e9cdff][@Inter_Medium] or go to the [#FF4949][@Inter_Bold]General Information[#d2e9cdff][@Inter_Medium] screen.
         \n\nIt is important to perform the destruction step after updating the world to ensure proper synchronization and avoid any potential issues.
     </string>
+    <string name="jmouse_note_5">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] For these examples, the [#FF4949][@Inter_Bold]previous code will be used[#d2e9cdff][@Inter_Medium], it just needs to be changed a little.</string>
 
     <string name="jmouse_codepanel_1" translatable="false">
         "val platform = StaticBody"
@@ -388,6 +392,28 @@
         "\n        }"
         "\n})"
     </string>
+    <string name="jmouse_codepanel_8" translatable="false">
+        "override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {"
+        "\n     touchPoint.set(Vector2(x, y).toBox2d)"
+        "\n     world.createJoint(MouseJointDef().apply {"
+        "\n              bodyA = platform"
+        "\n/*1*/      bodyB = ball"
+        "\n              collideConnected = true"
+        "\n              target.set(touchPoint)"
+        "\n              maxForce = 1000 * bodyB.mass"
+        "\n     })"
+        "\n     return true"
+        "\n}"
+    </string>
+    <string name="jmouse_codepanel_9" translatable="false">
+        "world.createJoint(MouseJointDef().apply {"
+        "\n                         bodyA = platform"
+        "\n                         bodyB = ball"
+        "\n                         collideConnected = true"
+        "\n/* UPDATE */ target.set(bodyB.position)"
+        "\n                         maxForce = 1000 * bodyB.mass"
+        "\n})"
+    </string>
 
     <string name="jmouse_longquote_1">
         [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Medium]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Medium].
@@ -400,6 +426,10 @@
         \n[#FF4949][@Inter_Bold]However, it is generally not recommended to use values outside the range of 0 to 1[#d2e9cdff][@Inter_Medium].
     </string>
     <string name="jmouse_longquote_3">[#d2e9cdff][@Inter_Medium]That\’s all. However, in most [#FF4949][@Inter_Bold]practical examples[#d2e9cdff][@Inter_Medium], it is common to include an additional check in the [#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Medium] to verify if the found body is [#FF4949][@Inter_Bold]dynamic[#d2e9cdff][@Inter_Medium]. This is because [#FF4949][@Inter_Bold]kinematic[#d2e9cdff][@Inter_Medium] or [#FF4949][@Inter_Bold]static[#d2e9cdff][@Inter_Medium] bodies are [#FF4949][@Inter_Bold]not movable[#d2e9cdff][@Inter_Medium] and, therefore, not relevant for certain interactions.</string>
+    <string name="jmouse_longquote_4">
+        [#d2e9cdff][@Inter_Medium]The body is attracted to the user\’s touch [#FF4949][@Inter_Bold]like a magnet[#d2e9cdff][@Inter_Medium], isn\’t it a miracle?
+        \n\n[#FF4949][@Inter_Bold]How cool is that!)[#d2e9cdff][@Inter_Medium]
+    </string>
 
     <string-array name="jmouse_arr_1" translatable="false">
         <item>
@@ -439,6 +469,10 @@
         <item>[#d2e9cdff][@Inter_Regular]We check if the [#FF4949][@Inter_Bold]callback[#d2e9cdff][@Inter_Regular] has determined that the user clicked within the coordinates of the body fixture. If this condition is met, we set the corresponding body as the [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular]. Then, we create a [#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] between the [#FF4949][@Inter_Bold]platform[#d2e9cdff][@Inter_Regular] and the [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] and assign this connection to the variable [#FF4949][@Inter_Bold]mouseJoint[#d2e9cdff][@Inter_Regular];</item>
         <item>[#d2e9cdff][@Inter_Regular]We set the [#FF4949][@Inter_Bold]target[#d2e9cdff][@Inter_Regular] in the coordinates of the [#FF4949][@Inter_Bold]touchPoint[#d2e9cdff][@Inter_Regular];</item>
         <item>[#d2e9cdff][@Inter_Regular]We set the [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Regular] (1000 * bodyB.mass).</item>
+    </string-array>
+    <string-array name="jmouse_arr_8" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]In the [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Regular] method set [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] like a [#FF4949][@Inter_Bold]ball[#d2e9cdff][@Inter_Regular];</item>
+        <item>[#d2e9cdff][@Inter_Regular]In the [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Regular] method (Delete / Comment out) [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] and [#FF4949][@Inter_Bold]QueryAABB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
 
 

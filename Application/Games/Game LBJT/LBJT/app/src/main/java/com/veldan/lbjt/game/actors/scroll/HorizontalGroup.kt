@@ -19,7 +19,7 @@ class HorizontalGroup(
 
     override fun getPrefWidth(): Float {
         newWidth = 0f
-        children.onEach { newWidth += it.height + gap }
+        children.onEach { newWidth += it.width + gap }
 
         newWidth -= gap
         newWidth += startGap + endGap

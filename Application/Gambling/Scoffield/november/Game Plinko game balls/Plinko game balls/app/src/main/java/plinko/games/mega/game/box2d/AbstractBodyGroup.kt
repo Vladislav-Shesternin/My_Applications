@@ -1,0 +1,103 @@
+package plinko.games.mega.game.box2d
+
+import com.badlogic.gdx.math.Vector2
+import com.badlogic.gdx.physics.box2d.Body
+import com.badlogic.gdx.physics.box2d.Joint
+import com.badlogic.gdx.physics.box2d.JointDef
+import com.badlogic.gdx.utils.Disposable
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import plinko.games.mega.game.utils.SizeStandardizer
+import plinko.games.mega.game.utils.actor.setBounds
+import plinko.games.mega.game.utils.advanced.AdvancedBox2dScreen
+import plinko.games.mega.game.utils.advanced.AdvancedGroup
+import plinko.games.mega.game.utils.disposeAll
+import plinko.games.mega.game.utils.toB2
+import plinko.games.mega.util.cancelCoroutinesAll
+import plinko.games.mega.util.log
+
+abstract class AbstractBodyGroup: Destroyable {
+    abstract val screenBox2d: AdvancedBox2dScreen
+    abstract val standartW: Float
+
+    private val _bodyList  = mutableListOf<AbstractBody>()
+    private val _actorList = mutableListOf<AdvancedGroup>()
+    val disposableSet      = mutableSetOf<Disposable>()
+
+    val bodyList get()  = _bodyList.toList()
+    val actorList get() = _actorList.toList()
+
+    private val standardizer = SizeStandardizer()
+    val Vector2.toStandart get() = standardizer.scope { toStandart }
+    val Float.toStandart   get() = standardizer.scope { toStandart }
+
+    var coroutine: CoroutineScope? = null
+        private set
+
+    val position  = Vector2()
+    val size      = Vector2()
+
+    private val tmpPositionA = Vector2()
+    private val tmpPositionB = Vector2()
+    private val tmpAnchorA   = Vector2()
+    private val tmpAnchorB   = Vector2()
+
+    open fun create(x: Float, y: Float, w: Float, h: Float) {
+        position.set(x,y)
+        size.set(w,h)
+
+        coroutine = CoroutineScope(Dispatchers.Default)
+        standardizer.standardize(standartW, w)
+    }
+
+    override fun destroy() {
+        log("destroy: ${this::class.java.name.substringAfterLast('.')}")
+        cancelCoroutinesAll(coroutine)
+        disposableSet.disposeAll()
+        _bodyList.destroyAll()
+        _actorList.disposeAll()
+    }
+
+    fun createBody(body: AbstractBody, pos: Vector2, size: Vector2) {
+        body.create(position.cpy().add(pos.toStandart), size.toStandart)
+        _bodyList.add(body)
+        body.actor?.let { _actorList.add(it) }
+    }
+
+    fun createBody(body: AbstractBody, x: Float, y: Float, w: Float, h: Float) {
+        createBody(body, Vector2(x, y), Vector2(w, h))
+    }
+
+    fun <T : JointDef> createJoint(joint: AbstractJoint<out Joint, T>, jointDef: T) {
+        joint.create(jointDef)
+    }
+
+    fun createBodyGroup(bodyGroup: AbstractBodyGroup, pos: Vector2, size: Vector2) {
+        val resultPosition = position.cpy().add(pos.toStandart)
+        val resultSize     = size.toStandart
+
+        bodyGroup.create(resultPosition.x, resultPosition.y, resultSize.x, resultSize.y)
+        _bodyList.addAll(bodyGroup.bodyList)
+        _actorList.addAll(bodyGroup.actorList)
+    }
+
+    fun createBodyGroup(bodyGroup: AbstractBodyGroup, x: Float, y: Float, w: Float, h: Float) {
+        createBodyGroup(bodyGroup, Vector2(x, y), Vector2(w, h))
+    }
+
+    protected fun Vector2.subCenter(body: Body): Vector2 = toStandart.toB2.sub((body.userData as AbstractBody).center)
+
+    protected fun AdvancedGroup.setBoundsStandart(x: Float, y: Float, width: Float, height: Float) {
+        setBounds(position.cpy().add(Vector2(x,y).toStandart), Vector2(width, height).toStandart)
+        _actorList.add(this)
+    }
+
+    fun setNoneId() {
+        bodyList.onEach { it.setNoneId() }
+    }
+
+    fun setOriginalId() {
+        bodyList.onEach { it.setOriginalId() }
+    }
+
+}

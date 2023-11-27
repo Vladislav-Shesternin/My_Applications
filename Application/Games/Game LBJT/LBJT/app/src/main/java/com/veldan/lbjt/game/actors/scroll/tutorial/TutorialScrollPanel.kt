@@ -8,15 +8,16 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane
 import com.badlogic.gdx.utils.Align
 import com.github.tommyettinger.textra.Font
 import com.github.tommyettinger.textra.Font.FontFamily
 import com.github.tommyettinger.textra.TypingLabel
 import com.veldan.lbjt.game.actors.image.AImageAnim
+import com.veldan.lbjt.game.actors.scroll.AScrollPane
 import com.veldan.lbjt.game.actors.scroll.HorizontalGroup
 import com.veldan.lbjt.game.actors.scroll.VerticalGroup
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AAbstractList
+import com.veldan.lbjt.game.actors.scroll.tutorial.actors.ABtnPanel
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.ACodePanel
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AList_Label
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AList_TypingLabel
@@ -25,12 +26,14 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.disposeAll
 import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.util.log
 
 abstract class TutorialScrollPanel(final override val screen: AdvancedScreen): AdvancedGroup() {
 
     private val parameter              = FontParameter().setCharacters(FontParameter.CharType.ALL)
-    private val fontInter_Black_30     = screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setSize(30))
+    private val fontInter_Black_30     = screen.fontGeneratorInter_Black.generateFont(parameter.setSize(30))
     private val fontInter_ExtraBold_50 = screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setSize(50))
+    private val fontInter_ExtraBold_35 = screen.fontGeneratorInter_ExtraBold.generateFont(parameter.setSize(35))
     private val fontInter_Bold_30      = screen.fontGeneratorInter_Bold.generateFont(parameter.setSize(30))
     private val fontInter_Medium_30    = screen.fontGeneratorInter_Medium.generateFont(parameter.setSize(30))
     private val fontInter_Regular_30   = screen.fontGeneratorInter_Regular.generateFont(parameter.setSize(30))
@@ -39,7 +42,7 @@ abstract class TutorialScrollPanel(final override val screen: AdvancedScreen): A
 
     // Actor
     private val verticalGroup   = VerticalGroup(screen, endGap = 145f)
-    private val scrollPanel     = ScrollPane(verticalGroup)
+    val scrollPanel             = AScrollPane(screen, verticalGroup)
 
     // Field
     private var thisWidth     = 0f
@@ -154,15 +157,19 @@ abstract class TutorialScrollPanel(final override val screen: AdvancedScreen): A
         addActor(ALongQuote_TypingLabel(screen, languageUtil.getStringResource(stringId), Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont()).also { it.width = thisWidth })
     }
 
+    fun VerticalGroup.addBtnPanel() {
+        addActor(ABtnPanel(screen, fontInter_ExtraBold_35).also { it.setSize(thisWidth, 90f) })
+    }
+
 
     // ---------------------------------------------------
     // Logic
     // ---------------------------------------------------
 
     private fun Static.LabelFont.getFont(): BitmapFont = when(this) {
-        Static.LabelFont.Inter_Black_30          -> fontInter_Black_30
-        Static.LabelFont.Inter_ExtraBold_50    -> fontInter_ExtraBold_50
-        Static.LabelFont.Inter_Regular_35 -> fontInter_Regular_35
+        Static.LabelFont.Inter_Black_30     -> fontInter_Black_30
+        Static.LabelFont.Inter_ExtraBold_50 -> fontInter_ExtraBold_50
+        Static.LabelFont.Inter_Regular_35   -> fontInter_Regular_35
     }
 
     private fun Static.TypingLabelFontFamily.getFont(): Font = Font().also { fnt ->
@@ -194,7 +201,7 @@ abstract class TutorialScrollPanel(final override val screen: AdvancedScreen): A
         }
 
         enum class CodePanelHeight(val height: Float) {
-             _110(110f), _140(140f), _210(210f), _390(390f), _400(400f)
+             _110(110f), _140(140f), _210(210f), _300(300f), _390(390f), _400(400f)
         }
 
         enum class Number(val nIndex: Int) {

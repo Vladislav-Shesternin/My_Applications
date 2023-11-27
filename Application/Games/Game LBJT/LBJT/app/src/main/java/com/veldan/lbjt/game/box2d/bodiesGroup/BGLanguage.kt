@@ -123,7 +123,7 @@ class BGLanguage(
 
             bLanguage.actor?.apply {
                 preDrawArray.clear()
-                preDrawArray.add(AdvancedGroup.Drawer { alpha -> drawer.line(bodyA.position.toUI, bodyB.position.toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
+                preDrawArray.add(AdvancedGroup.Static.Drawer { alpha -> drawer.line(bodyA.position.toUI, bodyB.position.toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
             }
         })
     }

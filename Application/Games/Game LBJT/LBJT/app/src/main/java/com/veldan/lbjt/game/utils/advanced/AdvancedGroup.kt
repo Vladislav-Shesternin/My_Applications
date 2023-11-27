@@ -9,6 +9,8 @@ import com.badlogic.gdx.utils.Array
 import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.SizeStandardizer
 import com.veldan.lbjt.game.utils.actor.setFillParent
+import com.veldan.lbjt.game.utils.advanced.AdvancedGroup.Static.AlignmentHorizontal
+import com.veldan.lbjt.game.utils.advanced.AdvancedGroup.Static.AlignmentVertical
 import com.veldan.lbjt.game.utils.disposeAll
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.cancelCoroutinesAll
@@ -30,8 +32,8 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
     val Vector2.toStandart get() = standardizer.scope { toStandart }
     val Float.toStandart   get() = standardizer.scope { toStandart }
 
-    val preDrawArray  = Array<Drawer>()
-    val postDrawArray = Array<Drawer>()
+    val preDrawArray  = Array<Static.Drawer>()
+    val postDrawArray = Array<Static.Drawer>()
     val disposableSet = mutableSetOf<Disposable>()
 
     private val onceInit = Once()
@@ -150,11 +152,13 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
         setBoundsStandart(position.x, position.y, size.x, size.y)
     }
 
-    enum class AlignmentHorizontal { START, CENTER, END, }
-    enum class AlignmentVertical { BOTTOM, CENTER, TOP, }
+    object Static {
+        enum class AlignmentHorizontal { START, CENTER, END, }
+        enum class AlignmentVertical { BOTTOM, CENTER, TOP, }
 
-    fun interface Drawer {
-        fun draw(alpha: Float)
+        fun interface Drawer {
+            fun draw(alpha: Float)
+        }
     }
 
 }

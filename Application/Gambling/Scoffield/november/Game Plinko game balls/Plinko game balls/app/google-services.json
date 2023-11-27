@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "67778445523",
+    "project_id": "plinko-game-balls",
+    "storage_bucket": "plinko-game-balls.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67778445523:android:16b5d8ec87fc7177141426",
+        "android_client_info": {
+          "package_name": "plinko.games.mega"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv3DKofTIY6OYKAs0w4BmRdKJCP2EAT6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

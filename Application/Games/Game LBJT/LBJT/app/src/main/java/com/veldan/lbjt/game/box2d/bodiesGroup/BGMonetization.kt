@@ -135,7 +135,7 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
                 maxForce = 200 * bodyB.mass
                 correctionFactor = 0.95f
 
-                data.bodyB.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
+                data.bodyB.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
                     drawer.line(
                         bodyA.position.cpy().add(data.anchorA.cpy().subCenter(bodyA)).toUI,
                         bodyB.position.cpy().add(data.anchorB.cpy().subCenter(bodyB)).toUI,

@@ -132,7 +132,7 @@ class BGRegularButtons(override val screenBox2d: AdvancedBox2dScreen): AbstractB
                 val leftAnchorB  = Vector2(62f, 5f)
                 val rightAnchorA = Vector2(401f, 164f)
                 val rightAnchorB = Vector2(401f, 5f)
-                bBtn.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
+                bBtn.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
                     drawJoint(alpha, bBtn, reversedRegularBtnList[index+1], leftAnchorA, leftAnchorB)
                     drawJoint(alpha, bBtn, reversedRegularBtnList[index+1], rightAnchorA, rightAnchorB)
                 })

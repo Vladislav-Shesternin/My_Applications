@@ -22,7 +22,7 @@ class MusicUtil: Disposable {
     val firebaseStorageMusicList = mutableListOf(DEFAULT_1, DEFAULT_2)
 
     // 0..100
-    val volumeLevelFlow = MutableStateFlow(AudioManager.volumeLevelPercent)
+    val volumeLevelFlow = MutableStateFlow(AudioManager.volumeLevelPercent / 100f)
 
     private var _music: Music? = null
     var music: Music?
@@ -32,7 +32,7 @@ class MusicUtil: Disposable {
                 if (_music != value) {
                     _music?.stop()
                     _music = value
-                    _music?.volume = volumeLevelFlow.value / 100f
+                    _music?.volume = volumeLevelFlow.value
                     _music?.play()
                 }
             } else {
@@ -42,7 +42,7 @@ class MusicUtil: Disposable {
         } }
 
     init {
-        coroutine.launch { volumeLevelFlow.collect { level -> runGDX { _music?.volume = level / 100f } } }
+        coroutine.launch { volumeLevelFlow.collect { level -> runGDX { _music?.volume = level } } }
     }
 
     override fun dispose() {

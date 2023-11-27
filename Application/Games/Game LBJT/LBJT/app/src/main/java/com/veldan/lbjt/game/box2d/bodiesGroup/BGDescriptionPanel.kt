@@ -95,7 +95,7 @@ class BGDescriptionPanel(override val screenBox2d: AdvancedBox2dScreen): Abstrac
                 frequencyHz = 1.2f
                 dampingRatio = 0.2f
             })
-            bDescriptionPanel.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> data.joint.drawJoint(alpha) })
+            bDescriptionPanel.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha -> data.joint.drawJoint(alpha) })
         }
 
     }

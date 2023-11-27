@@ -187,9 +187,14 @@ class SpriteUtil {
           private val animVideo_3_5 = List<TextureRegion>(78) { getRegion("video (${it.inc()+390})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_5.data) }
           private val animVideo_3_6 = List<TextureRegion>(18) { getRegion("video (${it.inc()+468})", SpriteManager.EnumAtlas_JointMouse.ANIM_VIDEO_3_6.data) }
 
+          private val mem_1 = List<TextureRegion>(78) { getRegion("mem (${it.inc()})", SpriteManager.EnumAtlas_JointMouse.MEM_1.data) }
+          private val mem_2 = List<TextureRegion>(35) { getRegion("mem (${it.inc()+78})", SpriteManager.EnumAtlas_JointMouse.MEM_2.data) }
+
           val animVideo_1 = animVideo_1_0+animVideo_1_1+animVideo_1_2+animVideo_1_3
           val animVideo_2 = animVideo_2_0+animVideo_2_1+animVideo_2_2+animVideo_2_3+animVideo_2_4+animVideo_2_5
           val animVideo_3 = animVideo_3_0+animVideo_3_1+animVideo_3_2+animVideo_3_3+animVideo_3_4+animVideo_3_5+animVideo_3_6
+
+          val mem = mem_1+mem_2
 
           val I1  = JMouse.I1.data.texture
 

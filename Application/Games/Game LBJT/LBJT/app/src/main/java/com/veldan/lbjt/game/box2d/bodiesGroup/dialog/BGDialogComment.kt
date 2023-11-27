@@ -183,7 +183,7 @@ class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
         val tmpCancelLeftAnchorB  = Vector2(38f, 101f)
         val tmpCancelRightAnchorA = Vector2(279f, 30f)
         val tmpCancelRightAnchorB = Vector2(254f, 101f)
-        bDialogComment.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
+        bDialogComment.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
             drawJoint(alpha, bDialogComment, bRegularBtnCancel, tmpCancelLeftAnchorA, tmpCancelLeftAnchorB)
             drawJoint(alpha, bDialogComment, bRegularBtnCancel, tmpCancelRightAnchorA, tmpCancelRightAnchorB)
         })
@@ -200,7 +200,7 @@ class BGDialogComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
         val tmpPublishLeftAnchorB  = Vector2(38f, 101f)
         val tmpPublishRightAnchorA = Vector2(620f, 30f)
         val tmpPublishRightAnchorB = Vector2(254f, 101f)
-        bDialogComment.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha ->
+        bDialogComment.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
             drawJoint(alpha, bDialogComment, bRegularBtnPublish, tmpPublishLeftAnchorA, tmpPublishLeftAnchorB)
             drawJoint(alpha, bDialogComment, bRegularBtnPublish, tmpPublishRightAnchorA, tmpPublishRightAnchorB)
         })

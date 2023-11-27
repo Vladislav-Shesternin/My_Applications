@@ -167,8 +167,8 @@ class BGVolume(
             lengthA = 209f.toStandart.toB2
             lengthB = 209f.toStandart.toB2
 
-            bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
-            bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
+            bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
+            bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
 
         })
     }

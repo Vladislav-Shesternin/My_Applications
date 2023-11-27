@@ -158,7 +158,7 @@ class SettingsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
         coroutine?.launch(Dispatchers.Default) {
             launch { bgVolumeMusic.percentVolumeFlow.collect { percent ->
                 percentVolumeMusic = percent
-                game.musicUtil.volumeLevelFlow.value = percent.toFloat()
+                game.musicUtil.volumeLevelFlow.value = percent / 100f
             } }
             launch { bgVolumeSound.percentVolumeFlow.collect { percent ->
                 percentVolumeSound = percent

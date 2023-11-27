@@ -183,7 +183,7 @@ class BGTestStand(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGr
             dampingRatio = 0.1f
         })
 
-        bHObjectKinematic.actor?.preDrawArray?.add(AdvancedGroup.Drawer { jDistanceDynamic.drawJoint(it) })
+        bHObjectKinematic.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { jDistanceDynamic.drawJoint(it) })
     }
 
     private fun createJ_Weld() {
@@ -200,7 +200,7 @@ class BGTestStand(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGr
             dampingRatio = 0.1f
         })
 
-        bTestStandBorders.actor?.postDrawArray?.add(AdvancedGroup.Drawer {
+        bTestStandBorders.actor?.postDrawArray?.add(AdvancedGroup.Static.Drawer {
             drawJoint(it, bTestStandBorders, bRegularBtnNext, Vector2(349f, 430f), Vector2(144f, 50f))
         })
 
