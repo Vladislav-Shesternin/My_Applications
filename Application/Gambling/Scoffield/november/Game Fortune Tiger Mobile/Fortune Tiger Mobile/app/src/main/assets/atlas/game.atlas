@@ -1,0 +1,173 @@
+game.png
+size: 1977, 1526
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+domik
+  rotate: false
+  xy: 1661, 131
+  size: 156, 165
+  orig: 156, 165
+  offset: 0, 0
+  index: -1
+falsik
+  rotate: false
+  xy: 2, 917
+  size: 320, 410
+  orig: 320, 410
+  offset: 0, 0
+  index: -1
+i1
+  rotate: false
+  xy: 160, 298
+  size: 201, 200
+  orig: 201, 200
+  offset: 0, 0
+  index: -1
+i2
+  rotate: false
+  xy: 363, 298
+  size: 201, 200
+  orig: 201, 200
+  offset: 0, 0
+  index: -1
+i3
+  rotate: false
+  xy: 566, 298
+  size: 201, 200
+  orig: 201, 200
+  offset: 0, 0
+  index: -1
+i4
+  rotate: false
+  xy: 769, 298
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+i5
+  rotate: false
+  xy: 971, 298
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+i6
+  rotate: false
+  xy: 1173, 298
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ntxt
+  rotate: false
+  xy: 1375, 298
+  size: 490, 212
+  orig: 490, 212
+  offset: 0, 0
+  index: -1
+ooff
+  rotate: false
+  xy: 1098, 2
+  size: 248, 112
+  orig: 248, 112
+  offset: 0, 0
+  index: -1
+oonn
+  rotate: false
+  xy: 411, 2
+  size: 248, 111
+  orig: 248, 111
+  offset: 0, 0
+  index: -1
+panel_big
+  rotate: false
+  xy: 646, 917
+  size: 1042, 607
+  orig: 1042, 607
+  offset: 0, 0
+  index: -1
+panel_min
+  rotate: false
+  xy: 912, 512
+  size: 1042, 403
+  orig: 1042, 403
+  offset: 0, 0
+  index: -1
+pipka
+  rotate: false
+  xy: 618, 512
+  size: 292, 384
+  orig: 292, 384
+  offset: 0, 0
+  index: -1
+playe
+  rotate: false
+  xy: 1819, 131
+  size: 156, 165
+  orig: 156, 165
+  offset: 0, 0
+  index: -1
+progress
+  rotate: false
+  xy: 2, 2
+  size: 407, 86
+  orig: 407, 86
+  offset: 0, 0
+  index: -1
+progress_background
+  rotate: false
+  xy: 661, 2
+  size: 435, 111
+  orig: 435, 111
+  offset: 0, 0
+  index: -1
+puzan
+  rotate: false
+  xy: 2, 298
+  size: 156, 165
+  orig: 156, 165
+  offset: 0, 0
+  index: -1
+restart
+  rotate: false
+  xy: 2, 512
+  size: 614, 234
+  orig: 614, 234
+  offset: 0, 0
+  index: -1
+star_one
+  rotate: false
+  xy: 1348, 2
+  size: 551, 127
+  orig: 551, 127
+  offset: 0, 0
+  index: -1
+star_triple
+  rotate: false
+  xy: 2, 131
+  size: 551, 127
+  orig: 551, 127
+  offset: 0, 0
+  index: -1
+star_two
+  rotate: false
+  xy: 555, 131
+  size: 551, 127
+  orig: 551, 127
+  offset: 0, 0
+  index: -1
+star_zero
+  rotate: false
+  xy: 1108, 131
+  size: 551, 127
+  orig: 551, 127
+  offset: 0, 0
+  index: -1
+trusik
+  rotate: false
+  xy: 324, 917
+  size: 320, 410
+  orig: 320, 410
+  offset: 0, 0
+  index: -1

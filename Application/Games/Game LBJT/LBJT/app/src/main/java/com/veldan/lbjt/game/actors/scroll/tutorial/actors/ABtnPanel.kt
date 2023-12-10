@@ -19,6 +19,7 @@ import com.veldan.lbjt.util.log
 class ABtnPanel(
     override val screen : AdvancedScreen,
     font    : BitmapFont,
+    val practicalScreenName: String,
 ): AdvancedGroup() {
 
     private val btnThanks = AButton_Regular(screen, screen.game.languageUtil.getStringResource(R.string.give_thanks), Label.LabelStyle(font, GameColor.textGreen))
@@ -36,7 +37,7 @@ class ABtnPanel(
         }
         btnPlay.setOnClickListener {
             screen.stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-                screen.game.navigationManager.navigate(AboutAuthorScreen::class.java.name, screen::class.java.name)
+                screen.game.navigationManager.navigate(practicalScreenName, screen::class.java.name)
             }
         }
     }

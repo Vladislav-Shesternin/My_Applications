@@ -2,32 +2,27 @@ package com.veldan.lbjt.game.utils.advanced
 
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.math.Interpolation
-import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane
+import com.badlogic.gdx.utils.Align
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.actors.button.AButton_Regular
-import com.veldan.lbjt.game.actors.label.ASpinningLabel
 import com.veldan.lbjt.game.actors.scroll.AScrollPane
-import com.veldan.lbjt.game.actors.scroll.VerticalGroup
-import com.veldan.lbjt.game.actors.scroll.tutorial.AJointMouseScrollPanel
-import com.veldan.lbjt.game.actors.scroll.tutorial.TutorialScrollPanel
+import com.veldan.lbjt.game.actors.scroll.tutorial.AAbstractTutorialScrollPanel
 import com.veldan.lbjt.game.manager.SpriteManager
 import com.veldan.lbjt.game.manager.util.SpriteUtil
-import com.veldan.lbjt.game.screens.AboutAuthorScreen
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.font.FontParameter
 import com.veldan.lbjt.game.utils.region
-import com.veldan.lbjt.util.log
 
 abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedScreen() {
 
-    abstract val title: String
+    abstract val title              : String
+    abstract val practicalScreenName: String
 
     private val textPlay by lazy { game.languageUtil.getStringResource(R.string.play) }
 
@@ -44,13 +39,14 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
     protected var isFinishLoading = false
 
     // Actor
-    open var aScrollPane: TutorialScrollPanel? = null
+    open var aScrollPane: AAbstractTutorialScrollPanel? = null
 
     private val aPlayBtn  by lazy { AButton_Regular(this, textPlay, Label.LabelStyle(fontInter_ExtraBold_50, GameColor.textGreen)) }
-    private val aTitleLbl by lazy { ASpinningLabel(this, title, Label.LabelStyle(fontInter_ExtraBold_50, GameColor.textRed), alphaWidth = 0) }
+    private val aTitleLbl by lazy { Label(title, Label.LabelStyle(fontInter_ExtraBold_50, GameColor.textRed)) }
 
 
     override fun show() {
+        game.activity.lottie.showLoader()
         stageUI.root.animHide()
         setUIBackground(game.themeUtil.assets.BACKGROUND.region)
         loadAssets()
@@ -66,6 +62,7 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
         addPlayBtn()
         addScrollPanel()
 
+        game.activity.lottie.hideLoader()
         stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
     }
 
@@ -101,6 +98,7 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
     private fun AdvancedStage.addTitleLbl() {
         addActor(aTitleLbl)
         aTitleLbl.setBounds(0f, 1315f, 700f, 61f)
+        aTitleLbl.setAlignment(Align.center)
     }
 
     private fun AdvancedStage.addPlayBtn() {
@@ -108,12 +106,12 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
         aPlayBtn.setBounds(225f, 1198f, 250f, 90f)
         aPlayBtn.setOnClickListener {
             stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-                game.navigationManager.navigate(AboutAuthorScreen::class.java.name, this::class.java.name)
+                game.navigationManager.navigate(practicalScreenName, this@AdvancedTutorialScreen::class.java.name)
             }
         }
     }
 
-    var isShow = true
+    private var isShow = true
 
     private fun AdvancedStage.addScrollPanel() {
         addActor(aScrollPane)
@@ -146,7 +144,7 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
         }
         aScrollPane?.apply {
             clearActions()
-            addAction(Actions.moveBy(0f, 235f, 0.6f, Interpolation.sine))
+            addAction(Actions.moveTo(25f, 0f, 0.6f, Interpolation.sine))
         }
     }
 
@@ -161,7 +159,7 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
         }
         aScrollPane?.apply {
             clearActions()
-            addAction(Actions.moveBy(0f, -235f, 0.6f, Interpolation.sine))
+            addAction(Actions.moveTo(25f, -235f, 0.6f, Interpolation.sine))
         }
     }
 

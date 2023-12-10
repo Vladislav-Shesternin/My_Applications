@@ -52,6 +52,11 @@
     <string name="gear_joint" translatable="false">{WAVE}Gear[] [#bc380eff]Joint[]</string>
     <string name="motor_joint" translatable="false">{WAVE}Motor[] [#bc380eff]Joint[]</string>
 
+    <!--Practical Settings-->
+    <string name="maxForce" translatable="false">maxForce:</string>
+    <string name="frequencyHz" translatable="false">frequencyHz:</string>
+    <string name="dampingRatio" translatable="false">dampingRatio:</string>
+
     <!--GeneralInformation-->
     <string name="geninfo_title_1">And so the… Joints</string>
     <string name="geninfo_title_2">Special Settings</string>

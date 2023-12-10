@@ -77,12 +77,15 @@ abstract class AbstractBody: Destroyable {
                 actor = null
             }
 
-            collisionList.clear()
-
             body?.jointList?.map { (it.joint.userData as AbstractJoint<out Joint, out JointDef>) }?.destroyAll()
 
             screenBox2d.worldUtil.world.destroyBody(body)
             body = null
+
+            collisionList.clear()
+            renderBlockArray.clear()
+            beginContactBlockArray.clear()
+            endContactBlockArray.clear()
         }
     }
 

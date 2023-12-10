@@ -6,6 +6,7 @@ import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.manager.MusicManager
 import com.veldan.lbjt.game.manager.SoundManager
 import com.veldan.lbjt.game.manager.SpriteManager
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JMouseScreen
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
@@ -130,7 +131,7 @@ class LoaderScreen(override val game: LibGDXGame) : AdvancedScreen() {
 
             stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
                 game.activity.lottie.hideLoader()
-                game.navigationManager.navigate(TutorialsScreen::class.java.name)
+                game.navigationManager.navigate(Practical_JMouseScreen::class.java.name)
             }
         }
     }

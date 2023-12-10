@@ -10,52 +10,59 @@ import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointMouse as JMou
 class SpriteUtil {
 
      interface AllAssets {
-          val CIRCLE_BLUE                 : TextureRegion
-          val FRAME_LANGUAGE              : TextureRegion
-          val HAND_HELLO                  : TextureRegion
-          val HAND_HINT                   : TextureRegion
-          val LANGUAGE_EN                 : TextureRegion
-          val LANGUAGE_UK                 : TextureRegion
-          val REGULAR_BTN_DEF             : TextureRegion
-          val REGULAR_BTN_PRESS           : TextureRegion
-          val REGULAR_BTN_DISABLE         : TextureRegion
-          val ROD_LOUDER                  : TextureRegion
-          val ROD_QUIET                   : TextureRegion
-          val USER                        : TextureRegion
-          val VOLUME_LOUDER               : TextureRegion
-          val VOLUME_QUIET                : TextureRegion
-          val YAN                         : TextureRegion
-          val YIN_YAN_LIGHT               : TextureRegion
-          val YIN                         : TextureRegion
-          val ADS                         : TextureRegion
-          val DESCRIPTION_PANEL           : TextureRegion
-          val EL_DAN                      : TextureRegion
-          val GIFT                        : TextureRegion
-          val HAND_V                      : TextureRegion
-          val MONETIZATION_BTN_DEF        : TextureRegion
-          val MONETIZATION_BTN_PRESS      : TextureRegion
-          val MONETIZATION_MEGA_BTN_DEF   : TextureRegion
-          val MONETIZATION_MEGA_BTN_PRESS : TextureRegion
-          val PS                          : TextureRegion
-          val THANKS_FRAME                : TextureRegion
-          val DEBUG_BOX_DEF               : TextureRegion
-          val DEBUG_BOX_CHECK             : TextureRegion
-          val LOADER                      : TextureRegion
-          val NO_WIFI                     : TextureRegion
-          val FRAME_ICON                  : TextureRegion
-          val ICON_DEF                    : TextureRegion
-          val FRAME_ICON_EMPTY            : TextureRegion
-          val C_DYNAMIC                   : TextureRegion
-          val C_KINEMATIC                 : TextureRegion
-          val C_STATIC                    : TextureRegion
-          val H_DYNAMIC                   : TextureRegion
-          val H_KINEMATIC                 : TextureRegion
-          val H_STATIC                    : TextureRegion
-          val V_DYNAMIC                   : TextureRegion
-          val V_KINEMATIC                 : TextureRegion
-          val V_STATIC                    : TextureRegion
-          val LIFT_PLATFORM               : TextureRegion
-          val LIFT_GEAR                   : TextureRegion
+          val CIRCLE_BLUE                  : TextureRegion
+          val FRAME_LANGUAGE               : TextureRegion
+          val HAND_HELLO                   : TextureRegion
+          val HAND_HINT                    : TextureRegion
+          val LANGUAGE_EN                  : TextureRegion
+          val LANGUAGE_UK                  : TextureRegion
+          val REGULAR_BTN_DEF              : TextureRegion
+          val REGULAR_BTN_PRESS            : TextureRegion
+          val REGULAR_BTN_DISABLE          : TextureRegion
+          val ROD_LOUDER                   : TextureRegion
+          val ROD_QUIET                    : TextureRegion
+          val USER                         : TextureRegion
+          val VOLUME_LOUDER                : TextureRegion
+          val VOLUME_QUIET                 : TextureRegion
+          val YAN                          : TextureRegion
+          val YIN_YAN_LIGHT                : TextureRegion
+          val YIN                          : TextureRegion
+          val ADS                          : TextureRegion
+          val DESCRIPTION_PANEL            : TextureRegion
+          val EL_DAN                       : TextureRegion
+          val GIFT                         : TextureRegion
+          val HAND_V                       : TextureRegion
+          val MONETIZATION_BTN_DEF         : TextureRegion
+          val MONETIZATION_BTN_PRESS       : TextureRegion
+          val MONETIZATION_MEGA_BTN_DEF    : TextureRegion
+          val MONETIZATION_MEGA_BTN_PRESS  : TextureRegion
+          val PS                           : TextureRegion
+          val THANKS_FRAME                 : TextureRegion
+          val DEBUG_BOX_DEF                : TextureRegion
+          val DEBUG_BOX_CHECK              : TextureRegion
+          val LOADER                       : TextureRegion
+          val NO_WIFI                      : TextureRegion
+          val FRAME_ICON                   : TextureRegion
+          val ICON_DEF                     : TextureRegion
+          val FRAME_ICON_EMPTY             : TextureRegion
+          val C_DYNAMIC                    : TextureRegion
+          val C_KINEMATIC                  : TextureRegion
+          val C_STATIC                     : TextureRegion
+          val H_DYNAMIC                    : TextureRegion
+          val H_KINEMATIC                  : TextureRegion
+          val H_STATIC                     : TextureRegion
+          val V_DYNAMIC                    : TextureRegion
+          val V_KINEMATIC                  : TextureRegion
+          val V_STATIC                     : TextureRegion
+          val LIFT_PLATFORM                : TextureRegion
+          val LIFT_GEAR                    : TextureRegion
+          val PRACTICAL_BTN                : TextureRegion
+          val PRACTICAL_SETTINGS           : TextureRegion
+          val PRACTICAL_DONE               : TextureRegion
+          val PRACTICAL_PROGRESS_ARM       : TextureRegion
+          val PRACTICAL_PROGRESS           : TextureRegion
+          val PRACTICAL_PROGRESS_BACKGROUND: TextureRegion
+          val PRACTICAL_PROGRESS_POINT     : TextureRegion
 
           val NUMBER_LIST : List<TextureRegion>
 
@@ -70,58 +77,67 @@ class SpriteUtil {
           val BACKGROUND : Texture
           val MASK_ICON  : Texture
           val ICON_VELDAN: Texture
+
+          val PRACTICAL_PROGRESS_MASK: Texture
      }
 
      abstract class CommonAssets: AllAssets {
           protected fun getGameRegion(name: String): TextureRegion = SpriteManager.EnumAtlas.GAME.data.atlas.findRegion(name)
           protected fun getGamePath(name: String): NinePatch = SpriteManager.EnumAtlas.GAME.data.atlas.createPatch(name)
 
-          override val CIRCLE_BLUE                 = getGameRegion("circle_blue")
-          override val FRAME_LANGUAGE              = getGameRegion("frame_language")
-          override val HAND_HELLO                  = getGameRegion("hand_hello")
-          override val HAND_HINT                   = getGameRegion("hand_hint")
-          override val LANGUAGE_EN                 = getGameRegion("language_en")
-          override val LANGUAGE_UK                 = getGameRegion("language_uk")
-          override val REGULAR_BTN_DEF             = getGameRegion("regular_btn_def")
-          override val REGULAR_BTN_PRESS           = getGameRegion("regular_btn_press")
-          override val REGULAR_BTN_DISABLE         = getGameRegion("regular_btn_disable")
-          override val ROD_LOUDER                  = getGameRegion("rod_louder")
-          override val ROD_QUIET                   = getGameRegion("rod_quiet")
-          override val USER                        = getGameRegion("user")
-          override val VOLUME_LOUDER               = getGameRegion("volume_louder")
-          override val VOLUME_QUIET                = getGameRegion("volume_quiet")
-          override val YAN                         = getGameRegion("yan")
-          override val YIN_YAN_LIGHT               = getGameRegion("yin_yan_light")
-          override val YIN                         = getGameRegion("yin")
-          override val ADS                         = getGameRegion("ads")
-          override val DESCRIPTION_PANEL           = getGameRegion("description_panel")
-          override val EL_DAN                      = getGameRegion("el_dan")
-          override val GIFT                        = getGameRegion("gift")
-          override val HAND_V                      = getGameRegion("hand_v")
-          override val MONETIZATION_BTN_DEF        = getGameRegion("monetization_btn_def")
-          override val MONETIZATION_BTN_PRESS      = getGameRegion("monetization_btn_press")
-          override val MONETIZATION_MEGA_BTN_DEF   = getGameRegion("monetization_mega_btn_def")
-          override val MONETIZATION_MEGA_BTN_PRESS = getGameRegion("monetization_mega_btn_press")
-          override val PS                          = getGameRegion("ps")
-          override val THANKS_FRAME                = getGameRegion("thanks_frame")
-          override val DEBUG_BOX_DEF               = getGameRegion("debug_box_def")
-          override val DEBUG_BOX_CHECK             = getGameRegion("debug_box_check")
-          override val LOADER                      = getGameRegion("loader")
-          override val NO_WIFI                     = getGameRegion("no_wifi")
-          override val FRAME_ICON                  = getGameRegion("frame_icon")
-          override val ICON_DEF                    = getGameRegion("icon_def")
-          override val FRAME_ICON_EMPTY            = getGameRegion("frame_icon_empty")
-          override val C_DYNAMIC                   = getGameRegion("c_dynamic")
-          override val C_KINEMATIC                 = getGameRegion("c_kinematic")
-          override val C_STATIC                    = getGameRegion("c_static")
-          override val H_DYNAMIC                   = getGameRegion("h_dynamic")
-          override val H_KINEMATIC                 = getGameRegion("h_kinematic")
-          override val H_STATIC                    = getGameRegion("h_static")
-          override val V_DYNAMIC                   = getGameRegion("v_dynamic")
-          override val V_KINEMATIC                 = getGameRegion("v_kinematic")
-          override val V_STATIC                    = getGameRegion("v_static")
-          override val LIFT_PLATFORM               = getGameRegion("lift_platform")
-          override val LIFT_GEAR                   = getGameRegion("lift_gear")
+          override val CIRCLE_BLUE                   = getGameRegion("circle_blue")
+          override val FRAME_LANGUAGE                = getGameRegion("frame_language")
+          override val HAND_HELLO                    = getGameRegion("hand_hello")
+          override val HAND_HINT                     = getGameRegion("hand_hint")
+          override val LANGUAGE_EN                   = getGameRegion("language_en")
+          override val LANGUAGE_UK                   = getGameRegion("language_uk")
+          override val REGULAR_BTN_DEF               = getGameRegion("regular_btn_def")
+          override val REGULAR_BTN_PRESS             = getGameRegion("regular_btn_press")
+          override val REGULAR_BTN_DISABLE           = getGameRegion("regular_btn_disable")
+          override val ROD_LOUDER                    = getGameRegion("rod_louder")
+          override val ROD_QUIET                     = getGameRegion("rod_quiet")
+          override val USER                          = getGameRegion("user")
+          override val VOLUME_LOUDER                 = getGameRegion("volume_louder")
+          override val VOLUME_QUIET                  = getGameRegion("volume_quiet")
+          override val YAN                           = getGameRegion("yan")
+          override val YIN_YAN_LIGHT                 = getGameRegion("yin_yan_light")
+          override val YIN                           = getGameRegion("yin")
+          override val ADS                           = getGameRegion("ads")
+          override val DESCRIPTION_PANEL             = getGameRegion("description_panel")
+          override val EL_DAN                        = getGameRegion("el_dan")
+          override val GIFT                          = getGameRegion("gift")
+          override val HAND_V                        = getGameRegion("hand_v")
+          override val MONETIZATION_BTN_DEF          = getGameRegion("monetization_btn_def")
+          override val MONETIZATION_BTN_PRESS        = getGameRegion("monetization_btn_press")
+          override val MONETIZATION_MEGA_BTN_DEF     = getGameRegion("monetization_mega_btn_def")
+          override val MONETIZATION_MEGA_BTN_PRESS   = getGameRegion("monetization_mega_btn_press")
+          override val PS                            = getGameRegion("ps")
+          override val THANKS_FRAME                  = getGameRegion("thanks_frame")
+          override val DEBUG_BOX_DEF                 = getGameRegion("debug_box_def")
+          override val DEBUG_BOX_CHECK               = getGameRegion("debug_box_check")
+          override val LOADER                        = getGameRegion("loader")
+          override val NO_WIFI                       = getGameRegion("no_wifi")
+          override val FRAME_ICON                    = getGameRegion("frame_icon")
+          override val ICON_DEF                      = getGameRegion("icon_def")
+          override val FRAME_ICON_EMPTY              = getGameRegion("frame_icon_empty")
+          override val C_DYNAMIC                     = getGameRegion("c_dynamic")
+          override val C_KINEMATIC                   = getGameRegion("c_kinematic")
+          override val C_STATIC                      = getGameRegion("c_static")
+          override val H_DYNAMIC                     = getGameRegion("h_dynamic")
+          override val H_KINEMATIC                   = getGameRegion("h_kinematic")
+          override val H_STATIC                      = getGameRegion("h_static")
+          override val V_DYNAMIC                     = getGameRegion("v_dynamic")
+          override val V_KINEMATIC                   = getGameRegion("v_kinematic")
+          override val V_STATIC                      = getGameRegion("v_static")
+          override val LIFT_PLATFORM                 = getGameRegion("lift_platform")
+          override val LIFT_GEAR                     = getGameRegion("lift_gear")
+          override val PRACTICAL_BTN                 = getGameRegion("practical_btn")
+          override val PRACTICAL_SETTINGS            = getGameRegion("practical_settings")
+          override val PRACTICAL_DONE                = getGameRegion("practical_done")
+          override val PRACTICAL_PROGRESS_ARM        = getGameRegion("practical_progress_arm")
+          override val PRACTICAL_PROGRESS            = getGameRegion("practical_progress")
+          override val PRACTICAL_PROGRESS_BACKGROUND = getGameRegion("practical_progress_background")
+          override val PRACTICAL_PROGRESS_POINT      = getGameRegion("practical_progress_point")
 
           override val NUMBER_LIST = List(9) { getGameRegion("number ${it.inc()}") }
 
@@ -135,6 +151,8 @@ class SpriteUtil {
 
           override val MASK_ICON   = SpriteManager.EnumTexture.MASK_ICON.data.texture
           override val ICON_VELDAN = SpriteManager.EnumTexture.VELDAN_ICON.data.texture
+
+          override val PRACTICAL_PROGRESS_MASK = SpriteManager.EnumTexture.PRACTICAL_PROGRESS_MASK.data.texture
      }
 
      class YanAssets: CommonAssets() {

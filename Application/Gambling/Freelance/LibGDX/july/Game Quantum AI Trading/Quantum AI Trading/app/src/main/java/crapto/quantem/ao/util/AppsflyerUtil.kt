@@ -66,7 +66,7 @@ object AppsflyerUtil {
     }
 
     private fun doOnError() {
-        campaignFlow.value = "c"
+        campaignFlow.value = null
     }
 
 

@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     companion object {
         const val INTERPOL = 146
-        var URL_INTERPOL = "https://stackoverflow.com/"
+        var URL_INTERPOL = ""
 
         val startFragmentID = MutableSharedFlow<Int>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
     }

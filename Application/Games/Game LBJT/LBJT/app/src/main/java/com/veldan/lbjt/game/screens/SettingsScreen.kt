@@ -49,7 +49,8 @@ class SettingsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
     private val bgLanguageEN    = BGLanguage(this, BLanguage.Static.Type.EN)
     private val bgLanguageUK    = BGLanguage(this, BLanguage.Static.Type.UK)
 
-    // Field
+
+
     override fun show() {
         stageUI.root.animHide()
         setUIBackground(game.themeUtil.assets.BACKGROUND.region)

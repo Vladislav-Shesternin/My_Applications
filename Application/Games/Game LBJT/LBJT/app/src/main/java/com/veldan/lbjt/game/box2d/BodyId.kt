@@ -32,6 +32,10 @@ object BodyId {
 
     object Tutorials {
         const val KINEMATIC = "tutorials.kinematic"
-        const val DYNAMIC     = "tutorials.dynamic"
+        const val DYNAMIC   = "tutorials.dynamic"
+    }
+
+    object Practical {
+        const val DYNAMIC = "practical.dynamic"
     }
 }

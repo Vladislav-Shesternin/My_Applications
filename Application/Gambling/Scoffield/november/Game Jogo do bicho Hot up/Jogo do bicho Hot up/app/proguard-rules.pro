@@ -12,3 +12,7 @@
 -keepclassmembers class com.yourcompany.models.** { *; }
 
 -dontwarn javax.annotation.Nullable
+
+
+#WebChromeClient
+-keep class * extends android.webkit.WebChromeClient { *; }

@@ -11,6 +11,12 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true" />
 
+    <WebView
+        android:id="@+id/tunella"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/loader"
         android:layout_width="0dp"

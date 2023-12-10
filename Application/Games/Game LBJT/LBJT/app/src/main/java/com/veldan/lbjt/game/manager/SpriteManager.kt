@@ -49,6 +49,8 @@ class SpriteManager(var assetManager: AssetManager) {
         YIN_BACKGROUND(TextureData("textures/yin_background.png")),
         MASK_ICON(     TextureData("textures/mask_icon.png")     ),
         VELDAN_ICON(   TextureData("textures/veldan_icon.png")   ),
+
+        PRACTICAL_PROGRESS_MASK(TextureData("textures/practical_progress_mask.png")),
     }
 
     enum class EnumAtlas_GeneralInformation(val data: AtlasData) {

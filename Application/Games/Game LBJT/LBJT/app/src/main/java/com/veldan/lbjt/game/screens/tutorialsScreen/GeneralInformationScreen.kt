@@ -2,7 +2,7 @@ package com.veldan.lbjt.game.screens.tutorialsScreen
 
 import com.badlogic.gdx.assets.AssetManager
 import com.veldan.lbjt.game.LibGDXGame
-import com.veldan.lbjt.game.actors.scroll.tutorial.AGeneralInformationScrollPanel
+import com.veldan.lbjt.game.actors.scroll.tutorial.AScrollPanel_GeneralInformation
 import com.veldan.lbjt.game.manager.SpriteManager
 import com.veldan.lbjt.game.manager.util.SpriteUtil
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
@@ -21,9 +21,10 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
     private var spriteUtilGeneralInfo: SpriteUtil.GeneralInformation? = null
 
     // Actor
-    private var aGeneralInformationScrollPanel: AGeneralInformationScrollPanel? = null
+    private var aGeneralInformationScrollPanel: AScrollPanel_GeneralInformation? = null
 
     override fun show() {
+        game.activity.lottie.showLoader()
         stageUI.root.animHide()
         setUIBackground(game.themeUtil.assets.BACKGROUND.region)
         loadAssets()
@@ -52,7 +53,7 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
                 initAssets()
 
                 spriteUtilGeneralInfo          = SpriteUtil.GeneralInformation()
-                aGeneralInformationScrollPanel = AGeneralInformationScrollPanel(this, spriteUtilGeneralInfo!!)
+                aGeneralInformationScrollPanel = AScrollPanel_GeneralInformation(this, spriteUtilGeneralInfo!!)
 
                 super.show()
             }
@@ -65,6 +66,7 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
 
     override fun AdvancedStage.addActorsOnStageUI() {
         addGeneralInformationScrollPanel()
+        game.activity.lottie.hideLoader()
         stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
     }
 

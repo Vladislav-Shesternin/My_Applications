@@ -17,6 +17,7 @@ import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
 import com.veldan.lbjt.game.utils.actor.disable
+import com.veldan.lbjt.game.utils.currentTimeMinus
 import com.veldan.lbjt.game.utils.toB2
 import com.veldan.lbjt.util.Once
 import com.veldan.lbjt.util.log
@@ -51,7 +52,7 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
     }
 
     override fun dispose() {
-        log("dispose AdvancedLBJTScreen: ${this::class.java.name.substringAfterLast('.')}")
+        log("dispose AdvancedMouseScreen: ${this::class.java.name.substringAfterLast('.')}")
         super.dispose()
     }
 
@@ -148,14 +149,14 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
 
 
         private fun playSound_TouchDown() {
-            if (System.currentTimeMillis().minus(timeTouchDown) >= 200) {
+            if (currentTimeMinus(timeTouchDown) >= 200) {
                 game.soundUtil.apply { play(TOUCH_DOWN) }
                 timeTouchDown = System.currentTimeMillis()
             }
         }
 
         private fun playSound_TouchUp() {
-            if (System.currentTimeMillis().minus(timeTouchDown) >= 500) game.soundUtil.apply { play(TOUCH_DOWN) }
+            if (currentTimeMinus(timeTouchDown) >= 500) game.soundUtil.apply { play(TOUCH_DOWN) }
         }
 
     }

