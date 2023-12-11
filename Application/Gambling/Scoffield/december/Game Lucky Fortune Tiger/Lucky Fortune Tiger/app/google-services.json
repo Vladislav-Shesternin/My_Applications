@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "523933190972",
+    "project_id": "lucky-fortune-tiger-919c3",
+    "storage_bucket": "lucky-fortune-tiger-919c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523933190972:android:9ba8654dbdeabb9106ac39",
+        "android_client_info": {
+          "package_name": "lycky.fortune.tiger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChshGiMN4TiSDTzv6KxEE_wGzcqVpH5FE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

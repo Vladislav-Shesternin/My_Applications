@@ -42,6 +42,9 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
     private val onceUserFirstTouch = Once()
     val isUserFirstTouchFlow       = MutableSharedFlow<Unit>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
 
+    private var maxForce     = 1000f
+    private var frequencyHz  = 5.0f
+    private var dampingRatio = 0.7f
 
     override fun show() {
         super.show()
@@ -127,7 +130,10 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
                     collideConnected = true
 
                     target.set(touchPointInBox)
-                    maxForce = 1000 * bodyB.mass
+
+                    maxForce     = this@AdvancedMouseScreen.maxForce * bodyB.mass
+                    frequencyHz  = this@AdvancedMouseScreen.frequencyHz
+                    dampingRatio = this@AdvancedMouseScreen.dampingRatio
                 })
             }
 
@@ -189,6 +195,22 @@ abstract class AdvancedMouseScreen(override val game: LibGDXGame): AdvancedBox2d
                 animHide(0.3f)
             }
         }
+    }
+
+    // ---------------------------------------------------
+    // Logic
+    // ---------------------------------------------------
+
+    fun updateMouseJoint(maxForce: Float, frequencyHz: Float, dampingRatio: Float) {
+        this.maxForce     = maxForce
+        this.frequencyHz  = frequencyHz
+        this.dampingRatio = dampingRatio
+    }
+
+    fun resetMouseJoint() {
+        this.maxForce     = 1000f
+        this.frequencyHz  = 5.0f
+        this.dampingRatio = 0.7f
     }
 
 }

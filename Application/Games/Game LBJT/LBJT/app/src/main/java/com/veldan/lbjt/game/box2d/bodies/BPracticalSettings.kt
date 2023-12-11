@@ -13,7 +13,7 @@ class BPracticalSettings(override val screenBox2d: AdvancedBox2dScreen): Abstrac
         type = BodyDef.BodyType.DynamicBody
     }
     override val fixtureDef = FixtureDef().apply {
-        density     = 1f
+        density     = 5f
         restitution = 0.3f
         friction    = 0.3f
     }

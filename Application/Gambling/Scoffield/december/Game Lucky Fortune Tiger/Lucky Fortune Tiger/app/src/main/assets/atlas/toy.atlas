@@ -1,0 +1,40 @@
+toy.png
+size: 862, 174
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+toy_1
+  rotate: false
+  xy: 2, 2
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: 1
+toy_2
+  rotate: false
+  xy: 174, 2
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: 2
+toy_3
+  rotate: false
+  xy: 346, 2
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: 3
+toy_4
+  rotate: false
+  xy: 518, 2
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: 4
+toy_5
+  rotate: false
+  xy: 690, 2
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: 5

@@ -1,0 +1,19 @@
+splash.png
+size: 1051, 211
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tiger_loader
+  rotate: false
+  xy: 2, 2
+  size: 1047, 115
+  orig: 1047, 115
+  offset: 0, 0
+  index: -1
+tiger_progrress
+  rotate: false
+  xy: 2, 119
+  size: 1016, 90
+  orig: 1016, 90
+  offset: 0, 0
+  index: -1

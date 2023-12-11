@@ -1,0 +1,96 @@
+game.png
+size: 1640, 350
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+grip
+  rotate: false
+  xy: 2, 2
+  size: 46, 71
+  orig: 46, 71
+  offset: 0, 0
+  index: -1
+rectangle
+  rotate: false
+  xy: 50, 2
+  size: 106, 110
+  orig: 106, 110
+  offset: 0, 0
+  index: -1
+rectangle_check
+  rotate: false
+  xy: 158, 2
+  size: 106, 110
+  orig: 106, 110
+  offset: 0, 0
+  index: -1
+tiger_menu_def
+  rotate: false
+  xy: 266, 2
+  size: 227, 227
+  orig: 227, 227
+  offset: 0, 0
+  index: -1
+tiger_menu_dis
+  rotate: false
+  xy: 495, 2
+  size: 227, 227
+  orig: 227, 227
+  offset: 0, 0
+  index: -1
+tiger_pause_def
+  rotate: false
+  xy: 724, 2
+  size: 227, 227
+  orig: 227, 227
+  offset: 0, 0
+  index: -1
+tiger_pause_dis
+  rotate: false
+  xy: 953, 2
+  size: 227, 227
+  orig: 227, 227
+  offset: 0, 0
+  index: -1
+tiger_sound
+  rotate: false
+  xy: 1182, 2
+  size: 227, 227
+  orig: 227, 227
+  offset: 0, 0
+  index: -1
+tiger_sound_not
+  rotate: false
+  xy: 1411, 2
+  size: 227, 227
+  orig: 227, 227
+  offset: 0, 0
+  index: -1
+tiger_time
+  rotate: false
+  xy: 2, 231
+  size: 430, 117
+  orig: 430, 117
+  offset: 0, 0
+  index: -1
+time_clock
+  rotate: false
+  xy: 434, 231
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+time_progress
+  rotate: false
+  xy: 536, 231
+  size: 391, 89
+  orig: 391, 89
+  offset: 0, 0
+  index: -1
+volume_progress
+  rotate: false
+  xy: 929, 231
+  size: 563, 71
+  orig: 563, 71
+  offset: 0, 0
+  index: -1

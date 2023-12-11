@@ -43,7 +43,7 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
     private val bLeft  = BVerticalPractical(screenBox2d)
     private val bRight = BVerticalPractical(screenBox2d)
 
-    private val bPracticalSettings = BPracticalSettings(screenBox2d)
+    val bPracticalSettings = BPracticalSettings(screenBox2d)
 
     // Joint
     private val jMotorPracticalSettings = AbstractJoint<MotorJoint, MotorJointDef>(screenBox2d)
@@ -58,6 +58,8 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
         createB_Horizontal()
         createB_Vertical()
 
+        createBodyBlock()
+
         screenBox2d.stageUI.apply {
             addPracticalSettings()
             addTitleLbl()
@@ -67,6 +69,8 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
 
         createJ_PracticalSettings()
     }
+
+    abstract fun createBodyBlock()
 
     // ---------------------------------------------------
     // Init
@@ -126,7 +130,7 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
             }
             doneBlock = {
                 aPracticalSettings.hideAndDisabled {
-                    showAndUpdateBody {  }
+                    showAndUpdateBody()
                 }
             }
         }
@@ -156,6 +160,6 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
 
     abstract fun hideAndToStartBody(endBlock: () -> Unit)
 
-    abstract fun showAndUpdateBody(endBlock: () -> Unit)
+    abstract fun showAndUpdateBody()
 
 }

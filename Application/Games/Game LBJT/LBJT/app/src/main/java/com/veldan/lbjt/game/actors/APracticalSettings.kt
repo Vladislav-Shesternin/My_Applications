@@ -88,6 +88,12 @@ class APracticalSettings(override val screen: AdvancedScreen): AdvancedGroup() {
         }
     }
 
+    fun runDoneBlock() {
+        doneBlock()
+        changeState(assets.PRACTICAL_SETTINGS)
+        state = State.SETTINGS
+    }
+
     private enum class State {
         SETTINGS, DONE
     }

@@ -40,6 +40,10 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     // Actor
     val valueLabelStyle = Label.LabelStyle(fontInter_Black_35, GameColor.textRed)
 
+    // Field
+    var isOpen = false
+        private set
+
 
     override fun addActorsOnGroup() {
         disable()
@@ -52,6 +56,7 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
 
     fun showAndEnabled(block: () -> Unit = {}) {
         animShow(TIME_ANIM_SCREEN_ALPHA) {
+            isOpen = true
             enable()
             block()
         }
@@ -59,6 +64,7 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
 
     fun hideAndDisabled(block: () -> Unit = {}) {
         animHide(TIME_ANIM_SCREEN_ALPHA) {
+            isOpen = false
             disable()
             block()
         }

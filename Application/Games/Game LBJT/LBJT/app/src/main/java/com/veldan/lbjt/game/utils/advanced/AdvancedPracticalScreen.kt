@@ -1,7 +1,10 @@
 package com.veldan.lbjt.game.utils.advanced
 
+import com.badlogic.gdx.Input
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.box2d.bodiesGroup.practical.AbstractBGPractical
+import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
+import com.veldan.lbjt.game.utils.actor.animHide
 
 abstract class AdvancedPracticalScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
@@ -9,6 +12,13 @@ abstract class AdvancedPracticalScreen(override val game: LibGDXGame): AdvancedM
 
     override fun AdvancedStage.addActorsOnStageUI() {
         createBG_Practical()
+    }
+
+    override fun keyDown(keycode: Int): Boolean {
+        return if (keycode == Input.Keys.BACK && bgPractical.aPracticalSettings.isOpen) {
+            bgPractical.bPracticalSettings.getActor()?.runDoneBlock()
+            true
+        } else super.keyDown(keycode)
     }
 
     // ---------------------------------------------------

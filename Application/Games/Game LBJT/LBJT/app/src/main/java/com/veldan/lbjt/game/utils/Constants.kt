@@ -37,3 +37,4 @@ const val COMMENT_LENGTH         = 350
 
 const val TIME_ANIM_SCREEN_ALPHA = 0.5f
 const val TIME_ANIM_DIALOG_ALPHA = 0.5f
+const val TIME_ANIM_ALPHA_PRACTICAL_BODY = 0.25f
