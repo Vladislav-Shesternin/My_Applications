@@ -12,6 +12,7 @@ import com.badlogic.gdx.utils.Align
 import com.github.tommyettinger.textra.Font
 import com.github.tommyettinger.textra.Font.FontFamily
 import com.github.tommyettinger.textra.TypingLabel
+import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.image.AImageAnim
 import com.veldan.lbjt.game.actors.scroll.AScrollPane
 import com.veldan.lbjt.game.actors.scroll.HorizontalGroup
@@ -54,8 +55,8 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         scrollPanel.setSize(width, height)
         verticalGroup.addActorsOnVerticalGroup()
 
-        verticalGroup.debug()
-        verticalGroup.children.onEach { it.debug() }
+        //verticalGroup.debug()
+        //verticalGroup.children.onEach { it.debug() }
     }
 
     override fun dispose() {
@@ -137,20 +138,12 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         addActor(ACodePanel(screen, languageUtil.getStringResource(stringId), fontInter_Light_30).also { it.setSize(thisWidth, codePanelHeight.height) })
     }
 
-    fun VerticalGroup.addList_Label(stringIds: Array<Int>, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet) {
-        addActor(AList_Label(screen, fontInter_Regular_30, stringIds.map { languageUtil.getStringResource(it) }, align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
+    fun VerticalGroup.addList_Label(stringId: Int, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet) {
+        addActor(AList_Label(screen, fontInter_Regular_30, languageUtil.getStringArrayResources(stringId).toList(), align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
     }
 
-    fun VerticalGroup.addList_Label(strings: List<String>, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet) {
-        addActor(AList_Label(screen, fontInter_Regular_30, strings, align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
-    }
-
-    fun VerticalGroup.addList_TypingLabel(stringIds: Array<Int>, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet) {
-        addActor(AList_TypingLabel(screen, Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont(), stringIds.map { languageUtil.getStringResource(it) }, align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
-    }
-
-    fun VerticalGroup.addList_TypingLabel(strings: List<String>, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet) {
-        addActor(AList_TypingLabel(screen, Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont(), strings, align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
+    fun VerticalGroup.addList_TypingLabel(stringId: Int, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet) {
+        addActor(AList_TypingLabel(screen, Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont(), languageUtil.getStringArrayResources(stringId).toList(), align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
     }
 
     fun VerticalGroup.addLongQuote(stringId: Int) {

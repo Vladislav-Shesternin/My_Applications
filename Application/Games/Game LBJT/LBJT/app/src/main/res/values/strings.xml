@@ -1,7 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name"   translatable="false">LBJT</string>
-    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="reward_UID" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+<!--    Test ID-->
+<!--    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--    <string name="reward_UID" translatable="false">ca-app-pub-3940256099942544/5224354917</string>-->
+    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/3159853793</string>
+    <string name="reward_UID" translatable="false">ca-app-pub-6757786625316217/9495336432</string>
 
     <string name="music">Music</string>
     <string name="quiet">Quiet</string>
@@ -39,6 +42,13 @@
     <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Main source of information.[_]{ENDLINK}</string>
     <string name="PS_Vel_daN" translatable="false">[#FFFFFF]PS. [#5BD344]Vel_daN[#FFFFFF]: Love what You DO [#5BD344]❤[#FFFFFF].</string>
 
+    <string name="will_be_later">Will be later</string>
+    <string name="now_implemented">Now implemented:</string>
+    <string name="now_implemented_screen" translatable="false">
+        • General Information
+        \n• Mouse Joint
+    </string>
+
     <string name="general_information">{JUMP}General information[]</string>
     <string name="mouse_joint" translatable="false">{WAVE}Mouse[] [#bc380eff]Joint[]</string>
     <string name="distance_joint" translatable="false">{WAVE}Distance[] [#bc380eff]Joint[]</string>
@@ -62,7 +72,7 @@
     <string name="geninfo_title_2">Special Settings</string>
     <string name="geninfo_title_3">So what is this getOrigin?</string>
     <string name="geninfo_title_4">How to measure, SCALE?</string>
-    <string name="geninfo_title_5">Destroy the joints U+1F4A5</string>
+    <string name="geninfo_title_5">Destroy the joints</string>
 
     <string name="geninfo_sub_title_1">Let\’s talk about Anchor Points</string>
     <string name="geninfo_sub_title_2">How to measure where to set the Anchor Point?</string>

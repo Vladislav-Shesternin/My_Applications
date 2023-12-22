@@ -10,6 +10,7 @@ import com.veldan.lbjt.game.box2d.bodiesGroup.BGLift
 import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
@@ -74,10 +75,20 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
         val screenNameList = listOf(
             GeneralInformationScreen::class.java.name,
             JMouseScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
+            WillBeLaterScreen::class.java.name,
         )
 
         bgLift.bgRegularBtns.bRegularBtnList.onEachIndexed { index, bRegularBtn ->
-            bRegularBtn.actor?.setOnTouchListener(radius = 20) { navigateTo(screenNameList[1]) }
+            bRegularBtn.actor?.setOnTouchListener(radius = 20) { navigateTo(screenNameList[index]) }
         }
     }
 

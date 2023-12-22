@@ -12,6 +12,7 @@ import com.veldan.lbjt.game.screens.TutorialsScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JMouseScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
 
@@ -55,8 +56,12 @@ class NavigationManager(val game: LibGDXGame) {
         // Tutorials Screens
         GeneralInformationScreen::class.java.name -> GeneralInformationScreen(game)
         JMouseScreen            ::class.java.name -> JMouseScreen(game)
+
+        WillBeLaterScreen::class.java.name -> WillBeLaterScreen(game)
         // Practical Screens
         Practical_JMouseScreen::class.java.name -> Practical_JMouseScreen(game)
+
+
 
         else -> MenuScreen(game)
     }

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Willy Wonka Quiz</string>
+
+    <string-array name="wonka_quiz">
+        <item>What is the name of the chocolate factory in Roald Dahl\'s "Charlie and the Chocolate Factory"?</item>
+        <item>Who is the author of the book "Charlie and the Chocolate Factory"?</item>
+        <item>What is the full name of the protagonist in the story?</item>
+        <item>How does Charlie initially obtain the golden ticket to enter the chocolate factory?</item>
+        <item>Which of the golden ticket winners turns out to be the most spoiled and misbehaved?</item>
+        <item>What is the name of the river inside the chocolate factory?</item>
+        <item>Who is Willy Wonka\'s eccentric and skilled workforce in the factory?</item>
+        <item>What is the fate of each golden ticket winner who misbehaves in the factory?</item>
+        <item>What is the magical candy that allows people to float in the air?</item>
+        <item>What is the first candy room the children enter in the factory?</item>
+        <item>Who accompanies Charlie to the factory tour?</item>
+        <item>What is the name of the giant machine that sorts and wraps the chocolate bars?</item>
+        <item>What is the special ingredient in the Everlasting Gobstoppers?</item>
+        <item>Who is the mysterious candyman who gives Charlie money to buy a Wonka bar?</item>
+        <item>What is the purpose of the Great Glass Elevator in the factory?</item>
+        <item>What does Willy Wonka use as a form of transportation inside the factory?</item>
+        <item>In the original film adaptation, who played the role of Willy Wonka?</item>
+        <item>What does each golden ticket winner receive at the end of the factory tour?</item>
+        <item>What is the magical item that allows Violet Beauregarde to stretch like rubber?</item>
+        <item>In the end, who does Willy Wonka choose as his successor to run the chocolate factory?</item>
+    </string-array>
+
+</resources>

@@ -11,13 +11,12 @@ import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AAbstractList
 import com.veldan.lbjt.game.manager.util.SpriteUtil
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
+import com.veldan.lbjt.util.log
 
 class AScrollPanel_GeneralInformation(
     _screen: AdvancedScreen,
     private val spriteUtil: SpriteUtil.GeneralInformation
 ): AAbstractTutorialScrollPanel(_screen) {
-
-    private val resources = screen.game.activity.resources
 
     override fun VerticalGroup.addActorsOnVerticalGroup() {
         addImage(spriteUtil.I1, 620f)
@@ -30,7 +29,7 @@ class AScrollPanel_GeneralInformation(
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_2, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_Label(resources.getStringArray(R.array.geninfo_arr_1).toList(), AAbstractList.Static.Align.Center)
+        addList_Label(R.array.geninfo_arr_1, AAbstractList.Static.Align.Center)
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_3, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
@@ -38,11 +37,11 @@ class AScrollPanel_GeneralInformation(
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_4, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_Label(resources.getStringArray(R.array.geninfo_arr_2).toList())
+        addList_Label(R.array.geninfo_arr_2)
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_note_1, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_Label(resources.getStringArray(R.array.geninfo_arr_3).toList())
+        addList_Label(R.array.geninfo_arr_3)
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_note_2, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
@@ -54,7 +53,7 @@ class AScrollPanel_GeneralInformation(
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_5, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_Label(resources.getStringArray(R.array.geninfo_arr_4).toList())
+        addList_Label(R.array.geninfo_arr_4)
         addSpace(Space._25)
         addLongQuote(R.string.geninfo_longquote_2)
         addSpace(Space._80)
@@ -92,7 +91,7 @@ class AScrollPanel_GeneralInformation(
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_11, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_TypingLabel(resources.getStringArray(R.array.geninfo_arr_5).toList(), symbol = AAbstractList.Static.Symbol.Bullet)
+        addList_TypingLabel(R.array.geninfo_arr_5, symbol = AAbstractList.Static.Symbol.Bullet)
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_12, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
@@ -106,7 +105,7 @@ class AScrollPanel_GeneralInformation(
         addSpace(Space._80)
         addTypingLabel(R.string.geninfo_text_14, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_TypingLabel(resources.getStringArray(R.array.geninfo_arr_6).toList(), symbol = AAbstractList.Static.Symbol.Number)
+        addList_TypingLabel(R.array.geninfo_arr_6, symbol = AAbstractList.Static.Symbol.Number)
         addSpace(Space._25)
         addCodePanel(R.string.geninfo_codepanel_5, CodePanelHeight._400)
         addSpace(Space._25)
@@ -120,7 +119,7 @@ class AScrollPanel_GeneralInformation(
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_16, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_TypingLabel(resources.getStringArray(R.array.geninfo_arr_7).toList(), symbol = AAbstractList.Static.Symbol.Number)
+        addList_TypingLabel(R.array.geninfo_arr_7, symbol = AAbstractList.Static.Symbol.Number)
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_17, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
@@ -164,7 +163,7 @@ class AScrollPanel_GeneralInformation(
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_25, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)
-        addList_TypingLabel(resources.getStringArray(R.array.geninfo_arr_8).toList(), symbol = AAbstractList.Static.Symbol.Bullet)
+        addList_TypingLabel(R.array.geninfo_arr_8, symbol = AAbstractList.Static.Symbol.Bullet)
         addSpace(Space._25)
         addTypingLabel(R.string.geninfo_text_26, TypingLabelFontFamily.Inter_MeniumBold_30)
         addSpace(Space._25)

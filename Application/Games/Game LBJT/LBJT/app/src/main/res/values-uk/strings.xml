@@ -36,6 +36,9 @@
     <string name="general_information">{JUMP=0.5;1.0;1.0}Загальна інформація[]</string>
     <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Основне джерело інформації.[_]{ENDLINK}</string>
 
+    <string name="will_be_later">Скоро буде</string>
+    <string name="now_implemented">Зараз реалізовано:</string>
+
     <!--GeneralInformation-->
     <string name="geninfo_title_1">І так… З\'єднання</string>
     <string name="geninfo_title_2">Спеціальні Налаштування</string>

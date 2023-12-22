@@ -1,0 +1,75 @@
+game.png
+size: 1000, 1301
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a3
+  rotate: false
+  xy: 2, 2
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+a3p
+  rotate: false
+  xy: 501, 2
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+a4
+  rotate: false
+  xy: 2, 284
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+a4p
+  rotate: false
+  xy: 501, 284
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+a5
+  rotate: false
+  xy: 2, 566
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+a5p
+  rotate: false
+  xy: 501, 566
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+exit
+  rotate: false
+  xy: 2, 848
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+exitp
+  rotate: false
+  xy: 501, 848
+  size: 497, 280
+  orig: 497, 280
+  offset: 0, 0
+  index: -1
+next
+  rotate: false
+  xy: 2, 1130
+  size: 300, 169
+  orig: 300, 169
+  offset: 0, 0
+  index: -1
+nextp
+  rotate: false
+  xy: 304, 1130
+  size: 300, 169
+  orig: 300, 169
+  offset: 0, 0
+  index: -1

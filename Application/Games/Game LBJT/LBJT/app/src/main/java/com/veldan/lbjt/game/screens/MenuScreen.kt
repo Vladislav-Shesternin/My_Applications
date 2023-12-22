@@ -64,7 +64,7 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
         game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
 
-        //oncePlayMusic.once { playMusic() }
+        oncePlayMusic.once { playMusic() }
     }
 
     override fun AdvancedStage.addActorsOnStageUI() {

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name" translatable="false">FBall team Quiz</string>
+
+    <string name="manchester_united">Manchester United</string>
+    <string name="chelsea">Chelsea</string>
+    <string name="manchester_city">Manchester city</string>
+    <string name="liverpool">Liverpool</string>
+    <string name="wolverhampton">Wolverhampton</string>
+    <string name="leicester_city">Leicester City</string>
+    <string name="brighton">Brighton</string>
+    <string name="west_bromwich">West Bromwich</string>
+    <string name="west_ham">West Ham</string>
+    <string name="southampton">Southampton</string>
+    <string name="milan">Milan</string>
+    <string name="torino">Torino</string>
+</resources>

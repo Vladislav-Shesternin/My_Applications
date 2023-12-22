@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="manchester_united">Манчестер юнайтед</string>
+    <string name="chelsea">Челсі</string>
+    <string name="manchester_city">Манчестер сіті</string>
+    <string name="liverpool">Ліверпуль</string>
+    <string name="wolverhampton">Вулверхемптон</string>
+    <string name="leicester_city">Лестер Сіті</string>
+    <string name="brighton">Брайтон</string>
+    <string name="west_bromwich">Вест Бромвич</string>
+    <string name="west_ham">Вест Хем</string>
+    <string name="southampton">Саутгемптон</string>
+    <string name="milan">Мілан</string>
+    <string name="torino">Торіно</string>
+</resources>

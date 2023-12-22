@@ -1,0 +1,40 @@
+loading.png
+size: 1890, 1933
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bull
+  rotate: false
+  xy: 2, 2
+  size: 1080, 1141
+  orig: 1080, 1141
+  offset: 0, 0
+  index: -1
+liading_liading
+  rotate: false
+  xy: 1084, 2
+  size: 786, 158
+  orig: 786, 158
+  offset: 0, 0
+  index: -1
+loading_babochke
+  rotate: false
+  xy: 2, 1145
+  size: 1095, 786
+  orig: 1095, 786
+  offset: 0, 0
+  index: -1
+loadingPlay
+  rotate: false
+  xy: 1099, 1145
+  size: 269, 269
+  orig: 269, 269
+  offset: 0, 0
+  index: -1
+progigress
+  rotate: false
+  xy: 1370, 1145
+  size: 518, 49
+  orig: 518, 49
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,61 @@
+game.png
+size: 804, 1713
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+answer
+  rotate: false
+  xy: 2, 2
+  size: 739, 159
+  orig: 739, 159
+  offset: 0, 0
+  index: -1
+exit
+  rotate: false
+  xy: 2, 163
+  size: 671, 144
+  orig: 671, 144
+  offset: 0, 0
+  index: -1
+falses
+  rotate: false
+  xy: 2, 309
+  size: 800, 199
+  orig: 800, 199
+  offset: 0, 0
+  index: -1
+music
+  rotate: false
+  xy: 2, 510
+  size: 348, 348
+  orig: 348, 348
+  offset: 0, 0
+  index: -1
+music_netu
+  rotate: false
+  xy: 352, 510
+  size: 348, 348
+  orig: 348, 348
+  offset: 0, 0
+  index: -1
+question
+  rotate: false
+  xy: 2, 860
+  size: 780, 504
+  orig: 780, 504
+  offset: 0, 0
+  index: -1
+quiz
+  rotate: false
+  xy: 2, 1366
+  size: 671, 144
+  orig: 671, 144
+  offset: 0, 0
+  index: -1
+trues
+  rotate: false
+  xy: 2, 1512
+  size: 800, 199
+  orig: 800, 199
+  offset: 0, 0
+  index: -1

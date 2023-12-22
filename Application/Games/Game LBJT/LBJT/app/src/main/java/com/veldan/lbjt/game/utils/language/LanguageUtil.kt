@@ -26,6 +26,11 @@ class LanguageUtil(activity: MainActivity) {
         language: Language = languageFlow.value,
     ): String = getConfigurationContextByLanguage(language).getString(resourceId)
 
+    fun getStringArrayResources(
+        resourceId: Int,
+        language: Language = languageFlow.value,
+    ): Array<String> = getConfigurationContextByLanguage(language).resources.getStringArray(resourceId)
+
     private fun getConfigurationContextByLanguage(language: Language): Context = when (language) {
         Language.UK -> configurationContextUK
         Language.EN -> configurationContextEN

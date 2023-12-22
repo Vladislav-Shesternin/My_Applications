@@ -1,0 +1,96 @@
+game.png
+size: 1009, 694
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball 1
+  rotate: false
+  xy: 2, 2
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ball 2
+  rotate: false
+  xy: 204, 2
+  size: 199, 200
+  orig: 199, 200
+  offset: 0, 0
+  index: -1
+ball 3
+  rotate: false
+  xy: 405, 2
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ball 4
+  rotate: false
+  xy: 607, 2
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ball 5
+  rotate: false
+  xy: 809, 2
+  size: 198, 200
+  orig: 198, 200
+  offset: 0, 0
+  index: -1
+ball 6
+  rotate: false
+  xy: 2, 204
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ball_panel
+  rotate: false
+  xy: 204, 204
+  size: 639, 220
+  orig: 639, 220
+  offset: 0, 0
+  index: -1
+checked
+  rotate: false
+  xy: 2, 426
+  size: 307, 97
+  orig: 307, 97
+  offset: 0, 0
+  index: -1
+default
+  rotate: false
+  xy: 311, 426
+  size: 307, 97
+  orig: 307, 97
+  offset: 0, 0
+  index: -1
+play_panel
+  rotate: false
+  xy: 2, 525
+  size: 484, 167
+  orig: 484, 167
+  offset: 0, 0
+  index: -1
+sound
+  rotate: false
+  xy: 488, 525
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+sound_not
+  rotate: false
+  xy: 640, 525
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+tetra
+  rotate: false
+  xy: 792, 525
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1

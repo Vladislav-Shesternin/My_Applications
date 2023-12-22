@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LBJTTest" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/yan</item>
+        <item name="android:navigationBarColor">@color/yan</item>
+    </style>
+
+    <style name="Theme.LBJTTest" parent="Base.Theme.LBJTTest" />
+</resources>

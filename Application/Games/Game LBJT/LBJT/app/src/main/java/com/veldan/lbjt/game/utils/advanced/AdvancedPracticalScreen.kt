@@ -3,6 +3,7 @@ package com.veldan.lbjt.game.utils.advanced
 import com.badlogic.gdx.Input
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.box2d.bodiesGroup.practical.AbstractBGPractical
+import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 
@@ -19,6 +20,11 @@ abstract class AdvancedPracticalScreen(override val game: LibGDXGame): AdvancedM
             bgPractical.bPracticalSettings.getActor()?.runDoneBlock()
             true
         } else super.keyDown(keycode)
+    }
+
+    override fun dispose() {
+        listOf(bgPractical).destroyAll()
+        super.dispose()
     }
 
     // ---------------------------------------------------

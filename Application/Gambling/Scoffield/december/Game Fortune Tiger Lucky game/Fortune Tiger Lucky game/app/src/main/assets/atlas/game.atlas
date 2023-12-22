@@ -1,0 +1,166 @@
+game.png
+size: 1686, 1064
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 212, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 422, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 632, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 842, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1052, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 1262, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+bomb
+  rotate: false
+  xy: 1472, 2
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+cb_check
+  rotate: false
+  xy: 2, 212
+  size: 73, 73
+  orig: 73, 73
+  offset: 0, 0
+  index: -1
+cb_def
+  rotate: false
+  xy: 77, 212
+  size: 73, 73
+  orig: 73, 73
+  offset: 0, 0
+  index: -1
+menu_def
+  rotate: false
+  xy: 152, 212
+  size: 177, 176
+  orig: 177, 176
+  offset: 0, 0
+  index: -1
+menu_press
+  rotate: false
+  xy: 331, 212
+  size: 177, 176
+  orig: 177, 176
+  offset: 0, 0
+  index: -1
+music_check
+  rotate: false
+  xy: 510, 212
+  size: 177, 176
+  orig: 177, 176
+  offset: 0, 0
+  index: -1
+music_def
+  rotate: false
+  xy: 689, 212
+  size: 177, 176
+  orig: 177, 176
+  offset: 0, 0
+  index: -1
+ok_def
+  rotate: false
+  xy: 868, 212
+  size: 258, 126
+  orig: 258, 126
+  offset: 0, 0
+  index: -1
+ok_press
+  rotate: false
+  xy: 1128, 212
+  size: 258, 126
+  orig: 258, 126
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 1388, 212
+  size: 117, 145
+  orig: 117, 145
+  offset: 0, 0
+  index: -1
+pause_check
+  rotate: false
+  xy: 1507, 212
+  size: 177, 176
+  orig: 177, 176
+  offset: 0, 0
+  index: -1
+pause_def
+  rotate: false
+  xy: 2, 390
+  size: 177, 176
+  orig: 177, 176
+  offset: 0, 0
+  index: -1
+tiger-1
+  rotate: false
+  xy: 181, 390
+  size: 498, 672
+  orig: 498, 672
+  offset: 0, 0
+  index: -1
+tiger-2
+  rotate: false
+  xy: 681, 390
+  size: 615, 645
+  orig: 615, 645
+  offset: 0, 0
+  index: -1
+time_panel
+  rotate: false
+  xy: 1298, 390
+  size: 209, 64
+  orig: 209, 64
+  offset: 0, 0
+  index: -1
+volume
+  rotate: false
+  xy: 1509, 390
+  size: 44, 72
+  orig: 44, 72
+  offset: 0, 0
+  index: -1

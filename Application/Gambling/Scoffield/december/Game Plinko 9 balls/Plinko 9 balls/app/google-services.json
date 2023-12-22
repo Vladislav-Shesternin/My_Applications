@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "220674554596",
+    "project_id": "plinko-9-balls",
+    "storage_bucket": "plinko-9-balls.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220674554596:android:e8ba157872b592ace90af1",
+        "android_client_info": {
+          "package_name": "plinko.gameballs.nine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsl9b1x9BsJAvUlhtJXLspFdPuEk_BcQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

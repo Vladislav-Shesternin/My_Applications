@@ -2,6 +2,7 @@ package com.veldan.lbjt.game.actors.practical_settings
 
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.BitmapFont
+import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
 import com.veldan.lbjt.game.actors.progress.AProgressPractical
@@ -84,6 +85,22 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
         addActor(Label(screen.game.languageUtil.getStringResource(stringId), Label.LabelStyle(labelFont.getFont(), color)).also {
             it.setBounds(layoutData)
             it.setAlignment(align)
+        })
+    }
+
+    fun addLabelValue(
+        string: String,
+        x: Float, y: Float,
+    ) {
+        addActor(Label(string, Label.LabelStyle(fontInter_Regular_20, GameColor.textGreen)).also {
+            it.setPosition(x, y)
+        })
+    }
+
+    fun addPointImg(x: Float, y: Float) {
+        addActor(Image(screen.game.themeUtil.assets.PRACTICAL_PROGRESS_POINT).apply {
+            disable()
+            setBounds(x, y, 5f, 5f)
         })
     }
 

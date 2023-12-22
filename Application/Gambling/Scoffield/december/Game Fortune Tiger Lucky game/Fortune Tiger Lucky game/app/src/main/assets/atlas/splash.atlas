@@ -1,0 +1,19 @@
+splash.png
+size: 993, 143
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+progress
+  rotate: false
+  xy: 2, 2
+  size: 677, 27
+  orig: 677, 27
+  offset: 0, 0
+  index: -1
+progress_bar
+  rotate: false
+  xy: 2, 31
+  size: 989, 110
+  orig: 989, 110
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Winter holiday quiz</string>
+
+    <string-array name="answers">
+        <item>Christmas Tree</item>
+        <item>Ornaments</item>
+        <item>Lights</item>
+        <item>Wreath</item>
+        <item>Stockings</item>
+        <item>Tinsel</item>
+        <item>Christmas Balls</item>
+        <item>Candles</item>
+        <item>Nutcracker</item>
+        <item>Gingerbread House</item>
+        <item>Mistletoe</item>
+        <item>Snow Globe</item>
+        <item>Advent Calendar</item>
+        <item>Christmas Stocking Holder</item>
+        <item>Snowman Figurine</item>
+        <item>Holiday Tablecloth</item>
+        <item>Holiday Napkin Rings</item>
+        <item>Christmas Cards</item>
+    </string-array>
+
+    <string-array name="questions">
+        <item>A decorated evergreen tree, often the focal point of holiday decorations.</item>
+        <item>Decorative items, often made of glass or other materials, hung on the Christmas tree.</item>
+        <item>Strings of lights used to decorate Christmas trees, homes, and outdoor spaces.</item>
+        <item>A circular decoration made of evergreen branches, often adorned with ribbons and ornaments.</item>
+        <item>Socks or stockings hung by the fireplace for Santa Claus to fill with gifts.</item>
+        <item>Santa Claus Hat: A red hat with white fur trim, worn by Santa Claus.</item>
+        <item>Shiny, metallic strands used for decoration, often hung on Christmas trees.</item>
+        <item>Round ornaments often made of glass or plastic, used to decorate trees.</item>
+        <item>Gift Wrap: Decorative paper used to wrap Christmas presents.</item>
+        <item>Scented or decorative candles used for ambiance during the holiday season.</item>
+        <item>Wooden figurines often associated with Christmas, especially in ballet performances.</item>
+        <item>Edible houses made of gingerbread, typically decorated with icing and candy.</item>
+        <item>Glass globes with scenes inside, filled with water and snow-like particles.</item>
+        <item>A plant hung in doorways, where it\'s traditional to exchange kisses beneath it.</item>
+        <item>A calendar with windows or compartments, opened each day leading up to Christmas.</item>
+        <item>Decorative hooks or holders for hanging stockings without a fireplace.</item>
+        <item>Decorative figurines or plush toys representing a snowman.</item>
+        <item>Festive tablecloths often featuring Christmas-themed patterns.</item>
+        <item>Decorative rings used to hold napkins on the Christmas dinner table.</item>
+        <item>Greeting cards exchanged during the holiday season, often featuring winter scenes or festive imagery.</item>
+    </string-array>
+
+</resources>

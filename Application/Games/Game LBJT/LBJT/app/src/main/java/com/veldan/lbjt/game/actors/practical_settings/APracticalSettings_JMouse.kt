@@ -1,9 +1,11 @@
 package com.veldan.lbjt.game.actors.practical_settings
 
+import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.progress.AProgressPractical
 import com.veldan.lbjt.game.utils.Layout
+import com.veldan.lbjt.game.utils.actor.disable
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.util.log
@@ -19,6 +21,8 @@ class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSett
         var dampingRatioValue: Float = 0.7f
     }
 
+    private val assets = _screen.game.themeUtil.assets
+
     // Actor
     private val maxForceLbl          = Label("", valueLabelStyle)
     private val frequencyHzLbl       = Label("", valueLabelStyle)
@@ -26,7 +30,6 @@ class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSett
     private val maxForceProgress     = AProgressPractical(screen)
     private val frequencyHzProgress  = AProgressPractical(screen)
     private val dampingRatioProgress = AProgressPractical(screen)
-
 
 
     override fun addActorsOnGroup() {
@@ -38,6 +41,8 @@ class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSett
 
         addValueLbls()
         addProgresses()
+        addPoints()
+        addValues()
 
         collectProgresses()
     }
@@ -58,6 +63,32 @@ class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSett
         maxForceProgress.setBounds(34f, 962f, 631f, 76f)
         frequencyHzProgress.setBounds(34f, 753f, 631f, 76f)
         dampingRatioProgress.setBounds(34f, 544f, 631f, 76f)
+    }
+
+    private fun addPoints() {
+        val listMaxForceX = listOf(96f, 347f, 660f)
+        repeat(3) { addPointImg(listMaxForceX[it], 986f) }
+
+        val listFrDmX = listOf(221f, 442f, 660f)
+        repeat(3) {
+            addPointImg(listFrDmX[it], 777f)
+            addPointImg(listFrDmX[it], 568f)
+        }
+    }
+
+    private fun addValues() {
+        val listMaxForceX     = listOf(34f, 97f, 327f, 601f)
+        val listMaxForceValue = listOf("0", "1.000", "5.000", "10.000")
+
+        listMaxForceValue.onEachIndexed { index, value -> addLabelValue(value, listMaxForceX[index], 962f) }
+
+        val listFrDmX     = listOf(34f, 209f, 429f, 643f)
+        val listFrDmValue = listOf("-5", "0.0", "5.0", "10")
+
+        listFrDmValue.onEachIndexed { index, value ->
+            addLabelValue(value, listFrDmX[index], 753f)
+            addLabelValue(value, listFrDmX[index], 544f)
+        }
     }
 
     // ---------------------------------------------------
