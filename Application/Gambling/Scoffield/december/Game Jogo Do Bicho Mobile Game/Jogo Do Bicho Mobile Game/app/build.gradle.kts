@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinTargetHierarchy.SourceSetTree.Co
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -13,8 +14,8 @@ android {
         applicationId = "mobile.jogodobicho.lucky"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.2"
+        versionCode = 2
+        versionName = "2.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -75,6 +76,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
     implementation("com.airbnb.android:lottie:6.2.0")
     implementation("space.earlygrey:shapedrawer:2.6.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-config-ktx")
 }
 
 tasks.register("copyAndroidNatives") {

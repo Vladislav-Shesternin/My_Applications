@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "901437690950",
+    "project_id": "plinko-test-you-luck",
+    "storage_bucket": "plinko-test-you-luck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901437690950:android:6a8722d48015157299a647",
+        "android_client_info": {
+          "package_name": "plinko.testyouluck.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy9eTc-WjHYThnnkVMadTi5sA7TRu7BVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

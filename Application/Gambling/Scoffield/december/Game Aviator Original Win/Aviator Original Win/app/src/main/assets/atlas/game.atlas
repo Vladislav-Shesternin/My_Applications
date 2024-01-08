@@ -1,0 +1,145 @@
+game.png
+size: 512, 1031
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+avia1
+  rotate: false
+  xy: 2, 2
+  size: 253, 253
+  orig: 253, 253
+  offset: 0, 0
+  index: -1
+avia2
+  rotate: false
+  xy: 257, 2
+  size: 253, 253
+  orig: 253, 253
+  offset: 0, 0
+  index: -1
+avia3
+  rotate: false
+  xy: 2, 257
+  size: 253, 253
+  orig: 253, 253
+  offset: 0, 0
+  index: -1
+avia4
+  rotate: false
+  xy: 257, 257
+  size: 253, 253
+  orig: 253, 253
+  offset: 0, 0
+  index: -1
+avia5
+  rotate: false
+  xy: 2, 512
+  size: 253, 253
+  orig: 253, 253
+  offset: 0, 0
+  index: -1
+coin1
+  rotate: false
+  xy: 257, 512
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+coin2
+  rotate: false
+  xy: 359, 512
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+coin3
+  rotate: false
+  xy: 2, 767
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+coin4
+  rotate: false
+  xy: 104, 767
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+enemy1
+  rotate: false
+  xy: 206, 767
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+enemy2
+  rotate: false
+  xy: 308, 767
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+enemy3
+  rotate: false
+  xy: 410, 767
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+hart
+  rotate: false
+  xy: 2, 869
+  size: 51, 51
+  orig: 51, 51
+  offset: 0, 0
+  index: -1
+menu_def
+  rotate: false
+  xy: 55, 869
+  size: 99, 98
+  orig: 99, 98
+  offset: 0, 0
+  index: -1
+menu_press
+  rotate: false
+  xy: 156, 869
+  size: 99, 98
+  orig: 99, 98
+  offset: 0, 0
+  index: -1
+music_check
+  rotate: false
+  xy: 257, 869
+  size: 98, 98
+  orig: 98, 98
+  offset: 0, 0
+  index: -1
+music_def
+  rotate: false
+  xy: 357, 869
+  size: 98, 98
+  orig: 98, 98
+  offset: 0, 0
+  index: -1
+pause_check
+  rotate: false
+  xy: 2, 969
+  size: 61, 60
+  orig: 61, 60
+  offset: 0, 0
+  index: -1
+pause_def
+  rotate: false
+  xy: 65, 969
+  size: 61, 60
+  orig: 61, 60
+  offset: 0, 0
+  index: -1
+point
+  rotate: false
+  xy: 128, 969
+  size: 42, 50
+  orig: 42, 50
+  offset: 0, 0
+  index: -1

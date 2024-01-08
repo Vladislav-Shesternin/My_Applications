@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "535458969701",
+    "project_id": "rainbow-riches-lucky-game",
+    "storage_bucket": "rainbow-riches-lucky-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535458969701:android:9f816c60beaf8bbeb2ee8c",
+        "android_client_info": {
+          "package_name": "rainbowriches.lucky.start"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDigcFtolFfbRRVOX0Y6QTXH0tWwWvjJ_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

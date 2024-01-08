@@ -14,6 +14,8 @@ import com.veldan.lbjt.game.box2d.bodiesGroup.BGBorders
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGMenu
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGYanYinTheme
 import com.veldan.lbjt.game.box2d.destroyAll
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JDistanceScreen
 import com.veldan.lbjt.game.utils.FIREBASE_STORAGE_MUSIC
 import com.veldan.lbjt.game.utils.LOCAL_MUSIC_DIR
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
@@ -122,7 +124,7 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
         bgMenu.create(117f,444f,466f,1012f)
 
         bgMenu.apply {
-            bRegularBtnTutorial   .getActor()?.setOnTouchListener { navigateTo(TutorialIntroductionScreen::class.java.name) }
+            bRegularBtnTutorial   .getActor()?.setOnTouchListener { navigateTo(Practical_JDistanceScreen::class.java.name) }//TutorialIntroductionScreen::class.java.name) }
             bRegularBtnSettings   .getActor()?.setOnTouchListener { navigateTo(SettingsScreen::class.java.name)    }
             bRegularBtnAboutAuthor.getActor()?.setOnTouchListener { navigateTo(AboutAuthorScreen::class.java.name) }
             bRegularBtnComment    .getActor()?.setOnTouchListener { navigateTo(CommentsScreen::class.java.name)     }

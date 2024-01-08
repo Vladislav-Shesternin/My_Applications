@@ -21,8 +21,6 @@ class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSett
         var dampingRatioValue: Float = 0.7f
     }
 
-    private val assets = _screen.game.themeUtil.assets
-
     // Actor
     private val maxForceLbl          = Label("", valueLabelStyle)
     private val frequencyHzLbl       = Label("", valueLabelStyle)

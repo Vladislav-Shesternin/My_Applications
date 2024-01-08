@@ -6,15 +6,19 @@ import atest.btest.lbjttest.game.box2d.AbstractJoint
 import atest.btest.lbjttest.game.box2d.BodyId
 import atest.btest.lbjttest.game.box2d.bodies.objects.BHObject
 import atest.btest.lbjttest.game.box2d.bodies.objects.BVObject
+import atest.btest.lbjttest.game.utils.DEGTORAD
+import atest.btest.lbjttest.game.utils.RADTODEG
 import atest.btest.lbjttest.game.utils.advanced.AdvancedBox2dScreen
 import atest.btest.lbjttest.game.utils.advanced.AdvancedGroup
 import atest.btest.lbjttest.game.utils.advanced.AdvancedStage
 import atest.btest.lbjttest.game.utils.toB2
+import atest.btest.lbjttest.util.log
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.joints.DistanceJointDef
 import com.badlogic.gdx.physics.box2d.joints.RevoluteJoint
 import com.badlogic.gdx.physics.box2d.joints.RevoluteJointDef
+import com.badlogic.gdx.physics.box2d.joints.WeldJointDef
 
 class BGRevoluteJoint_1(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup() {
 
@@ -92,7 +96,15 @@ class BGRevoluteJoint_1(override val screenBox2d: AdvancedBox2dScreen): Abstract
 
             localAnchorA.set(Vector2(35f, 0f).subCenter(bodyA))
             localAnchorB.set(Vector2(170f, 35f).subCenter(bodyB))
+
+            motorSpeed     = 10 * DEGTORAD
+            maxMotorTorque = 100f
+            enableMotor    = true
+
         })
+
+        //jRevolute.joint?.enableLimit(true)
+
     }
 
 }

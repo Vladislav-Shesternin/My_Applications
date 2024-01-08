@@ -39,6 +39,31 @@
     <string name="will_be_later">Скоро буде</string>
     <string name="now_implemented">Зараз реалізовано:</string>
 
+    <!--Joints Common-->
+    <string name="j_sub_title_mandatory">Обов\'язковi</string>
+    <string name="j_sub_title_optional">Не обов\'язковi</string>
+
+    <string name="j_text_works_great">[#d2e9cdff][@Inter_Medium]Це працює, і це чудово.</string>
+
+    <string name="j_longquote_frequency">
+        [#FF4949][@Inter_Bold]Значення &lt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями менше 1, наприклад 0,5 або 0,7, з\'єднання буде сильно розтягнутим, нагадуючи [#FF4949][@Inter_Bold]м\’яку пружину[#d2e9cdff][@Inter_Medium].
+        \n\n[#FF4949][@Inter_Bold]Значення &gt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями, більшe за 1, наприклад 2, 5 або 10, з\'єднання розтягнеться дуже мало або зовсім не розтягнеться, подібно до [#FF4949][@Inter_Bold]жорсткої пружини[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="j_longquote_damping">
+        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: не пригнічує.
+        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: майже абсолютне придушення.
+    </string>
+
+    <string-array name="j_arr_mandatory" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]bodyA — перше тiло з\'єднання.</item>
+        <item>[#d2e9cdff][@Inter_Regular]bodyB — другe тiло з\'єднання.</item>
+        <item>[#d2e9cdff][@Inter_Regular]collideConnected — &lt;boolean&gt; Визначає, чи має bodyA зіткнутися з bodyB.</item>
+    </string-array>
+
+    <string-array name="j_arr_damping" translatable="false">
+        <item>[#d2e9cdff][@Inter_Regular]dampingRatio — пригнічує вібрації і приймає значення від [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular] до [#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+
     <!--GeneralInformation-->
     <string name="geninfo_title_1">І так… З\'єднання</string>
     <string name="geninfo_title_2">Спеціальні Налаштування</string>
@@ -185,8 +210,6 @@
     <string name="jmouse_title_3">Ще кілька прикладів (круті ефекти)</string>
 
     <string name="jmouse_sub_title_1">MouseJointDef налаштування:</string>
-    <string name="jmouse_sub_title_2">Обов\'язковi</string>
-    <string name="jmouse_sub_title_3">Не обов\'язковi</string>
     <string name="jmouse_sub_title_4">Весь код:</string>
 
     <string name="jmouse_text_1">[#d2e9cdff][@Inter_Medium]Mouse joint — з\'єднання призначенe для переміщення динамічних тіл юзером.</string>
@@ -210,10 +233,6 @@
     </string>
     <string name="jmouse_note_5">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Для цих прикладів [#FF4949][@Inter_Bold]буде використовуватися попередній код[#d2e9cdff][@Inter_Medium], просто його потрібно трохи змінити.</string>
 
-    <string name="jmouse_longquote_1">
-        [#FF4949][@Inter_Bold]Значення &lt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями менше 1, наприклад 0,5 або 0,7, з\'єднання буде сильно розтягнутим, нагадуючи [#FF4949][@Inter_Bold]м\’яку пружину[#d2e9cdff][@Inter_Medium].
-        \n\n[#FF4949][@Inter_Bold]Значення &gt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями, більшe за 1, наприклад 2, 5 або 10, з\'єднання розтягнеться дуже мало або зовсім не розтягнеться, подібно до [#FF4949][@Inter_Bold]жорсткої пружини[#d2e9cdff][@Inter_Medium].
-    </string>
     <string name="jmouse_longquote_2">
         [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: не пригнічує.
         \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: майже абсолютне придушення.
@@ -244,9 +263,6 @@
     <string-array name="jmouse_arr_3" translatable="false">
         <item>[#d2e9cdff][@Inter_Regular]frequencyHz — також відомий як [#FF4949][@Inter_Bold]швидкість відповіді[#d2e9cdff][@Inter_Regular], працює як пружина між пальцем юзерa [#FF4949][@Inter_Bold](target)[#d2e9cdff][@Inter_Regular] i [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
-    <string-array name="jmouse_arr_4" translatable="false">
-        <item>[#d2e9cdff][@Inter_Regular]dampingRatio — пригнічує вібрації і приймає значення від [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular] до [#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular].</item>
-    </string-array>
     <string-array name="jmouse_arr_5" translatable="false">
         <item>[#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] (оскільки він буде [#FF4949][@Inter_Bold]створюватися[#d2e9cdff][@Inter_Regular] та [#FF4949][@Inter_Bold]знищуватися[#d2e9cdff][@Inter_Regular] різними методами);</item>
         <item>[#FF4949][@Inter_Bold]Тіло[#d2e9cdff][@Inter_Regular], яке буде рухатися;</item>
@@ -269,5 +285,41 @@
         <item>[#d2e9cdff][@Inter_Regular]У методі [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Regular] налаштуйте [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] як [#FF4949][@Inter_Bold]ball[#d2e9cdff][@Inter_Regular];</item>
         <item>[#d2e9cdff][@Inter_Regular]У методі [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Regular] (Видалити / Закоментувати) [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] і [#FF4949][@Inter_Bold]QueryAABB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
+
+    <!--JointDistance-->
+    <string name="jdistance_title_1">І так… Distance Joint</string>
+    <string name="jdistance_title_2">Практика. Як створити Distance Joint?</string>
+
+    <string name="jdistance_sub_title_1">DistanceJointDef налаштування:</string>
+
+    <string name="jdistance_text_1">[#d2e9cdff][@Inter_Medium]Distance joint — з\’єднання, призначене для з\’єднання двох тіл разом, як пружина, з можливістю налаштування пружності та швидкості зникнення коливань.</string>
+    <string name="jdistance_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Regular]. А тепер поговоримо про DistanceJointDef.</string>
+    <string name="jdistance_text_3">[#d2e9cdff][@Inter_Medium]Щоб ви могли [#FF4949][@Inter_Bold]тестувати Joints[#d2e9cdff][@Inter_Medium], вам потрібно взаємодіяти з тілами, для цього вам потрібно реалізувати [#FF4949][@Inter_Bold]Mouse Joint[#d2e9cdff][@Inter_Medium]. Як це реалізувати описано в статті [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Mouse Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_4">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься зі [#FF4949][@Inter_Bold]статичної платформи[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]динамічної кулі[#d2e9cdff][@Inter_Medium], з’єднаних за допомогою [#FF4949][@Inter_Bold]DistanceJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_5">[#d2e9cdff][@Inter_Medium]Створіть 2 тіла: [#FF4949][@Inter_Bold]статичну[#d2e9cdff][@Inter_Medium] платформу та [#FF4949][@Inter_Bold]динамічну[#d2e9cdff][@Inter_Medium] кулю.</string>
+    <string name="jdistance_text_6">[#d2e9cdff][@Inter_Medium]Створіть DistanceJoint:</string>
+    <string name="jdistance_text_7">[#d2e9cdff][@Inter_Medium]Ось і все, ви вже можете запустити програму і тіла будуть з\'єднані, [#FF4949][@Inter_Bold]але є одне але[#d2e9cdff][@Inter_Medium], вони будуть з\'єднані в своїх [#FF4949][@Inter_Bold]опорних точках[#d2e9cdff][@Inter_Medium], де вказано [#FF4949][@Inter_Bold]центр мас[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]довжиною 1 метр[#d2e9cdff][@Inter_Medium], щоб це виправити, вам потрібно [#FF4949][@Inter_Bold]налаштувати localAnchorA, localAnchorB, length[#d2e9cdff][@Inter_Medium] Я говорив про те, як [#FF4949][@Inter_Bold]розрахувати опорні точки[#d2e9cdff][@Inter_Medium] в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_8">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]localAnchorA, localAnchorB, length[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jdistance_text_9">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium] (пружність):</string>
+    <string name="jdistance_text_10">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jdistance_text_11">[#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium] — гасить саме [#FF4949][@Inter_Bold]розтягування[#d2e9cdff][@Inter_Medium] з\'єднання, а не коливання в сторони, тому можна сказати, що він працює разом з [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_12">[#d2e9cdff][@Inter_Medium]Тіло повертається у початкове положення [#FF4949][@Inter_Bold]дуже плавно й повільно[#d2e9cdff][@Inter_Medium], ніби хтось потроху тягне його до себе, хороший ефект, чим більше значення [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium], тим складніше з\'єднання буде розтягуватися і тим повільніше воно буде повернутися у вихідне положення (не забувайте, що це працює лише разом із [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium]).</string>
+
+    <string name="jdistance_note_1">
+        [#000000ff][@Inter_Bold](Примітка: )[#FF4949] Не забувайте[#d2e9cdff][@Inter_Medium] , що значення вказані в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Medium].
+        \nAbout Про одиниці вимірювання [#FF4949][@Inter_Bold]метри, кілограми, секунди (МКС)[#d2e9cdff][@Inter_Medium] написано в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="jdistance_longquote_1">
+        [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Medium]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Medium].
+        \n\n[#FF4949][@Inter_Bold]Value &gt; 1: [#d2e9cdff][@Inter_Medium]With values greater than 1, such as 2, 5, or 10, the joint will stretch very little or not at all, similar to a [#FF4949][@Inter_Bold]stiff spring[#d2e9cdff][@Inter_Medium].
+    </string>
+
+    <string-array name="jdistance_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]length — [#FF4949][@Inter_Bold]length[#d2e9cdff][@Inter_Regular] between anchor points.</item>
+        <item>[#d2e9cdff][@Inter_Regular]frequencyHz — affects the [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Regular] of the joint between bodyA and bodyB.</item>
+    </string-array>
+
 
 </resources>

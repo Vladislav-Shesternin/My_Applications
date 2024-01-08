@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinTargetHierarchy.SourceSetTree.Co
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -13,8 +14,8 @@ android {
         applicationId = "com.tigerfortune.jogo"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 3
+        versionName = "3.3.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -58,6 +59,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     val gdxVersion = "1.12.1"
     implementation("com.badlogicgames.gdx:gdx-backend-android:$gdxVersion")
@@ -79,6 +81,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
     implementation("com.airbnb.android:lottie:6.2.0")
     implementation("space.earlygrey:shapedrawer:2.6.0")
+
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-config-ktx")
 
     implementation("com.google.android.gms:play-services-ads:22.6.0")
 

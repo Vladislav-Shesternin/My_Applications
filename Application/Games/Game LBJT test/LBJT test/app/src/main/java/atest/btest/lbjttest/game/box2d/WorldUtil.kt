@@ -15,7 +15,7 @@ class WorldUtil: Disposable {
 
     companion object {
         const val GRAVITY_X = 0f
-        const val GRAVITY_Y = 0f //-9.8f
+        const val GRAVITY_Y = -9.8f
         private const val TIME_STEP: Float = 1f / 60f
 
         var isDebug = false

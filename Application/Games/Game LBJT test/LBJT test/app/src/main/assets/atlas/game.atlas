@@ -1,5 +1,5 @@
 game.png
-size: 1824, 174
+size: 906, 455
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -12,77 +12,98 @@ anchor
   index: -1
 c_dynamic
   rotate: false
-  xy: 19, 2
+  xy: 470, 111
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+c_dynamic_diagonal
+  rotate: false
+  xy: 642, 111
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+c_dynamic_horizontal
+  rotate: false
+  xy: 2, 283
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+c_dynamic_vertical
+  rotate: false
+  xy: 174, 283
   size: 170, 170
   orig: 170, 170
   offset: 0, 0
   index: -1
 c_kinematic
   rotate: false
-  xy: 191, 2
+  xy: 346, 283
   size: 170, 170
   orig: 170, 170
   offset: 0, 0
   index: -1
 c_static
   rotate: false
-  xy: 363, 2
+  xy: 518, 283
   size: 170, 170
   orig: 170, 170
   offset: 0, 0
   index: -1
 h_dynamic
   rotate: false
-  xy: 535, 2
+  xy: 19, 2
   size: 170, 71
   orig: 170, 71
   offset: 0, 0
   index: -1
 h_kinematic
   rotate: false
-  xy: 707, 2
+  xy: 191, 2
   size: 170, 71
   orig: 170, 71
   offset: 0, 0
   index: -1
 h_static
   rotate: false
-  xy: 879, 2
+  xy: 363, 2
   size: 170, 71
   orig: 170, 71
   offset: 0, 0
   index: -1
 test_btn
   rotate: false
-  xy: 1051, 2
+  xy: 2, 111
   size: 466, 169
   orig: 466, 169
   offset: 0, 0
   index: -1
 user
   rotate: false
-  xy: 1519, 2
+  xy: 535, 2
   size: 87, 107
   orig: 87, 107
   offset: 0, 0
   index: -1
 v_dynamic
   rotate: false
-  xy: 1608, 2
+  xy: 690, 283
   size: 70, 170
   orig: 70, 170
   offset: 0, 0
   index: -1
 v_kinematic
   rotate: false
-  xy: 1680, 2
+  xy: 762, 283
   size: 70, 170
   orig: 70, 170
   offset: 0, 0
   index: -1
 v_static
   rotate: false
-  xy: 1752, 2
+  xy: 834, 283
   size: 70, 170
   orig: 70, 170
   offset: 0, 0

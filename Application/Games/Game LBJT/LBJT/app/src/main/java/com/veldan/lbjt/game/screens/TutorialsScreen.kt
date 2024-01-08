@@ -9,6 +9,7 @@ import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGLift
 import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JDistanceScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
@@ -75,7 +76,7 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
         val screenNameList = listOf(
             GeneralInformationScreen::class.java.name,
             JMouseScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
+            JDistanceScreen::class.java.name,
             WillBeLaterScreen::class.java.name,
             WillBeLaterScreen::class.java.name,
             WillBeLaterScreen::class.java.name,

@@ -22,6 +22,7 @@ abstract class AbstractBodyGroup: Destroyable {
     private val _bodyList  = mutableListOf<AbstractBody>()
     private val _actorList = mutableListOf<AdvancedGroup>()
     val disposableSet      = mutableSetOf<Disposable>()
+    val destroyableSet     = mutableSetOf<Destroyable>()
 
     val bodyList get()  = _bodyList.toList()
     val actorList get() = _actorList.toList()
@@ -55,6 +56,7 @@ abstract class AbstractBodyGroup: Destroyable {
         log("destroy: ${this::class.java.name.substringAfterLast('.')}")
         cancelCoroutinesAll(coroutine)
         disposableSet.disposeAll()
+        destroyableSet.destroyAll()
         _bodyList.destroyAll()
         _actorList.disposeAll()
     }
@@ -78,8 +80,7 @@ abstract class AbstractBodyGroup: Destroyable {
         val resultSize     = size.toStandart
 
         bodyGroup.create(resultPosition.x, resultPosition.y, resultSize.x, resultSize.y)
-        _bodyList.addAll(bodyGroup.bodyList)
-        _actorList.addAll(bodyGroup.actorList)
+        destroyableSet.add(bodyGroup)
     }
 
     fun createBodyGroup(bodyGroup: AbstractBodyGroup, x: Float, y: Float, w: Float, h: Float) {

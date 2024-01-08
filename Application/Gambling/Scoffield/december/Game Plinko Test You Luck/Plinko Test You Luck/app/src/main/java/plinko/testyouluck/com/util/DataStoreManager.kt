@@ -9,16 +9,16 @@ import androidx.datastore.preferences.preferencesDataStore
 import plinko.testyouluck.com.util.AbstractDataStore
 
 object DataStoreManager: AbstractDataStore() {
-    override val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "PREFERENCES")
+    override val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "FRANCE")
 
 
 
     object Key: AbstractDataStore.DataStoreElement<String>() {
-        override val key = stringPreferencesKey("Norvegia")
+        override val key = stringPreferencesKey("Dubai")
     }
 
     object Link: AbstractDataStore.DataStoreElement<String>() {
-        override val key = stringPreferencesKey("ismadagaskar")
+        override val key = stringPreferencesKey("USA_key")
     }
 
 }

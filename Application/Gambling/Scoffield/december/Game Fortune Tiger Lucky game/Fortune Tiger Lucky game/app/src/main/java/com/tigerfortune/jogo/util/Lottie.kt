@@ -33,4 +33,26 @@ class Lottie(private val binding: ActivityMainBinding) {
         }
     }
 
+    fun showNotInternet() {
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.internet.apply {
+                if (isVisible.not()) {
+                    isVisible = true
+                    playAnimation()
+                }
+            }
+        }
+    }
+
+    fun hideNotInternet() {
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.internet.apply {
+                if (isVisible) {
+                    isVisible = false
+                    cancelAnimation()
+                }
+            }
+        }
+    }
+
 }

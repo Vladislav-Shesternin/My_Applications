@@ -1,0 +1,194 @@
+game.png
+size: 1820, 1644
+format: RGBA8888
+filter: Linear,Linear
+armore
+repeat: none
+  rotate: false
+  xy: 1682, 2
+  size: 108, 110
+  orig: 108, 110
+  offset: 0, 0
+frame_for_armore
+  index: -1
+  rotate: false
+  xy: 545, 2
+  size: 565, 78
+  orig: 565, 78
+  offset: 0, 0
+gear_def
+  index: -1
+  rotate: false
+  xy: 1112, 537
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+gear_dis
+  index: -1
+  rotate: false
+  xy: 1348, 537
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+l_easy
+  index: -1
+  rotate: false
+  xy: 120, 114
+  size: 435, 178
+  orig: 435, 178
+  offset: 0, 0
+l_hard
+  index: -1
+  rotate: false
+  xy: 557, 114
+  size: 435, 178
+  orig: 435, 178
+  offset: 0, 0
+l_normal
+  index: -1
+  rotate: false
+  xy: 994, 114
+  size: 435, 178
+  orig: 435, 178
+  offset: 0, 0
+level
+  index: -1
+  rotate: false
+  xy: 941, 309
+  size: 553, 226
+  orig: 553, 226
+  offset: 0, 0
+menu_def
+  index: -1
+  rotate: false
+  xy: 1431, 114
+  size: 182, 193
+  orig: 182, 193
+  offset: 0, 0
+menu_dis
+  index: -1
+  rotate: false
+  xy: 1615, 114
+  size: 182, 193
+  orig: 182, 193
+  offset: 0, 0
+music_def
+  index: -1
+  rotate: false
+  xy: 2, 309
+  size: 182, 193
+  orig: 182, 193
+  offset: 0, 0
+music_dis
+  index: -1
+  rotate: false
+  xy: 186, 309
+  size: 182, 193
+  orig: 182, 193
+  offset: 0, 0
+paper_def
+  index: -1
+  rotate: false
+  xy: 1584, 537
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+paper_dis
+  index: -1
+  rotate: false
+  xy: 2, 773
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+pause_def
+  index: -1
+  rotate: false
+  xy: 370, 309
+  size: 182, 193
+  orig: 182, 193
+  offset: 0, 0
+pause_dis
+  index: -1
+  rotate: false
+  xy: 554, 309
+  size: 182, 193
+  orig: 182, 193
+  offset: 0, 0
+rules
+  index: -1
+  rotate: false
+  xy: 2, 537
+  size: 553, 226
+  orig: 553, 226
+  offset: 0, 0
+season_frame_back
+  index: -1
+  rotate: false
+  xy: 1112, 2
+  size: 568, 78
+  orig: 568, 78
+  offset: 0, 0
+season_green
+  index: -1
+  rotate: false
+  xy: 2, 2
+  size: 541, 47
+  orig: 541, 47
+  offset: 0, 0
+season_time
+  index: -1
+  rotate: false
+  xy: 2, 114
+  size: 116, 122
+  orig: 116, 122
+  offset: 0, 0
+settings
+  index: -1
+  rotate: false
+  xy: 557, 537
+  size: 553, 226
+  orig: 553, 226
+  offset: 0, 0
+sound_music
+  index: -1
+  rotate: false
+  xy: 1040, 1176
+  size: 337, 466
+  orig: 337, 466
+  offset: 0, 0
+x
+  index: -1
+  rotate: false
+  xy: 738, 309
+  size: 201, 206
+  orig: 201, 206
+  offset: 0, 0
+x_def
+  index: -1
+  rotate: false
+  xy: 238, 773
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+x_dis
+  index: -1
+  rotate: false
+  xy: 474, 773
+  size: 234, 234
+  orig: 234, 234
+  offset: 0, 0
+you_lose
+  index: -1
+  rotate: false
+  xy: 710, 773
+  size: 1036, 401
+  orig: 1036, 401
+  offset: 0, 0
+you_win
+  index: -1
+  rotate: false
+  xy: 2, 1176
+  size: 1036, 401
+  orig: 1036, 401
+  offset: 0, 0
+  index: -1

@@ -18,8 +18,16 @@ class AllAssets {
     val TEST_BTN    = getRegion("test_btn")
     val USER        = getRegion("user")
     val ANCHOR      = getRegion("anchor")
+    val C_DYNAMIC_DIAGONAL   = getRegion("c_dynamic_diagonal")
+    val C_DYNAMIC_HORIZONTAL = getRegion("c_dynamic_horizontal")
+    val C_DYNAMIC_VERTICAL   = getRegion("c_dynamic_vertical")
 
     // val NUMBER_LIST = List(9) { getGameRegion("number ${it.inc()}") }
 
-    val BACKGROUND = SpriteManager.EnumTexture.BACKGROUND.data.texture
+    val BACKGROUND   = SpriteManager.EnumTexture.BACKGROUND.data.texture
+    val WHEEL_ARROWS = SpriteManager.EnumTexture.WHEEL_ARROWS.data.texture
+    val GEAR         = SpriteManager.EnumTexture.GEAR.data.texture
+    val DEGREES      = SpriteManager.EnumTexture.DEGREES.data.texture
+    val METERS      = SpriteManager.EnumTexture.METERS.data.texture
+
 }

@@ -79,7 +79,7 @@ class BGDistanceJoint(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
             localAnchorA.set(Vector2(84f, 3f).subCenter(bodyA))
             localAnchorB.set(Vector2(84f, 167f).subCenter(bodyB))
 
-            length = 203f.toStandart.toB2
+            length = 0f//203f.toStandart.toB2
             frequencyHz = 0.5f
             dampingRatio = 5f
         })

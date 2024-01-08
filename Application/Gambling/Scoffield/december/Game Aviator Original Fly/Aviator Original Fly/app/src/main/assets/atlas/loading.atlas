@@ -1,0 +1,19 @@
+loading.png
+size: 604, 655
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+avia_and_loading
+  rotate: false
+  xy: 2, 2
+  size: 600, 608
+  orig: 600, 608
+  offset: 0, 0
+  index: -1
+loadinger
+  rotate: false
+  xy: 2, 612
+  size: 555, 41
+  orig: 555, 41
+  offset: 0, 0
+  index: -1

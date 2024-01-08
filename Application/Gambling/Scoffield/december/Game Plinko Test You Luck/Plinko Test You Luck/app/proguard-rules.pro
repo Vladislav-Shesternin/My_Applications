@@ -1,3 +1,6 @@
+#WebChromeClient
+-keep class * extends android.webkit.WebChromeClient { *; }
+
 #Box2d
 -keepclassmembers class com.badlogic.gdx.physics.box2d.World {
    boolean contactFilter(long, long);

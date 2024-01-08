@@ -3,7 +3,15 @@ package atest.btest.lbjttest.game.screens
 import atest.btest.lbjttest.game.LibGDXGame
 import atest.btest.lbjttest.game.box2d.WorldUtil
 import atest.btest.lbjttest.game.screens.joints.DistanceJointScreen
+import atest.btest.lbjttest.game.screens.joints.FrictionJointScreen
+import atest.btest.lbjttest.game.screens.joints.GearJointScreen
+import atest.btest.lbjttest.game.screens.joints.MotorJointScreen
+import atest.btest.lbjttest.game.screens.joints.PrismaticJointScreen
+import atest.btest.lbjttest.game.screens.joints.PulleyJointScreen
 import atest.btest.lbjttest.game.screens.joints.RevoluteJointScreen
+import atest.btest.lbjttest.game.screens.joints.RopeJointScreen
+import atest.btest.lbjttest.game.screens.joints.WeldJointScreen
+import atest.btest.lbjttest.game.screens.joints.WheelJointScreen
 import atest.btest.lbjttest.game.utils.TIME_ANIM_SCREEN_ALPHA
 import atest.btest.lbjttest.game.utils.actor.animHide
 import atest.btest.lbjttest.game.utils.actor.animShow
@@ -39,7 +47,7 @@ class MenuScreen(override val game: LibGDXGame) : AdvancedScreen() {
             setBounds(467f, 266f, 466f, 169f)
             setOnClickListener {
                 stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-                    game.navigationManager.navigate(RevoluteJointScreen::class.java.name, MenuScreen::class.java.name)
+                    game.navigationManager.navigate(DistanceJointScreen::class.java.name, MenuScreen::class.java.name)
                 }
             }
         }

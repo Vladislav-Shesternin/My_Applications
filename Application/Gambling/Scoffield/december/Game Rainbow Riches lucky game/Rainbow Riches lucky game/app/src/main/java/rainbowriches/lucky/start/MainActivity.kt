@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     companion object {
         const val TELEPORT_ID = 146
-        var teleportURL       = ""
+        var teleportURL       = "https://lk.nsq.market/ru/tools/testing"
 
         val startFragmentID = MutableSharedFlow<Int>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
     }
@@ -67,9 +67,9 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
             asyncCheckInternetConnection()
             lottie.showLoader()
 
-            checkDataStore()
+            //checkDataStore()
 //            startFragmentID.tryEmit(R.id.libGDXFragment)
-//            startFragmentID.tryEmit(INTERPOL)
+            startFragmentID.tryEmit(TELEPORT_ID)
 
             coroutine.launch(Dispatchers.Main) {
                 startFragmentID.collect { fragmentId ->

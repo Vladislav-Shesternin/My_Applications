@@ -189,6 +189,9 @@
                 <false/>
             </struct>
             <key type="filename">c_dynamic.png</key>
+            <key type="filename">c_dynamic_diagonal.png</key>
+            <key type="filename">c_dynamic_horizontal.png</key>
+            <key type="filename">c_dynamic_vertical.png</key>
             <key type="filename">c_kinematic.png</key>
             <key type="filename">c_static.png</key>
             <struct type="IndividualSpriteSettings">

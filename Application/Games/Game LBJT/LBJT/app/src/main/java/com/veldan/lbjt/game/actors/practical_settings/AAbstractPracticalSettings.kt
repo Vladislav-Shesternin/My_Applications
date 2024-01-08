@@ -26,9 +26,15 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     companion object {
         private const val ONE_PERCENT_0_10k = 10_000f / 100f
 
+        private const val ONE_PERCENT_0_20 = 20f / 100f
+
         private const val NEGATIVE_m5_10             = 30
         private const val POSITIVE_ONE_PERCENT_m5_10 = 10f / 70f
         private const val NEGATIVE_ONE_PERCENT_m5_10 = 5f / 30f
+
+        private const val START_PERCENT_0_10     = 30
+        private const val RIGHT_ONE_PERCENT_0_10 = 10f / 70f
+        private const val LEFT_ONE_PERCENT_0_10  = 1f / 30f
     }
 
     // Font
@@ -107,6 +113,49 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     // ---------------------------------------------------
     // Collect
     // ---------------------------------------------------
+
+    suspend fun collectProgress_0_20(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
+        var tmpValue = 0f
+
+        progress.apply {
+            setProgressPercent(currentValue / ONE_PERCENT_0_20)
+            progressPercentFlow.collect { progress ->
+                runGDX {
+                    tmpValue = progress * ONE_PERCENT_0_20
+                    label.setText("${tmpValue.roundToInt()}")
+                    block(tmpValue)
+                }
+            }
+        }
+    }
+
+    suspend fun collectProgress_0_10(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
+        var tmpValue = 0f
+
+        progress.apply {
+            tmpValue = if (currentValue >= 1) {
+                START_PERCENT_0_10 + (currentValue / RIGHT_ONE_PERCENT_0_10)
+            } else {
+                (currentValue / LEFT_ONE_PERCENT_0_10)
+            }
+            setProgressPercent(tmpValue)
+
+            progressPercentFlow.collect { progress ->
+                runGDX {
+                    if (progress >= START_PERCENT_0_10) {
+                        tmpValue = (progress - START_PERCENT_0_10) * RIGHT_ONE_PERCENT_0_10
+                        if (tmpValue < 1) tmpValue = 1f
+                        label.setText(String.format("%.1f", tmpValue).replace(',', '.'))
+                        block(tmpValue)
+                    } else {
+                        tmpValue = progress * LEFT_ONE_PERCENT_0_10
+                        label.setText(String.format("%.1f", tmpValue).replace(',', '.'))
+                        block(tmpValue)
+                    }
+                }
+            }
+        }
+    }
 
     suspend fun collectProgress_0_10k(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
         var tmpValue = 0f

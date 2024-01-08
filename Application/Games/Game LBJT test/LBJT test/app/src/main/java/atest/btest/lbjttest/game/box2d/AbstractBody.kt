@@ -25,7 +25,7 @@ abstract class AbstractBody: Destroyable {
     abstract val fixtureDef : FixtureDef
 
     open var actor     : AdvancedGroup? = null
-    open val collisionList          = mutableListOf<String>()
+    open val collisionList              = mutableListOf<String>()
 
     open var originalId: String = BodyId.NONE
     open var id        : String = BodyId.NONE

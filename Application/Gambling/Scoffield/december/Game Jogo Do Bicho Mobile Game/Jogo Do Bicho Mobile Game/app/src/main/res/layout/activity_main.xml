@@ -9,8 +9,13 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph" />
+        app:defaultNavHost="true" />
+
+    <WebView
+        android:id="@+id/portativka"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/splash"
@@ -26,5 +31,19 @@
         app:lottie_loop="true"
         app:layout_constraintVertical_bias="0.52"
         app:lottie_rawRes="@raw/loadering" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/internet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent=".4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/internet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

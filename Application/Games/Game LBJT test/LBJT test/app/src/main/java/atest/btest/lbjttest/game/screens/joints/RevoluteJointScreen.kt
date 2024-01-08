@@ -39,7 +39,10 @@ class RevoluteJointScreen(override val game: LibGDXGame): AdvancedMouseScreen(ga
     }
 
     override fun dispose() {
-        listOf(bgBorders).destroyAll()
+        listOf(
+            bgBorders,
+            bgRevoluteJoint_1, bgRevoluteJoint_2, bgRevoluteJoint_3
+        ).destroyAll()
         super.dispose()
     }
 

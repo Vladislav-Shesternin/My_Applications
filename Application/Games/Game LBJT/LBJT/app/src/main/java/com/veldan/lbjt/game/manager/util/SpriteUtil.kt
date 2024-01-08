@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.veldan.lbjt.game.manager.SpriteManager
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_GeneralInformation as GenInfo
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointMouse as JMouse
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointDistance as JDistance
 
 class SpriteUtil {
 
@@ -163,6 +164,10 @@ class SpriteUtil {
           override val BACKGROUND = SpriteManager.EnumTexture.YIN_BACKGROUND.data.texture
      }
 
+     // ---------------------------------------------------
+     // Tutorials
+     // ---------------------------------------------------
+
      class GeneralInformation {
           private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
 
@@ -214,7 +219,37 @@ class SpriteUtil {
 
           val mem = mem_1+mem_2
 
-          val I1  = JMouse.I1.data.texture
+          val I1  = JDistance.I1.data.texture
+
+     }
+
+     class JointDistance: TutorialsAssets {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          private val animVideo_1_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_1_0.data) }
+          private val animVideo_1_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_1_1.data) }
+          private val animVideo_1_2 = List<TextureRegion>(31) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_1_2.data) }
+
+          private val animVideo_2_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_2_0.data) }
+          private val animVideo_2_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_2_1.data) }
+          private val animVideo_2_2 = List<TextureRegion>(45) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_2_2.data) }
+
+          private val animVideo_3_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_3_0.data) }
+          private val animVideo_3_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_3_1.data) }
+          private val animVideo_3_2 = List<TextureRegion>(78) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_3_2.data) }
+          private val animVideo_3_3 = List<TextureRegion>(35) { getRegion("video (${it.inc()+234})", SpriteManager.EnumAtlas_JointDistance.ANIM_VIDEO_3_3.data) }
+
+          private val mem_1 = List<TextureRegion>(83) { getRegion("mem (${it.inc()})", SpriteManager.EnumAtlas_JointDistance.MEM_1.data) }
+          private val mem_2 = List<TextureRegion>(29) { getRegion("mem (${it.inc()+83})", SpriteManager.EnumAtlas_JointDistance.MEM_2.data) }
+
+          val animVideo_1 = animVideo_1_0+animVideo_1_1+animVideo_1_2
+          val animVideo_2 = animVideo_2_0+animVideo_2_1+animVideo_2_2
+          val animVideo_3 = animVideo_3_0+animVideo_3_1+animVideo_3_2+animVideo_3_3
+
+          val mem = mem_1+mem_2
+
+          val I1 = JDistance.I1.data.texture
+          val I2 = JDistance.I2.data.texture
 
      }
 

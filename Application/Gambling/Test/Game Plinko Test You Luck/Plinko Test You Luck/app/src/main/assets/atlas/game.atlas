@@ -1,0 +1,131 @@
+game.png
+size: 837, 544
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball-5000
+  rotate: false
+  xy: 55, 2
+  size: 71, 71
+  orig: 71, 71
+  offset: 0, 0
+  index: -1
+ball-8500
+  rotate: false
+  xy: 128, 2
+  size: 71, 71
+  orig: 71, 71
+  offset: 0, 0
+  index: -1
+ball-10000
+  rotate: false
+  xy: 201, 2
+  size: 71, 71
+  orig: 71, 71
+  offset: 0, 0
+  index: -1
+ball_default
+  rotate: false
+  xy: 274, 2
+  size: 71, 71
+  orig: 71, 71
+  offset: 0, 0
+  index: -1
+bomb
+  rotate: false
+  xy: 347, 2
+  size: 114, 77
+  orig: 114, 77
+  offset: 0, 0
+  index: -1
+cb_sound
+  rotate: false
+  xy: 492, 81
+  size: 113, 103
+  orig: 113, 103
+  offset: 0, 0
+  index: -1
+cb_sound_not
+  rotate: false
+  xy: 607, 81
+  size: 113, 103
+  orig: 113, 103
+  offset: 0, 0
+  index: -1
+coins_bar
+  rotate: false
+  xy: 2, 81
+  size: 243, 80
+  orig: 243, 80
+  offset: 0, 0
+  index: -1
+division
+  rotate: false
+  xy: 2, 2
+  size: 51, 63
+  orig: 51, 63
+  offset: 0, 0
+  index: -1
+menu_btn
+  rotate: false
+  xy: 722, 81
+  size: 113, 103
+  orig: 113, 103
+  offset: 0, 0
+  index: -1
+pause
+  rotate: false
+  xy: 2, 186
+  size: 113, 103
+  orig: 113, 103
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 117, 186
+  size: 113, 103
+  orig: 113, 103
+  offset: 0, 0
+  index: -1
+play_btn
+  rotate: false
+  xy: 232, 186
+  size: 577, 154
+  orig: 577, 154
+  offset: 0, 0
+  index: -1
+play_btn_press
+  rotate: false
+  xy: 2, 342
+  size: 577, 154
+  orig: 577, 154
+  offset: 0, 0
+  index: -1
+portal
+  rotate: false
+  xy: 581, 342
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+timer_bar
+  rotate: false
+  xy: 247, 81
+  size: 243, 80
+  orig: 243, 80
+  offset: 0, 0
+  index: -1
+x2
+  rotate: false
+  xy: 463, 2
+  size: 114, 77
+  orig: 114, 77
+  offset: 0, 0
+  index: -1
+x5
+  rotate: false
+  xy: 579, 2
+  size: 114, 77
+  orig: 114, 77
+  offset: 0, 0
+  index: -1

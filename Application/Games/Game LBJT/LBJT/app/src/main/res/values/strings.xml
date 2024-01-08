@@ -3,8 +3,11 @@
 <!--    Test ID-->
 <!--    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
 <!--    <string name="reward_UID" translatable="false">ca-app-pub-3940256099942544/5224354917</string>-->
-    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/3159853793</string>
-    <string name="reward_UID" translatable="false">ca-app-pub-6757786625316217/9495336432</string>
+    <!--Original-->
+<!--    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/3159853793</string>-->
+<!--    <string name="reward_UID" translatable="false">ca-app-pub-6757786625316217/9495336432</string>-->
+    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="reward_UID" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
 
     <string name="music">Music</string>
     <string name="quiet">Quiet</string>
@@ -62,7 +65,32 @@
     <string name="gear_joint" translatable="false">{WAVE}Gear[] [#bc380eff]Joint[]</string>
     <string name="motor_joint" translatable="false">{WAVE}Motor[] [#bc380eff]Joint[]</string>
 
+    <!--Joints Common-->
+    <string name="j_sub_title_mandatory">Mandatory</string>
+    <string name="j_sub_title_optional">Optional</string>
+
+    <string name="j_text_works_great">[#d2e9cdff][@Inter_Medium]It works and it’s great.</string>
+
+    <string name="j_longquote_frequency">
+        [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Medium]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Medium].
+        \n\n[#FF4949][@Inter_Bold]Value &gt; 1: [#d2e9cdff][@Inter_Medium]With values greater than 1, such as 2, 5, or 10, the joint will stretch very little or not at all, similar to a [#FF4949][@Inter_Bold]stiff spring[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="j_longquote_damping">
+        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: does not suppress.
+        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: almost absolute suppression.
+    </string>
+
+    <string-array name="j_arr_mandatory">
+        <item>[#d2e9cdff][@Inter_Regular]bodyA — first joint body.</item>
+        <item>[#d2e9cdff][@Inter_Regular]bodyB — second joint body.</item>
+        <item>[#d2e9cdff][@Inter_Regular]collideConnected — &lt;boolean&gt; Specifies whether bodyA should collide with bodyB.</item>
+    </string-array>
+    <string-array name="j_arr_damping">
+        <item>[#d2e9cdff][@Inter_Regular]dampingRatio — suppresses vibrations and takes values from [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular] to [#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+
     <!--Practical Settings-->
+    <string name="length" translatable="false">length:</string>
     <string name="maxForce" translatable="false">maxForce:</string>
     <string name="frequencyHz" translatable="false">frequencyHz:</string>
     <string name="dampingRatio" translatable="false">dampingRatio:</string>
@@ -290,8 +318,6 @@
     <string name="jmouse_title_3">A few more examples (cool effects)</string>
 
     <string name="jmouse_sub_title_1">MouseJointDef settings:</string>
-    <string name="jmouse_sub_title_2">Mandatory</string>
-    <string name="jmouse_sub_title_3">Optional</string>
     <string name="jmouse_sub_title_4">All code:</string>
 
     <string name="jmouse_text_1">[#d2e9cdff][@Inter_Medium]Mouse joint — the joint is designed to move dynamic bodies by the user.</string>
@@ -430,10 +456,6 @@
         "\n})"
     </string>
 
-    <string name="jmouse_longquote_1">
-        [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Medium]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Medium].
-        \n\n[#FF4949][@Inter_Bold]Value &gt; 1: [#d2e9cdff][@Inter_Medium]With values greater than 1, such as 2, 5, or 10, the joint will stretch very little or not at all, similar to a [#FF4949][@Inter_Bold]stiff spring[#d2e9cdff][@Inter_Medium].
-    </string>
     <string name="jmouse_longquote_2">
         [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: does not suppress.
         \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: almost absolute suppression.
@@ -464,9 +486,6 @@
     <string-array name="jmouse_arr_3" translatable="false">
         <item>[#d2e9cdff][@Inter_Regular]frequencyHz — also known as the [#FF4949][@Inter_Bold]response rate[#d2e9cdff][@Inter_Regular], works like a spring between the user\’s finger [#FF4949][@Inter_Bold](target)[#d2e9cdff][@Inter_Regular] and [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
-    <string-array name="jmouse_arr_4" translatable="false">
-        <item>[#d2e9cdff][@Inter_Regular]dampingRatio — suppresses vibrations and takes values from [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular] to [#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular].</item>
-    </string-array>
     <string-array name="jmouse_arr_5" translatable="false">
         <item>[#FF4949][@Inter_Bold]MouseJoint[#d2e9cdff][@Inter_Regular] (because it will be [#FF4949][@Inter_Bold]created[#d2e9cdff][@Inter_Regular] and [#FF4949][@Inter_Bold]destroyed[#d2e9cdff][@Inter_Regular] in different methods);</item>
         <item>[#d2e9cdff][@Inter_Regular]The [#FF4949][@Inter_Bold]body[#d2e9cdff][@Inter_Regular] that will move;</item>
@@ -490,5 +509,68 @@
         <item>[#d2e9cdff][@Inter_Regular]In the [#FF4949][@Inter_Bold]touchDown[#d2e9cdff][@Inter_Regular] method (Delete / Comment out) [#FF4949][@Inter_Bold]hitBody[#d2e9cdff][@Inter_Regular] and [#FF4949][@Inter_Bold]QueryAABB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
 
+    <!--JointDistance-->
+    <string name="jdistance_title_1">And so the… Distance Joint</string>
+    <string name="jdistance_title_2">Practice. How to create a Distance Joint?</string>
+
+    <string name="jdistance_sub_title_1">DistanceJointDef settings:</string>
+
+    <string name="jdistance_text_1">[#d2e9cdff][@Inter_Medium]Distance joint — a joint designed to connect two bodies together like a spring with the ability to configure the elasticity and how quickly the oscillations disappear.</string>
+    <string name="jdistance_text_2">[#d2e9cdff][@Inter_Medium]First, we need to set up the joint. For this, each joint has its own implementation of JointDef. You can read about this in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. And now let’s talk about the DistanceJointDef.</string>
+    <string name="jdistance_text_3">[#d2e9cdff][@Inter_Medium]In order for you to be able to [#FF4949][@Inter_Bold]test Joints[#d2e9cdff][@Inter_Medium], you need to interact with bodies, for this you need to implement [#FF4949][@Inter_Bold]Mouse Joint[#d2e9cdff][@Inter_Medium]. How to implement it is described in article [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Mouse Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_4">[#d2e9cdff][@Inter_Medium]Our example will consist of a [#FF4949][@Inter_Bold]static platform[#d2e9cdff][@Inter_Medium] and a [#FF4949][@Inter_Bold]dynamic ball[#d2e9cdff][@Inter_Medium] connected by [#FF4949][@Inter_Bold]DistanceJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_5">[#d2e9cdff][@Inter_Medium]Create 2 bodies: a [#FF4949][@Inter_Bold]static[#d2e9cdff][@Inter_Medium] platform and a [#FF4949][@Inter_Bold]dynamic[#d2e9cdff][@Inter_Medium] ball.</string>
+    <string name="jdistance_text_6">[#d2e9cdff][@Inter_Medium]Create DistanceJoint:</string>
+    <string name="jdistance_text_7">[#d2e9cdff][@Inter_Medium]That’s it, you can already run the program and the bodies will be connected, [#FF4949][@Inter_Bold]but there is one but[#d2e9cdff][@Inter_Medium], they will be connected at their [#FF4949][@Inter_Bold]anchor points[#d2e9cdff][@Inter_Medium], where the [#FF4949][@Inter_Bold]center of mass[#d2e9cdff][@Inter_Medium] is specified and with a [#FF4949][@Inter_Bold]length of 1 meter[#d2e9cdff][@Inter_Medium], to fix this, you need to [#FF4949][@Inter_Bold]configure localAnchorA, localAnchorB, length[#d2e9cdff][@Inter_Medium] I talked about how to [#FF4949][@Inter_Bold]calculate anchor points[#d2e9cdff][@Inter_Medium] in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_8">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]localAnchorA, localAnchorB, length[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jdistance_text_9">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium] (elasticity):</string>
+    <string name="jdistance_text_10">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jdistance_text_11">[#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium] — it extinguishes the [#FF4949][@Inter_Bold]stretching[#d2e9cdff][@Inter_Medium] of the joint and not the oscillations to the sides, so it can be said that it works together with [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jdistance_text_12">[#d2e9cdff][@Inter_Medium]The body returns to its original position [#FF4949][@Inter_Bold]very smoothly and slowly[#d2e9cdff][@Inter_Medium], as if someone is pulling it towards you a little at a time, a good effect, the greater the value of [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium], the more your body will be pulled back and the slower it will return to its original position (don’t forget that it only works together with [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium]).</string>
+
+    <string name="jdistance_note_1">
+        [#000000ff][@Inter_Bold](Note: )[#FF4949] Do not forget[#d2e9cdff][@Inter_Medium] that the values are indicated in [#FF4949][@Inter_Bold]meters[#d2e9cdff][@Inter_Medium].
+        \nAbout the units of measurement of [#FF4949][@Inter_Bold]meters, kilograms, seconds (MKS)[#d2e9cdff][@Inter_Medium] is written in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
+    </string>
+
+    <string name="jdistance_codepanel_1" translatable="false">
+        "val platform = StaticBody"
+        "\nval ball         = DynamicBody"
+    </string>
+    <string name="jdistance_codepanel_2" translatable="false">
+        "world.createJoint(DistanceJointDef().apply {"
+        "\n    bodyA = platform"
+        "\n    bodyB = ball"
+        "\n    collideConnected = true"
+        "\n}"
+    </string>
+    <string name="jdistance_codepanel_3" translatable="false">
+        "world.createJoint(DistanceJointDef().apply {"
+        "\n    bodyA = platform"
+        "\n    bodyB = ball"
+        "\n    collideConnected = true"
+        "\n    localAnchorA.set(Vector2(5f, 1f))"
+        "\n    localAnchorB.set(Vector2(5f, 4f))"
+        "\n    length = 6f"
+        "\n}"
+    </string>
+    <string name="jdistance_codepanel_4" translatable="false">
+        "world.createJoint(DistanceJointDef().apply {"
+        "\n    ..."
+        "\n    frequencyHz = 5.0f"
+        "\n}"
+    </string>
+
+    <string name="jdistance_longquote_1">
+        [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Medium]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Medium].
+        \n\n[#FF4949][@Inter_Bold]Value &gt; 1: [#d2e9cdff][@Inter_Medium]With values greater than 1, such as 2, 5, or 10, the joint will stretch very little or not at all, similar to a [#FF4949][@Inter_Bold]stiff spring[#d2e9cdff][@Inter_Medium].
+    </string>
+
+    <string-array name="jdistance_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]length — [#FF4949][@Inter_Bold]length[#d2e9cdff][@Inter_Regular] between anchor points.</item>
+        <item>[#d2e9cdff][@Inter_Regular]frequencyHz — affects the [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Regular] of the joint between bodyA and bodyB.</item>
+    </string-array>
 
 </resources>

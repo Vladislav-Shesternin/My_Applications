@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "212957444331",
+    "project_id": "aviator-original-fly",
+    "storage_bucket": "aviator-original-fly.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212957444331:android:943d78baab97927f8c26ae",
+        "android_client_info": {
+          "package_name": "aviator.original.fly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGbc4SLOsxU-hK2fdIeG1134n0oUvo_6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

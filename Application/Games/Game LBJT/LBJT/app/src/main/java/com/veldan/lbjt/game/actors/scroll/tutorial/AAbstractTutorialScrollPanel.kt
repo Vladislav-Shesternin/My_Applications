@@ -11,9 +11,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
 import com.github.tommyettinger.textra.Font
 import com.github.tommyettinger.textra.Font.FontFamily
+import com.github.tommyettinger.textra.TypingAdapter
 import com.github.tommyettinger.textra.TypingLabel
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.image.AImageAnim
+import com.veldan.lbjt.game.actors.image.AImageFrame
 import com.veldan.lbjt.game.actors.scroll.AScrollPane
 import com.veldan.lbjt.game.actors.scroll.HorizontalGroup
 import com.veldan.lbjt.game.actors.scroll.VerticalGroup
@@ -23,10 +25,15 @@ import com.veldan.lbjt.game.actors.scroll.tutorial.actors.ACodePanel
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AList_Label
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AList_TypingLabel
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.ALongQuote_TypingLabel
+import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
+import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
+import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.disposeAll
 import com.veldan.lbjt.game.utils.font.FontParameter
+import com.veldan.lbjt.game.utils.region
 
 abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedScreen): AdvancedGroup() {
 
@@ -66,6 +73,8 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
 
     abstract fun VerticalGroup.addActorsOnVerticalGroup()
 
+    open fun click(textId: Int, event: String) {}
+
     fun VerticalGroup.addSpace(space: Static.Space) {
         addActor(Actor().also { it.setSize(thisWidth, space.space) })
     }
@@ -74,8 +83,9 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         addActor(Image(region).also { it.setSize(thisWidth, height) })
     }
 
-    fun VerticalGroup.addImage(texture: Texture, height: Float) {
-        addActor(Image(texture).also { it.setSize(thisWidth, height) })
+    fun VerticalGroup.addImage(texture: Texture, height: Float, isFrame: Boolean = false) {
+        if (isFrame) addActor(AImageFrame(screen, texture.region).also { it.setSize(thisWidth, height) })
+        else addActor(Image(texture).also { it.setSize(thisWidth, height) })
     }
 
     fun VerticalGroup.addImageAnim(frameDuration: Float, keyFrames: List<TextureRegion>, playMode: PlayMode, height: Float) {
@@ -91,15 +101,19 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         })
     }
 
-    fun VerticalGroup.addTypingLabel(stringId: Int, fontFamily: Static.TypingLabelFontFamily) {
+    fun VerticalGroup.addTypingLabel(stringId: Int, fontFamily: Static.TypingLabelFontFamily, triggerBlock: (event: String) -> Unit = {}) {
         addActor(TypingLabel(languageUtil.getStringResource(stringId), fontFamily.getFont()).also {
             it.wrap = true
             it.width = thisWidth
             it.height = it.prefHeight
+
+            it.typingListener = object : TypingAdapter() {
+                override fun event(event: String?) { triggerBlock(event ?: "") }
+            }
         })
     }
 
-    fun VerticalGroup.addTypingLabel(stringId: Int, labelFont: Static.LabelFont) {
+    fun VerticalGroup.addTypingLabel(stringId: Int, labelFont: Static.LabelFont, triggerBlock: (event: String) -> Unit = {}) {
         val font = Font(labelFont.getFont())
         disposableSet.add(font)
 
@@ -107,6 +121,10 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
             it.wrap = true
             it.width = thisWidth
             it.height = it.prefHeight
+
+            it.typingListener = object : TypingAdapter() {
+                override fun event(event: String?) { triggerBlock(event ?: "") }
+            }
         })
     }
 
@@ -159,6 +177,17 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
     // Logic
     // ---------------------------------------------------
 
+    protected fun navigateToGeneralInformation() {
+        screen.stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
+            screen.game.navigationManager.navigate(GeneralInformationScreen::class.java.name)
+        }
+    }
+    protected fun navigateToJMouse() {
+        screen.stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
+            screen.game.navigationManager.navigate(JMouseScreen::class.java.name)
+        }
+    }
+
     private fun Static.LabelFont.getFont(): BitmapFont = when(this) {
         Static.LabelFont.Inter_Black_30     -> fontInter_Black_30
         Static.LabelFont.Inter_ExtraBold_50 -> fontInter_ExtraBold_50
@@ -167,7 +196,7 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
 
     private fun Static.TypingLabelFontFamily.getFont(): Font = Font().also { fnt ->
         when(this) {
-            Static.TypingLabelFontFamily.Inter_MeniumBold_30 -> fnt.setFamily(FontFamily(arrayOf(
+            Static.TypingLabelFontFamily.Inter_MediumBold_30  -> fnt.setFamily(FontFamily(arrayOf(
                 Font(fontInter_Medium_30).setName("Inter_Medium"), Font(fontInter_Bold_30).setName("Inter_Bold")
             )))
             Static.TypingLabelFontFamily.Inter_RegularBold_30 -> fnt.setFamily(FontFamily(arrayOf(
@@ -185,7 +214,7 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         }
 
         enum class TypingLabelFontFamily {
-            Inter_MeniumBold_30,
+            Inter_MediumBold_30,
             Inter_RegularBold_30,
         }
 
@@ -194,7 +223,10 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         }
 
         enum class CodePanelHeight(val height: Float) {
-             _110(110f), _140(140f), _210(210f), _300(300f), _390(390f), _400(400f)
+             _110(110f), _140(140f), _170(170f),
+            _210(210f),
+            _300(300f), _330(330f), _390(390f),
+            _400(400f)
         }
 
         enum class Number(val nIndex: Int) {

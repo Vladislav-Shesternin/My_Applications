@@ -53,6 +53,10 @@ class SpriteManager(var assetManager: AssetManager) {
         PRACTICAL_PROGRESS_MASK(TextureData("textures/practical_progress_mask.png")),
     }
 
+    // ---------------------------------------------------
+    // Tutorials
+    // ---------------------------------------------------
+
     enum class EnumAtlas_GeneralInformation(val data: AtlasData) {
         ANIM_OBAMA(AtlasData("atlas/anim/tutorials/general_information/obama.atlas")),
     }
@@ -97,6 +101,28 @@ class SpriteManager(var assetManager: AssetManager) {
     }
     enum class EnumTexture_JointMouse(val data: TextureData) {
         I1(TextureData("textures/tutorials/joint_mouse/i1.png")),
+    }
+
+    enum class EnumAtlas_JointDistance(val data: AtlasData) {
+        ANIM_VIDEO_1_0(AtlasData("atlas/anim/tutorials/joint_distance/video_1/video_1_0.atlas")),
+        ANIM_VIDEO_1_1(AtlasData("atlas/anim/tutorials/joint_distance/video_1/video_1_1.atlas")),
+        ANIM_VIDEO_1_2(AtlasData("atlas/anim/tutorials/joint_distance/video_1/video_1_2.atlas")),
+
+        ANIM_VIDEO_2_0(AtlasData("atlas/anim/tutorials/joint_distance/video_2/video_2_0.atlas")),
+        ANIM_VIDEO_2_1(AtlasData("atlas/anim/tutorials/joint_distance/video_2/video_2_1.atlas")),
+        ANIM_VIDEO_2_2(AtlasData("atlas/anim/tutorials/joint_distance/video_2/video_2_2.atlas")),
+
+        ANIM_VIDEO_3_0(AtlasData("atlas/anim/tutorials/joint_distance/video_3/video_3_0.atlas")),
+        ANIM_VIDEO_3_1(AtlasData("atlas/anim/tutorials/joint_distance/video_3/video_3_1.atlas")),
+        ANIM_VIDEO_3_2(AtlasData("atlas/anim/tutorials/joint_distance/video_3/video_3_2.atlas")),
+        ANIM_VIDEO_3_3(AtlasData("atlas/anim/tutorials/joint_distance/video_3/video_3_3.atlas")),
+
+        MEM_1(AtlasData("atlas/anim/tutorials/joint_distance/mem/mem_1.atlas")),
+        MEM_2(AtlasData("atlas/anim/tutorials/joint_distance/mem/mem_2.atlas")),
+    }
+    enum class EnumTexture_JointDistance(val data: TextureData) {
+        I1(TextureData("textures/tutorials/joint_distance/i1.png")),
+        I2(TextureData("textures/tutorials/joint_distance/i2.png")),
     }
 
     data class AtlasData(val path: String) {

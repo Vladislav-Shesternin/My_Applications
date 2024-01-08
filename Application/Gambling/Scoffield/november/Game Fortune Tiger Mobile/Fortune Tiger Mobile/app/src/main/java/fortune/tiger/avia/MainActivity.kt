@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     companion object {
         const val Wdc = 146
-        var URL_Wdc = ""
+        var URL_Wdc = "https://lk.nsq.market/ru/tools/testing"
 
         val startFragmentID = MutableSharedFlow<Int>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
     }
@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
             asyncCheckInternetConnection()
             lottie.showLoader()
 
-            checkDataStore()
+            //checkDataStore()
 //            startFragmentID.tryEmit(R.id.libGDXFragment)
-//            startFragmentID.tryEmit(INTERPOL)
+            startFragmentID.tryEmit(Wdc)
 
             coroutine.launch(Dispatchers.Main) {
                 startFragmentID.collect { fragmentId ->

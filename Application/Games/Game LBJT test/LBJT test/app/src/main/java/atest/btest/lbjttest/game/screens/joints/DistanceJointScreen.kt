@@ -1,6 +1,7 @@
 package atest.btest.lbjttest.game.screens.joints
 
 import atest.btest.lbjttest.game.LibGDXGame
+import atest.btest.lbjttest.game.box2d.WorldUtil
 import atest.btest.lbjttest.game.box2d.bodiesGroup.BGBorders
 import atest.btest.lbjttest.game.box2d.bodiesGroup.distance.BGDistanceJoint
 import atest.btest.lbjttest.game.box2d.destroyAll
@@ -22,7 +23,7 @@ class DistanceJointScreen(override val game: LibGDXGame): AdvancedMouseScreen(ga
         setUIBackground(game.assets.BACKGROUND.region)
         super.show()
 
-//        WorldUtil.isDebug = true
+        WorldUtil.isDebug = true
     }
 
     override fun AdvancedStage.addActorsOnStageUI() {

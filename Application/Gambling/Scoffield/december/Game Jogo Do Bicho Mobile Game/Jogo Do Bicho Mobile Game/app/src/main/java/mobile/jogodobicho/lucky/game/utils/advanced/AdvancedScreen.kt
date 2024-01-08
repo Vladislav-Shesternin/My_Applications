@@ -58,13 +58,15 @@ abstract class AdvancedScreen(
     }
 
     override fun show() {
+        game.activity.webViewFragment.backBlock = { runGDX { stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) { game.navigationManager.back() }}}
+
         stageBack.addAndFillActor(backBackgroundImage)
         stageUI.addAndFillActor(uiBackgroundImage)
 
         stageUI.addActorsOnStageUI()
 
         Gdx.input.inputProcessor = inputMultiplexer.apply { addProcessors(this@AdvancedScreen, stageUI) }
-        Gdx.input.setCatchKey(Input.Keys.BACK, true)
+//        Gdx.input.setCatchKey(Input.Keys.BACK, true)
     }
 
     override fun render(delta: Float) {
@@ -85,15 +87,15 @@ abstract class AdvancedScreen(
         coroutine = null
     }
 
-    override fun keyDown(keycode: Int): Boolean {
-        when(keycode) {
-            Input.Keys.BACK -> {
-                if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
-                else stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) { game.navigationManager.back() }
-            }
-        }
-        return true
-    }
+//    override fun keyDown(keycode: Int): Boolean {
+//        when(keycode) {
+//            Input.Keys.BACK -> {
+//                if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
+//                else stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) { game.navigationManager.back() }
+//            }
+//        }
+//        return true
+//    }
 
     open fun AdvancedStage.addActorsOnStageUI() {}
 

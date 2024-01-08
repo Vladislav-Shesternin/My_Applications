@@ -4,7 +4,15 @@ import atest.btest.lbjttest.game.LibGDXGame
 import atest.btest.lbjttest.game.screens.LoadingScreen
 import atest.btest.lbjttest.game.screens.MenuScreen
 import atest.btest.lbjttest.game.screens.joints.DistanceJointScreen
+import atest.btest.lbjttest.game.screens.joints.FrictionJointScreen
+import atest.btest.lbjttest.game.screens.joints.GearJointScreen
+import atest.btest.lbjttest.game.screens.joints.MotorJointScreen
+import atest.btest.lbjttest.game.screens.joints.PrismaticJointScreen
+import atest.btest.lbjttest.game.screens.joints.PulleyJointScreen
 import atest.btest.lbjttest.game.screens.joints.RevoluteJointScreen
+import atest.btest.lbjttest.game.screens.joints.RopeJointScreen
+import atest.btest.lbjttest.game.screens.joints.WeldJointScreen
+import atest.btest.lbjttest.game.screens.joints.WheelJointScreen
 import atest.btest.lbjttest.game.utils.advanced.AdvancedScreen
 import atest.btest.lbjttest.game.utils.runGDX
 import com.badlogic.gdx.Gdx
@@ -43,8 +51,16 @@ class NavigationManager(val game: LibGDXGame) {
         MenuScreen   ::class.java.name -> MenuScreen(game)
 
         // Joints
-        DistanceJointScreen::class.java.name -> DistanceJointScreen(game)
-        RevoluteJointScreen::class.java.name -> RevoluteJointScreen(game)
+        DistanceJointScreen ::class.java.name -> DistanceJointScreen(game)
+        RevoluteJointScreen ::class.java.name -> RevoluteJointScreen(game)
+        PrismaticJointScreen::class.java.name -> PrismaticJointScreen(game)
+        WheelJointScreen    ::class.java.name -> WheelJointScreen(game)
+        WeldJointScreen     ::class.java.name -> WeldJointScreen(game)
+        FrictionJointScreen ::class.java.name -> FrictionJointScreen(game)
+        RopeJointScreen     ::class.java.name -> RopeJointScreen(game)
+        PulleyJointScreen   ::class.java.name -> PulleyJointScreen(game)
+        GearJointScreen     ::class.java.name -> GearJointScreen(game)
+        MotorJointScreen    ::class.java.name -> MotorJointScreen(game)
 
         else -> LoadingScreen(game)
     }

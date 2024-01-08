@@ -45,7 +45,11 @@ class SpriteManager(var assetManager: AssetManager) {
     }
 
     enum class EnumTexture(val data: TextureData) {
-        BACKGROUND(TextureData("textures/background.png")),
+        BACKGROUND  (TextureData("textures/background.png")),
+        WHEEL_ARROWS(TextureData("textures/wheel_arrows.png")),
+        GEAR        (TextureData("textures/gear.png")),
+        DEGREES     (TextureData("textures/degrees.png")),
+        METERS      (TextureData("textures/meters.png")),
     }
 
     data class AtlasData(val path: String) {

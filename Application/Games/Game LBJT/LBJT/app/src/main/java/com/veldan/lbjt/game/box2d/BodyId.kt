@@ -36,6 +36,7 @@ object BodyId {
     }
 
     object Practical {
+        const val STATIC  = "practical.static"
         const val DYNAMIC = "practical.dynamic"
     }
 }

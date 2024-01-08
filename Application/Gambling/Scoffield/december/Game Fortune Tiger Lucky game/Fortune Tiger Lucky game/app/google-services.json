@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870741830181",
+    "project_id": "fortune-tiger-lucky-game",
+    "storage_bucket": "fortune-tiger-lucky-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870741830181:android:adfed6038e5cff19a12dcc",
+        "android_client_info": {
+          "package_name": "com.tigerfortune.jogo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABT9ny73aD81lBIc-xfdQXRcuwmw3g34s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
