@@ -33,6 +33,8 @@
     <string name="test_stand">випробувальний стенд</string>
     <string name="next">Далi</string>
     <string name="play">Грати</string>
+    <string name="update_available">{JUMP}Оновлення Доступне!{ENDJUMP}</string>
+    <string name="update_now">{RAINBOW}Оновити зараз{ENDRAINBOW}</string>
     <string name="general_information">{JUMP=0.5;1.0;1.0}Загальна інформація[]</string>
     <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Основне джерело інформації.[_]{ENDLINK}</string>
 
@@ -44,14 +46,45 @@
     <string name="j_sub_title_optional">Не обов\'язковi</string>
 
     <string name="j_text_works_great">[#d2e9cdff][@Inter_Medium]Це працює, і це чудово.</string>
+    <string name="j_text_test_mouse">[#d2e9cdff][@Inter_Medium]Щоб ви могли [#FF4949][@Inter_Bold]тестувати Joints[#d2e9cdff][@Inter_Medium], вам потрібно взаємодіяти з тілами, для цього вам потрібно реалізувати [#FF4949][@Inter_Bold]Mouse Joint[#d2e9cdff][@Inter_Medium]. Як це реалізувати описано в статті [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Mouse Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="j_text_already_run">[#d2e9cdff][@Inter_Medium]Ось і все, ви вже можете запустити програму і тіла будуть з\'єднані, [#FF4949][@Inter_Bold]але є одне але[#d2e9cdff][@Inter_Medium], вони будуть з\'єднані в своїх [#FF4949][@Inter_Bold]опорних точках[#d2e9cdff][@Inter_Medium], де вказано [#FF4949][@Inter_Bold]центр мас[#d2e9cdff][@Inter_Medium], щоб це виправити, вам потрібно [#FF4949][@Inter_Bold]налаштувати localAnchorA, localAnchorB[#d2e9cdff][@Inter_Medium] Я говорив про те, як [#FF4949][@Inter_Bold]розрахувати опорні точки[#d2e9cdff][@Inter_Medium] в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="j_text_configure_local_anchor_ab">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]localAnchorA, localAnchorB[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_reference_angle">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]referenceAngle[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_limit">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]limits[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_motor">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]motor[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_localAxisA">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]localAxisA[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_why_limit">
+        [#d2e9cdff][@Inter_Medium]На даний момент це не спрацює. Чому?
+        \nТому що за умовчанням обмеження вимкнено, і нам потрібно їх увімкнути!
+    </string>
+    <string name="j_text_why_motor">
+        [#d2e9cdff][@Inter_Medium]На даний момент це не спрацює. Чому?
+        \nТому що за замовчуванням двигуни вимкнені, і нам потрібно їх увімкнути!
+    </string>
+    <string name="j_text_turnoff_gravity">[#d2e9cdff][@Inter_Medium]Щоб краще зрозуміти тест, [#FF4949][@Inter_Bold]вимкніть гравітацію[#d2e9cdff][@Inter_Medium].</string>
+
+    <string name="j_note_mks">
+        [#000000ff][@Inter_Bold](Примітка: )[#FF4949] Не забувайте[#d2e9cdff][@Inter_Medium], що значення вказані в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Medium].
+        \nПро одиниці вимірювання [#FF4949][@Inter_Bold]метри, кілограми, секунди (МКС)[#d2e9cdff][@Inter_Medium] написано в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
+    </string>
 
     <string name="j_longquote_frequency">
-        [#FF4949][@Inter_Bold]Значення &lt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями менше 1, наприклад 0,5 або 0,7, з\'єднання буде сильно розтягнутим, нагадуючи [#FF4949][@Inter_Bold]м\’яку пружину[#d2e9cdff][@Inter_Medium].
-        \n\n[#FF4949][@Inter_Bold]Значення &gt; 1[#d2e9cdff][@Inter_Medium]: зі значеннями, більшe за 1, наприклад 2, 5 або 10, з\'єднання розтягнеться дуже мало або зовсім не розтягнеться, подібно до [#FF4949][@Inter_Bold]жорсткої пружини[#d2e9cdff][@Inter_Medium].
+        [#FF4949][@Inter_Bold]Значення &lt; 1[#d2e9cdff][@Inter_Regular]: зі значеннями менше 1, наприклад 0,5 або 0,7, з\'єднання буде сильно розтягнутим, нагадуючи [#FF4949][@Inter_Bold]м\’яку пружину[#d2e9cdff][@Inter_Regular].
+        \n\n[#FF4949][@Inter_Bold]Значення &gt; 1[#d2e9cdff][@Inter_Regular]: зі значеннями, більшe за 1, наприклад 2, 5 або 10, з\'єднання розтягнеться дуже мало або зовсім не розтягнеться, подібно до [#FF4949][@Inter_Bold]жорсткої пружини[#d2e9cdff][@Inter_Regular].
     </string>
     <string name="j_longquote_damping">
-        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: не пригнічує.
-        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: майже абсолютне придушення.
+        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular]: не пригнічує.
+        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular]: майже абсолютне придушення.
+    </string>
+    <string name="j_longquote_radians">[#FF4949][@Inter_Bold]Не забувайте[#d2e9cdff][@Inter_Regular], що всі кути в Box2d вимірюються в [#FF4949][@Inter_Bold]радіанах[#d2e9cdff][@Inter_Regular].</string>
+    <string name="j_longquote_сlockwise">
+        [#FF4949][@Inter_Bold]За годинниковою стрілкою[#d2e9cdff][@Inter_Regular] від\’ємні кути ([#FF4949][@Inter_Bold]lowerAngle[#d2e9cdff][@Inter_Regular]).
+        \n[#FF4949][@Inter_Bold]Проти годинникової стрілки[#d2e9cdff][@Inter_Regular] додатні кути ([#FF4949][@Inter_Bold]upperAngle[#d2e9cdff][@Inter_Regular]).
+    </string>
+    <string name="j_longquote_radian_сlockwise">
+        [#FF4949][@Inter_Bold]Не забувайте[#d2e9cdff][@Inter_Regular], що всі кути в Box2d вимірюються в [#FF4949][@Inter_Bold]радіанах[#d2e9cdff][@Inter_Regular].
+        \n\n[#FF4949][@Inter_Bold]За годинниковою стрілкою[#d2e9cdff][@Inter_Regular] від\’ємні кути.
+        \n[#FF4949][@Inter_Bold]Проти годинникової стрілки[#d2e9cdff][@Inter_Regular] додатні кути.
     </string>
 
     <string-array name="j_arr_mandatory" translatable="false">
@@ -234,15 +267,15 @@
     <string name="jmouse_note_5">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Для цих прикладів [#FF4949][@Inter_Bold]буде використовуватися попередній код[#d2e9cdff][@Inter_Medium], просто його потрібно трохи змінити.</string>
 
     <string name="jmouse_longquote_2">
-        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Medium]: не пригнічує.
-        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]: майже абсолютне придушення.
+        [#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular]: не пригнічує.
+        \n\n[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular]: майже абсолютне придушення.
         \n\nАле можливі значення більше 1, хоча в таких випадках тіло рухатиметься дуже повільно. З іншого боку, значення, менші за 0, зроблять тiло дуже активним і поводитиметься хаотично, подібно до дикої поведінки.
-        \n[#FF4949][@Inter_Bold]Однак зазвичай не рекомендується використовувати значення за межами діапазону від 0 до 1[#d2e9cdff][@Inter_Medium].
+        \n[#FF4949][@Inter_Bold]Однак зазвичай не рекомендується використовувати значення за межами діапазону від 0 до 1[#d2e9cdff][@Inter_Regular].
     </string>
-    <string name="jmouse_longquote_3">[#d2e9cdff][@Inter_Medium]Це все. Однак у більшості [#FF4949][@Inter_Bold]практичних прикладів[#d2e9cdff][@Inter_Medium] зазвичай включається додаткова перевірка в [#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Medium], щоб перевірити, чи знайдене тіло є [#FF4949][@Inter_Bold]динамічним[#d2e9cdff][@Inter_Medium]. Це пояснюється тим, що [#FF4949][@Inter_Bold]кінематичні[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]статичні[#d2e9cdff][@Inter_Medium] тіла [#FF4949][@Inter_Bold]не є рухомими[#d2e9cdff][@Inter_Medium] і, отже, не мають значення для певних взаємодій.</string>
+    <string name="jmouse_longquote_3">[#d2e9cdff][@Inter_Regular]Це все. Однак у більшості [#FF4949][@Inter_Bold]практичних прикладів[#d2e9cdff][@Inter_Regular] зазвичай включається додаткова перевірка в [#FF4949][@Inter_Bold]QueryCallback[#d2e9cdff][@Inter_Regular], щоб перевірити, чи знайдене тіло є [#FF4949][@Inter_Bold]динамічним[#d2e9cdff][@Inter_Regular]. Це пояснюється тим, що [#FF4949][@Inter_Bold]кінематичні[#d2e9cdff][@Inter_Regular] або [#FF4949][@Inter_Bold]статичні[#d2e9cdff][@Inter_Regular] тіла [#FF4949][@Inter_Bold]не є рухомими[#d2e9cdff][@Inter_Regular] і, отже, не мають значення для певних взаємодій.</string>
     <string name="jmouse_longquote_4">
-        [#d2e9cdff][@Inter_Medium]Тіло притягується до дотиків користувача, [#FF4949][@Inter_Bold]як магніт[#d2e9cdff][@Inter_Medium], хіба це не диво?
-        \n\n[#FF4949][@Inter_Bold]Як це круто!)[#d2e9cdff][@Inter_Medium]
+        [#d2e9cdff][@Inter_Regular]Тіло притягується до дотиків користувача, [#FF4949][@Inter_Bold]як магніт[#d2e9cdff][@Inter_Regular], хіба це не диво?
+        \n\n[#FF4949][@Inter_Bold]Як це круто!)[#d2e9cdff][@Inter_Regular]
     </string>
 
     <string-array name="jmouse_arr_1" translatable="false">
@@ -294,7 +327,6 @@
 
     <string name="jdistance_text_1">[#d2e9cdff][@Inter_Medium]Distance joint — з\’єднання, призначене для з\’єднання двох тіл разом, як пружина, з можливістю налаштування пружності та швидкості зникнення коливань.</string>
     <string name="jdistance_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Regular]. А тепер поговоримо про DistanceJointDef.</string>
-    <string name="jdistance_text_3">[#d2e9cdff][@Inter_Medium]Щоб ви могли [#FF4949][@Inter_Bold]тестувати Joints[#d2e9cdff][@Inter_Medium], вам потрібно взаємодіяти з тілами, для цього вам потрібно реалізувати [#FF4949][@Inter_Bold]Mouse Joint[#d2e9cdff][@Inter_Medium]. Як це реалізувати описано в статті [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Mouse Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
     <string name="jdistance_text_4">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься зі [#FF4949][@Inter_Bold]статичної платформи[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]динамічної кулі[#d2e9cdff][@Inter_Medium], з’єднаних за допомогою [#FF4949][@Inter_Bold]DistanceJoint[#d2e9cdff][@Inter_Medium].</string>
     <string name="jdistance_text_5">[#d2e9cdff][@Inter_Medium]Створіть 2 тіла: [#FF4949][@Inter_Bold]статичну[#d2e9cdff][@Inter_Medium] платформу та [#FF4949][@Inter_Bold]динамічну[#d2e9cdff][@Inter_Medium] кулю.</string>
     <string name="jdistance_text_6">[#d2e9cdff][@Inter_Medium]Створіть DistanceJoint:</string>
@@ -305,13 +337,9 @@
     <string name="jdistance_text_11">[#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium] — гасить саме [#FF4949][@Inter_Bold]розтягування[#d2e9cdff][@Inter_Medium] з\'єднання, а не коливання в сторони, тому можна сказати, що він працює разом з [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium].</string>
     <string name="jdistance_text_12">[#d2e9cdff][@Inter_Medium]Тіло повертається у початкове положення [#FF4949][@Inter_Bold]дуже плавно й повільно[#d2e9cdff][@Inter_Medium], ніби хтось потроху тягне його до себе, хороший ефект, чим більше значення [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium], тим складніше з\'єднання буде розтягуватися і тим повільніше воно буде повернутися у вихідне положення (не забувайте, що це працює лише разом із [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium]).</string>
 
-    <string name="jdistance_note_1">
-        [#000000ff][@Inter_Bold](Примітка: )[#FF4949] Не забувайте[#d2e9cdff][@Inter_Medium] , що значення вказані в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Medium].
-        \nAbout Про одиниці вимірювання [#FF4949][@Inter_Bold]метри, кілограми, секунди (МКС)[#d2e9cdff][@Inter_Medium] написано в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
-    </string>
     <string name="jdistance_longquote_1">
-        [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Medium]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Medium].
-        \n\n[#FF4949][@Inter_Bold]Value &gt; 1: [#d2e9cdff][@Inter_Medium]With values greater than 1, such as 2, 5, or 10, the joint will stretch very little or not at all, similar to a [#FF4949][@Inter_Bold]stiff spring[#d2e9cdff][@Inter_Medium].
+        [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Regular]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Regular].
+        \n\n[#FF4949][@Inter_Bold]Value &gt; 1: [#d2e9cdff][@Inter_Regular]With values greater than 1, such as 2, 5, or 10, the joint will stretch very little or not at all, similar to a [#FF4949][@Inter_Bold]stiff spring[#d2e9cdff][@Inter_Regular].
     </string>
 
     <string-array name="jdistance_arr_1">
@@ -321,5 +349,130 @@
         <item>[#d2e9cdff][@Inter_Regular]frequencyHz — affects the [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Regular] of the joint between bodyA and bodyB.</item>
     </string-array>
 
+    <!--JointRevolute-->
+    <string name="jrevolute_title_1">І так… Revolute Joint</string>
+    <string name="jrevolute_title_2">Практика. Як створити Revolute Joint?</string>
+
+    <string name="jrevolute_sub_title_1">RevoluteJointDef налаштування:</string>
+
+    <string name="jrevolute_text_1">[#d2e9cdff][@Inter_Medium]Revolute joint — з\’єднання, призначене для з\’єднання двох тіл разом та їх [#FF4949][@Inter_Bold]обертання[#d2e9cdff][@Inter_Medium], наприклад [#FF4949][@Inter_Bold]вал або колесо[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jrevolute_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. А тепер поговоримо про RevoluteJointDef.</string>
+    <string name="jrevolute_text_4">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься зі [#FF4949][@Inter_Bold]статичного прямокутника[#d2e9cdff][@Inter_Medium] ([#1465df]синій[#d2e9cdff]) і [#FF4949][@Inter_Bold]динамічного прямокутника[#d2e9cdff][@Inter_Medium] ([#1A932C]зелений[#d2e9cdff]), з\’єднаних [#FF4949][@Inter_Bold]RevoluteJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jrevolute_text_5">[#d2e9cdff][@Inter_Medium]Створіть 2 тіла: [#FF4949][@Inter_Bold]статичний[#d2e9cdff][@Inter_Medium] прямокутник та [#FF4949][@Inter_Bold]динамічний[#d2e9cdff][@Inter_Medium] прямокутник.</string>
+    <string name="jrevolute_text_6">[#d2e9cdff][@Inter_Medium]Створіть RevoluteJoint:</string>
+    <string name="jrevolute_text_7">[#d2e9cdff][@Inter_Medium]Щоб перетворити [#FF4949][@Inter_Bold]градуси в радіани[#d2e9cdff][@Inter_Medium], потрібно помножити градуси на нашу константу:</string>
+    <string name="jrevolute_text_8">[#d2e9cdff][@Inter_Medium]Щоб перетворити [#FF4949][@Inter_Bold]радіани в градуси[#d2e9cdff][@Inter_Medium], потрібно помножити радіани на нашу константу:</string>
+    <string name="jrevolute_text_9">[#d2e9cdff][@Inter_Medium]Подивіться referenceAngle не впливає на тіла, він потрібен тільки якщо ви отримаєте jointAngle.</string>
+    <string name="jrevolute_text_10">[#d2e9cdff][@Inter_Medium]На даний момент тіла можуть обертатися навколо своїх опорних точок протягом [#FF4949][@Inter_Bold]нескінченного часу[#d2e9cdff][@Inter_Medium], щоб змінити це, ви можете використовувати [#FF4949][@Inter_Bold]обмеження[#d2e9cdff][@Inter_Medium], вони дозволяють вказати [#FF4949][@Inter_Bold]максимальний[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]мінімальний[#d2e9cdff][@Inter_Medium] кут повороту.</string>
+    <string name="jrevolute_text_11">[#d2e9cdff][@Inter_Medium]lowerAngle має бути [#FF4949][@Inter_Bold]меншим[#d2e9cdff][@Inter_Medium] за upperAngle, але [#FF4949][@Inter_Bold]не обов\’язково від\’ємним[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jrevolute_text_12">[#d2e9cdff][@Inter_Medium]Як ви можете бачити, двигун повільно досягає обертів, указаних у [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], чим більше [#FF4949][@Inter_Bold]maxMotorTorque[#d2e9cdff][@Inter_Medium], тим швидше двигун досягне [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], щоб обертання було схоже на іржаве колесо, або щоб уповільнити швидкість обертання, встановіть [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium] на невелике значення.</string>
+
+    <string name="jrevolute_note_1">[#000000ff][@Inter_Bold](Примітка: )[#FF4949] collideConnected = false[#d2e9cdff][@Inter_Medium], це робиться для того, щоб сполучені тіла не стикалися одне з одним.</string>
+    <string name="jrevolute_note_2">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Чим важче тіло, тим більшою має бути сила. Якщо значення малі, двигун повільно набиратиме швидкість, щоб досягти [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], або взагалі не обертатиметься, якщо сила дуже мала, тому будьте обережні, регулюючи [#FF4949][@Inter_Bold]maxMotorTorque[#d2e9cdff][@Inter_Medium].</string>
+
+    <string name="jrevolute_longquote_1">[#d2e9cdff][@Inter_Regular]Число PI зазвичай міститься в стандартному математичному пакеті.</string>
+    <string name="jrevolute_longquote_2">[#FF4949][@Inter_Bold]Пояснення[#d2e9cdff][@Inter_Regular]: можливо, ви створюєте годинник, і коли ви відкриваєте гру, стрілка годинника показує 12, але якщо ви не встановите referenceAngle, він буде 0 градусів а має бути 90, тому ви встановили referenceAngle = 90 (початковий кут).</string>
+
+    <string-array name="jrevolute_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]referenceAngle — [#FF4949][@Inter_Bold]початковий кут[#d2e9cdff][@Inter_Regular] між bodyA і bodyB, (за замовчуванням 0 | вимірюється в [#FF4949][@Inter_Bold]радіанах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]lowerAngle — [#FF4949][@Inter_Bold]нижній кут[#d2e9cdff][@Inter_Regular] для ліміту з\’єднання (за замовчуванням 0 | вимірюється в [#FF4949][@Inter_Bold]радіанах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]upperAngle — [#FF4949][@Inter_Bold]верхній кут[#d2e9cdff][@Inter_Regular] для ліміту з\’єднання (за замовчуванням 0 | вимірюється в [#FF4949][@Inter_Bold]радіанах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]enableLimit — [#FF4949][@Inter_Bold]прапорець[#d2e9cdff][@Inter_Regular] для ввімкнення нижньої та верхньої [#FF4949][@Inter_Bold]меж[#d2e9cdff][@Inter_Regular] (за замовчуванням [#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]motorSpeed — [#FF4949][@Inter_Bold]оберти за секунду[#d2e9cdff][@Inter_Regular] (радіан за секунду).</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxMotorTorque — [#FF4949][@Inter_Bold]сила обертання[#d2e9cdff][@Inter_Regular], чим більша сила, тим швидше двигун набирає обертів, указаних у [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular] (вимірюється в Н-м. [#FF4949][@Inter_Bold]Ньютон-метрах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]enableMotor — [#FF4949][@Inter_Bold]прапорець[#d2e9cdff][@Inter_Regular] для ввімкнення [#FF4949][@Inter_Bold]двигуна[#d2e9cdff][@Inter_Regular] (за замовчуванням [#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular]).</item>
+    </string-array>
+    <string-array name="jrevolute_arr_2">
+        <item>[#d2e9cdff][@Inter_Regular]lowerAngle та upperAngle — [#FF4949][@Inter_Bold]можуть перевищувати 360 градусів[#d2e9cdff][@Inter_Regular], ви можете встановити обмеження 10 обертів або більше.</item>
+        <item>[#FF4949][@Inter_Bold]якщо вам потрібен лише lowerAngle[#d2e9cdff][@Inter_Regular], тоді upperAngle має бути [#FF4949][@Inter_Bold]дуже великим[#d2e9cdff][@Inter_Regular], щоб його не було досягнуто, і аналогічно, [#FF4949][@Inter_Bold]якщо вам потрібен лише upperAngle[#d2e9cdff][@Inter_Regular], lowerAngle має бути [#FF4949][@Inter_Bold]дуже малим[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]встановлення [#FF4949][@Inter_Bold]однакових значень[#d2e9cdff][@Inter_Regular] для lowerAngle і upperAngle затисне з\’єднання під [#FF4949][@Inter_Bold]заданим кутом[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jrevolute_arr_3">
+        <item>[#d2e9cdff][@Inter_Regular]motorSpeed — [#FF4949][@Inter_Bold]оберти за секунду[#d2e9cdff][@Inter_Regular] (радіани за секунду) це не гарантована швидкість двигуна, це означає, яка максимальна швидкість може бути досягнута, і може не бути досягнута, якщо вказане дуже мале значення для maxMotorTorque.</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxMotorTorque — [#FF4949][@Inter_Bold]сила обертання[#d2e9cdff][@Inter_Regular], чим більша сила, тим швидше двигун набирає обертів, указаних у [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular] (вимірюється в Н-м. [#FF4949][@Inter_Bold]Ньютон-метрах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]Щоб змусити двигун обертатися [#FF4949][@Inter_Bold]за годинниковою стрілкою[#d2e9cdff][@Inter_Regular], установіть [#FF4949][@Inter_Bold]від\’ємне[#d2e9cdff][@Inter_Regular] значення для [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular] або [#FF4949][@Inter_Bold]додатне[#d2e9cdff][@Inter_Regular] значення для обертання [#FF4949][@Inter_Bold]проти годинникової стрілки[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+
+    <!--JointPrismatic-->
+    <string name="jprismatic_title_1">І так… Prismatic Joint</string>
+    <string name="jprismatic_title_2">Практика. Як створити Prismatic Joint?</string>
+
+    <string name="jprismatic_sub_title_1">PrismaticJointDef налаштування:</string>
+    <string name="jprismatic_sub_title_2">Приклад для localAxisA:</string>
+
+    <string name="jprismatic_text_1">[#d2e9cdff][@Inter_Medium]Prismatic joint — з\’єднання, призначене для з\’єднання двох тіл та [#FF4949][@Inter_Bold]переміщення[#d2e9cdff][@Inter_Medium] їх уздовж [#FF4949][@Inter_Bold]однієї осі[#d2e9cdff][@Inter_Medium], наприклад [#FF4949][@Inter_Bold]ліфт[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]платформа[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. А тепер поговоримо про PrismaticJointDef.</string>
+    <string name="jprismatic_text_3">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься зі [#FF4949][@Inter_Bold]статичного прямокутника[#d2e9cdff][@Inter_Medium] ([#1465df]синій[#d2e9cdff]) і [#FF4949][@Inter_Bold]динамічної кулі[#d2e9cdff][@Inter_Medium] ([#1A932C]зелений[#d2e9cdff]), з\’єднаних [#FF4949][@Inter_Bold]PrismaticJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_text_4">[#d2e9cdff][@Inter_Medium]Створіть 2 тіла: [#FF4949][@Inter_Bold]статичний[#d2e9cdff][@Inter_Medium] прямокутник та [#FF4949][@Inter_Bold]динамічну[#d2e9cdff][@Inter_Medium] кулю.</string>
+    <string name="jprismatic_text_5">[#d2e9cdff][@Inter_Medium]Створіть PrismaticJoint:</string>
+    <string name="jprismatic_text_6">[#d2e9cdff][@Inter_Medium]localAxisA — це кут осі руху bodyB відносно bodyA.</string>
+    <string name="jprismatic_text_7">[#d2e9cdff][@Inter_Medium]localAxisA — значення [#FF4949][@Inter_Bold]X і Y нормалізовані[#d2e9cdff][@Inter_Medium], що означає, що вони можуть приймати значення лише від [#FF4949][@Inter_Bold]0 до 1[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_text_8">
+        [#d2e9cdff][@Inter_Medium](1, 0) — переміщення по осі [#FF4949][@Inter_Bold]X[#d2e9cdff][@Inter_Medium].
+        \n(0, 1) — переміщення по осі [#FF4949][@Inter_Bold]Y[#d2e9cdff][@Inter_Medium].
+        \n(1, 1) — діагональний рух.
+        \n(0, 0) — поведінка, ніби з\'єднання [#FF4949][@Inter_Bold]не створено[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="jprismatic_text_9">[#d2e9cdff][@Inter_Medium]Але так, оскільки я геній, я зрозумів практичним шляхом, що ви можете встановити будь-який кут осі, який забажаєте.</string>
+    <string name="jprismatic_text_10">[#d2e9cdff][@Inter_Medium]Для початку давайте зрозуміємо, що ми не встановлюємо 1 або 0, що, на вашу думку, тепер означає вибір осі X або Y, ви встановлюєте відношення катетів до гіпотенузи.</string>
+    <string name="jprismatic_text_11">[#d2e9cdff][@Inter_Medium]Тепер, завдяки цьому інструменту, ми можемо встановити потрібний нам кут, нам просто потрібно знайти значення кута для катетів, які є звичайним [#FF4949][@Inter_Bold]косинусом для X[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]синусом для Y[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_text_12">[#d2e9cdff][@Inter_Medium]Встановимо кут осі 60 градусів.</string>
+    <string name="jprismatic_text_13">[#d2e9cdff][@Inter_Medium]Таким чином ми можемо налаштувати вісь на будь-який кут від 0 до 360 градусів, просто замініть поле ( ([#FF4949][@Inter_Bold]val angle[#d2e9cdff][@Inter_Medium]) на потрібне значення кута.</string>
+    <string name="jprismatic_text_14">[#d2e9cdff][@Inter_Medium]Якщо ви запустите його зараз, кут буде неправильним, і це тому, що:</string>
+    <string name="jprismatic_text_15">[#d2e9cdff][@Inter_Medium]Давайте виправимо це, перетворивши DEGREES на RADIANS:</string>
+    <string name="jprismatic_text_16">[#d2e9cdff][@Inter_Medium]Щоб перетворити [#FF4949][@Inter_Bold]радіани в градуси[#d2e9cdff][@Inter_Medium], нам потрібно помножити радіани на нашу константу:</string>
+    <string name="jprismatic_text_17">[#d2e9cdff][@Inter_Medium]Для простішого продовження давайте змінимо [#FF4949][@Inter_Bold]localAxisA[#d2e9cdff][@Inter_Medium] для переміщення bodyB [#FF4949][@Inter_Bold]горизонтально[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_text_18">[#d2e9cdff][@Inter_Medium]Як ми вже знаємо, це можна зробити 3 способами:</string>
+    <string name="jprismatic_text_19">[#d2e9cdff][@Inter_Medium]Тепер ми можемо перейти до налаштування [#FF4949][@Inter_Bold]referenceAngle[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_text_20">[#FF4949][@Inter_Bold]referenceAngle[#d2e9cdff][@Inter_Medium] — просто змінює кут між bodyA і bodyB.</string>
+    <string name="jprismatic_text_21">[#d2e9cdff][@Inter_Medium]На даний момент тіла можуть рухатися вздовж своєї осі [#FF4949][@Inter_Bold]нескінченно далеко[#d2e9cdff][@Inter_Medium], щоб змінити це, ви можете використовувати [#FF4949][@Inter_Bold]ліміти[#d2e9cdff][@Inter_Medium], вони дозволяють вказати [#FF4949][@Inter_Bold]максимальну[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]мінімальну[#d2e9cdff][@Inter_Medium] довжину руху.</string>
+    <string name="jprismatic_text_22">[#d2e9cdff][@Inter_Medium]lowerTranslation має бути [#FF4949][@Inter_Bold]меншим[#d2e9cdff][@Inter_Medium] за upperTranslation, але [#FF4949][@Inter_Bold]не обов\’язково від\’ємним[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_text_23">[#d2e9cdff][@Inter_Medium]Як ви можете бачити, двигун повільно досягає руху, зазначеного в [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], чим більше [#FF4949][@Inter_Bold]maxMotorTorque[#d2e9cdff][@Inter_Medium], тим швидше двигун досягне [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], що б рух був схожим на іржаве колесо, або щоб уповільнити швидкість руху, встановіть [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium] на невелике значення.</string>
+
+    <string name="jprismatic_note_1">[#000000ff][@Inter_Bold](Примітка: )[#FF4949][@Inter_Bold] Кут[#d2e9cdff][@Inter_Medium] розраховується від [#FF4949][@Inter_Bold]опорної точки[#d2e9cdff][@Inter_Medium], а початок відліку йде [#FF4949][@Inter_Bold]проти годинникової стрілки[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jprismatic_note_2">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Число [#FF4949][@Inter_Bold]PI[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]sin[#d2e9cdff][@Inter_Medium](), [#FF4949][@Inter_Bold]cos[#d2e9cdff][@Inter_Medium]() — зазвичай міститься в стандартному математичному пакет.</string>
+    <string name="jprismatic_note_3">[#000000ff][@Inter_Bold](Примітка: )[#d2e9cdff][@Inter_Medium] Чим важче тіло, тим більшою має бути сила. Якщо значення малі, двигун повільно набиратиме швидкість, щоб досягти [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], або взагалі не рухатиметься, якщо сила дуже мала, тому будьте обережні, регулюючи [#FF4949][@Inter_Bold]maxMotorTorque[#d2e9cdff][@Inter_Medium].</string>
+
+    <string name="jprismatic_codepanel_7" translatable="false">
+        "world.createJoint(PrismaticJointDef().apply {"
+        "\n    ..."
+        "\n\n    // 1 спосіб"
+        "\n    localAxisA.set(1f, 0f)"
+        "\n\n    // 2 спосіб"
+        "\n    val angle = 0f * DEGTORAD"
+        "\n    localAxisA.set(cos(angle), sin(angle))"
+        "\n\n    // 3 спосіб"
+        "\n    val angle = 360f * DEGTORAD"
+        "\n    localAxisA.set(cos(angle), sin(angle))"
+        "\n}"
+    </string>
+
+    <string name="jprismatic_longquote_1">[#d2e9cdff][@Inter_Regular]За замовчуванням = Vector2(1f, 0f)</string>
+    <string name="jprismatic_longquote_2">[#d2e9cdff][@Inter_Regular]Тепер я сподіваюся, що ви розумієте, що відбувається, коли ви вставляєте значення від 0 до 1 для localAxisA.</string>
+
+    <string-array name="jprismatic_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAxisA — кут осі відносно bodyA.</item>
+        <item>[#d2e9cdff][@Inter_Regular]referenceAngle — [#FF4949][@Inter_Bold]початковий кут[#d2e9cdff][@Inter_Regular] між bodyA і bodyB, (за замовчуванням 0 | вимірюється в [#FF4949][@Inter_Bold]радіанах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]lowerTranslation — [#FF4949][@Inter_Bold]нижня точка[#d2e9cdff][@Inter_Regular] обмеження (за замовчуванням 0 | вимірюється в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]upperTranslation — [#FF4949][@Inter_Bold]верхня точка[#d2e9cdff][@Inter_Regular] обмеження (за замовчуванням 0 | вимірюється в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]enableLimit — [#FF4949][@Inter_Bold]прапорець[#d2e9cdff][@Inter_Regular] для ввімкнення нижньої та верхньої [#FF4949][@Inter_Bold]меж[#d2e9cdff][@Inter_Regular] (за замовчуванням [#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]motorSpeed — бажана кількість метрів за секунду (метрів за секунду).</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxMotorTorque — [#FF4949][@Inter_Bold]сила для руху[#d2e9cdff][@Inter_Regular], чим більша сила, тим швидше двигун набирає рух, указаний у [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular] (вимірюється в Н-м. [#FF4949][@Inter_Bold]Ньютон-метрах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]enableMotor — [#FF4949][@Inter_Bold]прапорець[#d2e9cdff][@Inter_Regular] для ввімкнення [#FF4949][@Inter_Bold]двигуна[#d2e9cdff][@Inter_Regular] (за замовчуванням [#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular]).</item>
+    </string-array>
+    <string-array name="jprismatic_arr_2">
+        <item>[#FF4949][@Inter_Bold]якщо вам потрібен тільки lowerTranslation[#d2e9cdff][@Inter_Regular], то upperTranslation має бути [#FF4949][@Inter_Bold]дуже великим[#d2e9cdff][@Inter_Regular], щоб його не було досягнуто, і аналогічно, якщо вам [#FF4949][@Inter_Bold]потрібен лише upperTranslation[#d2e9cdff][@Inter_Regular], lowerTranslation має бути [#FF4949][@Inter_Bold]дуже маленьким[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]встановлення [#FF4949][@Inter_Bold]майже однакових значень[#d2e9cdff][@Inter_Regular] для lowerTranslation і upperTranslation (наприклад, a = 4,99f | b = 5,0f) перемістить тіло на [#FF4949][@Inter_Bold]задану довжину[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jprismatic_arr_3">
+        <item>[#d2e9cdff][@Inter_Regular]motorSpeed — [#FF4949][@Inter_Bold]довжина за секунду[#d2e9cdff][@Inter_Regular] (метри в секунду) це не гарантована швидкість двигуна, це означає, яка максимальна швидкість може бути досягнута, а може не бути досягнута, якщо встановлено дуже мале значення для maxMotorTorque.</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxMotorTorque — [#FF4949][@Inter_Bold]сила руху[#d2e9cdff][@Inter_Regular], чим більша сила, тим швидше двигун набирає рух, указаний у motorSpeed (вимірюється в Н-м. [#FF4949][@Inter_Bold]Ньютон-метр[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]Щоб рухатися [#FF4949][@Inter_Bold]вперед[#d2e9cdff][@Inter_Regular] установіть [#FF4949][@Inter_Bold]позитивне[#d2e9cdff][@Inter_Regular] значення для [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]Щоб рухатися [#FF4949][@Inter_Bold]назад[#d2e9cdff][@Inter_Regular] установіть [#FF4949][@Inter_Bold]від\’ємне[#d2e9cdff][@Inter_Regular] значення для [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
 
 </resources>

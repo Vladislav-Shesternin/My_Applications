@@ -1,6 +1,7 @@
 package com.veldan.lbjt.game.screens
 
 import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.Input
 import com.badlogic.gdx.assets.AssetDescriptor
 import com.badlogic.gdx.audio.Music
 import com.badlogic.gdx.math.Interpolation
@@ -10,14 +11,17 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.veldan.lbjt.game.LibGDXGame
+import com.veldan.lbjt.game.actors.update.AUpdateAvailablePanel
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGBorders
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGMenu
 import com.veldan.lbjt.game.box2d.bodiesGroup.BGYanYinTheme
 import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JDistanceScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JRevoluteScreen
 import com.veldan.lbjt.game.utils.FIREBASE_STORAGE_MUSIC
 import com.veldan.lbjt.game.utils.LOCAL_MUSIC_DIR
+import com.veldan.lbjt.game.utils.TIME_ANIM_DIALOG_ALPHA
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
@@ -45,6 +49,7 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
     // Actor
     private val aHandHelloImg = Image(game.themeUtil.assets.HAND_HELLO)
     private val aHandHintImg  = Image(game.themeUtil.assets.HAND_HINT)
+    private val aUpdateAvailablePanel = AUpdateAvailablePanel(this).apply { color.a = 0f }
 
     // BodyGroup
     private val bgBorders     = BGBorders(this )
@@ -56,6 +61,7 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
     private val isLoadStorageMusicFlow = MutableSharedFlow<Boolean>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
 
     private var jobAnimHand: Job? = null
+
 
     override fun show() {
         game.apply { backgroundColor = themeUtil.backgroundColor }
@@ -84,12 +90,24 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
             animHandHint()
         }
 
-        stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
+        if (game.activity.isUpdateAvailable) addUpdateAvailablePanel()
+
+        stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA) {
+            aUpdateAvailablePanel.animShow(TIME_ANIM_DIALOG_ALPHA)
+        }
     }
 
     override fun dispose() {
         listOf(bgBorders, bgMenu, bgYanYinTheme).destroyAll()
         super.dispose()
+    }
+
+    override fun keyDown(keycode: Int): Boolean {
+        if (keycode == Input.Keys.BACK && aUpdateAvailablePanel.isShow) {
+            aUpdateAvailablePanel.close()
+            return true
+        }
+        return super.keyDown(keycode)
     }
 
     // ------------------------------------------------------------------------
@@ -113,6 +131,10 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
         }
     }
 
+    private fun AdvancedStage.addUpdateAvailablePanel() {
+        addAndFillActor(aUpdateAvailablePanel)
+    }
+
     // ------------------------------------------------------------------------
     // Create Body Group
     // ------------------------------------------------------------------------
@@ -124,10 +146,10 @@ class MenuScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
         bgMenu.create(117f,444f,466f,1012f)
 
         bgMenu.apply {
-            bRegularBtnTutorial   .getActor()?.setOnTouchListener { navigateTo(Practical_JDistanceScreen::class.java.name) }//TutorialIntroductionScreen::class.java.name) }
+            bRegularBtnTutorial   .getActor()?.setOnTouchListener { navigateTo(/*JRevoluteScreen::class.java.name) }*/ TutorialIntroductionScreen::class.java.name) }
             bRegularBtnSettings   .getActor()?.setOnTouchListener { navigateTo(SettingsScreen::class.java.name)    }
             bRegularBtnAboutAuthor.getActor()?.setOnTouchListener { navigateTo(AboutAuthorScreen::class.java.name) }
-            bRegularBtnComment    .getActor()?.setOnTouchListener { navigateTo(CommentsScreen::class.java.name)     }
+            bRegularBtnComment    .getActor()?.setOnTouchListener { navigateTo(CommentsScreen::class.java.name)    }
 
         }
     }

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Cosmo Plinko</string>
+    <!--    Test ID-->
+    <!--    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--Original-->
+    <!--    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/8876539005</string>-->
+    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/8876539005</string>
+</resources>

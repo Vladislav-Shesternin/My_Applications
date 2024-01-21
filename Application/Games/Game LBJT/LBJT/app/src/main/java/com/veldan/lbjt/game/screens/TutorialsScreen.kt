@@ -11,6 +11,8 @@ import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JDistanceScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JPrismaticScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JRevoluteScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
@@ -77,8 +79,8 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
             GeneralInformationScreen::class.java.name,
             JMouseScreen::class.java.name,
             JDistanceScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
+            JRevoluteScreen::class.java.name,
+            JPrismaticScreen::class.java.name,
             WillBeLaterScreen::class.java.name,
             WillBeLaterScreen::class.java.name,
             WillBeLaterScreen::class.java.name,

@@ -11,9 +11,12 @@ import com.veldan.lbjt.game.screens.TutorialIntroductionScreen
 import com.veldan.lbjt.game.screens.TutorialsScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JMouseScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JRevoluteScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JDistanceScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JPrismaticScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JRevoluteScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
@@ -59,11 +62,14 @@ class NavigationManager(val game: LibGDXGame) {
         GeneralInformationScreen::class.java.name -> GeneralInformationScreen(game)
         JMouseScreen            ::class.java.name -> JMouseScreen(game)
         JDistanceScreen         ::class.java.name -> JDistanceScreen(game)
+        JRevoluteScreen         ::class.java.name -> JRevoluteScreen(game)
+        JPrismaticScreen        ::class.java.name -> JPrismaticScreen(game)
 
         WillBeLaterScreen::class.java.name -> WillBeLaterScreen(game)
         // Practical Screens
         Practical_JMouseScreen   ::class.java.name -> Practical_JMouseScreen(game)
         Practical_JDistanceScreen::class.java.name -> Practical_JDistanceScreen(game)
+        Practical_JRevoluteScreen::class.java.name -> Practical_JRevoluteScreen(game)
 
 
 

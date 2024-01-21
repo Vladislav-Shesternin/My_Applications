@@ -25,7 +25,6 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
     var coroutine: CoroutineScope? = CoroutineScope(Dispatchers.Default)
         private set
     var isDisposed = false
-        private set
 
     private val standardizer = SizeStandardizer()
 
@@ -60,13 +59,19 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
             disposableSet.disposeAll()
             disposableSet.clear()
 
-            children.onEach { actor -> if (actor is Disposable) actor.dispose() }
+            disposeChildren()
+
             cancelCoroutinesAll(coroutine)
             coroutine = null
 
             isDisposed = true
             remove()
         }
+    }
+
+    fun disposeChildren() {
+        children.onEach { actor -> if (actor is Disposable) actor.dispose() }
+        clearChildren()
     }
 
     override fun removeActorAt(index: Int, unfocus: Boolean): Actor {

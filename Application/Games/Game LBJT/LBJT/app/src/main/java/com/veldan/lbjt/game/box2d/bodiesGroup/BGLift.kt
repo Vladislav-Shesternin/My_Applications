@@ -12,8 +12,6 @@ import com.badlogic.gdx.physics.box2d.joints.PulleyJoint
 import com.badlogic.gdx.physics.box2d.joints.PulleyJointDef
 import com.badlogic.gdx.physics.box2d.joints.RevoluteJoint
 import com.badlogic.gdx.physics.box2d.joints.RevoluteJointDef
-import com.badlogic.gdx.scenes.scene2d.actions.Actions
-import com.veldan.lbjt.game.actors.image.AImage
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
@@ -21,11 +19,8 @@ import com.veldan.lbjt.game.box2d.bodies.BLiftGear
 import com.veldan.lbjt.game.box2d.bodies.BLiftPlatform
 import com.veldan.lbjt.game.box2d.bodies.`object`.BVObject
 import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
-import com.veldan.lbjt.game.utils.Block
-import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
-import com.veldan.lbjt.game.utils.advanced.AdvancedStage
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.game.utils.toB2
 import kotlinx.coroutines.delay

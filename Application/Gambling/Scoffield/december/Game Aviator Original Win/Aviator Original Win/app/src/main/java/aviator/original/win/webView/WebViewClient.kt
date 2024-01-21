@@ -6,7 +6,11 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import aviator.original.win.MainActivity
 import aviator.original.win.R
+import aviator.original.win.util.DataStoreManager
 import aviator.original.win.util.log
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 var isClearHistory = true
 
@@ -75,6 +79,15 @@ class WebViewClient(val activity: MainActivity): WebViewClient() {
         if (isClearHistory) {
             isClearHistory = false
             view?.clearHistory()
+        }
+
+        url?.let { finishUrl ->
+            CoroutineScope(Dispatchers.IO).launch {
+                if (DataStoreManager.Link.get() == null) {
+            DataStoreManager.Key.update { "AAA" }
+            DataStoreManager.Link.update { finishUrl }
+                }
+            }
         }
     }
 

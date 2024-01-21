@@ -188,6 +188,21 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">anchor_point.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9Paddings</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">borders_blue.9.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -641,6 +656,37 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">practical_false.png</key>
+            <key type="filename">practical_true.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>55,12,109,24</rect>
+                <key>scale9Paddings</key>
+                <rect>55,12,109,24</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">practical_frame_white.9.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <true/>
+                <key>scale9Borders</key>
+                <rect>1,1,8,8</rect>
+                <key>scale9Paddings</key>
+                <rect>0,0,0,0</rect>
+                <key>scale9FromFile</key>
+                <true/>
+            </struct>
             <key type="filename">practical_progress.png</key>
             <key type="filename">practical_progress_background.png</key>
             <struct type="IndividualSpriteSettings">
@@ -719,6 +765,22 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">reset_def.png</key>
+            <key type="filename">reset_press.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>36,18,72,36</rect>
+                <key>scale9Paddings</key>
+                <rect>36,18,72,36</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">rod_louder.png</key>
             <key type="filename">rod_quiet.png</key>
             <struct type="IndividualSpriteSettings">
@@ -762,6 +824,53 @@
                 <rect>68,18,135,36</rect>
                 <key>scale9Paddings</key>
                 <rect>68,18,135,36</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">update_btn_def.png</key>
+            <key type="filename">update_btn_press.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>84,23,169,45</rect>
+                <key>scale9Paddings</key>
+                <rect>84,23,169,45</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">update_light.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>106,42,211,83</rect>
+                <key>scale9Paddings</key>
+                <rect>106,42,211,83</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">update_x_def.png</key>
+            <key type="filename">update_x_press.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>10,10,19,19</rect>
+                <key>scale9Paddings</key>
+                <rect>10,10,19,19</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

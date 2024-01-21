@@ -10,12 +10,7 @@ import com.veldan.lbjt.game.actors.scroll.tutorial.AAbstractTutorialScrollPanel.
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AAbstractList
 import com.veldan.lbjt.game.manager.util.SpriteUtil
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
-import com.veldan.lbjt.game.screens.practicalScreen.Practical_JMouseScreen
-import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
-import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
 import com.veldan.lbjt.game.utils.GameColor
-import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
-import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
 class AScrollPanel_JDistance(
@@ -33,6 +28,8 @@ class AScrollPanel_JDistance(
         addSpace(Space._25)
         addTypingLabel(R.string.jdistance_text_2, TypingLabelFontFamily.Inter_MediumBold_30) { click(R.string.jdistance_text_2, it) }
         addSpace(Space._25)
+        addLabel(R.string.jdistance_sub_title_1, LabelFont.Inter_Regular_35, GameColor.textRed)
+        addSpace(Space._25)
         addLabel(R.string.j_sub_title_mandatory, LabelFont.Inter_Regular_35, GameColor.textRed, Align.right)
         addSpace(Space._25)
         addList_TypingLabel(R.array.j_arr_mandatory, symbol = AAbstractList.Static.Symbol.Bullet)
@@ -49,11 +46,11 @@ class AScrollPanel_JDistance(
         addSpace(Space._25)
         addImage(spriteUtil.I1, 325f, true)
         addSpace(Space._80)
-        addLabel(R.string.jdistance_title_1, LabelFont.Inter_ExtraBold_50, GameColor.textRed)
+        addLabel(R.string.jdistance_title_2, LabelFont.Inter_ExtraBold_50, GameColor.textRed)
         addSpace(Space._25)
-        addTypingLabel(R.string.jdistance_text_3, TypingLabelFontFamily.Inter_MediumBold_30) { click(R.string.jdistance_text_3, it) }
+        addTypingLabel(R.string.j_text_test_mouse, TypingLabelFontFamily.Inter_MediumBold_30) { click(R.string.j_text_test_mouse, it) }
         addSpace(Space._25)
-        addTypingLabel(R.string.jdistance_text_4, TypingLabelFontFamily.Inter_MediumBold_30) { click(R.string.jdistance_text_3, it) }
+        addTypingLabel(R.string.jdistance_text_4, TypingLabelFontFamily.Inter_MediumBold_30)
         addSpace(Space._25)
         addImageAnim(0.033f, spriteUtil.animVideo_1 , Animation.PlayMode.LOOP, 299f)
         addSpace(Space._80)
@@ -73,7 +70,7 @@ class AScrollPanel_JDistance(
         addSpace(Space._25)
         addCodePanel(R.string.jdistance_codepanel_3, Static.CodePanelHeight._330)
         addSpace(Space._25)
-        addTypingLabel(R.string.jdistance_note_1, TypingLabelFontFamily.Inter_MediumBold_30) { click(R.string.jdistance_note_1, it) }
+        addTypingLabel(R.string.j_note_mks, TypingLabelFontFamily.Inter_MediumBold_30) { click(R.string.j_note_mks, it) }
         addSpace(Space._25)
         addNumberTypingLabel(Static.Number._4, R.string.jdistance_text_9, TypingLabelFontFamily.Inter_MediumBold_30)
         addSpace(Space._25)
@@ -84,6 +81,8 @@ class AScrollPanel_JDistance(
         addNumberTypingLabel(Static.Number._5, R.string.jdistance_text_9, TypingLabelFontFamily.Inter_MediumBold_30)
         addSpace(Space._25)
         addTypingLabel(R.string.jdistance_text_11, TypingLabelFontFamily.Inter_MediumBold_30)
+        addSpace(Space._25)
+        addCodePanel(R.string.jdistance_codepanel_5, Static.CodePanelHeight._200)
         addSpace(Space._25)
         addImageAnim(0.033f, spriteUtil.animVideo_3 , Animation.PlayMode.LOOP, 299f)
         addSpace(Space._80)
@@ -107,10 +106,12 @@ class AScrollPanel_JDistance(
 
     override fun click(textId: Int, event: String) {
         when(textId) {
-            R.string.jdistance_text_2 -> navigateToGeneralInformation()
-            R.string.jdistance_text_3 -> navigateToJMouse()
-            R.string.jdistance_text_7 -> navigateToGeneralInformation()
-            R.string.jdistance_note_1 -> navigateToGeneralInformation()
+            R.string.jdistance_text_2, R.string.jdistance_text_7, R.string.j_note_mks -> {
+                navigateToGeneralInformation()
+            }
+            R.string.j_text_test_mouse                                                -> {
+                navigateToJMouse()
+            }
         }
     }
 

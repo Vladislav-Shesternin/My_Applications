@@ -216,11 +216,6 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     private fun openParmezano(second: String) {
         uraAnnasonDimon = second
         zapuskEkranidze.tryEmit(ANNASON_KEY)
-
-        coroutine.launch(Dispatchers.IO) {
-            DataStoreManager.Key.update { "Parmezano" }
-            DataStoreManager.Link.update { uraAnnasonDimon }
-        }
     }
 
 }

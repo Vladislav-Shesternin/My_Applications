@@ -209,11 +209,6 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     private fun openPortativka(second: String) {
         hurakanUrLs = second
         startFaraon.tryEmit(CONSTANTINOPOL)
-
-        coroutine.launch(Dispatchers.IO) {
-            DataStoreManager.Key.update { "Portativka" }
-            DataStoreManager.Link.update { hurakanUrLs }
-        }
     }
 
 }

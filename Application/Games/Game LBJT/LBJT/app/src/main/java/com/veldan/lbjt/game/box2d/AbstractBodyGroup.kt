@@ -4,7 +4,6 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.Body
 import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
-import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.utils.Disposable
 import com.veldan.lbjt.game.utils.*
 import com.veldan.lbjt.game.utils.actor.setBounds
@@ -19,8 +18,8 @@ abstract class AbstractBodyGroup: Destroyable {
     abstract val screenBox2d: AdvancedBox2dScreen
     abstract val standartW: Float
 
-    private val _bodyList  = mutableListOf<AbstractBody>()
-    private val _actorList = mutableListOf<AdvancedGroup>()
+    private val _bodyList  = mutableSetOf<AbstractBody>()
+    private val _actorList = mutableSetOf<AdvancedGroup>()
     val disposableSet      = mutableSetOf<Disposable>()
     val destroyableSet     = mutableSetOf<Destroyable>()
 

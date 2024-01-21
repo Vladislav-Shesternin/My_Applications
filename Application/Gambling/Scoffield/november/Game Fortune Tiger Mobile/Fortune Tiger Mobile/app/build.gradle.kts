@@ -57,8 +57,11 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.activity:activity-ktx:1.8.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
 
     val gdxVersion = "1.12.0"
     implementation("com.badlogicgames.gdx:gdx-backend-android:$gdxVersion")
@@ -73,10 +76,8 @@ dependencies {
     natives("com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("com.airbnb.android:lottie:4.2.2")
     implementation("space.earlygrey:shapedrawer:2.6.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
 
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
     implementation("com.google.firebase:firebase-analytics-ktx")

@@ -8,7 +8,7 @@ import com.badlogic.gdx.utils.Align
 import com.veldan.lbjt.R
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.actors.button.AButton_Regular
-import com.veldan.lbjt.game.actors.scroll.AScrollPane
+import com.veldan.lbjt.game.actors.scroll.ATutorialScrollPane
 import com.veldan.lbjt.game.actors.scroll.tutorial.AAbstractTutorialScrollPanel
 import com.veldan.lbjt.game.manager.SpriteManager
 import com.veldan.lbjt.game.manager.util.SpriteUtil
@@ -46,6 +46,9 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
 
 
     override fun show() {
+        game.apply { backgroundColor = GameColor.background }
+        game.activity.apply { setNavigationBarColor(R.color.background) }
+
         game.activity.lottie.showLoader()
         stageUI.root.animHide()
         setUIBackground(game.themeUtil.assets.BACKGROUND.region)
@@ -61,6 +64,9 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
         addTitleLbl()
         addPlayBtn()
         addScrollPanel()
+
+        game.apply { backgroundColor = themeUtil.backgroundColor }
+        game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
 
         game.activity.lottie.hideLoader()
         stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
@@ -117,7 +123,7 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
         addActor(aScrollPane)
         aScrollPane?.setBounds(25f, -235f, 650f, 1400f)
 
-        aScrollPane?.scrollPanel?.scrollNextBlock = AScrollPane.Static.ScrollBlock { isScrollNext ->
+        aScrollPane?.scrollPanel?.scrollNextBlock = ATutorialScrollPane.Static.ScrollBlock { isScrollNext ->
             if (isScrollNext && isShow) {
                     isShow = false
                     animHideTop()

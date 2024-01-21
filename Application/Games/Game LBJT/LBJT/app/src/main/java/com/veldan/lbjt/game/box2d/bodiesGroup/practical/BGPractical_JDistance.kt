@@ -4,7 +4,6 @@ import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.joints.DistanceJoint
 import com.badlogic.gdx.physics.box2d.joints.DistanceJointDef
 import com.veldan.lbjt.game.actors.practical_settings.APracticalSettings_JDistance
-import com.veldan.lbjt.game.actors.practical_settings.APracticalSettings_JMouse
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.bodies.`object`.BCObject
@@ -16,10 +15,10 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedMouseScreen
 import com.veldan.lbjt.game.utils.toB2
 
-class BGPractical_JDistance(val screenMouse: AdvancedMouseScreen): AbstractBGPractical(screenMouse) {
+class BGPractical_JDistance(_screenBox2d: AdvancedMouseScreen): AbstractBGPractical(_screenBox2d) {
 
     override val title              = "Distance Joint"
-    override val aPracticalSettings = APracticalSettings_JDistance(screenMouse)
+    override val aPracticalSettings = APracticalSettings_JDistance(screenBox2d)
 
     // Body
     private val bStaticHorizontal = BHObject(screenBox2d, BodyDef.BodyType.StaticBody)
@@ -36,6 +35,7 @@ class BGPractical_JDistance(val screenMouse: AdvancedMouseScreen): AbstractBGPra
         createB_Dynamic()
 
         createJ_Distance()
+        bDynamicCircle.actor?.let { it.postDrawArray.add(AdvancedGroup.Static.Drawer { alpha -> jDistance.drawJoint(alpha) }) }
     }
 
     override fun hideAndToStartBody(endBlock: () -> Unit) {
@@ -54,11 +54,8 @@ class BGPractical_JDistance(val screenMouse: AdvancedMouseScreen): AbstractBGPra
     }
 
     override fun showAndUpdateBody() {
-        screenMouse.updateMouseJoint(
-            APracticalSettings_JMouse.maxForceValue,
-            APracticalSettings_JMouse.frequencyHzValue,
-            APracticalSettings_JMouse.dampingRatioValue,
-        )
+        jDistance.destroy()
+        createJ_Distance()
 
         setOriginalId()
         arrayOf(bStaticHorizontal, bDynamicCircle).onEach { it.actor?.animShow(TIME_ANIM_ALPHA_PRACTICAL_BODY) }
@@ -105,12 +102,13 @@ class BGPractical_JDistance(val screenMouse: AdvancedMouseScreen): AbstractBGPra
             bodyB = bDynamicCircle.body
             collideConnected = true
 
+            localAnchorA.set(APracticalSettings_JDistance.localAnchorAValue.cpy().sub(bStaticHorizontal.center))
+            localAnchorB.set(APracticalSettings_JDistance.localAnchorBValue.cpy().sub(bDynamicCircle.center))
+
             length       = APracticalSettings_JDistance.lengthValue
             frequencyHz  = APracticalSettings_JDistance.frequencyHzValue
             dampingRatio = APracticalSettings_JDistance.dampingRatioValue
         })
-
-        bDynamicCircle.actor?.let {it.postDrawArray.add(AdvancedGroup.Static.Drawer { alpha -> jDistance.drawJoint(alpha) }) }
     }
 
 }

@@ -148,6 +148,21 @@ open class AButton(
             pressed  = themeUtil.assets.MONETIZATION_MEGA_BTN_PRESS,
             disabled = themeUtil.assets.MONETIZATION_MEGA_BTN_PRESS,
         )
+        Static.Type.RESET -> Static.AButtonStyle(
+            default  = themeUtil.assets.RESET_DEF,
+            pressed  = themeUtil.assets.RESET_PRESS,
+            disabled = themeUtil.assets.RESET_PRESS,
+        )
+        Static.Type.UPDATE -> Static.AButtonStyle(
+            default  = themeUtil.assets.UPDATE_BTN_DEF,
+            pressed  = themeUtil.assets.UPDATE_BTN_PRESS,
+            disabled = themeUtil.assets.UPDATE_BTN_PRESS,
+        )
+        Static.Type.UPDATE_X -> Static.AButtonStyle(
+            default  = themeUtil.assets.UPDATE_X_DEF,
+            pressed  = themeUtil.assets.UPDATE_X_PRESS,
+            disabled = themeUtil.assets.UPDATE_X_PRESS,
+        )
     }
 
     // ---------------------------------------------------
@@ -162,7 +177,7 @@ open class AButton(
         )
 
         enum class Type {
-            REGULAR, MONETIZATION, MONETIZATION_MEGA
+            REGULAR, MONETIZATION, MONETIZATION_MEGA, RESET, UPDATE, UPDATE_X
         }
     }
 

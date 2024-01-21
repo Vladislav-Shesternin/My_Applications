@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.Disposable
 import com.badlogic.gdx.utils.viewport.FillViewport
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.veldan.lbjt.game.LibGDXGame
+import com.veldan.lbjt.game.actors.update.AUpdateAvailablePanel
 import com.veldan.lbjt.game.utils.HEIGHT_UI
 import com.veldan.lbjt.game.utils.ShapeDrawerUtil
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA

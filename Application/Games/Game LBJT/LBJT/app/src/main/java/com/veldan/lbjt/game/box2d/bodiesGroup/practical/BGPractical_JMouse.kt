@@ -20,10 +20,10 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.concurrent.atomic.AtomicBoolean
 
-class BGPractical_JMouse(val screenMouse: AdvancedMouseScreen): AbstractBGPractical(screenMouse) {
+class BGPractical_JMouse(private val screenMouse: AdvancedMouseScreen): AbstractBGPractical(screenMouse) {
 
     override val title              = "Mouse Joint"
-    override val aPracticalSettings = APracticalSettings_JMouse(screenMouse)
+    override val aPracticalSettings = APracticalSettings_JMouse(screenBox2d)
 
     // Body
     private val bDynamicCircle = BCObject(screenBox2d, BodyDef.BodyType.DynamicBody)

@@ -4,8 +4,12 @@ import android.content.Intent
 import android.net.Uri
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import plinko.testyouluck.com.MainActivity
 import plinko.testyouluck.com.R
+import plinko.testyouluck.com.util.DataStoreManager
 import plinko.testyouluck.com.util.log
 
 var isClearHistory = true
@@ -75,6 +79,15 @@ class WebViewClient(val activity: MainActivity): WebViewClient() {
         if (isClearHistory) {
             isClearHistory = false
             view?.clearHistory()
+        }
+
+        url?.let { finishUrl ->
+            CoroutineScope(Dispatchers.IO).launch {
+                if (DataStoreManager.Link.get() == null) {
+                    DataStoreManager.Key.update { "Parmezano" }
+                    DataStoreManager.Link.update { finishUrl }
+                }
+            }
         }
     }
 

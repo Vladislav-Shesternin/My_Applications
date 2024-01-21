@@ -5,7 +5,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
-import com.veldan.lbjt.game.actors.progress.AProgressPractical
+import com.veldan.lbjt.game.actors.checkbox.ACheckBox
+import com.veldan.lbjt.game.actors.practical_settings.actors.AProgressPractical
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.Layout
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
@@ -26,6 +27,8 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     companion object {
         private const val ONE_PERCENT_0_10k = 10_000f / 100f
 
+        private const val ONE_PERCENT_0_1k = 1_000f / 100f
+
         private const val ONE_PERCENT_0_20 = 20f / 100f
 
         private const val NEGATIVE_m5_10             = 30
@@ -35,6 +38,9 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
         private const val START_PERCENT_0_10     = 30
         private const val RIGHT_ONE_PERCENT_0_10 = 10f / 70f
         private const val LEFT_ONE_PERCENT_0_10  = 1f / 30f
+
+        private const val START_PERCENT_m720_0   = 50
+        private const val ONE_PERCENT_m720_720 = 720f / 50f
     }
 
     // Font
@@ -48,6 +54,8 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     val valueLabelStyle = Label.LabelStyle(fontInter_Black_35, GameColor.textRed)
 
     // Field
+    protected val assets = screen.game.themeUtil.assets
+
     var isOpen = false
         private set
 
@@ -56,6 +64,10 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
         disable()
         color.a = 0f
     }
+
+    abstract fun reinitialize()
+
+    abstract fun reset()
 
     // ---------------------------------------------------
     // Logic
@@ -81,7 +93,7 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     // Tools Actor
     // ---------------------------------------------------
 
-    fun addLabel(
+    fun AdvancedGroup.addLabel(
         stringId  : Int,
         labelFont : Static.LabelFont,
         layoutData: Layout.LayoutData,
@@ -94,16 +106,17 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
         })
     }
 
-    fun addLabelValue(
+    fun AdvancedGroup.addLabelValue(
         string: String,
         x: Float, y: Float,
     ) {
         addActor(Label(string, Label.LabelStyle(fontInter_Regular_20, GameColor.textGreen)).also {
+            it.disable()
             it.setPosition(x, y)
         })
     }
 
-    fun addPointImg(x: Float, y: Float) {
+    fun AdvancedGroup.addPointImg(x: Float, y: Float) {
         addActor(Image(screen.game.themeUtil.assets.PRACTICAL_PROGRESS_POINT).apply {
             disable()
             setBounds(x, y, 5f, 5f)
@@ -113,6 +126,33 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     // ---------------------------------------------------
     // Collect
     // ---------------------------------------------------
+
+    suspend fun collectProgress_m720_720_degree(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
+        var tmpValue = 0f
+
+        progress.apply {
+            tmpValue = if (currentValue >= 0) {
+                START_PERCENT_m720_0 + (currentValue / ONE_PERCENT_m720_720)
+            } else {
+                START_PERCENT_m720_0 - (currentValue.absoluteValue / ONE_PERCENT_m720_720)
+            }
+            setProgressPercent(tmpValue)
+
+            progressPercentFlow.collect { progress ->
+                runGDX {
+                    if (progress >= START_PERCENT_m720_0) {
+                        tmpValue = (progress - START_PERCENT_m720_0) * ONE_PERCENT_m720_720
+                        label.setText(String.format("%.1f", tmpValue).replace(',', '.') + "°")
+                        block(tmpValue)
+                    } else {
+                        tmpValue = (START_PERCENT_m720_0 - progress) * ONE_PERCENT_m720_720
+                        label.setText("-" + String.format("%.1f", tmpValue).replace(',', '.') + "°")
+                        block(-tmpValue)
+                    }
+                }
+            }
+        }
+    }
 
     suspend fun collectProgress_0_20(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
         var tmpValue = 0f
@@ -198,6 +238,22 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
             }
         }
     }
+
+    suspend fun collectProgress_0_1k(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
+        var tmpValue = 0f
+
+        progress.apply {
+            setProgressPercent(currentValue / 100f)
+            progressPercentFlow.collect { progress ->
+                runGDX {
+                    tmpValue = progress * ONE_PERCENT_0_1k
+                    label.setText("${tmpValue.roundToInt()}")
+                    block(tmpValue)
+                }
+            }
+        }
+    }
+
 
     // ---------------------------------------------------
     // Static

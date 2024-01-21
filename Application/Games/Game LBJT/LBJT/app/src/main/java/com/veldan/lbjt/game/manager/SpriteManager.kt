@@ -47,8 +47,9 @@ class SpriteManager(var assetManager: AssetManager) {
     enum class EnumTexture(val data: TextureData) {
         YAN_BACKGROUND(TextureData("textures/yan_background.png")),
         YIN_BACKGROUND(TextureData("textures/yin_background.png")),
-        MASK_ICON(     TextureData("textures/mask_icon.png")     ),
-        VELDAN_ICON(   TextureData("textures/veldan_icon.png")   ),
+        MASK_ICON     (TextureData("textures/mask_icon.png")     ),
+        VELDAN_ICON   (TextureData("textures/veldan_icon.png")   ),
+        UPDATE_PANEL  (TextureData("textures/update_panel.png")   ),
 
         PRACTICAL_PROGRESS_MASK(TextureData("textures/practical_progress_mask.png")),
     }
@@ -72,7 +73,6 @@ class SpriteManager(var assetManager: AssetManager) {
         I9( TextureData("textures/tutorials/general_information/i9.png") ),
         I10(TextureData("textures/tutorials/general_information/i10.png")),
         I11(TextureData("textures/tutorials/general_information/i11.png")),
-        I12(TextureData("textures/tutorials/general_information/i12.png")),
     }
 
     enum class EnumAtlas_JointMouse(val data: AtlasData) {
@@ -123,6 +123,59 @@ class SpriteManager(var assetManager: AssetManager) {
     enum class EnumTexture_JointDistance(val data: TextureData) {
         I1(TextureData("textures/tutorials/joint_distance/i1.png")),
         I2(TextureData("textures/tutorials/joint_distance/i2.png")),
+    }
+
+    enum class EnumAtlas_JointRevolute(val data: AtlasData) {
+        ANIM_VIDEO_1_0(AtlasData("atlas/anim/tutorials/joint_revolute/video_1/video_1_0.atlas")),
+        ANIM_VIDEO_1_1(AtlasData("atlas/anim/tutorials/joint_revolute/video_1/video_1_1.atlas")),
+        ANIM_VIDEO_1_2(AtlasData("atlas/anim/tutorials/joint_revolute/video_1/video_1_2.atlas")),
+        ANIM_VIDEO_1_3(AtlasData("atlas/anim/tutorials/joint_revolute/video_1/video_1_3.atlas")),
+
+        ANIM_VIDEO_2_0(AtlasData("atlas/anim/tutorials/joint_revolute/video_2/video_2_0.atlas")),
+        ANIM_VIDEO_2_1(AtlasData("atlas/anim/tutorials/joint_revolute/video_2/video_2_1.atlas")),
+
+        ANIM_VIDEO_3_0(AtlasData("atlas/anim/tutorials/joint_revolute/video_3/video_3_0.atlas")),
+        ANIM_VIDEO_3_1(AtlasData("atlas/anim/tutorials/joint_revolute/video_3/video_3_1.atlas")),
+
+        ANIM_VIDEO_4_0(AtlasData("atlas/anim/tutorials/joint_revolute/video_4/video_4_0.atlas")),
+        ANIM_VIDEO_4_1(AtlasData("atlas/anim/tutorials/joint_revolute/video_4/video_4_1.atlas")),
+        ANIM_VIDEO_4_2(AtlasData("atlas/anim/tutorials/joint_revolute/video_4/video_4_2.atlas")),
+        ANIM_VIDEO_4_3(AtlasData("atlas/anim/tutorials/joint_revolute/video_4/video_4_3.atlas")),
+
+        MEM_1(AtlasData("atlas/anim/tutorials/joint_revolute/mem/mem_1.atlas")),
+        MEM_2(AtlasData("atlas/anim/tutorials/joint_revolute/mem/mem_2.atlas")),
+    }
+    enum class EnumTexture_JointRevolute(val data: TextureData) {
+        I1(TextureData("textures/tutorials/joint_revolute/i1.png")),
+        I2(TextureData("textures/tutorials/joint_revolute/i2.png")),
+    }
+
+    enum class EnumAtlas_JointPrismatic(val data: AtlasData) {
+        ANIM_VIDEO_1_0(AtlasData("atlas/anim/tutorials/joint_prismatic/video_1/video_1_0.atlas")),
+        ANIM_VIDEO_1_1(AtlasData("atlas/anim/tutorials/joint_prismatic/video_1/video_1_1.atlas")),
+        ANIM_VIDEO_1_2(AtlasData("atlas/anim/tutorials/joint_prismatic/video_1/video_1_2.atlas")),
+
+        ANIM_VIDEO_2_0(AtlasData("atlas/anim/tutorials/joint_prismatic/video_2/video_2_0.atlas")),
+        ANIM_VIDEO_2_1(AtlasData("atlas/anim/tutorials/joint_prismatic/video_2/video_2_1.atlas")),
+
+        ANIM_VIDEO_3_0(AtlasData("atlas/anim/tutorials/joint_prismatic/video_3/video_3_0.atlas")),
+        ANIM_VIDEO_3_1(AtlasData("atlas/anim/tutorials/joint_prismatic/video_3/video_3_1.atlas")),
+
+        ANIM_VIDEO_4_0(AtlasData("atlas/anim/tutorials/joint_prismatic/video_4/video_4_0.atlas")),
+        ANIM_VIDEO_4_1(AtlasData("atlas/anim/tutorials/joint_prismatic/video_4/video_4_1.atlas")),
+
+        ANIM_VIDEO_5_0(AtlasData("atlas/anim/tutorials/joint_prismatic/video_5/video_5_0.atlas")),
+        ANIM_VIDEO_5_1(AtlasData("atlas/anim/tutorials/joint_prismatic/video_5/video_5_1.atlas")),
+        ANIM_VIDEO_5_2(AtlasData("atlas/anim/tutorials/joint_prismatic/video_5/video_5_2.atlas")),
+
+        MEM_1(AtlasData("atlas/anim/tutorials/joint_prismatic/mem/mem_1.atlas")),
+    }
+    enum class EnumTexture_JointPrismatic(val data: TextureData) {
+        I1(TextureData("textures/tutorials/joint_prismatic/i1.png")),
+        I2(TextureData("textures/tutorials/joint_prismatic/i2.png")),
+        I3(TextureData("textures/tutorials/joint_prismatic/i3.png")),
+        I4(TextureData("textures/tutorials/joint_prismatic/i4.png")),
+        I5(TextureData("textures/tutorials/joint_prismatic/i5.png")),
     }
 
     data class AtlasData(val path: String) {

@@ -1,10 +1,12 @@
 package com.veldan.lbjt.game.screens.tutorialsScreen
 
 import com.badlogic.gdx.assets.AssetManager
+import com.veldan.lbjt.R
 import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.actors.scroll.tutorial.AScrollPanel_GeneralInformation
 import com.veldan.lbjt.game.manager.SpriteManager
 import com.veldan.lbjt.game.manager.util.SpriteUtil
+import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
@@ -24,6 +26,9 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
     private var aGeneralInformationScrollPanel: AScrollPanel_GeneralInformation? = null
 
     override fun show() {
+        game.apply { backgroundColor = GameColor.background }
+        game.activity.apply { setNavigationBarColor(R.color.background) }
+
         game.activity.lottie.showLoader()
         stageUI.root.animHide()
         setUIBackground(game.themeUtil.assets.BACKGROUND.region)
@@ -66,6 +71,10 @@ class GeneralInformationScreen(override val game: LibGDXGame): AdvancedScreen() 
 
     override fun AdvancedStage.addActorsOnStageUI() {
         addGeneralInformationScrollPanel()
+
+        game.apply { backgroundColor = themeUtil.backgroundColor }
+        game.activity.apply { setNavigationBarColor(game.themeUtil.navBarColorId) }
+
         game.activity.lottie.hideLoader()
         stageUI.root.animShow(TIME_ANIM_SCREEN_ALPHA)
     }

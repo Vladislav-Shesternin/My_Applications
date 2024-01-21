@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "101691763905",
+    "project_id": "hellper-pokies-gallery",
+    "storage_bucket": "hellper-pokies-gallery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101691763905:android:c77427d07e658f3a54f840",
+        "android_client_info": {
+          "package_name": "com.hlperki.pesgllra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVX3K2tczK40cpinpL6KtDAFug6PMKFi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

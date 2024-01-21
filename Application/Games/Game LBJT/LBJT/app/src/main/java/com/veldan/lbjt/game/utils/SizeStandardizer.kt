@@ -9,6 +9,8 @@ class SizeStandardizer {
 
     val Vector2.toStandart get() = this.divOr0(standart)
     val Float.toStandart   get() = this.divOr0(standart)
+    val Vector2.toNew      get() = this.scl(standart)
+    val Float.toNew        get() = this * standart
 
     fun standardize(standartW: Float, newW: Float) {
         standart = standartW / newW

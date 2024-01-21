@@ -1,5 +1,6 @@
 package com.veldan.lbjt
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -9,8 +10,12 @@ import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
+import com.badlogic.gdx.backends.android.BuildConfig
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.veldan.lbjt.databinding.ActivityMainBinding
 import com.veldan.lbjt.game.data.User
 import com.veldan.lbjt.util.BillingUtil
@@ -24,8 +29,10 @@ import com.veldan.lbjt.util.setVisible
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import java.util.UUID
 import kotlin.system.exitProcess
 
@@ -42,6 +49,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     val user = User()
 
+    var isUpdateAvailable = false
+
     // registerForActivityResult
     private var pickMediaBlock: (Uri?) -> Unit = { }
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri -> pickMediaBlock(uri) }
@@ -50,6 +59,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         super.onCreate(savedInstanceState)
 
         initialize()
+        getFirebaseRemoteConfig()
+
         asyncCheckInternetConnection()
         asyncGenerateUserId()
 
@@ -108,6 +119,25 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     fun launchPickMedia(type: ActivityResultContracts.PickVisualMedia.VisualMediaType, block: (Uri?) -> Unit) {
         pickMediaBlock = block
         pickMedia.launch(PickVisualMediaRequest(type))
+    }
+
+    private fun getFirebaseRemoteConfig() {
+        Firebase.remoteConfig.apply {
+            setConfigSettingsAsync(remoteConfigSettings { minimumFetchIntervalInSeconds = 3600 })
+            fetchAndActivate().addOnCompleteListener(this@MainActivity) { task ->
+                try {
+                    if (task.isSuccessful) {
+                        val version = getLong("version")
+                        if (version > com.veldan.lbjt.BuildConfig.VERSION_CODE) isUpdateAvailable = true
+                        log("getFirebaseRemoteConfig success: $version")
+                    } else {
+                        log("getFirebaseRemoteConfig failure: ${this.all}")
+                    }
+                } catch (e: Exception) {
+                    log("getFirebaseRemoteConfig exception: = ${e.message}")
+                }
+            }
+        }
     }
 
 }

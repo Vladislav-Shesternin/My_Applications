@@ -7,6 +7,8 @@ import com.veldan.lbjt.game.manager.SpriteManager
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_GeneralInformation as GenInfo
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointMouse as JMouse
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointDistance as JDistance
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointRevolute as JRevolute
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointPrismatic as JPrismatic
 
 class SpriteUtil {
 
@@ -64,6 +66,16 @@ class SpriteUtil {
           val PRACTICAL_PROGRESS           : TextureRegion
           val PRACTICAL_PROGRESS_BACKGROUND: TextureRegion
           val PRACTICAL_PROGRESS_POINT     : TextureRegion
+          val ANCHOR_POINT                 : TextureRegion
+          val PRACTICAL_FALSE              : TextureRegion
+          val PRACTICAL_TRUE               : TextureRegion
+          val RESET_DEF                    : TextureRegion
+          val RESET_PRESS                  : TextureRegion
+          val UPDATE_BTN_DEF               : TextureRegion
+          val UPDATE_BTN_PRESS             : TextureRegion
+          val UPDATE_LIGHT                 : TextureRegion
+          val UPDATE_X_DEF                 : TextureRegion
+          val UPDATE_X_PRESS               : TextureRegion
 
           val NUMBER_LIST : List<TextureRegion>
 
@@ -74,10 +86,12 @@ class SpriteUtil {
           val PANEL_WITH_LIGHT_RED   : NinePatch
           val BORDERS_BLUE           : NinePatch
           val PANEL_CODE             : NinePatch
+          val PRACTICAL_FRAME_WHITE  : NinePatch
 
-          val BACKGROUND : Texture
-          val MASK_ICON  : Texture
-          val ICON_VELDAN: Texture
+          val BACKGROUND  : Texture
+          val MASK_ICON   : Texture
+          val ICON_VELDAN : Texture
+          val UPDATE_PANEL: Texture
 
           val PRACTICAL_PROGRESS_MASK: Texture
      }
@@ -139,6 +153,16 @@ class SpriteUtil {
           override val PRACTICAL_PROGRESS            = getGameRegion("practical_progress")
           override val PRACTICAL_PROGRESS_BACKGROUND = getGameRegion("practical_progress_background")
           override val PRACTICAL_PROGRESS_POINT      = getGameRegion("practical_progress_point")
+          override val ANCHOR_POINT                  = getGameRegion("anchor_point")
+          override val PRACTICAL_FALSE               = getGameRegion("practical_false")
+          override val PRACTICAL_TRUE                = getGameRegion("practical_true")
+          override val RESET_DEF                     = getGameRegion("reset_def")
+          override val RESET_PRESS                   = getGameRegion("reset_press")
+          override val UPDATE_BTN_DEF                = getGameRegion("update_btn_def")
+          override val UPDATE_BTN_PRESS              = getGameRegion("update_btn_press")
+          override val UPDATE_LIGHT                  = getGameRegion("update_light")
+          override val UPDATE_X_DEF                  = getGameRegion("update_x_def")
+          override val UPDATE_X_PRESS                = getGameRegion("update_x_press")
 
           override val NUMBER_LIST = List(9) { getGameRegion("number ${it.inc()}") }
 
@@ -149,11 +173,13 @@ class SpriteUtil {
           override val PANEL_WITH_LIGHT_RED   = getGamePath("panel_with_light_red")
           override val BORDERS_BLUE           = getGamePath("borders_blue")
           override val PANEL_CODE             = getGamePath("panel_code")
+          override val PRACTICAL_FRAME_WHITE  = getGamePath("practical_frame_white")
 
           override val MASK_ICON   = SpriteManager.EnumTexture.MASK_ICON.data.texture
           override val ICON_VELDAN = SpriteManager.EnumTexture.VELDAN_ICON.data.texture
 
           override val PRACTICAL_PROGRESS_MASK = SpriteManager.EnumTexture.PRACTICAL_PROGRESS_MASK.data.texture
+          override val UPDATE_PANEL            = SpriteManager.EnumTexture.UPDATE_PANEL.data.texture
      }
 
      class YanAssets: CommonAssets() {
@@ -184,7 +210,6 @@ class SpriteUtil {
           val I9  = GenInfo.I9.data.texture
           val I10 = GenInfo.I10.data.texture
           val I11 = GenInfo.I11.data.texture
-          val I12 = GenInfo.I12.data.texture
      }
 
      class JointMouse: TutorialsAssets {
@@ -219,8 +244,7 @@ class SpriteUtil {
 
           val mem = mem_1+mem_2
 
-          val I1  = JDistance.I1.data.texture
-
+          val I1  = JMouse.I1.data.texture
      }
 
      class JointDistance: TutorialsAssets {
@@ -250,7 +274,76 @@ class SpriteUtil {
 
           val I1 = JDistance.I1.data.texture
           val I2 = JDistance.I2.data.texture
+     }
 
+     class JointRevolute: TutorialsAssets {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          private val animVideo_1_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_1_0.data) }
+          private val animVideo_1_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_1_1.data) }
+          private val animVideo_1_2 = List<TextureRegion>(78) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_1_2.data) }
+          private val animVideo_1_3 = List<TextureRegion>(13) { getRegion("video (${it.inc()+234})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_1_3.data) }
+
+          private val animVideo_2_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_2_0.data) }
+          private val animVideo_2_1 = List<TextureRegion>(61) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_2_1.data) }
+
+          private val animVideo_3_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_3_0.data) }
+          private val animVideo_3_1 = List<TextureRegion>(12) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_3_1.data) }
+
+          private val animVideo_4_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_4_0.data) }
+          private val animVideo_4_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_4_1.data) }
+          private val animVideo_4_2 = List<TextureRegion>(78) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_4_2.data) }
+          private val animVideo_4_3 = List<TextureRegion>(1) { getRegion("video (${it.inc()+234})", SpriteManager.EnumAtlas_JointRevolute.ANIM_VIDEO_4_3.data) }
+
+          private val mem_1 = List<TextureRegion>(25) { getRegion("mem (${it.inc()})", SpriteManager.EnumAtlas_JointRevolute.MEM_1.data) }
+          private val mem_2 = List<TextureRegion>(25) { getRegion("mem (${it.inc()+25})", SpriteManager.EnumAtlas_JointRevolute.MEM_2.data) }
+
+          val animVideo_1 = animVideo_1_0+animVideo_1_1+animVideo_1_2+animVideo_1_3
+          val animVideo_2 = animVideo_2_0+animVideo_2_1
+          val animVideo_3 = animVideo_3_0+animVideo_3_1
+          val animVideo_4 = animVideo_4_0+animVideo_4_1+animVideo_4_2+animVideo_4_3
+
+          val mem = mem_1+mem_2
+
+          val I1 = JRevolute.I1.data.texture
+          val I2 = JRevolute.I2.data.texture
+     }
+
+     class JointPrismatic: TutorialsAssets {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          private val animVideo_1_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_1_0.data) }
+          private val animVideo_1_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_1_1.data) }
+          private val animVideo_1_2 = List<TextureRegion>(7) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_1_2.data) }
+
+          private val animVideo_2_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_2_0.data) }
+          private val animVideo_2_1 = List<TextureRegion>(20) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_2_1.data) }
+
+          private val animVideo_3_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_3_0.data) }
+          private val animVideo_3_1 = List<TextureRegion>(13) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_3_1.data) }
+
+          private val animVideo_4_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_4_0.data) }
+          private val animVideo_4_1 = List<TextureRegion>(24) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_4_1.data) }
+
+          private val animVideo_5_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_5_0.data) }
+          private val animVideo_5_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_5_1.data) }
+          private val animVideo_5_2 = List<TextureRegion>(49) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointPrismatic.ANIM_VIDEO_5_2.data) }
+
+          private val mem_1 = List<TextureRegion>(25) { getRegion("mem (${it.inc()})", SpriteManager.EnumAtlas_JointPrismatic.MEM_1.data) }
+
+          val animVideo_1 = animVideo_1_0+animVideo_1_1+animVideo_1_2
+          val animVideo_2 = animVideo_2_0+animVideo_2_1
+          val animVideo_3 = animVideo_3_0+animVideo_3_1
+          val animVideo_4 = animVideo_4_0+animVideo_4_1
+          val animVideo_5 = animVideo_5_0+animVideo_5_1+animVideo_5_2
+
+          val mem = mem_1
+
+          val I1 = JPrismatic.I1.data.texture
+          val I2 = JPrismatic.I2.data.texture
+          val I3 = JPrismatic.I3.data.texture
+          val I4 = JPrismatic.I4.data.texture
+          val I5 = JPrismatic.I5.data.texture
      }
 
      interface TutorialsAssets

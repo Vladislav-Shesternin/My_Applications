@@ -7,13 +7,16 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Align
 import com.veldan.lbjt.game.actors.label.ALabel
 import com.veldan.lbjt.game.actors.practical_settings.AAbstractPracticalSettings
+import com.veldan.lbjt.game.actors.practical_settings.APracticalSettings_JRevolute
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
 import com.veldan.lbjt.game.box2d.bodies.BHorizontalPractical
+import com.veldan.lbjt.game.box2d.bodies.BPracticalReset
 import com.veldan.lbjt.game.box2d.bodies.BPracticalSettings
 import com.veldan.lbjt.game.box2d.bodies.BVerticalPractical
 import com.veldan.lbjt.game.utils.GameColor
+import com.veldan.lbjt.game.utils.TIME_ANIM_ALPHA_PRACTICAL_BODY
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
 import com.veldan.lbjt.game.utils.actor.animShow
@@ -21,8 +24,6 @@ import com.veldan.lbjt.game.utils.actor.disable
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
 import com.veldan.lbjt.game.utils.font.FontParameter
-import com.veldan.lbjt.game.utils.runGDX
-import kotlinx.coroutines.launch
 
 abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2dScreen) : AbstractBodyGroup() {
 
@@ -44,16 +45,18 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
     private val bRight = BVerticalPractical(screenBox2d)
 
     val bPracticalSettings = BPracticalSettings(screenBox2d)
+    val bPracticalReset    = BPracticalReset(screenBox2d)
 
     // Joint
     private val jMotorPracticalSettings = AbstractJoint<MotorJoint, MotorJointDef>(screenBox2d)
+    private val jMotorPracticalReset    = AbstractJoint<MotorJoint, MotorJointDef>(screenBox2d)
 
 
     override fun create(x: Float, y: Float, w: Float, h: Float) {
         super.create(x, y, w, h)
 
         initB_Borders()
-        initB_PracticalSettings()
+        initB_Practical()
 
         createB_Horizontal()
         createB_Vertical()
@@ -66,8 +69,10 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
         }
 
         createB_PracticalSettings()
+        createB_PracticalReset()
 
         createJ_PracticalSettings()
+        createJ_PracticalReset()
     }
 
     abstract fun createBodyBlock()
@@ -83,8 +88,8 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
         } }
     }
 
-    private fun initB_PracticalSettings() {
-        arrayOf(bPracticalSettings).onEach { it.apply {
+    private fun initB_Practical() {
+        arrayOf(bPracticalSettings, bPracticalReset).onEach { it.apply {
             id = BodyId.Practical.DYNAMIC
             collisionList.addAll(arrayOf(BodyId.BORDERS, BodyId.Practical.DYNAMIC))
         } }
@@ -124,14 +129,33 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
 
         bPracticalSettings.getActor()?.apply {
             settingsBlock = {
+                bPracticalReset.getActor()?.apply {
+                    disable()
+                    animHide(TIME_ANIM_SCREEN_ALPHA)
+                }
                 hideAndToStartBody {
                     aPracticalSettings.showAndEnabled()
                 }
             }
             doneBlock = {
                 aPracticalSettings.hideAndDisabled {
+                    bPracticalReset.getActor()?.apply {
+                        enable()
+                        animShow(TIME_ANIM_SCREEN_ALPHA)
+                    }
                     showAndUpdateBody()
                 }
+            }
+        }
+    }
+
+    private fun createB_PracticalReset() {
+        createBody(bPracticalReset, 526f, 186f, 144f, 72f)
+
+        bPracticalReset.getActor()?.apply {
+            setOnClickListener {
+                aPracticalSettings.reset()
+                bPracticalSettings.getActor()?.runSettingsBlock()
             }
         }
     }
@@ -148,9 +172,23 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
 
             linearOffset.set(Vector2(598f, 102f).subCenter(bodyA))
 
-            maxForce  = 700 * bodyB.mass
-            maxTorque = 3000f
-            correctionFactor = 0.2f
+            maxForce  = 500 * bodyB.mass
+            maxTorque = 20_000f
+            correctionFactor = 0.5f
+        })
+    }
+
+    private fun createJ_PracticalReset() {
+        createJoint(jMotorPracticalReset, MotorJointDef().apply {
+            bodyA = bDown.body
+            bodyB = bPracticalReset.body
+            collideConnected = true
+
+            linearOffset.set(Vector2(598f, 222f).subCenter(bodyA))
+
+            maxForce  = 500 * bodyB.mass
+            maxTorque = 20_000f
+            correctionFactor = 0.5f
         })
     }
 

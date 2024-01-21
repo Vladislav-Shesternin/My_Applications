@@ -14,7 +14,6 @@ import com.veldan.lbjt.game.box2d.bodies.BMonetizationBtn
 import com.veldan.lbjt.game.box2d.bodies.BMonetizationMegaBtn
 import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 
-import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.JOINT_WIDTH
 import com.veldan.lbjt.game.utils.actor.disable
 import com.veldan.lbjt.game.utils.actor.enable
@@ -44,7 +43,11 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
     private val jMotorMega = AbstractJoint<MotorJoint, MotorJointDef>(screenBox2d)
 
     // Field
-    private val drawer      = screenBox2d.drawerUtil.drawer
+    private val drawer        = screenBox2d.drawerUtil.drawer
+    private val tmpPositionA  = Vector2()
+    private val tmpPositionA1 = Vector2()
+    private val tmpPositionB  = Vector2()
+    private val tmpPositionB1 = Vector2()
 
     override fun create(x: Float, y: Float, w: Float, h: Float) {
         super.create(x, y, w, h)
@@ -137,8 +140,8 @@ class BGMonetization(override val screenBox2d: AdvancedBox2dScreen): AbstractBod
 
                 data.bodyB.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha ->
                     drawer.line(
-                        bodyA.position.cpy().add(data.anchorA.cpy().subCenter(bodyA)).toUI,
-                        bodyB.position.cpy().add(data.anchorB.cpy().subCenter(bodyB)).toUI,
+                        tmpPositionA.set(bodyA.position).add(tmpPositionA1.set(data.anchorA).subCenter(bodyA)).toUI,
+                        tmpPositionB.set(bodyB.position).add(tmpPositionB1.set(data.anchorB).subCenter(bodyB)).toUI,
                         colorJoint.apply { a = alpha }, JOINT_WIDTH
                     )
                 })

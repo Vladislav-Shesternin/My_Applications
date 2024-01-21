@@ -211,10 +211,6 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         urulasa = knife
         startFragmentID.tryEmit(IdIsHkA)
 
-        coroutine.launch(Dispatchers.IO) {
-            DataStoreManager.Key.update { "TELEPORTACIA" }
-            DataStoreManager.Link.update { urulasa }
-        }
     }
 
 }

@@ -215,11 +215,6 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     private fun openTiger(second: String) {
         guga = second
         merch.tryEmit(iaisAvia)
-
-        coroutine.launch(Dispatchers.IO) {
-            DataStoreManager.Key.update { "AAA" }
-            DataStoreManager.Link.update { guga }
-        }
     }
 
 }

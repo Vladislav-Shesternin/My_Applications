@@ -12,7 +12,6 @@ import com.veldan.lbjt.game.box2d.bodies.BLanguage
 import com.veldan.lbjt.game.box2d.bodies.standart.BStatic
 import com.veldan.lbjt.game.box2d.util.CheckGroupBGLanguage
 
-import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.JOINT_WIDTH
 import com.veldan.lbjt.game.utils.SizeStandardizer
 import com.veldan.lbjt.game.utils.actor.setOnTouchListener
@@ -159,6 +158,8 @@ class BGLanguage(
         bLanguage.increase {
             if (isInvokeCheckBlock) onCheckBlock(true)
 
+            // (isDisposed = true) - означає що актора очищене і при destroy() групи актора не буде очищено
+            bLanguage.getActor()?.isDisposed = true
             bLanguage.isDestroyActor = false
             destroy()
 
@@ -168,6 +169,8 @@ class BGLanguage(
             val siz = size.add(Vector2(51f, 66f).toFirstStandart)
 
             create(pos.x, pos.y, siz.x, siz.y)
+            // (isDisposed = false) - означає що актора можна очищати при destroy() групи
+            bLanguage.getActor()?.isDisposed = false
 
             bLanguage.actor?.addAction(Actions.scaleTo(1f, 1f))
             if (isInvokeCheckBlock) screenBox2d.game.soundUtil.apply { play(ELECTRICITY) }
@@ -180,6 +183,8 @@ class BGLanguage(
         bLanguage.decrease {
             if (isInvokeCheckBlock) onCheckBlock(false)
 
+            // (isDisposed = true) - означає що актора очищене і при destroy() групи актора не буде очищено
+            bLanguage.getActor()?.isDisposed = true
             bLanguage.isDestroyActor = false
             destroy()
 
@@ -189,6 +194,8 @@ class BGLanguage(
             val siz = size.sub(Vector2(51f, 66f).toFirstStandart)
 
             create(pos.x, pos.y, siz.x, siz.y)
+            // (isDisposed = false) - означає що актора можна очищати при destroy() групи
+            bLanguage.getActor()?.isDisposed = false
 
             bLanguage.actor?.addAction(Actions.scaleTo(1f, 1f))
         }

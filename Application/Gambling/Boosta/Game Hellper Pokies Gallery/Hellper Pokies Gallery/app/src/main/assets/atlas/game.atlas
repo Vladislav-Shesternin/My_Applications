@@ -1,0 +1,61 @@
+game.png
+size: 788, 304
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+btn_mini
+  rotate: false
+  xy: 154, 2
+  size: 156, 78
+  orig: 156, 78
+  offset: 0, 0
+  index: -1
+exit
+  rotate: false
+  xy: 2, 2
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+ggg
+  rotate: false
+  xy: 2, 124
+  size: 391, 178
+  orig: 391, 178
+  offset: 0, 0
+  index: -1
+make_merry
+  rotate: false
+  xy: 470, 2
+  size: 243, 120
+  orig: 243, 120
+  offset: 0, 0
+  index: -1
+menuuu
+  rotate: false
+  xy: 312, 2
+  size: 156, 78
+  orig: 156, 78
+  offset: 0, 0
+  index: -1
+music_def
+  rotate: false
+  xy: 50, 2
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+music_not
+  rotate: false
+  xy: 102, 2
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+rrr
+  rotate: false
+  xy: 395, 124
+  size: 391, 178
+  orig: 391, 178
+  offset: 0, 0
+  index: -1

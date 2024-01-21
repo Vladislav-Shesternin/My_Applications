@@ -1,17 +1,13 @@
 package com.veldan.lbjt.game.actors.practical_settings
 
-import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.veldan.lbjt.R
-import com.veldan.lbjt.game.actors.progress.AProgressPractical
+import com.veldan.lbjt.game.actors.practical_settings.actors.AProgressPractical
 import com.veldan.lbjt.game.utils.Layout
-import com.veldan.lbjt.game.utils.actor.disable
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
-import com.veldan.lbjt.game.utils.runGDX
-import com.veldan.lbjt.util.log
+import com.veldan.lbjt.game.utils.toB2
 import kotlinx.coroutines.launch
-import kotlin.math.absoluteValue
-import kotlin.math.roundToInt
 
 class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSettings(_screen) {
 
@@ -19,15 +15,21 @@ class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSett
         var maxForceValue    : Float = 1000f
         var frequencyHzValue : Float = 5.0f
         var dampingRatioValue: Float = 0.7f
+
+        private fun reset() {
+            maxForceValue     = 1000f
+            frequencyHzValue  = 5.0f
+            dampingRatioValue = 0.7f
+        }
     }
 
     // Actor
-    private val maxForceLbl          = Label("", valueLabelStyle)
-    private val frequencyHzLbl       = Label("", valueLabelStyle)
-    private val dampingRatioLbl      = Label("", valueLabelStyle)
-    private val maxForceProgress     = AProgressPractical(screen)
-    private val frequencyHzProgress  = AProgressPractical(screen)
-    private val dampingRatioProgress = AProgressPractical(screen)
+    private var maxForceLbl          = Label("", valueLabelStyle)
+    private var frequencyHzLbl       = Label("", valueLabelStyle)
+    private var dampingRatioLbl      = Label("", valueLabelStyle)
+    private var maxForceProgress     = AProgressPractical(screen)
+    private var frequencyHzProgress  = AProgressPractical(screen)
+    private var dampingRatioProgress = AProgressPractical(screen)
 
 
     override fun addActorsOnGroup() {
@@ -43,6 +45,24 @@ class APracticalSettings_JMouse(_screen: AdvancedScreen): AAbstractPracticalSett
         addValues()
 
         collectProgresses()
+    }
+
+    override fun reinitialize() {
+        maxForceLbl          = Label("", valueLabelStyle)
+        frequencyHzLbl       = Label("", valueLabelStyle)
+        dampingRatioLbl      = Label("", valueLabelStyle)
+        maxForceProgress     = AProgressPractical(screen)
+        frequencyHzProgress  = AProgressPractical(screen)
+        dampingRatioProgress = AProgressPractical(screen)
+    }
+
+    override fun reset() {
+        disposeChildren()
+
+        APracticalSettings_JMouse.reset()
+
+        reinitialize()
+        addActorsOnGroup()
     }
 
     // ---------------------------------------------------

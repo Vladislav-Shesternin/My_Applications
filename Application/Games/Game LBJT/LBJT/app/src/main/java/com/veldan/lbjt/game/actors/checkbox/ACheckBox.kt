@@ -129,6 +129,10 @@ open class ACheckBox(
             default = themeUtil.assets.DEBUG_BOX_DEF,
             checked = themeUtil.assets.DEBUG_BOX_CHECK,
         )
+        Static.Type.PRACTICAL -> Static.ACheckBoxStyle(
+            default = themeUtil.assets.PRACTICAL_FALSE,
+            checked = themeUtil.assets.PRACTICAL_TRUE,
+        )
     }
 
     // ---------------------------------------------------
@@ -142,7 +146,7 @@ open class ACheckBox(
         )
 
         enum class Type {
-            YAN_YIN, DEBUG
+            YAN_YIN, DEBUG, PRACTICAL
         }
     }
 

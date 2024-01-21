@@ -13,10 +13,9 @@ import com.github.tommyettinger.textra.Font
 import com.github.tommyettinger.textra.Font.FontFamily
 import com.github.tommyettinger.textra.TypingAdapter
 import com.github.tommyettinger.textra.TypingLabel
-import com.veldan.lbjt.R
 import com.veldan.lbjt.game.actors.image.AImageAnim
 import com.veldan.lbjt.game.actors.image.AImageFrame
-import com.veldan.lbjt.game.actors.scroll.AScrollPane
+import com.veldan.lbjt.game.actors.scroll.ATutorialScrollPane
 import com.veldan.lbjt.game.actors.scroll.HorizontalGroup
 import com.veldan.lbjt.game.actors.scroll.VerticalGroup
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AAbstractList
@@ -49,7 +48,7 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
 
     // Actor
     private val verticalGroup   = VerticalGroup(screen, endGap = 145f)
-    val scrollPanel             = AScrollPane(screen, verticalGroup)
+    val scrollPanel             = ATutorialScrollPane(screen, verticalGroup)
 
     // Field
     private var thisWidth     = 0f
@@ -224,8 +223,8 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
 
         enum class CodePanelHeight(val height: Float) {
              _110(110f), _140(140f), _170(170f),
-            _210(210f),
-            _300(300f), _330(330f), _390(390f),
+            _200(200f), _210(210f), _240(240f), _280(280f),
+            _300(300f), _320(320f), _330(330f), _390(390f),
             _400(400f)
         }
 

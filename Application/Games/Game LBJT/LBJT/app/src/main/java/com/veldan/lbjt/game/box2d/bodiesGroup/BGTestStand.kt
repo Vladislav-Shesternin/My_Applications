@@ -15,10 +15,7 @@ import com.veldan.lbjt.game.box2d.AbstractBody
 import com.veldan.lbjt.game.box2d.AbstractBodyGroup
 import com.veldan.lbjt.game.box2d.AbstractJoint
 import com.veldan.lbjt.game.box2d.BodyId
-import com.veldan.lbjt.game.box2d.BodyId.Menu.BUTTON
-import com.veldan.lbjt.game.box2d.BodyId.Menu.STATIC
 import com.veldan.lbjt.game.box2d.bodies.BRegularBtn
-import com.veldan.lbjt.game.box2d.bodies.BStaticCircle
 import com.veldan.lbjt.game.box2d.bodies.BTestStandBorders
 import com.veldan.lbjt.game.box2d.bodies.`object`.BCObject
 import com.veldan.lbjt.game.box2d.bodies.`object`.BHObject
@@ -29,7 +26,6 @@ import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
 import com.veldan.lbjt.game.utils.advanced.AdvancedStage
 import com.veldan.lbjt.game.utils.font.FontParameter
-import com.veldan.lbjt.game.utils.font.FontParameter.CharType
 import com.veldan.lbjt.game.utils.runGDX
 import com.veldan.lbjt.game.utils.toB2
 import kotlinx.coroutines.delay

@@ -2,7 +2,7 @@ package com.veldan.lbjt.game.box2d.bodies
 
 import com.badlogic.gdx.physics.box2d.BodyDef
 import com.badlogic.gdx.physics.box2d.FixtureDef
-import com.veldan.lbjt.game.actors.APracticalSettings
+import com.veldan.lbjt.game.actors.practical_settings.actors.AButtonPracticalSettings
 import com.veldan.lbjt.game.box2d.AbstractBody
 import com.veldan.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedGroup
@@ -17,8 +17,8 @@ class BPracticalSettings(override val screenBox2d: AdvancedBox2dScreen): Abstrac
         restitution = 0.3f
         friction    = 0.3f
     }
-    override var actor: AdvancedGroup? = APracticalSettings(screenBox2d)
+    override var actor: AdvancedGroup? = AButtonPracticalSettings(screenBox2d)
 
-    fun getActor(): APracticalSettings? = actor as? APracticalSettings
+    fun getActor(): AButtonPracticalSettings? = actor as? AButtonPracticalSettings
 
 }

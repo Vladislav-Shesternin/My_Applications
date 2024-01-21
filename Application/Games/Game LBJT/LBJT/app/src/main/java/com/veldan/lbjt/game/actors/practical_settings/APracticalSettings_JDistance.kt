@@ -1,36 +1,54 @@
 package com.veldan.lbjt.game.actors.practical_settings
 
+import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.veldan.lbjt.R
-import com.veldan.lbjt.game.actors.progress.AProgressPractical
+import com.veldan.lbjt.game.actors.practical_settings.actors.APracticalSelectAnchorPoint
+import com.veldan.lbjt.game.actors.practical_settings.actors.AProgressPractical
 import com.veldan.lbjt.game.utils.Layout
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
+import com.veldan.lbjt.game.utils.toB2
 import kotlinx.coroutines.launch
 
 class APracticalSettings_JDistance(_screen: AdvancedScreen): AAbstractPracticalSettings(_screen) {
 
     companion object {
+        val localAnchorAValue: Vector2 = Vector2(85f, 35f).toB2
+        val localAnchorBValue: Vector2 = Vector2(85f, 85f).toB2
         var lengthValue      : Float = 10f
         var frequencyHzValue : Float = 0.5f
         var dampingRatioValue: Float = 0.2f
+
+        private fun reset() {
+            localAnchorAValue.set(Vector2(85f, 35f).toB2)
+            localAnchorBValue.set(Vector2(85f, 85f).toB2)
+            lengthValue       = 10f
+            frequencyHzValue  = 0.5f
+            dampingRatioValue = 0.2f
+        }
     }
 
     // Actor
-    private val lengthLbl            = Label("", valueLabelStyle)
-    private val frequencyHzLbl       = Label("", valueLabelStyle)
-    private val dampingRatioLbl      = Label("", valueLabelStyle)
-    private val lengthProgress       = AProgressPractical(screen)
-    private val frequencyHzProgress  = AProgressPractical(screen)
-    private val dampingRatioProgress = AProgressPractical(screen)
+    private var localAnchorA         = APracticalSelectAnchorPoint(screen, assets.H_STATIC, Vector2(170f, 70f), 170f, localAnchorAValue)
+    private var localAnchorB         = APracticalSelectAnchorPoint(screen, assets.C_DYNAMIC, Vector2(128f, 128f), 170f, localAnchorBValue)
+    private var lengthLbl            = Label("", valueLabelStyle)
+    private var frequencyHzLbl       = Label("", valueLabelStyle)
+    private var dampingRatioLbl      = Label("", valueLabelStyle)
+    private var lengthProgress       = AProgressPractical(screen)
+    private var frequencyHzProgress  = AProgressPractical(screen)
+    private var dampingRatioProgress = AProgressPractical(screen)
 
 
     override fun addActorsOnGroup() {
         super.addActorsOnGroup()
 
+        addLabel(R.string.localAnchorA, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 1021f, 227f, 42f))
+        addLabel(R.string.localAnchorB, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 885f, 227f, 42f))
         addLabel(R.string.length, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 763f, 114f, 42f))
         addLabel(R.string.frequencyHz, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 554f, 222f, 42f))
         addLabel(R.string.dampingRatio, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 345f, 237f, 42f))
 
+        addLocalAnchors()
         addValueLbls()
         addProgresses()
         addPoints()
@@ -39,9 +57,35 @@ class APracticalSettings_JDistance(_screen: AdvancedScreen): AAbstractPracticalS
         collectProgresses()
     }
 
+    override fun reinitialize() {
+        localAnchorA         = APracticalSelectAnchorPoint(screen, assets.H_STATIC, Vector2(170f, 70f), 170f, localAnchorAValue)
+        localAnchorB         = APracticalSelectAnchorPoint(screen, assets.C_DYNAMIC, Vector2(128f, 128f), 170f, localAnchorBValue)
+        lengthLbl            = Label("", valueLabelStyle)
+        frequencyHzLbl       = Label("", valueLabelStyle)
+        dampingRatioLbl      = Label("", valueLabelStyle)
+        lengthProgress       = AProgressPractical(screen)
+        frequencyHzProgress  = AProgressPractical(screen)
+        dampingRatioProgress = AProgressPractical(screen)
+    }
+
+    override fun reset() {
+        disposeChildren()
+
+        APracticalSettings_JDistance.reset()
+
+        reinitialize()
+        addActorsOnGroup()
+    }
+
     // ---------------------------------------------------
     // Add Actor
     // ---------------------------------------------------
+
+    private fun addLocalAnchors() {
+        addActors(localAnchorA, localAnchorB)
+        localAnchorA.setBounds(374f, 991f, 202f, 102f)
+        localAnchorB.setBounds(374f, 826f, 202f, 160f)
+    }
 
     private fun addValueLbls() {
         addActors(lengthLbl, frequencyHzLbl, dampingRatioLbl)
