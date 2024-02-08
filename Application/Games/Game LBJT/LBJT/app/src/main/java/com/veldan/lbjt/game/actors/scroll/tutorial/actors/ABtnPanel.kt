@@ -37,7 +37,7 @@ class ABtnPanel(
         }
         btnPlay.setOnClickListener {
             screen.stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-                screen.game.navigationManager.navigate(practicalScreenName, screen::class.java.name)
+                screen.game.navigationManager.navigate(practicalScreenName)
             }
         }
     }

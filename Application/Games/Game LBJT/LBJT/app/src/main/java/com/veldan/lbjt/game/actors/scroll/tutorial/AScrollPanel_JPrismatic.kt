@@ -10,6 +10,7 @@ import com.veldan.lbjt.game.actors.scroll.tutorial.AAbstractTutorialScrollPanel.
 import com.veldan.lbjt.game.actors.scroll.tutorial.actors.AAbstractList
 import com.veldan.lbjt.game.manager.util.SpriteUtil
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JPrismaticScreen
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 
@@ -178,7 +179,7 @@ class AScrollPanel_JPrismatic(
         addSpace(Space._25)
         addTypingLabel(R.string.PS_Vel_daN, LabelFont.Inter_Black_30)
         addSpace(Space._80)
-        addBtnPanel(Practical_JDistanceScreen::class.java.name)
+        addBtnPanel(Practical_JPrismaticScreen::class.java.name)
         addSpace(Space._80)
     }
 

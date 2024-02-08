@@ -60,7 +60,7 @@ class AScrollPanel_JRevolute(
         addSpace(Space._25)
         addCodePanel(R.string.jrevolute_codepanel_3, Static.CodePanelHeight._210)
         addSpace(Space._25)
-        addTypingLabel(R.string.jrevolute_note_1, TypingLabelFontFamily.Inter_MediumBold_30)
+        addTypingLabel(R.string.j_note_collide_false, TypingLabelFontFamily.Inter_MediumBold_30)
         addSpace(Space._25)
         addTypingLabel(R.string.j_text_already_run, TypingLabelFontFamily.Inter_MediumBold_30) { click(R.string.j_text_already_run, it) }
         addSpace(Space._25)

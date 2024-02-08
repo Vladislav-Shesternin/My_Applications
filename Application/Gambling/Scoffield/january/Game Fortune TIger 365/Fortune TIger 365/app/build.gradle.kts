@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "jogo.fortunetiger.tighrino"
+    namespace = "jogos.tigerfortune.tighrino"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "jogo.fortunetiger.tighrino"
+        applicationId = "jogos.tigerfortune.tighrino"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "3.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

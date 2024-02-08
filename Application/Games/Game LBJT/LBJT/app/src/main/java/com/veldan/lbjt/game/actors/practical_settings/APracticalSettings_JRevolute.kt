@@ -131,7 +131,7 @@ class APracticalSettings_JRevolute(_screen: AdvancedScreen): AAbstractPracticalS
 
     private fun addScrollPane() {
         addActor(scrollPane)
-        scrollPane.setBounds(0f, 10f, 700f, 1159f)
+        scrollPane.setBounds(0f, 10f, 700f, 1149f)
     }
 
     private fun AdvancedGroup.addLocalAnchors() {
@@ -151,8 +151,8 @@ class APracticalSettings_JRevolute(_screen: AdvancedScreen): AAbstractPracticalS
 
     private fun AdvancedGroup.addCheckBox() {
         addActors(enableLimitCB, enableMotorCB)
-        enableLimitCB.setBounds(447f, 788f, 218f, 42f)
-        enableMotorCB.setBounds(447f, 248f, 218f, 42f)
+        enableLimitCB.setBounds(447f, 778f, 218f, 48f)
+        enableMotorCB.setBounds(447f, 248f, 218f, 48f)
     }
 
     private fun AdvancedGroup.addValueLbls() {
@@ -203,8 +203,9 @@ class APracticalSettings_JRevolute(_screen: AdvancedScreen): AAbstractPracticalS
         }
 
         // maxMotorTorque
+        val x_0_1k = listOf(34f, 172f, 331f, 491f, 618f)
         listOf("0", "250", "500", "750", "1000").onEachIndexed { index, value ->
-            addLabelValue(value, degreesX[index], 373f)
+            addLabelValue(value, x_0_1k[index], 373f)
         }
     }
 

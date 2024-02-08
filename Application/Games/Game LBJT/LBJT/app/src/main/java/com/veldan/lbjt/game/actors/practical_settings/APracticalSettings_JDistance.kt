@@ -16,7 +16,7 @@ class APracticalSettings_JDistance(_screen: AdvancedScreen): AAbstractPracticalS
         val localAnchorAValue: Vector2 = Vector2(85f, 35f).toB2
         val localAnchorBValue: Vector2 = Vector2(85f, 85f).toB2
         var lengthValue      : Float = 10f
-        var frequencyHzValue : Float = 0.5f
+        var frequencyHzValue : Float = 0.7f
         var dampingRatioValue: Float = 0.2f
 
         private fun reset() {
@@ -105,7 +105,7 @@ class APracticalSettings_JDistance(_screen: AdvancedScreen): AAbstractPracticalS
         // lengthX
         listOf(188f, 347f, 507f, 660f).onEach { addPointImg(it, 700f) }
         // frequencyX | dampingX
-        listOf(221f, 442f, 660f).onEach {
+        listOf(221f, 418f, 660f).onEach {
             addPointImg(it, 491f)
             addPointImg(it, 282f)
         }
@@ -117,7 +117,7 @@ class APracticalSettings_JDistance(_screen: AdvancedScreen): AAbstractPracticalS
 
         listLengthValue.onEachIndexed { index, value -> addLabelValue(value, listLengthX[index], 676f) }
 
-        val listFrDmX     = listOf(34f, 209f, 429f, 643f)
+        val listFrDmX     = listOf(34f, 209f, 407f, 643f)
         val listFrDmValue = listOf("0", "1.0", "5.0", "10")
 
         listFrDmValue.onEachIndexed { index, value ->
@@ -135,9 +135,9 @@ class APracticalSettings_JDistance(_screen: AdvancedScreen): AAbstractPracticalS
             // maxForce
             launch { collectProgress_0_20(lengthValue, lengthProgress, lengthLbl) { lengthValue = it } }
             // frequencyHz
-            launch { collectProgress_0_10(frequencyHzValue, frequencyHzProgress, frequencyHzLbl) { frequencyHzValue = it } }
+            launch { collectProgress_0_1_10(frequencyHzValue, frequencyHzProgress, frequencyHzLbl) { frequencyHzValue = it } }
             // dampingRatio
-            launch { collectProgress_0_10(dampingRatioValue, dampingRatioProgress, dampingRatioLbl) { dampingRatioValue = it } }
+            launch { collectProgress_0_1_10(dampingRatioValue, dampingRatioProgress, dampingRatioLbl) { dampingRatioValue = it } }
         }
     }
 

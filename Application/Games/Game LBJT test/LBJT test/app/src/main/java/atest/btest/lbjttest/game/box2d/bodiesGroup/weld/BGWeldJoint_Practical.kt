@@ -93,8 +93,10 @@ class BGWeldJoint_Practical(override val screenBox2d: AdvancedBox2dScreen): Abst
             localAnchorA.set(Vector2(85f, 126f).subCenter(bodyA))
             localAnchorB.set(Vector2(85f, 0f).subCenter(bodyB))
 
-            frequencyHz  = 0.5f
-            dampingRatio = 0.8f
+            referenceAngle = 45f * DEGTORAD
+
+            frequencyHz  = 0f
+            dampingRatio = 0f
         })
     }
 

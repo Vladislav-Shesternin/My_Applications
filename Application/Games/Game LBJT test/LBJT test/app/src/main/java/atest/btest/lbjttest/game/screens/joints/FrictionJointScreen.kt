@@ -3,6 +3,7 @@ package atest.btest.lbjttest.game.screens.joints
 import atest.btest.lbjttest.game.LibGDXGame
 import atest.btest.lbjttest.game.box2d.WorldUtil
 import atest.btest.lbjttest.game.box2d.bodiesGroup.BGBorders
+import atest.btest.lbjttest.game.box2d.bodiesGroup.friction.BGFrictionJoint
 import atest.btest.lbjttest.game.box2d.bodiesGroup.motor.BGMotorJoint
 import atest.btest.lbjttest.game.box2d.destroyAll
 import atest.btest.lbjttest.game.utils.TIME_ANIM_SCREEN_ALPHA
@@ -16,7 +17,7 @@ class FrictionJointScreen(override val game: LibGDXGame): AdvancedMouseScreen(ga
 
     // BodyGroup
     private val bgBorders       = BGBorders(this)
-    private val bgFrictionJoint = BGMotorJoint(this)
+    private val bgFrictionJoint = BGFrictionJoint(this)
 
     override fun show() {
         stageUI.root.animHide()

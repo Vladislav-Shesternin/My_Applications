@@ -6,9 +6,16 @@ import com.veldan.lbjt.game.LibGDXGame
 import com.veldan.lbjt.game.manager.MusicManager
 import com.veldan.lbjt.game.manager.SoundManager
 import com.veldan.lbjt.game.manager.SpriteManager
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JMouseScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JPrismaticScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JRevoluteScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JWeldScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JWheelScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JFrictionScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JPrismaticScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JWeldScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JWheelScreen
 import com.veldan.lbjt.game.utils.GameColor
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
@@ -133,7 +140,7 @@ class LoaderScreen(override val game: LibGDXGame) : AdvancedScreen() {
 
             stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
                 game.activity.lottie.hideLoader()
-                game.navigationManager.navigate(/*JPrismaticScreen::class.java.name)*/MenuScreen::class.java.name)
+                game.navigationManager.navigate(/*JFrictionScreen::class.java.name)*/ MenuScreen::class.java.name)
             }
         }
     }

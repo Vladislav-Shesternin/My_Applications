@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Catch Fireballs</string>
+    <!--Test ID-->
+    <!--   BANNER:   ca-app-pub-3940256099942544/6300978111   -->
+    <!--    -->
+    <!--Original-->
+    <!--   BANNER:   ca-app-pub-6757786625316217/9616276154   -->
+
+    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/9616276154</string>
+
+</resources>

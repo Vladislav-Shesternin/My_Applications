@@ -19,7 +19,7 @@ class AList_TypingLabel(
 ): AAbstractList(_screen) {
 
     // Actor
-    private val labels = List(strings.size) { TypingLabel(strings[it], font) }
+    val labels = List(strings.size) { TypingLabel(strings[it], font) }
 
     // Field
     private val symbolLblStyle = Label.LabelStyle(symbolFont, GameColor.textGreen)

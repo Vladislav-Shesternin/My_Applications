@@ -47,11 +47,11 @@ class WillBeLaterScreen(override val game: LibGDXGame): AdvancedScreen() {
             setAlignment(Align.center)
         }
         nowImplementedLbl.apply {
-            setBounds(0f, 584f, 700f, 61f)
+            setBounds(0f, 688f, 700f, 61f)
             setAlignment(Align.center)
         }
         nowScreensLbl.apply {
-            setBounds(96f, 279f, 604f, 305f)
+            setBounds(96f, 218f, 604f, 427f)
         }
     }
 

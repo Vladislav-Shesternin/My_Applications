@@ -12,6 +12,7 @@ import com.veldan.lbjt.R
 import com.veldan.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 class RewardedUtil(private val activity : MainActivity, val coroutine: CoroutineScope) {
@@ -19,7 +20,7 @@ class RewardedUtil(private val activity : MainActivity, val coroutine: Coroutine
     private val adRequest by lazy { AdRequest.Builder().build() }
     private var rewardedAd: RewardedAd? = null
 
-    fun load(successBlock: () -> Unit, failedBlock: () -> Unit) {
+    private fun load(successBlock: () -> Unit, failedBlock: () -> Unit) {
         coroutine.launch(Dispatchers.Main) {
             RewardedAd.load(activity, activity.getString(R.string.reward_UID), adRequest,
                 object : RewardedAdLoadCallback() {
@@ -51,18 +52,20 @@ class RewardedUtil(private val activity : MainActivity, val coroutine: Coroutine
                             }
                         }
                         successBlock()
+                        cancel()
                     }
 
                     override fun onAdFailedToLoad(adError: LoadAdError) {
                         log("onAdFailedToLoad: ${adError.message}")
                         rewardedAd = null
                         failedBlock()
+                        cancel()
                     }
                 })
         }
     }
 
-    fun show(successBlock: (RewardItem) -> Unit, failedBlock: () -> Unit) {
+    private fun show(successBlock: (RewardItem) -> Unit, failedBlock: () -> Unit) {
         rewardedAd?.let { ad ->
             ad.show(activity) { rewardItem ->
                 log("User earned the reward.")

@@ -9,10 +9,14 @@ import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointMouse as JMou
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointDistance as JDistance
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointRevolute as JRevolute
 import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointPrismatic as JPrismatic
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointWheel as JWheel
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointWeld as JWeld
+import com.veldan.lbjt.game.manager.SpriteManager.EnumTexture_JointFriction as JFriction
 
 class SpriteUtil {
 
      interface AllAssets {
+          // game1
           val CIRCLE_BLUE                  : TextureRegion
           val FRAME_LANGUAGE               : TextureRegion
           val HAND_HELLO                   : TextureRegion
@@ -76,6 +80,9 @@ class SpriteUtil {
           val UPDATE_LIGHT                 : TextureRegion
           val UPDATE_X_DEF                 : TextureRegion
           val UPDATE_X_PRESS               : TextureRegion
+          // game2
+          val PRACTICAL_DEGREES : TextureRegion
+          val PRACTICAL_LINES   : TextureRegion
 
           val NUMBER_LIST : List<TextureRegion>
 
@@ -97,74 +104,79 @@ class SpriteUtil {
      }
 
      abstract class CommonAssets: AllAssets {
-          protected fun getGameRegion(name: String): TextureRegion = SpriteManager.EnumAtlas.GAME.data.atlas.findRegion(name)
-          protected fun getGamePath(name: String): NinePatch = SpriteManager.EnumAtlas.GAME.data.atlas.createPatch(name)
+          protected fun getGame1Region(name: String): TextureRegion = SpriteManager.EnumAtlas.GAME1.data.atlas.findRegion(name)
+          protected fun getGame2Region(name: String): TextureRegion = SpriteManager.EnumAtlas.GAME2.data.atlas.findRegion(name)
+          protected fun getGamePath(name: String): NinePatch = SpriteManager.EnumAtlas.GAME1.data.atlas.createPatch(name)
 
-          override val CIRCLE_BLUE                   = getGameRegion("circle_blue")
-          override val FRAME_LANGUAGE                = getGameRegion("frame_language")
-          override val HAND_HELLO                    = getGameRegion("hand_hello")
-          override val HAND_HINT                     = getGameRegion("hand_hint")
-          override val LANGUAGE_EN                   = getGameRegion("language_en")
-          override val LANGUAGE_UK                   = getGameRegion("language_uk")
-          override val REGULAR_BTN_DEF               = getGameRegion("regular_btn_def")
-          override val REGULAR_BTN_PRESS             = getGameRegion("regular_btn_press")
-          override val REGULAR_BTN_DISABLE           = getGameRegion("regular_btn_disable")
-          override val ROD_LOUDER                    = getGameRegion("rod_louder")
-          override val ROD_QUIET                     = getGameRegion("rod_quiet")
-          override val USER                          = getGameRegion("user")
-          override val VOLUME_LOUDER                 = getGameRegion("volume_louder")
-          override val VOLUME_QUIET                  = getGameRegion("volume_quiet")
-          override val YAN                           = getGameRegion("yan")
-          override val YIN_YAN_LIGHT                 = getGameRegion("yin_yan_light")
-          override val YIN                           = getGameRegion("yin")
-          override val ADS                           = getGameRegion("ads")
-          override val DESCRIPTION_PANEL             = getGameRegion("description_panel")
-          override val EL_DAN                        = getGameRegion("el_dan")
-          override val GIFT                          = getGameRegion("gift")
-          override val HAND_V                        = getGameRegion("hand_v")
-          override val MONETIZATION_BTN_DEF          = getGameRegion("monetization_btn_def")
-          override val MONETIZATION_BTN_PRESS        = getGameRegion("monetization_btn_press")
-          override val MONETIZATION_MEGA_BTN_DEF     = getGameRegion("monetization_mega_btn_def")
-          override val MONETIZATION_MEGA_BTN_PRESS   = getGameRegion("monetization_mega_btn_press")
-          override val PS                            = getGameRegion("ps")
-          override val THANKS_FRAME                  = getGameRegion("thanks_frame")
-          override val DEBUG_BOX_DEF                 = getGameRegion("debug_box_def")
-          override val DEBUG_BOX_CHECK               = getGameRegion("debug_box_check")
-          override val LOADER                        = getGameRegion("loader")
-          override val NO_WIFI                       = getGameRegion("no_wifi")
-          override val FRAME_ICON                    = getGameRegion("frame_icon")
-          override val ICON_DEF                      = getGameRegion("icon_def")
-          override val FRAME_ICON_EMPTY              = getGameRegion("frame_icon_empty")
-          override val C_DYNAMIC                     = getGameRegion("c_dynamic")
-          override val C_KINEMATIC                   = getGameRegion("c_kinematic")
-          override val C_STATIC                      = getGameRegion("c_static")
-          override val H_DYNAMIC                     = getGameRegion("h_dynamic")
-          override val H_KINEMATIC                   = getGameRegion("h_kinematic")
-          override val H_STATIC                      = getGameRegion("h_static")
-          override val V_DYNAMIC                     = getGameRegion("v_dynamic")
-          override val V_KINEMATIC                   = getGameRegion("v_kinematic")
-          override val V_STATIC                      = getGameRegion("v_static")
-          override val LIFT_PLATFORM                 = getGameRegion("lift_platform")
-          override val LIFT_GEAR                     = getGameRegion("lift_gear")
-          override val PRACTICAL_BTN                 = getGameRegion("practical_btn")
-          override val PRACTICAL_SETTINGS            = getGameRegion("practical_settings")
-          override val PRACTICAL_DONE                = getGameRegion("practical_done")
-          override val PRACTICAL_PROGRESS_ARM        = getGameRegion("practical_progress_arm")
-          override val PRACTICAL_PROGRESS            = getGameRegion("practical_progress")
-          override val PRACTICAL_PROGRESS_BACKGROUND = getGameRegion("practical_progress_background")
-          override val PRACTICAL_PROGRESS_POINT      = getGameRegion("practical_progress_point")
-          override val ANCHOR_POINT                  = getGameRegion("anchor_point")
-          override val PRACTICAL_FALSE               = getGameRegion("practical_false")
-          override val PRACTICAL_TRUE                = getGameRegion("practical_true")
-          override val RESET_DEF                     = getGameRegion("reset_def")
-          override val RESET_PRESS                   = getGameRegion("reset_press")
-          override val UPDATE_BTN_DEF                = getGameRegion("update_btn_def")
-          override val UPDATE_BTN_PRESS              = getGameRegion("update_btn_press")
-          override val UPDATE_LIGHT                  = getGameRegion("update_light")
-          override val UPDATE_X_DEF                  = getGameRegion("update_x_def")
-          override val UPDATE_X_PRESS                = getGameRegion("update_x_press")
+          // game1
+          override val CIRCLE_BLUE                   = getGame1Region("circle_blue")
+          override val FRAME_LANGUAGE                = getGame1Region("frame_language")
+          override val HAND_HELLO                    = getGame1Region("hand_hello")
+          override val HAND_HINT                     = getGame1Region("hand_hint")
+          override val LANGUAGE_EN                   = getGame1Region("language_en")
+          override val LANGUAGE_UK                   = getGame1Region("language_uk")
+          override val REGULAR_BTN_DEF               = getGame1Region("regular_btn_def")
+          override val REGULAR_BTN_PRESS             = getGame1Region("regular_btn_press")
+          override val REGULAR_BTN_DISABLE           = getGame1Region("regular_btn_disable")
+          override val ROD_LOUDER                    = getGame1Region("rod_louder")
+          override val ROD_QUIET                     = getGame1Region("rod_quiet")
+          override val USER                          = getGame1Region("user")
+          override val VOLUME_LOUDER                 = getGame1Region("volume_louder")
+          override val VOLUME_QUIET                  = getGame1Region("volume_quiet")
+          override val YAN                           = getGame1Region("yan")
+          override val YIN_YAN_LIGHT                 = getGame1Region("yin_yan_light")
+          override val YIN                           = getGame1Region("yin")
+          override val ADS                           = getGame1Region("ads")
+          override val DESCRIPTION_PANEL             = getGame1Region("description_panel")
+          override val EL_DAN                        = getGame1Region("el_dan")
+          override val GIFT                          = getGame1Region("gift")
+          override val HAND_V                        = getGame1Region("hand_v")
+          override val MONETIZATION_BTN_DEF          = getGame1Region("monetization_btn_def")
+          override val MONETIZATION_BTN_PRESS        = getGame1Region("monetization_btn_press")
+          override val MONETIZATION_MEGA_BTN_DEF     = getGame1Region("monetization_mega_btn_def")
+          override val MONETIZATION_MEGA_BTN_PRESS   = getGame1Region("monetization_mega_btn_press")
+          override val PS                            = getGame1Region("ps")
+          override val THANKS_FRAME                  = getGame1Region("thanks_frame")
+          override val DEBUG_BOX_DEF                 = getGame1Region("debug_box_def")
+          override val DEBUG_BOX_CHECK               = getGame1Region("debug_box_check")
+          override val LOADER                        = getGame1Region("loader")
+          override val NO_WIFI                       = getGame1Region("no_wifi")
+          override val FRAME_ICON                    = getGame1Region("frame_icon")
+          override val ICON_DEF                      = getGame1Region("icon_def")
+          override val FRAME_ICON_EMPTY              = getGame1Region("frame_icon_empty")
+          override val C_DYNAMIC                     = getGame1Region("c_dynamic")
+          override val C_KINEMATIC                   = getGame1Region("c_kinematic")
+          override val C_STATIC                      = getGame1Region("c_static")
+          override val H_DYNAMIC                     = getGame1Region("h_dynamic")
+          override val H_KINEMATIC                   = getGame1Region("h_kinematic")
+          override val H_STATIC                      = getGame1Region("h_static")
+          override val V_DYNAMIC                     = getGame1Region("v_dynamic")
+          override val V_KINEMATIC                   = getGame1Region("v_kinematic")
+          override val V_STATIC                      = getGame1Region("v_static")
+          override val LIFT_PLATFORM                 = getGame1Region("lift_platform")
+          override val LIFT_GEAR                     = getGame1Region("lift_gear")
+          override val PRACTICAL_BTN                 = getGame1Region("practical_btn")
+          override val PRACTICAL_SETTINGS            = getGame1Region("practical_settings")
+          override val PRACTICAL_DONE                = getGame1Region("practical_done")
+          override val PRACTICAL_PROGRESS_ARM        = getGame1Region("practical_progress_arm")
+          override val PRACTICAL_PROGRESS            = getGame1Region("practical_progress")
+          override val PRACTICAL_PROGRESS_BACKGROUND = getGame1Region("practical_progress_background")
+          override val PRACTICAL_PROGRESS_POINT      = getGame1Region("practical_progress_point")
+          override val ANCHOR_POINT                  = getGame1Region("anchor_point")
+          override val PRACTICAL_FALSE               = getGame1Region("practical_false")
+          override val PRACTICAL_TRUE                = getGame1Region("practical_true")
+          override val RESET_DEF                     = getGame1Region("reset_def")
+          override val RESET_PRESS                   = getGame1Region("reset_press")
+          override val UPDATE_BTN_DEF                = getGame1Region("update_btn_def")
+          override val UPDATE_BTN_PRESS              = getGame1Region("update_btn_press")
+          override val UPDATE_LIGHT                  = getGame1Region("update_light")
+          override val UPDATE_X_DEF                  = getGame1Region("update_x_def")
+          override val UPDATE_X_PRESS                = getGame1Region("update_x_press")
+          // game 2
+          override val PRACTICAL_DEGREES = getGame2Region("practical_degrees")
+          override val PRACTICAL_LINES   = getGame2Region("practical_lines")
 
-          override val NUMBER_LIST = List(9) { getGameRegion("number ${it.inc()}") }
+          override val NUMBER_LIST = List(9) { getGame1Region("number ${it.inc()}") }
 
           override val PANEL                  = getGamePath("panel")
           override val CURSOR                 = getGamePath("cursor")
@@ -344,6 +356,87 @@ class SpriteUtil {
           val I3 = JPrismatic.I3.data.texture
           val I4 = JPrismatic.I4.data.texture
           val I5 = JPrismatic.I5.data.texture
+     }
+
+     class JointWheel: TutorialsAssets {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          private val animVideo_1_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointWheel.ANIM_VIDEO_1_0.data) }
+          private val animVideo_1_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointWheel.ANIM_VIDEO_1_1.data) }
+          private val animVideo_1_2 = List<TextureRegion>(47) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointWheel.ANIM_VIDEO_1_2.data) }
+
+          private val animVideo_2_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointWheel.ANIM_VIDEO_2_0.data) }
+          private val animVideo_2_1 = List<TextureRegion>(19) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointWheel.ANIM_VIDEO_2_1.data) }
+
+          private val mem_1 = List<TextureRegion>(28) { getRegion("mem (${it.inc()})", SpriteManager.EnumAtlas_JointWheel.MEM_1.data) }
+
+          val animVideo_1 = animVideo_1_0+animVideo_1_1+animVideo_1_2
+          val animVideo_2 = animVideo_2_0+animVideo_2_1
+
+          val mem = mem_1
+
+          val I1 = JWheel.I1.data.texture
+     }
+
+     class JointWeld: TutorialsAssets {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          private val animVideo_1_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_1_0.data) }
+          private val animVideo_1_1 = List<TextureRegion>(48) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_1_1.data) }
+
+          private val animVideo_2_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_2_0.data) }
+          private val animVideo_2_1 = List<TextureRegion>(41) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_2_1.data) }
+
+          private val animVideo_3_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_3_0.data) }
+          private val animVideo_3_1 = List<TextureRegion>(43) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_3_1.data) }
+
+          private val animVideo_4_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_4_0.data) }
+          private val animVideo_4_1 = List<TextureRegion>(63) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointWeld.ANIM_VIDEO_4_1.data) }
+
+          private val mem_1 = List<TextureRegion>(91) { getRegion("mem (${it.inc()})", SpriteManager.EnumAtlas_JointWeld.MEM_1.data) }
+
+          val animVideo_1 = animVideo_1_0+animVideo_1_1
+          val animVideo_2 = animVideo_2_0+animVideo_2_1
+          val animVideo_3 = animVideo_3_0+animVideo_3_1
+          val animVideo_4 = animVideo_4_0+animVideo_4_1
+
+          val mem = mem_1
+
+          val I1 = JWeld.I1.data.texture
+          val I2 = JWeld.I2.data.texture
+     }
+
+     class JointFriction: TutorialsAssets {
+          private fun getRegion(name: String, atlasData: SpriteManager.AtlasData): TextureRegion = atlasData.atlas.findRegion(name)
+
+          private val animVideo_1_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_1_0.data) }
+          private val animVideo_1_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_1_1.data) }
+          private val animVideo_1_2 = List<TextureRegion>(46) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_1_2.data) }
+
+          private val animVideo_2_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_2_0.data) }
+          private val animVideo_2_1 = List<TextureRegion>(45) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_2_1.data) }
+
+          private val animVideo_3_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_3_0.data) }
+          private val animVideo_3_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_3_1.data) }
+          private val animVideo_3_2 = List<TextureRegion>(78) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_3_2.data) }
+          private val animVideo_3_3 = List<TextureRegion>(4) { getRegion("video (${it.inc()+234})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_3_3.data) }
+
+          private val animVideo_4_0 = List<TextureRegion>(78) { getRegion("video (${it.inc()})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_4_0.data) }
+          private val animVideo_4_1 = List<TextureRegion>(78) { getRegion("video (${it.inc()+78})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_4_1.data) }
+          private val animVideo_4_2 = List<TextureRegion>(32) { getRegion("video (${it.inc()+156})", SpriteManager.EnumAtlas_JointFriction.ANIM_VIDEO_4_2.data) }
+
+          private val mem_1 = List<TextureRegion>(48) { getRegion("mem (${it.inc()})", SpriteManager.EnumAtlas_JointFriction.MEM_1.data) }
+          private val mem_2 = List<TextureRegion>(48) { getRegion("mem (${it.inc()+48})", SpriteManager.EnumAtlas_JointFriction.MEM_2.data) }
+          private val mem_3 = List<TextureRegion>(23) { getRegion("mem (${it.inc()+96})", SpriteManager.EnumAtlas_JointFriction.MEM_3.data) }
+
+          val animVideo_1 = animVideo_1_0+animVideo_1_1+animVideo_1_2
+          val animVideo_2 = animVideo_2_0+animVideo_2_1
+          val animVideo_3 = animVideo_3_0+animVideo_3_1+animVideo_3_2+animVideo_3_3
+          val animVideo_4 = animVideo_4_0+animVideo_4_1+animVideo_4_2
+
+          val mem = mem_1+mem_2+mem_3
+
+          val I1 = JFriction.I1.data.texture
      }
 
      interface TutorialsAssets

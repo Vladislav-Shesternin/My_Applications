@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Base.Theme.WolfAssistant" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.WolfAssistant" parent="Base.Theme.WolfAssistant" />
+
+</resources>

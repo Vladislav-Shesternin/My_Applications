@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mega Moolah</string>
+    <!--Test ID-->
+    <!--   BANNER:   ca-app-pub-3940256099942544/6300978111   -->
+    <!--    -->
+    <!--Original-->
+    <!--   BANNER:   ca-app-pub-6757786625316217/8322278307   -->
+
+    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/8322278307</string>
+
+</resources>

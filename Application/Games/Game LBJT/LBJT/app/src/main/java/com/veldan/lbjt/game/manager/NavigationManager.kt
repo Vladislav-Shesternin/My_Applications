@@ -11,12 +11,18 @@ import com.veldan.lbjt.game.screens.TutorialIntroductionScreen
 import com.veldan.lbjt.game.screens.TutorialsScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JMouseScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JPrismaticScreen
 import com.veldan.lbjt.game.screens.practicalScreen.Practical_JRevoluteScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JWeldScreen
+import com.veldan.lbjt.game.screens.practicalScreen.Practical_JWheelScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JDistanceScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JFrictionScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JPrismaticScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JRevoluteScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JWeldScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JWheelScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.veldan.lbjt.game.utils.advanced.AdvancedScreen
 import com.veldan.lbjt.game.utils.runGDX
@@ -64,12 +70,18 @@ class NavigationManager(val game: LibGDXGame) {
         JDistanceScreen         ::class.java.name -> JDistanceScreen(game)
         JRevoluteScreen         ::class.java.name -> JRevoluteScreen(game)
         JPrismaticScreen        ::class.java.name -> JPrismaticScreen(game)
+        JWheelScreen            ::class.java.name -> JWheelScreen(game)
+        JWeldScreen             ::class.java.name -> JWeldScreen(game)
+        JFrictionScreen         ::class.java.name -> JFrictionScreen(game)
 
         WillBeLaterScreen::class.java.name -> WillBeLaterScreen(game)
         // Practical Screens
-        Practical_JMouseScreen   ::class.java.name -> Practical_JMouseScreen(game)
-        Practical_JDistanceScreen::class.java.name -> Practical_JDistanceScreen(game)
-        Practical_JRevoluteScreen::class.java.name -> Practical_JRevoluteScreen(game)
+        Practical_JMouseScreen    ::class.java.name -> Practical_JMouseScreen(game)
+        Practical_JDistanceScreen ::class.java.name -> Practical_JDistanceScreen(game)
+        Practical_JRevoluteScreen ::class.java.name -> Practical_JRevoluteScreen(game)
+        Practical_JPrismaticScreen::class.java.name -> Practical_JPrismaticScreen(game)
+        Practical_JWheelScreen    ::class.java.name -> Practical_JWheelScreen(game)
+        Practical_JWeldScreen     ::class.java.name -> Practical_JWeldScreen(game)
 
 
 

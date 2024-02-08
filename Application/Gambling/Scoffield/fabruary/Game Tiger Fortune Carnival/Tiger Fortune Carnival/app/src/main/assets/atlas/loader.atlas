@@ -1,0 +1,19 @@
+loader.png
+size: 933, 234
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ts_backich
+  rotate: false
+  xy: 2, 2
+  size: 929, 134
+  orig: 929, 134
+  offset: 0, 0
+  index: -1
+ts_progress
+  rotate: false
+  xy: 2, 138
+  size: 892, 94
+  orig: 892, 94
+  offset: 0, 0
+  index: -1

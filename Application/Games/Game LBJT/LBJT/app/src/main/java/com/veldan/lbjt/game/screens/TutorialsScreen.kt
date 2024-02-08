@@ -2,6 +2,7 @@ package com.veldan.lbjt.game.screens
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.physics.box2d.joints.MouseJointDef
+import com.badlogic.gdx.physics.box2d.joints.WeldJointDef
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
@@ -10,9 +11,12 @@ import com.veldan.lbjt.game.box2d.bodiesGroup.BGLift
 import com.veldan.lbjt.game.box2d.destroyAll
 import com.veldan.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JDistanceScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JFrictionScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JMouseScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JPrismaticScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.JRevoluteScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JWeldScreen
+import com.veldan.lbjt.game.screens.tutorialsScreen.JWheelScreen
 import com.veldan.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.veldan.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.veldan.lbjt.game.utils.actor.animHide
@@ -81,9 +85,9 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
             JDistanceScreen::class.java.name,
             JRevoluteScreen::class.java.name,
             JPrismaticScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
+            JWheelScreen::class.java.name,
+            JWeldScreen::class.java.name,
+            JFrictionScreen::class.java.name,
             WillBeLaterScreen::class.java.name,
             WillBeLaterScreen::class.java.name,
             WillBeLaterScreen::class.java.name,

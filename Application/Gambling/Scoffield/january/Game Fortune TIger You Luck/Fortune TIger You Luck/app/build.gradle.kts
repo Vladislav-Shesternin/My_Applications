@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "fortunetiger.you.luck"
+    namespace = "com.sca.rab.que.stgame"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "fortunetiger.you.luck"
+        applicationId = "com.sca.rab.que.stgame"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -79,8 +79,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
     implementation("com.airbnb.android:lottie:6.2.0")
     implementation("space.earlygrey:shapedrawer:2.6.0")
-
-    implementation("com.google.android.gms:play-services-ads:22.6.0")
 }
 
 tasks.register("copyAndroidNatives") {

@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name"   translatable="false">LBJT</string>
-<!--    Test ID-->
-<!--    <string name="banner_UID" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
-<!--    <string name="reward_UID" translatable="false">ca-app-pub-3940256099942544/5224354917</string>-->
-    <!--Original-->
-<!--    <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/3159853793</string>-->
-<!--    <string name="reward_UID" translatable="false">ca-app-pub-6757786625316217/9495336432</string>-->
+<!--Test-->
+<!--   banner_UID:   ca-app-pub-3940256099942544/6300978111   -->
+<!--   reward_UID:   ca-app-pub-3940256099942544/5224354917   -->
+<!--Original-->
+<!--   banner_UID:   ca-app-pub-6757786625316217/3159853793   -->
+<!--   reward_UID:   ca-app-pub-6757786625316217/9495336432   -->
     <string name="banner_UID" translatable="false">ca-app-pub-6757786625316217/3159853793</string>
     <string name="reward_UID" translatable="false">ca-app-pub-6757786625316217/9495336432</string>
 
@@ -42,8 +42,8 @@
     <string name="test_stand">test stand</string>
     <string name="next">Next</string>
     <string name="play">Play</string>
-    <string name="update_available">Update Available!</string>
-    <string name="update_now">Update now</string>
+    <string name="update_available">{JUMP}Update Available!{ENDJUMP}</string>
+    <string name="update_now">{RAINBOW}Update now{ENDRAINBOW}</string>
     <string name="main_source_info">[#FF4949]{LINK=https://www.iforce2d.net/b2dtut/joints-overview}[_]Main source of information.[_]{ENDLINK}</string>
     <string name="PS_Vel_daN" translatable="false">[#FFFFFF]PS. [#5BD344]Vel_daN[#FFFFFF]: Love what You DO [#5BD344]❤[#FFFFFF].</string>
 
@@ -55,6 +55,8 @@
         \n• Distance Joint
         \n• Revolute Joint
         \n• Prismatic Joint
+        \n• Wheel Joint
+        \n• Weld Joint
     </string>
 
     <string name="general_information">{JUMP}General information[]</string>
@@ -77,11 +79,16 @@
     <string name="j_text_works_great">[#d2e9cdff][@Inter_Medium]It works and it’s great.</string>
     <string name="j_text_test_mouse">[#d2e9cdff][@Inter_Medium]In order for you to be able to [#FF4949][@Inter_Bold]test Joints[#d2e9cdff][@Inter_Medium], you need to interact with bodies, for this you need to implement [#FF4949][@Inter_Bold]Mouse Joint[#d2e9cdff][@Inter_Medium]. How to implement it is described in article [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Mouse Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
     <string name="j_text_already_run">[#d2e9cdff][@Inter_Medium]That’s it, you can already run the program and the bodies will be connected, [#FF4949][@Inter_Bold]but there is one but[#d2e9cdff][@Inter_Medium], they will be connected at their [#FF4949][@Inter_Bold]anchor points[#d2e9cdff][@Inter_Medium], where the [#FF4949][@Inter_Bold]center of mass[#d2e9cdff][@Inter_Medium] is specified, to fix this, you need to [#FF4949][@Inter_Bold]configure localAnchorA, localAnchorB[#d2e9cdff][@Inter_Medium] I talked about how to [#FF4949][@Inter_Bold]calculate anchor points[#d2e9cdff][@Inter_Medium] in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="j_text_configure_frequency">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium] (elasticity):</string>
+    <string name="j_text_configure_damping">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_configure_local_anchor_ab">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]localAnchorA, localAnchorB[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_configure_reference_angle">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]referenceAngle[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_configure_limit">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]limits[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_configure_motor">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]motor[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_configure_localAxisA">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]localAxisA[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_elasticity">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_maxforce">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_maxtorque">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_why_limit">
         [#d2e9cdff][@Inter_Medium]It won\’t work at this point. Why?
         \nBecause by default the limits are disabled and we need to enable them!
@@ -96,6 +103,7 @@
         [#000000ff][@Inter_Bold](Note: )[#FF4949] Do not forget[#d2e9cdff][@Inter_Medium] that the values are indicated in [#FF4949][@Inter_Bold]meters[#d2e9cdff][@Inter_Medium].
         \nAbout the units of measurement of [#FF4949][@Inter_Bold]meters, kilograms, seconds (MKS)[#d2e9cdff][@Inter_Medium] is written in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
     </string>
+    <string name="j_note_collide_false">[#000000ff][@Inter_Bold](Note: )[#FF4949] collideConnected = false[#d2e9cdff][@Inter_Medium], this is done so that the connected bodies do not touch each other.</string>
 
     <string name="j_longquote_frequency">
         [#FF4949][@Inter_Bold]Value &lt; 1: [#d2e9cdff][@Inter_Regular]With values less than 1, such as 0.5 or 0.7, the joint will be strongly stretched, resembling a [#FF4949][@Inter_Bold]soft spring[#d2e9cdff][@Inter_Regular].
@@ -140,10 +148,14 @@
     <string name="enableLimit" translatable="false">enableLimit:</string>
     <string name="motorSpeed" translatable="false">motorSpeed:</string>
     <string name="maxMotorTorque" translatable="false">maxMotorTorque:</string>
+    <string name="maxMotorForce" translatable="false">maxMotorForce:</string>
     <string name="enableMotor" translatable="false">enableMotor:</string>
     <string name="maxForce" translatable="false">maxForce:</string>
     <string name="frequencyHz" translatable="false">frequencyHz:</string>
     <string name="dampingRatio" translatable="false">dampingRatio:</string>
+    <string name="localAxisA" translatable="false">localAxisA:</string>
+    <string name="lowerTranslation" translatable="false">lowerTranslation:</string>
+    <string name="upperTranslation" translatable="false">upperTranslation:</string>
 
     <!--GeneralInformation-->
     <string name="geninfo_title_1">And so the… Joints</string>
@@ -572,8 +584,6 @@
     <string name="jdistance_text_6">[#d2e9cdff][@Inter_Medium]Create DistanceJoint:</string>
     <string name="jdistance_text_7">[#d2e9cdff][@Inter_Medium]That’s it, you can already run the program and the bodies will be connected, [#FF4949][@Inter_Bold]but there is one but[#d2e9cdff][@Inter_Medium], they will be connected at their [#FF4949][@Inter_Bold]anchor points[#d2e9cdff][@Inter_Medium], where the [#FF4949][@Inter_Bold]center of mass[#d2e9cdff][@Inter_Medium] is specified and with a [#FF4949][@Inter_Bold]length of 1 meter[#d2e9cdff][@Inter_Medium], to fix this, you need to [#FF4949][@Inter_Bold]configure localAnchorA, localAnchorB, length[#d2e9cdff][@Inter_Medium] I talked about how to [#FF4949][@Inter_Bold]calculate anchor points[#d2e9cdff][@Inter_Medium] in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
     <string name="jdistance_text_8">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]localAnchorA, localAnchorB, length[#d2e9cdff][@Inter_Medium]:</string>
-    <string name="jdistance_text_9">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium] (elasticity):</string>
-    <string name="jdistance_text_10">[#d2e9cdff][@Inter_Medium]Configure: [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium]:</string>
     <string name="jdistance_text_11">[#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium] — it extinguishes the [#FF4949][@Inter_Bold]stretching[#d2e9cdff][@Inter_Medium] of the joint and not the oscillations to the sides, so it can be said that it works together with [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium].</string>
     <string name="jdistance_text_12">[#d2e9cdff][@Inter_Medium]The body returns to its original position [#FF4949][@Inter_Bold]very smoothly and slowly[#d2e9cdff][@Inter_Medium], as if someone is pulling it towards you a little at a time, a good effect, the greater the value of [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium], the more your body will be pulled back and the slower it will return to its original position (don’t forget that it only works together with [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium]).</string>
 
@@ -642,7 +652,6 @@
     <string name="jrevolute_text_11">[#d2e9cdff][@Inter_Medium]lowerAngle must be [#FF4949][@Inter_Bold]smaller[#d2e9cdff][@Inter_Medium] than upperAngle but [#FF4949][@Inter_Bold]not necessarily negative[#d2e9cdff][@Inter_Medium].</string>
     <string name="jrevolute_text_12">[#d2e9cdff][@Inter_Medium]As you can see, the motor slowly reaches the revolutions specified in [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], the greater the [#FF4949][@Inter_Bold]maxMotorTorque[#d2e9cdff][@Inter_Medium], the faster the motor will reach [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], so that the rotation is like a rusty wheel, or to slow down the speed of rotation, set [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium] to a small value.</string>
 
-    <string name="jrevolute_note_1">[#000000ff][@Inter_Bold](Note: )[#FF4949] collideConnected = false[#d2e9cdff][@Inter_Medium], this is done so that the connected bodies do not touch each other.</string>
     <string name="jrevolute_note_2">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] The heavier the body, the greater the force should be, if the values are small, the motor will slowly gain speed to reach the [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium] or will not rotate at all if the force is very small, so be careful when adjusting the [#FF4949][@Inter_Bold]maxMotorTorque[#d2e9cdff][@Inter_Medium].</string>
 
     <string name="jrevolute_codepanel_2" translatable="false">
@@ -768,7 +777,7 @@
     <string name="jprismatic_text_20">[#FF4949][@Inter_Bold]referenceAngle[#d2e9cdff][@Inter_Medium] — just changes the angle between bodyA and bodyB.</string>
     <string name="jprismatic_text_21">[#d2e9cdff][@Inter_Medium]At the moment, bodies can move on their axis [#FF4949][@Inter_Bold]infinitely far away[#d2e9cdff][@Inter_Medium] to change this, you can use [#FF4949][@Inter_Bold]limits[#d2e9cdff][@Inter_Medium], they allow you to specify the [#FF4949][@Inter_Bold]maximum[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]minimum[#d2e9cdff][@Inter_Medium] length of movement.</string>
     <string name="jprismatic_text_22">[#d2e9cdff][@Inter_Medium]lowerTranslation must be [#FF4949][@Inter_Bold]smaller[#d2e9cdff][@Inter_Medium] than upperTranslation but [#FF4949][@Inter_Bold]not necessarily negative[#d2e9cdff][@Inter_Medium].</string>
-    <string name="jprismatic_text_23">[#d2e9cdff][@Inter_Medium]As you can see, the motor slowly reaches the move specified in [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], the greater the [#FF4949][@Inter_Bold]maxMotorTorque[#d2e9cdff][@Inter_Medium], the faster the motor will reach [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], so that the move is like a rusty wheel, or to slow down the speed of move, set [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium] to a small value.</string>
+    <string name="jprismatic_text_23">[#d2e9cdff][@Inter_Medium]As you can see, the motor slowly reaches the move specified in [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], the greater the [#FF4949][@Inter_Bold]maxMotorForce[#d2e9cdff][@Inter_Medium], the faster the motor will reach [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium], so that the move is like a rusty wheel, or to slow down the speed of move, set [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Medium] to a small value.</string>
 
     <string name="jprismatic_note_1">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] The [#FF4949][@Inter_Bold]angle[#d2e9cdff][@Inter_Medium] is calculated from the [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Medium] and the beginning of the countdown goes [#FF4949][@Inter_Bold]counter-clockwise[#d2e9cdff][@Inter_Medium].</string>
     <string name="jprismatic_note_2">[#000000ff][@Inter_Bold](Note: )[#d2e9cdff][@Inter_Medium] Number [#FF4949][@Inter_Bold]PI[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]sin[#d2e9cdff][@Inter_Medium](), [#FF4949][@Inter_Bold]cos[#d2e9cdff][@Inter_Medium]() — is usually found in a standard math package.</string>
@@ -853,14 +862,14 @@
         "world.createJoint(PrismaticJointDef().apply {"
         "\n    ..."
         "\n    motorSpeed         = 5f"
-        "\n    maxMotorTorque = 100f"
+        "\n    maxMotorForce   = 100f"
         "\n}"
     </string>
     <string name="jprismatic_codepanel_12" translatable="false">
         "world.createJoint(PrismaticJointDef().apply {"
         "\n    ..."
         "\n    motorSpeed         = 5f"
-        "\n    maxMotorTorque = 100f"
+        "\n    maxMotorForce  = 100f"
         "\n    enableMotor        = true"
         "\n}"
     </string>
@@ -877,7 +886,7 @@
         <item>[#d2e9cdff][@Inter_Regular]upperTranslation — the [#FF4949][@Inter_Bold]upper point[#d2e9cdff][@Inter_Regular] of the limit (default 0 | measured in [#FF4949][@Inter_Bold]meters[#d2e9cdff][@Inter_Regular]).</item>
         <item>[#d2e9cdff][@Inter_Regular]enableLimit — [#FF4949][@Inter_Bold]flag[#d2e9cdff][@Inter_Regular] to enable lower and upper [#FF4949][@Inter_Bold]limits[#d2e9cdff][@Inter_Regular] (default [#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular]).</item>
         <item>[#d2e9cdff][@Inter_Regular]motorSpeed — the desired number of meters per second (meters per second).</item>
-        <item>[#d2e9cdff][@Inter_Regular]maxMotorTorque — [#FF4949][@Inter_Bold]force for motion[#d2e9cdff][@Inter_Regular], the greater the force, the faster the motor picks up motion specified in [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular] (measured in N-m. [#FF4949][@Inter_Bold]Newton meter[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxMotorForce — [#FF4949][@Inter_Bold]force for motion[#d2e9cdff][@Inter_Regular], the greater the force, the faster the motor picks up motion specified in [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular] (measured in N-m. [#FF4949][@Inter_Bold]Newton meter[#d2e9cdff][@Inter_Regular]).</item>
         <item>[#d2e9cdff][@Inter_Regular]enableMotor — [#FF4949][@Inter_Bold]flag[#d2e9cdff][@Inter_Regular] to enable the [#FF4949][@Inter_Bold]motor[#d2e9cdff][@Inter_Regular] (default [#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular]).</item>
     </string-array>
     <string-array name="jprismatic_arr_2">
@@ -885,10 +894,192 @@
         <item>[#d2e9cdff][@Inter_Regular]setting of [#FF4949][@Inter_Bold]almost identical values[#d2e9cdff][@Inter_Regular] for the lowerTranslation and upperTranslation (for example a = 4.99f | b = 5.0f) will move the body to a [#FF4949][@Inter_Bold]given length[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
     <string-array name="jprismatic_arr_3">
-        <item>[#d2e9cdff][@Inter_Regular]motorSpeed — [#FF4949][@Inter_Bold]length per second[#d2e9cdff][@Inter_Regular] (meters per second) this is not the guaranteed speed of the motor, it means what maximum speed can be reached, and may not be reached if there is a very small value of maxMotorTorque.</item>
-        <item>[#d2e9cdff][@Inter_Regular]maxMotorTorque — [#FF4949][@Inter_Bold]motion force[#d2e9cdff][@Inter_Regular], the greater the force, the faster the engine gains the motion indicated in motorSpeed (measured in N-m. [#FF4949][@Inter_Bold]Newton meter[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]motorSpeed — [#FF4949][@Inter_Bold]length per second[#d2e9cdff][@Inter_Regular] (meters per second) this is not the guaranteed speed of the motor, it means what maximum speed can be reached, and may not be reached if there is a very small value of maxMotorForce.</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxMotorForce — [#FF4949][@Inter_Bold]motion force[#d2e9cdff][@Inter_Regular], the greater the force, the faster the engine gains the motion indicated in motorSpeed (measured in N-m. [#FF4949][@Inter_Bold]Newton meter[#d2e9cdff][@Inter_Regular]).</item>
         <item>[#d2e9cdff][@Inter_Regular]To move [#FF4949][@Inter_Bold]forward[#d2e9cdff][@Inter_Regular] set a [#FF4949][@Inter_Bold]positive[#d2e9cdff][@Inter_Regular] value for [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular].</item>
         <item>[#d2e9cdff][@Inter_Regular]To move [#FF4949][@Inter_Bold]back[#d2e9cdff][@Inter_Regular] set a [#FF4949][@Inter_Bold]negative[#d2e9cdff][@Inter_Regular] value for [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
 
+    <!--JointWheel-->
+    <string name="jwheel_title_1">And so the… Wheel Joint</string>
+    <string name="jwheel_title_2">Practice. How to create a Wheel Joint?</string>
+
+    <string name="jwheel_sub_title_1">WheelJointDef settings:</string>
+
+    <string name="jwheel_text_1">[#d2e9cdff][@Inter_Medium]Wheel joint — a joint designed to connect two bodies together and interact between them as a [#FF4949][@Inter_Bold]wheel and a shock absorber[#d2e9cdff][@Inter_Medium], usually used to create a [#FF4949][@Inter_Bold]vehicle suspension[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jwheel_text_2">[#d2e9cdff][@Inter_Medium]Wheel joint — it\’s like a [#FF4949][@Inter_Bold]3-in-1[#d2e9cdff][@Inter_Medium] joint because it:</string>
+    <string name="jwheel_text_3">[#d2e9cdff][@Inter_Medium]First, we need to set up the joint. For this, each joint has its own implementation of JointDef. You can read about this in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. And now let’s talk about the WheelJointDef.</string>
+    <string name="jwheel_text_4">[#d2e9cdff][@Inter_Medium]Our example will consist of a [#FF4949][@Inter_Bold]static rectangle[#d2e9cdff][@Inter_Medium] ([#1465df]blue[#d2e9cdff]) and a [#FF4949][@Inter_Bold]dynamic circle[#d2e9cdff][@Inter_Medium] ([#1A932C]green[#d2e9cdff]) connected by [#FF4949][@Inter_Bold]WheelJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jwheel_text_5">[#d2e9cdff][@Inter_Medium]Create 2 bodies: a [#FF4949][@Inter_Bold]static[#d2e9cdff][@Inter_Medium] rectangle and a [#FF4949][@Inter_Bold]dynamic[#d2e9cdff][@Inter_Medium] circle.</string>
+    <string name="jwheel_text_6">[#d2e9cdff][@Inter_Medium]Create WheelJoint:</string>
+    <string name="jwheel_text_7">[#d2e9cdff][@Inter_Medium]About how I explained how to configure [#FF4949][@Inter_Bold]localAxisA[#d2e9cdff][@Inter_Medium] in the [_]article: [#FF4949][@Inter_Bold]{TRIGGER=prismatic_joint}Prismatic Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jwheel_text_8">[#d2e9cdff][@Inter_Medium]About how I explained how to configure [#FF4949][@Inter_Bold]motor[#d2e9cdff][@Inter_Medium] in the [_]article: [#FF4949][@Inter_Bold]{TRIGGER=revolute_joint}Revolute Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jwheel_text_9">[#d2e9cdff][@Inter_Medium]About how I explained how to configure [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Medium] in the [_]article: [#FF4949][@Inter_Bold]{TRIGGER=distance_joint}Distance Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jwheel_text_10">[#d2e9cdff][@Inter_Medium]If you read these 3 articles, now you can configure Wheel Joint:</string>
+    <string name="jwheel_text_11">[#d2e9cdff][@Inter_Medium]Wheel Join — is great for creating a [#FF4949][@Inter_Bold]vehicle suspension[#d2e9cdff][@Inter_Medium], if it weren’t for it we would have to implement many bodies and at least 3 connections (Prismatic, Revolute, Distance) — Joint and so we can just adjust the Wheel Join, it’s [#FF4949][@Inter_Bold]easier and saves resources[#d2e9cdff][@Inter_Medium].</string>
+
+    <string name="jwheel_codepanel_1" translatable="false">
+        "val staticRect     = StaticBody"
+        "\nval dynamicCirc = DynamicBody"
+    </string>
+    <string name="jwheel_codepanel_2" translatable="false">
+        "world.createJoint(WheelJointDef().apply {"
+        "\n    bodyA = staticRect"
+        "\n    bodyB = dynamicCirc"
+        "\n    collideConnected = true"
+        "\n}"
+    </string>
+    <string name="jwheel_codepanel_3" translatable="false">
+        "world.createJoint(WheelJointDef().apply {"
+        "\n    bodyA = staticRect"
+        "\n    bodyB = dynamicCirc"
+        "\n    collideConnected = true"
+        "\n\n    localAnchorA.set(Vector2(2.5f, -10.0f))"
+        "\n    localAnchorB.set(Vector2(2.5f, 2.5f))"
+        "\n}"
+    </string>
+
+    <string-array name="jwheel_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]Has an axis like [#FF4949][@Inter_Bold]{TRIGGER=prismatic_joint}[_]Prismatic Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]Rotates and has a motor for rotation as an [#FF4949][@Inter_Bold]{TRIGGER=revolute_joint}[_]Revolute Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]Has elasticity settings are like [#FF4949][@Inter_Bold]{TRIGGER=distance_joint}[_]Distance Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jwheel_arr_2">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAxisA — the angle of the axis relative to the bodyA.</item>
+        <item>[#d2e9cdff][@Inter_Regular]motorSpeed — [#FF4949][@Inter_Bold]revolutions per second[#d2e9cdff][@Inter_Regular] (radians per second).</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxMotorTorque — [#FF4949][@Inter_Bold]rotation force[#d2e9cdff][@Inter_Regular], the greater the force, the faster the motor will gain the revolutions specified in [#FF4949][@Inter_Bold]motorSpeed[#d2e9cdff][@Inter_Regular] (measured in N-m. [#FF4949][@Inter_Bold]Newton meter[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]enableMotor — [#FF4949][@Inter_Bold]flag[#d2e9cdff][@Inter_Regular] to enable the [#FF4949][@Inter_Bold]motor[#d2e9cdff][@Inter_Regular] (default [#FF4949][@Inter_Bold]false[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]frequencyHz — affects the [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Regular] of the joint between bodyA and bodyB.</item>
+    </string-array>
+
+    <!--JointWeld-->
+    <string name="jweld_title_1">And so the… Weld Joint</string>
+    <string name="jweld_title_2">Practice. How to create a Weld Joint?</string>
+
+    <string name="jweld_sub_title_1">WeldJointDef settings:</string>
+
+    <string name="jweld_text_1">[#d2e9cdff][@Inter_Medium]Weld joint — a joint intended for connecting 2 bodies together with the possibility of adjusting the [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Medium] and the [#FF4949][@Inter_Bold]rate of disappearance of oscillations[#d2e9cdff][@Inter_Medium]. (usually used as welding 2 bodies together)</string>
+    <string name="jweld_text_2">[#d2e9cdff][@Inter_Medium]First, we need to set up the joint. For this, each joint has its own implementation of JointDef. You can read about this in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. And now let’s talk about the WeldJointDef.</string>
+    <string name="jweld_text_3">[#d2e9cdff][@Inter_Medium]Our example will consist of a [#FF4949][@Inter_Bold]static circle[#d2e9cdff][@Inter_Medium] ([#1465df]blue[#d2e9cdff]) and a [#FF4949][@Inter_Bold]dynamic circle[#d2e9cdff][@Inter_Medium] ([#1A932C]green[#d2e9cdff]) connected by [#FF4949][@Inter_Bold]WeldJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jweld_text_4">[#d2e9cdff][@Inter_Medium]Create 2 bodies: a [#FF4949][@Inter_Bold]static[#d2e9cdff][@Inter_Medium] circle and a [#FF4949][@Inter_Bold]dynamic[#d2e9cdff][@Inter_Medium] circle:</string>
+    <string name="jweld_text_5">[#d2e9cdff][@Inter_Medium]Create WeldJoint:</string>
+    <string name="jweld_text_6">[#FF4949][@Inter_Bold]referenceAngle[#d2e9cdff][@Inter_Medium] — just changes the angle between bodyA and bodyB.</string>
+    <string name="jweld_text_7">[#d2e9cdff][@Inter_Medium]By default, WeldJoint will connect 2 bodies and they will be [#FF4949][@Inter_Bold]like one body[#d2e9cdff][@Inter_Medium], if you want it to be like a [#FF4949][@Inter_Bold]spring between them[#d2e9cdff][@Inter_Medium] and there are [#FF4949][@Inter_Bold]oscillations[#d2e9cdff][@Inter_Medium], then you need to adjust the [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jweld_text_8">[#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium] — damps [#FF4949][@Inter_Bold]oscillations[#d2e9cdff][@Inter_Medium] to the sides, so it can be said that it works together with the [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jweld_text_9">[#d2e9cdff][@Inter_Medium]The body returns to its original position [#FF4949][@Inter_Bold]very smoothly and slowly[#d2e9cdff][@Inter_Medium], a good effect, the larger the value of [#FF4949][@Inter_Bold]dampingRatio[#d2e9cdff][@Inter_Medium], the slower the body will return to its original position (remember that this only works together with the [#FF4949][@Inter_Bold]frequencyHz[#d2e9cdff][@Inter_Medium]).</string>
+
+    <string name="jweld_codepanel_1" translatable="false">
+        "val staticCirc      = StaticBody"
+        "\nval dynamicCirc = DynamicBody"
+    </string>
+    <string name="jweld_codepanel_2" translatable="false">
+        "world.createJoint(WeldJointDef().apply {"
+        "\n    bodyA = staticCirc"
+        "\n    bodyB = dynamicCirc"
+        "\n    collideConnected = false"
+        "\n}"
+    </string>
+    <string name="jweld_codepanel_3" translatable="false">
+        "world.createJoint(WeldJointDef().apply {"
+        "\n    bodyA = staticCirc"
+        "\n    bodyB = dynamicCirc"
+        "\n    collideConnected = false"
+        "\n\n    localAnchorA.set(Vector2(2.5f, 3.0f))"
+        "\n    localAnchorB.set(Vector2(2.5f, 0.0f))"
+        "\n}"
+    </string>
+    <string name="jweld_codepanel_4" translatable="false">
+        "const val PI: Double     = 3.141592653589793"
+        "\nconst val DEGTORAD   = (PI / 180f).toFloat()"
+        "\n\nworld.createJoint(WeldJointDef().apply {"
+        "\n    ..."
+        "\n    referenceAngle = 45f * DEGTORAD"
+        "\n}"
+    </string>
+    <string name="jweld_codepanel_5" translatable="false">
+        "world.createJoint(WeldJointDef().apply {"
+        "\n    ..."
+        "\n    frequencyHz = 0.5f"
+        "\n}"
+    </string>
+    <string name="jweld_codepanel_6" translatable="false">
+        "world.createJoint(WeldJointDef().apply {"
+        "\n    ..."
+        "\n    frequencyHz  = 0.5f"
+        "\n    dampingRatio = 0.8f"
+        "\n}"
+    </string>
+
+    <string-array name="jweld_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]referenceAngle — [#FF4949][@Inter_Bold]initial angle[#d2e9cdff][@Inter_Regular] between bodyA and bodyB, (default 0 | measured in [#FF4949][@Inter_Bold]radians[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]frequencyHz — affects the [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Regular] of the joint between bodyA and bodyB.</item>
+    </string-array>
+
+    <!--JointFriction-->
+    <string name="jfriction_title_1">And so the… Friction Joint</string>
+    <string name="jfriction_title_2">Practice. How to create a Friction Joint?</string>
+
+    <string name="jfriction_sub_title_1">FrictionJointDef settings:</string>
+
+    <string name="jfriction_text_1">[#d2e9cdff][@Inter_Medium]Friction joint — a joint intended for connecting 2 bodies together with the ability to adjust the [#FF4949][@Inter_Bold]motion damping force[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]rotation damping force[#d2e9cdff][@Inter_Medium] (usually used to simulate the [#FF4949][@Inter_Bold]absence of gravity in the body[#d2e9cdff][@Inter_Medium])</string>
+    <string name="jfriction_text_2">[#d2e9cdff][@Inter_Medium]First, we need to set up the joint. For this, each joint has its own implementation of JointDef. You can read about this in the article: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. And now let’s talk about the FrictionJointDef.</string>
+    <string name="jfriction_text_3">[#d2e9cdff][@Inter_Medium]Our example will consist of a [#FF4949][@Inter_Bold]static circle[#d2e9cdff][@Inter_Medium] ([#1465df]blue[#d2e9cdff]) and a [#FF4949][@Inter_Bold]dynamic rectangle[#d2e9cdff][@Inter_Medium] ([#1A932C]green[#d2e9cdff]) connected by [#FF4949][@Inter_Bold]FrictionJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jfriction_text_4">[#d2e9cdff][@Inter_Medium]Create 2 bodies: a [#FF4949][@Inter_Bold]static[#d2e9cdff][@Inter_Medium] circle and a [#FF4949][@Inter_Bold]dynamic[#d2e9cdff][@Inter_Medium] rectangle:</string>
+    <string name="jfriction_text_5">[#d2e9cdff][@Inter_Medium]Create FrictionJoint:</string>
+    <string name="jfriction_text_6">[#d2e9cdff][@Inter_Medium]As you can see, now the body falls as if there is no connection, and this is because it is necessary to adjust the [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Medium] and [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jfriction_text_7">[#d2e9cdff][@Inter_Medium]maxForce — force is necessary to [#FF4949][@Inter_Bold]dampen[#d2e9cdff][@Inter_Medium] the body\’s [#FF4949][@Inter_Bold]motion[#d2e9cdff][@Inter_Medium] (measured in N-m [#FF4949][@Inter_Bold]Newton-meters[#d2e9cdff][@Inter_Medium]).</string>
+    <string name="jfriction_text_8">[#d2e9cdff][@Inter_Medium]maxTorque — force is necessary to [#FF4949][@Inter_Bold]dampen[#d2e9cdff][@Inter_Medium] the body\’s [#FF4949][@Inter_Bold]rotation[#d2e9cdff][@Inter_Medium] (measured in N-m [#FF4949][@Inter_Bold]Newton-meters[#d2e9cdff][@Inter_Medium]).</string>
+    <string name="jfriction_text_9">[#d2e9cdff][@Inter_Medium]As you can see, the body really seems to avoid gravity, a cool effect.</string>
+
+    <string name="jfriction_codepanel_1" translatable="false">
+        "val staticCirc       = StaticBody"
+        "\nval dynamicRect = DynamicBody"
+    </string>
+    <string name="jfriction_codepanel_2" translatable="false">
+        "world.createJoint(FrictionJointDef().apply {"
+        "\n    bodyA = staticCirc"
+        "\n    bodyB = dynamicRect"
+        "\n    collideConnected = true"
+        "\n}"
+    </string>
+    <string name="jfriction_codepanel_3" translatable="false">
+        "world.createJoint(FrictionJointDef().apply {"
+        "\n    bodyA = staticCirc"
+        "\n    bodyB = dynamicRect"
+        "\n    collideConnected = true"
+        "\n\n    localAnchorA.set(Vector2(4.0f, 1.0f))"
+        "\n    localAnchorB.set(Vector2(3.5f, 2.5f))"
+        "\n}"
+    </string>
+    <string name="jfriction_codepanel_4" translatable="false">
+        "world.createJoint(FrictionJointDef().apply {"
+        "\n    ..."
+        "\n    maxForce = 300f"
+        "\n}"
+    </string>
+    <string name="jfriction_codepanel_5" translatable="false">
+        "world.createJoint(FrictionJointDef().apply {"
+        "\n    ..."
+        "\n    maxTorque = 300f"
+        "\n}"
+    </string>
+
+    <string-array name="jfriction_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — the local [#FF4949][@Inter_Bold]anchor point[#d2e9cdff][@Inter_Regular] relative to [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] origin.</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxForce — force is necessary to [#FF4949][@Inter_Bold]dampen[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]motion[#d2e9cdff][@Inter_Regular] of the body (measured in N-m [#FF4949][@Inter_Bold]Newton-meters[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxTorque — force is necessary to [#FF4949][@Inter_Bold]dampen[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]rotation[#d2e9cdff][@Inter_Regular] of the body (measured in N-m [#FF4949][@Inter_Bold]Newton-meters[#d2e9cdff][@Inter_Regular]).</item>
+    </string-array>
+    <string-array name="jfriction_arr_2">
+        <item>[#d2e9cdff][@Inter_Regular]the [#FF4949][@Inter_Bold]larger[#d2e9cdff][@Inter_Regular] the value of [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Regular], the [#FF4949][@Inter_Bold]faster[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]body will stop[#d2e9cdff][@Inter_Regular], as if the force of gravity almost does not act on it.</item>
+        <item>[#d2e9cdff][@Inter_Regular]the [#FF4949][@Inter_Bold]heavier[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]body[#d2e9cdff][@Inter_Regular], the [#FF4949][@Inter_Bold]larger[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Regular] value should be.</item>
+    </string-array>
+    <string-array name="jfriction_arr_3">
+        <item>[#d2e9cdff][@Inter_Regular]the [#FF4949][@Inter_Bold]larger[#d2e9cdff][@Inter_Regular] the value of [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Regular], the [#FF4949][@Inter_Bold]faster[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]body will stop rotating[#d2e9cdff][@Inter_Regular], as if the force of gravity almost does not act on it.</item>
+        <item>[#d2e9cdff][@Inter_Regular]the [#FF4949][@Inter_Bold]heavier[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]body[#d2e9cdff][@Inter_Regular], the [#FF4949][@Inter_Bold]larger[#d2e9cdff][@Inter_Regular] the [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Regular] value should be.</item>
+    </string-array>
 </resources>

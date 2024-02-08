@@ -41,7 +41,8 @@ class SpriteManager(var assetManager: AssetManager) {
 
 
     enum class EnumAtlas(val data: AtlasData) {
-        GAME(AtlasData("atlas/game.atlas")),
+        GAME1(AtlasData("atlas/game1.atlas")),
+        GAME2(AtlasData("atlas/game2.atlas")),
     }
 
     enum class EnumTexture(val data: TextureData) {
@@ -176,6 +177,65 @@ class SpriteManager(var assetManager: AssetManager) {
         I3(TextureData("textures/tutorials/joint_prismatic/i3.png")),
         I4(TextureData("textures/tutorials/joint_prismatic/i4.png")),
         I5(TextureData("textures/tutorials/joint_prismatic/i5.png")),
+    }
+
+    enum class EnumAtlas_JointWheel(val data: AtlasData) {
+        ANIM_VIDEO_1_0(AtlasData("atlas/anim/tutorials/joint_wheel/video_1/video_1_0.atlas")),
+        ANIM_VIDEO_1_1(AtlasData("atlas/anim/tutorials/joint_wheel/video_1/video_1_1.atlas")),
+        ANIM_VIDEO_1_2(AtlasData("atlas/anim/tutorials/joint_wheel/video_1/video_1_2.atlas")),
+
+        ANIM_VIDEO_2_0(AtlasData("atlas/anim/tutorials/joint_wheel/video_2/video_2_0.atlas")),
+        ANIM_VIDEO_2_1(AtlasData("atlas/anim/tutorials/joint_wheel/video_2/video_2_1.atlas")),
+
+        MEM_1(AtlasData("atlas/anim/tutorials/joint_wheel/mem/mem_1.atlas")),
+    }
+    enum class EnumTexture_JointWheel(val data: TextureData) {
+        I1(TextureData("textures/tutorials/joint_wheel/i1.png")),
+    }
+
+    enum class EnumAtlas_JointWeld(val data: AtlasData) {
+        ANIM_VIDEO_1_0(AtlasData("atlas/anim/tutorials/joint_weld/video_1/video_1_0.atlas")),
+        ANIM_VIDEO_1_1(AtlasData("atlas/anim/tutorials/joint_weld/video_1/video_1_1.atlas")),
+
+        ANIM_VIDEO_2_0(AtlasData("atlas/anim/tutorials/joint_weld/video_2/video_2_0.atlas")),
+        ANIM_VIDEO_2_1(AtlasData("atlas/anim/tutorials/joint_weld/video_2/video_2_1.atlas")),
+
+        ANIM_VIDEO_3_0(AtlasData("atlas/anim/tutorials/joint_weld/video_3/video_3_0.atlas")),
+        ANIM_VIDEO_3_1(AtlasData("atlas/anim/tutorials/joint_weld/video_3/video_3_1.atlas")),
+
+        ANIM_VIDEO_4_0(AtlasData("atlas/anim/tutorials/joint_weld/video_4/video_4_0.atlas")),
+        ANIM_VIDEO_4_1(AtlasData("atlas/anim/tutorials/joint_weld/video_4/video_4_1.atlas")),
+
+        MEM_1(AtlasData("atlas/anim/tutorials/joint_weld/mem/mem_1.atlas")),
+    }
+    enum class EnumTexture_JointWeld(val data: TextureData) {
+        I1(TextureData("textures/tutorials/joint_weld/i1.png")),
+        I2(TextureData("textures/tutorials/joint_weld/i2.png")),
+    }
+
+    enum class EnumAtlas_JointFriction(val data: AtlasData) {
+        ANIM_VIDEO_1_0(AtlasData("atlas/anim/tutorials/joint_friction/video_1/video_1_0.atlas")),
+        ANIM_VIDEO_1_1(AtlasData("atlas/anim/tutorials/joint_friction/video_1/video_1_1.atlas")),
+        ANIM_VIDEO_1_2(AtlasData("atlas/anim/tutorials/joint_friction/video_1/video_1_2.atlas")),
+
+        ANIM_VIDEO_2_0(AtlasData("atlas/anim/tutorials/joint_friction/video_2/video_2_0.atlas")),
+        ANIM_VIDEO_2_1(AtlasData("atlas/anim/tutorials/joint_friction/video_2/video_2_1.atlas")),
+
+        ANIM_VIDEO_3_0(AtlasData("atlas/anim/tutorials/joint_friction/video_3/video_3_0.atlas")),
+        ANIM_VIDEO_3_1(AtlasData("atlas/anim/tutorials/joint_friction/video_3/video_3_1.atlas")),
+        ANIM_VIDEO_3_2(AtlasData("atlas/anim/tutorials/joint_friction/video_3/video_3_2.atlas")),
+        ANIM_VIDEO_3_3(AtlasData("atlas/anim/tutorials/joint_friction/video_3/video_3_3.atlas")),
+
+        ANIM_VIDEO_4_0(AtlasData("atlas/anim/tutorials/joint_friction/video_4/video_4_0.atlas")),
+        ANIM_VIDEO_4_1(AtlasData("atlas/anim/tutorials/joint_friction/video_4/video_4_1.atlas")),
+        ANIM_VIDEO_4_2(AtlasData("atlas/anim/tutorials/joint_friction/video_4/video_4_2.atlas")),
+
+        MEM_1(AtlasData("atlas/anim/tutorials/joint_friction/mem/mem_1.atlas")),
+        MEM_2(AtlasData("atlas/anim/tutorials/joint_friction/mem/mem_2.atlas")),
+        MEM_3(AtlasData("atlas/anim/tutorials/joint_friction/mem/mem_3.atlas")),
+    }
+    enum class EnumTexture_JointFriction(val data: TextureData) {
+        I1(TextureData("textures/tutorials/joint_friction/i1.png")),
     }
 
     data class AtlasData(val path: String) {

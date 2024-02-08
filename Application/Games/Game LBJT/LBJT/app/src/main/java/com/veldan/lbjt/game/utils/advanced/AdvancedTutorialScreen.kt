@@ -112,7 +112,7 @@ abstract class AdvancedTutorialScreen(override val game: LibGDXGame): AdvancedSc
         aPlayBtn.setBounds(225f, 1198f, 250f, 90f)
         aPlayBtn.setOnClickListener {
             stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-                game.navigationManager.navigate(practicalScreenName, this@AdvancedTutorialScreen::class.java.name)
+                game.navigationManager.navigate(practicalScreenName)
             }
         }
     }

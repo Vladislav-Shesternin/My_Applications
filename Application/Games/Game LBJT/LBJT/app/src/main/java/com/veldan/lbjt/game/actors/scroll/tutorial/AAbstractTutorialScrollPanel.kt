@@ -159,8 +159,14 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         addActor(AList_Label(screen, fontInter_Regular_30, languageUtil.getStringArrayResources(stringId).toList(), align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
     }
 
-    fun VerticalGroup.addList_TypingLabel(stringId: Int, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet) {
-        addActor(AList_TypingLabel(screen, Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont(), languageUtil.getStringArrayResources(stringId).toList(), align, symbol, fontInter_Regular_30).also { it.width = thisWidth })
+    fun VerticalGroup.addList_TypingLabel(stringId: Int, align: AAbstractList.Static.Align = AAbstractList.Static.Align.Left, symbol: AAbstractList.Static.Symbol = AAbstractList.Static.Symbol.Bullet, triggerBlock: (event: String) -> Unit = {}) {
+        addActor(AList_TypingLabel(screen, Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont(), languageUtil.getStringArrayResources(stringId).toList(), align, symbol, fontInter_Regular_30).also {
+            it.width = thisWidth
+
+            it.labels.onEach { lbl -> lbl.typingListener = object : TypingAdapter() {
+                override fun event(event: String?) { triggerBlock(event ?: "") }
+            } }
+        })
     }
 
     fun VerticalGroup.addLongQuote(stringId: Int) {
@@ -178,12 +184,12 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
 
     protected fun navigateToGeneralInformation() {
         screen.stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-            screen.game.navigationManager.navigate(GeneralInformationScreen::class.java.name)
+            screen.game.navigationManager.navigate(GeneralInformationScreen::class.java.name, screen::class.java.name)
         }
     }
     protected fun navigateToJMouse() {
         screen.stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-            screen.game.navigationManager.navigate(JMouseScreen::class.java.name)
+            screen.game.navigationManager.navigate(JMouseScreen::class.java.name, screen::class.java.name)
         }
     }
 

@@ -1,0 +1,96 @@
+1.png
+size: 1957, 677
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1, 1
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 7, 1
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 13, 1
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 19, 1
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 25, 1
+  size: 1200, 675
+  orig: 1200, 675
+  offset: 0, 0
+  index: -1
+batut
+  rotate: false
+  xy: 1226, 1
+  size: 82, 49
+  orig: 82, 49
+  offset: 0, 0
+  index: -1
+coin
+  rotate: false
+  xy: 1309, 1
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+coub
+  rotate: false
+  xy: 1366, 1
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+mini_coin
+  rotate: false
+  xy: 1421, 1
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 1460, 1
+  size: 211, 52
+  orig: 211, 52
+  offset: 0, 0
+  index: -1
+rotate_btn
+  rotate: false
+  xy: 1672, 1
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+rotate_line
+  rotate: false
+  xy: 1713, 1
+  size: 168, 4
+  orig: 168, 4
+  offset: 0, 0
+  index: -1
+up
+  rotate: false
+  xy: 1882, 1
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
