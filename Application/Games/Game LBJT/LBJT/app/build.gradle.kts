@@ -5,15 +5,15 @@ plugins {
 }
 
 android {
-    namespace  = "com.veldan.lbjt"
+    namespace  = "com.education.lbjt"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.veldan.lbjt"
+        applicationId = "com.education.lbjt"
         minSdk        = 21
         targetSdk     = 34
-        versionCode   = 21
-        versionName   = "1.0.21"
+        versionCode   = 24
+        versionName   = "1.0.24"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -87,7 +87,6 @@ dependencies {
     implementation("com.airbnb.android:lottie:6.2.0")
     implementation("com.github.tommyettinger:textratypist:0.9.0-a3")
     implementation("com.google.android.gms:play-services-ads:22.6.0")
-    implementation("com.android.billingclient:billing-ktx:6.1.0")
 
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("com.google.firebase:firebase-analytics-ktx")

@@ -42,6 +42,7 @@ abstract class AdvancedScreen(
     val backBackgroundImage = Image()
     val uiBackgroundImage   = Image()
     val disposableSet       = mutableSetOf<Disposable>()
+
     var coroutine: CoroutineScope? = CoroutineScope(Dispatchers.Default)
         private set
 

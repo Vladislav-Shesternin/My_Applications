@@ -12,7 +12,7 @@ class APuzzlePanel(
     region: TextureRegion,
 ): AdvancedGroup() {
 
-    private val numberPuzzles = NumberPuzzles._3x3 //getNumberPuzzlesByLevel()
+    private val numberPuzzles = NumberPuzzles.values().random()
     private val puzzles       = Puzzles.generatePuzzles(screen, region, numberPuzzles)
 
     var finishBlock: () -> Unit = { }

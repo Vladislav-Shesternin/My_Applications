@@ -45,9 +45,9 @@ class MenuScreen(override val game: LibGDXGame) : AdvancedScreen() {
         menuImg.setBounds(294f, 819f, 494f, 933f)
 
         val selections = listOf(
-            MenuScreen::class.java.name,
+            LevelScreen   ::class.java.name,
             SettingsScreen::class.java.name,
-            RulesScreen::class.java.name,
+            RulesScreen   ::class.java.name,
         )
 
         var ny = 1247f

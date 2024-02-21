@@ -1,0 +1,61 @@
+actor.png
+size: 1673, 1232
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bulance
+  rotate: false
+  xy: 1, 1
+  size: 725, 123
+  orig: 725, 123
+  offset: 0, 0
+  index: -1
+kilo_bam
+  rotate: false
+  xy: 1358, 1
+  size: 246, 246
+  orig: 246, 246
+  offset: 0, 0
+  index: -1
+knopa_bum
+  rotate: false
+  xy: 1, 248
+  size: 246, 246
+  orig: 246, 246
+  offset: 0, 0
+  index: -1
+maska
+  rotate: false
+  xy: 947, 248
+  size: 725, 983
+  orig: 725, 983
+  offset: 0, 0
+  index: -1
+stafka_pirs
+  rotate: false
+  xy: 727, 1
+  size: 207, 123
+  orig: 207, 123
+  offset: 0, 0
+  index: -1
+stavka_def
+  rotate: false
+  xy: 935, 1
+  size: 207, 123
+  orig: 207, 123
+  offset: 0, 0
+  index: -1
+svetchenie
+  rotate: false
+  xy: 248, 248
+  size: 698, 698
+  orig: 698, 698
+  offset: 0, 0
+  index: -1
+svitae
+  rotate: false
+  xy: 1143, 1
+  size: 214, 214
+  orig: 214, 214
+  offset: 0, 0
+  index: -1

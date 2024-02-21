@@ -1,0 +1,54 @@
+game.png
+size: 1536, 1286
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background
+  rotate: false
+  xy: 1, 230
+  size: 1443, 800
+  orig: 1443, 800
+  offset: 0, 0
+  index: -1
+balk
+  rotate: false
+  xy: 1445, 230
+  size: 90, 1055
+  orig: 90, 1055
+  offset: 0, 0
+  index: -1
+bird
+  rotate: false
+  xy: 1, 1
+  size: 114, 81
+  orig: 114, 81
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 116, 1
+  size: 497, 105
+  orig: 497, 105
+  offset: 0, 0
+  index: -1
+pdfka
+  rotate: false
+  xy: 614, 1
+  size: 228, 228
+  orig: 228, 228
+  offset: 0, 0
+  index: -1
+play_def
+  rotate: false
+  xy: 843, 1
+  size: 228, 228
+  orig: 228, 228
+  offset: 0, 0
+  index: -1
+play_press
+  rotate: false
+  xy: 1072, 1
+  size: 228, 228
+  orig: 228, 228
+  offset: 0, 0
+  index: -1

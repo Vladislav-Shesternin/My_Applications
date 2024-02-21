@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "245250921788",
+    "project_id": "scarab-quest-98730",
+    "storage_bucket": "scarab-quest-98730.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245250921788:android:aba5b522506e1d9e97ba39",
+        "android_client_info": {
+          "package_name": "com.sca.rab.que.stgame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDimuwXorF8SkBHaosEEmUvSs_P9LxdvT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

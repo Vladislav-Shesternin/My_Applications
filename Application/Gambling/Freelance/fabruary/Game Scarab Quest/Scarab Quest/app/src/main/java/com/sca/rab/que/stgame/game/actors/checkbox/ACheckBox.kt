@@ -127,8 +127,8 @@ open class ACheckBox(
             checked = assets.m_press,
         )
         Static.Type.CBox -> Static.ACheckBoxStyle(
-            default = assets.on,
-            checked = assets.off,
+            default = assets.off,
+            checked = assets.on,
         )
     }
 

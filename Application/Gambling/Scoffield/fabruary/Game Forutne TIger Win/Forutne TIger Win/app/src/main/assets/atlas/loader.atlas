@@ -1,0 +1,19 @@
+loader.png
+size: 1284, 261
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bahanovski
+  rotate: false
+  xy: 1, 1
+  size: 1282, 176
+  orig: 1282, 176
+  offset: 0, 0
+  index: -1
+progressoluter
+  rotate: false
+  xy: 1, 178
+  size: 1179, 82
+  orig: 1179, 82
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,42 @@
+package com.rcks.scaloi.game.util.listeners
+
+import com.badlogic.gdx.scenes.scene2d.Actor
+import com.badlogic.gdx.scenes.scene2d.InputEvent
+import com.badlogic.gdx.scenes.scene2d.InputListener
+import com.rcks.scaloi.game.screens.buttonSound
+import com.rcks.scaloi.game.screens.isSound
+
+class ClickListener(val actor: Actor) {
+
+    private var onClickBlock: (Actor) -> Unit = { }
+
+
+
+    private fun Actor.getListener() = object : InputListener() {
+        var isWithin = false
+
+        override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {
+            if (isSound) buttonSound?.play(1f)
+            touchDragged(event, x, y, pointer)
+            return true
+        }
+
+        override fun touchDragged(event: InputEvent?, x: Float, y: Float, pointer: Int) {
+            isWithin = x in 0f..width && y in 0f..height
+        }
+
+        override fun touchUp(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
+            if (isWithin) onClickBlock(actor)
+        }
+    }
+
+
+
+    fun setOnClickListener(block: (Actor) -> Unit) {
+        with(actor) { addListener(getListener()) }
+        onClickBlock = block
+    }
+
+}
+
+fun Actor.toClickable() = ClickListener(this)

@@ -22,6 +22,7 @@ import com.sca.rab.que.stgame.game.utils.addProcessors
 import com.sca.rab.que.stgame.game.utils.disposeAll
 import com.sca.rab.que.stgame.game.utils.font.FontGenerator
 import com.sca.rab.que.stgame.game.utils.font.FontGenerator.Companion.FontPath
+import com.sca.rab.que.stgame.game.utils.runGDX
 import com.sca.rab.que.stgame.util.cancelCoroutinesAll
 import com.sca.rab.que.stgame.util.log
 import kotlinx.coroutines.CoroutineScope
@@ -57,6 +58,8 @@ abstract class AdvancedScreen(
     }
 
     override fun show() {
+        game.activity.webViewFragment.backBlock = { runGDX { stageUI.root.animHide(TIME_ANIM) { game.navigationManager.back() }}}
+
         startScreen()
 
         stageBack.addAndFillActor(backBackgroundImage)
@@ -66,7 +69,7 @@ abstract class AdvancedScreen(
         animShowScreen()
 
         Gdx.input.inputProcessor = inputMultiplexer.apply { addProcessors(this@AdvancedScreen, stageUI) }
-        Gdx.input.setCatchKey(Input.Keys.BACK, true)
+//        Gdx.input.setCatchKey(Input.Keys.BACK, true)
     }
 
     private fun startScreen() {
@@ -102,15 +105,15 @@ abstract class AdvancedScreen(
         coroutine = null
     }
 
-    override fun keyDown(keycode: Int): Boolean {
-        when(keycode) {
-            Input.Keys.BACK -> {
-                if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
-                else stageUI.root.animHide(TIME_ANIM) { game.navigationManager.back() }
-            }
-        }
-        return true
-    }
+//    override fun keyDown(keycode: Int): Boolean {
+//        when(keycode) {
+//            Input.Keys.BACK -> {
+//                if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
+//                else stageUI.root.animHide(TIME_ANIM) { game.navigationManager.back() }
+//            }
+//        }
+//        return true
+//    }
 
     open fun AdvancedStage.addActorsOnStageUI() {}
 

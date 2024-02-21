@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android { 
@@ -79,6 +80,13 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
     implementation("com.airbnb.android:lottie:6.2.0")
     implementation("space.earlygrey:shapedrawer:2.6.0")
+
+    implementation("com.google.android.gms:play-services-ads-identifier:18.0.1")
+    implementation("com.appsflyer:af-android-sdk:6.12.5")
+    implementation("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
+
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-config-ktx")
 }
 
 tasks.register("copyAndroidNatives") {

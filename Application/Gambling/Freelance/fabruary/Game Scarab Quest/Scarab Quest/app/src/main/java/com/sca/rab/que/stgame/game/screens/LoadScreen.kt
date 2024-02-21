@@ -1,15 +1,11 @@
 package com.sca.rab.que.stgame.game.screens
 
 import com.badlogic.gdx.scenes.scene2d.ui.Image
-import com.badlogic.gdx.utils.Align
 import com.sca.rab.que.stgame.game.LibGDXGame
 import com.sca.rab.que.stgame.game.actors.progress.ALoading
 import com.sca.rab.que.stgame.game.manager.MusicManager
 import com.sca.rab.que.stgame.game.manager.SoundManager.*
-import com.sca.rab.que.stgame.game.manager.SpriteManager
 import com.sca.rab.que.stgame.game.manager.SpriteManager.*
-import com.sca.rab.que.stgame.game.utils.TIME_ANIM
-import com.sca.rab.que.stgame.game.utils.actor.animShow
 import com.sca.rab.que.stgame.game.utils.actor.setBounds
 import com.sca.rab.que.stgame.game.utils.advanced.AdvancedScreen
 import com.sca.rab.que.stgame.game.utils.advanced.AdvancedStage
@@ -146,7 +142,7 @@ class LoadScreen(override val game: LibGDXGame) : AdvancedScreen() {
                     if (progress % 50 == 0) log("progress = $progress%")
                     if (progress == 100) isFinishProgress = true
 
-                    //delay((20..50).shuffled().first().toLong())
+                    delay((10..15).shuffled().first().toLong())
                 }
             }
         }
@@ -156,7 +152,7 @@ class LoadScreen(override val game: LibGDXGame) : AdvancedScreen() {
         if (isFinishProgress && isFinishAnim) {
             isFinishAnim = false
 
-//            game.musicUtil.apply { music = PUZZLE_MUSIC.apply { isLooping = true } }
+            game.musicUtil.apply { music = Eqipt_MUSIC.apply { isLooping = true } }
             animHideScreen { game.navigationManager.navigate(MenuScreen::class.java.name) }
         }
     }

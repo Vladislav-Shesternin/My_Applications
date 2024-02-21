@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.ElasticCube" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">#4BA7B0</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+</resources>

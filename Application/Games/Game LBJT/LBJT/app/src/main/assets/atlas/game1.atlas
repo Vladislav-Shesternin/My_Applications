@@ -1,5 +1,5 @@
 game1.png
-size: 2007, 1075
+size: 1971, 1075
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -49,7 +49,7 @@ c_static
   index: -1
 circle_blue
   rotate: false
-  xy: 1758, 221
+  xy: 1462, 221
   size: 113, 113
   orig: 113, 113
   offset: 0, 0
@@ -65,14 +65,14 @@ cursor
   index: -1
 debug_box_check
   rotate: false
-  xy: 1801, 125
+  xy: 1706, 125
   size: 98, 94
   orig: 98, 94
   offset: 0, 0
   index: -1
 debug_box_def
   rotate: false
-  xy: 1901, 125
+  xy: 1806, 125
   size: 98, 94
   orig: 98, 94
   offset: 0, 0
@@ -93,14 +93,14 @@ el_dan
   index: -1
 frame_icon
   rotate: false
-  xy: 282, 354
+  xy: 148, 354
   size: 154, 154
   orig: 154, 154
   offset: 0, 0
   index: -1
 frame_icon_empty
   rotate: false
-  xy: 438, 354
+  xy: 304, 354
   size: 154, 154
   orig: 154, 154
   offset: 0, 0
@@ -110,13 +110,6 @@ frame_language
   xy: 529, 221
   size: 314, 102
   orig: 314, 102
-  offset: 0, 0
-  index: -1
-gift
-  rotate: false
-  xy: 1627, 125
-  size: 93, 93
-  orig: 93, 93
   offset: 0, 0
   index: -1
 h_dynamic
@@ -163,7 +156,7 @@ hand_v
   index: -1
 icon_def
   rotate: false
-  xy: 1722, 125
+  xy: 1627, 125
   size: 77, 93
   orig: 77, 93
   offset: 0, 0
@@ -198,7 +191,7 @@ lift_platform
   index: -1
 loader
   rotate: false
-  xy: 1532, 221
+  xy: 1236, 221
   size: 111, 110
   orig: 111, 110
   offset: 0, 0
@@ -217,23 +210,9 @@ monetization_btn_press
   orig: 296, 296
   offset: 0, 0
   index: -1
-monetization_mega_btn_def
-  rotate: false
-  xy: 1147, 221
-  size: 146, 106
-  orig: 146, 106
-  offset: 0, 0
-  index: -1
-monetization_mega_btn_press
-  rotate: false
-  xy: 1295, 221
-  size: 146, 106
-  orig: 146, 106
-  offset: 0, 0
-  index: -1
 no_wifi
   rotate: false
-  xy: 1645, 221
+  xy: 1349, 221
   size: 111, 110
   orig: 111, 110
   offset: 0, 0
@@ -339,7 +318,7 @@ panel_with_light_white
   index: -1
 practical_btn
   rotate: false
-  xy: 136, 354
+  xy: 2, 354
   size: 144, 144
   orig: 144, 144
   offset: 0, 0
@@ -418,14 +397,14 @@ ps
   index: -1
 regular_btn_def
   rotate: false
-  xy: 1018, 354
+  xy: 884, 354
   size: 466, 169
   orig: 466, 169
   offset: 0, 0
   index: -1
 regular_btn_disable
   rotate: false
-  xy: 1486, 354
+  xy: 1352, 354
   size: 466, 169
   orig: 466, 169
   offset: 0, 0
@@ -497,7 +476,7 @@ update_btn_press
   index: -1
 update_light
   rotate: false
-  xy: 594, 354
+  xy: 460, 354
   size: 422, 167
   orig: 422, 167
   offset: 0, 0
@@ -518,7 +497,7 @@ update_x_press
   index: -1
 user
   rotate: false
-  xy: 1443, 221
+  xy: 1147, 221
   size: 87, 107
   orig: 87, 107
   offset: 0, 0
@@ -560,14 +539,14 @@ volume_quiet
   index: -1
 yan
   rotate: false
-  xy: 1873, 221
+  xy: 1577, 221
   size: 132, 131
   orig: 132, 131
   offset: 0, 0
   index: -1
 yin
   rotate: false
-  xy: 2, 354
+  xy: 1711, 221
   size: 132, 131
   orig: 132, 131
   offset: 0, 0

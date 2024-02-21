@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.GodsOfOlympus" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/backi</item>
+        <item name="android:navigationBarColor">@color/backi</item>
+    </style>
+
+    <style name="Theme.GodsOfOlympus" parent="Base.Theme.GodsOfOlympus" />
+</resources>

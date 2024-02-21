@@ -58,6 +58,7 @@
     <string name="j_text_configure_elasticity">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]elasticity[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_configure_maxforce">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_configure_maxtorque">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="j_text_configure_maxlength">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]maxLength[#d2e9cdff][@Inter_Medium]:</string>
     <string name="j_text_why_limit">
         [#d2e9cdff][@Inter_Medium]На даний момент це не спрацює. Чому?
         \nТому що за умовчанням обмеження вимкнено, і нам потрібно їх увімкнути!
@@ -563,6 +564,61 @@
     <string-array name="jfriction_arr_3">
         <item>[#d2e9cdff][@Inter_Regular]чим [#FF4949][@Inter_Bold]більше[#d2e9cdff][@Inter_Regular] значення [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Regular], тим [#FF4949][@Inter_Bold]швидше тіло перестане обертатися[#d2e9cdff][@Inter_Regular], ніби сила тяжіння на нього майже не діє.</item>
         <item>[#d2e9cdff][@Inter_Regular]чим [#FF4949][@Inter_Bold]важче тіло[#d2e9cdff][@Inter_Regular], тим [#FF4949][@Inter_Bold]більше[#d2e9cdff][@Inter_Regular] значення [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Regular] повинне бути.</item>
+    </string-array>
+
+    <!--JointRope-->
+    <string name="jrope_title_1">І так… Rope Joint</string>
+    <string name="jrope_title_2">Практика. Як створити Rope Joint?</string>
+
+    <string name="jrope_sub_title_1">FrictionJointDef налаштування:</string>
+
+    <string name="jrope_text_1">[#d2e9cdff][@Inter_Medium]Rope joint — з\’єднання, призначене для з\’єднання двох тіл, зазвичай використовується для виготовлення [#FF4949][@Inter_Bold]канатів[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]підвісних мостів[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jrope_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. А тепер поговоримо про RopeJointDef.</string>
+    <string name="jrope_text_3">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься зі [#FF4949][@Inter_Bold]статичної кулі[#d2e9cdff][@Inter_Medium] ([#1465df]синій[#d2e9cdff]) та списку з 4 [#FF4949][@Inter_Bold]динамічних прямокутників[#d2e9cdff][@Inter_Medium] ([#1A932C]зелений[#d2e9cdff]), з\’єднаних [#FF4949][@Inter_Bold]RopeJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jrope_text_4">[#d2e9cdff][@Inter_Medium]Створіть тіла: [#FF4949][@Inter_Bold]статичну[#d2e9cdff][@Inter_Medium] кулю та список з 4 [#FF4949][@Inter_Bold]динамічих[#d2e9cdff][@Inter_Medium] прямокутників:</string>
+    <string name="jrope_text_5">[#d2e9cdff][@Inter_Medium]Створіть RopeJoint:</string>
+    <string name="jrope_text_6">[#d2e9cdff][@Inter_Medium]Для простоти розуміння спочатку об\'єднаємо [#FF4949][@Inter_Bold]статичне коло[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]перший прямокутник[#d2e9cdff][@Inter_Medium] зі списку, з рештою все буде так само, але в кінці.</string>
+    <string name="jrope_text_7">[#d2e9cdff][@Inter_Medium]Зараз начебто все працює, але тіла трясуться, це тому, що [#FF4949][@Inter_Bold]maxLength[#d2e9cdff][@Inter_Medium] не налаштований, виправимо це.</string>
+    <string name="jrope_text_8">[#d2e9cdff][@Inter_Medium]Налаштувати: список із 4 [#FF4949][@Inter_Bold]динамічних[#d2e9cdff][@Inter_Medium] прямокутників:</string>
+    <string name="jrope_text_9">[#d2e9cdff][@Inter_Medium]Власне, на цьому все, тепер залишилося аналогічно налаштувати список з 4 [#FF4949][@Inter_Bold]динамічних[#d2e9cdff][@Inter_Medium] прямокутників.</string>
+    <string name="jrope_text_10">[#d2e9cdff][@Inter_Medium]Так як [#FF4949][@Inter_Bold]перший прямокутник[#d2e9cdff][@Inter_Medium] вже з\'єднаний, залишилося [#FF4949][@Inter_Bold]3[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jrope_text_11">[#d2e9cdff][@Inter_Medium]Ось так просто ми створили мотузку, якщо вам потрібна еластична мотузка і з можливістю регулювати [#FF4949][@Inter_Bold]еластичності[#d2e9cdff][@Inter_Medium], то краще використовувати [#FF4949][@Inter_Bold]Distance Joint[#d2e9cdff][@Inter_Medium], про який у мене також є стаття: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Distance Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].</string>
+
+    <string-array name="jrope_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxLength — довжина між опорними точками.</item>
+    </string-array>
+
+    <!--JointPulley-->
+    <string name="jpulley_title_1">І так… Pulley Joint</string>
+    <string name="jpulley_title_2">Практика. Як створити Pulley Joint?</string>
+
+    <string name="jpulley_sub_title_1">PulleyJointDef налаштування:</string>
+
+    <string name="jpulley_text_1">[#d2e9cdff][@Inter_Medium]Pulley joint — з\’єднання, призначений для з\’єднання двох тіл разом, зазвичай використовується для [#FF4949][@Inter_Bold]маятника[#d2e9cdff][@Inter_Medium] або чогось, що має [#FF4949][@Inter_Bold]противагу[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jpulley_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. А тепер поговоримо про PulleyJointDef.</string>
+    <string name="jpulley_text_3">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься з 2 [#FF4949][@Inter_Bold]динамічних куль[#d2e9cdff][@Inter_Medium] ([#1A932C]зелений[#d2e9cdff]), з\’єднаних [#FF4949][@Inter_Bold]PylleyJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jpulley_text_4">[#d2e9cdff][@Inter_Medium]Створіть тіла [#FF4949][@Inter_Bold]2 динамічні кулі[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jpulley_text_5">[#d2e9cdff][@Inter_Medium]Створіть PulleyJoint:</string>
+    <string name="jpulley_text_6">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]groundAnchorA, groundAnchorB[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jpulley_text_7">[#d2e9cdff][@Inter_Medium]Він працює, але не як шків, і це тому, що вам потрібно налаштувати [#FF4949][@Inter_Bold]довжину[#d2e9cdff][@Inter_Medium], давайте це виправимо: (вимірюється в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Medium]).</string>
+    <string name="jpulley_text_8">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]lengthA, lengthB[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jpulley_text_9">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]localAnchorA, localAnchorB[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jpulley_text_10">[#d2e9cdff][@Inter_Medium]Ось і все, ви вже можете запустити програму і тіла будуть з\'єднані, але є одне але, вони будуть з\'єднані в [#FF4949][@Inter_Bold]точці світу (x=0.0 | y=0.0)[#d2e9cdff][@Inter_Medium], щоб це виправити, вам потрібно [#FF4949][@Inter_Bold]налаштувати groundAnchorA, groundAnchorB[#d2e9cdff][@Inter_Medium]. (вимірюється в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Medium]).</string>
+    <string name="jpulley_text_11">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]ratio[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jpulley_text_12">[#FF4949][@Inter_Bold]ratio[#d2e9cdff][@Inter_Medium] — це налаштування співвідношення lengthA до lengthB (за замовчуванням 1x1).</string>
+    <string name="jpulley_text_13">[#d2e9cdff][@Inter_Medium]Завжди думайте, що [#FF4949][@Inter_Bold]співвідношення для lengthB = 1[#d2e9cdff][@Inter_Medium] а [#FF4949][@Inter_Bold]Ви налаштовуєте співвідношення для lengthA[#d2e9cdff][@Inter_Medium] (за замовчуванням = 1).</string>
+    <string name="jpulley_text_14">[#d2e9cdff][@Inter_Medium]Бувають випадки, коли тіла прилипають на деякий час до точки [#FF4949][@Inter_Bold]groundAnchor[#d2e9cdff][@Inter_Medium], це вирішується простим зміщенням [#FF4949][@Inter_Bold]groundAnchor[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]localAnchor[#d2e9cdff][@Inter_Medium], або створенням [#FF4949][@Inter_Bold]додаткового тіла[#d2e9cdff][@Inter_Medium] в місці зчеплення, з яким відбудеться зіткнення.</string>
+
+    <string-array name="jpulley_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]groundAnchorA — [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] для [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]світу[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]groundAnchorB — [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] для [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]світу[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorA — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]localAnchorB — локальна [#FF4949][@Inter_Bold]опорна точка[#d2e9cdff][@Inter_Regular] відносно початку [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]lengthA — [#FF4949][@Inter_Bold]довжина[#d2e9cdff][@Inter_Regular] між [#FF4949][@Inter_Bold]groundAnchorA[#d2e9cdff][@Inter_Regular] і [#FF4949][@Inter_Bold]localAnchorA[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]lengthB — [#FF4949][@Inter_Bold]довжина[#d2e9cdff][@Inter_Regular] між [#FF4949][@Inter_Bold]groundAnchorB[#d2e9cdff][@Inter_Regular] і [#FF4949][@Inter_Bold]localAnchorB[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]ratio — [#FF4949][@Inter_Bold]співвідношення довжини[#d2e9cdff][@Inter_Regular] між [#FF4949][@Inter_Bold]lengthA[#d2e9cdff][@Inter_Regular] та [#FF4949][@Inter_Bold]lengthB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
 
 </resources>

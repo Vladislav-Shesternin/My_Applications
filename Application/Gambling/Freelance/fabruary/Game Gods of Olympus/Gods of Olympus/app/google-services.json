@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "229781939907",
+    "project_id": "gods-of-olympus-326f3",
+    "storage_bucket": "gods-of-olympus-326f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229781939907:android:11910ae3939d1e19eaa476",
+        "android_client_info": {
+          "package_name": "com.god.sof.olym.pus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg9fkf4rDkSJKrZgoLNk8FS04Ca8o3hO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

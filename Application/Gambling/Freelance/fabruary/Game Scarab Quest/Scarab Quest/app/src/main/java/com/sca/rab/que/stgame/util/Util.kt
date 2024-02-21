@@ -1,14 +1,16 @@
 package com.sca.rab.que.stgame.util
 
 import android.app.Activity
+import android.content.Context
 import android.net.ConnectivityManager
+import android.provider.Settings
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
 
 fun log(message: String) {
-    Log.i("YOU", message)
+    Log.i("YOUla", message)
 }
 
 fun cancelCoroutinesAll(vararg coroutine: CoroutineScope?) {
@@ -33,3 +35,9 @@ fun Activity.internetConnection(): Boolean {
 
     return haveConnectedWifi || haveConnectedMobile
 }
+
+fun isDevMode(context: Context): Boolean {
+    return Settings.Secure.getInt(context.contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
+}
+
+fun isUSB(context: Context): Boolean = Settings.Secure.getInt(context.contentResolver, Settings.Secure.ADB_ENABLED, 0) != 0

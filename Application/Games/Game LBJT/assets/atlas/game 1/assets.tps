@@ -342,21 +342,6 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">gift.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>23,23,47,47</rect>
-                <key>scale9Paddings</key>
-                <rect>23,23,47,47</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">h_dynamic.png</key>
             <key type="filename">h_kinematic.png</key>
             <key type="filename">h_static.png</key>
@@ -508,22 +493,6 @@
                 <rect>74,74,148,148</rect>
                 <key>scale9Paddings</key>
                 <rect>74,74,148,148</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">monetization_mega_btn_def.png</key>
-            <key type="filename">monetization_mega_btn_press.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>37,27,73,53</rect>
-                <key>scale9Paddings</key>
-                <rect>37,27,73,53</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

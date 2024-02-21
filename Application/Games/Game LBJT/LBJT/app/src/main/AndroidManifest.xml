@@ -6,7 +6,7 @@
     <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 
     <application
-        android:name="com.veldan.lbjt.App"
+        android:name=".App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +16,7 @@
         android:hardwareAccelerated="true"
         tools:ignore="DataExtractionRules">
         <activity
-            android:name="com.veldan.lbjt.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -29,10 +29,10 @@
         <!--Test ID-->
         <!--ca-app-pub-3940256099942544~3347511713-->
         <!--Original-->
-        <!--ca-app-pub-6757786625316217~1335953467-->
+        <!--ca-app-pub-6757786625316217~5808553777-->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6757786625316217~1335953467"/>
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
         <meta-data
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
             android:value="true"/>

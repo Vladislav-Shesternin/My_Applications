@@ -8,7 +8,7 @@ import com.sca.rab.que.stgame.game.utils.runGDX
 class SoundUtil {
 
     // Common
-    val ClickR      = SoundManager.EnumSound.Click.data.sound
+    val ClickR   = SoundManager.EnumSound.Click.data.sound
     val POSITIVE = SoundManager.EnumSound.POSITIVE.data.sound
     val NEGATIVE = SoundManager.EnumSound.NEGATIVE.data.sound
 
