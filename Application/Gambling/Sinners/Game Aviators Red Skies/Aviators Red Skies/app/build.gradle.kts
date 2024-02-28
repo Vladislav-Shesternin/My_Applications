@@ -11,8 +11,8 @@ android {
         applicationId = "com.ottplay.ottpl"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "2.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,7 +56,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.activity:activity-ktx:1.8.2")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     val gdxVersion = "1.12.1"
@@ -84,6 +84,8 @@ dependencies {
     implementation("com.appsflyer:af-android-sdk:6.12.5")
 
     implementation("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
+
+    implementation("com.facebook.android:facebook-android-sdk:latest.release")
 }
 
 tasks.register("copyAndroidNatives") {

@@ -14,31 +14,43 @@ import kotlinx.coroutines.launch
 class APracticalSettings_JPulley(_screen: AdvancedScreen): AAbstractPracticalSettings(_screen) {
 
     companion object {
-        val localAnchorAValue: Vector2 = Vector2(25f, 0f).toB2
-        val localAnchorBValue: Vector2 = Vector2(24f, 116f).toB2
-        var maxLength: Float = 2f
+        val localAnchorAValue: Vector2 = Vector2(50f, 50f).toB2
+        val localAnchorBValue: Vector2 = Vector2(50f, 50f).toB2
+
+        var lengthAValue: Float = 4f
+        var lengthBValue: Float = 4f
+        var ratioValue  : Float = 1f
 
         private fun reset() {
-            localAnchorAValue.set(Vector2(25f, 0f).toB2)
-            localAnchorBValue.set(Vector2(24f, 116f).toB2)
-            maxLength = 2f
+            localAnchorAValue.set(Vector2(50f, 50f).toB2)
+            localAnchorBValue.set(Vector2(50f, 50f).toB2)
+
+            lengthAValue = 4f
+            lengthBValue = 4f
+            ratioValue   = 1f
         }
     }
 
     // Actor
-    private var localAnchorA = APracticalSelectAnchorPoint(screen, assets.C_STATIC, Vector2(100f, 100f), 50f, localAnchorAValue)
-    private var localAnchorB = APracticalSelectAnchorPoint(screen, assets.V_DYNAMIC, Vector2(52f, 128f), 48f, localAnchorBValue)
+    private var localAnchorA = APracticalSelectAnchorPoint(screen, assets.C_DYNAMIC, Vector2(100f, 100f), 100f, localAnchorAValue)
+    private var localAnchorB = APracticalSelectAnchorPoint(screen, assets.C_DYNAMIC, Vector2(100f, 100f), 100f, localAnchorBValue)
 
-    private var maxLengthLbl = Label("", valueLabelStyle)
+    private var lengthALbl = Label("", valueLabelStyle)
+    private var lengthBLbl = Label("", valueLabelStyle)
+    private var ratioLbl   = Label("", valueLabelStyle)
 
-    private var maxLengthProgress = AProgressPractical(screen)
+    private var lengthAProgress = AProgressPractical(screen)
+    private var lengthBProgress = AProgressPractical(screen)
+    private var ratioProgress   = AProgressPractical(screen)
 
     override fun addActorsOnGroup() {
         super.addActorsOnGroup()
 
         addLabel(R.string.localAnchorA, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 1021f, 227f, 42f))
         addLabel(R.string.localAnchorB, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 885f, 227f, 42f))
-        addLabel(R.string.maxLength, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 763f, 195f, 42f))
+        addLabel(R.string.lengthA, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 763f, 138f, 42f))
+        addLabel(R.string.lengthB, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 554f, 137f, 42f))
+        addLabel(R.string.ratio, Static.LabelFont.Inter_Regular_35, Layout.LayoutData(34f, 345f, 85f, 42f))
 
         addLocalAnchors()
         addProgresses()
@@ -50,12 +62,16 @@ class APracticalSettings_JPulley(_screen: AdvancedScreen): AAbstractPracticalSet
     }
 
     override fun reinitialize() {
-        localAnchorA = APracticalSelectAnchorPoint(screen, assets.C_STATIC, Vector2(100f, 100f), 50f, localAnchorAValue)
-        localAnchorB = APracticalSelectAnchorPoint(screen, assets.H_DYNAMIC, Vector2(52f, 128f), 48f, localAnchorBValue)
+        localAnchorA = APracticalSelectAnchorPoint(screen, assets.C_DYNAMIC, Vector2(100f, 100f), 100f, localAnchorAValue)
+        localAnchorB = APracticalSelectAnchorPoint(screen, assets.C_DYNAMIC, Vector2(100f, 100f), 100f, localAnchorBValue)
 
-        maxLengthLbl = Label("", valueLabelStyle)
+        lengthALbl = Label("", valueLabelStyle)
+        lengthBLbl = Label("", valueLabelStyle)
+        ratioLbl   = Label("", valueLabelStyle)
 
-        maxLengthProgress = AProgressPractical(screen)
+        lengthAProgress = AProgressPractical(screen)
+        lengthBProgress = AProgressPractical(screen)
+        ratioProgress   = AProgressPractical(screen)
     }
 
     override fun reset() {
@@ -78,27 +94,43 @@ class APracticalSettings_JPulley(_screen: AdvancedScreen): AAbstractPracticalSet
     }
 
     private fun AdvancedGroup.addProgresses() {
-        addActors(maxLengthProgress)
-        maxLengthProgress.setBounds(34f, 676f, 631f, 76f)
+        addActors(lengthAProgress, lengthBProgress, ratioProgress)
+        lengthAProgress.setBounds(34f, 676f, 631f, 76f)
+        lengthBProgress.setBounds(34f, 467f, 631f, 76f)
+        ratioProgress.setBounds(34f, 258f, 631f, 76f)
     }
 
     private fun AdvancedGroup.addValueLbls() {
-        addActors(maxLengthLbl)
-        maxLengthLbl.setBounds(249f, 763f, 50f, 42f)
+        addActors(lengthALbl, lengthBLbl, ratioLbl)
+        lengthALbl.setBounds(192f, 763f, 100f, 42f)
+        lengthBLbl.setBounds(191f, 554f, 100f, 42f)
+        ratioLbl.setBounds(139f, 345f, 100f, 42f)
     }
 
     private fun AdvancedGroup.addPoints() {
-        val x5 = listOf(158f, 283f, 410f, 536f, 660f)
-        x5.onEach { nx -> addPointImg(nx, 700f) }
+        val x4 = listOf(189f, 347f, 505f, 660f)
+
+        listOf(
+            /*lengthA*/ 700f,
+            /*lengthB*/ 491f,
+            /*ratio*/ 282f,
+        ).onEach { ny -> x4.onEach { nx -> addPointImg(nx, ny) } }
     }
 
     private fun AdvancedGroup.addValues() {
-        val values_0_5 = listOf("0", "1", "2", "3", "4", "5")
+        val values_0_10 = listOf("0", "2.5", "5", "7.5", "10")
+        val values_0_2  = listOf("0", "0.5", "1", "1.5", "2")
 
-        val x_0_5 = listOf(34f, 156f, 279f, 406f, 532f, 653f)
+        val x_0_10 = listOf(34f, 176f, 343f, 494f, 643f)
+        val x_0_2  = listOf(34f, 176f, 345f, 495f, 653f)
 
-        val data = Static.ValuesData(676f, x_0_5, values_0_5)
-        data.listValue.onEachIndexed { index, value -> addLabelValue(value, data.listX[index], data.y) }
+        listOf(
+            /*lengthA*/ Static.ValuesData(676f, x_0_10, values_0_10),
+            /*lengthB*/ Static.ValuesData(467f, x_0_10, values_0_10),
+            /*ratio*/ Static.ValuesData(258f, x_0_2, values_0_2),
+        ).onEach { data ->
+            data.listValue.onEachIndexed { index, value -> addLabelValue(value, data.listX[index], data.y) }
+        }
     }
 
     // ---------------------------------------------------
@@ -107,7 +139,9 @@ class APracticalSettings_JPulley(_screen: AdvancedScreen): AAbstractPracticalSet
 
     private fun collectProgresses() {
         coroutine?.launch {
-            collectProgress_0_5(maxLength, maxLengthProgress, maxLengthLbl) { maxLength = it }
+            launch { collectProgress_0_10(lengthAValue, lengthAProgress, lengthALbl) { lengthAValue = it } }
+            launch { collectProgress_0_10(lengthBValue, lengthBProgress, lengthBLbl) { lengthBValue = it } }
+            launch { collectProgress_0_2(ratioValue, ratioProgress, ratioLbl) { ratioValue = it } }
         }
     }
 

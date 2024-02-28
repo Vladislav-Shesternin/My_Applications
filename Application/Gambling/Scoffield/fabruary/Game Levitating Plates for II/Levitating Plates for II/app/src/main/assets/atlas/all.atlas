@@ -1,0 +1,33 @@
+all.png
+size: 483, 555
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blue
+  rotate: false
+  xy: 1, 1
+  size: 276, 276
+  orig: 276, 276
+  offset: 0, 0
+  index: -1
+blue_tarelka
+  rotate: false
+  xy: 278, 1
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+green
+  rotate: false
+  xy: 1, 278
+  size: 276, 276
+  orig: 276, 276
+  offset: 0, 0
+  index: -1
+green_tarelka
+  rotate: false
+  xy: 278, 278
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1

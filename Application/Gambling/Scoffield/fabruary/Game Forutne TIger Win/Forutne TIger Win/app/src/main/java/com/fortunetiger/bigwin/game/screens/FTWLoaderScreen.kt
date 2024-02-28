@@ -155,6 +155,11 @@ class FTWLoaderScreen(override val game: LibGDXGame) : AdvancedScreen() {
         if (isFinishProgress && isFinishAnim) {
             isFinishAnim = false
 
+            game.musicUtil.apply {
+                coff  = 0.25f
+                music = MUSIC.apply { isLooping = true }
+            }
+
             stageUI.root.animHide(TIME_ANIM_ALPHA) {
                 game.navigationManager.navigate(FTWMenuScreen::class.java.name)
             }

@@ -18,7 +18,7 @@ class Slot(override val screen: AdvancedScreen): AdvancedGroup() {
         const val SLOT_ITEM_VISIBLE_COUNT      = 5
         const val SLOT_ITEM_INTERMEDIATE_COUNT = 15
 
-        const val TIME_SPIN_SLOT = 1.5f
+        const val TIME_SPIN_SLOT = 2.5f
     }
 
     private val intermediateSlotItemImageList = List(SLOT_ITEM_INTERMEDIATE_COUNT) { Image() }
@@ -68,9 +68,9 @@ class Slot(override val screen: AdvancedScreen): AdvancedGroup() {
     suspend fun spin() = CompletableDeferred<Boolean>().also { continuation ->
         runGDX {
             addAction(Actions.sequence(
-                Actions.moveTo(x, LS.endY , TIME_SPIN_SLOT, Interpolation.swingIn),
+                Actions.moveTo(x, LS.endY , TIME_SPIN_SLOT, Interpolation.elasticIn),
                 Actions.run {
-                    screen.game.soundUtil.apply { play(boom) }
+                    screen.game.soundUtil.apply { play(bum) }
                     reset()
                     continuation.complete(true)
                 }

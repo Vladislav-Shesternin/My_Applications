@@ -34,7 +34,11 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
 
         private const val ONE_PERCENT_0_1k = 1_000f / 100f
 
+        private const val ONE_PERCENT_0_2 = 2f / 100f
+
         private const val ONE_PERCENT_0_5 = 5f / 100f
+
+        private const val ONE_PERCENT_0_10 = 10f / 100f
 
         private const val ONE_PERCENT_0_20 = 20f / 100f
 
@@ -146,6 +150,36 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
     // ---------------------------------------------------
     // Collect
     // ---------------------------------------------------
+
+    suspend fun collectProgress_0_2(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
+        var tmpValue = 0f
+
+        progress.apply {
+            setProgressPercent(currentValue / ONE_PERCENT_0_2)
+            progressPercentFlow.collect { progress ->
+                runGDX {
+                    tmpValue = progress * ONE_PERCENT_0_2
+                    label.setText(String.format("%.2f", tmpValue).replace(',', '.'))
+                    block(tmpValue)
+                }
+            }
+        }
+    }
+
+    suspend fun collectProgress_0_10(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
+        var tmpValue = 0f
+
+        progress.apply {
+            setProgressPercent(currentValue / ONE_PERCENT_0_10)
+            progressPercentFlow.collect { progress ->
+                runGDX {
+                    tmpValue = progress * ONE_PERCENT_0_10
+                    label.setText(String.format("%.1f", tmpValue).replace(',', '.'))
+                    block(tmpValue)
+                }
+            }
+        }
+    }
 
     suspend fun collectProgress_0_5(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
         var tmpValue = 0f

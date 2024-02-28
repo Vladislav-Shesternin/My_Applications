@@ -157,6 +157,9 @@
     <string name="maxForce" translatable="false">maxForce:</string>
     <string name="maxTorque" translatable="false">maxTorque:</string>
     <string name="maxLength" translatable="false">maxLength:</string>
+    <string name="lengthA" translatable="false">lengthA:</string>
+    <string name="lengthB" translatable="false">lengthB:</string>
+    <string name="ratio" translatable="false">ratio:</string>
     <string name="frequencyHz" translatable="false">frequencyHz:</string>
     <string name="dampingRatio" translatable="false">dampingRatio:</string>
     <string name="localAxisA" translatable="false">localAxisA:</string>

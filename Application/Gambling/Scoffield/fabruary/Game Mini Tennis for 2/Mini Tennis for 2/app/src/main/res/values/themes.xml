@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.MiniTennisFor2" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.MiniTennisFor2" parent="Base.Theme.MiniTennisFor2" />
+</resources>

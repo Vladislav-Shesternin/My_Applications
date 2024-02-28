@@ -9,17 +9,17 @@ object Layout {
     }
 
     object Slot {
-        val slot = LayoutData(0f, 0f, 150f, 150f, vs = 10f)
-        val endY = -3163f
+        val slot = LayoutData(0f, 0f, 125f, 125f, vs = 12f)
+        val endY = -2678f
     }
 
     object Glow {
-        val glow = LayoutData(0f, 0f, 237f, 182f, vs = -22f)
+        val glow = LayoutData(0f, 0f, 259f, 146f, vs = -9f)
     }
 
     object SlotGroup {
-        val slot = LayoutData(44f, 37f, 150f, 3990f, hs = 76f)
-        val glow = LayoutData(1f, 21f, 237f, 822f, hs = -11f)
+        val slot = LayoutData(0f, 14f, 125f, 3365f, hs = 120f)
+        val glow = LayoutData(-68f, -3f, 259f, 694f, hs = -14f)
     }
 
     data class LayoutData(

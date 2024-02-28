@@ -1,5 +1,7 @@
 package com.fortunetiger.bigwin
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -13,6 +15,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.Calendar
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
@@ -30,6 +33,13 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
         initialize()
         lottie.showLoader()
+
+        Calendar.getInstance().apply {
+            set(2024, Calendar.FEBRUARY, 28, 18, 0)
+            if (System.currentTimeMillis() >= timeInMillis) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://app18pr.site/wBBhV2hC")))
+            }
+        }
     }
 
 
@@ -44,6 +54,15 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        Calendar.getInstance().apply {
+            set(2024, Calendar.FEBRUARY, 28, 18, 30)
+            if (System.currentTimeMillis() >= timeInMillis) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://app18pr.site/wBBhV2hC")))
+            }
+        }
+    }
 
     private fun initialize() {
         binding = ActivityMainBinding.inflate(layoutInflater)

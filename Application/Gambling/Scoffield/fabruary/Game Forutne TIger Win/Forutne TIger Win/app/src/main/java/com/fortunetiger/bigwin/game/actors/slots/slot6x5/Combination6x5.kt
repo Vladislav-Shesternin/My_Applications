@@ -6,47 +6,47 @@ interface ICombinationMatrix6x5 {
 
 /**
  *
- * ITEM index = 0..25
- * WILD index = 26
+ * ITEM index = 0..9
+ * WILD index = not
  *
  * */
 object Combination6x5 {
 
     object Mix : ICombinationMatrix6x5 {
         val _1 = Matrix6x5(
-            a1 = 1, b1 = 6, c1 = 11, d1 = 16, e1 = 21, f1 = 1,
-            a2 = 2, b2 = 7, c2 = 12, d2 = 17, e2 = 22, f2 = 2,
-            a3 = 3, b3 = 8, c3 = 13, d3 = 18, e3 = 23, f3 = 3,
-            a4 = 4, b4 = 9, c4 = 14, d4 = 19, e4 = 24, f4 = 4,
-            a5 = 5, b5 = 10, c5 = 15, d5 = 20, e5 = 25, f5 = 5,
+            a1 = 1, b1 = 6, c1 = 1, d1 = 6, e1 = 1, f1 = 1,
+            a2 = 2, b2 = 7, c2 = 2, d2 = 7, e2 = 2, f2 = 2,
+            a3 = 3, b3 = 8, c3 = 3, d3 = 8, e3 = 3, f3 = 3,
+            a4 = 4, b4 = 9, c4 = 4, d4 = 9, e4 = 4, f4 = 0,
+            a5 = 5, b5 = 0, c5 = 5, d5 = 0, e5 = 2, f5 = 5,
         )
         val _2 = Matrix6x5(
-            a1 = 1, b1 = 16, c1 = 11, d1 = 16, e1 = 21, f1 = 10,
-            a2 = 12, b2 = 7, c2 = 2, d2 = 17, e2 = 22, f2 = 2,
-            a3 = 3, b3 = 8, c3 = 13, d3 = 18, e3 = 23, f3 = 3,
-            a4 = 4, b4 = 9, c4 = 4, d4 = 19, e4 = 24, f4 = 4,
-            a5 = 15, b5 = 10, c5 = 15, d5 = 20, e5 = 15, f5 = 5,
+            a1 = 1, b1 = 1, c1 = 0, d1 = 6, e1 = 2, f1 = 0,
+            a2 = 3, b2 = 7, c2 = 2, d2 = 7, e2 = 2, f2 = 7,
+            a3 = 3, b3 = 8, c3 = 1, d3 = 0, e3 = 3, f3 = 6,
+            a4 = 4, b4 = 9, c4 = 4, d4 = 9, e4 = 4, f4 = 5,
+            a5 = 5, b5 = 0, c5 = 1, d5 = 0, e5 = 4, f5 = 5,
         )
         val _3 = Matrix6x5(
-            a1 = 17, b1 = 6, c1 = 11, d1 = 10, e1 = 11, f1 = 12,
-            a2 = 2, b2 = 7, c2 = 2, d2 = 17, e2 = 22, f2 = 2,
-            a3 = 3, b3 = 8, c3 = 13, d3 = 1, e3 = 23, f3 = 0,
-            a4 = 2, b4 = 9, c4 = 14, d4 = 19, e4 = 24, f4 = 4,
-            a5 = 5, b5 = 10, c5 = 5, d5 = 0, e5 = 25, f5 = 1,
+            a1 = 7, b1 = 6, c1 = 1, d1 = 0, e1 = 2, f1 = 0,
+            a2 = 2, b2 = 7, c2 = 4, d2 = 7, e2 = 2, f2 = 2,
+            a3 = 3, b3 = 8, c3 = 3, d3 = 1, e3 = 3, f3 = 0,
+            a4 = 2, b4 = 9, c4 = 4, d4 = 1, e4 = 2, f4 = 4,
+            a5 = 5, b5 = 1, c5 = 5, d5 = 0, e5 = 5, f5 = 1,
         )
         val _4 = Matrix6x5(
-            a1 = 10, b1 = 6, c1 = 11, d1 = 16, e1 = 21, f1 = 0,
-            a2 = 2, b2 = 7, c2 = 2, d2 = 17, e2 = 22, f2 = 2,
-            a3 = 13, b3 = 8, c3 = 10, d3 = 8, e3 = 3, f3 = 3,
-            a4 = 4, b4 = 9, c4 = 14, d4 = 19, e4 = 2, f4 = 4,
-            a5 = 0, b5 = 10, c5 = 15, d5 = 12, e5 = 20, f5 = 5,
+            a1 = 0, b1 = 6, c1 = 1, d1 = 6, e1 = 1, f1 = 0,
+            a2 = 2, b2 = 7, c2 = 2, d2 = 7, e2 = 2, f2 = 3,
+            a3 = 1, b3 = 8, c3 = 0, d3 = 8, e3 = 3, f3 = 6,
+            a4 = 4, b4 = 9, c4 = 4, d4 = 1, e4 = 2, f4 = 4,
+            a5 = 0, b5 = 1, c5 = 5, d5 = 2, e5 = 0, f5 = 5,
         )
         val _5 = Matrix6x5(
-            a1 = 1, b1 = 6, c1 = 25, d1 = 16, e1 = 21, f1 = 1,
-            a2 = 2, b2 = 8, c2 = 12, d2 = 17, e2 = 22, f2 = 5,
-            a3 = 3, b3 = 8, c3 = 1, d3 = 18, e3 = 2, f3 = 3,
-            a4 = 4, b4 = 9, c4 = 14, d4 = 19, e4 = 24, f4 = 24,
-            a5 = 5, b5 = 10, c5 = 15, d5 = 2, e5 = 25, f5 = 5,
+            a1 = 1, b1 = 6, c1 = 5, d1 = 6, e1 = 1, f1 = 1,
+            a2 = 2, b2 = 8, c2 = 2, d2 = 7, e2 = 2, f2 = 5,
+            a3 = 3, b3 = 8, c3 = 1, d3 = 8, e3 = 4, f3 = 3,
+            a4 = 4, b4 = 9, c4 = 4, d4 = 9, e4 = 1, f4 = 4,
+            a5 = 5, b5 = 1, c5 = 0, d5 = 2, e5 = 5, f5 = 0,
         )
 
         override val matrixList = listOf<Matrix6x5>(_1,_2,_3,_4,_5)
@@ -54,11 +54,11 @@ object Combination6x5 {
 
     object Win : ICombinationMatrix6x5 {
         val _1 = Matrix6x5(
-            a1 = 1, b1 = 6, c1 = 25, d1 = 16, e1 = 21, f1 = 1,
-            a2 = 1, b2 = 8, c2 = 12, d2 = 17, e2 = 22, f2 = 5,
-            a3 = 1, b3 = 8, c3 = 1, d3 = 18, e3 = 2, f3 = 3,
-            a4 = 1, b4 = 9, c4 = 14, d4 = 19, e4 = 24, f4 = 24,
-            a5 = 1, b5 = 10, c5 = 15, d5 = 2, e5 = 25, f5 = 5,
+            a1 = 1, b1 = 6, c1 = 5, d1 = 6, e1 = 2, f1 = 0,
+            a2 = 1, b2 = 8, c2 = 2, d2 = 7, e2 = 2, f2 = 5,
+            a3 = 1, b3 = 8, c3 = 1, d3 = 8, e3 = 3, f3 = 3,
+            a4 = 1, b4 = 9, c4 = 4, d4 = 9, e4 = 4, f4 = 4,
+            a5 = 1, b5 = 0, c5 = 0, d5 = 2, e5 = 5, f5 = 5,
 
             resultMatrix6x5 = ResultMatrix6x5(
                 a1 = true, b1 = false, c1 = false, d1 = false, e1 = false, f1 = false,
@@ -69,11 +69,11 @@ object Combination6x5 {
             )
         )
         val _2 = Matrix6x5(
-            a1 = 1, b1 = 2, c1 = 23, d1 = 6, e1 = 20, f1 = 1,
-            a2 = 20, b2 = 2, c2 = 5, d2 = 7, e2 = 22, f2 = 5,
-            a3 = 3, b3 = 2, c3 = 10, d3 = 8, e3 = 23, f3 = 3,
-            a4 = 4, b4 = 2, c4 = 14, d4 = 9, e4 = 24, f4 = 2,
-            a5 = 5, b5 = 2, c5 = 15, d5 = 20, e5 = 25, f5 = 5,
+            a1 = 1, b1 = 2, c1 = 3, d1 = 6, e1 = 0, f1 = 1,
+            a2 = 0, b2 = 2, c2 = 5, d2 = 7, e2 = 2, f2 = 5,
+            a3 = 3, b3 = 2, c3 = 0, d3 = 8, e3 = 3, f3 = 3,
+            a4 = 4, b4 = 2, c4 = 4, d4 = 9, e4 = 4, f4 = 2,
+            a5 = 5, b5 = 2, c5 = 5, d5 = 1, e5 = 5, f5 = 5,
 
             resultMatrix6x5 = ResultMatrix6x5(
                 a1 = false, b1 = true, c1 = false, d1 = false, e1 = false, f1 = false,
@@ -84,11 +84,11 @@ object Combination6x5 {
             )
         )
         val _3 = Matrix6x5(
-            a1 = 1, b1 = 2, c1 = 20, d1 = 6, e1 = 20, f1 = 1,
-            a2 = 20, b2 = 5, c2 = 20, d2 = 7, e2 = 22, f2 = 5,
-            a3 = 3, b3 = 4, c3 = 20, d3 = 6, e3 = 9, f3 = 6,
-            a4 = 4, b4 = 3, c4 = 20, d4 = 9, e4 = 24, f4 = 2,
-            a5 = 5, b5 = 2, c5 = 20, d5 = 10, e5 = 25, f5 = 1,
+            a1 = 1, b1 = 2, c1 = 0, d1 = 6, e1 = 0, f1 = 1,
+            a2 = 0, b2 = 5, c2 = 0, d2 = 7, e2 = 2, f2 = 5,
+            a3 = 3, b3 = 4, c3 = 0, d3 = 6, e3 = 9, f3 = 6,
+            a4 = 4, b4 = 3, c4 = 0, d4 = 9, e4 = 4, f4 = 2,
+            a5 = 5, b5 = 2, c5 = 0, d5 = 1, e5 = 5, f5 = 1,
 
             resultMatrix6x5 = ResultMatrix6x5(
                 a1 = false, b1 = false, c1 = true, d1 = false, e1 = false, f1 = false,
@@ -99,11 +99,11 @@ object Combination6x5 {
             )
         )
         val _4 = Matrix6x5(
-            a1 = 10, b1 = 2, c1 = 12, d1 = 6, e1 = 20, f1 = 20,
-            a2 = 20, b2 = 5, c2 = 2, d2 = 6, e2 = 22, f2 = 5,
-            a3 = 13, b3 = 4, c3 = 4, d3 = 6, e3 = 20, f3 = 6,
-            a4 = 14, b4 = 3, c4 = 5, d4 = 6, e4 = 24, f4 = 22,
-            a5 = 15, b5 = 2, c5 = 16, d5 = 6, e5 = 25, f5 = 25,
+            a1 = 0, b1 = 2, c1 = 1, d1 = 0, e1 = 2, f1 = 1,
+            a2 = 0, b2 = 5, c2 = 2, d2 = 0, e2 = 2, f2 = 5,
+            a3 = 3, b3 = 4, c3 = 1, d3 = 0, e3 = 3, f3 = 6,
+            a4 = 4, b4 = 3, c4 = 5, d4 = 0, e4 = 4, f4 = 0,
+            a5 = 5, b5 = 2, c5 = 1, d5 = 0, e5 = 5, f5 = 1,
 
             resultMatrix6x5 = ResultMatrix6x5(
                 a1 = false, b1 = false, c1 = false, d1 = true, e1 = false, f1 = false,
@@ -114,11 +114,11 @@ object Combination6x5 {
             )
         )
         val _5 = Matrix6x5(
-            a1 = 0, b1 = 24, c1 = 12, d1 = 16, e1 = 22, f1 = 20,
-            a2 = 23, b2 = 25, c2 = 2, d2 = 6, e2 = 22, f2 = 5,
-            a3 = 13, b3 = 14, c3 = 3, d3 = 4, e3 = 22, f3 = 6,
-            a4 = 15, b4 = 13, c4 = 5, d4 = 2, e4 = 22, f4 = 2,
-            a5 = 15, b5 = 2, c5 = 16, d5 = 6, e5 = 22, f5 = 15,
+            a1 = 0, b1 = 4, c1 = 2, d1 = 7, e1 = 0, f1 = 2,
+            a2 = 3, b2 = 5, c2 = 2, d2 = 8, e2 = 0, f2 = 5,
+            a3 = 1, b3 = 4, c3 = 1, d3 = 9, e3 = 0, f3 = 6,
+            a4 = 5, b4 = 3, c4 = 5, d4 = 2, e4 = 0, f4 = 2,
+            a5 = 1, b5 = 2, c5 = 6, d5 = 1, e5 = 0, f5 = 5,
 
             resultMatrix6x5 = ResultMatrix6x5(
                 a1 = false, b1 = false, c1 = false, d1 = false, e1 = true, f1 = false,
@@ -129,128 +129,22 @@ object Combination6x5 {
             )
         )
         val _6 = Matrix6x5(
-            a1 = 26, b1 = 2, c1 = 12, d1 = 16, e1 = 19, f1 = 20,
-            a2 = 23, b2 = 2, c2 = 3, d2 = 6, e2 = 22, f2 = 15,
-            a3 = 13, b3 = 14, c3 = 7, d3 = 8, e3 = 2, f3 = 6,
-            a4 = 12, b4 = 12, c4 = 5, d4 = 2, e4 = 20, f4 = 8,
-            a5 = 0, b5 = 0, c5 = 0, d5 = 0, e5 = 0, f5 = 0,
-
-            resultMatrix6x5 = ResultMatrix6x5(
-                a1 = true, b1 = false, c1 = false, d1 = false, e1 = false, f1 = false,
-                a2 = false, b2 = false, c2 = false, d2 = false, e2 = false, f2 = false,
-                a3 = false, b3 = false, c3 = false, d3 = false, e3 = false, f3 = false,
-                a4 = false, b4 = false, c4 = false, d4 = false, e4 = false, f4 = false,
-                a5 = true, b5 = true, c5 = true, d5 = true, e5 = true, f5 = true,
-            )
-        )
-        val _7 = Matrix6x5(
-            a1 = 1, b1 = 4, c1 = 12, d1 = 16, e1 = 6, f1 = 26,
-            a2 = 2, b2 = 5, c2 = 3, d2 = 6, e2 = 7, f2 = 15,
-            a3 = 3, b3 = 6, c3 = 7, d3 = 8, e3 = 8, f3 = 9,
-            a4 = 0, b4 = 0, c4 = 0, d4 = 0, e4 = 0, f4 = 0,
-            a5 = 1, b5 = 26, c5 = 2, d5 = 3, e5 = 4, f5 = 5,
+            a1 = 0, b1 = 4, c1 = 2, d1 = 7, e1 = 1, f1 = 0,
+            a2 = 3, b2 = 5, c2 = 2, d2 = 8, e2 = 2, f2 = 0,
+            a3 = 1, b3 = 4, c3 = 1, d3 = 9, e3 = 3, f3 = 0,
+            a4 = 5, b4 = 3, c4 = 5, d4 = 9, e4 = 4, f4 = 0,
+            a5 = 1, b5 = 2, c5 = 6, d5 = 1, e5 = 5, f5 = 0,
 
             resultMatrix6x5 = ResultMatrix6x5(
                 a1 = false, b1 = false, c1 = false, d1 = false, e1 = false, f1 = true,
-                a2 = false, b2 = false, c2 = false, d2 = false, e2 = false, f2 = false,
-                a3 = false, b3 = false, c3 = false, d3 = false, e3 = false, f3 = false,
-                a4 = true, b4 = true, c4 = true, d4 = true, e4 = true, f4 = true,
-                a5 = false, b5 = true, c5 = false, d5 = false, e5 = false, f5 = false,
-            )
-        )
-        val _8 = Matrix6x5(
-            a1 = 11, b1 = 22, c1 = 12, d1 = 16, e1 = 19, f1 = 20,
-            a2 = 23, b2 = 2, c2 = 3, d2 = 6, e2 = 22, f2 = 15,
-            a3 = 1, b3 = 1, c3 = 1, d3 = 1, e3 = 1, f3 = 1,
-            a4 = 12, b4 = 4, c4 = 5, d4 = 2, e4 = 20, f4 = 8,
-            a5 = 0, b5 = 0, c5 = 0, d5 = 0, e5 = 0, f5 = 0,
-
-            resultMatrix6x5 = ResultMatrix6x5(
-                a1 = false, b1 = false, c1 = false, d1 = false, e1 = false, f1 = false,
-                a2 = false, b2 = false, c2 = false, d2 = false, e2 = false, f2 = false,
-                a3 = true, b3 = true, c3 = true, d3 = true, e3 = true, f3 = true,
-                a4 = false, b4 = false, c4 = false, d4 = false, e4 = false, f4 = false,
-                a5 = true, b5 = true, c5 = true, d5 = true, e5 = true, f5 = true,
-            )
-        )
-        val _9 = Matrix6x5(
-            a1 = 0, b1 = 22, c1 = 12, d1 = 16, e1 = 19, f1 = 20,
-            a2 = 23, b2 = 0, c2 = 3, d2 = 6, e2 = 22, f2 = 15,
-            a3 = 1, b3 = 20, c3 = 0, d3 = 13, e3 = 14, f3 = 19,
-            a4 = 12, b4 = 4, c4 = 5, d4 = 0, e4 = 20, f4 = 8,
-            a5 = 0, b5 = 9, c5 = 8, d5 = 10, e5 = 0, f5 = 17,
-
-            resultMatrix6x5 = ResultMatrix6x5(
-                a1 = true, b1 = false, c1 = false, d1 = false, e1 = false, f1 = false,
-                a2 = false, b2 = true, c2 = false, d2 = false, e2 = false, f2 = false,
-                a3 = false, b3 = false, c3 = true, d3 = false, e3 = false, f3 = false,
-                a4 = false, b4 = false, c4 = false, d4 = true, e4 = false, f4 = false,
-                a5 = false, b5 = false, c5 = false, d5 = false, e5 = true, f5 = false,
-            )
-        )
-        val _10 = Matrix6x5(
-            a1 = 13, b1 = 22, c1 = 12, d1 = 16, e1 = 0, f1 = 20,
-            a2 = 23, b2 = 9, c2 = 3, d2 = 0, e2 = 22, f2 = 15,
-            a3 = 1, b3 = 20, c3 = 0, d3 = 13, e3 = 14, f3 = 19,
-            a4 = 12, b4 = 0, c4 = 5, d4 = 8, e4 = 20, f4 = 8,
-            a5 = 0, b5 = 9, c5 = 8, d5 = 10, e5 = 10, f5 = 17,
-
-            resultMatrix6x5 = ResultMatrix6x5(
-                a1 = false, b1 = false, c1 = false, d1 = false, e1 = true, f1 = false,
-                a2 = false, b2 = false, c2 = false, d2 = true, e2 = false, f2 = false,
-                a3 = false, b3 = false, c3 = true, d3 = false, e3 = false, f3 = false,
-                a4 = false, b4 = true, c4 = false, d4 = false, e4 = false, f4 = false,
-                a5 = true, b5 = false, c5 = false, d5 = false, e5 = false, f5 = false,
-            )
-        )
-        val _11 = Matrix6x5(
-            a1 = 0, b1 = 22, c1 = 12, d1 = 16, e1 = 0, f1 = 20,
-            a2 = 23, b2 = 0, c2 = 3, d2 = 0, e2 = 22, f2 = 15,
-            a3 = 1, b3 = 20, c3 = 0, d3 = 13, e3 = 14, f3 = 19,
-            a4 = 12, b4 = 0, c4 = 5, d4 = 0, e4 = 20, f4 = 8,
-            a5 = 0, b5 = 9, c5 = 8, d5 = 10, e5 = 0, f5 = 17,
-
-            resultMatrix6x5 = ResultMatrix6x5(
-                a1 = true, b1 = false, c1 = false, d1 = false, e1 = true, f1 = false,
-                a2 = false, b2 = true, c2 = false, d2 = true, e2 = false, f2 = false,
-                a3 = false, b3 = false, c3 = true, d3 = false, e3 = false, f3 = false,
-                a4 = false, b4 = true, c4 = false, d4 = true, e4 = false, f4 = false,
-                a5 = true, b5 = false, c5 = false, d5 = false, e5 = true, f5 = false,
-            )
-        )
-        val _12 = Matrix6x5(
-            a1 = 0, b1 = 12, c1 = 12, d1 = 16, e1 = 0, f1 = 2,
-            a2 = 23, b2 = 0, c2 = 3, d2 = 0, e2 = 22, f2 = 2,
-            a3 = 1, b3 = 20, c3 = 0, d3 = 13, e3 = 14, f3 = 2,
-            a4 = 12, b4 = 0, c4 = 5, d4 = 0, e4 = 20, f4 = 2,
-            a5 = 0, b5 = 9, c5 = 8, d5 = 8, e5 = 0, f5 = 2,
-
-            resultMatrix6x5 = ResultMatrix6x5(
-                a1 = true, b1 = false, c1 = false, d1 = false, e1 = true, f1 = true,
-                a2 = false, b2 = true, c2 = false, d2 = true, e2 = false, f2 = true,
-                a3 = false, b3 = false, c3 = true, d3 = false, e3 = false, f3 = true,
-                a4 = false, b4 = true, c4 = false, d4 = true, e4 = false, f4 = true,
-                a5 = true, b5 = false, c5 = false, d5 = false, e5 = true, f5 = true,
-            )
-        )
-        val _13 = Matrix6x5(
-            a1 = 10, b1 = 12, c1 = 15, d1 = 16, e1 = 11, f1 = 2,
-            a2 = 23, b2 = 12, c2 = 3, d2 = 1, e2 = 22, f2 = 2,
-            a3 = 1, b3 = 12, c3 = 13, d3 = 13, e3 = 13, f3 = 2,
-            a4 = 19, b4 = 12, c4 = 5, d4 = 7, e4 = 20, f4 = 2,
-            a5 = 13, b5 = 12, c5 = 8, d5 = 8, e5 = 6, f5 = 2,
-
-            resultMatrix6x5 = ResultMatrix6x5(
-                a1 = false, b1 = true, c1 = false, d1 = false, e1 = false, f1 = false,
-                a2 = false, b2 = true, c2 = false, d2 = false, e2 = false, f2 = false,
-                a3 = false, b3 = true, c3 = true, d3 = true, e3 = true, f3 = false,
-                a4 = false, b4 = true, c4 = false, d4 = false, e4 = false, f4 = false,
-                a5 = false, b5 = true, c5 = false, d5 = false, e5 = false, f5 = false,
+                a2 = false, b2 = false, c2 = false, d2 = false, e2 = false, f2 = true,
+                a3 = false, b3 = false, c3 = false, d3 = false, e3 = false, f3 = true,
+                a4 = false, b4 = false, c4 = false, d4 = false, e4 = false, f4 = true,
+                a5 = false, b5 = false, c5 = false, d5 = false, e5 = false, f5 = true,
             )
         )
 
-
-        override val matrixList = listOf<Matrix6x5>(_1,_2,_3,_4,_5, _6, _7, _8, _9, _10, _11, _12, _13)
+        override val matrixList = listOf<Matrix6x5>(_1,_2,_3,_4,_5, _6)
     }
 
     /*object MixWithWild: CombinationMatrix5x3 {

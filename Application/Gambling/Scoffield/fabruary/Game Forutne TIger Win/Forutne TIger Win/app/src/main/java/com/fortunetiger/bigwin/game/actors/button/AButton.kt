@@ -28,7 +28,7 @@ open class AButton(
 
     private var area: Actor? = null
 
-    private val spriteUtil                by lazy { screen.game.allAssets }
+    private val spriteUtil by lazy { screen.game.allAssets }
 
     override fun addActorsOnGroup() {
         addAndFillActors(getActors())

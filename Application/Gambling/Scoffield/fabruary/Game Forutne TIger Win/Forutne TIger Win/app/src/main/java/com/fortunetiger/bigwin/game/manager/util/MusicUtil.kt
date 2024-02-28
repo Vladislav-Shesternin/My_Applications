@@ -17,7 +17,6 @@ class MusicUtil: Disposable {
     private val coroutine = CoroutineScope(Dispatchers.Default)
 
     val MUSIC   = MusicManager.EnumMusic.MUSIC.data.music
-    val SUSPECT = MusicManager.EnumMusic.SUSPECT.data.music
 
     // 0..100
     val volumeLevelFlow = MutableStateFlow(AudioManager.volumeLevelPercent)
@@ -49,23 +48,6 @@ class MusicUtil: Disposable {
         cancelCoroutinesAll(coroutine)
         _music = null
         music  = null
-    }
-
-
-    // ---------------------------------------------------
-    // class
-    // ---------------------------------------------------
-
-    class CarnavalCatMusic {
-        val MUSIC = MusicManager.CarnavalCatMusic.MUSIC.data.music
-    }
-
-    class TreasureSnipesMusic {
-        val MUSIC = MusicManager.TreasureSnipesMusic.MUSIC.data.music
-    }
-
-    class SweetBonanzaMusic {
-        val MUSIC = MusicManager.SweetBonanzaMusic.MUSIC.data.music
     }
 
 }

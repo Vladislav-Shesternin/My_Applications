@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.BallAndStars" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/sprite</item>
+        <item name="android:navigationBarColor">@color/pink</item>
+    </style>
+
+    <style name="Theme.BallAndStars" parent="Base.Theme.BallAndStars" />
+</resources>

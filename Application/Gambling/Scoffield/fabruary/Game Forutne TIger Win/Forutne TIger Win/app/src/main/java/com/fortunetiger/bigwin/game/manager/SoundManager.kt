@@ -17,11 +17,9 @@ class SoundManager(var assetManager: AssetManager) {
     }
 
     enum class EnumSound(val data: SoundData) {
-        boom (SoundData("sound/boom.mp3")),
-        click(SoundData("sound/click.mp3")),
-        start(SoundData("sound/start.mp3")),
-        laser(SoundData("sound/laser.mp3")),
-        game_bonus(SoundData("sound/game-bonus.mp3")),
+        bum         (SoundData("sound/bum.mp3")),
+        click       (SoundData("sound/click.mp3")),
+        coin_donatio(SoundData("sound/coin-donatio.mp3")),
     }
 
     data class SoundData(

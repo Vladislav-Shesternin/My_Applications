@@ -109,17 +109,13 @@ class BGPractical_JPulley(_screenBox2d: AdvancedBox2dScreen): AbstractBGPractica
             groundAnchorA.set(position.cpy().add(167f, 879f).toB2)
             groundAnchorB.set(position.cpy().add(533f, 879f).toB2)
 
-            //localAnchorA.set(0f, 0f)
-            //localAnchorB.set(0f, 0f)
+            localAnchorA.set(APracticalSettings_JPulley.localAnchorAValue.cpy().sub(bDynamicCircleLeft.center))
+            localAnchorB.set(APracticalSettings_JPulley.localAnchorBValue.cpy().sub(bDynamicCircleRight.center))
 
-            lengthA = 4f
-            lengthB = 4f
+            lengthA = APracticalSettings_JPulley.lengthAValue
+            lengthB = APracticalSettings_JPulley.lengthBValue
 
-            ratio = 1f
-
-            //localAnchorA.set(APracticalSettings_JRope.localAnchorAValue.cpy().sub(bStaticCircle.center))
-            //localAnchorB.set(APracticalSettings_JRope.localAnchorBValue.cpy().sub(bListDynamicVertical[0].center))
-
+            ratio = APracticalSettings_JPulley.ratioValue
         })
     }
 

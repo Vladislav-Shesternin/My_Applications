@@ -49,7 +49,7 @@ class Glow(override val screen: AdvancedScreen): AdvancedGroup() {
     suspend fun show(time: Float = 0f, timeBetween: Float = 0f) = CompletableDeferred<Boolean>().also { continuation ->
         listIndexWin?.onEach { winIndex ->
             glowItemImageList[winIndex].animShow(time)
-            screen.game.soundUtil.apply { play(laser) }
+            screen.game.soundUtil.apply { play(coin_donatio) }
             delay(timeBetween.toMS)
         }
         continuation.complete(true)

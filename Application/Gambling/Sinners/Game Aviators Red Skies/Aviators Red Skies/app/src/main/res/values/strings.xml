@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Aviator\'s Red Skies</string>
+    <string name="facebook_app_id">1116723186024822</string>
+    <string name="facebook_client_token">cfb7b6f27ce5f862228211a9260913ec</string>
 </resources>

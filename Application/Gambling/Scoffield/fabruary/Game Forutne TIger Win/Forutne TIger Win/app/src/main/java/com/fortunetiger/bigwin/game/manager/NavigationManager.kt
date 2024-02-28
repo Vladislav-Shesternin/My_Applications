@@ -6,6 +6,7 @@ import com.fortunetiger.bigwin.game.screens.FTWMenuScreen
 import com.fortunetiger.bigwin.game.screens.FTWLoaderScreen
 import com.fortunetiger.bigwin.game.screens.FTWRulesScreen
 import com.fortunetiger.bigwin.game.screens.FTWSettingsScreen
+import com.fortunetiger.bigwin.game.screens.FTWSlotScreen
 import com.fortunetiger.bigwin.game.utils.advanced.AdvancedScreen
 import com.fortunetiger.bigwin.game.utils.runGDX
 
@@ -39,10 +40,11 @@ class NavigationManager(val game: LibGDXGame) {
     fun isBackStackEmpty() = backStack.isEmpty()
 
     private fun getScreenByName(name: String): AdvancedScreen = when (name) {
-        FTWLoaderScreen::class.java.name   -> FTWLoaderScreen(game)
-        FTWMenuScreen::class.java.name     -> FTWMenuScreen(game)
-        FTWRulesScreen::class.java.name    -> FTWRulesScreen(game)
+        FTWLoaderScreen  ::class.java.name -> FTWLoaderScreen(game)
+        FTWMenuScreen    ::class.java.name -> FTWMenuScreen(game)
+        FTWRulesScreen   ::class.java.name -> FTWRulesScreen(game)
         FTWSettingsScreen::class.java.name -> FTWSettingsScreen(game)
+        FTWSlotScreen    ::class.java.name -> FTWSlotScreen(game)
 
         else -> FTWLoaderScreen(game)
     }

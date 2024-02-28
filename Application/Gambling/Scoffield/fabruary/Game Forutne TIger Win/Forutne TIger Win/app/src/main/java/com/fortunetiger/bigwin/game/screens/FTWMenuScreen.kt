@@ -47,7 +47,7 @@ class FTWMenuScreen(override val game: LibGDXGame): AdvancedScreen() {
         var ny = 727f
 
         listOf(
-            FTWMenuScreen::class.java.name,
+            FTWSlotScreen::class.java.name,
             FTWRulesScreen::class.java.name,
             FTWSettingsScreen::class.java.name,
         ).onEach { sn ->

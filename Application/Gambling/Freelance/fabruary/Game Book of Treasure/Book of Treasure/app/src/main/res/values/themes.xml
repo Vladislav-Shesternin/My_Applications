@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.BookOfTreasure" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/matrix</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.BookOfTreasure" parent="Base.Theme.BookOfTreasure" />
+</resources>

@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CountryBirds" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/background</item>
+        <item name="android:navigationBarColor">@color/green</item>
+    </style>
+
+    <style name="Theme.CountryBirds" parent="Base.Theme.CountryBirds" />
+</resources>

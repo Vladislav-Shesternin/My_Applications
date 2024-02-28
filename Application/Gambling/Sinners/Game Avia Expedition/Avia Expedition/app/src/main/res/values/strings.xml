@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Avia Expedition</string>
+    <string name="facebook_app_id">632588328992679</string>
+    <string name="facebook_client_token">f5f2efc1e3670858ed5fa9c9360ee3a9</string>
 </resources>

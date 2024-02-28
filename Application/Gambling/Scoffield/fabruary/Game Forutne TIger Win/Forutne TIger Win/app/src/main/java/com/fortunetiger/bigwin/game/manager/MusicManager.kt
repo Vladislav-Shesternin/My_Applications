@@ -17,20 +17,7 @@ class MusicManager(var assetManager: AssetManager) {
     }
 
     enum class EnumMusic(val data: MusicData) {
-        MUSIC(MusicData("music/cinematic-adventure-alive.ogg")),
-        SUSPECT(MusicData("music/suspect.ogg")),
-    }
-
-    enum class CarnavalCatMusic(val data: MusicData) {
-        MUSIC(MusicData("music/Carnaval Cat/sakura-meditate-beat.ogg")),
-    }
-
-    enum class TreasureSnipesMusic(val data: MusicData) {
-        MUSIC(MusicData("music/Treasure Snipes/orchestral-epic-adventure.ogg")),
-    }
-
-    enum class SweetBonanzaMusic(val data: MusicData) {
-        MUSIC(MusicData("music/Sweet Bonanza/fun-kids-playful-comic-carefree-game-happy.ogg")),
+        MUSIC(MusicData("music/music.ogg")),
     }
 
     data class MusicData(

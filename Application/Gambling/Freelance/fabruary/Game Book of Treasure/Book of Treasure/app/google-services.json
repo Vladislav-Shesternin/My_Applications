@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "747840889647",
+    "project_id": "book-of-treasure-23a07",
+    "storage_bucket": "book-of-treasure-23a07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747840889647:android:56cda7511309d0af1377da",
+        "android_client_info": {
+          "package_name": "com.boo.koftre.sure.game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6gTDD3XqRD8PeuwO2hOV71a7mD7bash4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
