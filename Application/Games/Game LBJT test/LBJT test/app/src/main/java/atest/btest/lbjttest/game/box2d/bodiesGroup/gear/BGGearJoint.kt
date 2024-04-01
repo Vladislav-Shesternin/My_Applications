@@ -57,15 +57,15 @@ class BGGearJoint(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGr
     // ---------------------------------------------------
 
     private fun AdvancedStage.addTitleLbl() {
-//        addActors(aTitleDegreesLbl, aTitleMetersLbl)
-//        aTitleDegreesLbl.setBoundsStandart(966f, 397f, 146f, 36f)
-//        aTitleMetersLbl.setBoundsStandart(966f, 332f, 146f, 36f)
+        addActors(aTitleDegreesLbl, aTitleMetersLbl)
+        aTitleDegreesLbl.setBoundsStandart(966f, 397f, 146f, 36f)
+        aTitleMetersLbl.setBoundsStandart(966f, 332f, 146f, 36f)
     }
 
     private fun AdvancedStage.addValueLbl() {
-//        addActors(aDegreesLbl, aMetersLbl)
-//        aDegreesLbl.setBoundsStandart(1120f, 397f, 91f, 54f)
-//        aMetersLbl.setBoundsStandart(1120f, 328f, 91f, 54f)
+        addActors(aDegreesLbl, aMetersLbl)
+        aDegreesLbl.setBoundsStandart(1120f, 397f, 91f, 54f)
+        aMetersLbl.setBoundsStandart(1120f, 328f, 91f, 54f)
     }
 
     // ---------------------------------------------------
@@ -96,14 +96,14 @@ class BGGearJoint(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGr
             ratio = -1f
         })
 
-//        bgRevoluteJoint.bDynamicCircle.renderBlockArray.add(AbstractBody.RenderBlock {
-//            bgRevoluteJoint.jRevolute.joint?.run { jointAngle }.also { degree ->
-//                aDegreesLbl.label.setText("$degree")
-//            }
-//            bgPrismaticJoint.bDynamicHorizontal.body?.position?.x?.also { bx ->
-//                aMetersLbl.label.setText("${bx - (217f.toB2 / 2f)}")
-//            }
-//        })
+        bgRevoluteJoint.bDynamicCircle.renderBlockArray.add(AbstractBody.RenderBlock {
+            bgRevoluteJoint.jRevolute.joint?.run { jointAngle }.also { degree ->
+                aDegreesLbl.label.setText("$degree")
+            }
+            bgPrismaticJoint.bDynamicHorizontal.body?.position?.x?.also { bx ->
+                aMetersLbl.label.setText("${bx - (217f.toB2 / 2f)}")
+            }
+        })
     }
 
 }

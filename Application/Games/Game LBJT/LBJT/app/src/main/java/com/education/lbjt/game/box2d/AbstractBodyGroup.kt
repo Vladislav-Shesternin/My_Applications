@@ -1,14 +1,19 @@
 package com.education.lbjt.game.box2d
 
+import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.physics.box2d.Body
 import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
+import com.badlogic.gdx.physics.box2d.joints.WeldJointDef
 import com.badlogic.gdx.utils.Disposable
-import com.education.lbjt.game.utils.*
+import com.education.lbjt.game.utils.SizeStandardizer
 import com.education.lbjt.game.utils.actor.setBounds
 import com.education.lbjt.game.utils.advanced.AdvancedBox2dScreen
 import com.education.lbjt.game.utils.advanced.AdvancedGroup
+import com.education.lbjt.game.utils.disposeAll
+import com.education.lbjt.game.utils.toB2
+import com.education.lbjt.game.utils.toUI
 import com.education.lbjt.util.cancelCoroutinesAll
 import com.education.lbjt.util.log
 import kotlinx.coroutines.CoroutineScope
@@ -27,8 +32,8 @@ abstract class AbstractBodyGroup: Destroyable {
     val actorList get() = _actorList.toList()
 
     private val standardizer = SizeStandardizer()
-    val Vector2.toStandart get() = standardizer.scope { toStandart }
-    val Float.toStandart   get() = standardizer.scope { toStandart }
+    val Vector2.toStandartBG get() = standardizer.scope { toStandart }
+    val Float.toStandartBG   get() = standardizer.scope { toStandart }
 
     var coroutine: CoroutineScope? = null
         private set
@@ -41,7 +46,7 @@ abstract class AbstractBodyGroup: Destroyable {
     private val tmpAnchorA   = Vector2()
     private val tmpAnchorB   = Vector2()
 
-    val colorJoint = GameColor.joint.cpy()
+    val colorJoint = Color.BLUE.cpy() //GameColor.joint.cpy()
 
     open fun create(x: Float, y: Float, w: Float, h: Float) {
         position.set(x,y)
@@ -61,7 +66,7 @@ abstract class AbstractBodyGroup: Destroyable {
     }
 
     fun createBody(body: AbstractBody, pos: Vector2, size: Vector2) {
-        body.create(position.cpy().add(pos.toStandart), size.toStandart)
+        body.create(position.cpy().add(pos.toStandartBG), size.toStandartBG)
         _bodyList.add(body)
         body.actor?.let { _actorList.add(it) }
     }
@@ -75,8 +80,8 @@ abstract class AbstractBodyGroup: Destroyable {
     }
 
     fun createBodyGroup(bodyGroup: AbstractBodyGroup, pos: Vector2, size: Vector2) {
-        val resultPosition = position.cpy().add(pos.toStandart)
-        val resultSize     = size.toStandart
+        val resultPosition = position.cpy().add(pos.toStandartBG)
+        val resultSize     = size.toStandartBG
 
         bodyGroup.create(resultPosition.x, resultPosition.y, resultSize.x, resultSize.y)
         destroyableSet.add(bodyGroup)
@@ -86,10 +91,10 @@ abstract class AbstractBodyGroup: Destroyable {
         createBodyGroup(bodyGroup, Vector2(x, y), Vector2(w, h))
     }
 
-    protected fun Vector2.subCenter(body: Body): Vector2 = toStandart.toB2.sub((body.userData as AbstractBody).center)
+    protected fun Vector2.subCenter(body: Body): Vector2 = toStandartBG.toB2.sub((body.userData as AbstractBody).center)
 
-    protected fun AdvancedGroup.setBoundsStandart(x: Float, y: Float, width: Float, height: Float) {
-        setBounds(position.cpy().add(Vector2(x,y).toStandart), Vector2(width, height).toStandart)
+    protected fun AdvancedGroup.setBoundsStandartBG(x: Float, y: Float, width: Float, height: Float) {
+        setBounds(position.cpy().add(Vector2(x,y).toStandartBG), Vector2(width, height).toStandartBG)
         _actorList.add(this)
     }
 
@@ -103,7 +108,7 @@ abstract class AbstractBodyGroup: Destroyable {
         screenBox2d.drawerUtil.drawer.line(
             tmpPositionA.set(bodyA.body?.position).add(tmpAnchorA.set(anchorA).subCenter(bodyA.body!!)).toUI,
             tmpPositionB.set(bodyB.body?.position).add(tmpAnchorB.set(anchorB).subCenter(bodyB.body!!)).toUI,
-            colorJoint.apply { a = alpha }, JOINT_WIDTH
+            colorJoint.apply { a = alpha }, 1f
         )
     }
 

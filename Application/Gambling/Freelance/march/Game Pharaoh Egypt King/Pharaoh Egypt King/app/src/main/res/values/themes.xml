@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.PharaohEgyptKing" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/piramida</item>
+        <item name="android:navigationBarColor">@color/yellow</item>
+    </style>
+
+    <style name="Theme.PharaohEgyptKing" parent="Base.Theme.PharaohEgyptKing" />
+</resources>

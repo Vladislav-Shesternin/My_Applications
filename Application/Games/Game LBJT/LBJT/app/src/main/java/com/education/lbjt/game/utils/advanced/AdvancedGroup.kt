@@ -65,7 +65,6 @@ abstract class AdvancedGroup : WidgetGroup(), Disposable {
             coroutine = null
 
             isDisposed = true
-            remove()
         }
     }
 

@@ -69,6 +69,8 @@ abstract class AbstractBody: Destroyable {
 
     override fun destroy() {
         if (body != null) {
+            id = BodyId.NONE
+
             cancelCoroutinesAll(coroutine)
             coroutine = null
 

@@ -1,0 +1,54 @@
+all.png
+size: 1022, 928
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+control
+  rotate: false
+  xy: 99, 1
+  size: 153, 153
+  orig: 153, 153
+  offset: 0, 0
+  index: -1
+coup
+  rotate: false
+  xy: 408, 245
+  size: 596, 675
+  orig: 596, 675
+  offset: 0, 0
+  index: -1
+enemy
+  rotate: false
+  xy: 1, 1
+  size: 97, 84
+  orig: 97, 84
+  offset: 0, 0
+  index: -1
+kangaroo
+  rotate: false
+  xy: 253, 1
+  size: 177, 243
+  orig: 177, 243
+  offset: 0, 0
+  index: -1
+line
+  rotate: false
+  xy: 1, 921
+  size: 1020, 6
+  orig: 1020, 6
+  offset: 0, 0
+  index: -1
+panel
+  rotate: false
+  xy: 431, 1
+  size: 286, 38
+  orig: 286, 38
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 1, 245
+  size: 406, 402
+  orig: 406, 402
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "810591989836",
+    "project_id": "egyptian-stories-deb16",
+    "storage_bucket": "egyptian-stories-deb16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810591989836:android:fdbc8bba40348575be04e9",
+        "android_client_info": {
+          "package_name": "com.egypt.tian.sto.game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH8gqYd9kq3v8KmPCZin6VTKFET56hJI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

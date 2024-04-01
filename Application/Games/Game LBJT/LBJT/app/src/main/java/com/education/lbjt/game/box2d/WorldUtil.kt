@@ -41,6 +41,7 @@ class WorldUtil: Disposable {
         cancelCoroutinesAll(coroutine)
         world.bodies().map { it.userData as AbstractBody }.destroyAll()
         world.dispose()
+        debugRenderer.dispose()
     }
 
     fun update(deltaTime: Float) {

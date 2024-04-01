@@ -1,0 +1,110 @@
+alas.png
+size: 1848, 870
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bigaras
+  rotate: false
+  xy: 537, 327
+  size: 334, 334
+  orig: 334, 334
+  offset: 0, 0
+  index: -1
+bl_pink
+  rotate: false
+  xy: 1511, 121
+  size: 205, 205
+  orig: 205, 205
+  offset: 0, 0
+  index: -1
+bl_yellow
+  rotate: false
+  xy: 1, 327
+  size: 205, 206
+  orig: 205, 206
+  offset: 0, 0
+  index: -1
+coin
+  rotate: false
+  xy: 1, 1
+  size: 62, 81
+  orig: 62, 81
+  offset: 0, 0
+  index: -1
+crokl
+  rotate: false
+  xy: 207, 327
+  size: 329, 329
+  orig: 329, 329
+  offset: 0, 0
+  index: -1
+culke
+  rotate: false
+  xy: 254, 1
+  size: 302, 108
+  orig: 302, 108
+  offset: 0, 0
+  index: -1
+kars
+  rotate: false
+  xy: 64, 1
+  size: 88, 88
+  orig: 88, 88
+  offset: 0, 0
+  index: -1
+knipko
+  rotate: false
+  xy: 1153, 327
+  size: 694, 542
+  orig: 694, 542
+  offset: 0, 0
+  index: -1
+kvadr
+  rotate: false
+  xy: 872, 327
+  size: 280, 420
+  orig: 280, 420
+  offset: 0, 0
+  index: -1
+luna
+  rotate: false
+  xy: 1137, 121
+  size: 184, 175
+  orig: 184, 175
+  offset: 0, 0
+  index: -1
+podarok
+  rotate: false
+  xy: 1322, 121
+  size: 188, 188
+  orig: 188, 188
+  offset: 0, 0
+  index: -1
+sokulele
+  rotate: false
+  xy: 557, 1
+  size: 1036, 119
+  orig: 1036, 119
+  offset: 0, 0
+  index: -1
+wita
+  rotate: false
+  xy: 153, 1
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+xersers
+  rotate: false
+  xy: 1, 121
+  size: 964, 133
+  orig: 964, 133
+  offset: 0, 0
+  index: -1
+xrestiv
+  rotate: false
+  xy: 966, 121
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1

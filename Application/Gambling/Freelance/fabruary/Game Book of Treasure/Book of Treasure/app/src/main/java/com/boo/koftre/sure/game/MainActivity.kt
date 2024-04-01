@@ -16,6 +16,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.boo.koftre.sure.game.databinding.ActivityMainBinding
+import com.boo.koftre.sure.game.game.utils.TextureEmpty
 import com.boo.koftre.sure.game.util.AppsflyerUtil
 import com.boo.koftre.sure.game.util.Completer
 import com.boo.koftre.sure.game.util.DataStoreManager

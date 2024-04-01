@@ -16,7 +16,6 @@ class Balance(val coroutineScope: CoroutineScope) {
             balanceFlow.value = GameDataStoreManager.Balance.get() ?: 1000L
 
             balanceFlow.collect { balance ->
-                log("Balance: $balance")
                 if (balance != -1L) GameDataStoreManager.Balance.update { if (balance != it) balance else it }
             }
         }

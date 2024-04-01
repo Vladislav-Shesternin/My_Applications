@@ -34,12 +34,12 @@ class GearJointScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
     }
 
     override fun AdvancedStage.addActorsOnStageUI() {
-       // createBG_Borders()
+        createBG_Borders()
         createBG_GearJoint()
 
         stageUI.root.apply {
-            //addDegreesImg()
-            //addMetersImg()
+            addDegreesImg()
+            addMetersImg()
 
             animShow(TIME_ANIM_SCREEN_ALPHA)
         }

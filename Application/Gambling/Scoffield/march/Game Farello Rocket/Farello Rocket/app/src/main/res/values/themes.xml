@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.FarelloRocket" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/farello</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="Theme.FarelloRocket" parent="Base.Theme.FarelloRocket" />
+</resources>

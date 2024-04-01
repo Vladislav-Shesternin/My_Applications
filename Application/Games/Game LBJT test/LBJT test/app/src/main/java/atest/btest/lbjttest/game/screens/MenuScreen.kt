@@ -47,7 +47,7 @@ class MenuScreen(override val game: LibGDXGame) : AdvancedScreen() {
             setBounds(467f, 266f, 466f, 169f)
             setOnClickListener {
                 stageUI.root.animHide(TIME_ANIM_SCREEN_ALPHA) {
-                    game.navigationManager.navigate(FrictionJointScreen::class.java.name, MenuScreen::class.java.name)
+                    game.navigationManager.navigate(GearJointScreen::class.java.name, MenuScreen::class.java.name)
                 }
             }
         }

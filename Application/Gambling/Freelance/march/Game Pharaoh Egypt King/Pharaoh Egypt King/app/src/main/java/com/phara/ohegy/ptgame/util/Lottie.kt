@@ -1,0 +1,58 @@
+package com.phara.ohegy.ptgame.util
+
+import androidx.core.view.isVisible
+import com.phara.ohegy.ptgame.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancelChildren
+import kotlinx.coroutines.launch
+
+class Lottie(private val binding: ActivityMainBinding) {
+
+    private val coroutineLottie = CoroutineScope(Dispatchers.Main)
+
+    fun showLoader() {
+        coroutineLottie.launch {
+            binding.lorenco.apply {
+                if (isVisible.not()) {
+                    isVisible = true
+                    playAnimation()
+                }
+            }
+        }
+    }
+
+    fun hideLoader() {
+        coroutineLottie.launch {
+            binding.lorenco.apply {
+                if (isVisible) {
+                    isVisible = false
+                    coroutineLottie.coroutineContext.cancelChildren()
+                }
+            }
+        }
+    }
+
+    fun showNotInternet() {
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.initert.apply {
+                if (isVisible.not()) {
+                    isVisible = true
+                    playAnimation()
+                }
+            }
+        }
+    }
+
+    fun hideNotInternet() {
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.initert.apply {
+                if (isVisible) {
+                    isVisible = false
+                    cancelAnimation()
+                }
+            }
+        }
+    }
+
+}

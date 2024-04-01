@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "350557199705",
+    "project_id": "pharaoh-egypt-king-12bf0",
+    "storage_bucket": "pharaoh-egypt-king-12bf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350557199705:android:be43c0595bc4b270a04048",
+        "android_client_info": {
+          "package_name": "com.phara.ohegy.ptgame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRIBEB01U2uGZZhtC4QlUFxqTKpb-Gm5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

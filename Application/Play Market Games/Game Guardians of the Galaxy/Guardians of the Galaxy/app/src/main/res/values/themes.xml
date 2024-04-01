@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.GuardiansOfTheGalaxy" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/fonik</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="Theme.GuardiansOfTheGalaxy" parent="Base.Theme.GuardiansOfTheGalaxy" />
+</resources>

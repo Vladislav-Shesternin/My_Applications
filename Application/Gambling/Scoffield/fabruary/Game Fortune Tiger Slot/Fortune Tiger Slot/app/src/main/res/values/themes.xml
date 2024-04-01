@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.FortuneTigerSlot" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/main</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.FortuneTigerSlot" parent="Base.Theme.FortuneTigerSlot" />
+</resources>

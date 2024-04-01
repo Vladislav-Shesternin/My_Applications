@@ -1,0 +1,89 @@
+all.png
+size: 933, 1042
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 560, 1
+  size: 169, 294
+  orig: 169, 294
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 661, 296
+  size: 182, 366
+  orig: 182, 366
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 316, 296
+  size: 344, 350
+  orig: 344, 350
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 1, 296
+  size: 314, 334
+  orig: 314, 334
+  offset: 0, 0
+  index: -1
+b1
+  rotate: false
+  xy: 350, 1
+  size: 209, 283
+  orig: 209, 283
+  offset: 0, 0
+  index: -1
+b2
+  rotate: false
+  xy: 1, 663
+  size: 223, 378
+  orig: 223, 378
+  offset: 0, 0
+  index: -1
+b3
+  rotate: false
+  xy: 225, 663
+  size: 392, 378
+  orig: 392, 378
+  offset: 0, 0
+  index: -1
+b4
+  rotate: false
+  xy: 618, 663
+  size: 314, 378
+  orig: 314, 378
+  offset: 0, 0
+  index: -1
+back
+  rotate: false
+  xy: 111, 1
+  size: 104, 104
+  orig: 104, 104
+  offset: 0, 0
+  index: -1
+chain
+  rotate: false
+  xy: 1, 1
+  size: 6, 12
+  orig: 6, 12
+  offset: 0, 0
+  index: -1
+destroy
+  rotate: false
+  xy: 216, 1
+  size: 133, 217
+  orig: 133, 217
+  offset: 0, 0
+  index: -1
+stone
+  rotate: false
+  xy: 8, 1
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
