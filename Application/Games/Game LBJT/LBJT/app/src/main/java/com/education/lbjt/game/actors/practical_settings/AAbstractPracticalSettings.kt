@@ -60,6 +60,9 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
         private const val START_PERCENT_m5_0 = 50
         private const val ONE_PERCENT_m5_5 = 5f / 50f
 
+        private const val START_PERCENT_m2_0 = 50
+        private const val ONE_PERCENT_m2_2 = 2f / 50f
+
         private const val START_PERCENT_m100_0 = 50
         private const val ONE_PERCENT_m100_100 = 100f / 50f
 
@@ -269,7 +272,7 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
         var tmpValue = 0f
 
         progress.apply {
-            setProgressPercent(currentValue / 100f)
+            setProgressPercent(currentValue / ONE_PERCENT_0_10k)
             progressPercentFlow.collect { progress ->
                 runGDX {
                     tmpValue = progress * ONE_PERCENT_0_10k
@@ -311,7 +314,7 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
         var tmpValue = 0f
 
         progress.apply {
-            setProgressPercent(currentValue / 100f)
+            setProgressPercent(currentValue / ONE_PERCENT_0_1k)
             progressPercentFlow.collect { progress ->
                 runGDX {
                     tmpValue = progress * ONE_PERCENT_0_1k
@@ -341,6 +344,33 @@ abstract class AAbstractPracticalSettings(final override val screen: AdvancedScr
                         block(tmpValue)
                     } else {
                         tmpValue = (START_PERCENT_m5_0 - progress) * ONE_PERCENT_m5_5
+                        label.setText("-" + String.format("%.1f", tmpValue).replace(',', '.'))
+                        block(-tmpValue)
+                    }
+                }
+            }
+        }
+    }
+
+    suspend fun collectProgress_m2_2(currentValue: Float, progress: AProgressPractical, label: Label, block: (Float) -> Unit) {
+        var tmpValue = 0f
+
+        progress.apply {
+            tmpValue = if (currentValue >= 0) {
+                START_PERCENT_m2_0 + (currentValue / ONE_PERCENT_m2_2)
+            } else {
+                START_PERCENT_m2_0 - (currentValue.absoluteValue / ONE_PERCENT_m2_2)
+            }
+            setProgressPercent(tmpValue)
+
+            progressPercentFlow.collect { progress ->
+                runGDX {
+                    if (progress >= START_PERCENT_m2_0) {
+                        tmpValue = (progress - START_PERCENT_m2_0) * ONE_PERCENT_m2_2
+                        label.setText(String.format("%.1f", tmpValue).replace(',', '.'))
+                        block(tmpValue)
+                    } else {
+                        tmpValue = (START_PERCENT_m2_0 - progress) * ONE_PERCENT_m2_2
                         label.setText("-" + String.format("%.1f", tmpValue).replace(',', '.'))
                         block(-tmpValue)
                     }

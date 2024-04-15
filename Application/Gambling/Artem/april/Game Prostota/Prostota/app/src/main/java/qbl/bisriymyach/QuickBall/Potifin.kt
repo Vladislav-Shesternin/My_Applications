@@ -16,9 +16,9 @@ import kotlin.system.exitProcess
 class Potifin : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     private val coroutine = CoroutineScope(Dispatchers.Default)
-    private val onceExit  = vvavava()
+    private val onceExit = vvavava()
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     lateinit var lottie: lakki
 

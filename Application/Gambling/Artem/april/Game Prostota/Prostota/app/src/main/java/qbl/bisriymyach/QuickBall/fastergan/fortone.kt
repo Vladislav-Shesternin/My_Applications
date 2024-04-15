@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-class fortone(val zabuvsa: CoroutineScope) {
+class fortone(zabuvsa: CoroutineScope) {
 
     val kalim = MutableStateFlow(-1L)
 
@@ -13,12 +13,9 @@ class fortone(val zabuvsa: CoroutineScope) {
         zabuvsa.launch(Dispatchers.IO) {
             kalim.value = imporer.kava.get() ?: 1000L
 
-                          kalim.collect { balance ->
+            kalim.collect { balance ->
                 if (balance != -1L) imporer.kava.ubed { if (balance != it) balance else it }
-
-
-
-             }
+            }
         }
     }
 

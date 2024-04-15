@@ -7,6 +7,7 @@ import com.badlogic.gdx.physics.box2d.Joint
 import com.badlogic.gdx.physics.box2d.JointDef
 import com.badlogic.gdx.physics.box2d.joints.WeldJointDef
 import com.badlogic.gdx.utils.Disposable
+import com.education.lbjt.game.utils.GameColor
 import com.education.lbjt.game.utils.SizeStandardizer
 import com.education.lbjt.game.utils.actor.setBounds
 import com.education.lbjt.game.utils.advanced.AdvancedBox2dScreen
@@ -46,7 +47,7 @@ abstract class AbstractBodyGroup: Destroyable {
     private val tmpAnchorA   = Vector2()
     private val tmpAnchorB   = Vector2()
 
-    val colorJoint = Color.BLUE.cpy() //GameColor.joint.cpy()
+    val colorJoint = GameColor.joint.cpy()
 
     open fun create(x: Float, y: Float, w: Float, h: Float) {
         position.set(x,y)

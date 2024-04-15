@@ -11,6 +11,7 @@ import com.education.lbjt.game.screens.TutorialIntroductionScreen
 import com.education.lbjt.game.screens.TutorialsScreen
 import com.education.lbjt.game.screens.practicalScreen.Practical_JDistanceScreen
 import com.education.lbjt.game.screens.practicalScreen.Practical_JFrictionScreen
+import com.education.lbjt.game.screens.practicalScreen.Practical_JGearScreen
 import com.education.lbjt.game.screens.practicalScreen.Practical_JMouseScreen
 import com.education.lbjt.game.screens.practicalScreen.Practical_JPrismaticScreen
 import com.education.lbjt.game.screens.practicalScreen.Practical_JPulleyScreen
@@ -21,6 +22,7 @@ import com.education.lbjt.game.screens.practicalScreen.Practical_JWheelScreen
 import com.education.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JDistanceScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JFrictionScreen
+import com.education.lbjt.game.screens.tutorialsScreen.JGearScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JMouseScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JPrismaticScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JPulleyScreen
@@ -31,6 +33,7 @@ import com.education.lbjt.game.screens.tutorialsScreen.JWheelScreen
 import com.education.lbjt.game.screens.tutorialsScreen.WillBeLaterScreen
 import com.education.lbjt.game.utils.advanced.AdvancedScreen
 import com.education.lbjt.game.utils.runGDX
+import com.education.lbjt.game.screens.tutorialsScreen.JMotorScreen
 
 class NavigationManager(val game: LibGDXGame) {
 
@@ -80,6 +83,8 @@ class NavigationManager(val game: LibGDXGame) {
         JFrictionScreen         ::class.java.name -> JFrictionScreen(game)
         JRopeScreen             ::class.java.name -> JRopeScreen(game)
         JPulleyScreen           ::class.java.name -> JPulleyScreen(game)
+        JGearScreen             ::class.java.name -> JGearScreen(game)
+        JMotorScreen            ::class.java.name -> JMotorScreen(game)
 
         WillBeLaterScreen::class.java.name -> WillBeLaterScreen(game)
         // Practical Screens
@@ -92,6 +97,7 @@ class NavigationManager(val game: LibGDXGame) {
         Practical_JFrictionScreen ::class.java.name -> Practical_JFrictionScreen(game)
         Practical_JRopeScreen     ::class.java.name -> Practical_JRopeScreen(game)
         Practical_JPulleyScreen   ::class.java.name -> Practical_JPulleyScreen(game)
+        Practical_JGearScreen     ::class.java.name -> Practical_JGearScreen(game)
 
 
 

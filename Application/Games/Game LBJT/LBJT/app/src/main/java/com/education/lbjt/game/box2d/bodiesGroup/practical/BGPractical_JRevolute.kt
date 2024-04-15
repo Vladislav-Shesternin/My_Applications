@@ -113,7 +113,7 @@ class BGPractical_JRevolute(_screenBox2d: AdvancedBox2dScreen): AbstractBGPracti
 
     private fun AdvancedStage.addJointAngleLbl() {
         addActor(aJointAngleLbl)
-        aJointAngleLbl.setBoundsStandart(227f, 1037f, 246f, 42f)
+        aJointAngleLbl.setBoundsStandartBG(227f, 1037f, 246f, 42f)
     }
 
     // ---------------------------------------------------

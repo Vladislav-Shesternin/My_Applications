@@ -14,7 +14,7 @@ class ALongQuote_TypingLabel(
 ): AdvancedGroup() {
 
     private val lineImg    = Image(screen.drawerUtil.getRegion(Color.BLACK))
-    private val quoteLbl   = TypingLabel(textQuote, font)
+    val quoteLbl   = TypingLabel(textQuote, font)
 
     override fun addActorsOnGroup() {
         addQuoteLbl()

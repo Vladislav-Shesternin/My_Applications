@@ -621,4 +621,102 @@
         <item>[#d2e9cdff][@Inter_Regular]ratio — [#FF4949][@Inter_Bold]співвідношення довжини[#d2e9cdff][@Inter_Regular] між [#FF4949][@Inter_Bold]lengthA[#d2e9cdff][@Inter_Regular] та [#FF4949][@Inter_Bold]lengthB[#d2e9cdff][@Inter_Regular].</item>
     </string-array>
 
+    <!--JointGear-->
+    <string name="jgear_title_1">І так… Gear Joint</string>
+    <string name="jgear_title_2">Практика. Як створити Gear Joint?</string>
+
+    <string name="jgear_sub_title_1">GearJointDef налаштування:</string>
+    <string name="jgear_sub_title_2">RevoluteJoint з RevoluteJoint:</string>
+    <string name="jgear_sub_title_3">PrismaticJoint з PrismaticJoint:</string>
+    <string name="jgear_sub_title_4">RevoluteJoint з PrismaticJoint:</string>
+
+    <string name="jgear_text_1">[#d2e9cdff][@Inter_Medium]Gear joint — з\’єднання, призначене для з\’єднання двох з\’єднань разом, але існує 1 особливість для його створення, потрібні два існуючих обертових або призматичних з\’єднання (підійде будь-яка комбінація). Надані з\’єднання мають приєднувати динамічне тіло до статичного тіла.</string>
+    <string name="jgear_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. А тепер поговоримо про GearJointDef.</string>
+    <string name="jgear_text_3">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься з [#FF4949][@Inter_Bold]RevoluteJoint[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]PrismaticJoint[#d2e9cdff][@Inter_Medium] з\’єднаних GearJoint.</string>
+    <string name="jgear_text_4">[#d2e9cdff][@Inter_Medium]Створіть 2 з\'єднання: Revolute та Prismatic:</string>
+    <string name="jgear_text_5">[#d2e9cdff][@Inter_Medium]Для простоти розуміння [#FF4949][@Inter_Bold]розмістіть з\'єднання[#d2e9cdff][@Inter_Medium] як у відео вище.</string>
+    <string name="jgear_text_6">[#d2e9cdff][@Inter_Medium]Створіть GearJoint:</string>
+    <string name="jgear_text_7">[#FF4949][@Inter_Bold]bodyA[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Medium] — в них ми встановлюємо [#FF4949][@Inter_Bold]динамічне тіло[#d2e9cdff][@Inter_Medium] з [#FF4949][@Inter_Bold]RevoluteJoint[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]PrismaticJoint[#d2e9cdff][@Inter_Medium] (ті тіла, які будуть безпосередньо [#FF4949][@Inter_Bold]обертатися[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]рухатися[#d2e9cdff][@Inter_Medium]).</string>
+    <string name="jgear_text_8">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]joint1[#d2e9cdff][@Inter_Medium] | [#FF4949][@Inter_Bold]joint2[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jgear_text_9">[#d2e9cdff][@Inter_Medium]Ось і все, вже можна запускати програму і тіла будуть з\'єднанні.</string>
+    <string name="jgear_text_10">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]ratio[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jgear_text_11">[#d2e9cdff][@Inter_Medium]ratio — [#FF4949][@Inter_Bold]співвідношення[#d2e9cdff][@Inter_Medium] між [#FF4949][@Inter_Bold]joint1[#d2e9cdff][@Inter_Medium] та [#FF4949][@Inter_Bold]joint2[#d2e9cdff][@Inter_Medium] (за замовчуванням = [#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Medium]).</string>
+    <string name="jgear_text_12">[#d2e9cdff][@Inter_Medium]Коли ви встановлюєте значення для [#FF4949][@Inter_Bold]співвідношення[#d2e9cdff][@Inter_Medium], завжди думайте, що це значення для [#FF4949][@Inter_Bold]joint1[#d2e9cdff][@Inter_Medium], а для [#FF4949][@Inter_Bold]joint2 ratio = 1[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jgear_text_13">[#d2e9cdff][@Inter_Medium]Якщо у вас joint1 = RevoluteJoint і joint2 = RevoluteJoint.</string>
+    <string name="jgear_text_14">[#d2e9cdff][@Inter_Medium]Він працює так само, як RevoluteJoint з RevoluteJoint, тільки тут [#FF4949][@Inter_Bold]не оберти, а метри[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jgear_text_15">[#d2e9cdff][@Inter_Medium]Це те саме, що в нашому прикладі, але як розрахувати, скільки метрів пройде PrismaticJoint, якщо RevoluteJoint зробить 1 оберт?</string>
+    <string name="jgear_text_16">[#FF4949][@Inter_Bold]Все дуже просто[#d2e9cdff][@Inter_Medium], на скільки радіан поверне [#FF4949][@Inter_Bold]RevoluteJoint[#d2e9cdff][@Inter_Medium], стільки в метрах і пройде [#FF4949][@Inter_Bold]PrismaticJoint[#d2e9cdff][@Inter_Medium], і навпаки скільки метрів пройде [#FF4949][@Inter_Bold]PrismaticJoint[#d2e9cdff][@Inter_Medium] на стільки радіан і повернеться [#FF4949][@Inter_Bold]RevoluteJoint[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jgear_text_17">[#d2e9cdff][@Inter_Medium]Якщо вам потрібно [#FF4949][@Inter_Bold]змінити напрямок обертання[#d2e9cdff][@Inter_Medium] або [#FF4949][@Inter_Bold]руху[#d2e9cdff][@Inter_Medium], просто змініть знак [#FF4949][@Inter_Bold]ratio[#d2e9cdff][@Inter_Medium] = ([#FF4949][@Inter_Bold]-1 мінус[#d2e9cdff][@Inter_Medium] | [#FF4949][@Inter_Bold]+1 плюс[#d2e9cdff][@Inter_Medium]).</string>
+    <string name="jgear_text_18">[#d2e9cdff][@Inter_Medium]Для кращого розуміння, як ви бачите в прикладі, Я додав метри як чорні та білі куби, намалював градуси навколо RevoluteJoint і вивів значення [#FF4949][@Inter_Bold]RADIANS[#d2e9cdff][@Inter_Medium] і [#FF4949][@Inter_Bold]METERS[#d2e9cdff][@Inter_Medium] в окремих мітках (ви можете вивести їх у журналах).</string>
+    <string name="jgear_text_19">[#d2e9cdff][@Inter_Medium]Головне не забувати, що в [#FF4949][@Inter_Bold]Box2d все обертається в радіанах[#d2e9cdff][@Inter_Medium], а не в градусах, тому що я вперше виводив градуси і дуже заплутався, як це працює, а потім згадав, що все в радіанах і все стало очевидно.</string>
+
+    <string name="jgear_longquote_1">
+        [#d2e9cdff][@Inter_Medium]Я пояснював як створити RevoluteJoint в статті: [#FF4949][@Inter_Bold]{TRIGGER=revolute_joint}[_]LBJT: Revolute Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
+        \n\nЯ пояснював як створити PrismaticJoint в статті: [#FF4949][@Inter_Bold]{TRIGGER=prismatic_joint}[_]LBJT: Prismatic Joint[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
+    </string>
+    <string name="jgear_longquote_2">
+        [#FF4949][@Inter_Bold]Не забувайте[#d2e9cdff][@Inter_Medium], що всі кути в Box2d вимірюються в [#FF4949][@Inter_Bold]радіанах.
+        \n\nНе забувайте[#d2e9cdff][@Inter_Medium], що значення дистанції вказані в [#FF4949][@Inter_Bold]метрах[#d2e9cdff][@Inter_Medium].
+        \n\nПро радіани та одиниці вимірювання [#FF4949][@Inter_Bold]метри[#d2e9cdff][@Inter_Medium], [#FF4949][@Inter_Bold]кілограми[#d2e9cdff][@Inter_Medium], [#FF4949][@Inter_Bold]секунди[#d2e9cdff][@Inter_Medium] ([#FF4949][@Inter_Bold]MKS[#d2e9cdff][@Inter_Medium]) написано в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]LBJT: Сommon in Joints[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium].
+    </string>
+
+    <string-array name="jgear_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]joint1 — перше з\’єднання ([#FF4949][@Inter_Bold]RevoluteJoint або PrismaticJoint[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]joint2 — друге з\’єднання ([#FF4949][@Inter_Bold]RevoluteJoint або PrismaticJoin[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]ratio — [#FF4949][@Inter_Bold]відношення[#d2e9cdff][@Inter_Regular] між [#FF4949][@Inter_Bold]joint1[#d2e9cdff][@Inter_Regular] і [#FF4949][@Inter_Bold]joint2[#d2e9cdff][@Inter_Regular] (за замовчуванням = [#d2e9cdff][@Inter_Regular]1[#FF4949][@Inter_Bold]).</item>
+    </string-array>
+    <string-array name="jgear_arr_2">
+        <item>[#d2e9cdff][@Inter_Regular]Якщо [#FF4949][@Inter_Bold]ratio = 1[#d2e9cdff][@Inter_Regular], це означає, що коли [#FF4949][@Inter_Bold]joint1[#d2e9cdff][@Inter_Regular] робить [#FF4949][@Inter_Bold]1 оберт[#d2e9cdff][@Inter_Regular], то [#FF4949][@Inter_Bold]joint2[#d2e9cdff][@Inter_Regular] робить [#FF4949][@Inter_Bold]1 оберт[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]Якщо [#FF4949][@Inter_Bold]ratio = 0.5[#d2e9cdff][@Inter_Regular], це означає, що коли [#FF4949][@Inter_Bold]joint1[#d2e9cdff][@Inter_Regular] робить [#FF4949][@Inter_Bold]1 оберт[#d2e9cdff][@Inter_Regular], то [#FF4949][@Inter_Bold]joint2[#d2e9cdff][@Inter_Regular] робить у 2 рази більше, тобто [#FF4949][@Inter_Bold]2 оберта[#d2e9cdff][@Inter_Regular].</item>
+        <item>[#d2e9cdff][@Inter_Regular]Якщо [#FF4949][@Inter_Bold]ratio = 2[#d2e9cdff][@Inter_Regular], це означає, що коли [#FF4949][@Inter_Bold]joint1[#d2e9cdff][@Inter_Regular] робить [#FF4949][@Inter_Bold]1 оберт[#d2e9cdff][@Inter_Regular], то [#FF4949][@Inter_Bold]joint2[#d2e9cdff][@Inter_Regular] робить у 2 рази менше, тобто [#FF4949][@Inter_Bold]0.5 оберта[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+
+    <!--JointMotor-->
+    <string name="jmotor_title_1">І так… Motor Joint</string>
+    <string name="jmotor_title_2">Практика. Як створити Motor Joint?</string>
+
+    <string name="jmotor_sub_title_1">MotorJointDef налаштування:</string>
+
+    <string name="jmotor_text_1">[#d2e9cdff][@Inter_Medium]Motor joint — з\’єднання, призначене для з\’єднання двох тіл разом, яке використовується як [#FF4949][@Inter_Bold]магніт[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jmotor_text_2">[#d2e9cdff][@Inter_Medium]Спочатку нам потрібно налаштувати з\'єднання. Для цього кожен Joint має власну реалізацію JointDef. Про це можна прочитати в статті: [#FF4949][@Inter_Bold]{TRIGGER=click}[_]General information[_]{ENDTRIGGER}[#d2e9cdff][@Inter_Medium]. А тепер поговоримо про MotorJointDef.</string>
+    <string name="jmotor_text_3">[#d2e9cdff][@Inter_Medium]Наш приклад складатиметься з статичного кола ([#0094FF]синій[#d2e9cdff]) і динамічного кола ([#1A932C]зелений[#d2e9cdff]) з\’єднаних за допомогою MotorJoint.</string>
+    <string name="jmotor_text_4">[#d2e9cdff][@Inter_Medium]Створіть 2 тіла: [#FF4949][@Inter_Bold]статичне[#d2e9cdff][@Inter_Medium] коло та [#FF4949][@Inter_Bold]динамічне[#d2e9cdff][@Inter_Medium] коло:</string>
+    <string name="jmotor_text_5">[#d2e9cdff][@Inter_Medium]Створіть MotorJoint:</string>
+    <string name="jmotor_text_6">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmotor_text_7">[#d2e9cdff][@Inter_Medium]Як бачимо, [#FF4949][@Inter_Bold]maxForce[#d2e9cdff][@Inter_Medium] достатньо, щоб повернути bodyB у вихідне положення. Але він довго крутиться, щоб це виправити, потрібно налаштувати [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jmotor_text_8">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]maxTorque[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmotor_text_9">[#d2e9cdff][@Inter_Medium]Як бачите, тіло не відразу повертається у вихідне положення, [#FF4949][@Inter_Bold]тепер воно працює як прикріплене пружиною[#d2e9cdff][@Inter_Medium], щоб налаштувати жорсткість, так би мовити, цієї пружини, необхідно налаштувати [#FF4949][@Inter_Bold]correctionFactor[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jmotor_text_10">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]correctionFactor[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmotor_text_11">[#FF4949][@Inter_Bold]correctionFactor[#d2e9cdff][@Inter_Medium] має значення від 0 до 1 (за замовчуванням 0,3).</string>
+    <string name="jmotor_text_12">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]linearOffset[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmotor_text_13">[#d2e9cdff][@Inter_Medium]За замовчуванням [#FF4949][@Inter_Bold]bodyB[#d2e9cdff][@Inter_Medium] притягується до [#FF4949][@Inter_Bold]центру мас bodyA[#d2e9cdff][@Inter_Medium], щоб змінити це, потрібно налаштувати [#FF4949][@Inter_Bold]linearOffset[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jmotor_text_14">[#d2e9cdff][@Inter_Medium]Налаштовується так само, як [#FF4949][@Inter_Bold]localAnchorA[#d2e9cdff][@Inter_Medium].</string>
+    <string name="jmotor_text_15">[#d2e9cdff][@Inter_Medium]Налаштувати: [#FF4949][@Inter_Bold]angularOffset[#d2e9cdff][@Inter_Medium]:</string>
+    <string name="jmotor_text_16">[#FF4949][@Inter_Bold]angularOffset[#d2e9cdff][@Inter_Medium] — просто змінює кут початкового положення, до якого повернеться тіло.</string>
+    <string name="jmotor_text_17">[#d2e9cdff][@Inter_Medium]Щоб перетворити [#FF4949][@Inter_Bold]радіани в градуси[#d2e9cdff][@Inter_Medium], нам потрібно помножити радіани на нашу константу:</string>
+    <string name="jmotor_text_18">[#d2e9cdff][@Inter_Medium]Ось і все, друзі, серія статей LBJT підійшла до кінця, дякую, що дочитали до цього моменту, сподіваюся, це допомогло вам зрозуміти, як вони працюють і як використовувати Joints Box2d у LibGDX.</string>
+    <string name="jmotor_text_19">[#d2e9cdff][@Inter_Medium]Все буде Прекрасно.</string>
+
+    <string-array name="jmotor_arr_1">
+        <item>[#d2e9cdff][@Inter_Regular]linearOffset — подібно до localAnchorA, bodyB буде притягуватися до нього.</item>
+        <item>[#d2e9cdff][@Inter_Regular]angularOffset — подібно до referenceAngle, [#FF4949][@Inter_Bold]початковий кут[#d2e9cdff][@Inter_Regular] між bodyA та bodyB (за замовчуванням 0 | вимірюється в [#FF4949][@Inter_Bold]радіанах[#d2e9cdff][@Inter_Regular]).</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxForce — сила, необхідна для [#FF4949][@Inter_Bold]притягування[#d2e9cdff][@Inter_Regular] bodyB. Зазвичай виражається як (множник * маса * сила тяжіння) = (500 * bodyB.mass * gravity). Я особисто зазвичай роблю це для тестів (500 * bodyB.mass).</item>
+        <item>[#d2e9cdff][@Inter_Regular]maxTorque — [#FF4949][@Inter_Bold]крутний момент[#d2e9cdff][@Inter_Regular] необхідний для повернення у вихідне положення.</item>
+        <item>[#d2e9cdff][@Inter_Regular]correctionFactor — значення від якого залежить, як швидко bodyB повернеться у [#FF4949][@Inter_Bold]вихідне положення[#d2e9cdff][@Inter_Regular].</item>
+    </string-array>
+    <string-array name="jmotor_arr_2">
+        <item>[#d2e9cdff][@Inter_Regular]Якщо сила дуже мала, bodyB не притягуватиметься.</item>
+        <item>[#d2e9cdff][@Inter_Regular]Якщо сила більша за силу, зазначену в MouseJoint, ви не зможете зрушити bodyB з місця.</item>
+    </string-array>
+    <string-array name="jmotor_arr_3">
+        <item>[#d2e9cdff][@Inter_Regular]Якщо крутний момент дуже малий, bodyB не повернеться до початкового кута.</item>
+        <item>[#d2e9cdff][@Inter_Regular]Якщо крутний момент більший за силу, зазначену в MouseJoint, ви не зможете змінити кут bodyB.</item>
+    </string-array>
+    <string-array name="jmotor_arr_4">
+        <item>[#FF4949][@Inter_Bold]0[#d2e9cdff][@Inter_Regular] — зовсім не притягується до початкової позиції.</item>
+        <item>[#FF4949][@Inter_Bold]1[#d2e9cdff][@Inter_Regular] — довго притягується до вихідного положення, як м\'яка пружина.</item>
+        <item>[#FF4949][@Inter_Bold]&lt; 0[#d2e9cdff][@Inter_Regular] — нескінченно відштовхується від початкового положення як би однією стороною магніту.</item>
+        <item>[#FF4949][@Inter_Bold]&gt; 1[#d2e9cdff][@Inter_Regular] — дуже довго притягується до початкового положення, як дуже м\'яка пружина.</item>
+    </string-array>
+
 </resources>

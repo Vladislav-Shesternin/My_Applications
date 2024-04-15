@@ -79,7 +79,7 @@ class BGFrameLanguage(override val screenBox2d: AdvancedBox2dScreen): AbstractBo
     fun impulseFrameLanguage() {
         bFrameLanguage.body?.applyLinearImpulse(
             Vector2(0f, 300f),
-            position.cpy().add(Vector2(55f, 45f).toStandart).toB2,
+            position.cpy().add(Vector2(55f, 45f).toStandartBG).toB2,
             true
         )
     }

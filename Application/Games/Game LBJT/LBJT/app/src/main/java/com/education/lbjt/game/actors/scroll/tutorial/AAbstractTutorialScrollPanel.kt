@@ -169,8 +169,14 @@ abstract class AAbstractTutorialScrollPanel(final override val screen: AdvancedS
         })
     }
 
-    fun VerticalGroup.addLongQuote(stringId: Int) {
-        addActor(ALongQuote_TypingLabel(screen, languageUtil.getStringResource(stringId), Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont()).also { it.width = thisWidth })
+    fun VerticalGroup.addLongQuote(stringId: Int, triggerBlock: (event: String) -> Unit = {}) {
+        addActor(ALongQuote_TypingLabel(screen, languageUtil.getStringResource(stringId), Static.TypingLabelFontFamily.Inter_RegularBold_30.getFont()).also {
+            it.width = thisWidth
+
+            it.quoteLbl.typingListener = object : TypingAdapter() {
+                override fun event(event: String?) { triggerBlock(event ?: "") }
+            }
+        })
     }
 
     fun VerticalGroup.addBtnPanel(practicalScreenName: String) {

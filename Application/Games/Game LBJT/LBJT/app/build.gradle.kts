@@ -86,7 +86,7 @@ dependencies {
     implementation("space.earlygrey:shapedrawer:2.6.0")
     implementation("com.airbnb.android:lottie:6.2.0")
     implementation("com.github.tommyettinger:textratypist:0.9.0-a3")
-    implementation("com.google.android.gms:play-services-ads:22.6.0")
+//    implementation("com.google.android.gms:play-services-ads:22.6.0")
 
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("com.google.firebase:firebase-analytics-ktx")

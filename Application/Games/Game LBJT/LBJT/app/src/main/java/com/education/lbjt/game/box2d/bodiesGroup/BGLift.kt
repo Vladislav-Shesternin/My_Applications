@@ -136,10 +136,10 @@ class BGLift(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
             localAnchorA.set(Vector2(263f, 0f).subCenter(bodyA))
             localAnchorB.set(Vector2(33f, 160f).subCenter(bodyB))
 
-            groundAnchorA.set(position.cpy().add(Vector2(263f, 35f).toStandart).toB2)
-            groundAnchorB.set(position.cpy().add(Vector2(621f, 1153f).toStandart).toB2)
+            groundAnchorA.set(position.cpy().add(Vector2(263f, 35f).toStandartBG).toB2)
+            groundAnchorB.set(position.cpy().add(Vector2(621f, 1153f).toStandartBG).toB2)
 
-            lengthA = 1872f.toStandart.toB2
+            lengthA = 1872f.toStandartBG.toB2
             lengthB = 0f
 
             ratio = 1.885196f
@@ -167,8 +167,8 @@ class BGLift(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
             localAxisA.set(0f, 1f)
 
             enableLimit      = true
-            lowerTranslation = -1872f.toStandart.toB2
-            upperTranslation = 17.5f.toStandart.toB2
+            lowerTranslation = -1872f.toStandartBG.toB2
+            upperTranslation = 17.5f.toStandartBG.toB2
         })
         createJoint(jPrismaticLever, PrismaticJointDef().apply {
             bodyA = bStatic.body
@@ -214,7 +214,7 @@ class BGLift(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
             localAnchorB.set(Vector2(233f, 0f).subCenter(bodyB))
 
             enableLimit      = true
-            upperTranslation = 20f.toStandart.toB2
+            upperTranslation = 20f.toStandartBG.toB2
             lowerTranslation = 0f
 
             localAxisA.set(0f, 1f)

@@ -25,20 +25,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--AdMob-->
-        <!--Test ID-->
-        <!--ca-app-pub-3940256099942544~3347511713-->
-        <!--Original-->
-        <!--ca-app-pub-6757786625316217~5808553777-->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
-        <meta-data
-            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
-            android:value="true"/>
-        <meta-data
-            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
-            android:value="true"/>
+
+<!--        &lt;!&ndash;AdMob&ndash;&gt;-->
+<!--        &lt;!&ndash;Test ID&ndash;&gt;-->
+<!--        &lt;!&ndash;ca-app-pub-3940256099942544~3347511713&ndash;&gt;-->
+<!--        &lt;!&ndash;Original&ndash;&gt;-->
+<!--        &lt;!&ndash;ca-app-pub-6757786625316217~5808553777&ndash;&gt;-->
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
+<!--            android:value="ca-app-pub-3940256099942544~3347511713"/>-->
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"-->
+<!--            android:value="true"/>-->
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"-->
+<!--            android:value="true"/>-->
+
         <!--Emoji2 remove-->
         <provider
             android:name="androidx.startup.InitializationProvider"

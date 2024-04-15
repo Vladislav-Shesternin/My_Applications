@@ -4,13 +4,9 @@ import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
 import qbl.bisriymyach.QuickBall.fastergan.suchka
 
-open class aceton: ApplicationListener {
+open class aceton : ApplicationListener {
 
     private var screen: suchka? = null
-
-    // ---------------------------------------------------
-    // Override
-    // ---------------------------------------------------
 
     override fun create() {}
 
@@ -33,10 +29,6 @@ open class aceton: ApplicationListener {
     override fun dispose() {
         screen?.dispose()
     }
-
-    // ---------------------------------------------------
-    // Logic
-    // ---------------------------------------------------
 
     fun updateScreen(screen: suchka) {
         this.screen?.dispose()

@@ -24,10 +24,10 @@ class Sitriska(override val game: LibGDXGame) : suchka() {
     private val cbSnd = pipRen(this, pipRen.Static.Type.NO)
     private val cbMsc = pipRen(this, pipRen.Static.Type.NO)
 
-    private val cbBcgLeft  = pipRen(this, pipRen.Static.Type.BACKGROUND)
+    private val cbBcgLeft = pipRen(this, pipRen.Static.Type.BACKGROUND)
     private val cbBcgRight = pipRen(this, pipRen.Static.Type.BACKGROUND)
 
-    private val cbBallLeft  = pipRen(this, pipRen.Static.Type.BALL)
+    private val cbBallLeft = pipRen(this, pipRen.Static.Type.BALL)
     private val cbBallRight = pipRen(this, pipRen.Static.Type.BALL)
 
     override fun show() {
@@ -67,9 +67,9 @@ class Sitriska(override val game: LibGDXGame) : suchka() {
         cbMsc.apply {
             setBounds(694f, 1387f, 88f, 88f)
             setOnCheckListener {
-                if (it) MUSICALka?.pause() else MUSICALka?.play()
+                if (it) game.MUSICALka?.pause() else game.MUSICALka?.play()
             }
-            if (MUSICALka?.isPlaying == false) check(false)
+            if (game.MUSICALka?.isPlaying == false) check(false)
         }
     }
 
@@ -79,20 +79,21 @@ class Sitriska(override val game: LibGDXGame) : suchka() {
         cbBcgLeft.apply {
             setBounds(276f, 740f, 280f, 420f)
             setOnCheckListener {
-                if (it) qbl.bisriymyach.QuickBall.hotvils.Sitriska.BACG =
-                    qbl.bisriymyach.QuickBall.hotvils.Sitriska.Baraboli.LEft
+                if (it) BACG = Baraboli.LEft
             }
             checkBoxGroup = cbg
         }
         cbBcgRight.apply {
             setBounds(560f, 740f, 280f, 420f)
             setOnCheckListener {
-                if (it) qbl.bisriymyach.QuickBall.hotvils.Sitriska.BACG =
-                    qbl.bisriymyach.QuickBall.hotvils.Sitriska.Baraboli.Right
+                if (it) BACG =
+                    Baraboli.Right
             }
             checkBoxGroup = cbg
         }
-        if (qbl.bisriymyach.QuickBall.hotvils.Sitriska.BACG == qbl.bisriymyach.QuickBall.hotvils.Sitriska.Baraboli.LEft) cbBcgLeft.check(false) else cbBcgRight.check(false)
+        if (BACG == Baraboli.LEft) cbBcgLeft.check(
+            false
+        ) else cbBcgRight.check(false)
     }
 
     private fun zavtra_v_shskull.addCB_Bacll() {
@@ -101,20 +102,18 @@ class Sitriska(override val game: LibGDXGame) : suchka() {
         cbBallLeft.apply {
             setBounds(168f, 289f, 329f, 329f)
             setOnCheckListener {
-                if (it) qbl.bisriymyach.QuickBall.hotvils.Sitriska.boll =
-                    qbl.bisriymyach.QuickBall.hotvils.Sitriska.Baraboli.LEft
+                if (it) boll = Baraboli.LEft
             }
             checkBoxGroup = cbg
         }
         cbBallRight.apply {
             setBounds(614f, 289f, 329f, 329f)
             setOnCheckListener {
-                if (it) qbl.bisriymyach.QuickBall.hotvils.Sitriska.boll =
-                    qbl.bisriymyach.QuickBall.hotvils.Sitriska.Baraboli.Right
+                if (it) boll = Baraboli.Right
             }
             checkBoxGroup = cbg
         }
-        if (qbl.bisriymyach.QuickBall.hotvils.Sitriska.boll == qbl.bisriymyach.QuickBall.hotvils.Sitriska.Baraboli.LEft) cbBallLeft.check(false) else cbBallRight.check(false)
+        if (boll == Baraboli.LEft) cbBallLeft.check(false) else cbBallRight.check(false)
     }
 
     enum class Baraboli {

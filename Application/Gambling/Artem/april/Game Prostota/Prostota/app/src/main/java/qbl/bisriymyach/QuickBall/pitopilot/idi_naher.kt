@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas
 
 class idi_naher(var assetManager: AssetManager) {
 
-    var loadableAtlasList   = mutableListOf<AtlasData>()
+    var loadableAtlasList = mutableListOf<AtlasData>()
     var loadableTextureList = mutableListOf<TextureData>()
 
     fun loadAtlas() {
@@ -39,17 +39,16 @@ class idi_naher(var assetManager: AssetManager) {
         initTexture()
     }
 
-
     enum class EnumAtlas(val data: AtlasData) {
         Alas(AtlasData("alarmo/alas.atlas")),
     }
 
     enum class EnumTexture(val data: TextureData) {
-        FOREX    (TextureData("rutex/forex.png")),
-        POLILINE (TextureData("rutex/poliline.png")),
-        ROPENDE  (TextureData("rutex/ropende.png")),
-        SETERO   (TextureData("rutex/setero.png")),
-        TABEX    (TextureData("rutex/tabex.png")),
+        FOREX(TextureData("rutex/forex.png")),
+        POLILINE(TextureData("rutex/poliline.png")),
+        ROPENDE(TextureData("rutex/ropende.png")),
+        SETERO(TextureData("rutex/setero.png")),
+        TABEX(TextureData("rutex/tabex.png")),
         WINLANDIA(TextureData("rutex/winlandia.png")),
     }
 

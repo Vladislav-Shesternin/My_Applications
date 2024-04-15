@@ -130,7 +130,7 @@ class BGVolume(
 
     private fun AdvancedStage.addNameLbl() {
         addActor(aNameLbl)
-        aNameLbl.setBoundsStandart(0f, 565f, 314f, 65f)
+        aNameLbl.setBoundsStandartBG(0f, 565f, 314f, 65f)
     }
 
     // ---------------------------------------------------
@@ -160,12 +160,12 @@ class BGVolume(
             bodyA = bVolumeRodQuiet.body
             bodyB = bVolumeRodLouder.body
 
-            groundAnchorA.set(position.cpy().add(Vector2(74f, 440f).toStandart).toB2)
-            groundAnchorB.set(position.cpy().add(Vector2(239f, 440f).toStandart).toB2)
+            groundAnchorA.set(position.cpy().add(Vector2(74f, 440f).toStandartBG).toB2)
+            groundAnchorB.set(position.cpy().add(Vector2(239f, 440f).toStandartBG).toB2)
             localAnchorA.set(Vector2(23f, 23f).subCenter(bodyA))
             localAnchorB.set(Vector2(23f, 23f).subCenter(bodyB))
-            lengthA = 209f.toStandart.toB2
-            lengthB = 209f.toStandart.toB2
+            lengthA = 209f.toStandartBG.toB2
+            lengthB = 209f.toStandartBG.toB2
 
             bVolumeRodQuiet.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorA).toUI, bodyA.position.add(localAnchorA).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })
             bVolumeRodLouder.actor?.preDrawArray?.add(AdvancedGroup.Static.Drawer { alpha -> drawer.line(tmpVector2.set(groundAnchorB).toUI, bodyB.position.add(localAnchorB).toUI, colorJoint.apply { a = alpha }, JOINT_WIDTH) })

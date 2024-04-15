@@ -31,27 +31,31 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
     }
 
     private val fontParameter = doo()
-    private val font77        = fontGenerator_Jaldi.generateFont(fontParameter.setCharacters(
-        doo.CharType.ALL).setSize(77))
-    private val font46        = fontGenerator_Jaldi.generateFont(fontParameter.setCharacters(
-        doo.CharType.ALL).setSize(46))
+    private val font77 = fontGenerator_Jaldi.generateFont(
+        fontParameter.setCharacters(
+            doo.CharType.ALL
+        ).setSize(77)
+    )
+    private val font46 = fontGenerator_Jaldi.generateFont(
+        fontParameter.setCharacters(
+            doo.CharType.ALL
+        ).setSize(46)
+    )
 
-    // Actor
-    private val aClickHire   = Image(game.allAssets.culke)
+    private val aClickHire = Image(game.allAssets.culke)
     private val aPanelClicka = Image(game.allAssets.sokulele)
-    private val aLina        = Image(game.allAssets.luna)
-    private val aCion        = Image(game.allAssets.coin)
-    private val aXerestes    = Image(game.allAssets.xersers)
-    private val aBnceLbl     = Label("${game.iaiusjdf7.kalim.value}", Label.LabelStyle(font77, Color.WHITE))
-    private val aBillLbl     = Label(BLL_COUNT.toString(), Label.LabelStyle(font46, Color.WHITE))
+    private val aLina = Image(game.allAssets.luna)
+    private val aCion = Image(game.allAssets.coin)
+    private val aXerestes = Image(game.allAssets.xersers)
+    private val aBnceLbl =
+        Label("${game.iaiusjdf7.kalim.value}", Label.LabelStyle(font77, Color.WHITE))
+    private val aBillLbl = Label(BLL_COUNT.toString(), Label.LabelStyle(font46, Color.WHITE))
 
-    // Body
     private val bList15Circle = List(15) { Materasu(this) }
     private val bList12Circle = List(8) { Materasu(this) }
-    private val bListBall     = MutableList(BLL_COUNT) { bill(this) }
-    private val bListXXX      = List(6) { Did(this) }
+    private val bListBall = MutableList(BLL_COUNT) { bill(this) }
+    private val bListXXX = List(6) { Did(this) }
 
-    // Body Group
     private val bgBackground = bakugangbang(this)
 
     override fun show() {
@@ -59,10 +63,14 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
         setBackBackground(if (Sitriska.BACG == Sitriska.Baraboli.Right) game.loaderAssets.TABEX.mp489 else game.allAssets.FOREX.mp489)
         super.show()
         stageUI.root.zahovaqka(yatayaaaya) {
-            aClickHire.addAction(Actions.forever(Actions.sequence(
-                Actions.alpha(0.3f, 0.3f, Interpolation.sine),
-                Actions.alpha(1f, 0.3f, Interpolation.sine),
-            )))
+            aClickHire.addAction(
+                Actions.forever(
+                    Actions.sequence(
+                        Actions.alpha(0.3f, 0.3f, Interpolation.sine),
+                        Actions.alpha(1f, 0.3f, Interpolation.sine),
+                    )
+                )
+            )
         }
     }
 
@@ -94,9 +102,6 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
         }
     }
 
-    // ------------------------------------------------------------------------
-    // Add Actors
-    // ------------------------------------------------------------------------
     private fun zavtra_v_shskull.addBLbl() {
         addActor(aBnceLbl)
         aBnceLbl.setBounds(571f, 1695f, 144f, 130f)
@@ -121,13 +126,28 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
 
     private fun zavtra_v_shskull.addPanelClikarka() {
         val tmpVector = Vector2()
-        var isFirst   = true
+        var isFirst = true
 
         addActor(aPanelClicka)
         aPanelClicka.setBounds(22f, 1463f, 1036f, 119f)
         aPanelClicka.addListener(object : InputListener() {
-            override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean { return true }
-            override fun touchUp( event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int) {
+            override fun touchDown(
+                event: InputEvent?,
+                x: Float,
+                y: Float,
+                pointer: Int,
+                button: Int
+            ): Boolean {
+                return true
+            }
+
+            override fun touchUp(
+                event: InputEvent?,
+                x: Float,
+                y: Float,
+                pointer: Int,
+                button: Int
+            ) {
                 if (isFirst) {
                     isFirst = false
                     aClickHire.addAction(Actions.sequence(Actions.removeActor()))
@@ -135,11 +155,11 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
                 runGDX {
                     bListBall.removeFirstOrNull()?.also { ball ->
                         ball.setOriginalId()
-                                          ball.body?.apply {
-                                              setTransform(tmpVector.set(22f + x, 1463f + y).toB2, 0f)
-                                              gravityScale = 1f
-                                              applyForceToCenter(0f, 1f, true)
-                                          }
+                        ball.body?.apply {
+                            setTransform(tmpVector.set(22f + x, 1463f + y).toB2, 0f)
+                            gravityScale = 1f
+                            applyForceToCenter(0f, 1f, true)
+                        }
                         ball.isWork.set(true)
 
                         game.soundUtil.apply { play(clk) }
@@ -177,17 +197,9 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
         aXerestes.setBounds(58f, 112f, 964f, 133f)
     }
 
-    // ---------------------------------------------------
-    // Create Body Group
-    // ---------------------------------------------------
-
     private fun createBG_Boroda() {
         bgBackground.mackro(0f, 0f, liza, piza)
     }
-
-    // ---------------------------------------------------
-    // Create Body
-    // ---------------------------------------------------
 
     private fun createB_ListCircle_15() {
         var nx = 110f
@@ -232,14 +244,16 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
         bListBall.onEach { ball ->
             ball.apply {
                 id = Omred.BALL
-                collisionList.addAll(arrayOf(
-                    Omred.STATIC,
-                    Omred.BALL,
-                    Omred.x01,
-                    Omred.x05,
-                    Omred.x15,
-                    Omred.x10
-                ))
+                collisionList.addAll(
+                    arrayOf(
+                        Omred.STATIC,
+                        Omred.BALL,
+                        Omred.x01,
+                        Omred.x05,
+                        Omred.x15,
+                        Omred.x10
+                    )
+                )
                 setNoneId()
                 ronaldo.gravityScale = 0f
                 create(-100f, -100f, 80f, 80f)
@@ -267,16 +281,19 @@ class Palibresko(override val game: LibGDXGame) : Ebufren(Selomon_donzeruha()) {
                     if (enemy.isWork.getAndSet(false)) {
                         runGDX {
 
-                            when(win.id) {
+                            when (win.id) {
                                 Omred.x01 -> {
                                     game.iaiusjdf7.kalim.value -= 90
                                 }
+
                                 Omred.x05 -> {
                                     game.iaiusjdf7.kalim.value -= 50
                                 }
+
                                 Omred.x15 -> {
                                     game.iaiusjdf7.kalim.value += 50
                                 }
+
                                 Omred.x10 -> {
                                     game.iaiusjdf7.kalim.value += 1000
                                 }

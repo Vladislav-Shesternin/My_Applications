@@ -2,31 +2,24 @@ package com.education.lbjt
 
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.remoteconfig.ktx.remoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.education.lbjt.databinding.ActivityMainBinding
 import com.education.lbjt.game.data.User
 import com.education.lbjt.util.DataStoreManager
 import com.education.lbjt.util.Lottie
 import com.education.lbjt.util.Once
-import com.education.lbjt.util.admob.RewardedUtil
-import com.education.lbjt.util.internetConnection
 import com.education.lbjt.util.log
-import com.education.lbjt.util.setVisible
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import java.util.UUID
 import kotlin.system.exitProcess
@@ -38,8 +31,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     private lateinit var binding : ActivityMainBinding
     lateinit var lottie          : Lottie
-    lateinit var banner          : AdView
-    lateinit var rewardedUtil    : RewardedUtil
+    //lateinit var banner          : AdView
+    //lateinit var rewardedUtil    : RewardedUtil
 
     val user = User()
 
@@ -76,8 +69,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         lottie       = Lottie(binding)
-        banner       = binding.banner.apply { loadAd(AdRequest.Builder().build()) }
-        rewardedUtil = RewardedUtil(this, coroutine)
+        //banner       = binding.banner.apply { loadAd(AdRequest.Builder().build()) }
+        //rewardedUtil = RewardedUtil(this, coroutine)
     }
 
     // ---------------------------------------------------
@@ -85,12 +78,12 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     // ---------------------------------------------------
 
     private fun asyncCheckInternetConnection() {
-        coroutine.launch(Dispatchers.Main) {
-            while (isActive) {
-                delay(10_000)
-                banner.setVisible(if (internetConnection()) View.VISIBLE else View.GONE)
-            }
-        }
+//        coroutine.launch(Dispatchers.Main) {
+//            while (isActive) {
+//                delay(10_000)
+//                banner.setVisible(if (internetConnection()) View.VISIBLE else View.GONE)
+//            }
+//        }
     }
 
     private fun asyncGenerateUserId() {

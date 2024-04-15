@@ -18,8 +18,11 @@ import qbl.bisriymyach.QuickBall.fastergan.runGDX
 class Miski(override val game: LibGDXGame) : suchka() {
 
     private val fontParameter = doo()
-    private val font77        = fontGenerator_Jaldi.generateFont(fontParameter.setCharacters(
-        doo.CharType.ALL).setSize(77))
+    private val font77 = fontGenerator_Jaldi.generateFont(
+        fontParameter.setCharacters(
+            doo.CharType.ALL
+        ).setSize(77)
+    )
 
     private val muha = Image(game.allAssets.knipko)
 
@@ -30,6 +33,7 @@ class Miski(override val game: LibGDXGame) : suchka() {
         stageUI.root.zahovaqka(yatayaaaya)
 
     }
+
     private val cino = Image(game.allAssets.coin)
 
     override fun zavtra_v_shskull.addActorsOnStageUI() {
@@ -44,10 +48,10 @@ class Miski(override val game: LibGDXGame) : suchka() {
         podranuk.setBounds(853f, 1706f, 188f, 188f)
 
         podranuk.gol(game.soundUtil) {
-                podranuk.disable()
-                apd.zahovaqka(yatayaaaya) {
-                    apd.frop()
-                }
+            podranuk.disable()
+            apd.zahovaqka(yatayaaaya) {
+                apd.frop()
+            }
         }
 
         if (game.isBABAna) podranuk.check(false) else podranuk.disable()
@@ -78,7 +82,10 @@ class Miski(override val game: LibGDXGame) : suchka() {
             setBounds(413f, 1063f, 254f, 254f)
             gol(game.soundUtil) {
                 stageUI.root.hrom(yatayaaaya) {
-                    game.navigationManager.navigate(Palibresko::class.java.name, Miski::class.java.name)
+                    game.navigationManager.navigate(
+                        Palibresko::class.java.name,
+                        Miski::class.java.name
+                    )
                 }
             }
         }
@@ -86,7 +93,10 @@ class Miski(override val game: LibGDXGame) : suchka() {
             setBounds(193f, 775f, 170f, 170f)
             gol(game.soundUtil) {
                 stageUI.root.hrom(yatayaaaya) {
-                    game.navigationManager.navigate(Sitriska::class.java.name, Miski::class.java.name)
+                    game.navigationManager.navigate(
+                        Sitriska::class.java.name,
+                        Miski::class.java.name
+                    )
                 }
             }
         }

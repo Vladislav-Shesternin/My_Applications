@@ -8,11 +8,10 @@ class zizi {
     private var standart = 1f
 
     val Vector2.toStandart get() = this.divOr0(standart)
-    val Float.toStandart   get() = this.divOr0(standart)
 
     fun standardize(standartW: Float, newW: Float) {
         standart = standartW / newW
     }
 
-    inline fun<T> scope(block: zizi.() -> T) = block(this)
+    inline fun <T> scope(block: zizi.() -> T) = block(this)
 }

@@ -13,50 +13,42 @@ import qbl.bisriymyach.QuickBall.tidams.cancelCoroutinesAll
 import qbl.bisriymyach.QuickBall.tidams.log
 import qbl.bisriymyach.QuickBall.tidams.zizi
 
-abstract class Corona: Destroyable {
+abstract class Corona : Destroyable {
     abstract val screenBox2d: Ebufren
     abstract val standartW: Float
 
-    private val _bodyList  = mutableSetOf<Bibash>()
+    private val _bodyList = mutableSetOf<Bibash>()
 
 
     var coroutine: CoroutineScope? = null
         private set
 
-    val position  = Vector2()
-    val size      = Vector2()
+    val position = Vector2()
+    val size = Vector2()
 
 
     open fun mackro(x: Float, y: Float, w: Float, h: Float) {
-        position.set(x,y)
-        size.set(w,h)
+        position.set(x, y)
+        size.set(w, h)
 
         coroutine = CoroutineScope(Dispatchers.Default)
         standardizer.standardize(standartW, w)
     }
+
     private val _actorList = mutableSetOf<Oi_oi_uoi>()
-    val disposableSet      = mutableSetOf<Disposable>()
-    val destroyableSet     = mutableSetOf<Destroyable>()
+    val disposableSet = mutableSetOf<Disposable>()
+    val destroyableSet = mutableSetOf<Destroyable>()
 
 
     private val standardizer = zizi()
     val Vector2.toStandartBG get() = standardizer.scope { toStandart }
     override fun dodo() {
         log("destroy: ${this::class.java.name.substringAfterLast('.')}")
-                                    cancelCoroutinesAll(coroutine)
+        cancelCoroutinesAll(coroutine)
         disposableSet.hshshshJ()
         destroyableSet.destroyAll()
 
-
-
-
-
-
-
-
-
-
-                                    _bodyList.destroyAll()
+        _bodyList.destroyAll()
         _actorList.hshshshJ()
     }
 
@@ -69,7 +61,6 @@ abstract class Corona: Destroyable {
     fun createBody(body: Bibash, x: Float, y: Float, w: Float, h: Float) {
         createBody(body, Vector2(x, y), Vector2(w, h))
     }
-
 
 
 }

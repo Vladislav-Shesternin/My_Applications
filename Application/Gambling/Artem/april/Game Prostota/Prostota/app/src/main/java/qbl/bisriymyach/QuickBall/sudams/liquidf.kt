@@ -11,10 +11,14 @@ import qbl.bisriymyach.QuickBall.LibGDXGame
 
 class liquidf : AndroidFragmentApplication() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val conf = AndroidApplicationConfiguration().apply {
             a = 8
-                                   useAccelerometer = false
+            useAccelerometer = false
             useCompass = false
         }
 

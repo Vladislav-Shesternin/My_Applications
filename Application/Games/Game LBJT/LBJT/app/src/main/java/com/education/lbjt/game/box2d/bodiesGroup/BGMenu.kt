@@ -152,7 +152,7 @@ class BGMenu(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGroup()
             localAnchorB.set(_anchorB.subCenter(bodyB))
             collideConnected = true
 
-            length       = _length.toStandart.toB2
+            length       = _length.toStandartBG.toB2
             frequencyHz  = 1.7f
             dampingRatio = 0.6f
         })

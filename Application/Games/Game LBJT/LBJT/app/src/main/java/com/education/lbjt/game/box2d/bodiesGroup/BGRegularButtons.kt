@@ -97,7 +97,7 @@ class BGRegularButtons(override val screenBox2d: AdvancedBox2dScreen): AbstractB
                 localAnchorA.set(resultAnchorA.subCenter(bodyA))
                 localAnchorB.set(resultAnchorB.subCenter(bodyB))
 
-                length       = 369.5f.toStandart.toB2
+                length       = 369.5f.toStandartBG.toB2
                 frequencyHz  = 9f
                 dampingRatio = 2f
             })
@@ -112,7 +112,7 @@ class BGRegularButtons(override val screenBox2d: AdvancedBox2dScreen): AbstractB
             localAnchorA.set(Vector2(232f, 164f).subCenter(bodyA))
             localAnchorB.set(Vector2(232f, 55f).subCenter(bodyB))
 
-            length       = 109f.toStandart.toB2
+            length       = 109f.toStandartBG.toB2
             frequencyHz  = 9f
             dampingRatio = 2f
         })

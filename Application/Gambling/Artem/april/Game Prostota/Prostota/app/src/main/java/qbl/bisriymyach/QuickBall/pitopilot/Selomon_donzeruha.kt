@@ -15,16 +15,13 @@ import qbl.bisriymyach.QuickBall.tidams.log
 import qbl.bisriymyach.QuickBall.sudams.bodies
 import qbl.bisriymyach.QuickBall.sudams.destroyAll
 
-class Selomon_donzeruha: Disposable {
+class Selomon_donzeruha : Disposable {
 
     companion object {
         const val tta5 = 0f
 
 
-
-
-
-                                                                    const val tay = -15f
+        const val tay = -15f
         private const val setet: Float = 1f / 60f
 
         var yatay = false
@@ -32,13 +29,13 @@ class Selomon_donzeruha: Disposable {
 
     private var accumulatorTime = 0f
 
-    val contactFilter   = solistkagroupveagra()
+    val contactFilter = solistkagroupveagra()
     val contactListener = aga_ugu()
-    val tetriska         by lazy { World(Vector2(tta5, tay), true) }
+    val tetriska by lazy { World(Vector2(tta5, tay), true) }
 
     init {
         tetriska.setContactFilter(contactFilter)
-                                             tetriska.setContactListener(contactListener)
+        tetriska.setContactListener(contactListener)
     }
 
     override fun dispose() {
@@ -58,13 +55,14 @@ class Selomon_donzeruha: Disposable {
 
         tetriska.bodies().onEach { (it.userData as Bibash).render(deltaTime) }
     }
-    private val coroutine       = CoroutineScope(Dispatchers.Default)
+
+    private val coroutine = CoroutineScope(Dispatchers.Default)
 
     val debugRenderer by lazy { Box2DDebugRenderer(true, true, true, true, true, true) }
-                             val bodyEditor    by lazy { ButafoRia(Gdx.files.internal("poligonel/PhysicsData")) }
+    val bodyEditor by lazy { ButafoRia(Gdx.files.internal("poligonel/PhysicsData")) }
 
     fun bbeh(matrix4: Matrix4) {
-         if (yatay) debugRenderer.render(tetriska, matrix4)
+        if (yatay) debugRenderer.render(tetriska, matrix4)
     }
 
 }

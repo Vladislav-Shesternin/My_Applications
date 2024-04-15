@@ -33,20 +33,19 @@ class neirofemka(val game: LibGDXGame) {
         if (isBackStackEmpty()) exit() else game.updateScreen(getScreenByName(backStack.removeLast()))
     }
 
-
     fun exit() = runGDX { Gdx.app.exit() }
 
 
     fun isBackStackEmpty() = backStack.isEmpty()
 
-    private fun getScreenByName(name: String): suchka = when(name) {
-        LoaderScreen::class.java.name       -> LoaderScreen(game)
-        Miski  ::class.java.name            -> Miski(game)
-        Riski     ::class.java.name   -> Riski(game)
-        Sitriska  ::class.java.name   -> Sitriska(game)
-        Palibresko  ::class.java.name -> Palibresko(game)
+    private fun getScreenByName(name: String): suchka = when (name) {
+        LoaderScreen::class.java.name -> LoaderScreen(game)
+        Miski::class.java.name        -> Miski(game)
+        Riski::class.java.name        -> Riski(game)
+        Sitriska::class.java.name     -> Sitriska(game)
+        Palibresko::class.java.name   -> Palibresko(game)
 
-        else                                -> Miski(game)
+        else                          -> Miski(game)
     }
 
 }

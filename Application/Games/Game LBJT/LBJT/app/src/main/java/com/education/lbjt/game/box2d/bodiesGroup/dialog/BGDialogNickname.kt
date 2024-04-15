@@ -135,12 +135,12 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
 
     private fun AdvancedStage.addBackgroundImg() {
         addActor(aBackgroundImg)
-        aBackgroundImg.setBoundsStandart(0f, 0f, 700f, 1400f)
+        aBackgroundImg.setBoundsStandartBG(0f, 0f, 700f, 1400f)
     }
 
     private fun AdvancedStage.addIndicator() {
         addActor(aIndicator)
-        aIndicator.setBoundsStandart(320f, 870f, 60f, 60f)
+        aIndicator.setBoundsStandartBG(320f, 870f, 60f, 60f)
     }
 
     // ---------------------------------------------------
@@ -269,8 +269,8 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
             localAnchorB.set(_anchorB.subCenter(bodyB))
 
             enableLimit = true
-            upperTranslation = _upper.toStandart.toB2
-            lowerTranslation = _lower.toStandart.toB2
+            upperTranslation = _upper.toStandartBG.toB2
+            lowerTranslation = _lower.toStandartBG.toB2
         })
 
         createJoint(_jMotor, MotorJointDef().apply {
@@ -292,7 +292,7 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
     private fun upDialogNickname() {
         bStatic.body?.apply {
             runGDX {
-                setTransform(position.add(Vector2(0f, 207f).toStandart.toB2), 0f)
+                setTransform(position.add(Vector2(0f, 207f).toStandartBG.toB2), 0f)
                 bDialogNickname.body?.apply { applyForce(Vector2(0f, 10f), worldCenter, true) }
             }
         }
@@ -301,7 +301,7 @@ class BGDialogNickname(override val screenBox2d: AdvancedBox2dScreen): AbstractB
     private fun downDialogNickname() {
         bStatic.body?.apply {
             runGDX {
-                setTransform(position.add(Vector2(0f, -207f).toStandart.toB2), 0f)
+                setTransform(position.add(Vector2(0f, -207f).toStandartBG.toB2), 0f)
                 bDialogNickname.body?.apply { applyForce(Vector2(0f, -10f), worldCenter, true) }
             }
         }

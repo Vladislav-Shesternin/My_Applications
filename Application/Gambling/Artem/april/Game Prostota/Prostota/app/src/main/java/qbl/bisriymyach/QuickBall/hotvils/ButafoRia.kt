@@ -9,34 +9,18 @@ import com.badlogic.gdx.physics.box2d.PolygonShape
 import com.badlogic.gdx.utils.JsonReader
 import com.badlogic.gdx.utils.JsonValue
 
-class ButafoRia {
+class ButafoRia(file: FileHandle?) {
 
     val internalModel: Model
 
     private val vectorPool: MutableList<Vector2?> = ArrayList()
 
 
-    // -------------------------------------------------------------------------
-    // Constructors
-    // -------------------------------------------------------------------------
-    constructor(file: FileHandle?) {
-        if (file == null) throw NullPointerException("file is null")
-        internalModel = readJson(file.readString())
-    }
-
     private val polygonShape = PolygonShape()
-    private val circleShape  = CircleShape()
-
-    constructor(str: String?) {
-        if (str == null) throw NullPointerException("str is null")
-        internalModel = readJson(str)
-    }
-
-    // -------------------------------------------------------------------------
-    // Public API
-    // -------------------------------------------------------------------------
+    private val circleShape = CircleShape()
     fun attachFixture(body: Body, name: String, fd: FixtureDef, scale: Float = 1f) {
-        val rbModel = internalModel.rigidBodies[name] ?: throw RuntimeException("Name '$name' was not found.")
+        val rbModel =
+            internalModel.rigidBodies[name] ?: throw RuntimeException("Name '$name' was not found.")
         val origin = Vector2().set(rbModel.origin).scl(scale)
         run {
             var i = 0
@@ -80,19 +64,12 @@ class ButafoRia {
         }
     }
 
-    fun getImagePath(name: String): String? {
-        val rbModel = internalModel.rigidBodies[name] ?: throw RuntimeException("Name '$name' was not found.")
-        return rbModel.imagePath
-    }
-
     fun getOrigin(name: String, scale: Float = 1f): Vector2 {
-        val rbModel = internalModel.rigidBodies[name] ?: throw RuntimeException("Name '$name' was not found.")
+        val rbModel =
+            internalModel.rigidBodies[name] ?: throw RuntimeException("Name '$name' was not found.")
         return Vector2(rbModel.origin).scl(scale)
     }
 
-    // -------------------------------------------------------------------------
-    // Json Models
-    // -------------------------------------------------------------------------
     class Model {
         val rigidBodies: MutableMap<String?, RigidBodyModel> = HashMap()
     }
@@ -127,9 +104,6 @@ class ButafoRia {
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Json reading process
-    // -------------------------------------------------------------------------
     private fun readJson(str: String): Model {
         val m = Model()
         val map = JsonReader().parse(str)
@@ -150,7 +124,6 @@ class ButafoRia {
         rbModel.origin.x = originElem.getFloat("x")
         rbModel.origin.y = originElem.getFloat("y")
 
-        // polygons
         var polygonsElem = bodyElem.getChild("polygons")
         while (polygonsElem != null) {
             val polygon = PolygonModel()
@@ -166,7 +139,6 @@ class ButafoRia {
             polygonsElem = polygonsElem.next()
         }
 
-        // circles
         var circleElem = bodyElem.getChild("circles")
         while (circleElem != null) {
             val circle = CircleModel()
@@ -179,15 +151,17 @@ class ButafoRia {
         return rbModel
     }
 
-    // -------------------------------------------------------------------------
-    // Helpers
-    // -------------------------------------------------------------------------
     private fun newVec(): Vector2 {
         return if (vectorPool.isEmpty()) Vector2() else vectorPool.removeAt(0)!!
     }
 
     private fun free(v: Vector2?) {
         vectorPool.add(v)
+    }
+
+    init {
+        if (file == null) throw NullPointerException("file is null")
+        internalModel = readJson(file.readString())
     }
 
 }

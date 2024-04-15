@@ -10,80 +10,30 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.first
 import qbl.bisriymyach.QuickBall.hotvils.kalimatronika
 
-object imporer: IdiNaherOchkolupGuglovski() {
-    override val Context.dataStore:
+object imporer : IdiNaherOchkolupGuglovski() {
+    override val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "DataStore")
 
-                    DataStore<Preferences> by preferencesDataStore(name = "DataStore")
-
-
-
-    object kava: Sasa<Long>() {
+    object kava : Sasa<Long>() {
         override val key = longPreferencesKey("balance")
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    object Date: Sasa<String>() {
+    object Date : Sasa<String>() {
         override val key = stringPreferencesKey("date")
     }
 
 }
 
 abstract class IdiNaherOchkolupGuglovski {
-    abstract val Context.dataStore
-
-
-
-                    : DataStore<Preferences>
-
-
+    abstract val Context.dataStore: DataStore<Preferences>
 
     abstract inner class Sasa<T> {
         abstract val key: Preferences.Key<T>
-
-        open suspend fun collect(block: suspend (T?) -> Unit) {
-                                    kalimatronika.dataStore.data.collect { block(it[key]) }
-        }
 
         open suspend fun ubed(block: suspend (T?) -> T) {
             kalimatronika.dataStore.edit { it[key] = block(it[key]) }
         }
 
         open suspend fun get(): T? {
-                                                        return kalimatronika.dataStore.data.first()[key]
+            return kalimatronika.dataStore.data.first()[key]
         }
     }
 }

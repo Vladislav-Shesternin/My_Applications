@@ -2,6 +2,7 @@ package com.education.lbjt.game.screens.tutorialsScreen
 
 import com.education.lbjt.game.LibGDXGame
 import com.education.lbjt.game.actors.scroll.tutorial.AScrollPanel_JFriction
+import com.education.lbjt.game.actors.scroll.tutorial.AScrollPanel_JGear
 import com.education.lbjt.game.actors.scroll.tutorial.AScrollPanel_JPulley
 import com.education.lbjt.game.actors.scroll.tutorial.AScrollPanel_JRope
 import com.education.lbjt.game.manager.SpriteManager

@@ -98,13 +98,13 @@ abstract class AbstractBGPractical(final override val screenBox2d: AdvancedBox2d
 
     private fun AdvancedStage.addTitleLbl() {
         addActor(aTitleLbl)
-        aTitleLbl.setBoundsStandart(10f, 1159f, 680f, 61f)
+        aTitleLbl.setBoundsStandartBG(10f, 1159f, 680f, 61f)
         aTitleLbl.label.setAlignment(Align.center)
     }
 
     private fun AdvancedStage.addPracticalSettings() {
         addActor(aPracticalSettings)
-        aPracticalSettings.setBoundsStandart(0f, 0f, this@AbstractBGPractical.size.x, this@AbstractBGPractical.size.y)
+        aPracticalSettings.setBoundsStandartBG(0f, 0f, this@AbstractBGPractical.size.x, this@AbstractBGPractical.size.y)
     }
 
     // ---------------------------------------------------

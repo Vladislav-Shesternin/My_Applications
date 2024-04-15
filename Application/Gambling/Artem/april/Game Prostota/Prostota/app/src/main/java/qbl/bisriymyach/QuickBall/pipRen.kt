@@ -20,8 +20,12 @@ open class pipRen(
     type: Static.Type? = null,
 ) : Oi_oi_uoi() {
 
-    private val defaultImage by lazy {  if (type != null) Image(getStyleByType(type).default) else Image() }
-    private val checkImage   by lazy { (if (type != null) Image(getStyleByType(type).checked) else Image()).apply { isVisible = false } }
+    private val defaultImage by lazy { if (type != null) Image(getStyleByType(type).default) else Image() }
+    private val checkImage by lazy {
+        (if (type != null) Image(getStyleByType(type).checked) else Image()).apply {
+            isVisible = false
+        }
+    }
 
     private var onCheckBlock: (Boolean) -> Unit = { }
 
@@ -35,34 +39,33 @@ open class pipRen(
 
     override fun addActorsOnGroup() {
         addAndFillActors(getActors())
-                                                                 addListener(openerta())
+        addListener(openerta())
         ioaik987()
     }
 
     private fun getActors() = listOf<Actor>(
         defaultImage,
-
-
-
-
-
-
         checkImage,
     )
 
     private fun ioaik987() {
-        coroutine?.launch { checkFlow.collect {
-
-
-
-
-                isCheck -> if (isInvokeCheckBlock) onCheckBlock(isCheck) } }
+        coroutine?.launch {
+            checkFlow.collect { isCheck ->
+                if (isInvokeCheckBlock) onCheckBlock(isCheck)
+            }
+        }
     }
 
     open fun openerta() = object : InputListener() {
         var isWithin = false
 
-        override fun touchDown(event: InputEvent?, x: Float, y: Float, pointer: Int, button: Int): Boolean {
+        override fun touchDown(
+            event: InputEvent?,
+            x: Float,
+            y: Float,
+            pointer: Int,
+            button: Int
+        ): Boolean {
             screen.game.soundUtil.apply { play(clk) }
             touchDragged(event, x, y, pointer)
             return true
@@ -83,8 +86,6 @@ open class pipRen(
         }
     }
 
-
-
     fun check(isInvokeCheckBlock: Boolean = true) {
         this.isInvokeCheckBlock = isInvokeCheckBlock
 
@@ -94,7 +95,7 @@ open class pipRen(
         }
 
         defaultImage.isVisible = false
-        checkImage.isVisible   = true
+        checkImage.isVisible = true
 
         checkFlow.value = true
     }
@@ -103,60 +104,40 @@ open class pipRen(
         this.isInvokeCheckBlock = isInvokeCheckBlock
 
         defaultImage.isVisible = true
-        checkImage.isVisible   = false
+        checkImage.isVisible = false
 
         checkFlow.value = false
-    }
-
-    fun checkAndDisable() {
-        check()
-        disable()
-    }
-
-    fun uncheckAndEnabled() {
-        uncheck()
-        enable()
-    }
-
-    fun enable() {
-        touchable = Touchable.enabled
     }
 
     fun disable() {
         touchable = Touchable.disabled
     }
 
-    fun setStyle(style: Static.ACheckBoxStyle) {
-        defaultImage.drawable = TextureRegionDrawable(style.default)
-        checkImage.drawable   = TextureRegionDrawable(style.checked)
-    }
-
     fun setOnCheckListener(block: (Boolean) -> Unit) {
         onCheckBlock = block
     }
 
-    fun getStyleByType(type: Static.Type) = when(type) {
-        Static.Type.BALL       -> Static.ACheckBoxStyle(
+    fun getStyleByType(type: Static.Type) = when (type) {
+        Static.Type.BALL -> Static.ACheckBoxStyle(
             default = TextureEpidpty.mp489,
             checked = assets.crokl,
         )
+
         Static.Type.BACKGROUND -> Static.ACheckBoxStyle(
             default = TextureEpidpty.mp489,
             checked = assets.kvadr,
         )
-        Static.Type.NO         -> Static.ACheckBoxStyle(
+
+        Static.Type.NO -> Static.ACheckBoxStyle(
             default = TextureEpidpty.mp489,
             checked = assets.kars,
         )
-        Static.Type.PORD       -> Static.ACheckBoxStyle(
+
+        Static.Type.PORD -> Static.ACheckBoxStyle(
             default = TextureEpidpty.mp489,
             checked = assets.podarok,
         )
     }
-
-    // ---------------------------------------------------
-    // Style
-    // ---------------------------------------------------
 
     object Static {
         data class ACheckBoxStyle(

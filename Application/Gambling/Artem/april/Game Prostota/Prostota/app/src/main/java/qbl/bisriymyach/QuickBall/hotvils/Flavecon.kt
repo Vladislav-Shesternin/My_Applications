@@ -5,17 +5,10 @@ import android.content.Context
 
 lateinit var kalimatronika: Context private set
 
-class Baba: Application() {
+class Baba : Application() {
 
     override fun onCreate() {
-
-
-
-
-
-
-
-                                                                         super.onCreate()
+        super.onCreate()
         kalimatronika = applicationContext
     }
 

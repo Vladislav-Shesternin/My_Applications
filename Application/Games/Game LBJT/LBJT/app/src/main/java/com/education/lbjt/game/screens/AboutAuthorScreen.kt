@@ -1,5 +1,8 @@
 package com.education.lbjt.game.screens
 
+import android.content.Intent
+import android.net.Uri
+import androidx.core.content.ContextCompat.startActivity
 import com.badlogic.gdx.math.Interpolation
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
@@ -8,24 +11,26 @@ import com.education.lbjt.game.box2d.BodyId
 import com.education.lbjt.game.box2d.bodies.BSeparator
 import com.education.lbjt.game.box2d.bodiesGroup.BGBorders
 import com.education.lbjt.game.box2d.bodiesGroup.BGDescriptionPanel
-import com.education.lbjt.game.box2d.bodiesGroup.BGMonetization
 import com.education.lbjt.game.box2d.bodiesGroup.BGThanksFrame
 import com.education.lbjt.game.box2d.destroyAll
 import com.education.lbjt.game.utils.TIME_ANIM_SCREEN_ALPHA
 import com.education.lbjt.game.utils.actor.animHide
 import com.education.lbjt.game.utils.actor.animShow
+import com.education.lbjt.game.utils.actor.setOnClickListener
 import com.education.lbjt.game.utils.advanced.AdvancedMouseScreen
 import com.education.lbjt.game.utils.advanced.AdvancedStage
 import com.education.lbjt.game.utils.region
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.launch
 
+
 class AboutAuthorScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
     // Actor
-    private val aHandVImg = Image(game.themeUtil.assets.HAND_V)
-    private val aEldanImg = Image(game.themeUtil.assets.EL_DAN)
-    private val aPSImg    = Image(game.themeUtil.assets.PS)
+    private val aHandVImg    = Image(game.themeUtil.assets.HAND_V)
+    private val aEldanImg    = Image(game.themeUtil.assets.EL_DAN)
+    private val aPSImg       = Image(game.themeUtil.assets.PS)
+    private val aTelegramImg = Image(game.themeUtil.assets.TELEGRAM)
 
     // Body
     private val bSeparator = BSeparator(this)
@@ -34,7 +39,7 @@ class AboutAuthorScreen(override val game: LibGDXGame): AdvancedMouseScreen(game
     private val bgBorders          = BGBorders(this)
     private val bgDescriptionPanel = BGDescriptionPanel(this)
     private val bgThanksFrame      = BGThanksFrame(this)
-    private val bgMonetization     = BGMonetization(this)
+//    private val bgMonetization     = BGMonetization(this)
 
     override fun show() {
         stageUI.root.animHide()
@@ -46,6 +51,7 @@ class AboutAuthorScreen(override val game: LibGDXGame): AdvancedMouseScreen(game
         initB_Separator()
 
         addV()
+        addTelegramImg()
 
         createBG_Borders()
         createB_Separator()
@@ -59,7 +65,7 @@ class AboutAuthorScreen(override val game: LibGDXGame): AdvancedMouseScreen(game
 
 
     override fun dispose() {
-        listOf(bgBorders, bgDescriptionPanel, bgThanksFrame, bgMonetization).destroyAll()
+        listOf(bgBorders, bgDescriptionPanel, bgThanksFrame /*bgMonetization*/).destroyAll()
         super.dispose()
     }
 
@@ -79,6 +85,16 @@ class AboutAuthorScreen(override val game: LibGDXGame): AdvancedMouseScreen(game
         aPSImg.apply {
             setBounds(700f, 1189f, 411f, 64f)
             animHide()
+        }
+    }
+
+    private fun AdvancedStage.addTelegramImg() {
+        addActor(aTelegramImg)
+        aTelegramImg.apply {
+            setBounds(222f, 321f, 257f, 74f)
+            setOnClickListener {
+                game.activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/Vel_daN")))
+            }
         }
     }
 
@@ -117,7 +133,7 @@ class AboutAuthorScreen(override val game: LibGDXGame): AdvancedMouseScreen(game
     }
 
     private fun createBG_Monetization() {
-        bgMonetization.create(39f,0f,622f,507f)
+        //bgMonetization.create(39f,0f,622f,507f)
     }
 
     // ---------------------------------------------------

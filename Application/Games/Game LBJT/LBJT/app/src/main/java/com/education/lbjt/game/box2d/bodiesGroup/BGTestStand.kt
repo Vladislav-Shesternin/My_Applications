@@ -122,7 +122,7 @@ class BGTestStand(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGr
 
     private fun AdvancedStage.addTitleLbl() {
         addActor(aTitleLbl)
-        aTitleLbl.setBoundsStandart(34f, 388f, 661f, 38f)
+        aTitleLbl.setBoundsStandartBG(34f, 388f, 661f, 38f)
     }
 
     // ---------------------------------------------------

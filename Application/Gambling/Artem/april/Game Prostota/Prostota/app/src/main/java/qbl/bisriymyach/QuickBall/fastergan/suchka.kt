@@ -24,34 +24,38 @@ import qbl.bisriymyach.QuickBall.tidams.yatayaaaya
 import qbl.bisriymyach.QuickBall.tidams.liza
 
 abstract class suchka(
-    val moNa : Float = liza,
+    val moNa: Float = liza,
     val Goga: Float = piza
 ) : ScreenAdapter(), seichasiki {
 
     abstract val game: LibGDXGame
 
-    private val viewportBack by lazy { FillViewport(Gdx.graphics.width.toFloat(), Gdx.graphics.height.toFloat()) }
-    private val stageBack    by lazy { zavtra_v_shskull(viewportBack) }
+    private val viewportBack by lazy {
+        FillViewport(
+            Gdx.graphics.width.toFloat(),
+            Gdx.graphics.height.toFloat()
+        )
+    }
+    private val stageBack by lazy { zavtra_v_shskull(viewportBack) }
 
     val viewportUI by lazy { FitViewport(moNa, Goga) }
-    val stageUI    by lazy { zavtra_v_shskull(viewportUI) }
+    val stageUI by lazy { zavtra_v_shskull(viewportUI) }
 
     fun setBackgrounds(backRegion: TextureRegion, uiRegion: TextureRegion = backRegion) {
         setBackBackground(backRegion)
         setUIBackground(uiRegion)
     }
-    val inputMultiplexer    = InputMultiplexer()
+
+    val inputMultiplexer = InputMultiplexer()
 
     val drawerUtil by lazy { fradel(stageUI.batch) }
 
     val fontGenerator_Jaldi = Fronoton(Fronoton.Companion.yyyyAAoap.Jaldi)
 
     override fun resize(width: Int, height: Int) {
-                                 viewportBack.update(width, height, true)
+        viewportBack.update(width, height, true)
         viewportUI.update(width, height, true)
     }
-
-
 
 
     override fun show() {
@@ -65,13 +69,13 @@ abstract class suchka(
     }
 
     val backBackgroundImage = Image()
-    val uiBackgroundImage   = Image()
-    val disposableSet       = mutableSetOf<Disposable>()
+    val uiBackgroundImage = Image()
+    val disposableSet = mutableSetOf<Disposable>()
     var coroutine: CoroutineScope? = CoroutineScope(Dispatchers.Default)
         private set
 
     override fun keyDown(keycode: Int): Boolean {
-        when(keycode) {
+        when (keycode) {
             Input.Keys.BACK -> {
                 if (game.navigationManager.isBackStackEmpty()) game.navigationManager.exit()
                 else stageUI.root.hrom(yatayaaaya) { game.navigationManager.back() }
@@ -86,8 +90,6 @@ abstract class suchka(
     fun setBackBackground(region: TextureRegion) {
         backBackgroundImage.drawable = TextureRegionDrawable(region)
     }
-
-
 
 
     override fun render(delta: Float) {
@@ -106,6 +108,7 @@ abstract class suchka(
         cancelCoroutinesAll(coroutine)
         coroutine = null
     }
+
     fun setUIBackground(texture: TextureRegion) {
         uiBackgroundImage.drawable = TextureRegionDrawable(texture)
     }

@@ -6,19 +6,13 @@ class vvavava {
 
     fun once(block: () -> Unit) {
         if (event == Event.NOT_WAS) {
-
-
-
-
-
-
-                                        event = Event.WAS
+            event = Event.WAS
             block()
         }
     }
 
     enum class Event {
-                     WAS, NOT_WAS
+        WAS, NOT_WAS
     }
 
 }

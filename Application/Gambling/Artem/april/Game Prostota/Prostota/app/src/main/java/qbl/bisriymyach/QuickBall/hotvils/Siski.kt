@@ -12,15 +12,12 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-
-var MUSICALka: Music? = null
-
 class LoaderScreen(override val game: LibGDXGame) : suchka() {
 
-    private val progressFlow     = MutableStateFlow(0f)
-    private var isFinishLoading  = false
+    private val progressFlow = MutableStateFlow(0f)
+    private var isFinishLoading = false
     private var isFinishProgress = false
-    private var isFinishAnim     = false
+    private var isFinishAnim = false
 
     override fun show() {
         loadLoaderAssets()
@@ -36,7 +33,9 @@ class LoaderScreen(override val game: LibGDXGame) : suchka() {
         isFinish()
     }
 
-    override fun zavtra_v_shskull.addActorsOnStageUI() { isFinishAnim = true }
+    override fun zavtra_v_shskull.addActorsOnStageUI() {
+        isFinishAnim = true
+    }
 
     // ------------------------------------------------------------------------
     // Logic
@@ -59,7 +58,8 @@ class LoaderScreen(override val game: LibGDXGame) : suchka() {
             loadTexture()
         }
         with(game.sosipa) {
-            loadableSoundList = sosisochki_na_grili.EnumSound.values().map { it.data }.toMutableList()
+            loadableSoundList =
+                sosisochki_na_grili.EnumSound.values().map { it.data }.toMutableList()
             load()
         }
     }
@@ -102,9 +102,9 @@ class LoaderScreen(override val game: LibGDXGame) : suchka() {
 
             game.flagmen.load("my-trip.ogg", Music::class.java)
             game.flagmen.finishLoading()
-            MUSICALka = game.flagmen["my-trip.ogg", Music::class.java].apply {
+            game.MUSICALka = game.flagmen["my-trip.ogg", Music::class.java].apply {
                 isLooping = true
-                volume    = 0.287f
+                volume = 0.287f
                 play()
             }
 

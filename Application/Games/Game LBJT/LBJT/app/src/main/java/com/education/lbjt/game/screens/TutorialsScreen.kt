@@ -10,6 +10,7 @@ import com.education.lbjt.game.box2d.destroyAll
 import com.education.lbjt.game.screens.tutorialsScreen.GeneralInformationScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JDistanceScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JFrictionScreen
+import com.education.lbjt.game.screens.tutorialsScreen.JGearScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JMouseScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JPrismaticScreen
 import com.education.lbjt.game.screens.tutorialsScreen.JPulleyScreen
@@ -25,6 +26,7 @@ import com.education.lbjt.game.utils.actor.setOnTouchListener
 import com.education.lbjt.game.utils.advanced.AdvancedMouseScreen
 import com.education.lbjt.game.utils.advanced.AdvancedStage
 import com.education.lbjt.game.utils.region
+import com.education.lbjt.game.screens.tutorialsScreen.JMotorScreen
 
 class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) {
 
@@ -90,8 +92,8 @@ class TutorialsScreen(override val game: LibGDXGame): AdvancedMouseScreen(game) 
             JFrictionScreen::class.java.name,
             JRopeScreen::class.java.name,
             JPulleyScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
-            WillBeLaterScreen::class.java.name,
+            JGearScreen::class.java.name,
+            JMotorScreen::class.java.name,
         )
 
         bgLift.bgRegularBtns.bRegularBtnList.onEachIndexed { index, bRegularBtn ->

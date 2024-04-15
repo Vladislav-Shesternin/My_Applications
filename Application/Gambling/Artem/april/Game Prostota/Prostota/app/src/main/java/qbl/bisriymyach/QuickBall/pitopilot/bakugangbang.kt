@@ -10,9 +10,9 @@ class bakugangbang(override val screenBox2d: Ebufren) : Corona() {
 
     override val standartW = 1080f
 
-    private val bTop   = harizma(screenBox2d)
-    private val bDown  = harizma(screenBox2d)
-    private val bLeft  = Brat(screenBox2d)
+    private val bTop = harizma(screenBox2d)
+    private val bDown = harizma(screenBox2d)
+    private val bLeft = Brat(screenBox2d)
     private val bRight = Brat(screenBox2d)
 
     override fun mackro(x: Float, y: Float, w: Float, h: Float) {
@@ -24,23 +24,18 @@ class bakugangbang(override val screenBox2d: Ebufren) : Corona() {
         createVertical()
     }
 
-
-    // ---------------------------------------------------
-    // Init
-    // ---------------------------------------------------
-
     private fun initB_Borders() {
-        arrayOf(bTop, bDown, bLeft, bRight).onEach { it.apply {
-            id = Omred.STATIC
-            collisionList.addAll(arrayOf(
-                Omred.BALL,
-            ))
-        } }
+        arrayOf(bTop, bDown, bLeft, bRight).onEach {
+            it.apply {
+                id = Omred.STATIC
+                collisionList.addAll(
+                    arrayOf(
+                        Omred.BALL,
+                    )
+                )
+            }
+        }
     }
-
-    // ---------------------------------------------------
-    // Create Body
-    // ---------------------------------------------------
 
     private fun createHorizontal() {
         createBody(bTop, 0f, 1920f, 1080f, 20f)

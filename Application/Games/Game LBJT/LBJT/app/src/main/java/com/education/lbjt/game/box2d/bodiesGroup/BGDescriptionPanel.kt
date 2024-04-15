@@ -91,7 +91,7 @@ class BGDescriptionPanel(override val screenBox2d: AdvancedBox2dScreen): Abstrac
                 localAnchorA.set(data.anchorA.subCenter(bodyA))
                 localAnchorB.set(data.anchorB.subCenter(bodyB))
 
-                length = 78f.toStandart.toB2
+                length = 78f.toStandartBG.toB2
                 frequencyHz = 1.2f
                 dampingRatio = 0.2f
             })

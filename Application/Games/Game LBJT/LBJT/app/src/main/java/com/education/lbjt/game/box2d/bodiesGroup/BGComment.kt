@@ -217,8 +217,8 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
             localAnchorB.set(_anchorB.subCenter(bodyB))
 
             enableLimit = true
-            upperTranslation = _upper.toStandart.toB2
-            lowerTranslation = _lower.toStandart.toB2
+            upperTranslation = _upper.toStandartBG.toB2
+            lowerTranslation = _lower.toStandartBG.toB2
         })
 
         createJoint(_jMotor, MotorJointDef().apply {
@@ -249,7 +249,7 @@ class BGComment(override val screenBox2d: AdvancedBox2dScreen): AbstractBodyGrou
             localAnchorB.set(_anchorB.subCenter(bodyB))
             collideConnected = true
 
-            length = _length.toStandart.toB2
+            length = _length.toStandartBG.toB2
             frequencyHz  = 4f
             dampingRatio = 0.5f
         })

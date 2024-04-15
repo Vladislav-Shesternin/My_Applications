@@ -110,13 +110,13 @@ class BGPractical_JWheel(_screenBox2d: AdvancedBox2dScreen): AbstractBGPractical
 
     private fun AdvancedStage.addLinesImg() {
         addActor(aLinesImg)
-        aLinesImg.setBoundsStandart(40f, 317f, 621f, 621f)
+        aLinesImg.setBoundsStandartBG(40f, 317f, 621f, 621f)
         aLinesImg.disable()
     }
 
     private fun AdvancedStage.addDegreesImg() {
         addActor(aDegreesImg)
-        aDegreesImg.setBoundsStandart(33f, 330f, 643f, 598f)
+        aDegreesImg.setBoundsStandartBG(33f, 330f, 643f, 598f)
         aDegreesImg.disable()
     }
 

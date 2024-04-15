@@ -19,67 +19,42 @@ import qbl.bisriymyach.QuickBall.tidams.toB2
 import qbl.bisriymyach.QuickBall.tidams.toFonk
 import qbl.bisriymyach.QuickBall.tidams.toPop
 
-abstract class Bibash: Destroyable {
+abstract class Bibash : Destroyable {
 
     abstract val franke: Ebufren
-                abstract val bobo       : String
-
-
-
-
-                 abstract val ronaldo    : BodyDef
-    abstract val kardinallo : FixtureDef
-
+    abstract val bobo: String
+    abstract val ronaldo: BodyDef
+    abstract val kardinallo: FixtureDef
     open var ultima: Oi_oi_uoi? = null
-
-
-
-
-    open val collisionList          = mutableListOf<String>()
-
+    open val collisionList = mutableListOf<String>()
     open var originalId: String = Omred.NONE
-    open var id        : String = Omred.NONE
+    open var id: String = Omred.NONE
         set(value) {
             if (isSetId.not()) {
-
-
-                              isSetId = true
+                isSetId = true
                 originalId = value
             }
             field = value
         }
-
     private var isSetId = false
     private val tmpVector2 = Vector2()
-
-    val size       = Vector2()
-    val position   = Vector2()
-
+    val size = Vector2()
+    val position = Vector2()
     var body: Body? = null
         private set
-
-
     var beginContactBlockArray = Array<ContactBlock>()
-
     fun setOriginalId() {
         id = originalId
     }
-
-    // ---------------------------------------------------
-    // SAM
-    // ---------------------------------------------------
-
-    fun interface ContactBlock { fun block(body: Bibash) }
-
+    fun interface ContactBlock {
+        fun block(body: Bibash)
+    }
     var isDestroyActor = true
-
     open fun render(deltaTime: Float) {
         renderBlockArray.onEach { it.block(deltaTime) }
         transformActor()
     }
-
     open fun beginContact(contactBody: Bibash) = beginContactBlockArray.onEach { it.block(contactBody) }
-
     open fun endContact(contactBody: Bibash) = endContactBlockArray.onEach { it.block(contactBody) }
     var scale = 0f
         private set
@@ -87,6 +62,7 @@ abstract class Bibash: Destroyable {
         private set
     var coroutine: CoroutineScope? = null
         private set
+
     override fun dodo() {
         if (body != null) {
             cancelCoroutinesAll(coroutine)
@@ -99,7 +75,8 @@ abstract class Bibash: Destroyable {
 
             collisionList.clear()
 
-            body?.jointList?.map { (it.joint.userData as Dencherous<out Joint, out JointDef>) }?.destroyAll()
+            body?.jointList?.map { (it.joint.userData as Dencherous<out Joint, out JointDef>) }
+                ?.destroyAll()
 
             franke.tya9.tetriska.destroyBody(body)
             body = null
@@ -110,7 +87,7 @@ abstract class Bibash: Destroyable {
         if (body == null) {
             position.set(x, y)
             size.set(w, h)
-            scale  = size.x.toFonk
+            scale = size.x.toFonk
             center = franke.tya9.bodyEditor.getOrigin(bobo, scale)
 
             ronaldo.position.set(tmpVector2.set(position).toB2.add(center))
@@ -124,8 +101,9 @@ abstract class Bibash: Destroyable {
             isDestroyActor = true
         }
     }
-    var endContactBlockArray   = Array<ContactBlock>()
-    var renderBlockArray       = Array<RenderBlock>()
+
+    var endContactBlockArray = Array<ContactBlock>()
+    var renderBlockArray = Array<RenderBlock>()
     fun create(position: Vector2, size: Vector2) {
         create(position.x, position.y, size.x, size.y)
     }
@@ -151,7 +129,8 @@ abstract class Bibash: Destroyable {
         id = Omred.NONE
     }
 
-
-    fun interface RenderBlock { fun block(deltaTime: Float) }
+    fun interface RenderBlock {
+        fun block(deltaTime: Float)
+    }
 
 }

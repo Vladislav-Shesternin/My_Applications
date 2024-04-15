@@ -94,7 +94,7 @@ class BGThanksFrame(override val screenBox2d: AdvancedBox2dScreen): AbstractBody
                 localAnchorA.set(data.anchorA.subCenter(bodyA))
                 localAnchorB.set(data.anchorB.subCenter(bodyB))
 
-                length = 214f.toStandart.toB2
+                length = 214f.toStandartBG.toB2
                 frequencyHz  = 0.5f
                 dampingRatio = 0.1f
             })
