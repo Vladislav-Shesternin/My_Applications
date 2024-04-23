@@ -56,6 +56,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     val gdxVersion = "1.12.1"
     implementation("com.badlogicgames.gdx:gdx-backend-android:$gdxVersion")
