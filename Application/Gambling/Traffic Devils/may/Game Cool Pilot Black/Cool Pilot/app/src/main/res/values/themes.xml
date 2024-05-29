@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.CoolPilot" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/startuma</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.CoolPilot" parent="Base.Theme.CoolPilot"/>
+</resources>

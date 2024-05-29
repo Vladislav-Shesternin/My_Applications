@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.LegendOfPrincess" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/sabis</item>
+        <item name="android:navigationBarColor">@color/bublic</item>
+    </style>
+
+    <style name="Theme.LegendOfPrincess" parent="Base.Theme.LegendOfPrincess"/>
+</resources>

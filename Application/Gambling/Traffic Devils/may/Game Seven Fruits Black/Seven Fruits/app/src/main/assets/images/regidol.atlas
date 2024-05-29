@@ -1,0 +1,145 @@
+regidol.png
+size: 863, 1494
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 227, 1
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 354, 1
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 481, 1
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 608, 1
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 735, 1
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1, 128
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+bix_dif
+  rotate: false
+  xy: 128, 128
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+bix_press
+  rotate: false
+  xy: 279, 128
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+leften_def
+  rotate: false
+  xy: 430, 128
+  size: 202, 202
+  orig: 202, 202
+  offset: 0, 0
+  index: -1
+leften_press
+  rotate: false
+  xy: 633, 128
+  size: 202, 202
+  orig: 202, 202
+  offset: 0, 0
+  index: -1
+malchonka
+  rotate: false
+  xy: 508, 556
+  size: 315, 315
+  orig: 315, 315
+  offset: 0, 0
+  index: -1
+menu_def
+  rotate: false
+  xy: 1, 1
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+menu_press
+  rotate: false
+  xy: 114, 1
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+misika_soudika
+  rotate: false
+  xy: 1, 872
+  size: 594, 621
+  orig: 594, 621
+  offset: 0, 0
+  index: -1
+prely
+  rotate: false
+  xy: 1, 556
+  size: 229, 226
+  orig: 229, 226
+  offset: 0, 0
+  index: -1
+recordiy
+  rotate: false
+  xy: 231, 556
+  size: 276, 247
+  orig: 276, 247
+  offset: 0, 0
+  index: -1
+rigite_def
+  rotate: false
+  xy: 1, 331
+  size: 202, 202
+  orig: 202, 202
+  offset: 0, 0
+  index: -1
+rigite_press
+  rotate: false
+  xy: 204, 331
+  size: 202, 202
+  orig: 202, 202
+  offset: 0, 0
+  index: -1
+rubeliy
+  rotate: false
+  xy: 407, 331
+  size: 227, 224
+  orig: 227, 224
+  offset: 0, 0
+  index: -1
+stronsiy
+  rotate: false
+  xy: 635, 331
+  size: 227, 224
+  orig: 227, 224
+  offset: 0, 0
+  index: -1

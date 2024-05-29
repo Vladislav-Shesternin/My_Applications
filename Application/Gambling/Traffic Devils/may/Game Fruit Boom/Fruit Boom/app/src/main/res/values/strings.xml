@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Fruit Boom</string>
+
+    <string name="tutorial_menu_rules">Click on the \"Rules\" button to go to the rules screen.</string>
+    <string name="tutorial_menu_settings">Click on the \"Settings\" button to go to the settings screen.</string>
+    <string name="tutorial_menu_games">Click on the \"Games\" button to go to the games screen.</string>
+    <string name="tutorial_menu_fruit_record">This is the \"Fruit Record\" panel, and it shows your current record.</string>
+    <string name="tutorial_menu_bonus">This is a \"Bonus\", it appears 1 time per game, click on it to get the bonus.</string>
+
+    <string name="tutorial_rules_next">Click to continue reading</string>
+    <string name="tutorial_rules_back">Click the \"Back\" button to return to the previous screen.</string>
+
+    <string name="tutorial_settings_music">Move the progress bar left and right to adjust the Music volume.</string>
+    <string name="tutorial_settings_sound">Move the progress bar left and right to adjust the Sound volume.</string>
+    <string name="tutorial_settings_back">Click the \"Back\" button to return to the previous screen.</string>
+
+    <string name="tutorial_bonus_records">This is a table of possible winnings.</string>
+    <string name="tutorial_bonus_go">To start the wheel, press the \"GO\" button.</string>
+
+    <string name="tutorial_levels_locked">This is how a blocked level is marked, it can be seen by the red outline and the Castle on the right, and above the level there is information that this level will open if you set a record of 20,000+</string>
+    <string name="tutorial_levels_unlocked">This is how the unlocked level is marked, it can be seen by the white outline, click on it to go to the \"Game\" screen.</string>
+
+    <string name="tutorial_game">This is the game screen where the main action takes place, your task is to take the falling fruits and combine the same ones if you combine a pair of 3+ fruits they will explode beautifully and bring you points that will increase your record.</string>
+
+</resources>

@@ -1,0 +1,29 @@
+
+App title: Powerful Blast
+App package: com.rusya.cartycoo
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://sites.google.com/trafficdevils.net/powerful-blast/
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+Embark on a thrilling adventure with fruity fun or candy chaos! Catch colorful treats with a tap.
+--------------------------------------------------------------------------------
+Full description:
+"Embark on a sweet and thrilling adventure with Powerful Blast! Indulge in a frenzy of fruity fun or a candy-coated cascade, depending on your craving. As colorful confections rain down, hone your reflexes and quick thinking to catch them all with a tap!
+
+Unleash your inner connoisseur as you gather succulent fruits or delectable candies, each catch propelling you closer to victory. With every tap, unlock a symphony of satisfying sounds and melodies that complement your gameplay, ensuring an immersive experience.
+
+But the excitement doesn't end there! Dive into the music and sound settings screen to customize your auditory journey, fine-tuning every note to your liking. Whether you're aiming for a serene melody or an adrenaline-pumping beat, the choice is yours.
+
+Get ready to unleash the power of your touch and embark on an addictive escapade filled with vibrant visuals, captivating tunes, and endless delight. Play Powerful Blast now and let the fruity frenzy or candy chaos begin!"
+--------------------------------------------------------------------------------
+Music license:
+Bliss by Luke Bergs | https://soundcloud.com/bergscloud/
+Creative Commons - Attribution-ShareAlike 3.0 Unported
+https://creativecommons.org/licenses/by-sa/3.0/
+Music promoted by https://www.chosic.com/free-music/all/
+--------------------------------------------------------------------------------

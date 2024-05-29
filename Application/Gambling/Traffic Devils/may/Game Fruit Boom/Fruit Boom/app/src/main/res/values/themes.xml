@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.FruitBoom" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/loading_screen</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.FruitBoom" parent="Base.Theme.FruitBoom"/>
+</resources>

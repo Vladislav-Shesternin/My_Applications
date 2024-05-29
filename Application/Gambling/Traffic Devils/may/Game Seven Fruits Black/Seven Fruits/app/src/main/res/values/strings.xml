@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Seven Fruits</string>
+    <string name="privacy_policy">
+        "🍇 Greetings, Fruit Picker! 🌟
+
+        Ready to embark on a juicy adventure in the world of Seven Fruits? 🎮
+
+        Grant us access to your Advertising ID. Unlock personalized challenges and embark on fruitful quests! Accept to reveal exclusive rewards and let the sweet flavors of adventure flourish. 🍓🍊🍏"
+    </string>
+    <string name="agree">Agree</string>
+    <string name="disagree">Disagree</string>
+</resources>

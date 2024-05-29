@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Cool Pilot</string>
+    <string name="privacy_policy">
+        "✈️ Greetings, Cool Pilot! 🌟
+
+        Ready to embark on a thrilling adventure in the world of Cool Pilot? 🎮
+
+        Grant us access to your Advertising ID. Unlock personalized challenges and embark on daring quests! Accept to reveal exclusive rewards and let the excitement of flying high and collecting compasses soar. 🛩️🧭"
+    </string>
+    <string name="agree">Agree</string>
+    <string name="disagree">Disagree</string>
+</resources>

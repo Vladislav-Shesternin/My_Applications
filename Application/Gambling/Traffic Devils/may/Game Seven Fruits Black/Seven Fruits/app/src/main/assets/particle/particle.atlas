@@ -1,0 +1,47 @@
+particle.png
+size: 255, 382
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1, 1
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 128, 1
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1, 128
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 128, 128
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 1, 255
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 128, 255
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1

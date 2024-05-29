@@ -1,0 +1,10 @@
+alisa - bomDisaDonh34
+pass  - FilashgertYud7
+
+-------------------------------------------
+Fruit Boom
+тип сервера - Policy + header
+файл: ProstoFile.php
+ad_id: Bidon
+refer: Molochay
+-------------------------------------------

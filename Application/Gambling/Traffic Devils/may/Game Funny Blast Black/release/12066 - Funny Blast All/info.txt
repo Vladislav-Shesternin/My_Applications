@@ -1,0 +1,23 @@
+
+App title: Funny Blast
+App package: com.goplaytoday.guildofhero
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://sites.google.com/trafficdevils.net/funnyblast/
+Type: Game
+Category: Gambling
+Content rating category: Game
+Target age: 18+
+--------------------------------------------------------------------------------
+Short description:
+"Laugh out loud with wacky reels, a 6x5 game with fun characters and surprises."
+--------------------------------------------------------------------------------
+Full description:
+Embark on a whirlwind journey with Funny Blast, where quirky characters and unexpected pranks await you in the 6x5 game. Have fun launching violent animations and enjoy the joy of each process as you try to create fun combos. With each round, immerse yourself in a world of exciting fun and unforgettable moments. Gather your friends, let's laugh and plunge into the turbulent adventure of Funny Blast!
+--------------------------------------------------------------------------------
+Music license:
+Run Amok by Kevin MacLeod | https://incompetech.com/
+Music promoted by https://www.chosic.com/free-music/all/
+Creative Commons CC BY 3.0
+https://creativecommons.org/licenses/by/3.0/
+--------------------------------------------------------------------------------
