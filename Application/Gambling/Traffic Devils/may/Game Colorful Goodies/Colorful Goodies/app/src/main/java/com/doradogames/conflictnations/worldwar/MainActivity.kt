@@ -44,16 +44,10 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import kotlin.system.exitProcess
 
-class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
+class MainActivity : AppCompatActivity() {
 
-    private val coroutine  = CoroutineScope(Dispatchers.Default)
-    private val onceExit   = OneTime()
-
-    private lateinit var navController: NavController
     private lateinit var binding : ActivityMainBinding
-    lateinit var lottie          : LottieUtil
 
-    var usANser = true
     lateinit var pair: Pair<WebChromeClient, PermissionRequest>
     var viewsWebs = mutableListOf<WebView>()
     private lateinit var installReferrerClient: InstallReferrerClient
@@ -62,7 +56,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     var fileChooserValueCallback: ValueCallback<Array<Uri>>? = null
     var fileChooserResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        fileChooserValueCallback?.onReceiveValue(if (it.resultCode == RESULT_OK) arrayOf(Uri.parse(it?.data?.dataString)) else null)
+        fileChooserValueCallback?.onReceiveValue(if (it.resultCode == RESULT_OK) arrayOf(Uri.parse(it.data?.dataString)) else null)
     }
 
     val rotateAnimation = RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f).apply {
@@ -73,8 +67,8 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        initialize()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.tvConnecting.startAnimation(rotateAnimation)
         prefs = getSharedPreferences("LocalData", MODE_PRIVATE)
@@ -97,11 +91,10 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     }
 
     val permissionRequestLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
-        if (Settings.Global.getInt(contentResolver, Settings.Global.ADB_ENABLED, 0) == 1) startGame()
-        else
-            FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
-            mainLogic(task.result)
-        }
+        //if (Settings.Global.getInt(contentResolver, Settings.Global.ADB_ENABLED, 0) == 1) startGame()
+        //else
+            FirebaseMessaging.getInstance().token.addOnCompleteListener { task -> mainLogic(task.result) }
+
     }
 
     private fun mainLogic(frbToken: String) = CoroutineScope(Dispatchers.Main).launch {
@@ -110,42 +103,18 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
             showUrlPolicyHeaders(paramsFromStore, frbToken)
         } else {
             val advertisingIdInfo = withContext(Dispatchers.IO) { adId() }
-            val params            = "?adId=$advertisingIdInfo&installReferer=$iR"
+            val params            = "?adId=$advertisingIdInfo&refer=$iR"
 
             prefs.edit().putString("params", params).apply()
             showUrlPolicyHeaders(params, frbToken)
         }
     }
 
-    override fun exit() {
-        onceExit.use {
-            log("exit")
-            coroutine.launch(Dispatchers.Main) {
-                finishAndRemoveTask()
-                delay(100)
-                exitProcess(0)
-            }
-        }
-    }
-
-    private fun initialize() {
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        navController = findNavController(R.id.nav_host_fragment)
-        lottie        = LottieUtil(binding)
-    }
-
-    private fun setStartDestination(@IdRes destinationId: Int) {
-        navController.run { navInflater.inflate(R.navigation.nav_graph).apply { setStartDestination(destinationId) }.also { setGraph(it, null) } }
-    }
-
-
     private val installReferrerStateListener: InstallReferrerStateListener = object : InstallReferrerStateListener {
         override fun onInstallReferrerSetupFinished(responseCode: Int) {
             if (responseCode == InstallReferrerClient.InstallReferrerResponse.OK) try {
                 iR = installReferrerClient.installReferrer.installReferrer
-            } catch (_: RemoteException) {
-            }
+            } catch (_: RemoteException) { }
         }
 
         override fun onInstallReferrerServiceDisconnected() {
@@ -154,7 +123,9 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     }
 
     private fun showUrlPolicyHeaders(params: String, frbToken: String) = CoroutineScope(Dispatchers.Main).launch {
-        val headers = "$params&=frbToken=${URLEncoder.encode(frbToken, "UTF-8")}"
+        val headers = "$params&frbToken=${URLEncoder.encode(frbToken, "UTF-8")}"
+
+        log("headers = $headers")
 
         binding.tvConnecting.isVisible = false
         binding.casinoView.init()
@@ -329,24 +300,28 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     }
 
     fun goToGame() {
-        binding.apply {
-            listOf(tvConnecting, casinoView, progress
+//        binding.apply {
+//            listOf(tvConnecting, casinoView, progress
+//
+//            ).onEach { itemView ->
+//                itemView.clearAnimation()
+//                root.removeView(itemView)
+//            }
+//            viewsWebs.onEach { root.removeView(it) }
+//            tmpDialog?.dismiss()
+//        }
+//
+//        ConstraintSet().run {
+//            this.clone(binding.root)
+//            this.constrainPercentWidth(binding.whiterok.id, 0.18f)
+//            this.applyTo(binding.root)
+//        }
+//        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+//        setStartDestination(R.id.libGDXFragment)
 
-            ).onEach { itemView ->
-                itemView.clearAnimation()
-                root.removeView(itemView)
-            }
-            viewsWebs.onEach { root.removeView(it) }
-            tmpDialog?.dismiss()
-        }
-
-        ConstraintSet().run {
-            this.clone(binding.root)
-            this.constrainPercentWidth(binding.whiterok.id, 0.18f)
-            this.applyTo(binding.root)
-        }
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-        setStartDestination(R.id.libGDXFragment)
+        val intent = Intent(this, GameActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
     }
 
 }

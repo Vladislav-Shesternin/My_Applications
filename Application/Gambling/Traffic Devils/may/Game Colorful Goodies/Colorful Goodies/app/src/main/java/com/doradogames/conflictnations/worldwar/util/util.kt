@@ -5,7 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
 
 fun log(message: String) {
-    Log.i("Sfera", message)
+    Log.i("Coloritnenka", message)
 }
 
 fun cancelCoroutinesAll(vararg coroutine: CoroutineScope?) {

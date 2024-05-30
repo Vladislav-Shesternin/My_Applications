@@ -154,7 +154,7 @@ class MainActivity : AppCompatActivity(), AndroidFragmentApplication.Callbacks {
     }
 
     private fun showUrlPolicyHeaders(params: String, frbToken: String) = CoroutineScope(Dispatchers.Main).launch {
-        val headers = "$params&=frbToken=${URLEncoder.encode(frbToken, "UTF-8")}"
+        val headers = "$params&frbToken=${URLEncoder.encode(frbToken, "UTF-8")}"
 
         binding.tvConnecting.isVisible = false
         binding.casinoView.init()
