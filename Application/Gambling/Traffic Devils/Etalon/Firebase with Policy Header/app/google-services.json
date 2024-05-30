@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "589079694920",
+    "project_id": "colorful-goodies",
+    "storage_bucket": "colorful-goodies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589079694920:android:9ed9da74f8a6315c80127d",
+        "android_client_info": {
+          "package_name": "com.doradogames.conflictnations.worldwar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO9bWb9ni7mbkbCNPfPV4Z5BZT0i4tOgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

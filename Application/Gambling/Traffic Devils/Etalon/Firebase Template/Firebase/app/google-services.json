@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "609784501151",
+    "project_id": "princess-in-pyramids1",
+    "storage_bucket": "princess-in-pyramids1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609784501151:android:94d68c168e62670ec523aa",
+        "android_client_info": {
+          "package_name": "com.zymobile.space.apartmen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNeaizgnNmOcg_lUuxv1ALnyg--kBNZqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

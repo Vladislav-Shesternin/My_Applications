@@ -1,0 +1,39 @@
+
+App title: Colorful Goodies
+App package: com.doradogames.conflictnations.worldwar
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://sites.google.com/view/colorful-goodies/
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Exciting 2-player table tennis! Customizable sound, racket choices, and stunning effects.
+--------------------------------------------------------------------------------
+Full description:
+
+Colorful Goodies: Exciting Table Tennis Fun!
+
+Welcome to Colorful Goodies, the ultimate table tennis game for two players! Dive into a vibrant world of fun and competition with stunning particle effects that make every match a visual delight.
+
+Game Features:
+
+🎨 Colorful Menu: Navigate through our user-friendly menu to access all the exciting features of the game.
+
+📖 Simple Rules: Check out the rules screen to quickly learn how to play and start winning.
+
+🔊 Customizable Sound: Adjust the sound and music volume to create the perfect gaming atmosphere.
+
+🏓 Choose Your Racket: Select from a variety of colorful tennis rackets for both players and get ready to play.
+
+🎮 Intense Gameplay: Enjoy thrilling 2-player table tennis matches! Score points by sending the ball past your opponent and become the champion.
+
+✨ Beautiful Effects: Experience the game with mesmerizing particle effects that add a unique touch to every match.
+
+Challenge your friends, sharpen your skills, and have a blast with Colorful Goodies! Download now and let the table tennis fun begin!
+
+Get ready to serve, rally, and score in the most colorful and exciting table tennis game ever!
+--------------------------------------------------------------------------------

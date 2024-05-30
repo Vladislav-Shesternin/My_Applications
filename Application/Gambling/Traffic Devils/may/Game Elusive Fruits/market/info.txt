@@ -1,0 +1,37 @@
+
+App title: Elusive Fruits
+App package: com.flaregames.olympusrisin
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://sites.google.com/view/elusivefruits/
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Catch falling fruits, earn points, and beat your high score in this fun, addictive game!
+--------------------------------------------------------------------------------
+Full description:
+
+Elusive Fruits: Fun and Addictive Gameplay!
+
+Welcome to the world of Elusive Fruits, where simplicity meets endless fun! Play and uplift your mood anytime, anywhere.
+
+Game Features:
+
+    Menu Screen: Easy-to-navigate interface for quick access to all game functions.
+    Sound Settings: Adjust sound effects to your liking.
+    Rules Screen: Familiarize yourself with the simple game rules before you start.
+    Game Screen: A dynamic play area where various fruits fall.
+
+How to Play:
+
+    Watch as fruits fall from the top of the screen.
+    Click on the fruits in time to catch them.
+    Earn points for each successful click.
+    Increase your high score and become the top player!
+
+Download Elusive Fruits now and enjoy unforgettable gaming moments!
+--------------------------------------------------------------------------------
