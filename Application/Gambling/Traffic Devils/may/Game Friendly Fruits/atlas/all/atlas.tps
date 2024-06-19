@@ -124,7 +124,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../Elusive Fruits/app/src/main/assets/asset/assets.atlas</filename>
+                <filename>../../Friendly Fruits/app/src/main/assets/asset/assets.atlas</filename>
             </struct>
         </map>
         <key>multiPackMode</key>
@@ -188,6 +188,23 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">10.png</key>
+            <key type="filename">8.png</key>
+            <key type="filename">9.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>54,54,107,107</rect>
+                <key>scale9Paddings</key>
+                <rect>54,54,107,107</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">2.png</key>
             <key type="filename">3.png</key>
             <key type="filename">4.png</key>
@@ -222,8 +239,8 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">b_def.png</key>
-            <key type="filename">b_press.png</key>
+            <key type="filename">b_d.png</key>
+            <key type="filename">b_p.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -232,13 +249,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>117,37,235,73</rect>
+                <rect>164,47,328,93</rect>
                 <key>scale9Paddings</key>
-                <rect>117,37,235,73</rect>
+                <rect>164,47,328,93</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">progress.png</key>
+            <key type="filename">pogresso.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -247,9 +264,24 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>290,28,581,56</rect>
+                <rect>28,224,55,447</rect>
                 <key>scale9Paddings</key>
-                <rect>290,28,581,56</rect>
+                <rect>28,224,55,447</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">record.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>213,99,425,198</rect>
+                <key>scale9Paddings</key>
+                <rect>213,99,425,198</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

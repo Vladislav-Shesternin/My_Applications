@@ -1,0 +1,131 @@
+allstars.png
+size: 472, 1564
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1, 1
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 92, 1
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 183, 1
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 274, 1
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 365, 1
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1, 92
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 92, 92
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+bdef
+  rotate: false
+  xy: 1, 232
+  size: 225, 129
+  orig: 225, 129
+  offset: 0, 0
+  index: -1
+bpref
+  rotate: false
+  xy: 227, 232
+  size: 225, 129
+  orig: 225, 129
+  offset: 0, 0
+  index: -1
+o1
+  rotate: false
+  xy: 1, 362
+  size: 187, 187
+  orig: 187, 187
+  offset: 0, 0
+  index: -1
+o2
+  rotate: false
+  xy: 189, 362
+  size: 187, 187
+  orig: 187, 187
+  offset: 0, 0
+  index: -1
+o3
+  rotate: false
+  xy: 1, 550
+  size: 187, 187
+  orig: 187, 187
+  offset: 0, 0
+  index: -1
+o4
+  rotate: false
+  xy: 189, 550
+  size: 187, 187
+  orig: 187, 187
+  offset: 0, 0
+  index: -1
+pblu
+  rotate: false
+  xy: 183, 92
+  size: 139, 139
+  orig: 139, 139
+  offset: 0, 0
+  index: -1
+porg
+  rotate: false
+  xy: 323, 92
+  size: 139, 139
+  orig: 139, 139
+  offset: 0, 0
+  index: -1
+prorg
+  rotate: false
+  xy: 300, 738
+  size: 85, 825
+  orig: 85, 825
+  offset: 0, 0
+  index: -1
+prosbl
+  rotate: false
+  xy: 386, 738
+  size: 85, 825
+  orig: 85, 825
+  offset: 0, 0
+  index: -1
+strelki
+  rotate: false
+  xy: 1, 738
+  size: 298, 171
+  orig: 298, 171
+  offset: 0, 0
+  index: -1

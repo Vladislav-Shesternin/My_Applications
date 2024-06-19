@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Elusive Fruits</string>
+    <string name="texetes">"🔥 Greetings, Fruit Gatherer! 🍎🍊
+
+To begin your journey in Elusive Fruits, grant us access to your Advertising ID. Unlock personalized challenges and embark on fruitful quests! Accept to reveal exclusive rewards and let the orchard of adventure flourish.
+
+Happy harvesting!"
+    </string>
+    <string name="adler">Agree</string>
+    <string name="disagree">Disagree</string>
 </resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "494906055717",
+    "project_id": "sandy-fun-ab9c0",
+    "storage_bucket": "sandy-fun-ab9c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494906055717:android:da4fd352ef14096caf73cc",
+        "android_client_info": {
+          "package_name": "com.dogbytegames.offtheroa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7bHLDYFRkaLMcOj7--zLunvhfpzB5Dl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

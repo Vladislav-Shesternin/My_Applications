@@ -1,8 +1,11 @@
 package com.tutotoons.app.kpopsiescuteunicornpet.game
 
+import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.utils.Disposable
 import com.badlogic.gdx.utils.ScreenUtils
+import com.tutotoons.app.kpopsiescuteunicornpet.GameActivity
 import com.tutotoons.app.kpopsiescuteunicornpet.MainActivity
 import com.tutotoons.app.kpopsiescuteunicornpet.game.manager.*
 import com.tutotoons.app.kpopsiescuteunicornpet.game.manager.util.MusicUtil
@@ -21,7 +24,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 
-class GDXGame(val activity: MainActivity) : AdvancedGame() {
+class GDXGame(val activity: GameActivity) : AdvancedGame() {
 
     lateinit var assetManager     : AssetManager      private set
     lateinit var navigationManager: NavigationManager private set
@@ -46,6 +49,8 @@ class GDXGame(val activity: MainActivity) : AdvancedGame() {
     val levelUtil       = LevelUtil(coroutine)
     val recordUtil      = RecordUtil(coroutine, levelUtil)
     val isTutorialsUtil = IsTutorialsUtil(coroutine)
+
+    val prefsDialog: SharedPreferences = activity.getSharedPreferences("DialogAnswer", MODE_PRIVATE)
 
     override fun create() {
         navigationManager = NavigationManager(this)

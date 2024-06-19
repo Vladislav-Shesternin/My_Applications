@@ -1,3 +1,0 @@
--keep class com.appsflyer.** { *; }
--keep class com.android.installreferrer.** { *; }
--keep class * extends android.webkit.WebChromeClient { *; }

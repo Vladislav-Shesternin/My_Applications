@@ -4,7 +4,11 @@ pass  - FilashgertYud7
 -------------------------------------------
 Fruit Boom
 тип сервера - Policy + header
-файл: ProstoFile.php
-ad_id: Bidon
-refer: Molochay
+ad_id: Ilonikas
+refer: LigvochaNa
+frbToken: BazisdonKa
 -------------------------------------------
+Server:
+https://rdingfruitprejboom.digital
+-------------------------------------------
+

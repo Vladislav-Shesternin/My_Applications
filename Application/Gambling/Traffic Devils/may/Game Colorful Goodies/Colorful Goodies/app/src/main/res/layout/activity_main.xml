@@ -6,7 +6,7 @@
     android:background="@drawable/starter">
 
     <ImageView
-            android:id="@+id/tv_connecting"
+            android:id="@+id/krutilka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -17,7 +17,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-            android:id="@+id/progress"
+            android:id="@+id/barron"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     <WebView
-            android:id="@+id/casino_view"
+            android:id="@+id/visitka"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone" />

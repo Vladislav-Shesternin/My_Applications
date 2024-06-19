@@ -79,6 +79,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("space.earlygrey:shapedrawer:2.6.0")
     implementation("com.airbnb.android:lottie:6.2.0")
+
+    implementation("com.onesignal:OneSignal:5.1.10")
+    implementation("com.google.android.gms:play-services-ads-identifier:18.1.0")
+    implementation("com.android.installreferrer:installreferrer:2.2")
 }
 
 tasks.register("copyAndroidNatives") {

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "441670025923",
+    "project_id": "fruit-boom-a9806",
+    "storage_bucket": "fruit-boom-a9806.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441670025923:android:59b8c2c73fd5fd71101876",
+        "android_client_info": {
+          "package_name": "com.tutotoons.app.kpopsiescuteunicornpet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2K_bXj4vEaCid0QfMBgAZaqDtedh0ZWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

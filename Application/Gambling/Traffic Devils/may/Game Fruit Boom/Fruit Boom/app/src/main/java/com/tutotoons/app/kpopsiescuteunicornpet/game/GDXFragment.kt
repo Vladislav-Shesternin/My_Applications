@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
+import com.tutotoons.app.kpopsiescuteunicornpet.GameActivity
 import com.tutotoons.app.kpopsiescuteunicornpet.MainActivity
 
 class GDXFragment : AndroidFragmentApplication() {
@@ -17,6 +18,6 @@ class GDXFragment : AndroidFragmentApplication() {
             useCompass = false
         }
 
-        return initializeForView(GDXGame(requireActivity() as MainActivity), conf)
+        return initializeForView(GDXGame(requireActivity() as GameActivity), conf)
     }
 }

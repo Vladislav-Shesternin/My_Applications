@@ -1,0 +1,42 @@
+
+App title: Small Balls
+App package: com.educational.baby.gam
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://tempalldemonballs.life/privacy_policy.html
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Control a platform to catch falling balls, dodge rotating triangles, and customize settings!
+--------------------------------------------------------------------------------
+Full description:
+
+Small Balls - Catch the Fun!
+
+Dive into the colorful world of Small Balls, an addictive and vibrant arcade game where quick reflexes and strategic thinking are your best allies. Simple to play but hard to master, Small Balls will keep you entertained for hours!
+
+Game Features:
+
+🎮 Exciting Gameplay: Control a platform that you can move left or right to catch falling small balls of various colors. The more balls you catch, the higher your score!
+
+🔄 Challenging Obstacles: Beware of rotating triangles that alter the balls' trajectory, making it harder to catch them. They add a thrilling twist to the game!
+
+🔧 Customizable Settings: Adjust the volume of music and sound effects to suit your preference in the settings screen. Enjoy the game your way!
+
+📋 Intuitive Menu: Navigate easily through the game's menu. Start a new game, adjust settings, or choose which balls you want to catch from the selection screen.
+
+🎨 Ball Selection: Select your favorite balls to catch from a variety of colorful options. Personalize your gameplay and keep things fresh!
+
+Why You'll Love Small Balls:
+
+    Simple Controls: Easy-to-learn touch controls make it accessible for all ages.
+    Endless Fun: With increasing difficulty and random obstacles, no two games are the same!
+    Vibrant Graphics: Enjoy a visually pleasing experience with bright and colorful graphics.
+    Addictive Challenge: Test your reflexes and improve your skills to beat your high score.
+
+Get ready to catch them all! Download Small Balls now and see how many you can catch!
+--------------------------------------------------------------------------------

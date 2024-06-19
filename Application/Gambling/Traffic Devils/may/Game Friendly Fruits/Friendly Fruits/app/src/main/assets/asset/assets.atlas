@@ -1,0 +1,103 @@
+assets.png
+size: 963, 1949
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 658, 189
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 1, 405
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 217, 405
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 433, 405
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 649, 405
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1, 621
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 217, 621
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 433, 621
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 649, 621
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 1, 837
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+b_d
+  rotate: false
+  xy: 1, 1
+  size: 656, 187
+  orig: 656, 187
+  offset: 0, 0
+  index: -1
+b_p
+  rotate: false
+  xy: 1, 189
+  size: 656, 187
+  orig: 656, 187
+  offset: 0, 0
+  index: -1
+pogresso
+  rotate: false
+  xy: 852, 1053
+  size: 110, 895
+  orig: 110, 895
+  offset: 0, 0
+  index: -1
+record
+  rotate: false
+  xy: 1, 1053
+  size: 850, 396
+  orig: 850, 396
+  offset: 0, 0
+  index: -1

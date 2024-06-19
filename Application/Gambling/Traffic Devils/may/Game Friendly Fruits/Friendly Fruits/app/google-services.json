@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "764526907673",
+    "project_id": "friendly-fruits",
+    "storage_bucket": "friendly-fruits.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764526907673:android:783bd8758c9080af9ab588",
+        "android_client_info": {
+          "package_name": "com.doradogames.confli"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-zevXKhUwSS2L_-GL6h6fay5H3avK_CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

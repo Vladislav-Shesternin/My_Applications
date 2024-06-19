@@ -99,12 +99,18 @@ class MainActivity : AppCompatActivity() {
     private fun mainLogic(frbToken: String) = CoroutineScope(Dispatchers.Main).launch {
         val paramsFromStore = prefs.getString("params", "") ?: ""
         if (paramsFromStore.isNotEmpty()) {
+            // Policy
+            showUrlPolicy(paramsFromStore, frbToken)
+            // Policy + Header
             showUrlPolicyHeaders(paramsFromStore, frbToken)
         } else {
             val advertisingIdInfo = withContext(Dispatchers.IO) { adId() }
-            val params            = "?adId=$advertisingIdInfo&refer=$iR"
+            val params            = "adId=$advertisingIdInfo&refer=$iR"
 
             prefs.edit().putString("params", params).apply()
+            // Policy
+            showUrlPolicy(params, frbToken)
+            // Policy + Header
             showUrlPolicyHeaders(params, frbToken)
         }
     }
@@ -244,12 +250,7 @@ class MainActivity : AppCompatActivity() {
             else {
                 try {
                     view.context.startActivity(Intent.parseUri(url, Intent.URI_INTENT_SCHEME))
-                } catch (e: java.lang.Exception) {
-                    if (url.contains("line:")) {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=jp.naver.line.android"))
-                        view.context.startActivity(intent)
-                    }
-                }
+                } catch (_: java.lang.Exception) { }
                 true
             }
         }

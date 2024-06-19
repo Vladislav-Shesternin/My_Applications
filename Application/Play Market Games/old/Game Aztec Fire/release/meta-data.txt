@@ -1,2 +1,0 @@
-pass: GolenTvaGen
-alias: SamogonoChKa

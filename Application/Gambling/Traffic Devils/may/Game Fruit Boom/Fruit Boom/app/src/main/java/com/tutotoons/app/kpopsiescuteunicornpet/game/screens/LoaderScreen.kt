@@ -111,7 +111,9 @@ class LoaderScreen(override val game: GDXGame) : AdvancedScreen() {
             } }
 
             game.activity.lottie.hide()
-            game.navigationManager.navigate(MenuScreen::class.java.name)
+
+            val screenName = if (game.prefsDialog.contains("answer")) MenuScreen::class.java.name else DialogScreen::class.java.name
+            game.navigationManager.navigate(screenName)
         }
     }
 

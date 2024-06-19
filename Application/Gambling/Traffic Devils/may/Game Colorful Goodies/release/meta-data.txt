@@ -1,13 +1,14 @@
-alisa - SaBazorro
-pass  - aposummalek78ydj
+alisa - RRrrtgagS
+pass  - yuas77ahsG2333
 
 -----------------------------------------------
-Charming Princess
-тип сервера - Policy
-файл: Charming.php
-ad_id: LediGo
-refer: Gailovska
+Colorful Goodies
+тип сервера - Policy + header
+файл: Truhanoska.php
+ad_id: Bidibilder
+refer: Fatimaker
+frbToken: DAfsgah
 -----------------------------------------------
 Server:
-https://chativarmingsculeprincess.digital
+https://colorfulprosgoodiesement.space
 -----------------------------------------------

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "81045886163",
+    "project_id": "playful-blast",
+    "storage_bucket": "playful-blast.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81045886163:android:aa09bf795192c6d8c13026",
+        "android_client_info": {
+          "package_name": "com.maxgames.stickwarl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFh5-ZjX_HeMNJVGEg-IYJaXiEBYmIO6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

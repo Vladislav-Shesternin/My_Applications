@@ -1,9 +1,9 @@
 
-App title: Charming Princess
-App package: com.warrior.officebuilding.g
+App title: Friendly Fruits
+App package: com.ninjakiwi.bloonspuzzl
 Main language: EN
 Contains ADs: Yes
-Privacy Policy URL: https://sites.google.com/trafficdevils.net/charmingprincess/
+Privacy Policy URL: https://friendlynotofruitsltation.life/privacy_policy.html
 Type: Game
 Category: Arcade
 Content rating category: Game
@@ -11,21 +11,13 @@ Target age: 3+
 --------------------------------------------------------------------------------
 Short description:
 
-"Embark on a journey of precision and strategy, toppling obstacles to earn points and glory!"
+Dive into a fruity adventure! Tap falling fruits, beat records!
 --------------------------------------------------------------------------------
 Full description:
 
-"Embark on a majestic journey with Charming Princess, the enchanting mobile game that promises to captivate your heart!
+🍎🍊🍇 Welcome to Friendly Fruits - an engaging mobile game designed especially for children! 🍉🍌🍓
 
-Upon entering the kingdom, you'll be warmly welcomed by an interactive tutorial, guiding you through the intricacies of gameplay step by step. Learn the art of precision and strategy as you immerse yourself in the magical realm of Charming Princess.
+Dive into a world of colorful fruits falling from the sky and get ready for some fruity fun! 🌈 With an intuitive menu screen offering quick access to game modes, a leaderboard to track your achievements 🏆, rules of play to get you started 📜, and customizable sound settings for added convenience 🔊, Friendly Fruits ensures an enjoyable gaming experience for all.
 
-With a dedicated game rules screen, orchestrate your gameplay with finesse, ensuring every move aligns with your royal ambitions. Customize your experience with the music and sound settings screen, crafting the perfect atmosphere for your adventure.
-
-Prepare to be enchanted by the 10 captivating levels awaiting your exploration. From verdant forests to towering castles, each level presents a unique challenge and opportunity to showcase your prowess. Collect points ranging from 100 to 1000, etching your name into the annals of history with each record-breaking performance.
-
-As the ball becomes your trusted companion, channel your inner champion and demolish obstacles with precision and grace. Revel in the satisfaction of toppling elements one by one, each collapse heralding a triumph in your quest for glory.
-
-But remember, it's not just about points—it's about the journey. With every level conquered, cherish the memories etched into the fabric of your adventure, as your achievements are immortalized in the annals of Charming Princess.
-
-So, are you ready to embark on a journey fit for royalty? Unleash your charm, seize the moment, and become the legend you were destined to be in Charming Princess!"
+The objective is simple: tap on each fruit as it falls to make it disappear and earn points to boost your high score. 🎯 Don't let any fruit slip through your fingers - every tap counts! 🕹️ Let your child's reflexes and coordination skills shine in this delightful fruit-tapping adventure. 🌟
 --------------------------------------------------------------------------------

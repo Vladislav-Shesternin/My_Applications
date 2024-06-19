@@ -1,0 +1,15 @@
+alisa - ---
+pass  - ---
+
+-----------------------------------------------
+Playful blast
+тип сервера - Policy + header
+ad_id: AlohhaL
+refer: kilogramus
+frbToken: silikonovadolina
+
+Server:
+https://presidencyplayfulmultimediablast.life
+
+WebView
+-----------------------------------------------

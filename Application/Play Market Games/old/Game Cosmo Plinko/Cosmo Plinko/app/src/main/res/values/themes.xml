@@ -1,9 +1,0 @@
-<resources>
-    <style name="Base.Theme.CosmoPlinko" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@color/blume</item>
-        <item name="android:navigationBarColor">@color/blume</item>
-    </style>
-
-    <style name="Theme.CosmoPlinko" parent="Base.Theme.CosmoPlinko" />
-</resources>

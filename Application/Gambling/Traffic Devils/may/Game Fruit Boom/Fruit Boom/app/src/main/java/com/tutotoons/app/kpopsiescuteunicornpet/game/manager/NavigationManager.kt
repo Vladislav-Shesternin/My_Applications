@@ -45,6 +45,7 @@ class NavigationManager(val game: GDXGame) {
         GameScreen     ::class.java.name -> GameScreen(game)
         SuperGameScreen::class.java.name -> SuperGameScreen(game)
         BigGameScreen  ::class.java.name -> BigGameScreen(game)
+        DialogScreen   ::class.java.name -> DialogScreen(game)
 
         else -> MenuScreen(game)
     }

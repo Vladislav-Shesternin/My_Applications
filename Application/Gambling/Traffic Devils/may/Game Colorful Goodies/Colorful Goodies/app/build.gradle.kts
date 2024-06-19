@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.doradogames.conflictnations.worldwar"
+    namespace = "com.doradogames.conflictnations.worldw"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.doradogames.conflictnations.worldwar"
+        applicationId = "com.doradogames.conflictnations.worldw"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "853575291739",
+    "project_id": "egypts-hope",
+    "storage_bucket": "egypts-hope.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853575291739:android:c24c639b03d8d0301f807e",
+        "android_client_info": {
+          "package_name": "com.internetdes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3i87TaINT11yjstvtktQ1xrxVPtS5jRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

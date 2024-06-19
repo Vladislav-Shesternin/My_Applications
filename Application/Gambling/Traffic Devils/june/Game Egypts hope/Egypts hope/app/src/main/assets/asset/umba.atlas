@@ -1,0 +1,103 @@
+umba.png
+size: 1015, 635
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 591, 1
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 760, 1
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 1, 170
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 170, 170
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 339, 170
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 508, 170
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 677, 170
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 846, 170
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 1, 339
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 170, 339
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+berf
+  rotate: false
+  xy: 1, 1
+  size: 589, 74
+  orig: 589, 74
+  offset: 0, 0
+  index: -1
+gdef
+  rotate: false
+  xy: 339, 339
+  size: 185, 185
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+gpers
+  rotate: false
+  xy: 525, 339
+  size: 185, 185
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+porso
+  rotate: false
+  xy: 711, 339
+  size: 286, 295
+  orig: 286, 295
+  offset: 0, 0
+  index: -1

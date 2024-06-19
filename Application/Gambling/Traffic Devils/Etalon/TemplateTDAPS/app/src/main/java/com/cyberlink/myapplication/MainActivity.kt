@@ -302,12 +302,7 @@ class MainActivity : AppCompatActivity() {
             else {
                 try {
                     view.context.startActivity(Intent.parseUri(url, Intent.URI_INTENT_SCHEME))
-                } catch (e: java.lang.Exception) {
-                    if (url.contains("line:")) {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=jp.naver.line.android"))
-                        view.context.startActivity(intent)
-                    }
-                }
+                } catch (e: java.lang.Exception) { }
                 true
             }
         }

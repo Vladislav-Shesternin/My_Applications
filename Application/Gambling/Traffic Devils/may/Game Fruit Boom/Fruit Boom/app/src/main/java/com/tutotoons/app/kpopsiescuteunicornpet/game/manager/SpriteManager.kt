@@ -49,6 +49,8 @@ class SpriteManager(var assetManager: AssetManager) {
         b_back (TextureData("textures/all/b_back.png")),
         b_music(TextureData("textures/all/b_music.png")),
         b_sound(TextureData("textures/all/b_sound.png")),
+
+        dialog(TextureData("textures/all/dialog.png")),
     }
 
     data class AtlasData(val path: String) {

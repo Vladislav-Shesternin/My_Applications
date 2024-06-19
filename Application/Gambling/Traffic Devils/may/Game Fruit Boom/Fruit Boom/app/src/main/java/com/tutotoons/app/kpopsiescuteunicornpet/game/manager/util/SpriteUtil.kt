@@ -47,6 +47,7 @@ class SpriteUtil {
           val b_back          = SpriteManager.EnumTexture.b_back.data.texture
           val b_music         = SpriteManager.EnumTexture.b_music.data.texture
           val b_sound         = SpriteManager.EnumTexture.b_sound.data.texture
+          val dialog          = SpriteManager.EnumTexture.dialog.data.texture
 
           val visible_area = getNinePath("visible_area")
 

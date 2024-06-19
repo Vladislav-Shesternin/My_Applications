@@ -3,7 +3,7 @@ App title: Colorful Goodies
 App package: com.doradogames.conflictnations.worldwar
 Main language: EN
 Contains ADs: Yes
-Privacy Policy URL: https://sites.google.com/view/colorful-goodies/
+Privacy Policy URL: https://colorfulprosgoodiesement.space
 Type: Game
 Category: Arcade
 Content rating category: Game

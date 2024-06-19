@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>6</int>
         <key>texturePackerVersion</key>
-        <string>7.3.0</string>
+        <string>7.4.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -231,6 +231,8 @@
             <key type="filename">right_p.png</key>
             <key type="filename">up.png</key>
             <key type="filename">up_p.png</key>
+            <key type="filename">upup_d.png</key>
+            <key type="filename">upup_p.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -246,6 +248,7 @@
                 <false/>
             </struct>
             <key type="filename">p1.png</key>
+            <key type="filename">p1d.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -261,6 +264,7 @@
                 <false/>
             </struct>
             <key type="filename">p2.png</key>
+            <key type="filename">p2d.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -276,6 +280,7 @@
                 <false/>
             </struct>
             <key type="filename">p3.png</key>
+            <key type="filename">p3d.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -291,6 +296,7 @@
                 <false/>
             </struct>
             <key type="filename">p4.png</key>
+            <key type="filename">p4d.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -317,21 +323,6 @@
                 <rect>118,63,235,125</rect>
                 <key>scale9Paddings</key>
                 <rect>118,63,235,125</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">win.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>202,182,403,364</rect>
-                <key>scale9Paddings</key>
-                <rect>202,182,403,364</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
