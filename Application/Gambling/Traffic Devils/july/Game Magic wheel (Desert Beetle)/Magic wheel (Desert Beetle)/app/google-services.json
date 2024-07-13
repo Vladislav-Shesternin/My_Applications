@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "831805476443",
+    "project_id": "magic-wheel-64cf4",
+    "storage_bucket": "magic-wheel-64cf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831805476443:android:91162ac900685b1624f97e",
+        "android_client_info": {
+          "package_name": "com.bitmango.go"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFX2UsXgzsStvy8EIJkS_yYkUKuJTRVz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

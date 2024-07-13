@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094495962024",
+    "project_id": "gorgeous-princess",
+    "storage_bucket": "gorgeous-princess.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094495962024:android:3de8f2115dcbe76a8f539d",
+        "android_client_info": {
+          "package_name": "com.kongregate.mobile.burrit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-PNyusKsqKmAYWK211RShUsYVS_OaYRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

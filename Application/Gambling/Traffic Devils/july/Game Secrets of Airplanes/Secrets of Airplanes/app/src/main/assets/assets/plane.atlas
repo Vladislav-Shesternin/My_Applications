@@ -1,0 +1,131 @@
+plane.png
+size: 929, 589
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 1, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 117, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 233, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 349, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 465, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 581, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 697, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 813, 1
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 1, 117
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 117, 117
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+bbb
+  rotate: false
+  xy: 1, 495
+  size: 315, 93
+  orig: 315, 93
+  offset: 0, 0
+  index: -1
+ddd
+  rotate: false
+  xy: 317, 495
+  size: 315, 93
+  orig: 315, 93
+  offset: 0, 0
+  index: -1
+off
+  rotate: false
+  xy: 233, 117
+  size: 166, 163
+  orig: 166, 163
+  offset: 0, 0
+  index: -1
+on
+  rotate: false
+  xy: 400, 117
+  size: 166, 163
+  orig: 166, 163
+  offset: 0, 0
+  index: -1
+p1
+  rotate: false
+  xy: 567, 117
+  size: 258, 188
+  orig: 258, 188
+  offset: 0, 0
+  index: -1
+p2
+  rotate: false
+  xy: 260, 306
+  size: 259, 188
+  orig: 259, 188
+  offset: 0, 0
+  index: -1
+p3
+  rotate: false
+  xy: 1, 306
+  size: 258, 187
+  orig: 258, 187
+  offset: 0, 0
+  index: -1
+p4
+  rotate: false
+  xy: 520, 306
+  size: 259, 187
+  orig: 259, 187
+  offset: 0, 0
+  index: -1

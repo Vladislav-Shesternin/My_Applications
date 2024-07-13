@@ -1,0 +1,35 @@
+
+App title: Incredible Planes
+App package: com.duckduckmoosedesign.cpk
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://nationalismincredibleinterventionplanes.store/privacy_policy.html
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Choose your plane, shoot enemies, collect bonuses, and conquer the skies! ✈️🌟
+--------------------------------------------------------------------------------
+Full description:
+
+Incredible Planes: Soar and Conquer the Skies!
+
+Get ready for an aerial adventure with Incredible Planes! Navigate through a sky-themed menu and choose from 6 top-class planes. Customize your sound settings, learn the game rules, and prepare for thrilling dogfights.
+
+Key Features:
+
+✈️ Sky-Themed Menu: Enjoy an intuitive menu designed with planes and clouds.
+
+🔊 Adjustable Sound Settings: Set sound and music volume in percentages to your preference.
+
+📜 Game Rules Screen: Understand the basics and become a master pilot.
+
+🛩️ Plane Selection Screen: Choose from 6 high-class planes for your mission.
+
+🎮 Action-Packed Gameplay: Control your selected plane, move freely across the screen, shoot down enemy planes, and collect x5 and x20 bonuses. Track your progress with a score panel showing the number of planes shot down.
+
+Embark on this exciting journey, shoot down enemies, and collect bonuses for higher scores. Download Incredible Planes now and dominate the skies!
+--------------------------------------------------------------------------------

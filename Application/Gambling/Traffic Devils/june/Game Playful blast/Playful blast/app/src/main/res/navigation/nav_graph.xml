@@ -6,7 +6,7 @@
 
     <fragment
             android:id="@+id/libGDXFragment"
-            android:name="com.maxgames.stickwarl.game.LibGDXFragment"
+            android:name="com.bigag.farm.garden.village.offline.farming.game.game.LibGDXFragment"
             android:label="LibGDXFragment"/>
 
 </navigation>

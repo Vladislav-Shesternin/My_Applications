@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "154107133846",
+    "project_id": "incredible-planes",
+    "storage_bucket": "incredible-planes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154107133846:android:4f1cbcc7b2b5de1d0ce7b7",
+        "android_client_info": {
+          "package_name": "com.duckduckmoosedesign.cpk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqR6zTtMgTi3RaD_VX3P89OdfkXHIuPnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

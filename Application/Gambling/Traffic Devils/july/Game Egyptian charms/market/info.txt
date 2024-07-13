@@ -1,0 +1,33 @@
+
+App title: Egyptian charms
+App package: com.frogmind.rumblehocke
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://seminaregyptianessentialcharms.xyz/privacy_policy.html
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Catch treasures from the pharaoh's magic book, score points, and enjoy the adventure!
+--------------------------------------------------------------------------------
+Full description:
+
+Egyptian Charms: Catch the Treasures of the Pharaoh!
+
+Step into the mystical world of Egyptian Charms! Navigate through enchanting screens featuring a pharaoh with a magical book, and embark on a treasure-catching adventure.
+
+Key Features:
+
+📜 Pharaoh-Themed Menu: Navigate easily with four buttons while the pharaoh's magic book guides you.
+
+🔊 Adjustable Sound Settings: Personalize your experience with the pharaoh's magical book showing volume in percentages.
+
+📚 Game Rules Screen: Learn how to master the game with the pharaoh's guidance.
+
+🎮 Magical Gameplay: Watch as the pharaoh moves across the top of the screen, releasing various treasures from his magical book. Tap to catch them and score points, tracked on the score panel.
+
+Immerse yourself in the magic of ancient Egypt, catch the flying treasures, and climb the leaderboard. Download Egyptian Charms now and become the ultimate treasure catcher!
+--------------------------------------------------------------------------------

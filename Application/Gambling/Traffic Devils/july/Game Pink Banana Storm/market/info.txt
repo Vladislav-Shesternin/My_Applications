@@ -1,0 +1,33 @@
+
+App title: Pink Banana Storm
+App package: com.dekovir
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://clepinkexcbananastorm.store/privacy_policy.html
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Bounce a ball, catch falling fruits and candies, earn points, and enjoy the fun! 🍌🍬
+--------------------------------------------------------------------------------
+Full description:
+
+Pink Banana Storm: Bounce, Catch, and Score!
+
+Enter the delightful world of Pink Banana Storm, where a charming pink girl invites you to her fruit garden and candy factory.
+
+Key Features:
+
+🍌 Charming Pink Theme: Enjoy beautiful animations in a whimsical pink setting.
+
+🎀 Interactive Gameplay: Choose a ball and use the platform to bounce it left and right.
+
+🍬 Catch Falling Treats: Knock down falling fruits and candies to earn points.
+
+❤️ Three Lives Challenge: Miss a treat and lose a life. Lose all lives and return to the menu.
+
+Join the fun, rack up points, and enjoy the magical adventure in Pink Banana Storm!
+--------------------------------------------------------------------------------

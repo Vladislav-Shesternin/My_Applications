@@ -1,0 +1,23 @@
+
+App title: Desert Beetle
+App package: com.tapclap.designvil
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://reinmagicsionwheel.site/privacy_policy.html
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Catch falling Egyptian treasures, earn points, and track scores in a sleek, fun adventure!
+--------------------------------------------------------------------------------
+Full description:
+
+Desert Beetle: Egyptian Treasure Hunt
+
+Embark on a thrilling adventure in Desert Beetle! Navigate through a sleek and intuitive menu where a random element awaits you each time. Dive into the game rules to master your skills and fine-tune your experience with the music and sound settings. Discover the values of all possible elements with the handy scroll panel at the top.
+
+In the heart of the game, the desert beetle brings you a rain of Egyptian treasures. Your mission? Click on these falling elements to rack up points! Watch your score climb on the panel at the top as you catch each precious item. Quick reflexes and keen eyes are your best allies in this exciting chase!
+--------------------------------------------------------------------------------

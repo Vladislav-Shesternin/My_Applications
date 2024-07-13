@@ -12,6 +12,7 @@ import android.webkit.*
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.tutotoons.app.kpopsiescuteunicornpet.databinding.ActivityMainBinding
+import com.tutotoons.app.kpopsiescuteunicornpet.util.log
 
 class Hermes {
     var uuuuais: Int = 0
@@ -209,6 +210,8 @@ class Hermes {
     private fun mercedessSLC(activity: MainActivity) = object : WebViewClient() {
 
         override fun onPageFinished(view: WebView?, url: String?) {
+            log("final: $url")
+
             var isDominika = false
             oscarList.map { it.copy(rating = it.rating * 1.7) }.filter { it.rating > 9.8 }
                 .map { it.copy(name = it.name.uppercase()) }.sortedBy { it.id }

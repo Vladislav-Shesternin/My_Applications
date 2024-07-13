@@ -1,0 +1,180 @@
+alolo.png
+size: 486, 1400
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 213, 66
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 304, 66
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 395, 66
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 1, 157
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 92, 157
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 183, 157
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 274, 157
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 365, 157
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 1, 248
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 92, 248
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+11
+  rotate: false
+  xy: 183, 248
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+12
+  rotate: false
+  xy: 274, 248
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+13
+  rotate: false
+  xy: 365, 248
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+14
+  rotate: false
+  xy: 1, 339
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+bll1
+  rotate: false
+  xy: 92, 339
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+bll2
+  rotate: false
+  xy: 195, 339
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+cbb
+  rotate: false
+  xy: 1, 482
+  size: 233, 161
+  orig: 233, 161
+  offset: 0, 0
+  index: -1
+cbd
+  rotate: false
+  xy: 235, 482
+  size: 233, 161
+  orig: 233, 161
+  offset: 0, 0
+  index: -1
+deva
+  rotate: false
+  xy: 1, 966
+  size: 269, 433
+  orig: 269, 433
+  offset: 0, 0
+  index: -1
+fruitcandy
+  rotate: false
+  xy: 1, 644
+  size: 344, 321
+  orig: 344, 321
+  offset: 0, 0
+  index: -1
+menu
+  rotate: false
+  xy: 64, 1
+  size: 65, 63
+  orig: 65, 63
+  offset: 0, 0
+  index: -1
+panalka
+  rotate: false
+  xy: 1, 66
+  size: 211, 77
+  orig: 211, 77
+  offset: 0, 0
+  index: -1
+pla
+  rotate: false
+  xy: 298, 339
+  size: 147, 142
+  orig: 147, 142
+  offset: 0, 0
+  index: -1
+pltfrma
+  rotate: false
+  xy: 130, 1
+  size: 266, 64
+  orig: 266, 64
+  offset: 0, 0
+  index: -1
+srdce
+  rotate: false
+  xy: 1, 1
+  size: 62, 61
+  orig: 62, 61
+  offset: 0, 0
+  index: -1

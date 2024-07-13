@@ -1,0 +1,17 @@
+alisa - sudyah7326
+pass  - hasfdfASGFDgsad6723
+
+-----------------------------------------------
+Enchanted Wheel
+тип сервера - Policy
+ad_id: ovochi
+refer: salut
+frbToken: LbrahIm
+
+Server:
+https://cabinetenchantedfunctionwheel.site
+
+CustomTabs
+
+Firebase Remote Key: KEY_ZA_LUPANA = "LUPOTA"
+-----------------------------------------------

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "81045886163",
-    "project_id": "playful-blast",
-    "storage_bucket": "playful-blast.appspot.com"
+    "project_number": "13683845919",
+    "project_id": "playful-blast-74814",
+    "storage_bucket": "playful-blast-74814.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:81045886163:android:aa09bf795192c6d8c13026",
+        "mobilesdk_app_id": "1:13683845919:android:6ddd622c8f15ff2d6b5e2a",
         "android_client_info": {
-          "package_name": "com.maxgames.stickwarl"
+          "package_name": "com.bigag.farm.garden.village.offline.farming.game"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAFh5-ZjX_HeMNJVGEg-IYJaXiEBYmIO6c"
+          "current_key": "AIzaSyCBgAhTpwrH2j6z5tu3Sy7UV7AhO6Mv6tM"
         }
       ],
       "services": {

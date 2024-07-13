@@ -1,0 +1,23 @@
+
+App title: Secrets of Airplanes
+App package: com.centurygames.idlecouri
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://conssecretsaintyofairplanes.store/privacy_policy.html
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Explore skybound adventures with 4 aircraft choices, achievements to catch, and more!
+--------------------------------------------------------------------------------
+Full description:
+
+Secrets of Airplanes: Skybound Adventures
+
+Prepare for an epic journey with Secrets of Airplanes! Navigate through a menu styled with airplanes and blue skies, offering seamless navigation through screens. Discover 4 unique aircraft on the selection screen before diving into the game.
+
+In the skies, diverse achievements descend, and your mission is to catch them with your aircraft. Track your progress with three achievement scales displayed at the top. Explore rules and settings amidst the skies and soar to new heights in this thrilling aerial quest!
+--------------------------------------------------------------------------------

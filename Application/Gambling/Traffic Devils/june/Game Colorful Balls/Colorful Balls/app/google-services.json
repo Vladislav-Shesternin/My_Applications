@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "250779761271",
+    "project_id": "colorful-balls",
+    "storage_bucket": "colorful-balls.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250779761271:android:dd6012367c6370d608e472",
+        "android_client_info": {
+          "package_name": "com.mvgamesteam.mineta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfOJSxu0WNY93PSTDBhuE84NwmtyvfbEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

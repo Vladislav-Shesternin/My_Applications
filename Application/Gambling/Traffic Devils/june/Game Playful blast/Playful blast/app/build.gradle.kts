@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.maxgames.stickwarl"
+    namespace = "com.bigag.farm.garden.village.offline.farming.game"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.maxgames.stickwarl"
+        applicationId = "com.bigag.farm.garden.village.offline.farming.game"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -85,6 +85,8 @@ dependencies {
     implementation("com.android.installreferrer:installreferrer:2.2")
     implementation("com.google.android.gms:play-services-ads-identifier:18.1.0")
     implementation("com.google.firebase:firebase-messaging-ktx:24.0.0")
+
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 }
 
 tasks.register("copyAndroidNatives") {

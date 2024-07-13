@@ -1,0 +1,33 @@
+
+App title: Colorful Balls
+App package: com.mvgamesteam.mineta
+Main language: EN
+Contains ADs: Yes
+Privacy Policy URL: https://concerncolorfulcasualtyballs.digital/privacy_policy.html
+Type: Game
+Category: Arcade
+Content rating category: Game
+Target age: 3+
+--------------------------------------------------------------------------------
+Short description:
+
+Catch colorful balls through 7 triangles. Customize sound. Fast and fun!
+--------------------------------------------------------------------------------
+Full description:
+
+Colorful Balls: Catch the Fun!
+
+Dive into the vibrant world of Colorful Balls, where your reflexes are put to the test! Watch as colorful balls fly from left to right, and catch them as they pass through seven challenging triangles to score points.
+
+Key Features:
+
+🎨 Dynamic Menu Screen: Navigate through a sleek and colorful interface.
+
+🔊 Adjustable Sound and Music Settings: Customize your audio experience with adjustable volume controls.
+
+📚 Detailed Rules Screen: Learn the ins and outs of catching balls and maximizing your score.
+
+⚡ Fast-Paced Gameplay: Colorful balls zoom across the screen. Catch them as they pass through the triangles and rack up points!
+
+Get ready for a fun, fast-paced challenge in Colorful Balls. Download now and start catching!
+--------------------------------------------------------------------------------

@@ -1,0 +1,15 @@
+alisa - uidjASDh
+pass  - uasdasHNDsgsd7
+
+-----------------------------------------------
+Secrets of Airplanes
+тип сервера - Policy
+ad_id: alegr
+refer: oop
+frbToken: gaus
+
+Server:
+https://conssecretsaintyofairplanes.store
+
+CustomTabs
+-----------------------------------------------

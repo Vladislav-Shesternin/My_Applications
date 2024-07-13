@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "437610966728",
+    "project_id": "egyptian-charms-6d40b",
+    "storage_bucket": "egyptian-charms-6d40b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437610966728:android:a98fc8bec3135697ba7ffd",
+        "android_client_info": {
+          "package_name": "com.earlymorningstudio.championsofa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGIfbNaVszPIHp3cXLYU_ZdfwEchsHnLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

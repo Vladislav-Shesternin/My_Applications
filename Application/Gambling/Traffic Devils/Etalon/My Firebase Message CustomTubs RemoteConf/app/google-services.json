@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "309458798881",
+    "project_id": "enchanted-wheel",
+    "storage_bucket": "enchanted-wheel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309458798881:android:a185fc7c94d7c750dc5660",
+        "android_client_info": {
+          "package_name": "com.amayasoft.cars.kids.toddlers.garage.ga"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHu6ZVunE18ro5fTzzNfBmlC1WtMLiZDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
